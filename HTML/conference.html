@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <title> NITW Conf | {{ conference.conferenceName }} </title>
+    <title> NITW Conf </title>
     <style>
     .navbar {
       margin-bottom: 0;
@@ -22,50 +22,42 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
         <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand" href="#">{{conference.alias}}</a>
-
-            {% if navbar %}
-              <ul class="nav navbar-nav">
-
-                  {% for item in navbar %}
-                     <li> <a href="/conferences/{{ conference.alias }}/{{ item.pageUrl }}"> {{ item.pageName }}</a> </li>
-                  {% endfor %}
-
-              </ul>
-            {% endif %}
-
-
-
-
+            <a class="navbar-brand" href="#">{{ConfAlias}}</a>
+            <ul class="nav navbar-nav">
+              <li><a href="#">SUBPAGE1</a></li>
+              <li><a href="#">SUBPAGE2</a></li>
+              <li><a href="#">SUBPAGE3</a></li>
+            </ul>
         </div>
       </div>
     </nav>
 
      <div class ="jumbotron">
         <div class = "container">
-         <h1>{{conference.conferenceName}}</h1>
-         <h6>{{conference.startDate}} to {{conference.endDate}}</h6>
-         <p>
-           {{conference.description}}
-        </p>
-
+         <h1>{{Conference Name}}</h1>
+         <p>This is description of the conf</p>
        </div>
      </div>
 
      <div class="container">
        <div class="row">
          <div class="col-md-8">
-           <h2>{{ subpage.pageName }}</h2>
+           <h2>{{Subpage Name}}</h2>
            <p>
-             {{ subpage.content }}
+             {{Content of the page goes here. <br> New content <br>
+               <b>This is bold.</b> <br> This is not.}}
+               {{Content of the page goes here. <br> New content <br>
+               <b>This is bold.</b> <br> This is not.}}
+               {{Content of the page goes here. <br> New content <br>
+               <b>This is bold.</b> <br> This is not.}}
                <br><br><br><br><br><br><br><br><br><br><br><br>
 
           </p>
          </div>
          <div class="col-md-4 sidebar">
-           <h2>Important dates</h2>
+           <h2>{{Important dates}}</h2>
 
-             Content goes here
+             {{Content goes here}}
              <ul>
                <li><em><strong>25 </strong> Feb<em>Item one</li>
                <li><em><strong>25 </strong> Feb<em>Item one</li>
@@ -83,7 +75,7 @@
 
      <footer class="footer">
        <div class="container">
-        <p>This is footer text</p>
+        <p>{{This is footer text}}</p>
        </div>
 
      </footer>

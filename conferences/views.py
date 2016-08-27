@@ -24,9 +24,13 @@ def index(request):
 def home(request, conferenceAlias):
     conference = Conference.objects.get(alias=conferenceAlias)
     template = loader.get_template('conferences/conference.html')
+
+    num = Page.objects.get(cid=conference.cid, pageUrl='home')
+
     context = {
         'conference' : conference,
-        'subpage' : Page.objects.get(cid=conference.cid, pageUrl='home')
+        'subpage' : num if not num else None,
+        'navbar'  : Page.objects.filter(cid=conference.cid) if Page.objects.filter(cid=conference.cid).count() != 0 else None,
     }
     return HttpResponse(template.render(context, request))
     #return HttpResponse('This is conf homepage of ' + conferenceAlias)
@@ -37,7 +41,8 @@ def subpage(request, conferenceAlias, subpage):
 
     context = {
         'conference' : conference,
-        'subpage' : Page.objects.get(cid=conference.cid, pageUrl=subpage)
+        'subpage' : Page.objects.get(cid=conference.cid, pageUrl=subpage),
+        'navbar'  : Page.objects.filter(cid=conference.cid),
     }
     return HttpResponse(template.render(context, request))
     #return HttpResponse('We are on the subpage '+ subpage+ ' of the conf '+conferenceName)

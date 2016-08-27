@@ -23,11 +23,20 @@
       <div class="container-fluid">
         <div id="navbar" class="navbar-collapse collapse">
             <a class="navbar-brand" href="#">{{conference.alias}}</a>
-            <ul class="nav navbar-nav">
-              <li><a href="#">SUBPAGE1</a></li>
-              <li><a href="#">SUBPAGE2</a></li>
-              <li><a href="#">SUBPAGE3</a></li>
-            </ul>
+
+            {% if navbar %}
+              <ul class="nav navbar-nav">
+
+                  {% for item in navbar %}
+                     <li> <a href="/conferences/{{ conference.alias }}/{{ item.pageUrl }}"> {{ item.pageName }}</a> </li>
+                  {% endfor %}
+
+              </ul>
+            {% endif %}
+
+
+
+
         </div>
       </div>
     </nav>
