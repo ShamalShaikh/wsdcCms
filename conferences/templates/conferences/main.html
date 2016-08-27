@@ -45,7 +45,7 @@
               <ul class="list-group">
 
                   {% for conference in upcoming_confs %}
-                     <li> <a href="/conferences/{{ conference.alias }}"> {{conference.conferenceName}} </a> </li>
+                     <li> <a href="/conferences/{{ conference.alias }}"> {{conference.conferenceName}} on  {{conference.startDate}}</a> </li>
                   {% endfor %}
 
               </ul>

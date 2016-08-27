@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
-from .models import Conference
+from .models import Conference, Page
 
 
 def index(request):
@@ -26,9 +26,18 @@ def home(request, conferenceAlias):
     template = loader.get_template('conferences/conference.html')
     context = {
         'conference' : conference,
+        'subpage' : Page.objects.get(cid=conference.cid, pageUrl='home')
     }
     return HttpResponse(template.render(context, request))
     #return HttpResponse('This is conf homepage of ' + conferenceAlias)
 
 def subpage(request, conferenceAlias, subpage):
-    return HttpResponse('We are on the subpage '+ subpage+ ' of the conf '+conferenceName)
+    conference = Conference.objects.get(alias=conferenceAlias)
+    template = loader.get_template('conferences/subpage.html')
+
+    context = {
+        'conference' : conference,
+        'subpage' : Page.objects.get(cid=conference.cid, pageUrl=subpage)
+    }
+    return HttpResponse(template.render(context, request))
+    #return HttpResponse('We are on the subpage '+ subpage+ ' of the conf '+conferenceName)

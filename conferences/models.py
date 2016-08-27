@@ -16,7 +16,9 @@ class Conference(models.Model):
     cid = models.AutoField(primary_key = True)
     conferenceName = models.CharField(max_length = 100)
     mid = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField()
+    startDate = models.DateField()
+    endDate = models.DateField()
+
     STATUS = (
         ('U' , 'Upcoming'),
         ('P' , 'Previous'),
@@ -37,5 +39,6 @@ class Paper(models.Model):
 class Page(models.Model):
     pid = models.AutoField(primary_key = True)
     cid = models.ForeignKey(Conference, on_delete = models.CASCADE)
-    pageName = models.CharField(max_length = 20)
+    pageUrl = models.CharField(max_length = 20)
+    pageName = models.CharField(max_length = 50)
     content = models.CharField(max_length = 1000)
