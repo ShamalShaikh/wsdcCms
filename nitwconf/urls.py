@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^conferences', include('conferences.urls')),
+    url(r'^conferences/', include('conferences.urls')),
+    #url(r'^conferences/(?P<conferenceName>)')
     url(r'^admin/', admin.site.urls),
 ]
