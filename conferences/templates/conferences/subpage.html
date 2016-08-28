@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <title> NITW Conf | {{ conference.conferenceName }} </title>
+    <title> NITW Conf | {{conference.conferenceName}}</title>
     <style>
     .navbar {
       margin-bottom: 0;
     }
     .sidebar {
+      background-color: #f5f5f5;
+    }
+    footer{
       background-color: #f5f5f5;
     }
     </style>
@@ -63,15 +66,17 @@
           </p>
          </div>
          <div class="col-md-4 sidebar">
-           <h2>Important dates</h2>
 
-             Content goes here
-             <ul>
-               <li><em><strong>25 </strong> Feb<em>Item one</li>
-               <li><em><strong>25 </strong> Feb<em>Item one</li>
-               <li><em><strong>25 </strong> Feb<em>Item one</li>
+           {% if sidebar %}
 
-             </ul>
+            <h2>{{sidebar.pageName}}</h2>
+            {{sidebar.content}}
+
+            {% else %}
+                <h2>Custom sidebar</h2>
+                <p>Add a new subpage to your conference page with pageUrl as sidebar.
+                The contents are displayed here.</p>
+            {% endif %}
 
          </div>
 
@@ -80,10 +85,9 @@
 
      </div>
 
-
      <footer class="footer">
        <div class="container">
-        <p>This is footer text</p>
+        <p>NITW Conference Manager | {{conference.conferenceName}}</p>
        </div>
 
      </footer>
@@ -92,6 +96,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
