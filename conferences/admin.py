@@ -85,7 +85,8 @@ class PaperAdmin(admin.ModelAdmin):
         if  request.user.groups.filter(name__in=['admin','manager']).exists():
             self.exclude = []
         elif  request.user.groups.filter(name='attendee').exists():
-            self.exclude = ('approved','uid', )
+            self.exclude = ('approved', )
+
         else:
             pass
         return super(PaperAdmin, self).get_form(request, obj, **kwargs)

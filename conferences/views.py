@@ -13,7 +13,7 @@ def index(request):
     conference = Conference.objects.all()
     template = loader.get_template('conferences/main.html')
     context = {
-        'upcoming_confs' : Conference.objects.filter(status='U'),
+        'upcoming_confs' : Conference.objects.filter(status='U').order_by('startDate')[::-1],
         'recent_confs' : Conference.objects.filter(status='P'),
 
     }
@@ -59,14 +59,15 @@ def subpage(request, conferenceAlias, subpage):
 
         context = {
             'conference' : conference,
-        'subpage' : Page.objects.get(cid=conference.cid, pageUrl=subpage).exclude(pageUrl='sidebar'),
-        'navbar'  : Page.objects.filter(cid=conference.cid).exclude(pageUrl='sidebar'),
+            'subpage' : Page.objects.get(cid=conference.cid, pageUrl=subpage),
+            'navbar'  : Page.objects.filter(cid=conference.cid).exclude(pageUrl='sidebar'),
         }
-
-        num = Page.objects.get(cid=conference.cid, pageUrl='sidebar')
-        if num:
-            context['sidebar'] = Page.objects.get(cid=conference.cid, pageUrl='sidebar')
-
+        try:
+            num = Page.objects.get(cid=conference.cid, pageUrl='sidebar')
+            if num:
+                context['sidebar'] = Page.objects.get(cid=conference.cid, pageUrl='sidebar')
+        except:
+            pass
 
         return HttpResponse(template.render(context, request))
     except:
@@ -78,6 +79,3 @@ def subpage(request, conferenceAlias, subpage):
             context = {}
 
         return HttpResponse(template.render(context, request))
-
-
-    #return HttpResponse('We are on the subpage '+ subpage+ ' of the conf '+conferenceName)
