@@ -1,5 +1,7 @@
 # wsdc-devathon-cms
 
+## Instructions to run
+
 python manage.py makemigrations
 
 python manage.y migrate
