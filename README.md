@@ -4,7 +4,7 @@
 
 python manage.py makemigrations
 
-python manage.y migrate
+python manage.py migrate
 
 python manage.py createsuperuser
 
