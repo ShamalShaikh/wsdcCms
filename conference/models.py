@@ -26,6 +26,7 @@ class Conference(models.Model):
 	description = models.CharField(max_length = 200)
 	alias = models.CharField(max_length = 10)
 	manager = models.ForeignKey(User)
+	fee = models.IntegerField(default=0)
 
 	def __str__(self):
 		return str(self.conference_name)

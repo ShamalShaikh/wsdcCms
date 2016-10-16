@@ -1,0 +1,55 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+{% if payment %}
+	   
+	{% if payment.is_aprooved %}
+	<div class="ui segment">
+		<table class="ui celled table">
+			<thead>
+				<tr>
+					<th>Paper</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if papers %}
+				{% for paper in papers %}
+					<tr>
+						<td>{{paper.papername}}</td>
+						<td>{%if paper.is_approved%}Published{%else%}Not Approved{%endif%}</td>
+					</tr>
+				{% endfor %}
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+	<div class="ui fluid segment">
+		<form class="ui form" action="#" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+	        <div class="field" style="margin-left: 33%;">
+	              <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+	        </div>
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+	        </div>
+		</form>
+	</div>
+	{% else %}
+	<div class="ui fluid segment">
+		<h3> Status :
+		<span> DD yet to be Approved </span>
+		</h3>
+	</div>
+	{% endif %}
+	
+{% else %}
+	<div style="margin-left: 40%;">
+		<a href="/conference/make_payment/?cid={{conference.conference_id}}"><button class="ui button blue">Register for Conference</button></a>
+	</div>
+{% endif %}
+</div>
+
+{% endblock %}
