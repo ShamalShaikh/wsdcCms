@@ -1,0 +1,53 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	{% if message %}
+	<div class="ui negative message" id="errormessage">
+		<i class="close icon"></i>
+		<div class="header">
+		  Network Error
+		</div>
+		<div>
+		  <p>{{message}}</p>
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="ui fluid segment">
+		<form class="ui form" action="/login/register/" method="post">
+			{% csrf_token %}
+			<div class="field">
+	              <label>First Name</label>
+	              <input name="firstname" placeholder="FirstName" type="text" id="firstname">
+	        </div>
+	        <div class="field">
+	              <label>Last Name</label>
+	              <input name="lastname" placeholder="LastName" type="text" id="lastname">
+	        </div>
+	        <div class="field">
+	              <label>UserName</label>
+	              <input name="username" placeholder="Username" type="text" id="username">
+	        </div>
+	        <div class="field">
+	              <label>Email-id</label>
+	              <input name="email" placeholder="Email-id" type="text" id="email">
+	        </div>
+	        <div class="field">
+	              <label>Password</label>
+	              <input name="password" placeholder="Password" type="password" id="password">
+	        </div>
+	        <div class="field">
+	              <label>Confirm-Password</label>
+	              <input name="confirm_password" placeholder="ConfirmPassword" type="password" id="confirm_password">
+	        </div>
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="register">Register</button>
+	        </div>
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}

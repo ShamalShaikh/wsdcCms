@@ -7,6 +7,22 @@ from conference.models import *
 def get_user_profile_picture_path(instance,filename):
     return 'userprofile/{0}'.format(filename)
 
+def get_dd_path(instance,filename):
+	return 'payments/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+
+class Payment(models.Model):
+	payment_choice = (
+		('net','Net Banking'),
+		('dd','Through DD'),
+	)
+	user = models.OneToOneField(User)
+	conf_id = models.ForeignKey(Conference)
+	amount = models.IntegerField(default=0)
+	payment_mode = models.CharField(max_length=20,choices=payment_choice)
+	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
+	is_aprooved = models.BooleanField(default=False)
+
+
 class Registered_Conference(models.Model):
 	conf_id = models.ForeignKey(Conference)
 	papers = models.ManyToManyField(Conf_Paper,null=True,blank=True)

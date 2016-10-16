@@ -1,0 +1,22 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+	<div class="ui fluid segment">
+		<form class="ui form" action="/conference/payment/?cid={{conference.conference_id}}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			
+	        <div class="field disabled">
+	              <label>Amount</label>
+	              <input name="amount" placeholder="Amount" type="text" id="amount" value="{{conference.fee}}">
+	        </div>
+	        <div class="field">
+	              <input name="dd_file" type="file" id="dd_file" class="ui button blue">
+	        </div>
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="pay">Pay</button>
+	        </div>
+		</form>
+	</div>
+</div>
+{% endblock %}
