@@ -9,20 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>Technozion: Registration</title>
-   <meta name="description" content="NIT Warangal Presents Technozion 2016. The annual Technical extravaganza. Events and workshop registrations are open.">
-    <!-- Facebook open graph -->
-    <meta property="og:title" content="Technozion 2016"/>
-    <meta property="og:type" content="Fest Website, non profit organisation"/>
-    <meta property="og:image" content="http://www.technozion.org/static/main/oglogo.png"/>
-    <meta property="og:url" content="http://www.technozion.org"/>
-    <meta property="og:description" content="Technozion is the annual celebration of engineering, science and technology organised wholly and solely by the students of NIT Warangal. Thus, one can not go wrong with the level of enthusiasm shown by the young engineering population, and the resulting magnificent ideas from it."/>
-    <!-- Twitter cards -->
-    <meta name="twitter:card" content="Technozion is the annual celebration of engineering, science and technology organised wholly and solely by the students of NIT Warangal. Thus, one can not go wrong with the level of enthusiasm shown by the young engineering population, and the resulting magnificent ideas from it." />
-    <meta name="twitter:site" content="@Technozion16" />
-    <meta name="twitter:title" content="Technozion , NITWarangal" />
-    <meta name="twitter:description" content="National Level Technical Fest of NIT-Warangal." />
-    <meta name="twitter:image" content="http://www.technozion.org/static/main/green-new.png" />
+  <title>Conference Management System</title>
      <link rel="icon" type="image/png" href="{%static 'images/favicon.png' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'main/semantic.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'main/components/reset.css' %}">
