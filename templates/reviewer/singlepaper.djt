@@ -1,0 +1,29 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1>{{paper.papername}}</h1>
+	</center>
+	<div class="ui segment">
+	<center>	
+	<iframe id="iframepdf" src="/media/{{ paperpath }}"" width="900" height="600"></iframe>
+	</center>
+
+	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
+	
+
+	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
+			{% for q in  questions %}
+			<a class="header">{{q.question}}</a>
+			<div class="fieldWrapper">
+     	    <textarea cols="40" id="id_answer" name="answer{{q.id}}" rows="10" required></textarea>
+    	 	</div>
+	        {% endfor %}
+    	<input type="submit" value="Submit" />
+	</form>	  
+
+</div>
+
+{% endblock %}
