@@ -1,0 +1,16 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1>Papers to Review</h1>
+	</center>
+	<div class="ui segment">
+	<center>
+	<a href = "/manager/assignreviewer">redirect</a>
+	</center>
+	</div>
+</div>
+
+{% endblock %}

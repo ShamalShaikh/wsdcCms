@@ -8,6 +8,7 @@ from conference.models import *
 from login_auth.models import *
 
 # Create your views here.
+@login_required(login_url='/signin')
 def index(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)
@@ -29,11 +30,13 @@ def index(request):
 	except :
 		return render(request,'conference/conference.djt',{'conference':conference})
 
+@login_required(login_url='/signin')
 def make_payment(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)
 	return render(request,'conference/payment.djt',{'conference':conference})
 
+@login_required(login_url='/signin')
 def payment(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)

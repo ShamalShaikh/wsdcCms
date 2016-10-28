@@ -18,7 +18,7 @@
 				{% if papers %}
 				{% for paper in papers %}
 					<tr>
-						<td>{{paper.papername}}</td>
+						<td><a href="/media/{{paper.paperfile}}" >{{paper.papername}}</a></td>
 						<td>{%if paper.is_approved%}Published{%else%}Not Approved{%endif%}</td>
 					</tr>
 				{% endfor %}
