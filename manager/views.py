@@ -4,8 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpRequest, Http404
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
-from conference.models import Conference
-from reviews.models import Reviewer
+from conference.models import Conference, Conf_Paper
+from reviews.models import Reviewer, Questions, Answers
 from manager.models import *
 from login_auth.models import *
 
@@ -37,10 +37,14 @@ def home(request):
 	return render(request, 'manager/home.djt', {'conferences':conferences})
 
 @login_required(login_url='/manager/signin/')
-def assign_reviewer(request):
-	reviewer = Reviewer.objects.all()
+def assign_reviewer(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	reviewer = Reviewer.objects.all().exclude(papers=paper)
+	reviewer_assigned = Reviewer.objects.filter(papers=paper)
 	context = {
 		'reviewer':reviewer,
+		'reviewer_assigned':reviewer_assigned,
+		'paper':paper,
 	}
 	return render(request, 'manager/assignreviewer.djt', context)
 
@@ -66,3 +70,16 @@ def conference_landing(request,cid,type):
 	response['type']=type
 	return render(request,'manager/conf_navbar.djt',response)
 
+def reviewCompleted(request,paper_id,u_id):
+	reviewer = Reviewer.objects.get(id=u_id)
+	questions = Questions.objects.filter(paper_id = paper_id)
+	answers = Answers.objects.filter(reviewer=reviewer)
+	
+	print questions
+
+	context = {
+		'answers':answers,
+		'questions':questions,
+	}
+
+	return render(request, 'manager/reviewresp.djt', context)
