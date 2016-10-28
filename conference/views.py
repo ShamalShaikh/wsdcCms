@@ -12,6 +12,7 @@ def index(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)
 	try :
+		print request.user
 		payment = Payment.objects.get(user=request.user, conf_id=conference)
 		print "payment found"
 		if payment is not None :
@@ -35,20 +36,27 @@ def make_payment(request):
 
 def payment(request):
 	cid = request.GET['cid']
+	conference = Conference.objects.get(conference_id=cid)
 	if request.method == 'POST' :
 		dd_pic = request.FILES['dd_file']
 		user = request.user
 		conf_id = Conference.objects.get(conference_id=cid)
 		amount = request.POST['amount']
-		pay = Payment()
-		pay.amount = amount
-		pay.user = user
-		pay.conf_id = conf_id
-		pay.pic_of_dd = dd_pic
-		pay.is_approved = False
-		pay.payment_mode = 'dd'
-		pay.save()
+
+		previousPayment = Payment.objects.get(user=request.user,conf_id=conference)
+		if previousPayment:
+			previousPayment.pic_of_dd = dd_pic
+			previousPayment.save()
+		else:
+			pay = Payment()
+			pay.amount = amount
+			pay.user = user
+			pay.conf_id = conf_id
+			pay.pic_of_dd = dd_pic
+			pay.is_approved = False
+			pay.payment_mode = 'dd'
+			pay.save()
 		url = '/conference/?cid='+cid
 		return redirect(url)
-	return render(request,'conference/payment.djt',{'conference':conf_id})
+	return render(request,'conference/payment.djt',{'conference':conference})
 
