@@ -42,6 +42,12 @@
 		<h3> Status :
 		<span> DD yet to be Approved </span>
 		</h3>
+		{% if payment.remarks %}
+			<h3>Remarks : {{payment.remarks}}</h3>
+		{% endif %}
+		<div style="margin-left: 40%;">
+			<a href="/conference/payment/?cid={{conference.conference_id}}"><button class="ui button blue">Upload DD again</button></a>
+		</div>
 	</div>
 	{% endif %}
 	

@@ -16,31 +16,31 @@
 	{% endif %}
 
 	<div class="ui fluid segment">
-		<form class="ui form" action="/login/register/" method="post">
+		<form class="ui form" action="/register/" method="post">
 			{% csrf_token %}
 			<div class="field">
 	              <label>First Name</label>
-	              <input name="firstname" placeholder="FirstName" type="text" id="firstname">
+	              <input name="firstname" placeholder="FirstName" type="text" id="firstname" required>
 	        </div>
 	        <div class="field">
 	              <label>Last Name</label>
-	              <input name="lastname" placeholder="LastName" type="text" id="lastname">
+	              <input name="lastname" placeholder="LastName" type="text" id="lastname" required>
 	        </div>
 	        <div class="field">
 	              <label>UserName</label>
-	              <input name="username" placeholder="Username" type="text" id="username">
+	              <input name="username" placeholder="Username" type="text" id="username" required>
 	        </div>
 	        <div class="field">
 	              <label>Email-id</label>
-	              <input name="email" placeholder="Email-id" type="text" id="email">
+	              <input name="email" placeholder="Email-id" type="text" id="email" required>
 	        </div>
 	        <div class="field">
 	              <label>Password</label>
-	              <input name="password" placeholder="Password" type="password" id="password">
+	              <input name="password" placeholder="Password" type="password" id="password" required>
 	        </div>
 	        <div class="field">
 	              <label>Confirm-Password</label>
-	              <input name="confirm_password" placeholder="ConfirmPassword" type="password" id="confirm_password">
+	              <input name="confirm_password" placeholder="ConfirmPassword" type="password" id="confirm_password" required>
 	        </div>
 	        <div style="margin-left: 40%;">
 	        <button class="ui button green" type="submit" id="register">Register</button>
