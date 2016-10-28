@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
-from conference.models import *
+from conference.models import Conf_Paper
 from login_auth.models import *
 from reviews.models import Reviewer
 
