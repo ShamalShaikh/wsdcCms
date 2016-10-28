@@ -23,6 +23,9 @@ class Payment(models.Model):
 	is_aprooved = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
 
+	def __unicode__(self):
+		return (self.user.username+" for "+self.conf_id.conference_name)
+
 
 class Registered_Conference(models.Model):
 	conf_id = models.ForeignKey(Conference)
@@ -30,7 +33,7 @@ class Registered_Conference(models.Model):
 	user = models.ForeignKey(User)
 
 	def __unicode__(self):
-		return (self.user+" --> "+self.conf_id)
+		return (self.user.username+" --> "+self.conf_id.conference_name)
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
