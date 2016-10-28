@@ -16,7 +16,7 @@
 	{% endif %}
 
 	<div class="ui fluid segment">
-		<form class="ui form" action="/login/signin/" method="post">
+		<form class="ui form" action="/signin/" method="post">
 			{% csrf_token %}
 			
 	        <div class="field">

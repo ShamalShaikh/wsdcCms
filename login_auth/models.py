@@ -15,18 +15,19 @@ class Payment(models.Model):
 		('net','Net Banking'),
 		('dd','Through DD'),
 	)
-	user = models.OneToOneField(User)
+	user = models.ForeignKey(User)
 	conf_id = models.ForeignKey(Conference)
 	amount = models.IntegerField(default=0)
 	payment_mode = models.CharField(max_length=20,choices=payment_choice)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
 	is_aprooved = models.BooleanField(default=False)
+	remarks = models.CharField(max_length=50,null=True,blank=True)
 
 
 class Registered_Conference(models.Model):
 	conf_id = models.ForeignKey(Conference)
 	papers = models.ManyToManyField(Conf_Paper,null=True,blank=True)
-	user = models.OneToOneField(User)
+	user = models.ForeignKey(User)
 
 	def __unicode__(self):
 		return (self.user+" --> "+self.conf_id)
