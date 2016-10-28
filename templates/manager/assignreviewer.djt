@@ -1,0 +1,18 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1>Reviewers</h1>
+	</center>
+	{% for r in reviewer %}
+	<div class="ui segment">
+	<center>
+	<p>{{r.user.username}}</p>
+	</center>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
