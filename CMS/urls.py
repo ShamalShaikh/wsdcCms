@@ -8,4 +8,5 @@ urlpatterns = [
     url('',include('login_auth.urls')),
     url(r'^conference/',include('conference.urls')),
     url(r'^review/', include('reviews.urls')),
+    url(r'^manager/', include('manager.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
