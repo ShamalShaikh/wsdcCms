@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'login_auth',
     'conference',
     'reviews',
+    'manager',
 ]
 
 MIDDLEWARE = [

@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError 
 from login_auth.models import *
+# from manager.models import Manager
 
 # Create your models here.
 def get_conf_image_path(instance,filename):
