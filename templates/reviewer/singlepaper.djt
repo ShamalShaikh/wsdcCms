@@ -10,20 +10,28 @@
 	<center>	
 	<iframe id="iframepdf" src="/media/{{ paperpath }}"" width="900" height="600"></iframe>
 	</center>
+	<br><br>
 
+	{% if q_len %}
 	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
 	
-
+	<center>
 	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
-			{% for q in  questions %}
+			{% for q in questions %}
+			{{ q_ans.q.id }}
 			<a class="header">{{q.question}}</a>
 			<div class="fieldWrapper">
-     	    <textarea cols="40" id="id_answer" name="answer{{q.id}}" rows="10" required></textarea>
+     	    <textarea cols="80" id="id_answer" name="answer{{q.id}}" rows="4" required>{{ q_ans.items.q }}</textarea>
     	 	</div>
+    	 	<br>
 	        {% endfor %}
     	<input type="submit" value="Submit" />
-	</form>	  
+	</form>	
+	</center>  
+	{% endif %}
 
 </div>
+
+<br><br>
 
 {% endblock %}
