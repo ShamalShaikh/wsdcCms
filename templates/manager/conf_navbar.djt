@@ -1,0 +1,27 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+  <div class="ui three item menu">
+    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users</a>
+    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approval</a>
+    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers</a>
+  </div>
+</div>
+
+{% if type==1 %}
+
+{% elsif type==2 %}
+
+{% else %}
+
+{% endif %}
+
+{%if users %}
+{% for user in users %}
+<p>{{user.username}}</p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
+

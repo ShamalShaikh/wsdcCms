@@ -14,7 +14,7 @@ def Register(request):
 	return render(request,'login_auth/sites/register.djt')
 
 def register(request):
-	reponse={}
+	response={}
 	if request.method=='POST':
 		firstname = request.POST['firstname']
 		lastname = request.POST['lastname']

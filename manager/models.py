@@ -9,7 +9,7 @@ class Manager(models.Model):
 	user = models.OneToOneField(User)
 
 	def  __unicode__(self):
-		return user.username
+		return self.user.username
 
 class Paper_assign(models.Model):
 	manager = models.ForeignKey(Manager)
@@ -17,4 +17,4 @@ class Paper_assign(models.Model):
 	paper = models.ForeignKey(Conf_Paper)
 
 	def  __unicode__(self):
-		return (manager.user.username+" "+paper.papername)
+		return (self.manager.user.username+" "+self.paper.papername)
