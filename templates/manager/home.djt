@@ -3,13 +3,24 @@
 {% block content %}
 
 <div class="ui container">
-	<center>
-	<h1>Papers to Review</h1>
-	</center>
-	<div class="ui segment">
-	<center>
-	<a href = "/manager/assignreviewer">redirect</a>
-	</center>
+	<div class="ui grid">
+		<div class="ui eight wide column">
+				{% for conference in conferences %}
+				<br>
+				<div class="ui fluid link card">
+					<a class="content" href="/manager/conference_landing/{{conference.conference_id}}/1">
+	                    <div class="header">{{conference.conference_name}}</div>
+	                </a>
+	                <a class="content" href="/manager/conference_landing/{{conference.conference_id}}/1">
+		             	<div>Start Date : {{conference.startDate}}</div>
+		             	<div>End Date : {{conference.endDate}}</div>
+		            </a>
+				</div>
+				{% endfor %}
+		</div>
+		<div class="ui eight wide column">
+			
+		</div>
 	</div>
 </div>
 
