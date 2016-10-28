@@ -53,7 +53,7 @@ def signin(request):
 	        response['message']='User is not registered/Password Incorrect' 
 	return render(request,'login_auth/sites/login.djt',response)
 
-@login_required(login_url='/login/signin')
+@login_required(login_url='/login/signin/')
 def dashboard(request):
 	response={}
 	response['conferences'] = Conference.objects.filter(is_published=True)
