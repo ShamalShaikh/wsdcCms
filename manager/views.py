@@ -53,21 +53,26 @@ def conference_landing(request,cid,type):
 	conference = Conference.objects.get(conference_id=cid)
 	regconfs = Registered_Conference.objects.filter(conf_id=conference)
 	users = []
+	paidtrans = []
 	pending_dds= []
 	papers = []
 	for regconf in regconfs:
 		user = regconf.user
-		papers.append(regconf.papers.all())
-		payment = Payment.objects.filter(user=user)
-		if payment.is_aprooved:
+		for paper in regconf.papers.all() :
+			papers.append(paper)
+		payment = Payment.objects.get(user=user,conf_id=conference)
+		if payment.is_aprooved==True :
 			users.append(user)
+			paidtrans.append(payment)
 		else:
 			pending_dds.append(payment)
 	response={}
 	response['users']=users
+	response['paidtrans']=paidtrans
 	response['papers']=papers
 	response['pending_dds']=pending_dds
 	response['type']=type
+	response['conference']=conference
 	return render(request,'manager/conf_navbar.djt',response)
 
 def reviewCompleted(request,paper_id,u_id):
