@@ -11,6 +11,8 @@ def index(request):
 	return redirect('/Register/')
 
 def Register(request):
+	if request.user.is_authenticated():
+	    return redirect('/dashboard')
 	return render(request,'login_auth/sites/register.djt')
 
 def register(request):
@@ -42,7 +44,7 @@ def register(request):
 	return render(request,'login_auth/sites/register.djt')
 			
 def signin(request):
-	reponse={}
+	response={}
 	if request.user.is_authenticated():
 	    return redirect('/dashboard')
 	if request.method == "POST":

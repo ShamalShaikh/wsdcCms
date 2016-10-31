@@ -66,6 +66,11 @@ def conference_landing(request,cid,type):
 			paidtrans.append(payment)
 		else:
 			pending_dds.append(payment)
+	
+	for pendingtrans in Payment.objects.filter(conf_id=conference):
+		if pendingtrans.is_aprooved==False :
+			paidtrans.append(pendingtrans)
+
 	response={}
 	response['users']=users
 	response['paidtrans']=paidtrans
