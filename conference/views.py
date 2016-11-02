@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
 from conference.models import *
 from login_auth.models import *
+import datetime
 
 # Create your views here.
 @login_required(login_url='/signin')
@@ -63,3 +64,20 @@ def payment(request):
 		return redirect(url)
 	return render(request,'conference/payment.djt',{'conference':conference})
 
+@login_required(login_url='/signin')
+def upload_paper(request,cid):
+	conference = Conference.objects.get(conference_id=cid)
+	now = datetime.datetime.now()
+	if request.method == 'POST' :
+		paper = Conf_Paper()
+		paper.conf_id=conference
+		paper.uid=request.user
+		paper.paperfile=request.FILES['paper_file']
+		paper.submissionDate=now.strftime("%Y-%m-%d")
+		paper.save()
+
+		regconf = Registered_Conference.objects.get(conf_id=conference,user=request.user)
+		regconf.papers.add(paper)
+		regconf.save()
+	url = '/conference/?cid='+cid
+	return redirect(url)

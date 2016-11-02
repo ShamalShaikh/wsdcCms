@@ -11,6 +11,8 @@ def index(request):
 	return redirect('/Register/')
 
 def Register(request):
+	if request.user.is_authenticated():
+	    return redirect('/dashboard')
 	return render(request,'login_auth/sites/register.djt')
 
 def register(request):
