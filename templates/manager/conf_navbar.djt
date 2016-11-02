@@ -20,7 +20,7 @@
           {% for paidtran in paidtrans %}
             <tr>
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
-            <td>{{paidtran.pic_of_dd}}</td>
+            <td><a href="/media/{{paidtran.pic_of_dd}}" target="blank">show dd</a></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -39,7 +39,7 @@
           {% for pendingdd in pending_dds %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td>{{pendingdd.pic_of_dd}}</td>
+            <td><a href="/media/{{pendingdd.pic_of_dd}}" target="blank">show dd</a></td>
             <td><button class="ui button" href="#" >Approve</button></td>
             </tr>
           {% endfor %}
@@ -58,7 +58,7 @@
           {% for paper in papers %}
           <tr>
             <td>{{paper.uid}}</td>
-            <td>{{paper.paperfile}}</td>
+            <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
           </tr>
           {% endfor %}
         </tbody>

@@ -52,24 +52,24 @@ def assign_reviewer(request, paper_id):
 def conference_landing(request,cid,type):
 	conference = Conference.objects.get(conference_id=cid)
 	regconfs = Registered_Conference.objects.filter(conf_id=conference)
+	print regconfs
 	users = []
 	paidtrans = []
 	pending_dds= []
 	papers = []
 	for regconf in regconfs:
+		print "hello"
 		user = regconf.user
+		payment = Payment.objects.get(user=user,conf_id=conference)
+		users.append(user)
+		paidtrans.append(payment)
 		for paper in regconf.papers.all() :
 			papers.append(paper)
-		payment = Payment.objects.get(user=user,conf_id=conference)
-		if payment.is_aprooved==True :
-			users.append(user)
-			paidtrans.append(payment)
-		else:
-			pending_dds.append(payment)
+			
 	
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
 		if pendingtrans.is_aprooved==False :
-			paidtrans.append(pendingtrans)
+			pending_dds.append(pendingtrans)
 
 	response={}
 	response['users']=users
