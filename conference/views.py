@@ -73,6 +73,7 @@ def upload_paper(request,cid):
 		paper.conf_id=conference
 		paper.uid=request.user
 		paper.paperfile=request.FILES['paper_file']
+		paper.papername=request.POST['paper_name']
 		paper.submissionDate=now.strftime("%Y-%m-%d")
 		paper.save()
 

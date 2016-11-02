@@ -18,7 +18,7 @@
 				{% if papers %}
 				{% for paper in papers %}
 					<tr>
-						<td><a href="/media/{{paper.paperfile}}" >{{paper.papername}}</a></td>
+						<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
 						<td>{%if paper.is_approved%}Published{%else%}Not Approved{%endif%}</td>
 					</tr>
 				{% endfor %}
@@ -29,6 +29,9 @@
 	<div class="ui fluid segment">
 		<form class="ui form" action="/conference/upload_paper/{{conference.conference_id}}/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
+			<div class="field" style="margin-left: 35%; width:250px;">
+	              <input name="paper_name" placeholder="paper name" type="text" id="paper_name">
+	        </div>
 	        <div class="field" style="margin-left: 33%;">
 	              <input name="paper_file" type="file" id="paper_file" class="ui button blue">
 	        </div>
