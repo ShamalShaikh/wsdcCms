@@ -26,18 +26,17 @@ def reviewPaper(request, paper_id):
 	reviewer = Reviewer.objects.get(user = request.user)
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	paperpath = str(paper.paperfile)
-	questions = Questions.objects.filter(paper=paper)
+	conference = paper.conf_id
+	questions = Questions.objects.filter(conference=conference)
 	form = ReviewForm(request.POST or None)
 	q_len = len(questions)
-	q_ans = []
-
-	for i in range(0,10):
-		q_ans.append('')
+	q_ans = {}
 
 	for q in questions:
 		try:
 			a = Answers.objects.filter(reviewer = reviewer).get(question = q)
-			q_ans.insert(q.id,a.answer)
+			# q_ans.insert(q,a.answer)
+			q_ans[str(q.question)] = str(a.answer)
 		except:
 			traceback.print_exc()
 	print q_ans
@@ -57,11 +56,16 @@ def reviewPaper(request, paper_id):
 				a.answer = ans
 				a.save()
 	
+	ques_str = []
+	for q in questions:
+		ques_str.append(str(q.question))
+	print ques_str
 
 	context = {
 		"paperpath":paperpath,
 		"paper":paper,
 		'questions':questions,
+		"ques_str":ques_str,
 		'form':form,
 		'q_len':q_len,
 		'q_ans':q_ans,
