@@ -7,21 +7,66 @@
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approval</a>
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers</a>
   </div>
+
+  {% ifequal type '1' %}
+    <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>view DD</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paidtran in paidtrans %}
+            <tr>
+            <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
+            <td>{{paidtran.pic_of_dd}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+{% endifequal %}
+{% ifequal type '2' %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>view DD</th>
+          <th>Approve</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for pendingdd in pending_dds %}
+            <tr>
+            <td>{{pendingdd.user.username}}</td>
+            <td>{{pendingdd.pic_of_dd}}</td>
+            <td><button class="ui button" href="#" >Approve</button></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endifequal %}
+{% ifequal type '3' %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paper in papers %}
+          <tr>
+            <td>{{paper.uid}}</td>
+            <td>{{paper.paperfile}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endifequal %}
+
+
 </div>
-
-{% if type==1 %}
-
-{% elsif type==2 %}
-
-{% else %}
-
-{% endif %}
-
-{%if users %}
-{% for user in users %}
-<p>{{user.username}}</p>
-{% endfor %}
-{% endif %}
 
 {% endblock %}
 

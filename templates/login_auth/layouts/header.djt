@@ -10,7 +10,6 @@
 
   <!-- Site Properties -->
   <title>Conference Management System</title>
-     <link rel="icon" type="image/png" href="{%static 'images/favicon.png' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'main/semantic.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'main/components/reset.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'main/components/site.css' %}">

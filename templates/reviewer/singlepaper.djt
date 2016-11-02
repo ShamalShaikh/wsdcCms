@@ -14,14 +14,25 @@
 
 	{% if q_len %}
 	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
-	
+	<br><br>
 	<center>
+
+
 	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
-			{% for q in questions %}
-			{{ q_ans.q.id }}
-			<a class="header">{{q.question}}</a>
+			{% for q in ques_str %}
+			<a class="header">{{q}}</a>
 			<div class="fieldWrapper">
-     	    <textarea cols="80" id="id_answer" name="answer{{q.id}}" rows="4" required>{{ q_ans.items.q }}</textarea>
+			{{q_ans}}
+			{% for val in q_ans %}
+			{% if val == q %}
+			 <select id = "id_answer" name = "answer{{q.id}}" required>
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			</select> 
+			{% endif %}
+			{% endfor %}
     	 	</div>
     	 	<br>
 	        {% endfor %}
