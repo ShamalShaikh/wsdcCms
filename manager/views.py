@@ -84,14 +84,13 @@ def conference_landing(request,cid,type):
 
 def reviewCompleted(request,paper_id,u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
-	questions = Questions.objects.filter(paper_id = paper_id)
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	print paper
 	answers = Answers.objects.filter(reviewer=reviewer)
 	
-	print questions
-
 	context = {
 		'answers':answers,
-		'questions':questions,
+		
 	}
 
 	return render(request, 'manager/reviewresp.djt', context)

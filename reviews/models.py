@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
-from conference.models import Conf_Paper
+from conference.models import Conf_Paper, Conference
 # Create your models here.
 
 class Reviewer(models.Model):
@@ -13,7 +13,7 @@ class Reviewer(models.Model):
 
 class Questions(models.Model):
 	question = models.TextField()
-	paper = models.ForeignKey(Conf_Paper)
+	conference = models.ForeignKey(Conference, default = 1)
 
 	def __str__(self):
 		return self.question
