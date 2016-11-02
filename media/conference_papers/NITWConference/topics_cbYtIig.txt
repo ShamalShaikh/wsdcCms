@@ -1,0 +1,111 @@
+**Topics to go through
+
+Number Theory
+Primes Relation
+Square Root Decomposition
+Segment Tree
+BIT
+Two level BIT
+MO's algorithm
+Simple DP
+Knapsack DP
+DP with Bitmasks
+Hashing Polynomial
+Binary Search
+Ternary Search
+Greedy
+Normal Recursion
+Matrix Exponentiation
+Query Root Decomposition
+Game Theory
+Nim Game
+Grundy Numbers
+OEIS Sequence
+Pattern
+Meet in the middle (Specially when state search is more for some algos like bfs)
+Trie
+Treaps (Break array in two parts)
+Persistent Segment Tree
+Suffix Array
+LCA
+Centroid Decomposition
+*Block-Cut Tree
+Bridge Tree
+Divide and Conquer (K number in BST type)
+Maximum Flow
+Min-Cut (Max-flow)
+Matching (Bipartite)
+Vertex Cover (MCBM)
+Edge Cove r 
+Independent Set/ Dominating Set (Max Independent Set + Max Card Bipartite Matching = N)
+Min path cover (n-matching)
+Max Edge Disjoint Paths (Max Flow)
+Hall's marriage theorem
+Min Cost Maximum Flow (Use Bellman Ford to find paths)
+Clique
+Optimizations using Bitsets
+Optimizations in DP
+Extended Euclid
+Diophantine Equations
+DFS
+BFS
+Dijkstra's Shortest Path
+Bellman Ford (V*E)
+Floyd Warshall (V^3)
+Minimum Spanning Tree
+Convex Hull
+Convex Hull Trick (Try to fit problem into some no of lines)
+Digit DP
+Z-Algorithm
+Jump Links (Square Root Jumps)
+Pigeonhole Principle
+Chinese Remainder Theorem
+Heap (Priority Queue)
+RMQ Sparse table and Tricks (works for GCD too)
+Gaussian Elimination (Implement It, Basic Step: Find some multi-variable equations)
+Euler Path
+Hamiltonian Path
+2-SAT (Implement it)
+Back-Tracking
+FFT (Find the polynomials to multiply)
+FFT tricks with Divide and Conquer
+NTT
+Longest Increasing Subsequence & Tricks
+Longest Common Subsequence & Tricks
+Strongly Connected Components
+Articulation Points
+Bridges
+Topological Sort
+Reverse Topo Sort Tricks
+KMP
+Suffix Automaton (Learn it Quickly)
+Union Find
+Union Find with the trick to merge smaller with larger sets
+Offline Queries Tricks (Sorting or some pattern)
+Two Pointers
+Combinatorics
+Brute Force
+Geometry
+*Line Sweep Algorithm
+Tree- DFS Order to make subtrees to segments
+Manacher's Algorithm
+Miller Rabin Primality
+Max area of triangle given n points
+Distinct Substrings - Suffix Array
+Synthetic division
+Baby step giant step
+*Heavy-Light Decomposition
+*Chinese remainder theorem
+DP (check if pruning can be done to reduce time)
+Postman Problem
+*Hungarian Algorithm
+*Burnside lemma
+LCA using RMQ
+Pollard Rho integer factorization
+Sliding Window
+Maintaining chains in the tree
+Floyd's cycle detection (Tortoise and hare)
+Mobius inversion
+Dijkstra with Potentials
+Find distinct elements in range offline
+
