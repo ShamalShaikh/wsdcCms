@@ -67,8 +67,8 @@ def conference_landing(request,cid,type):
 		paidtrans.append(payment)
 		for paper in regconf.papers.all() :
 			papers.append(paper)
-			
-	
+
+
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
 		if pendingtrans.is_aprooved==False :
 			pending_dds.append(pendingtrans)
@@ -87,10 +87,10 @@ def reviewCompleted(request,paper_id,u_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	print paper
 	answers = Answers.objects.filter(reviewer=reviewer)
-	
+
 	context = {
 		'answers':answers,
-		
+
 	}
 
 	return render(request, 'manager/reviewresp.djt', context)
@@ -118,3 +118,34 @@ def disapproval(request):
 		payment.is_rejected = True
 		payment.save()
 	return redirect('/manager/conference_landing/2/1')
+
+def questionnaire(request,cid):
+	conference = Conference.objects.get(conference_id=cid)
+
+
+	response={}
+	response['message'] = "Add your questions below for the conference "+conference.conference_name
+	if request.method == "POST":
+		try:
+			i = 1
+			while ('question' + str(i)) in request.POST:
+				
+				newQuestion = request.POST['question'  + str(i)]
+				q = Questions()
+				q.question = newQuestion
+				q.conference = conference
+				q.save()
+				i += 1
+
+			response['message'] = "Question saved successfully!"
+		except:
+			response['message'] = "Error in saving the question. Please try again."
+
+
+	questions = Questions.objects.filter(conference=conference)
+	q_len = len(questions)
+
+	response['questions'] = questions
+	response['conference'] = conference
+
+	return render(request,'manager/questionnaire.djt',response)
