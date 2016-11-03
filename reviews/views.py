@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required,user_passes_test
+from django.contrib.auth import authenticate,login,logout
 from .models import Reviewer, Questions, Answers
 from conference.models import Conf_Paper
 from .forms import ReviewForm
@@ -9,7 +10,16 @@ import sys
 
 # Create your views here.
 
-@login_required
+def checkuserifReviewer(user):
+	user = Reviewer.objects.filter(user=user)
+	if len(user)>0:
+		return True
+	else:
+		return False
+
+
+@login_required(login_url='/review/login/')
+@user_passes_test(checkuserifReviewer,login_url="/review/404/")
 def reviewHome(request):
 	user=request.user
 	reviewer = Reviewer.objects.get(user = request.user)
@@ -21,22 +31,29 @@ def reviewHome(request):
 	}
 	return render(request, 'reviewer/home.djt',context)
 
+@login_required(login_url='/review/login/')
+@user_passes_test(checkuserifReviewer,login_url="/review/404/")
 def reviewPaper(request, paper_id):
-	user=request.user
+	user = request.user
 	reviewer = Reviewer.objects.get(user = request.user)
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	ch_paper = reviewer.papers.filter(paper_id=paper_id)
+	if len(ch_paper)<=0:
+		raise Http404
 	paperpath = str(paper.paperfile)
 	conference = paper.conf_id
 	questions = Questions.objects.filter(conference=conference)
 	form = ReviewForm(request.POST or None)
 	q_len = len(questions)
-	q_ans = {}
+	q_ans = []
 
 	for q in questions:
 		try:
-			a = Answers.objects.filter(reviewer = reviewer).get(question = q)
-			# q_ans.insert(q,a.answer)
-			q_ans[str(q.question)] = str(a.answer)
+			a = Answers.objects.filter(reviewer = reviewer).filter(question = q)
+			if len(a)>0:
+				q_ans.append(a[0].answer)
+			else:
+				q_ans.append(1)
 		except:
 			traceback.print_exc()
 	print q_ans
@@ -50,24 +67,61 @@ def reviewPaper(request, paper_id):
 				a.question = q
 				a.reviewer = reviewer
 				a.answer = ans
+				a.paper = paper
 				a.save()
 			else:
 				a = Answers.objects.filter(reviewer = reviewer).get(question = q)
 				a.answer = ans
 				a.save()
 	
-	ques_str = []
-	for q in questions:
-		ques_str.append(str(q.question))
-	print ques_str
 
 	context = {
 		"paperpath":paperpath,
 		"paper":paper,
 		'questions':questions,
-		"ques_str":ques_str,
 		'form':form,
 		'q_len':q_len,
 		'q_ans':q_ans,
 	}
 	return render(request, 'reviewer/singlepaper.djt',context)
+
+def loginReviewer(request):
+	if request.user.is_authenticated():
+		try:
+			user = Reviewer.objects.get(user=request.user)
+			if user:
+				return HttpResponseRedirect('/review/')
+			else:
+				return HttpResponseRedirect('/review/404/')
+		except:
+			print "here"
+			return HttpResponseRedirect('/review/404/')
+	else:
+		response={}
+		if request.method == 'POST':
+			username=request.POST['username']
+			password=request.POST['password']
+			user = authenticate(username=username, password=password)
+			
+			if user is not None:
+				login(request, user)
+				return HttpResponseRedirect('/review/')
+			
+			else:
+				response['message']='User is invalid'
+		return render(request,'reviewer/login.djt',response)
+
+	context = {}
+	return render(request, 'reviewer/login.djt', context)
+
+@login_required(login_url='/review/login/')
+def logoutReviewer(request):
+	logout(request)
+	return HttpResponseRedirect('/review/login/')
+
+def err404(request):
+	return render(request, 'reviewer/404.djt', {})
+
+
+
+

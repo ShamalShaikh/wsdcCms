@@ -4,13 +4,32 @@
 
 <div class="ui container">
 	<center>
-	<h1>Assign Reviewers </h1>
+	<h1>Review</h1>
 	</center>
-	<div class="ui segment">
-	<center>
-	<p>sf</p>
-	</center>
+
+	{% if ans_len %}
+	<div class="ui container">
+		<table class="ui celled table">
+	  		<tbody>
+	  			<thead>
+			    	<tr>
+			    	<th>Question</th>
+			    	<th>Response</th>
+			  		</tr>
+			  	</thead>
+			    {% for a in answers %}
+			    <tr>
+			      <td>{{a.question}}</td>
+			      <td>{{a.answer}}</td>
+			    </tr>
+			    {% endfor %}	    
+	  		</tbody>
+	 	 </table>
+
 	</div>
+	{% else %}
+		<h2>Not Yet Filled</h2>
+	{% endif %}
 </div>
 
 <br><br><br>

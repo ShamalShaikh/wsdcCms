@@ -1,0 +1,37 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1> Average responses for {{paper.papername}}</h1>
+	</center>
+	
+	<div class="ui segment">
+	<table class="ui celled table">
+  		<tbody>
+		    {% for q in questions %}
+		    {% with forloop.counter as cou %}
+		    {% for a in avg %}
+		    {% if cou == forloop.counter %}
+		    <tr>
+		      <td>{{q.question}}</td>
+		      {% if a == 0 %}
+		      <td>No data yet</td>
+		      {% else %}
+		      <td>{{a}}</td>
+		      {% endif %}
+		    </tr>
+		    {% endif %}
+		    {% endfor %}
+		    {% endwith %}
+		    {% endfor %}
+	    
+  		</tbody>
+ 	 </table>
+	</div>
+</div>
+
+
+{% endblock %}
+

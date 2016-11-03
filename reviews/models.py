@@ -13,7 +13,7 @@ class Reviewer(models.Model):
 
 class Questions(models.Model):
 	question = models.TextField()
-	conference = models.ForeignKey(Conference, default = 1)
+	conference = models.ForeignKey(Conference)
 
 	def __str__(self):
 		return self.question
@@ -22,6 +22,7 @@ class Answers(models.Model):
 	question = models.ForeignKey(Questions)
 	answer = models.TextField()
 	reviewer = models.ForeignKey(Reviewer)
+	paper = models.ForeignKey(Conf_Paper)
 
 	def __str__(self):
 		return (str(self.question)+' ' + str(self.reviewer))
