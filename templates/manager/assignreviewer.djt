@@ -44,11 +44,38 @@
 
 <br><br>
 <center>
+
+{% if is_rejected %}
+<h2>Status : Rejected</h2>
+{% elif is_approved %}
+<h2>Status : Approved </h2>
+{% elif under_review %}
+<h2> Status : Under Review </h2>
+{% endif %}
+</center>
+<br>
+
+<center>
 <a href="/manager/allresponses/{{paper.paper_id}}">
 <button class="ui button">
   Average Responses
 </button>
 </a>
+
+<br><br>
+
+<a href="/manager/approvepaper/{{paper.paper_id}}">
+<button class="ui button green">
+  Approve Paper
+</button>
+</a>
+
+<a href="/manager/disapprovepaper/{{paper.paper_id}}">
+<button class="ui button red">
+  Disapprove Paper
+</button>
+</a>
+
 </center>
 
 {% endblock %}

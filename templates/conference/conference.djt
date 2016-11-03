@@ -67,7 +67,7 @@ height:7em;
   <div class="four wide column">
   <div class="ui segment">
     <h3>Conference Manager : </h3>
-    <h3>{{conference.manager.first_name}} {{conference.manager.last_name}}</h3>
+    <h3>{{conference.manager.user.first_name}} {{conference.manager.user.last_name}}</h3>
   </div>
   </div>
 </div>
@@ -88,10 +88,10 @@ height:7em;
 			</thead>
 			<tbody>
 				{% if papers %}
-				{% for paper,review in zip %}
+				{% for paper in papers %}
 					<tr>
 						<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
-						<td>{%if paper.is_approved%}Published{%else%} {%ifequal review 1 %}Under Review {%else%} Not Approved{% endifequal %} {%endif%}</td>
+						<td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.is_under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
 					</tr>
 				{% endfor %}
 				{% endif %}
