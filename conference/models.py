@@ -48,6 +48,7 @@ class Conf_Paper(models.Model):
 	submissionDate = models.DateField()
 	is_approved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
+	under_review = models.BooleanField(default=False)
 	paperfile = models.FileField(upload_to=get_conf_paper_path, validators=[validate], null=True, blank=True)
 
 	def __str__(self):

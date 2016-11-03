@@ -33,7 +33,7 @@ def signin_auth(request):
 
 def signout(request):
 	logout(request)
-	return redirect('/manger/signin')
+	return redirect('/manager/signin')
 
 @login_required(login_url='/manager/signin/')
 def home(request):
