@@ -1,0 +1,26 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+  <div class="ui three item menu">
+      <center>
+    	<h1>Add or Modify questionnaire</h1>
+    	</center>
+  </div>
+
+
+
+  <form action="/manager/questionnaire/{{conference.conference_id}}/" method="post">{% csrf_token %}
+
+      <div class="ui form">
+        <div class="field">
+          <label>Text</label>
+          <textarea name="question"></textarea>
+        </div>
+      </div>
+      <input type="submit" value="Submit" />
+  </form>
+
+</div>
+
+{% endblock %}
