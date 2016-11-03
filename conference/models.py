@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError 
+from django.core.exceptions import ValidationError
 from login_auth.models import *
-# from manager.models import Manager
+from manager.models import Manager
 
 # Create your models here.
 def get_conf_image_path(instance,filename):
@@ -27,7 +27,7 @@ class Conference(models.Model):
 	is_published = models.BooleanField(default = False)
 	description = models.CharField(max_length = 200)
 	alias = models.CharField(max_length = 10)
-	manager = models.ForeignKey(User)
+	manager = models.ForeignKey(Manager)
 	fee = models.IntegerField(default=0)
 
 	def __str__(self):
@@ -51,5 +51,3 @@ class Conf_Paper(models.Model):
 
 	def __str__(self):
 	    return str(self.papername)
-
-		
