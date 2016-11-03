@@ -99,14 +99,19 @@ def questionnaire(request,cid):
 
 
 	response={}
-
+	response['message'] = "Add your questions below for the conference "+conference.conference_name
 	if request.method == "POST":
-		newQuestion = request.POST['question']
-		q = Questions()
-		q.question = newQuestion
-		q.conference = conference
 		try:
-			q.save()
+			i = 1
+			while ('question' + str(i)) in request.POST:
+				
+				newQuestion = request.POST['question'  + str(i)]
+				q = Questions()
+				q.question = newQuestion
+				q.conference = conference
+				q.save()
+				i += 1
+
 			response['message'] = "Question saved successfully!"
 		except:
 			response['message'] = "Error in saving the question. Please try again."
