@@ -163,6 +163,7 @@ def disapproval(request):
 		payment.save()
 	return redirect('/manager/conference_landing/2/1')
 
+
 def questionnaire(request,cid):
 	conference = Conference.objects.get(conference_id=cid)
 
@@ -201,6 +202,7 @@ def questionnaire(request,cid):
 
 	return render(request,'manager/questionnaire.djt',response)
 
+
 def isApprovedPaper(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	paper.is_approved = True
@@ -216,7 +218,3 @@ def isDisapprovedPaper(request, paper_id):
 	paper.under_review = False
 	paper.save()
 	return HttpResponseRedirect('/manager/assignreviewer/'+paper_id+'/')
-
-
-
-
