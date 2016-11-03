@@ -27,10 +27,17 @@
 	              <label>Password</label>
 	              <input name="password" placeholder="Password" type="password" id="password">
 	        </div>
-	        <div style="margin-left: 40%;">
-	        <button class="ui button green" type="submit" id="signin">Sign In</button>
+	        <div>
+	        <center><button class="ui button green" type="submit" id="signin">Sign In</button></center>
 	        </div>
 		</form>
+	</div>
+	<br><br>
+	<div class="ui fluid segment">
+	<center>
+	<p>Don't have an account ??? ...</p>
+	<a href="/Register"><button class="ui button black">Sign up</button></a>
+	</center>
 	</div>
 
 </div>

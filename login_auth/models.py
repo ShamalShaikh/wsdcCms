@@ -21,6 +21,7 @@ class Payment(models.Model):
 	payment_mode = models.CharField(max_length=20,choices=payment_choice)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
 	is_aprooved = models.BooleanField(default=False)
+	is_rejected = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
 
 	def __unicode__(self):

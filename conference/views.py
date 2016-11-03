@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
 from conference.models import *
 from login_auth.models import *
+from manager.models import *
 import datetime
 
 # Create your views here.
@@ -16,15 +17,20 @@ def index(request):
 	try :
 		print request.user
 		payment = Payment.objects.get(user=request.user, conf_id=conference)
-		print "payment found"
 		if payment is not None :
 			papers = {}
 			try :
-				print "papers"
 				papers = Conf_Paper.objects.filter(uid=request.user, conf_id=conference)
-				return render(request,'conference/conference.djt',{'conference':conference,'payment':payment,'papers':papers})
+				under_review = []
+				for paper in papers:
+					assigned = Paper_assign.objects.filter(paper=paper)
+					if len(assigned)==1 :
+						under_review.append(1)
+					else:
+						under_review.append(0)
+				zip_all = zip(papers,under_review)
+				return render(request,'conference/conference.djt',{'conference':conference,'payment':payment,'papers':papers,'zip':zip_all})
 			except :
-				print "no papers"
 				return render(request,'conference/conference.djt',{'conference':conference,'payment':payment})
 		else :
 			return render(request,'conference/conference.djt',{'conference':conference})
@@ -47,10 +53,13 @@ def payment(request):
 		conf_id = Conference.objects.get(conference_id=cid)
 		amount = request.POST['amount']
 
-		previousPayment = Payment.objects.get(user=request.user,conf_id=conference)
-		if previousPayment:
-			previousPayment.pic_of_dd = dd_pic
-			previousPayment.save()
+		previousPayment = Payment.objects.filter(user=request.user,conf_id=conference)
+		print previousPayment
+		if len(previousPayment)==1:
+			previousPayment[0].pic_of_dd = dd_pic
+			previousPayment[0].is_rejected = False
+			previousPayment[0].remarks = ""
+			previousPayment[0].save()
 		else:
 			pay = Payment()
 			pay.amount = amount

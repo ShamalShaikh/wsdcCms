@@ -31,6 +31,10 @@ def signin_auth(request):
 		response['message']='Only Manager can Login'
 	return render(request,'login_auth/sites/manager_signin.djt',response)
 
+def signout(request):
+	logout(request)
+	return redirect('/manger/signin')
+
 @login_required(login_url='/manager/signin/')
 def home(request):
 	conferences = Conference.objects.filter(manager=request.user)
@@ -52,21 +56,19 @@ def assign_reviewer(request, paper_id):
 def conference_landing(request,cid,type):
 	conference = Conference.objects.get(conference_id=cid)
 	regconfs = Registered_Conference.objects.filter(conf_id=conference)
-	print regconfs
 	users = []
 	paidtrans = []
 	pending_dds= []
 	papers = []
 	for regconf in regconfs:
-		print "hello"
 		user = regconf.user
 		payment = Payment.objects.get(user=user,conf_id=conference)
 		users.append(user)
 		paidtrans.append(payment)
 		for paper in regconf.papers.all() :
 			papers.append(paper)
-			
-	
+
+
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
 		if pendingtrans.is_aprooved==False :
 			pending_dds.append(pendingtrans)
@@ -92,9 +94,13 @@ def reviewCompleted(request,paper_id,u_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	answers = Answers.objects.filter(reviewer=reviewer).filter(paper=paper)
 	ans_len = len(answers)
+	print paper
+	answers = Answers.objects.filter(reviewer=reviewer)
+
 	context = {
 		'ans_len':ans_len,
 		'answers':answers,
+
 	}
 	return render(request, 'manager/reviewresp.djt', context)
 
@@ -122,5 +128,57 @@ def averageResponses(request, paper_id):
 	}
 	return render(request, 'manager/allresponses.djt', context)
 
+@login_required(login_url='/manager/signin/')
+def approve_payment(request,payid):
+	payment = Payment.objects.get(id=payid)
+	payment.is_aprooved=True
+	payment.is_rejected=False
+	payment.save()
+	regconf = Registered_Conference()
+	regconf.user = payment.user
+	regconf.conf_id = payment.conf_id
+	regconf.save()
+	print regconf.conf_id.conference_id
+	url = '/manager/conference_landing/'+str(regconf.conf_id.conference_id)+'/1/'
+	return redirect(url)
+
+def disapproval(request):
+	if request.method=='POST':
+		print request.POST['remark']
+		print request.POST['payid']
+		payment=Payment.objects.get(id=request.POST['payid'])
+		payment.remarks=request.POST['remark']
+		payment.is_rejected = True
+		payment.save()
+	return redirect('/manager/conference_landing/2/1')
+
+def questionnaire(request,cid):
+	conference = Conference.objects.get(conference_id=cid)
 
 
+	response={}
+	response['message'] = "Add your questions below for the conference "+conference.conference_name
+	if request.method == "POST":
+		try:
+			i = 1
+			while ('question' + str(i)) in request.POST:
+				
+				newQuestion = request.POST['question'  + str(i)]
+				q = Questions()
+				q.question = newQuestion
+				q.conference = conference
+				q.save()
+				i += 1
+
+			response['message'] = "Question saved successfully!"
+		except:
+			response['message'] = "Error in saving the question. Please try again."
+
+
+	questions = Questions.objects.filter(conference=conference)
+	q_len = len(questions)
+
+	response['questions'] = questions
+	response['conference'] = conference
+
+	return render(request,'manager/questionnaire.djt',response)
