@@ -1,0 +1,11 @@
+{% extends "reviewer/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+<h1>Page Not Found</h1>
+</div>
+
+<br><br>
+
+{% endblock %}
