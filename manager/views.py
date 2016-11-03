@@ -37,7 +37,8 @@ def signout(request):
 
 @login_required(login_url='/manager/signin/')
 def home(request):
-	conferences = Conference.objects.filter(manager=request.user)
+	manager = Manager.objects.get(user=request.user)
+	conferences = Conference.objects.filter(manager=manager)
 	return render(request, 'manager/home.djt', {'conferences':conferences})
 
 @login_required(login_url='/manager/signin/')
@@ -162,7 +163,7 @@ def questionnaire(request,cid):
 		try:
 			i = 1
 			while ('question' + str(i)) in request.POST:
-				
+
 				newQuestion = request.POST['question'  + str(i)]
 				q = Questions()
 				q.question = newQuestion
