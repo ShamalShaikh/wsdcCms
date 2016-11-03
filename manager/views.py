@@ -80,15 +80,47 @@ def conference_landing(request,cid,type):
 	response['conference']=conference
 	return render(request,'manager/conf_navbar.djt',response)
 
+def reviewerAssigned(request, paper_id, u_id):
+	reviewer = Reviewer.objects.get(id=u_id)
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	reviewer.papers.add(paper)
+	reviewer.save()
+	return HttpResponse("done")
+
 def reviewCompleted(request,paper_id,u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
-	print paper
-	answers = Answers.objects.filter(reviewer=reviewer)
-	
+	answers = Answers.objects.filter(reviewer=reviewer).filter(paper=paper)
+	ans_len = len(answers)
 	context = {
+		'ans_len':ans_len,
 		'answers':answers,
-		
 	}
-
 	return render(request, 'manager/reviewresp.djt', context)
+
+def averageResponses(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	conf = paper.conf_id
+	questions = Questions.objects.filter(conference=conf)
+	avg = []
+	for q in questions:
+		ans = q.answers_set.filter(paper=paper)
+		sum=0
+		count=0
+		for i in ans:
+			sum = sum+int(i.answer)
+			count = count+1
+		if count>0:
+			average = sum/count
+			avg.append(average)
+		else:
+			avg.append(0)
+	context = {
+		'questions':questions,
+		'avg':avg,
+		'paper':paper,
+	}
+	return render(request, 'manager/allresponses.djt', context)
+
+
+

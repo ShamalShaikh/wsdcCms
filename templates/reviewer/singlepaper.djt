@@ -1,4 +1,4 @@
-{% extends "login_auth/layouts/header.djt" %}
+{% extends "reviewer/header.djt" %}
 {% load staticfiles %}
 {% block content %}
 
@@ -16,23 +16,28 @@
 	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
 	<br><br>
 	<center>
-
-
 	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
-			{% for q in ques_str %}
-			<a class="header">{{q}}</a>
+			{% for q in questions %}
+			<a class="header">{{q.question}}</a>
 			<div class="fieldWrapper">
-			{{q_ans}}
-			{% for val in q_ans %}
-			{% if val == q %}
-			 <select id = "id_answer" name = "answer{{q.id}}" required>
+			{% with forloop.counter as cou %}
+			{% for a in q_ans %}
+			{% if cou == forloop.counter %}
+			<script>
+				$(document).ready(function(){
+				   $('.id_answer{{q.id}} option[value={{a}}]').attr('selected','selected');
+				});
+			</script> 
+			 <select id = "id_answer" class = "id_answer{{q.id}}" name = "answer{{q.id}}" required>
 			  <option value="1">1</option>
 			  <option value="2">2</option>
 			  <option value="3">3</option>
 			  <option value="4">4</option>
-			</select> 
+			</select>
+
 			{% endif %}
 			{% endfor %}
+			{% endwith %}
     	 	</div>
     	 	<br>
 	        {% endfor %}

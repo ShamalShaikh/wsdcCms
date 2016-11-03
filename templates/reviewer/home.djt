@@ -1,4 +1,4 @@
-{% extends "login_auth/layouts/header.djt" %}
+{% extends "reviewer/header.djt" %}
 {% load staticfiles %}
 {% block content %}
 
