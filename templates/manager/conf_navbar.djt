@@ -1,10 +1,18 @@
-{% extends "login_auth/layouts/header.djt" %}
+{% extends "manager/sidebar.djt" %}
 {% load staticfiles %}
 {% block content %}
+
+<center>
+<h1 class="ui header">{{conference.conference_name}}</h1>
+<a href="/manager/questionnaire/{{conference.conference_id}}">Add or Modify questions to evaluate papers.</a>
+
+</center>
+
 <div class="ui container">
+<br>
   <div class="ui three item menu">
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users</a>
-    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approval</a>
+    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved</a>
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers</a>
   </div>
 
@@ -33,15 +41,19 @@
           <th>Name</th>
           <th>view DD</th>
           <th>Approve</th>
+          <th>Disapprove</th>
           </tr>
         </thead>
         <tbody>
           {% for pendingdd in pending_dds %}
+          {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
             <td><a href="/media/{{pendingdd.pic_of_dd}}" target="blank">show dd</a></td>
-            <td><button class="ui button" href="#" >Approve</button></td>
+            <td><center><a href="/manager/approve_payment/{{pendingdd.id}}"><button class="ui button green">Approve</button></a></center></td>
+            <td><center><button class="ui button red disapprove_btn" payid={{pendingdd.id}}>Disapprove</button></center></td>
             </tr>
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
@@ -52,6 +64,7 @@
           <tr>
           <th>Name</th>
           <th>Papers</th>
+          <th>Review</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +72,7 @@
           <tr>
             <td>{{paper.uid}}</td>
             <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui button blue">Assign Reviewers</button></a></center></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -68,5 +82,34 @@
 
 </div>
 
+<div class="ui small modal pop_up1">
+    <div class="header ">Reason for Disapproval</div>
+    <div class="content">
+      <form class="ui form" action="/manager/disapproval/" method="post">
+      {% csrf_token %}
+        <div class="field">
+          <label>Remark</label>
+          <input type="text" id="remark" name="remark">
+        </div>
+        <div class="field">
+          <input type="hidden" id="payid" name="payid">
+        </div>
+        <button class="ui submit button" type="submit">Submit</button>
+      </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+$(".disapprove_btn").click(function(){
+  $('.small.modal.pop_up1').modal('show');
+  var pid=$(this).attr('payid');
+  $('#payid').val(pid);
+})
+
+</script>
 {% endblock %}
 

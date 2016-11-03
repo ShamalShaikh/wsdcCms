@@ -1,4 +1,4 @@
-{% extends "login_auth/layouts/header.djt" %}
+{% extends "manager/sidebar.djt" %}
 {% load staticfiles %}
 {% block content %}
 

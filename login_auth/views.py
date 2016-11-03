@@ -8,7 +8,7 @@ from conference.models import Conference
 
 # Create your views here.
 def index(request):
-	return redirect('/Register/')
+	return redirect('/signin/')
 
 def Register(request):
 	if request.user.is_authenticated():
@@ -58,7 +58,10 @@ def signin(request):
 	        response['message']='User is not registered/Password Incorrect' 
 	return render(request,'login_auth/sites/login.djt',response)
 
-@login_required(login_url='/signin')
+def signout(request):
+	logout(request)
+	return redirect('/')
+
 def dashboard(request):
 	response={}
 	response['conferences'] = Conference.objects.filter(is_published=True)

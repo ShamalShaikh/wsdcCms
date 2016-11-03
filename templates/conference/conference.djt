@@ -2,6 +2,78 @@
 {% load staticfiles %}
 {% block content %}
 
+<style type="text/css">
+	.head{height:5em;
+background-color:black;
+color:white;}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+h4{position:relative;
+top:2em;
+left:1em;
+color:violet;}
+.heading{font-size:2em;
+font-family:Courier
+;}
+#horiline{border-bottom:solid;
+border-width:2px;}
+.hugebox{background-color:#F0F8FF;
+height:20em;
+position:relative;
+bottom:1em;}
+.confhead{font-size:3em;
+position:relative;
+top:1.4em;}
+.date{position:relative;
+left:2.2em;
+font-size:90%;}
+.desc{position:relative;
+left:1.5em;}
+.homebox{position:relative;
+background-color:#F0F8FF;
+left:3em;
+height:7em;
+}
+.Announcebox{position:relative;
+background-color:#F0F8FF;
+right:3em;
+height:7em;
+}
+</style>
+
+<div class="hugebox">
+<p class="confhead">COMPUTER VISION AND PATTERN RECOGNITION</p><br>
+<p class="date">{{conference.startDate}} to {{conference.endDate}}</p>
+
+<p class="desc">Celebrated CVPR conference</p></div>
+
+<div class="ui grid">
+    <div class="sixteen wide column bijimg">
+      <img height="400em" width="100%" class="bigimg" id="img1">
+</div></div>
+<div class="ui doubling stackable grid container">
+  <div class="ten wide column">
+  <div class="ui segment">
+    <h1>ABOUT US</h1>
+    <p>Steve Jobs was born in San Francisco, California, on February 24, 1955, to two University of Wisconsin graduate students who gave him up for adoption. Smart but directionless, Jobs experimented with different pursuits before starting Apple Computer with Steve Wozniak in 1976. Apple's revolutionary products, which include the iPod, iPhone and iPad, are now seen as dictating the evolution of modern technology, with Jobs having left the company in 1985 and returning more than a decade later. He died in 2011, following a long battle with pancreatic cancer.</p>
+   </div>
+  </div>
+  <div class="two wide column">
+    <p></p>
+    <p></p>
+  </div>
+  <div class="four wide column">
+  <div class="ui segment">
+    <h3>Conference Manager : </h3>
+    <h3>{{conference.manager.first_name}} {{conference.manager.last_name}}</h3>
+  </div>
+  </div>
+</div>
+
+<br><br><br>
+
 <div class="ui container">
 {% if payment %}
 	   
@@ -16,10 +88,10 @@
 			</thead>
 			<tbody>
 				{% if papers %}
-				{% for paper in papers %}
+				{% for paper,review in zip %}
 					<tr>
 						<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
-						<td>{%if paper.is_approved%}Published{%else%}Not Approved{%endif%}</td>
+						<td>{%if paper.is_approved%}Published{%else%} {%ifequal review 1 %}Under Review {%else%} Not Approved{% endifequal %} {%endif%}</td>
 					</tr>
 				{% endfor %}
 				{% endif %}
@@ -42,11 +114,15 @@
 	</div>
 	{% else %}
 	<div class="ui fluid segment">
-		<h3> Status :
-		<span> DD yet to be Approved </span>
-		</h3>
 		{% if payment.remarks %}
+			<h3> Status :
+			<span> DD rejected </span>
+			</h3>
 			<h3>Remarks : {{payment.remarks}}</h3>
+		{% else %}
+			<h3> Status :
+			<span> DD yet to be Approved </span>
+			</h3>
 		{% endif %}
 		<div style="margin-left: 40%;">
 			<a href="/conference/payment/?cid={{conference.conference_id}}"><button class="ui button blue">Upload DD again</button></a>
@@ -60,5 +136,21 @@
 	</div>
 {% endif %}
 </div>
+<br>
+{% endblock %}
 
+{% block script %}
+<script type="text/javascript">
+	var imgArray = new Array("{% static 'images/landing0.jpg' %}","{% static 'images/IMG_6300.JPG' %}","{% static 'images/DSC2235.JPG' %}");
+	startTime();
+	var imgCount = 0;
+	function startTime() {
+	    if(imgCount == imgArray.length) {
+	        imgCount = 0;
+	    }
+	    document.getElementById("img1").src = imgArray[imgCount];
+	    imgCount++;
+	    setTimeout("startTime()", 1000);
+	}
+</script>
 {% endblock %}
