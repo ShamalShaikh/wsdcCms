@@ -6,13 +6,20 @@
 	<center>
 	<h1>Assign Reviewers for {{paper.papername}}</h1>
 	</center>
-	{% for r in reviewer %}
+	
 	<div class="ui segment">
-	<center>
-	<p>{{r.user.username}}</p>
-	</center>
+	<table class="ui celled table">
+  		<tbody>
+		    {% for r in reviewer %}
+		    <tr>
+		      <td>{{r.user.username}}</td>
+		      <td><a href="/manager/reviewerassigned/{{paper.paper_id}}/{{r.id}}"><button class="ui button green" type="submit" id="assign">Assign</button></a></td>
+		    </tr>
+		    {% endfor %}
+	    
+  		</tbody>
+ 	 </table>
 	</div>
-	{% endfor %}
 </div>
 
 <br><br><br>
@@ -21,15 +28,28 @@
 	<center>
 	<h1>Reviewers assigned for {{paper.papername}}</h1>
 	</center>
-	{% for r in reviewer_assigned %}
 	<div class="ui segment">
-	<center>
-	<p>{{r.user.username}}</p>
-	</center>
-	<a href = "/manager/reviewcomplete/{{paper.paper_id}}/{{r.id}}/">Response</a>
-	</div>
-	{% endfor %}
+	<table class="ui celled table">
+  		<tbody>
+		    {% for r in reviewer_assigned %}
+		    <tr>
+		      <td>{{r.user.username}}</td>
+		      <td><a href="/manager/reviewcomplete/{{paper.paper_id}}/{{r.id}}/"><button class="ui button green" type="submit" id="assign">Response</button></a></td>
+		    </tr>
+		    {% endfor %}	    
+  		</tbody>
+ 	 </table>
+ 	 </div>
 </div>
 
+<br><br>
+<center>
+<a href="/manager/allresponses/{{paper.paper_id}}">
+<button class="ui button">
+  Average Responses
+</button>
+</a>
+</center>
 
 {% endblock %}
+
