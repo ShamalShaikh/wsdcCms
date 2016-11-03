@@ -1,0 +1,46 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+  <div class="ui three item menu">
+      <center>
+    	<h1>Add or Modify questionnaire</h1>
+    	</center>
+  </div>
+  <center>
+  {{message}}
+  </center>
+  <form action="/manager/questionnaire/{{conference.conference_id}}/" method="post">{% csrf_token %}
+      <input type="hidden" name="noOfQuestions" id="noOfQuestions" value="1" />
+      <div class="ui form" id="questionsArea">
+        <div class="field">
+          <label>Question 1</label>
+          <textarea name="question1" rows="2"></textarea>
+        </div>
+      </div>
+      <br>
+      <button  class="ui button" id="addAnotherQuestion" type="button">Add another question</button>
+
+      <input class="ui button" type="submit" value="Submit" />
+  </form>
+
+  <script>
+      $(document).ready(function(){
+          $('#addAnotherQuestion').click(function (){
+              newValue = Number($('#noOfQuestions').val()) + 1;
+              $('#noOfQuestions').val(newValue);
+              console.log(newValue);
+              $('#questionsArea').append('\
+                <div class="field">\
+                  <label>Question '+newValue+'</label>\
+                  <textarea name="question'+ newValue +'" rows="2"></textarea>\
+                </div>\
+              ');
+          });
+      });
+  </script>
+
+
+</div>
+
+{% endblock %}
