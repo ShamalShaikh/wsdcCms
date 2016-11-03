@@ -46,10 +46,20 @@ def assign_reviewer(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	reviewer = Reviewer.objects.all().exclude(papers=paper)
 	reviewer_assigned = Reviewer.objects.filter(papers=paper)
+	if paper.is_approved:
+		paper.under_review = False
+	elif paper.is_rejected:
+		paper.under_review = False
+	else:
+		paper.under_review = True
+	paper.save()
 	context = {
 		'reviewer':reviewer,
 		'reviewer_assigned':reviewer_assigned,
 		'paper':paper,
+		'is_approved':paper.is_approved,
+		'is_rejected':paper.is_rejected,
+		'under_review':paper.under_review,
 	}
 	return render(request, 'manager/assignreviewer.djt', context)
 
@@ -71,7 +81,7 @@ def conference_landing(request,cid,type):
 
 
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
-		if pendingtrans.is_aprooved==False :
+		if pendingtrans.is_approved==False :
 			pending_dds.append(pendingtrans)
 
 	response={}
@@ -132,7 +142,7 @@ def averageResponses(request, paper_id):
 @login_required(login_url='/manager/signin/')
 def approve_payment(request,payid):
 	payment = Payment.objects.get(id=payid)
-	payment.is_aprooved=True
+	payment.is_approved=True
 	payment.is_rejected=False
 	payment.save()
 	regconf = Registered_Conference()
@@ -183,3 +193,23 @@ def questionnaire(request,cid):
 	response['conference'] = conference
 
 	return render(request,'manager/questionnaire.djt',response)
+
+def isApprovedPaper(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	paper.is_approved = True
+	paper.is_rejected = False
+	paper.under_review = False
+	paper.save()
+	return HttpResponseRedirect('/manager/assignreviewer/'+paper_id+'/')
+
+def isDisapprovedPaper(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	paper.is_approved = False
+	paper.is_rejected = True
+	paper.under_review = False
+	paper.save()
+	return HttpResponseRedirect('/manager/assignreviewer/'+paper_id+'/')
+
+
+
+
