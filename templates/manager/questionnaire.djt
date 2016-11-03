@@ -11,13 +11,19 @@
   {{message}}
   </center>
   <form action="/manager/questionnaire/{{conference.conference_id}}/" method="post">{% csrf_token %}
-      <input type="hidden" name="noOfQuestions" id="noOfQuestions" value="1" />
+      <input type="hidden" name="noOfQuestions" id="noOfQuestions" value="{{q_len}}" />
       <div class="ui form" id="questionsArea">
+      {% for q in questions %}
+
         <div class="field">
-          <label>Question 1</label>
-          <textarea name="question1" rows="2"></textarea>
+          <label>Question {{forloop.counter}}</label>
+          <textarea name="question{{forloop.counter}}" rows="2">{{q.question}}</textarea>
+          <input type="hidden" name="qId{{forloop.counter}}" value="{{q.id}}" />
         </div>
+
+      {% endfor %}
       </div>
+
       <br>
       <button  class="ui button" id="addAnotherQuestion" type="button">Add another question</button>
 
@@ -34,6 +40,7 @@
                 <div class="field">\
                   <label>Question '+newValue+'</label>\
                   <textarea name="question'+ newValue +'" rows="2"></textarea>\
+                  <input type="hidden" name="qId'+newValue+'" value="" />\
                 </div>\
               ');
           });

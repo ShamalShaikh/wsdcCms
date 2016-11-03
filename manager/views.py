@@ -165,13 +165,19 @@ def questionnaire(request,cid):
 			while ('question' + str(i)) in request.POST:
 
 				newQuestion = request.POST['question'  + str(i)]
-				q = Questions()
-				q.question = newQuestion
-				q.conference = conference
-				q.save()
-				i += 1
+				if newQuestion != "":
+					if request.POST['qId' + str(i)] == "":
+						q = Questions()
+						q.conference = conference
+					else:
+						q = Questions.objects.get(id=request.POST['qId' + str(i)])
+					q.question = newQuestion
 
-			response['message'] = "Question saved successfully!"
+					q.save()
+					i += 1
+					response['message'] = "Question saved successfully!"
+				else:
+					response['message'] = "Question body cannot be empty. Please try again."
 		except:
 			response['message'] = "Error in saving the question. Please try again."
 
@@ -181,5 +187,6 @@ def questionnaire(request,cid):
 
 	response['questions'] = questions
 	response['conference'] = conference
+	response['q_len'] = q_len
 
 	return render(request,'manager/questionnaire.djt',response)
