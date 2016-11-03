@@ -91,7 +91,7 @@ height:7em;
 				{% for paper,review in zip %}
 					<tr>
 						<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
-						<td>{%if paper.is_approved%}Published{%else%} {%ifequal review 1 %}Under Review {%else%} Not Approved{% endifequal %} {%endif%}</td>
+						<td>{%if paper.is_approved%}Published{%else%} {%ifequal review 1 %}Under Review {%else%} {% if paper.is_rejected %}Rejected{%else%}Not Approved{%endif%}{% endifequal %} {%endif%}</td>
 					</tr>
 				{% endfor %}
 				{% endif %}
