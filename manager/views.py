@@ -8,6 +8,7 @@ from conference.models import Conference, Conf_Paper
 from reviews.models import Reviewer, Questions, Answers
 from manager.models import *
 from login_auth.models import *
+import datetime
 
 def signin(request):
 	return render(request,'login_auth/sites/manager_signin.djt')
@@ -71,6 +72,7 @@ def conference_landing(request,cid,type):
 	paidtrans = []
 	pending_dds= []
 	papers = []
+	rejected_dds = []
 	for regconf in regconfs:
 		user = regconf.user
 		payment = Payment.objects.get(user=user,conf_id=conference)
@@ -81,14 +83,19 @@ def conference_landing(request,cid,type):
 
 
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
-		if pendingtrans.is_approved==False :
+		if pendingtrans.is_aprooved==False and pendingtrans.is_rejected==False:
 			pending_dds.append(pendingtrans)
+		if pendingtrans.is_rejected==True:
+			rejected_dd = Rejected_payment.objects.filter(conf_id=conference,user=pendingtrans.user)
+			for obj in rejected_dd:
+				rejected_dds.append(obj)
 
 	response={}
 	response['users']=users
 	response['paidtrans']=paidtrans
 	response['papers']=papers
 	response['pending_dds']=pending_dds
+	response['rejected_dds']=rejected_dds
 	response['type']=type
 	response['conference']=conference
 	return render(request,'manager/conf_navbar.djt',response)
@@ -142,7 +149,7 @@ def averageResponses(request, paper_id):
 @login_required(login_url='/manager/signin/')
 def approve_payment(request,payid):
 	payment = Payment.objects.get(id=payid)
-	payment.is_approved=True
+	payment.is_aprooved=True
 	payment.is_rejected=False
 	payment.save()
 	regconf = Registered_Conference()
@@ -155,13 +162,20 @@ def approve_payment(request,payid):
 
 def disapproval(request):
 	if request.method=='POST':
-		print request.POST['remark']
-		print request.POST['payid']
 		payment=Payment.objects.get(id=request.POST['payid'])
 		payment.remarks=request.POST['remark']
 		payment.is_rejected = True
 		payment.save()
-	return redirect('/manager/conference_landing/2/1')
+
+		now = datetime.datetime.now()
+		rejected_payment = Rejected_payment()
+		rejected_payment.conf_id = payment.conf_id
+		rejected_payment.user = payment.user
+		rejected_payment.pic_of_dd = payment.pic_of_dd
+		rejected_payment.date = now.strftime("%Y-%m-%d")
+		rejected_payment.save()
+		url = '/manager/conference_landing/'+request.POST['cid']+'/2/'
+	return redirect(url)
 
 
 def questionnaire(request,cid):
