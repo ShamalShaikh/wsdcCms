@@ -38,6 +38,9 @@ class Conf_Image(models.Model):
 	imgname = models.CharField(max_length=20)
 	conf_id = models.ForeignKey(Conference, on_delete = models.CASCADE)
 
+	def __str__(self):
+		return str(self.imgname+" "+self.conf_id.conference_name)
+
 
 class Conf_Paper(models.Model):
 	paper_id = models.AutoField(primary_key = True)

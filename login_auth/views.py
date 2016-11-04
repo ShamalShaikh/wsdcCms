@@ -25,8 +25,8 @@ def register(request):
 		username = request.POST['username']
 		email = request.POST['email']
 		if password1 != password2 :
-			reponse['message'] = "Password doesn't match"
-			return render(request,'login_auth/sites/register.djt',reponse)
+			response['message'] = "Password doesn't match"
+			return render(request,'login_auth/sites/register.djt',response)
 		else :
 			user = User()
 			user.first_name = firstname
@@ -36,11 +36,11 @@ def register(request):
 			user.set_password(password1)
 			try:
 				user.save()
-				reponse['message'] = "Successfully Registered"
-				return render(request,'login_auth/sites/login.djt',reponse)
+				response['message'] = "Successfully Registered"
+				return render(request,'login_auth/sites/login.djt',response)
 			except :
-				reponse['message'] = "username already exist"
-				return render(request,'login_auth/sites/register.djt',reponse)
+				response['message'] = "username already exist"
+				return render(request,'login_auth/sites/register.djt',response)
 	return render(request,'login_auth/sites/register.djt')
 			
 def signin(request):

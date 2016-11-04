@@ -47,6 +47,11 @@ class UserProfile(models.Model):
 		return self.user.username
 
 
-	
+class Rejected_payment(models.Model):
+	conf_id = models.ForeignKey(Conference)
+	user = models.ForeignKey(User)
+	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
+	date = models.DateField()
 
-
+	def __unicode__(self):
+		return (self.user.username+" for "+self.conf_id.conference_name+" - "+self.date.strftime("%Y-%m-%d"))

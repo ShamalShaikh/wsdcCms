@@ -10,13 +10,21 @@
 
 <div class="ui container">
 <br>
-  <div class="ui three item menu">
+  <div class="ui three item menu ">
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users</a>
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved</a>
     <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers</a>
   </div>
 
   {% ifequal type '1' %}
+    <br>
+    <h2 class="ui header">
+        <div class="content">
+          Registered Users
+        </div>
+      </h2>
+      <br>
+    {% if paidtrans %}
     <table class="ui celled table">
         <thead>
           <tr>
@@ -33,8 +41,20 @@
           {% endfor %}
         </tbody>
     </table>
+    {% else %}
+      <div class="ui segment">
+        <center><h3>No Registered Users !!!</h3></center>
+      </div>
+    {% endif %}
 {% endifequal %}
 {% ifequal type '2' %}
+      <br>
+      <h2 class="ui header">
+        <div class="content">
+          Payments for Approval
+        </div>
+      </h2>
+      {% if pending_dds %}
       <table class="ui celled table">
         <thead>
           <tr>
@@ -57,8 +77,48 @@
           {% endfor %}
         </tbody>
       </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Pending DD's to be approved !!!</h3></center>
+      </div>
+    {% endif %}
+
+    {% if rejected_dds %}
+    <br><br>
+    <h2 class="ui header">
+      <div class="content">
+        Rejected Payments
+      </div>
+    </h2>
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>view DD</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for rejected_dd in rejected_dds %}
+          <tr>
+            <td>{{rejected_dd.user.username}}</td>
+            <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
+            <td><a href="/media/{{rejected_dd.pic_of_dd}}" target="blank">show dd</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    {% endif %}
+
 {% endifequal %}
 {% ifequal type '3' %}
+      <br>
+      <h2 class="ui header">
+        <div class="content">
+          Papers Uploaded by various users
+        </div>
+      </h2>
+      <br>
+      {% if papers %}
       <table class="ui celled table">
         <thead>
           <tr>
@@ -77,6 +137,11 @@
           {% endfor %}
         </tbody>
       </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No papers Uploaded yet !!!</h3></center>
+      </div>
+      {% endif %}
 {% endifequal %}
 
 
@@ -94,6 +159,9 @@
         <div class="field">
           <input type="hidden" id="payid" name="payid">
         </div>
+        <div class="field">
+          <input type="hidden" id="cid" name="cid">
+        </div>
         <button class="ui submit button" type="submit">Submit</button>
       </form>
     </div>
@@ -108,6 +176,7 @@ $(".disapprove_btn").click(function(){
   $('.small.modal.pop_up1').modal('show');
   var pid=$(this).attr('payid');
   $('#payid').val(pid);
+  $('#cid').val({{conference.conference_id}});
 })
 
 </script>

@@ -7,7 +7,7 @@
 	<div class="ui message">
 		<i class="close icon"></i>
 		<div class="header">
-		  Network Error
+		  Message
 		</div>
 		<div>
 		  <p>{{message}}</p>

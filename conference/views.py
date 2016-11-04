@@ -14,20 +14,25 @@ import datetime
 def index(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)
+	response = {}
+	response['conference']=conference
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
 	try :
-		print request.user
 		payment = Payment.objects.get(user=request.user, conf_id=conference)
+		response['payment']=payment
 		if payment is not None :
 			papers = {}
 			try :
 				papers = Conf_Paper.objects.filter(uid=request.user, conf_id=conference)
-				return render(request,'conference/conference.djt',{'conference':conference,'payment':payment,'papers':papers})
+				response['papers']=papers
+				return render(request,'conference/conference.djt',response)
 			except :
-				return render(request,'conference/conference.djt',{'conference':conference,'payment':payment})
+				return render(request,'conference/conference.djt',response)
 		else :
-			return render(request,'conference/conference.djt',{'conference':conference})
+			return render(request,'conference/conference.djt',response)
 	except :
-		return render(request,'conference/conference.djt',{'conference':conference})
+		return render(request,'conference/conference.djt',response)
 
 @login_required(login_url='/signin')
 def make_payment(request):
