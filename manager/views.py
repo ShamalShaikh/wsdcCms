@@ -40,11 +40,10 @@ def signout(request):
 def home(request):
 	try:
 		manager = Manager.objects.get(user=request.user)
-	except Manager.DoesNotExist:
-		print "Manager status not assigned"
-		raise Http404
-	conferences = Conference.objects.filter(manager=manager)
-	return render(request, 'manager/home.djt', {'conferences':conferences})
+		conferences = Conference.objects.filter(manager=manager)
+		return render(request, 'manager/home.djt', {'conferences':conferences})
+	except:
+		return redirect('/manager/signin')
 
 @login_required(login_url='/manager/signin/')
 def assign_reviewer(request, paper_id):
