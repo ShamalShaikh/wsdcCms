@@ -10,7 +10,6 @@ from manager.models import *
 import datetime
 
 # Create your views here.
-@login_required(login_url='/signin')
 def index(request):
 	cid = request.GET['cid']
 	conference = Conference.objects.get(conference_id=cid)

@@ -52,6 +52,9 @@
     {% if request.user.is_authenticated %}
     <a class="item" href="/profile/1/">Profile</a>
     <a class="item" href="/signout/">Logout</a>
+    {%else%}
+    <a class="item" href="/">Login</a>
+    <a class="item" href="/Register">Signup</a>
     {% endif %}
   </div>
 </div>
