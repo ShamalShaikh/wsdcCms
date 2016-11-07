@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpRequest, Http404
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
+from login_auth.models import Registered_Conference, Payment
 from conference.models import Conference
 
 # Create your views here.
@@ -66,3 +67,35 @@ def dashboard(request):
 	response={}
 	response['conferences'] = Conference.objects.filter(is_published=True)
 	return render(request,'login_auth/sites/dashboard.djt',response)
+
+
+@login_required(login_url='/signin')
+def profile(request,type):
+	response = {}
+
+	conferences = Registered_Conference.objects.filter(user=request.user)
+	payments = Payment.objects.filter(user=request.user)
+	response['conferences'] = conferences
+	response['payments'] = payments
+	response['type'] = type
+
+	if request.method == 'POST':
+		u = User.objects.get(username=request.user.username)
+		u.first_name = request.POST['firstname']
+		u.last_name = request.POST['lastname']
+		u.email = request.POST['email']
+		u.username = request.POST['username']
+
+		try:
+			u.save()
+			response['message'] = "Details Updated"
+			return HttpResponseRedirect('/profile/3/')
+		except:
+			response['message'] = "Username already exists"
+			return render(request, 'login_auth/sites/profile.djt',response)
+
+	return render(request, 'login_auth/sites/profile.djt',response)
+
+
+
+

@@ -88,3 +88,4 @@ def upload_paper(request,cid):
 		regconf.save()
 	url = '/conference/?cid='+cid
 	return redirect(url)
+
