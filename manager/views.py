@@ -38,9 +38,12 @@ def signout(request):
 
 @login_required(login_url='/manager/signin/')
 def home(request):
-	manager = Manager.objects.get(user=request.user)
-	conferences = Conference.objects.filter(manager=manager)
-	return render(request, 'manager/home.djt', {'conferences':conferences})
+	try:
+		manager = Manager.objects.get(user=request.user)
+		conferences = Conference.objects.filter(manager=manager)
+		return render(request, 'manager/home.djt', {'conferences':conferences})
+	except:
+		return redirect('/manager/signin')
 
 @login_required(login_url='/manager/signin/')
 def assign_reviewer(request, paper_id):
