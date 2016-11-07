@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
 from conference.models import Conference
+from login_auth.models import *
 
 # Create your views here.
 def index(request):
@@ -64,5 +65,5 @@ def signout(request):
 
 def dashboard(request):
 	response={}
-	response['conferences'] = Conference.objects.filter(is_published=True)
+	response['conferences'] = Conference.objects.filter(is_published=True)	
 	return render(request,'login_auth/sites/dashboard.djt',response)

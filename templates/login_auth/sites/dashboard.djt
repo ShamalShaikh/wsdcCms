@@ -2,18 +2,26 @@
 {% load staticfiles %}
 {% block content %}
 
+<style type="text/css">
+	body{
+		background: #ECE9E3;
+	}
+</style>
+
 <div class="ui container">
 <div class="ui grid">
 	<div class="ui eight wide column">
 			{% for conference in conferences %}
 			<br>
-			<div class="ui fluid link card">
+			<div class="ui fluid link red card">
 				<a class="content" href="/conference/?cid={{conference.conference_id}}">
                     <div class="header">{{conference.conference_name}}</div>
                 </a>
-                <a class="content" href="/conference/?cid={{conference.conference_id}}">
-	             	<div>Start Date : {{conference.startDate}}</div>
-	             	<div>End Date : {{conference.endDate}}</div>
+                <a class="content" style="color:black; font-size: 16px; " href="/conference/?cid={{conference.conference_id}}">
+	             	<div class="left floated">Start Date : {{conference.startDate}} <br><br>
+	             	End Date : {{conference.endDate}}
+	             	</div>
+	             	<img class="right floated small ui image" src="{% static 'images/DSC2235.JPG' %}" data-pin-nopin="true">
 	            </a>
 			</div>
 			{% endfor %}
