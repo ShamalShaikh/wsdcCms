@@ -1,0 +1,138 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+
+    {% if message %}
+    <div class="ui positive message" id="errormessage">
+        <i class="close icon"></i>
+        <div class="header">
+          Message
+        </div>
+        <div>
+          <p>{{message}}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="ui equal height row grid">
+        <div class="ui two column grid">
+            <div class="row">
+                <div class="ui six wide column">
+                    {% if userprofile.profilepic %}
+                     <div class="ui four wide column"><img class="ui medium circular bordered image" img="/media/{{userprofile.profilepic}}"></div>
+                     {% else %}
+                    <div class="ui six wide column"><img class="ui medium circular bordered image" img src= "{% static 'images/defimg.png' %}"></div>
+                    {% endif %}
+                    <div class="ui segment four wide column">
+                        <div >UserName: {{user.username}}</div>
+                        <div >Email: {{user.email}}</div>
+                        <div >Name: {{user.first_name}} {{user.last_name}}</div>
+                    </div>
+                </div>
+                <div class="ui six column wide">
+                    <div class="row">
+                        <div class="ui three item menu ">
+                        <a class="xmenu item" href="/profile/1">Conferences</a>
+                        <a class="xmenu item" href="/profile/2">Payments</a>
+                        <a class="xmenu item" href="/profile/3">Update Profile</a>
+                        </div>
+                    </div>
+                    {% ifequal type '1' %}
+                    <h2 class="ui header">
+                        <div class="content">
+                        Conferences
+                        </div>
+                    </h2>
+                    <table class="ui celled table">
+                        {% if conferences %}
+                        {% for c in conferences %}
+                            <tr><td>{{c.conf_id}}</td></tr>
+                        {% endfor %}
+                        {% else %}
+                            <tr><td>No registered Conferences</td></tr>
+                        {% endif %}
+                    </table>
+                    {% endifequal %}
+
+                    {% ifequal type '2' %}
+                    <h2 class="ui header">
+                        <div class="content">
+                        Payments
+                        </div>
+                    </h2>
+                    <table class="ui celled table">
+                    {% if payments %}
+                        <thead>
+                            <tr>
+                            <th>Conference</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        {% for p in payments %}
+                            <tr>
+                            <td>{{p.conf_id}}</td>
+                            <td>{{p.amount}}</td>
+                            {% if p.is_aprooved %}
+                            <td>Approved</td>
+                            {% elif p.is_rejected %}
+                            <td>Rejected</td>
+                            {% else %}
+                            <td>Pending</td>
+                            {% endif %}
+                            </tr>
+                        {% endfor %}
+                        {% else %}
+                            <tr><td>No Payments</td></tr>
+                        {% endif %}
+                    </table>
+                    {% endifequal %}
+
+                    {% ifequal type '3' %}
+                    <h2 class="ui header">
+                        <div class="content">
+                        Update profile
+                        </div>
+                    </h2>
+                    
+                    <div class="ui fluid segment">
+                        <form class="ui form" action="/profile/3/" method="post">
+                            {% csrf_token %}
+                            <div class="field">
+                                  <label>First Name</label>
+                                  <input name="firstname" placeholder="FirstName" type="text" id="firstname" required value="{{user.first_name}}">
+                            </div>
+                            <div class="field">
+                                  <label>Last Name</label>
+                                  <input name="lastname" placeholder="LastName" type="text" id="lastname" required value = "{{user.last_name}}">
+                            </div>
+                            <div class="field">
+                                  <label>UserName</label>
+                                  <input name="username" placeholder="Username" type="text" id="username" required value="{{user.username}}">
+                            </div>
+                            <div class="field">
+                                  <label>Email-id</label>
+                                  <input name="email" placeholder="Email-id" type="text" id="email" required value="{{user.email}}">
+                            </div>
+                            
+                            <div style="margin-left: 40%;">
+                            <button class="ui button green" type="submit" id="register">Register</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    {% endifequal %}
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+ </div>
+  
+
+{% endblock %}
+                    

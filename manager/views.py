@@ -38,7 +38,11 @@ def signout(request):
 
 @login_required(login_url='/manager/signin/')
 def home(request):
-	manager = Manager.objects.get(user=request.user)
+	try:
+		manager = Manager.objects.get(user=request.user)
+	except Manager.DoesNotExist:
+		print "Manager status not assigned"
+		raise Http404
 	conferences = Conference.objects.filter(manager=manager)
 	return render(request, 'manager/home.djt', {'conferences':conferences})
 
