@@ -26,3 +26,11 @@ class Answers(models.Model):
 
 	def __str__(self):
 		return (str(self.question)+' ' + str(self.reviewer))
+
+class Remarks(models.Model):
+	answer = models.TextField()
+	reviewer = models.ForeignKey(Reviewer)
+	paper = models.ForeignKey(Conf_Paper)
+
+	def __str__(self):
+		return ("Remark " + str(self.reviewer))
