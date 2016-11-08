@@ -10,11 +10,10 @@
 	<center>	
 	<iframe id="iframepdf" src="/media/{{ paperpath }}"" width="900" height="600"></iframe>
 	</center>
-	<br><br>
 
 	{% if q_len %}
 	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
-	<br><br>
+	<br>
 	<center>
 	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
 			{% for q in questions %}
@@ -34,13 +33,20 @@
 			  <option value="3">3</option>
 			  <option value="4">4</option>
 			</select>
-
 			{% endif %}
 			{% endfor %}
 			{% endwith %}
     	 	</div>
     	 	<br>
 	        {% endfor %}
+			<div class="ui form" id="remark">
+    		    <div class="field">
+          			<label>Remarks</label>
+          			<textarea name="remark" rows="3" cols="10">{{rem}}</textarea>
+        		</div>
+      		</div>
+      		<br>
+
     	<input type="submit" value="Submit" />
 	</form>	
 	</center>  

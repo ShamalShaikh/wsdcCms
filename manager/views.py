@@ -108,16 +108,13 @@ def reviewerAssigned(request, paper_id, u_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	reviewer.papers.add(paper)
 	reviewer.save()
-	return HttpResponse("done")
+	return HttpResponseRedirect("/manager/assignreviewer/"+paper_id+"/")
 
 def reviewCompleted(request,paper_id,u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	answers = Answers.objects.filter(reviewer=reviewer).filter(paper=paper)
 	ans_len = len(answers)
-	print paper
-	answers = Answers.objects.filter(reviewer=reviewer)
-
 	context = {
 		'ans_len':ans_len,
 		'answers':answers,
