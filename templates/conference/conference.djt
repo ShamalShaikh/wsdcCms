@@ -1,119 +1,119 @@
 {% extends "login_auth/layouts/header.djt" %}
 {% load staticfiles %}
 {% block content %}
-
-<style type="text/css">
-	.head{height:5em; background-color:black; color:white;}
-html, body {margin: 0;	padding: 0;}
-h4{position:relative;top:2em;left:1em;color:violet;}
-.heading{font-size:2em;font-family:Courier;}
-#horiline{border-bottom:solid;border-width:2px;}
-.hugebox{background-color:#F0F8FF;height:20em;position:relative;bottom:1em;}
-.confhead{font-size:3em;position:relative;top:1.4em;}
-.date{position:relative;left:2.2em;font-size:90%;}
-.desc{position:relative;left:1.5em;}
-.homebox{position:relative;background-color:#F0F8FF;left:3em;height:7em;}
-.Announcebox{position:relative;background-color:#F0F8FF;right:3em;height:7em;}
-</style>
-
-<div class="hugebox">
-<p class="confhead">COMPUTER VISION AND PATTERN RECOGNITION</p><br>
-<p class="date">{{conference.startDate}} to {{conference.endDate}}</p>
-
-<p class="desc">Celebrated CVPR conference</p></div>
-
-<div class="ui grid">
-    <div class="sixteen wide column bijimg">
-      <img height="400em" width="100%" class="bigimg" id="img1">
-</div></div>
-<div class="ui doubling stackable grid container">
-  <div class="ten wide column">
-  <div class="ui segment">
-    <h1>ABOUT US</h1>
-    <p>Steve Jobs was born in San Francisco, California, on February 24, 1955, to two University of Wisconsin graduate students who gave him up for adoption. Smart but directionless, Jobs experimented with different pursuits before starting Apple Computer with Steve Wozniak in 1976. Apple's revolutionary products, which include the iPod, iPhone and iPad, are now seen as dictating the evolution of modern technology, with Jobs having left the company in 1985 and returning more than a decade later. He died in 2011, following a long battle with pancreatic cancer.</p>
-   </div>
-  </div>
-  <div class="two wide column">
-    <p></p>
-    <p></p>
-  </div>
-  <div class="four wide column">
-  <div class="ui segment">
-    <h3>Conference Manager : </h3>
-    <h3>{{conference.manager.user.first_name}} {{conference.manager.user.last_name}}</h3>
-  </div>
-  </div>
-</div>
-
-<br><br><br>
-
 <div class="ui container">
-{% if payment %}
-	   
-	{% if payment.is_aprooved %}
-	<div class="ui segment">
-		{% if papers %}
-		<table class="ui celled table">
-			<thead>
-				<tr>
-					<th>Paper</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-				{% for paper in papers %}
-					<tr>
-						<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
-						<td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
-					</tr>
-				{% endfor %}
-
-			</tbody>
-		</table>
-		{%else%}
-		<center><h3>No Papers Uploaded !!!</h3></center>
-		{% endif %}
-	</div>
-	<div class="ui fluid segment">
-		<form class="ui form" action="/conference/upload_paper/{{conference.conference_id}}/" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			<div class="field" style="margin-left: 35%; width:250px;">
-	              <input name="paper_name" placeholder="paper name" type="text" id="paper_name">
-	        </div>
-	        <div class="field" style="margin-left: 33%;">
-	              <input name="paper_file" type="file" id="paper_file" class="ui button blue">
-	        </div>
-	        <div style="margin-left: 40%;">
-	        <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
-	        </div>
-		</form>
-	</div>
-	{% else %}
-	<div class="ui fluid segment">
-		{% if payment.remarks %}
-			<h3> Status :
-			<span> DD rejected </span>
-			</h3>
-			<h3>Remarks : {{payment.remarks}}</h3>
-		{% else %}
-			<h3> Status :
-			<span> DD yet to be Approved </span>
-			</h3>
-		{% endif %}
-		<div style="margin-left: 40%;">
-			<a href="/conference/payment/?cid={{conference.conference_id}}"><button class="ui button blue">Upload DD again</button></a>
+		<div class="ui large breadcrumb">
+		  <a class="section">Home</a>
+		  <i class="right chevron icon divider"></i>
+		  <a class="section">Conferences</a>
+		  <i class="right chevron icon divider"></i>
+		  <div class="active section">{{conference.conference_name}}</div>
 		</div>
-	</div>
-	{% endif %}
-	
-{% else %}
-	<div style="margin-left: 40%;">
-		<a href="/conference/make_payment/?cid={{conference.conference_id}}"><button class="ui button blue">Register for Conference</button></a>
-	</div>
-{% endif %}
+		<h2 class="ui horizontal header divider">
+		  <i class="university icon"></i>
+		  {{conference.conference_name}}
+		</h2>
+		<br>
+		<div class="ui two column stackable grid">
+			<div class="column">
+				<div class="ui blue basic fluid button">Start-Date: {{conference.startDate}}</div>
+			</div>
+			<div class="column">
+				<div class="ui blue basic fluid button">Start-Date: {{conference.endDate}}</div>
+			</div>
+		</div>
+		<br>
+		<div class="ui container">
+		{% if payment %}
+			   
+			{% if payment.is_aprooved %}
+			<div class="ui segment">
+				{% if papers %}
+				<table class="ui celled table">
+					<thead>
+						<tr>
+							<th>Paper</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						{% for paper in papers %}
+							<tr>
+								<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+								<td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
+							</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+				{%else%}
+				<center><h3>No Papers Uploaded !!!</h3></center>
+				{% endif %}
+			</div>
+			<div class="ui fluid segment">
+				<form class="ui form" action="/conference/upload_paper/{{conference.conference_id}}/" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="field" style="margin-left: 35%; width:250px;">
+			              <input name="paper_name" placeholder="paper name" type="text" id="paper_name">
+			        </div>
+			        <div class="field" style="margin-left: 33%;">
+			              <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+			        </div>
+			        <div style="margin-left: 40%;">
+			        <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+			        </div>
+				</form>
+			</div>
+			{% else %}
+			<div class="ui fluid segment">
+				{% if payment.remarks %}
+					<h3> Status :
+					<span> DD rejected </span>
+					</h3>
+					<h3>Remarks : {{payment.remarks}}</h3>
+				{% else %}
+					<h3> Status :
+					<span> DD yet to be Approved </span>
+					</h3>
+				{% endif %}
+				<div style="margin-left: 40%;">
+					<a href="/conference/payment/?cid={{conference.conference_id}}"><button class="ui button blue">Upload DD again</button></a>
+				</div>
+			</div>
+			{% endif %}
+			
+		{% else %}
+			<div>
+				<a href="/conference/make_payment/?cid={{conference.conference_id}}"><button class="ui button fluid blue">Register for Conference</button></a>
+			</div>
+		{% endif %}
+		<br>
+		</div>
+		<div class="ui grid">
+		    <div class="sixteen wide column bijimg">
+		      <img height="400em" width="100%" class="bigimg" id="img1">
+			</div>
+		</div>
+		<div class="ui doubling stackable grid container">
+		  <div class="ten wide column">
+		  <div class="ui segment">
+		    <h1>Description</h1>
+		    <p>{{conference.description}}</p>
+		   </div>
+		  </div>
+		  <div class="two wide column">
+		    <p></p>
+		    <p></p>
+		  </div>
+		  <div class="four wide column">
+		  <div class="ui segment">
+		    <h3>Conference Manager : </h3>
+		    <h3>{{conference.manager.user.first_name}} {{conference.manager.user.last_name}}</h3>
+		  </div>
+		  </div>
+		</div>
 </div>
-<br>
 {% endblock %}
 
 {% block script %}
