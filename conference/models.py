@@ -19,6 +19,12 @@ def validate(value):
 	    if not ext in valid_extentions:
 	        raise ValidationError(u'File type is not supported')
 
+class Branch(models.Model):
+	branch_name = models.CharField(max_length=200)
+	branch_alias = models.CharField(max_length=10)
+	def __unicode__(self):
+		return self.branch_name
+
 class Conference(models.Model):
 	conference_id = models.AutoField(primary_key = True)
 	conference_name = models.CharField(max_length = 50)
@@ -29,7 +35,7 @@ class Conference(models.Model):
 	alias = models.CharField(max_length = 10)
 	manager = models.ForeignKey(Manager)
 	fee = models.IntegerField(default=0)
-
+	branch = models.ForeignKey(Branch,null=True,blank=True)
 	def __str__(self):
 		return str(self.conference_name)
 
