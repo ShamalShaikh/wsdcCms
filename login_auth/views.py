@@ -10,7 +10,7 @@ from login_auth.models import *
 
 # Create your views here.
 def index(request):
-	return redirect('/signin/')
+	return redirect('/dashboard')
 
 def Register(request):
 	if request.user.is_authenticated():
