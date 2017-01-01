@@ -3,25 +3,44 @@
 {% block content %}
 
 <div class="ui container">
-	<div class="ui grid">
-		<div class="ui eight wide column">
-				{% for conference in conferences %}
-				<br>
-				<div class="ui fluid link card">
-					<a class="content" href="/manager/conference_landing/{{conference.conference_id}}/1">
-	                    <div class="header">{{conference.conference_name}}</div>
-	                </a>
-	                <a class="content" href="/manager/conference_landing/{{conference.conference_id}}/1">
-		             	<div>Start Date : {{conference.startDate}}</div>
-		             	<div>End Date : {{conference.endDate}}</div>
-		            </a>
-				</div>
-				{% endfor %}
-		</div>
-		<div class="ui eight wide column">
-			
-		</div>
-	</div>
+	<h2 class="ui center aligned icon header dash_header">
+	  <i class="circular users icon"></i>
+	  Manager Portal
+	</h2>
+	<div class="ui divider"></div>
+	<br>
+<table class="ui celled striped table">
+  <thead>
+    <tr class="center aligned"><th colspan="4">
+      My Conferences
+    </th>
+  </tr>
+  <tr>
+  	<th>Conference Name</th>
+  	<th>Start Date</th>
+  	<th>End Date</th>
+  	<th>View</th>
+  </tr>
+  </thead>
+  <tbody>
+  {%if conferences%}
+  	{% for conference in conferences %}
+    <tr>
+      <td class="collapsing">
+         {{conference.conference_name}}
+      </td>
+      <td>{{conference.startDate}}</td>
+      <td>{{conference.endDate}}</td>
+      <td><a href="/manager/conference_landing/{{conference.conference_id}}/1" class="ui fluid primary button">View Conference</a>
+    </tr>
+    {%endfor%}
+  {%else%}
+  	<tr colspan="4">
+  		No Conferences are assigned to you
+  	</tr>
+  {%endif%}
+  </tbody>
+</table>
 </div>
 
 {% endblock %}
