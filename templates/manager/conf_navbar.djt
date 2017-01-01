@@ -4,18 +4,14 @@
 
 <center>
 <h1 class="ui header">{{conference.conference_name}}</h1>
-<a href="/manager/questionnaire/{{conference.conference_id}}">Add or Modify questions to evaluate papers.</a>
-
 </center>
-
+<div class="ui divider"></div>
+  <br>
 <div class="ui container">
 <br>
-  <div class="ui three item menu ">
-    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users</a>
-    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved</a>
-    <a class="xmenu item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers</a>
-  </div>
-
+<div class="ui grid">
+  {%include "manager/sidemenu.djt" %}
+  <div class="twelve wide column">
   {% ifequal type '1' %}
     <br>
     <h2 class="ui header">
@@ -107,6 +103,7 @@
           </tr>
         {% endfor %}
         </tbody>
+      </table>
     {% endif %}
 
 {% endifequal %}
@@ -143,8 +140,8 @@
       </div>
       {% endif %}
 {% endifequal %}
-
-
+</div>
+</div>
 </div>
 
 <div class="ui small modal pop_up1">

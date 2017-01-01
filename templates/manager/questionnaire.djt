@@ -1,34 +1,41 @@
 {% extends "manager/sidebar.djt" %}
 {% load staticfiles %}
 {% block content %}
+<center>
+<h1 class="ui header">{{conference.conference_name}}</h1>
+</center>
+<div class="ui divider"></div>
+  <br>
 <div class="ui container">
-  <div class="ui three item menu">
-      <center>
-    	<h1>Add or Modify questionnaire</h1>
-    	</center>
+  <div class="ui grid">
+    <div class="four wide column">
+      {%include "manager/sidemenu.djt" %}
+    </div>
+    <div class="twelve wide column">
+          	<h1>Add or Modify questionnaire</h1>
+        {{message}}
+        </center>
+        <form action="/manager/questionnaire/{{conference.conference_id}}/" method="post">{% csrf_token %}
+            <input type="hidden" name="noOfQuestions" id="noOfQuestions" value="{{q_len}}" />
+            <div class="ui form" id="questionsArea">
+            {% for q in questions %}
+
+              <div class="field">
+                <label>Question {{forloop.counter}}</label>
+                <textarea name="question{{forloop.counter}}" rows="2">{{q.question}}</textarea>
+                <input type="hidden" name="qId{{forloop.counter}}" value="{{q.id}}" />
+              </div>
+
+            {% endfor %}
+            </div>
+
+            <br>
+            <button  class="ui button" id="addAnotherQuestion" type="button">Add another question</button>
+
+            <input class="ui button" type="submit" value="Submit" />
+        </form>
+    </div>
   </div>
-  <center>
-  {{message}}
-  </center>
-  <form action="/manager/questionnaire/{{conference.conference_id}}/" method="post">{% csrf_token %}
-      <input type="hidden" name="noOfQuestions" id="noOfQuestions" value="{{q_len}}" />
-      <div class="ui form" id="questionsArea">
-      {% for q in questions %}
-
-        <div class="field">
-          <label>Question {{forloop.counter}}</label>
-          <textarea name="question{{forloop.counter}}" rows="2">{{q.question}}</textarea>
-          <input type="hidden" name="qId{{forloop.counter}}" value="{{q.id}}" />
-        </div>
-
-      {% endfor %}
-      </div>
-
-      <br>
-      <button  class="ui button" id="addAnotherQuestion" type="button">Add another question</button>
-
-      <input class="ui button" type="submit" value="Submit" />
-  </form>
 
   <script>
       $(document).ready(function(){
