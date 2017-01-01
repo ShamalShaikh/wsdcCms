@@ -4,46 +4,11 @@
 
 <div class="ui container">
 	<center>
-	<h1>Assign Reviewers for {{paper.papername}}</h1>
+	<h1>{{paper.papername}}: Status and Reviews</h1>
 	</center>
-	
-	<div class="ui segment">
-	<table class="ui celled table">
-  		<tbody>
-		    {% for r in reviewer %}
-		    <tr>
-		      <td>{{r.user.username}}</td>
-		      <td><a href="/manager/reviewerassigned/{{paper.paper_id}}/{{r.id}}"><button class="ui button green" type="submit" id="assign">Assign</button></a></td>
-		    </tr>
-		    {% endfor %}
-	    
-  		</tbody>
- 	 </table>
-	</div>
-</div>
-
-<br><br><br>
-
-<div class="ui container">
+	<div class="ui divider"></div>
+	<br>
 	<center>
-	<h1>Reviewers assigned for {{paper.papername}}</h1>
-	</center>
-	<div class="ui segment">
-	<table class="ui celled table">
-  		<tbody>
-		    {% for r in reviewer_assigned %}
-		    <tr>
-		      <td>{{r.user.username}}</td>
-		      <td><a href="/manager/reviewcomplete/{{paper.paper_id}}/{{r.id}}/"><button class="ui button green" type="submit" id="assign">Response</button></a></td>
-		    </tr>
-		    {% endfor %}	    
-  		</tbody>
- 	 </table>
- 	 </div>
-</div>
-
-<br><br>
-<center>
 
 {% if is_rejected %}
 <h2>Status : Rejected</h2>
@@ -56,27 +21,85 @@
 <br>
 
 <center>
-<a href="/manager/allresponses/{{paper.paper_id}}">
-<button class="ui button">
-  Average Responses
-</button>
-</a>
-
+<div class="ui grid stackable columns">
+<div class="row">
+	<div class="column">
+		<a href="/manager/allresponses/{{paper.paper_id}}">
+		<button class="ui button">
+		  Average Responses
+		</button>
+		</a>
+	</div>
+</div>
 <br><br>
-
-<a href="/manager/approvepaper/{{paper.paper_id}}">
-<button class="ui button green">
-  Approve Paper
-</button>
-</a>
-
-<a href="/manager/disapprovepaper/{{paper.paper_id}}">
-<button class="ui button red">
-  Disapprove Paper
-</button>
-</a>
-
+<div class="row">
+	<div class="eight wide column">
+		<a href="/manager/approvepaper/{{paper.paper_id}}">
+		<button class="ui fluid button green">
+		  Approve Paper
+		</button>
+		</a>
+	</div>
+	<div class="eight wide column">
+		<a href="/manager/disapprovepaper/{{paper.paper_id}}">
+		<button class="ui fluid button red">
+		  Disapprove Paper
+		</button>
+		</a>
+	</div>
+</div>	
+</div>
 </center>
+<br><br>
+<div class="ui grid stackable columns">
+	<div class="eight wide column">
+		<center>
+			<h3>Reviewers List (Unassigned)</h3>
+		</center>
+		<div class="ui segment">
+		<table class="ui celled table">
+	  		<tbody>
+	  		{%if reviewer%}
+			    {% for r in reviewer %}
+			    <tr>
+			      <td>{{r.user.username}}</td>
+			      <td><a href="/manager/reviewerassigned/{{paper.paper_id}}/{{r.id}}"><button class="ui button green" type="submit" id="assign">Assign</button></a></td>
+			    </tr>
+			    {% endfor %}
+		    {%else%}
+		    	<tr class="center aligned">
+		    		<h2>No more unassigned reviewers</h2>
+		    	</tr>
+		    {%endif%}
+	  		</tbody>
+	 	 </table>
+		</div>
+	</div>
+	<div class="eight wide column">
+			<center>
+			<h3>Assigned Reviewers</h3>
+			</center>
+			<div class="ui segment">
+			<table class="ui celled table">
+		  		<tbody>
+		  			{%if reviewer_assigned %}
+					    {% for r in reviewer_assigned %}
+					    <tr>
+					      <td>{{r.user.username}}</td>
+					      <td><a href="/manager/reviewcomplete/{{paper.paper_id}}/{{r.id}}/"><button class="ui button green" type="submit" id="assign">Response</button></a></td>
+					    </tr>
+					    {% endfor %}
+					{%else%}
+						<tr class="center aligned" colspan="3">
+							<h2>No Reviewers Assigned</h2>
+						</tr>
+					{%endif%}	    
+		  		</tbody>
+		 	 </table>
+		 	 </div>
+	</div>
+</div>
+<br><br>
 
 {% endblock %}
 

@@ -121,7 +121,8 @@
           <tr>
           <th>Name</th>
           <th>Papers</th>
-          <th>Review</th>
+          <th>Status</th>
+          <th>Manage Paper</th>
           </tr>
         </thead>
         <tbody>
@@ -129,7 +130,16 @@
           <tr>
             <td>{{paper.uid}}</td>
             <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
-            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui button blue">Assign Reviewers</button></a></center></td>
+            <td>
+                {%if paper.is_approved%}
+                  <button class="ui fluid button green">Approved</button>
+                {%elif paper.is_rejected%}
+                  <button class="ui fluid button red">Rejected</button>
+                {%else%}
+                  <button class="ui fluid button yellow">Under Review</button>
+                {%endif%}
+            </td>
+            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui fluid button blue">Manage</button></a></center></td>
           </tr>
           {% endfor %}
         </tbody>
