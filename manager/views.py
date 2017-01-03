@@ -78,9 +78,12 @@ def conference_landing(request,cid,type):
 	rejected_dds = []
 	for regconf in regconfs:
 		user = regconf.user
-		payment = Payment.objects.get(user=user,conf_id=conference)
-		users.append(user)
-		paidtrans.append(payment)
+		try:
+			payment = Payment.objects.get(user=user,conf_id=conference)
+			users.append(user)
+			paidtrans.append(payment)
+		except:
+			print "Payment not done"
 		for paper in regconf.papers.all() :
 			papers.append(paper)
 

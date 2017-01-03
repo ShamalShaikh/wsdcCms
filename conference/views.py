@@ -74,30 +74,47 @@ def upload_paper(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	now = datetime.datetime.now()
 	if request.method == 'POST' :
-		paper = Conf_Paper()
-		paper.conf_id=conference
-		paper.uid=request.user
-		paper.paperfile=request.FILES['paper_file']
-		paper.papername=request.POST['paper_name']
-		paper.submissionDate=now.strftime("%Y-%m-%d")
-		paper.save()
-
-		regconf = Registered_Conference.objects.get(conf_id=conference,user=request.user)
-		regconf.papers.add(paper)
-		regconf.save()
-	url = '/conference/?cid='+cid
+		regconf = None
+		try:
+			regconf = Registered_Conference.objects.get(conf_id=conference,user=request.user)
+		except:
+			regconf = Registered_Conference()
+			regconf.conf_id = conference
+			regconf.user = request.user
+			regconf.save()
+		if regconf.papers.count() < conference.max_papers:
+			paper = Conf_Paper()
+			paper.conf_id=conference
+			paper.uid=request.user
+			paper.paperfile=request.FILES['paper_file']
+			paper.papername=request.POST['paper_name']
+			paper.submissionDate=now.strftime("%Y-%m-%d")
+			paper.save()
+			regconf.papers.add(paper)
+			regconf.save()
+	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)
 
 @login_required(login_url='/signin')
 def dashboard(request,alias):
 	response = {}
 	response['alias']=alias
-	conference = Conference.objects.filter(conference_alias=alias)
+	conference = Conference.objects.filter(conference_alias=alias)[0]
 	conferences = Registered_Conference.objects.filter(user=request.user)
 	payments = Payment.objects.filter(user=request.user)
+	response['conference']= conference
 	response['conferences'] = conferences
 	response['payments'] = payments
-
+	papers = {}
+	try :
+		papers = Conf_Paper.objects.filter(uid=request.user, conf_id=conference)
+	except:
+		papers = {}
+	if len(papers) < conference.max_papers:
+		response['upload_paper'] = True
+	else:
+		response['upload_paper']=False 
+	response['papers']=papers
 	if request.method == 'POST':
 		u = User.objects.get(username=request.user.username)
 		u.first_name = request.POST['firstname']
