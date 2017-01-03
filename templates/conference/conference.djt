@@ -1,4 +1,4 @@
-{% extends "login_auth/layouts/header.djt" %}
+{% extends "conference/layouts/header.djt" %}
 {% load staticfiles %}
 {% block content %}
 <div class="ui container">

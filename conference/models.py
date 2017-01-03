@@ -28,6 +28,7 @@ class Branch(models.Model):
 class Conference(models.Model):
 	conference_id = models.AutoField(primary_key = True)
 	conference_name = models.CharField(max_length = 50)
+	conference_alias = models.CharField(max_length = 50,null=True,blank=True)
 	startDate = models.DateField()
 	endDate = models.DateField()
 	is_published = models.BooleanField(default = False)
@@ -35,6 +36,7 @@ class Conference(models.Model):
 	alias = models.CharField(max_length = 10)
 	manager = models.ForeignKey(Manager)
 	fee = models.IntegerField(default=0)
+	max_papers = models.IntegerField(default=1)
 	branch = models.ForeignKey(Branch,null=True,blank=True)
 	def __str__(self):
 		return str(self.conference_name)

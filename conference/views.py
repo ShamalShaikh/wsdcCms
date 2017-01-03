@@ -10,11 +10,11 @@ from manager.models import *
 import datetime
 
 # Create your views here.
-def index(request):
-	cid = request.GET['cid']
-	conference = Conference.objects.get(conference_id=cid)
+def index(request,alias):
+	conference = Conference.objects.get(conference_alias=alias)
 	response = {}
 	response['conference']=conference
+	response['alias']=alias
 	images = Conf_Image.objects.filter(conf_id=conference)
 	response['images']=images
 	try :
@@ -70,8 +70,8 @@ def payment(request):
 	return render(request,'conference/payment.djt',{'conference':conference})
 
 @login_required(login_url='/signin')
-def upload_paper(request,cid):
-	conference = Conference.objects.get(conference_id=cid)
+def upload_paper(request,alias):
+	conference = Conference.objects.get(conference_alias=alias)
 	now = datetime.datetime.now()
 	if request.method == 'POST' :
 		paper = Conf_Paper()
@@ -87,4 +87,31 @@ def upload_paper(request,cid):
 		regconf.save()
 	url = '/conference/?cid='+cid
 	return redirect(url)
+
+@login_required(login_url='/signin')
+def dashboard(request,alias):
+	response = {}
+	response['alias']=alias
+	conference = Conference.objects.filter(conference_alias=alias)
+	conferences = Registered_Conference.objects.filter(user=request.user)
+	payments = Payment.objects.filter(user=request.user)
+	response['conferences'] = conferences
+	response['payments'] = payments
+
+	if request.method == 'POST':
+		u = User.objects.get(username=request.user.username)
+		u.first_name = request.POST['firstname']
+		u.last_name = request.POST['lastname']
+		u.email = request.POST['email']
+		u.username = request.POST['username']
+
+		try:
+			u.save()
+			response['message'] = "Details Updated"
+			return HttpResponseRedirect('/profile/3/')
+		except:
+			response['message'] = "Username already exists"
+			return render(request, 'login_auth/sites/profile.djt',response)
+
+	return render(request, 'conference/upload_paper.djt',response)
 

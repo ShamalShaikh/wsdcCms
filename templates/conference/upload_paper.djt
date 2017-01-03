@@ -1,0 +1,33 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="ui container">
+        <h2 class="ui center aligned icon header dash_header">
+          <i class="circular file text icon"></i>
+          Paper Upload
+        </h2>
+        <div class="ui divider"></div>
+        <br>
+        <div class="ui top attached tabular menu">
+          <a class="active item" data-tab="first">Upload Paper</a>
+          <a class="item" data-tab="second">Final Upload</a>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="first">
+          First
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+          Second
+        </div>
+        <div class="ui bottom attached tab segment active" data-tab="third">
+          Third
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    $('.menu .item')
+  .tab()
+;
+</script>
+{% endblock %}
+                    
