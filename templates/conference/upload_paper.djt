@@ -9,17 +9,55 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          <a class="active item" data-tab="first">Upload Paper</a>
+          <a class="item" data-tab="first">Upload Paper</a>
           <a class="item" data-tab="second">Final Upload</a>
         </div>
-        <div class="ui bottom attached tab segment" data-tab="first">
-          First
+      <div class="ui bottom attached tab segment" data-tab="first">
+          <div class="ui segment">
+        {% if papers %}
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Paper</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {% for paper in papers %}
+              <tr>
+                <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+                <td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
+              </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+        {%else%}
+        <center><h3>No Papers Uploaded !!!</h3></center>
+        {% endif %}
+      </div>
+      {%if upload_paper%}
+      <div class="ui fluid segment">
+        <form class="ui form" action="/conference/upload_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="field" style="margin-left: 35%; width:250px;">
+                    <input name="paper_name" placeholder="paper name" type="text" id="paper_name">
+              </div>
+              <div class="field" style="margin-left: 33%;">
+                    <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+              </div>
+              <div style="margin-left: 40%;">
+              <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+              </div>
+        </form>
+      </div>
+      {%else%}
+        <h2>You have already uploaded max papers</h2>
+      {%endif%}
         </div>
         <div class="ui bottom attached tab segment" data-tab="second">
           Second
-        </div>
-        <div class="ui bottom attached tab segment active" data-tab="third">
-          Third
         </div>
     </div>
 {% endblock %}
