@@ -1,0 +1,139 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Treat'17</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/treat17">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/links">Important Links</a>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Registration Form</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">About Institute and Wranagal</span></center></h2><br>
+                <p style="color:black">
+                    National Institute of Technology (formerly Regional Engineering College), Warangal was established in 1959 and is the first among 17 RECs setup as joint venture of the Government of India and the state government. Over the years the college has established itself as a premier Institution imparting technical education of a very high standard leading to the B.Tech degrees in various branches of engineering and M.Tech. and Ph.D programs in various specializations.
+                </p>
+                <p style="color:black"> There are 14 Departments offering eight undergraduate and 29 post-graduate programs besides doctoral programs. About 5,000 students across the country and about 500 international students pursue their education in the campus. It is a fully residential campus sprawling over 250 acres with excellent infrastructure in the form of state of art library, seminar halls, guest houses and laboratories.</p>
+                <p style="color:black">Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 Km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 Km away) and by Road (NH 202). Warangal is known for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is the place of tourist attraction with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">About The Department</span></center></h2><br>
+            <p>
+                The Department of Electronics and Communication Engineering offers an Undergraduate program in Electronics and communication Engineering and three Postgraduate programs in EI, VLSI, and ACS Specializations. The Department has experienced faculty and well-established laboratories to meet the requirement of UG, PG and Phd students. The Department has liaison with reputed industries and R&D organizations like DRDO, ISRO ECIL, Analog Devices Bangalore and C-DAC. Department conducts various sponsored programs throughout the year. At present, more than 30 Research Scholars are working for their Ph.D program.
+            </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2016 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/ece/" target="_blank">Department of ECE, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Reach Us:</b></h4>
+                                <b>E-mail : </b> treat2017.nitw@gmail.com<br>
+                                <b>Ph : </b>0870-2462412 
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+</body>
+
+</html>

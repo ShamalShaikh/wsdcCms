@@ -1,0 +1,330 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Treat'17</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/treat17">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/links">Important Links</a>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#fee_div">Registration Fee</a></li>
+                            <li><a href="#">Registration Form</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+            </div>
+            <div class="col-sm-6">
+            <center>
+                <P style="font-size:15px;" >NATIONAL SYMPOSIUM ON</P>
+                <p style="font-size:25px;"><b>TRENDS IN ELECTRONICS & TELECOM</b></p>
+                <p style="font-size:20px;"><b>( TREAT17 )</b></p>
+            </center>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>17-18 February , 2017</b></h3>
+                <h3>Organised by<br><br>
+                    Department of Electronics & Communication <br>Engineering<br> <br>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h3></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Call for Papers and Registration , Opening Soon !!!</marquee>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <hr>
+            <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+            <hr>
+            <div class="col-md-4">
+                <center><h3><span class="label label-primary">National</span></h3></center><br>
+                <ul>
+                    <li>Prof. R.V. RAJA KUMAR , IIT , BHUBNESHWAR</li>
+                    <li>Prof. AJAY CHAKRABARTY , IIT KHARAGPUR</li>
+                    <li>Prof. SHANKAR P. , IIT DELHI</li>
+                    <li>Prof. RAMA SUBBA REDDY , IIT MADRAS</li>
+                    <li>Prof. D. JALIHAL, IIT Madras</li>
+                    <li>Dr. D. R. JAHAGIRDAR , RCI Hyderabad</li>
+                    <li>Prof. M.V. Karthikeyan, IIT ROORKEE</li>
+                    <li>Prof. Ratnajit Bhattacharjee IIT Guwahati</li>
+                    <li>Prof. Dr. Elizabeth Elias NIT Calicut</li>
+                    <li>Prof. Muralidhar Kulakarni NITK, Suratkal</li>
+                    <li>Prof. B. Venkataramani NIT Trichy</li>
+                    <li>Dr. Lava Bhargava NIT Jaipur</li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <h3 style="margin-left:60px;"><span class="label label-primary">Departmental Organising Committee</span></h3><br>
+                    <div class="col-md-4">
+                        <ul>
+                            <li>Prof. Krishna Prasad K S R</li>
+                            <li>Sri Raghunath M. V</li>
+                            <li>Dr. C.B. Rama Rao</li>
+                            <li>Sri K.Ravi Kishore</li>
+                            <li>Sri S.K.L.V.Sai Prakash</li>
+                            <li>Sri P.Harikrishna Prasad</li>
+                            <li>Dr. B. Lakshmi</li>
+                            <li>Dr. N.Bheema Rao</li>
+                            <li>Dr.L.Anjaneyulu</li>
+                            <li>Sri K.V.Sridhar</li>
+                            <li>Dr.T.V.K.Hanumantha Rao</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul>
+                            <li>Dr. P.Sreehari Rao</li>
+                            <li>Sri A.Prakasa Rao</li>
+                            <li>Sri P.Muralidhar</li>
+                            <li>Smt.P.Prithvi</li>
+                            <li>Smt.V.Rama</li>
+                            <li>Dr.J.Ravi Kumar</li>
+                            <li>Dr.D.Vakula</li>
+                            <li>Sri K. Sarangam</li>
+                            <li>Dr.S.Anuradha</li>
+                            <li>Dr.V.V.Mani</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>CHIEF PATRON</h4>
+                        <h5><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Prof. G.R.C. Reddy, Director </h5> 
+                        <h4>ORGANISING SECRETARY</h4>
+                        <h5><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Dr. T. KISHORE KUMAR (HOD) </h5> 
+                        <h4>CONVENER</h4>
+                        <h5><span class="glyphicon glyphicon-star" aria-hidden="true"></span> PROF. N.V.S.N. SARMA </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
+                <p><b>Topics on recent advances Electronics Engineering will include are not limited to </b></p>
+                <ul>
+                    <li>Wireless Communication</li>
+                    <li>Wireless Sensor Networks</li>
+                    <li>Microwave and Antennas</li>
+                    <li>Optical Communication</li>
+                    <li>Signal Processing</li>
+                    <li>Internet of Things</li>
+                    <li>Embedded Systems</li>
+                    <li>Advances in Digital Design</li>
+                </ul>                
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Submission of Paper</td>
+                        <td>30 Jan , 2017</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Acceptance of Paper</td>
+                        <td>06 Feb , 2017</td>
+                    </tr>  
+                    <tr class="active">
+                        <td>Receipt of full length paper</td>
+                        <td>13 Feb , 2017</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Last date of Regitration</td>
+                        <td>14 Feb , 2017</td>
+                    </tr>  
+                </table>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+            <div class="col-md-3">
+                <h2><span class="label label-primary">Mode of Payment</span></h2><br>
+                Account Name Director, TEQIP-II, NITW<br>
+                Account Number 62182612968<br>
+                Bank State Bank of Hyderabad<br>
+                Branch REC Warangal (NIT Campus)<br>
+                Branch Code 20149<br>
+                IFSC SBHY0020149<br>
+                <br>
+                DD Drawn in Favour of "Director, (TEQIP), NIT WARANGAL" or NEFT.
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">OBJECTIVES</span></center></h2><br>
+                <p>The objective of this symposium is to bring awareness and exposure to research scholars in various topics of current research interest so that they can actively pursue or incorporate the novel methods in other areas in their area of work.  Also this symposium gives a forum for the researchers to have long discussions on future trends.  The symposium is open to professionals, academics, and individuals from government agencies and other institutions registered for Ph.D. to exchange information and ideas on the advancement of Communications and Electronics technology.</p>
+                <p>The conference will feature a comprehensive technical program offering numerous technical sessions with papers showcasing the latest technologies, applications and services. In addition, the conference program includes keynote talks from industrial leaders and renowned academicians.
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Accomodation</span></center></h2><br>
+                <p>
+                    Limited accommodation may be provided on payment basis in the institute Visitors Block depending on availability and on first come first served basis. Participants who require accommodation in hotels will be arranged on PAYMENT basis. Warangal city covers a wide range of hotels and other accommodation facilities to suit every budget. Participants are advised to contact the hotels directly and book their accommodation. However, in case of difficulty, we will assist on your prior request.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
+                <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Delegates from Academic, R&D Institutions</td>
+                        <td>Rs. 2000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Delegates from Industry</td>
+                        <td>Rs. 6000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Students</td>
+                        <td>Rs. 1000/- </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-default">BEST PAPER AWARD</span></center></h2><br>
+                <p>
+                    A " Best Paper Award " will be conferred to the author(s) of a full paper presented at the conference.
+                </p>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2016 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/ece/" target="_blank">Department of ECE, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Reach Us:</b></h4>
+                                <b>E-mail : </b> treat2017.nitw@gmail.com<br>
+                                <b>Ph : </b>0870-2462412 
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+</body>
+
+</html>

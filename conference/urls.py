@@ -2,6 +2,9 @@ from django.conf.urls import url,include
 from . import views
 
 urlpatterns = [
+	url(r'^treat17/$',views.treat),
+	url(r'^treat17/about/$',views.treatabout),
+	url(r'^treat17/links/$',views.treatlinks),
 	url(r'^(?P<alias>[A-Za-z0-9.-]+)/$',views.index),
 	url(r'^make_payment/$',views.make_payment,name='make_payment'),
 	url(r'^payment/$',views.payment,name='payment'),
