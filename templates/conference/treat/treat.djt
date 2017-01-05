@@ -66,6 +66,20 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="/profile/1/">Profile</a> 
+                    </li>
+                    <li>
+                        <a href="/signout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
