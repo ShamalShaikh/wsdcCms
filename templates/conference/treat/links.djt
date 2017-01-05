@@ -1,0 +1,134 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Treat'17</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/treat17">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/conference/treat17/links">Important Links</a>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Registration Form</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
+                <br><br>
+                <h4><b><ol>
+                    <li><a href="docs/TREAT-Brochure.doc">Brochure</a></li><br>
+                    <li><a href="docs/paper_template.doc">Full Paper Template</a></li><br>
+                    <li><a href="#">Copyright Transfer Form</a></li><br>
+                    <li><a href="docs/TREAT- Schedule 2016.doc">Schedule</a></li>
+                </ol></b></h4>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2016 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/ece/" target="_blank">Department of ECE, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Reach Us:</b></h4>
+                                <b>E-mail : </b> treat2017.nitw@gmail.com<br>
+                                <b>Ph : </b>0870-2462412 
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+</body>
+
+</html>
