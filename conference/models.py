@@ -64,3 +64,14 @@ class Conf_Paper(models.Model):
 
 	def __str__(self):
 	    return str(self.papername)
+
+
+class Paper_Remark(models.Model):
+	manager = models.ForeignKey(Manager)
+	content = models.TextField()
+	conf_paper = models.ForeignKey(Conf_Paper)
+	user = models.ForeignKey(User)
+	timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
+
+	def __str__(self):
+		return str(str(self.manager) + " " + self.content[:20] + "....")
