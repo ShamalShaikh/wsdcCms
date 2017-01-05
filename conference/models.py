@@ -27,7 +27,7 @@ class Branch(models.Model):
 
 class Conference(models.Model):
 	conference_id = models.AutoField(primary_key = True)
-	conference_name = models.CharField(max_length = 50)
+	conference_name = models.CharField(max_length = 100)
 	conference_alias = models.CharField(max_length = 50,null=True,blank=True)
 	startDate = models.DateField()
 	endDate = models.DateField()

@@ -132,3 +132,14 @@ def dashboard(request,alias):
 
 	return render(request, 'conference/upload_paper.djt',response)
 
+def treat(request):
+	response={}
+	return render(request, 'conference/treat/treat.djt',response)
+
+def treatabout(request):
+	response={}
+	return render(request, 'conference/treat/about.djt',response)
+
+def treatlinks(request):
+	response={}
+	return render(request, 'conference/treat/links.djt',response)
