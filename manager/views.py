@@ -108,8 +108,9 @@ def conference_landing(request,cid,type):
 			paidtrans.append(payment)
 		except:
 			print "Payment not done"
-		for paper in regconf.papers.all() :
-			papers.append(paper)
+	paper_conf = Conf_Paper.objects.filter(conf_id=cid)
+	for paper in paper_conf:
+		papers.append(paper)
 
 
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
@@ -332,7 +333,7 @@ def paper_remark(request, paper_id):
 
 		remark.save() 
 		return HttpResponseRedirect('/manager/assignreviewer/' + paper_id +"/")
-		
+
 	return HttpResponseRedirect('/manager/assignreviewer/' + paper_id +"/")
 
 
