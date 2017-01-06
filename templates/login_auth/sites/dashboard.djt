@@ -22,7 +22,7 @@
 				<a class="content" href="/conference/{{conference.conference_id}}">
                     <div class="header">{{conference.conference_name}}</div>
                 </a>
-                <a class="content" style="color:black; font-size: 16px; " href="/conference/{{conference.conference_id}}">
+                <a class="content" style="color:black; font-size: 16px; " href="/conference/{{conference.conference_alias}}">
 	             	<div class="left floated">Start Date : {{conference.startDate}} <br><br>
 	             	End Date : {{conference.endDate}}
 	             	</div>
