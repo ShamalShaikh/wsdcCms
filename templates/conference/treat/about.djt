@@ -61,9 +61,30 @@
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Registration Form</a></li>
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
                         </ul>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <!-- <a href="/profile/1/">Profile</a>  -->
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -133,6 +154,34 @@
 
     </div>
     <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     
 </body>
 
