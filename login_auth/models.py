@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from conference.models import *
 
-
 def get_user_profile_picture_path(instance,filename):
     return 'userprofile/{0}'.format(filename)
 
@@ -20,6 +19,7 @@ class Payment(models.Model):
 	amount = models.IntegerField(default=0)
 	payment_mode = models.CharField(max_length=20,choices=payment_choice)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
+	pic_of_id = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
@@ -37,7 +37,7 @@ class Registered_Conference(models.Model):
 		return (self.user.username+" --> "+self.conf_id.conference_name)
 
 class UserProfile(models.Model):
-	user = models.OneToOneField(User)
+	user = models.ForeignKey(User)
 	contact = models.CharField(max_length=20,null=True)
 	profilepic = models.ImageField(upload_to=get_user_profile_picture_path ,null=True, blank=True)
 	gender = models.CharField(max_length=10,null=True)

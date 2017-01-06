@@ -21,6 +21,9 @@
       </h2>
       <br>
     {% if paidtrans %}
+    <div float="right">
+      <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
+    </div>
     <table class="ui celled table">
         <thead>
           <tr>
@@ -150,6 +153,46 @@
       </div>
       {% endif %}
 {% endifequal %}
+
+{% ifequal type '4' %}
+      <br>
+      <h2 class="ui header">
+        <div class="content">
+          Papers Uploaded by various users
+        </div>
+      </h2>
+      <br>
+      {% if papers %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Final Paper</th>
+          <th>Copyright Script</th>
+          <th>Manage Paper</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paper in papers %}
+          <tr>
+            <td>{{paper.uid}}</td>
+            <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+            <td>
+                <a href="#">Copyright Script</button>
+                
+            </td>
+            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui fluid button blue">Manage</button></a></center></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No papers Uploaded yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+
 </div>
 </div>
 </div>
