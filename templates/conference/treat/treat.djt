@@ -59,17 +59,24 @@
                     <li>
                         <a href="/conference/treat17/links">Important Links</a>
                     </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
-                            <li><a href="#">Registration Form</a></li>
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
                         </ul>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
                     <li>
-                       <a href="/profile/1/">Profile</a> 
+                       <!-- <a href="/profile/1/">Profile</a>  -->
+                       <a href="">Hi, {{request.user.first_name}}</a>
                     </li>
                     <li>
                         <a href="/signout/">Logout</a>
@@ -111,12 +118,16 @@
             <!-- /.col-md-8 -->
             <div class="col-md-6">
                 <center><h3 style="color:blue;"><b>17-18 February , 2017</b></h3>
-                <h3>Organised by<br><br>
+                <h4>
+                    Sponsored by<br><br>
+                    TEQIP-II, E&amp;ICT Academy,<br>
+                    NITW<br><br>
+                    Organised by<br><hr>
                     Department of Electronics & Communication <br>Engineering<br> <br>
                     National Institute of Technology Warangal<br>
                     Warangal 506 004. <br>
                     Telangana State, India.
-                </h3></center>
+                </h4></center>
             </div>
             <!-- /.col-md-4 -->
         </div>
@@ -338,7 +349,35 @@
 
     </div>
     <!-- /.container -->
-    
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 
 </html>
