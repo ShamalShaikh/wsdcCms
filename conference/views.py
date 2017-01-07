@@ -105,6 +105,13 @@ def dashboard(request,alias):
 	response['conference']= conference
 	response['conferences'] = conferences
 	response['payments'] = payments
+
+	try:
+		receipt = Payment.objects.get(user=request.user,conf_id=conference)
+		response['receipt'] = True
+	except:
+		response['receipt'] = False
+
 	papers = {}
 	finalpapers = {}
 	try :
@@ -168,6 +175,8 @@ def treat(request):
 def treatabout(request):
 	conference = Conference.objects.get(conference_alias='treat17')
 	response={}
+	response['conference']=conference
+	response['alias']='treat17'
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
 		if len(payment)==1 :
@@ -177,6 +186,8 @@ def treatabout(request):
 def treatlinks(request):
 	conference = Conference.objects.get(conference_alias='treat17')
 	response={}
+	response['conference']=conference
+	response['alias']='treat17'
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
 		if len(payment)==1 :

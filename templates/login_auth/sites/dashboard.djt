@@ -19,7 +19,7 @@
 			{% for conference in conferences %}
 			<div class="ui column">
 			<div class="ui fluid link red card">
-				<a class="content" href="/conference/{{conference.conference_id}}">
+				<a class="content" href="/conference/{{conference.conference_alias}}">
                     <div class="header">{{conference.conference_name}}</div>
                 </a>
                 <a class="content" style="color:black; font-size: 16px; " href="/conference/{{conference.conference_alias}}">
