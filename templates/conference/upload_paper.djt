@@ -86,7 +86,7 @@
             </div>
 
           <div class="ui fluid segment">
-            {% if final_paper %}
+            {% if final_paper and receipt %}
             <form class="ui form" action="/conference/upload_final_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
               {% csrf_token %}
                 <div class="field" style="margin-left: 35%; width:250px;">
@@ -127,8 +127,11 @@
                 <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
                 </div>
             </form>
-          {%else%}
-            <h2>You have already uploaded all final papers</h2>
+          {% elif not receipt %}
+            <center><h3>You have not uploaded the payment receipt yet. Please upload it first!!!</h3>
+            </center>
+          {% else %}
+            <center><h3>You have already uploaded all final papers</h3></center>
           {% endif %}
           </div>
         </div>
