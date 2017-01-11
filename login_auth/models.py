@@ -39,6 +39,7 @@ class Registered_Conference(models.Model):
 class UserProfile(models.Model):
 	user = models.ForeignKey(User)
 	contact = models.CharField(max_length=20,null=True)
+	institute = models.CharField(max_length=100,null=True)
 	profilepic = models.ImageField(upload_to=get_user_profile_picture_path ,null=True, blank=True)
 	gender = models.CharField(max_length=10,null=True)
 	regConferences = models.ManyToManyField(Registered_Conference,null=True,blank=True)

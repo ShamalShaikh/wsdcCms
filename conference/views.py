@@ -125,7 +125,7 @@ def dashboard(request,alias):
 		response['upload_paper']=False 
 	response['papers']=papers
 	for paper in papers:
-		print paper.paper_id
+		# print paper.paper_id
 		try:
 			finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
 			finalpapers.append(finalpaper)
