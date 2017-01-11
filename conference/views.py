@@ -113,23 +113,24 @@ def dashboard(request,alias):
 		response['receipt'] = False
 
 	papers = {}
-	finalpapers = []
+	finalpapers =[]
 	try :
 		papers = Conf_Paper.objects.filter(uid=request.user, conf_id=conference)
-	except:
+	except Exception as e:
+		print str(e)
 		papers = {}
 	if len(papers) < conference.max_papers:
 		response['upload_paper'] = True
 	else:
 		response['upload_paper']=False 
 	response['papers']=papers
-
 	for paper in papers:
 		# print paper.paper_id
 		try:
 			finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
 			finalpapers.append(finalpaper)
-		except:
+		except Exception as e:
+			print str(e)
 			print "No final paper for this yet"
 
 	print finalpapers
