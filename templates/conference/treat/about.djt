@@ -54,22 +54,25 @@
                         <a href="/conference/treat17/about">About Us</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li>
                         <a href="/conference/treat17/links">Important Links</a>
                     </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                    <li>
+                        <a href="/Register">Register</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
                         </ul>
                     </li>
-                    {% if request.user.is_authenticated %}
                     <li>
                         <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
                     </li>
                     {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}

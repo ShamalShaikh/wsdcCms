@@ -54,22 +54,25 @@
                         <a href="/conference/treat17/about">About Us</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li>
                         <a href="/conference/treat17/links">Important Links</a>
                     </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Registration <span class="caret"></span></a>
+                    <li>
+                        <a href="/Register">Register</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
                         </ul>
                     </li>
-                    {% if request.user.is_authenticated %}
                     <li>
                         <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
                     </li>
                     {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
@@ -107,7 +110,13 @@
                     <li><a href="docs/TREAT- Schedule 2016.doc">Schedule</a></li>
                 </ol></b></h4>
             </div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <br><br><br>
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
         </div>
         
         <!-- Footer -->
@@ -169,6 +178,40 @@
         {% else %}
             <h3>You have not uploaded the payment receipt yet</h3>
         {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="instructions" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Instructions</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Steps to register</h4>
+        <ol>
+            <li>Click on register tab at the top</li>
+            <li>Fill in the details and click on register</li>
+            <li>Login with your credentials</li>
+            <li>Congrats !!! You are succesfully registered on website</li>
+        </ol>
+        <h4>Steps for Payment</h4>
+        <ol>
+            <li>Pay the fee through NEFT ( or in worst case DD )</li>
+            <li>Select "upload payment Receipt" option from the navbar at top</li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+            <li>Now your work is done.Wait for approval/Verification</li>
+            <li>You can check the status using option given in payment dropdown</li>
+        </ol>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
