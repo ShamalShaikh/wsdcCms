@@ -1,9 +1,9 @@
   <div class="four wide column">
     <div class="ui vertical menu ">
-      <a class="active item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">1</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved<div class="ui teal left pointing label">1</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">1</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">1</div></a>
+      <a class="active item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">{{regusercount}}</div></a>
+      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved<div class="ui teal left pointing label">{{ddcount}}</div></a>
+      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
       <!--<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a>--!>
     </div>
   </div>

@@ -75,7 +75,7 @@
                     {% if request.user.is_authenticated %}
                     <li>
                        <!-- <a href="/profile/1/">Profile</a>  -->
-                       <a href="">Hi, {{request.user.first_name}}</a>
+                       <a href="">Hi, {{request.user.username}}</a>
                     </li>
                     <li>
                         <a href="/signout/">Logout</a>

@@ -158,7 +158,7 @@
       <br>
       <h2 class="ui header">
         <div class="content">
-          Papers Uploaded by various users
+          Final Papers Uploaded by various users
         </div>
       </h2>
       <br>
@@ -169,19 +169,17 @@
           <th>Name</th>
           <th>Final Paper</th>
           <th>Copyright Script</th>
-          <th>Manage Paper</th>
           </tr>
         </thead>
         <tbody>
-          {% for paper in papers %}
+          {% for paper in finalpapers %}
           <tr>
-            <td>{{paper.uid}}</td>
-            <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+            <td>{{paper.papername}}</td>
+            <td><a class="ui fluid orange button" href="/media/{{paper.related_paper.paperfile}}" target="blank">Download Paper</a></td>
             <td>
-                <a href="#">Copyright Script</button>
+                <a class="ui fluid orange button" href="/media/{{paper.copyright_form}}">Download Copyright form</button>
                 
             </td>
-            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui fluid button blue">Manage</button></a></center></td>
           </tr>
           {% endfor %}
         </tbody>
