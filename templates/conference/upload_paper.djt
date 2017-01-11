@@ -9,10 +9,10 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          <a class="item" data-tab="first">Upload Paper</a>
+          <a class="active item" data-tab="first">Upload Paper</a>
           <a class="item" data-tab="second">Final Upload</a>
         </div>
-      <div class="ui bottom attached tab segment" data-tab="first">
+      <div class="ui bottom attached tab active segment" data-tab="first">
           <div class="ui segment">
         {% if papers %}
         <table class="ui celled table">

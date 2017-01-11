@@ -99,6 +99,7 @@ def conference_landing(request,cid,type):
 	paidtrans = []
 	pending_dds= []
 	papers = []
+	final_papers = []
 	rejected_dds = []
 	for regconf in regconfs:
 		user = regconf.user
@@ -111,7 +112,12 @@ def conference_landing(request,cid,type):
 	paper_conf = Conf_Paper.objects.filter(conf_id=cid)
 	for paper in paper_conf:
 		papers.append(paper)
-
+		try:
+			finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
+			final_papers.append(finalpaper)
+		except Exception as e:
+			print str(e)
+			print "No final paper for this yet"
 
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
 		if pendingtrans.is_aprooved==False and pendingtrans.is_rejected==False:
@@ -123,12 +129,18 @@ def conference_landing(request,cid,type):
 
 	response={}
 	response['users']=users
+	print users
+	response['regusercount']=len(users)
 	response['paidtrans']=paidtrans
 	response['papers']=papers
+	response['papercount']=len(papers)
 	response['pending_dds']=pending_dds
+	response['ddcount']=len(pending_dds)
 	response['rejected_dds']=rejected_dds
 	response['type']=type
 	response['conference']=conference
+	response['finalpapers']=final_papers
+	response['finalsubcount']=len(final_papers)
 	return render(request,'manager/conf_navbar.djt',response)
 
 def reviewerAssigned(request, paper_id, u_id):

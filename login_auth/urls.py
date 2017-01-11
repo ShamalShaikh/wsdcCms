@@ -6,6 +6,7 @@ urlpatterns = [
 	url(r'^$',RedirectView.as_view(url='/conference/treat17/')),
 	url(r'^Register/$',views.Register,name='Register'),
 	url(r'^register/$',views.register,name='register'),
+	url(r'^signin$',views.signin,name='signin'),
 	url(r'^signin/$',views.signin,name='signin'),
 	url(r'^signout/$',views.signout,name='signout'),
 	url(r'^dashboard/$',RedirectView.as_view(url='/conference/treat17/')),
