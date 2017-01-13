@@ -212,6 +212,16 @@
             <li>Now your work is done.Wait for approval/Verification</li>
             <li>You can check the status using option given in payment dropdown</li>
         </ol>
+        <h4>Steps for Upload of Paper</h4>
+        <ol>
+            <li>Select upload paper option from navbar</li>
+            <li>Upload the paper</li>
+            <li>Wait for the response of approval. You will receive an e-mail for the same (There will be no mail for disapproval.)</li>
+            <li>Once you receive the mail, Pay the registration fee and upload it's scanned copy</li>
+            <li>Then from the same upload paper option, go to final paper upload</li>
+            <li>Upload Copyright Form (Get the same from important links page)</li>
+            <li>Upload final paper, and you are done !!!</li>
+        </ol>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
