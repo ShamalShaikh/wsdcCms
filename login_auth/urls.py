@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
 	url(r'^$',RedirectView.as_view(url='/conference/treat17/')),
+	url(r'^treat2017/$',RedirectView.as_view(url='/conference/treat17/')),
 	url(r'^Register/$',views.Register,name='Register'),
 	url(r'^register/$',views.register,name='register'),
 	url(r'^signin$',views.signin,name='signin'),
