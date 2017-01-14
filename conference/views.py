@@ -36,7 +36,13 @@ def index(request,alias):
 @login_required(login_url='/signin')
 def make_payment(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
-	return render(request,'conference/payment.djt',{'conference':conference})
+	payments = Payment.objects.filter(user=request.user,conf_id=conference)
+	rejected_payments = Rejected_payment.objects.filter(user=request.user,conf_id=conference)
+	response = {}
+	response['conference'] = conference
+	response['payments'] = payments
+	response['rejected_payments'] = rejected_payments
+	return render(request,'conference/payment.djt',response)
 
 @login_required(login_url='/signin')
 def payment(request,alias):
@@ -46,6 +52,7 @@ def payment(request,alias):
 		user = request.user
 		conf_id = Conference.objects.get(conference_alias=alias)
 		amount = 0
+		now = datetime.datetime.now()
 
 		previousPayment = Payment.objects.filter(user=request.user,conf_id=conf_id)
 		print previousPayment
@@ -54,6 +61,7 @@ def payment(request,alias):
 			previousPayment[0].pic_of_id = id_pic
 			previousPayment[0].is_rejected = False
 			previousPayment[0].remarks = ""
+			previousPayment[0].date = now.strftime("%Y-%m-%d")
 			previousPayment[0].save()
 		else:
 			pay = Payment()
@@ -64,6 +72,7 @@ def payment(request,alias):
 			pay.pic_of_id = id_pic
 			pay.is_approved = False
 			pay.payment_mode = 'dd'
+			pay.date = now.strftime("%Y-%m-%d")
 			pay.save()
 		url = '/conference/'+alias
 		return redirect(url)
@@ -169,7 +178,7 @@ def treat(request):
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
 		if len(payment)==1 :
-			response['payment'] = payment
+			response['payment'] = payment[0]
 
 	return render(request, 'conference/treat/treat.djt',response)
 

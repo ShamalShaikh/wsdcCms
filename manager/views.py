@@ -213,6 +213,7 @@ def disapproval(request):
 		rejected_payment.user = payment.user
 		rejected_payment.pic_of_dd = payment.pic_of_dd
 		rejected_payment.date = now.strftime("%Y-%m-%d")
+		rejected_payment.remarks = payment.remarks
 		rejected_payment.save()
 		url = '/manager/conference_landing/'+request.POST['cid']+'/2/'
 	return redirect(url)

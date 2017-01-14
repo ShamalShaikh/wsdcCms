@@ -22,5 +22,37 @@
 	        </div>
 		</form>
 	</div>
+	{% if payments or rejected_payments %}
+	<div class="ui fluid segment">
+		<table class="ui celled table">
+			<thead>
+			<tr>
+				<th>Payment Date</th>
+				<th>Status</th>
+				<th>Remarks</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for pay in payments %}
+				{% if not pay.is_rejected %}
+				<tr>
+				<td>{{pay.date}}</td>
+				<td>{% if pay.is_aprooved %}Aprooved {%else%} Not yet Verified {% endif %}</td>
+				<td></td>
+				</tr>
+				{% endif %}
+			{% endfor %}
+
+			{% for pay in rejected_payments %}
+				<tr>
+				<td>Rejection Date : {{pay.date}}</td>
+				<td>Rejected</td>
+				<td>{{pay.remarks}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
 </div>
 {% endblock %}
