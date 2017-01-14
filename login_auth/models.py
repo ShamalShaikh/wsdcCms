@@ -23,6 +23,7 @@ class Payment(models.Model):
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
+	date = models.DateField(null=True)
 
 	def __unicode__(self):
 		return (self.user.username+" for "+self.conf_id.conference_name)
@@ -53,6 +54,7 @@ class Rejected_payment(models.Model):
 	user = models.ForeignKey(User)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
 	date = models.DateField()
+	remarks = models.CharField(max_length=50,null=True,blank=True)
 
 	def __unicode__(self):
 		return (self.user.username+" for "+self.conf_id.conference_name+" - "+self.date.strftime("%Y-%m-%d"))
