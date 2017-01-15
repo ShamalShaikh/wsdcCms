@@ -11,13 +11,13 @@ sendfile_storage = FileSystemStorage(location=settings.SENDFILE_ROOT)
 
 # Create your models here.
 def get_conf_image_path(instance,filename):
-    return 'conference_images/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+    return 'conference_images/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()),filename)
 
 def get_conf_paper_path(instance,filename):
-	return 'conference_papers/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+	return 'conference_papers/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()),filename)
 
 def get_final_paper_path(instance,filename):
-	return 'conference_papers/final_papers/{0}/{1}'.format(instance.related_paper.conf_id.conference_name,filename)
+	return 'conference_papers/final_papers/{0}/{1}'.format("".join(instance.related_paper.conf_id.conference_name.split()),filename)
 
 def validate(value):
 	    import os
