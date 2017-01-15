@@ -38,7 +38,7 @@
             
             {% for paper in papers %}
               <tr>
-                <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+                <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
                 <td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
                 {% if not paper.under_review %}
                 <td><center><button class="ui button green reupload_btn" pid="{{paper.paper_id}}">Upload again</button></center></td>
@@ -85,7 +85,7 @@
                   
                   {% for paper in finalpapers %}
                   <tr>
-                    <td><a href="/media/{{paper.final_file}}" target="blank">{{paper.papername}}</a></td>
+                    <td><a href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">{{paper.papername}}</a></td>
                   </tr>
                   {% endfor %}
 

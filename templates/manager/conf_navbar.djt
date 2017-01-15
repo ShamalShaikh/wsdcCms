@@ -35,7 +35,7 @@
           {% for paidtran in paidtrans %}
             <tr>
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
-            <td><a href="/media/{{paidtran.pic_of_dd}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -68,7 +68,7 @@
           {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td><a href="/media/{{pendingdd.pic_of_dd}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show dd</a></td>
             <td><center><a href="/manager/approve_payment/{{pendingdd.id}}"><button class="ui button green">Approve</button></a></center></td>
             <td><center><button class="ui button red disapprove_btn" payid={{pendingdd.id}}>Disapprove</button></center></td>
             </tr>
@@ -102,7 +102,7 @@
           <tr>
             <td>{{rejected_dd.user.username}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
-            <td><a href="/media/{{rejected_dd.pic_of_dd}}" target="blank">show dd</a></td>
+            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show dd</a></td>
           </tr>
         {% endfor %}
         </tbody>
@@ -132,7 +132,7 @@
           {% for paper in papers %}
           <tr>
             <td>{{paper.uid}}</td>
-            <td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+            <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
             <td>
                 {%if paper.is_approved%}
                   <button class="ui fluid button green">Approved</button>
@@ -175,9 +175,9 @@
           {% for paper in finalpapers %}
           <tr>
             <td>{{paper.papername}}</td>
-            <td><a class="ui fluid orange button" href="/media/{{paper.related_paper.paperfile}}" target="blank">Download Paper</a></td>
+            <td><a class="ui fluid orange button" href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">Download Paper</a></td>
             <td>
-                <a class="ui fluid orange button" href="/media/{{paper.copyright_form}}">Download Copyright form</button>
+                <a class="ui fluid orange button" href="/conference/downloadfinalcf/{{paper.id}}">Download Copyright form</button>
                 
             </td>
           </tr>

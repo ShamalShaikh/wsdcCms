@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render, render_to_response, redirect
-from django.http import HttpResponse, HttpResponseRedirect, HttpRequest, Http404,JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest, Http404,JsonResponse,HttpResponseForbidden
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
@@ -8,8 +8,31 @@ from conference.models import *
 from login_auth.models import *
 from manager.models import *
 import datetime
-
+from sendfile import sendfile
 # Create your views here.
+@login_required(login_url='/signin')
+def paperdownload(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	if not request.user.is_superuser and request.user != paper.uid:
+		return HttpResponseForbidden('Sorry, you cannot access this file')
+	return sendfile(request, paper.paperfile.path)
+
+@login_required(login_url='/signin')
+def finalpaperdownload(request, final_paper_id):
+	paper = Final_paper.objects.get(id=final_paper_id)
+	if not request.user.is_superuser and request.user != paper.related_paper.uid:
+		return HttpResponseForbidden('Sorry, you cannot access this file')
+	return sendfile(request, paper.final_file.path)
+
+@login_required(login_url='/signin')
+def finalcfdownload(request, final_paper_id):
+	paper = Final_paper.objects.get(id=final_paper_id)
+	if not request.user.is_superuser and request.user != paper.related_paper.uid:
+		return HttpResponseForbidden('Sorry, you cannot access this file')
+	return sendfile(request, paper.copyright_form.path)
+
+
+
 def index(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	response = {}
