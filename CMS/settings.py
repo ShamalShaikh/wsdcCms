@@ -135,3 +135,9 @@ STATICFILES_DIRS = ('./static',)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# SENDFILE_BACKEND = 'sendfile.backends.development'
+SENDFILE_BACKEND = 'sendfile.backends.xsendfile'
+#SENDFILE_BACKEND = 'sendfile.backends.nginx'
+SENDFILE_ROOT = os.path.join(BASE_DIR, 'protected')
+SENDFILE_URL = '/protected'

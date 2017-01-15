@@ -2,6 +2,10 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from conference.models import *
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+
+sendfile_storage = FileSystemStorage(location=settings.SENDFILE_ROOT)
 
 def get_user_profile_picture_path(instance,filename):
     return 'userprofile/{0}'.format(filename)
@@ -18,8 +22,8 @@ class Payment(models.Model):
 	conf_id = models.ForeignKey(Conference)
 	amount = models.IntegerField(default=0)
 	payment_mode = models.CharField(max_length=20,choices=payment_choice)
-	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
-	pic_of_id = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
+	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
+	pic_of_id = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
@@ -52,7 +56,7 @@ class UserProfile(models.Model):
 class Rejected_payment(models.Model):
 	conf_id = models.ForeignKey(Conference)
 	user = models.ForeignKey(User)
-	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True)
+	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
 	date = models.DateField()
 	remarks = models.CharField(max_length=50,null=True,blank=True)
 
