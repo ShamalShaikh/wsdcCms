@@ -11,7 +11,7 @@ def get_user_profile_picture_path(instance,filename):
     return 'userprofile/{0}'.format(filename)
 
 def get_dd_path(instance,filename):
-	return 'payments/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+	return 'payments/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()),filename)
 
 class Payment(models.Model):
 	payment_choice = (
