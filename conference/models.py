@@ -4,16 +4,20 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from login_auth.models import *
 from manager.models import Manager
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+
+sendfile_storage = FileSystemStorage(location=settings.SENDFILE_ROOT)
 
 # Create your models here.
 def get_conf_image_path(instance,filename):
-    return 'conference_images/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+    return 'conference_images/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()),filename)
 
 def get_conf_paper_path(instance,filename):
-	return 'conference_papers/{0}/{1}'.format(instance.conf_id.conference_name,filename)
+	return 'conference_papers/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()),filename)
 
 def get_final_paper_path(instance,filename):
-	return 'conference_papers/final_papers/{0}/{1}'.format(instance.related_paper.conf_id.conference_name,filename)
+	return 'conference_papers/final_papers/{0}/{1}'.format("".join(instance.related_paper.conf_id.conference_name.split()),filename)
 
 def validate(value):
 	    import os
@@ -63,7 +67,7 @@ class Conf_Paper(models.Model):
 	is_approved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	under_review = models.BooleanField(default=False)
-	paperfile = models.FileField(upload_to=get_conf_paper_path, validators=[validate], null=True, blank=True)
+	paperfile = models.FileField(upload_to=get_conf_paper_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
 
 	def __str__(self):
 	    return str(self.papername)
@@ -71,8 +75,8 @@ class Conf_Paper(models.Model):
 class Final_paper(models.Model):
 	papername = models.CharField(max_length=50)
 	related_paper = models.OneToOneField(Conf_Paper, on_delete = models.CASCADE)
-	copyright_form = models.FileField(upload_to=get_final_paper_path, validators=[validate], null=True, blank=True)
-	final_file = models.FileField(upload_to=get_final_paper_path, validators=[validate], null=True, blank=True)
+	copyright_form = models.FileField(upload_to=get_final_paper_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
+	final_file = models.FileField(upload_to=get_final_paper_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
 
 	def __str__(self):
 	    return str(self.papername)
