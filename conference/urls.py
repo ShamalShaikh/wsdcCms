@@ -12,4 +12,7 @@ urlpatterns = [
 	url(r'^upload_final_paper/(?P<alias>[A-Za-z0-9.-]+)/$',views.final_paper,name='upload_final_paper'),
 	url(r'^reupload_paper/(?P<alias>[A-Za-z0-9.-]+)/$',views.reupload_paper,name='reupload_paper'),
 	url(r'^(?P<alias>[A-Za-z0-9.-]+)/dashboard/$',views.dashboard,name='dashboard'),
+	url(r'^downloadpaper/(?P<paper_id>[A-Za-z0-9.-]+)/$',views.paperdownload,name='paperdownload'),
+	url(r'^downloadfinalpaper/(?P<final_paper_id>[A-Za-z0-9.-]+)/$',views.finalpaperdownload,name='finalpaperdownload'),
+	url(r'^downloadfinalcf/(?P<final_paper_id>[A-Za-z0-9.-]+)/$',views.finalcfdownload,name='finalcfdownload'),
 ]
