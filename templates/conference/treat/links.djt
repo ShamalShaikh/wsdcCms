@@ -105,7 +105,7 @@
                 <br><br>
                 <h4><b><ol>
                     <li><a href="{% static 'docs/TREAT-Brochure.docx' %}">Brochure</a></li><br>
-                    <li><a href="#">Full Paper Template</a></li><br>
+                    <li><a href="{% static 'docs/IEEE_Paper_Template.doc' %}">Full Paper Template</a></li><br>
                     <li><a href="{% static 'docs/transferForm.doc' %}">Copyright Transfer Form</a></li><br>
                     <li><a href="#">Schedule</a></li>
                 </ol></b></h4>
