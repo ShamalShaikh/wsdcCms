@@ -258,3 +258,41 @@ def final_paper(request,alias):
 
 	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)
+
+
+def nhtff(request):
+	conference = Conference.objects.get(conference_alias='nhtff2018')
+	response = {}
+	response['conference']=conference
+	response['alias']='nhtff2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/nhtff/home.djt',response)
+
+def nhtffabout(request):
+	conference = Conference.objects.get(conference_alias='nhtff2018')
+	response={}
+	response['conference']=conference
+	response['alias']='nhtff2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/nhtff/about.djt',response)
+
+def nhtfflinks(request):
+	conference = Conference.objects.get(conference_alias='nhtff2018')
+	response={}
+	response['conference']=conference
+	response['alias']='nhtff2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/nhtff/links.djt',response)
