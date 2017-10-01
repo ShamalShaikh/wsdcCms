@@ -39,6 +39,22 @@
 	              <input name="institute" placeholder="Institute" type="text" id="institute" required>
 	        </div>
 	        <div class="field">
+	              <label>Department</label>
+	              <input name="department" placeholder="Department" type="text" id="department" required>
+	        </div>
+	        <div class="field">
+	              <label>Contact</label>
+	              <input name="contact" placeholder="contact" type="text" id="contact" required>
+	        </div>
+	        <div class="field">
+	              <label>Gender</label>
+				  <select class="ui dropdown" name="gender" required>
+					<option value="">Gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				  </select>
+	        </div>
+	        <div class="field">
 	              <label>Password</label>
 	              <input name="password" placeholder="Password" type="password" id="password" required>
 	        </div>
@@ -54,4 +70,10 @@
 
 </div>
 
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript">
+		$('.ui.dropdown').dropdown();
+	</script>
 {% endblock %}

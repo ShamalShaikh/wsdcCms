@@ -4,20 +4,31 @@
 
 <div class="ui container">
 	<center>
-	<h1>{{paper.papername}}: Status and Reviews</h1>
+	<h1>{{paper.papername}}</h1>
 	</center>
 	<div class="ui divider"></div>
 	<br>
 	<center>
 
-{% if is_rejected %}
-<h2>Status : Rejected</h2>
-{% elif is_approved %}
-<h2>Status : Approved </h2>
-{% elif under_review %}
-<h2> Status : Under Review </h2>
-{% endif %}
-</center>
+		{%ifequal paper.status 0 %}
+	      <h3> Status :  Under Review </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 1 %}
+	      <h3> Status :  Asked for Revision </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 2 %}
+	      <h3> Status :  Accepted for Presentation </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 3 %}
+	      <h3> Status :  Accepted for Publication </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 4 %}
+	      <h3> Status :  Rejected </h3>
+	    {% endifequal %}
+
+	</center>
+	<br>
+	<div class="ui divider"></div>
 <br>
 
 <center>
@@ -32,7 +43,7 @@
 		</a>
 	</div>
 </div>
-<br><br>--!>
+<br><br>-->
 
 </center>
 <br><br>
@@ -65,11 +76,11 @@
 	</div>
 </div>
 <br> 
---!>
+-->
 
 
 
-<br><br>
+<!-- <br><br>
 <center>
 			<h3>Assign Reviewers</h3>
 		</center>
@@ -100,49 +111,98 @@
 	</form>
 </div>
 
-<br><br>
+<br><br> -->
 
 <center>
-	<h3>Remarks (Please Submit to Confirm) </h3>
+	<h3> Remarks : Submit Remarks file for asking revision of paper </h3>
 </center>
 <div class="ui fluid segment">
-	<form class="ui form" action="/manager/paper_remark/{{paper.paper_id}}/" method="post">
+	<form class="ui form" action="/manager/paper_remark/{{paper.paper_id}}/" method="post" enctype="multipart/form-data" id="remarkForm">
 		{% csrf_token %}
+		<div class="ui grid">
+			<div class="three wide centered column">
+				<b>Upload Remarks File <br> (PDF Only)</b>
+			</div>
+			<div class="three wide centered column">
+				<div class="field">
+					<input type="file" id="remfile" name="remarkFile">
+				</div>
+			</div>
+			<div class="six wide centered column">
+				<button class="ui fluid button green" type="button" id="remarkbtn">Submit</button>
+			</div>
+		</div>
 		
-        <div class="textfield">
+        <!-- <div class="textfield">
               <label>Remarks</label><br><br>
               <textarea name="remark" placeholder="Descriptive Remarks" type="text" id="remark">{{content}}</textarea>
-        </div>
-        <br>
-        <div style="margin-left: 40%;">
-        <button class="ui button green" type="submit" id="remark">Submit</button>
-        </div>
+        </div> -->
 	</form>
 </div>
 
 <br><br>
 
+<center><h3> Other Actions </h3></center>
 
-
-
-<div class="ui grid stackable columns">
-<div class="row">
-	<div class="eight wide column">
-		<a href="/manager/approvepaper/{{paper.paper_id}}">
-		<button class="ui fluid button green">
-		  Approve Paper
-		</button>
-		</a>
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/1/{{paper.paper_id}}">
+			<button class="ui fluid button green">
+			  Approve Paper for Presentation
+			</button>
+			</a>
+		</div>
 	</div>
-	<div class="eight wide column">
-		<a href="/manager/disapprovepaper/{{paper.paper_id}}">
-		<button class="ui fluid button red">
-		  Disapprove Paper
-		</button>
-		</a>
-	</div>
-</div>	
 </div>
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/2/{{paper.paper_id}}">
+			<button class="ui fluid button green">
+			  Approve Paper for Publication
+			</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/disapprovepaper/{{paper.paper_id}}">
+			<button class="ui fluid button red">
+			  Reject Paper
+			</button>
+			</a>
+		</div>
+	</div>
+</div>
+
 </div>
 {% endblock %}
 
+{% block script %}
+<script type="text/javascript">
+	$('#remarkbtn').click(function(){
+		var fileName = $("#remfile").val();
+	    var extension = fileName.split('.').pop();
+	    if(fileName) {
+	    	if(extension != 'pdf')
+	    	{
+	    		alert("Only PDF format is supported");
+	    		return false;
+	    	}
+	    } else {
+	    	file = $('input[name="remarkFile"]').val();
+	    	if(file.length<=0)
+	    	{
+	    		alert("No file selected");
+	        	return false;
+	    	}
+	    }
+	    $('#remarkForm').submit();
+	});
+</script>
+{% endblock %}

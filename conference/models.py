@@ -19,6 +19,9 @@ def get_conf_paper_path(instance,filename):
 def get_final_paper_path(instance,filename):
 	return 'conference_papers/final_papers/{0}/{1}'.format("".join(instance.related_paper.conf_id.conference_name.split()),filename)
 
+def get_remark_file_path(instance,filename):
+	return 'conference_papers/remarks/{0}/{1}'.format("".join(instance.conf_paper.conf_id.conference_name.split()),filename)
+
 def validate(value):
 	    import os
 	    ext = os.path.splitext(value.name)[1]
@@ -45,6 +48,7 @@ class Conference(models.Model):
 	fee = models.IntegerField(default=0)
 	max_papers = models.IntegerField(default=1)
 	branch = models.ForeignKey(Branch,null=True,blank=True)
+	paperCount = models.IntegerField(default=0)
 	def __str__(self):
 		return str(self.conference_name)
 
@@ -59,14 +63,19 @@ class Conf_Image(models.Model):
 
 class Conf_Paper(models.Model):
 	paper_id = models.AutoField(primary_key = True)
+	paperRefNum = models.CharField(max_length=15,blank=True)
 	papername = models.CharField(max_length=50)
 	conf_id = models.ForeignKey(Conference, on_delete = models.CASCADE)
 	uid = models.ForeignKey(User,on_delete = models.CASCADE)
 	description = models.CharField(max_length = 100)
-	submissionDate = models.DateField()
+	submissionDate = models.DateTimeField()
 	is_approved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	under_review = models.BooleanField(default=False)
+	status = models.IntegerField(default=0)
+	# 0 - under_review, 1 - revision, 2-approved_for_presentation, 3 - approved for publication
+	# 4 - rejected
+	revisionNumber = models.IntegerField(default=1)
 	paperfile = models.FileField(upload_to=get_conf_paper_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
 
 	def __str__(self):
@@ -84,7 +93,8 @@ class Final_paper(models.Model):
 class Paper_Remark(models.Model):
 	manager = models.ForeignKey(Manager)
 	content = models.TextField()
-	conf_paper = models.ForeignKey(Conf_Paper)
+	remarkFile = models.FileField(upload_to=get_remark_file_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
+	conf_paper = models.ForeignKey(Conf_Paper, related_name='remark')
 	user = models.ForeignKey(User)
 	timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 

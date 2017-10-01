@@ -59,9 +59,11 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
-                    <!-- <li>
-                        <a href="#">Register</a>
-                    </li> -->
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                    {% endif %}
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
@@ -90,9 +92,9 @@
                         <a href="/signout/">Logout</a>
                     </li>
                     {% else %}
-                    <!-- <li>
+                    <li>
                        <a href="/signin" style="color:red">Login</a> 
-                    </li> -->
+                    </li>
                     {% endif %}
                 </ul>
             </div>
@@ -151,7 +153,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Registrations will open soon.</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are Open. Last Date of paper Submission is 8th December 2017 !!!</marquee>
                 </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -449,14 +451,6 @@
             <li>Login with your credentials</li>
             <li>Congrats !!! You are succesfully registered on website</li>
         </ol>
-        <h4>Steps for Payment</h4>
-        <ol>
-            <li>Pay the fee through NEFT ( or in worst case DD )</li>
-            <li>Select "upload payment Receipt" option from the navbar at top</li>
-            <li>Upload picture of ID proof and the payment receipt</li>
-            <li>Now your work is done.Wait for approval/Verification</li>
-            <li>You can check the status using option given in payment dropdown</li>
-        </ol>
         <h4>Steps for Upload of Paper</h4>
         <ol>
             <li>Select upload paper option from navbar</li>
@@ -466,6 +460,14 @@
             <li>Then from the same upload paper option, go to final paper upload</li>
             <li>Upload Copyright Form (Get the same from important links page)</li>
             <li>Upload final paper, and you are done !!!</li>
+        </ol>
+        <h4>Steps for Payment</h4>
+        <ol>
+            <li>Pay the fee through NEFT ( or in worst case DD )</li>
+            <li>Select "upload payment Receipt" option from the navbar at top</li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+            <li>Now your work is done.Wait for approval/Verification</li>
+            <li>You can check the status using option given in payment dropdown</li>
         </ol>
       </div>
       <div class="modal-footer">
