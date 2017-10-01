@@ -19,6 +19,7 @@ import base64
 import httplib2
 import os
 from django.core.mail import EmailMessage
+import datetime
 # from mail import main 
 
 def signin(request):
@@ -103,9 +104,9 @@ def conference_landing(request,cid,type):
 	rejected_dds = []
 	for regconf in regconfs:
 		user = regconf.user
+		users.append(UserProfile.objects.get(user=user))
 		try:
-			payment = Payment.objects.get(user=user,conf_id=conference)
-			users.append(user)
+			payment = Payment.objects.get(user=user,conf_id=conference,is_aprooved=True)
 			paidtrans.append(payment)
 		except:
 			print "Payment not done"
@@ -129,9 +130,9 @@ def conference_landing(request,cid,type):
 
 	response={}
 	response['users']=users
-	print users
 	response['regusercount']=len(users)
 	response['paidtrans']=paidtrans
+	response['paidusers'] = len(paidtrans)
 	response['papers']=papers
 	response['papercount']=len(papers)
 	response['pending_dds']=pending_dds
@@ -192,10 +193,13 @@ def approve_payment(request,payid):
 	payment.is_aprooved=True
 	payment.is_rejected=False
 	payment.save()
-	regconf = Registered_Conference()
-	regconf.user = payment.user
-	regconf.conf_id = payment.conf_id
-	regconf.save()
+	try:
+		regconf = Registered_Conference.objects.get(conf_id=payment.conf_id,user=payment.user)
+	except:
+		regconf = Registered_Conference()
+		regconf.user = payment.user
+		regconf.conf_id = payment.conf_id
+		regconf.save()
 	print regconf.conf_id.conference_id
 	url = '/manager/conference_landing/'+str(regconf.conf_id.conference_id)+'/1/'
 	return redirect(url)
@@ -258,11 +262,12 @@ def questionnaire(request,cid):
 	return render(request,'manager/questionnaire.djt',response)
 
 
-def isApprovedPaper(request, paper_id):
+def isApprovedPaper(request, type,paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	paper.is_approved = True
 	paper.is_rejected = False
 	paper.under_review = False
+	paper.status = int(type)+1
 	paper.save()
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
@@ -271,11 +276,56 @@ def isDisapprovedPaper(request, paper_id):
 	paper.is_approved = False
 	paper.is_rejected = True
 	paper.under_review = False
+	paper.status = 4
 	paper.save()
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
-def export_xls(request, conference_name):
-	queryset = UserProfile.objects.all()
+# def export_xls(request, conference_name):
+# 	queryset = UserProfile.objects.all()
+# 	response = HttpResponse(content_type='application/ms-excel')
+# 	response['Content-Disposition'] = 'attachment; filename=UserData.xls'
+# 	wb = xlwt.Workbook(encoding='utf-8')
+# 	ws = wb.add_sheet("MyModel")
+
+# 	row_num = 0
+
+# 	columns = [
+# 	    (u"User", 6000),
+# 	    (u"Gender",6000),
+# 	    (u"Contact",6000),
+# 	    (u"regConferences", 20000),
+# 	]
+
+# 	font_style = xlwt.XFStyle()
+# 	font_style.font.bold = True
+
+# 	for col_num in xrange(len(columns)):
+# 	    ws.write(row_num, col_num, columns[col_num][0], font_style)
+# 	    ws.col(col_num).width = columns[col_num][1]
+
+# 	font_style = xlwt.XFStyle()
+# 	font_style.alignment.wrap = 1
+# 	l = len(queryset)
+
+# 	for query in queryset:
+# 		userp = query
+
+# 		conf = ""
+# 		reg_con = userp.regConferences.all()
+# 		i=1
+# 		for conferences in reg_con:
+# 			if conferences.conf_id.conference_name == conference_name:
+# 				row_num += 1
+# 				conf += str(i) + ": " + conferences.conf_id.conference_name + " "
+# 				i+=1
+# 				rows = [userp.user.username,userp.gender,userp.contact,conf]
+# 				for col_num in xrange(len(rows)):
+# 					ws.write(row_num, col_num, rows[col_num], font_style)
+
+# 	wb.save(response)
+# 	return response
+
+def export_xls(request, cid):
 	response = HttpResponse(content_type='application/ms-excel')
 	response['Content-Disposition'] = 'attachment; filename=UserData.xls'
 	wb = xlwt.Workbook(encoding='utf-8')
@@ -284,10 +334,16 @@ def export_xls(request, conference_name):
 	row_num = 0
 
 	columns = [
+		(u"Reference Number",6000),
 	    (u"User", 6000),
 	    (u"Gender",6000),
 	    (u"Contact",6000),
-	    (u"regConferences", 20000),
+	    (u"Email",6000),
+	    (u"Institute",10000),
+	    (u"Department",6000),
+	    (u"Tile Of Paper",20000),
+	    (u"TimeStamp",6000),
+	    (u"Conference", 20000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -299,22 +355,32 @@ def export_xls(request, conference_name):
 
 	font_style = xlwt.XFStyle()
 	font_style.alignment.wrap = 1
-	l = len(queryset)
 
-	for query in queryset:
-		userp = query
+	conference = Conference.objects.get(conference_id=cid)
+	papers = Conf_Paper.objects.filter(conf_id=conference)
 
-		conf = ""
-		reg_con = userp.regConferences.all()
-		i=1
-		for conferences in reg_con:
-			if conferences.conf_id.conference_name == conference_name:
-				row_num += 1
-				conf += str(i) + ": " + conferences.conf_id.conference_name + " "
-				i+=1
-				rows = [userp.user.username,userp.gender,userp.contact,conf]
-				for col_num in xrange(len(rows)):
-					ws.write(row_num, col_num, rows[col_num], font_style)
+	totalRows = len(papers)
+
+	for paper in papers:
+
+		row_num += 1
+
+		refnum = str(paper.paperRefNum)
+		nameOfPerson = paper.uid.first_name + " " + paper.uid.last_name
+		gender = paper.uid.profile.gender
+		contact = paper.uid.profile.contact
+		email = paper.uid.email
+		institute = paper.uid.profile.institute
+		department = paper.uid.profile.department
+		title = paper.papername
+		localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
+		timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
+		confname = conference.conference_name
+		dataRow = [refnum, nameOfPerson, gender, contact, email, institute, department,
+					title, timestamp, confname ]
+
+		for col_num in xrange(len(dataRow)) :
+			ws.write(row_num, col_num, dataRow[col_num], font_style)
 
 	wb.save(response)
 	return response
@@ -323,31 +389,26 @@ def paper_remark(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	manager = Manager.objects.get(user=request.user)
 	user = paper.uid
-	
-	remarks = Paper_Remark.objects.all()
-	content = ""
-
-	for rem in remarks:
-		if rem.user == user and rem.manager == manager and rem.conf_paper == paper:
-			content = rem.content
-
 
 	if request.method == 'POST':
-		content = request.POST['remark']
-		remark_check = Paper_Remark.objects.filter(conf_paper=paper).filter(user=user).filter(manager=manager)
+		remark_check = Paper_Remark.objects.filter(conf_paper=paper,manager=manager,user=user)
 		if remark_check:
 			remark = remark_check[0]
 		else:
 			remark = Paper_Remark()
 		remark.manager = manager
 		remark.user = user
-		remark.content = content
+		remark.remarkFile = request.FILES['remarkFile']
+		remark.content = ''
 		remark.conf_paper = paper
+		remark.save()
 
-		remark.save() 
-		return HttpResponseRedirect('/manager/assignreviewer/' + paper_id +"/")
+		paper.status = 1
+		paper.save()
 
-	return HttpResponseRedirect('/manager/assignreviewer/' + paper_id +"/")
+		return redirect('/manager/assignreviewer/' + paper_id +"/")
+
+	return redirect('/manager/assignreviewer/' + paper_id +"/")
 
 
 import smtplib

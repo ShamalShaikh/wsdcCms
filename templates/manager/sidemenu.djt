@@ -1,9 +1,20 @@
-  <div class="four wide column">
-    <div class="ui vertical menu ">
-      <a class="active item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">{{regusercount}}</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved<div class="ui teal left pointing label">{{ddcount}}</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
-      <a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
-      <!--<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a>--!>
-    </div>
-  </div>
+<div class="three wide column">
+	<div class="ui vertical menu ">
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">{{regusercount}}</div></a>
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/5">Approved DD's <br><br> (Paid Users)<div class="ui teal left pointing label">{{paidusers}}</div></a>
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved<div class="ui teal left pointing label">{{ddcount}}</div></a>
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
+
+		<!--<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a> -->
+
+		<a class="item" href="/manager/exportdata/{{conference.conference_id}}">
+		<button class="ui fluid button blue">Export Data</button></a>
+
+	</div>
+</div>

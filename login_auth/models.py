@@ -42,12 +42,13 @@ class Registered_Conference(models.Model):
 		return (self.user.username+" --> "+self.conf_id.conference_name)
 
 class UserProfile(models.Model):
-	user = models.ForeignKey(User)
+	user = models.OneToOneField(User,related_name='profile')
 	contact = models.CharField(max_length=20,null=True)
-	institute = models.CharField(max_length=100,null=True)
+	institute = models.CharField(max_length=255,null=True)
 	profilepic = models.ImageField(upload_to=get_user_profile_picture_path ,null=True, blank=True)
 	gender = models.CharField(max_length=10,null=True)
 	regConferences = models.ManyToManyField(Registered_Conference,null=True,blank=True)
+	department = models.CharField(max_length=255,null=True,blank=True)
 
 	def __unicode__(self):
 		return self.user.username

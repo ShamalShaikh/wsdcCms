@@ -15,9 +15,9 @@ urlpatterns = [
 	url(r'^approve_payment/(?P<payid>[0-9]+)/$',views.approve_payment,name='approve_payment'),
 	url(r'^disapproval/$',views.disapproval,name='disapproval'),
 	url(r'^questionnaire/(?P<cid>[0-9]+)/$',views.questionnaire,name='questionnaire'),
-	url(r'^approvepaper/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.isApprovedPaper),
+	url(r'^approvepaper/(?P<type>[0-9]+)/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.isApprovedPaper),
 	url(r'^disapprovepaper/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.isDisapprovedPaper),
-	url(r'^exportdata/(?P<conference_name>[A-Za-z0-9.-]+)/$', views.export_xls),
+	url(r'^exportdata/(?P<cid>[0-9]+)/$', views.export_xls),
 	url(r'^sendmail/$', views.sendmail),
 	url(r'^paper_remark/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.paper_remark),
 ]
