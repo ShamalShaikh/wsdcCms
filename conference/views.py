@@ -18,6 +18,14 @@ def paperdownload(request, paper_id):
 	return sendfile(request, paper.paperfile.path)
 
 @login_required(login_url='/signin')
+def remarkdownload(request, paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	remark = Paper_Remark.objects.get(conf_paper=paper)
+	if not request.user.is_superuser and request.user != paper.uid:
+		return HttpResponseForbidden('Sorry, you cannot access this file')
+	return sendfile(request, remark.remarkFile.path)
+
+@login_required(login_url='/signin')
 def finalpaperdownload(request, final_paper_id):
 	paper = Final_paper.objects.get(id=final_paper_id)
 	if not request.user.is_superuser and request.user != paper.related_paper.uid:
@@ -120,7 +128,13 @@ def upload_paper(request,alias):
 			paper.uid=request.user
 			paper.paperfile=request.FILES['paper_file']
 			paper.papername=request.POST['paper_name']
-			paper.submissionDate=now.strftime("%Y-%m-%d")
+			# paper.submissionDate=now.strftime("%Y-%m-%d")
+			paper.submissionDate = now
+			paper.status = 0
+			conference.paperCount += 1
+			conference.save()
+			refnum = '17' + str(conference.paperCount).zfill(4)
+			paper.paperRefNum = refnum
 			paper.save()
 			regconf.papers.add(paper)
 			regconf.save()
@@ -140,7 +154,10 @@ def dashboard(request,alias):
 
 	try:
 		receipt = Payment.objects.get(user=request.user,conf_id=conference)
-		response['receipt'] = True
+		if receipt.is_aprooved :
+			response['receipt'] = True
+		else :
+			response['receipt'] = False
 	except:
 		response['receipt'] = False
 
@@ -234,7 +251,10 @@ def reupload_paper(request,alias):
 	if request.method == 'POST' :
 		paper = Conf_Paper.objects.get(paper_id=request.POST['paperid'],uid=request.user)
 		paper.paperfile=request.FILES['paper_file']
-		paper.submissionDate=now.strftime("%Y-%m-%d")
+		# paper.submissionDate=now.strftime("%Y-%m-%d")
+		paper.submissionDate=now
+		paper.status = 0
+		paper.revisionNumber += 1
 		paper.save()
 	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)	
