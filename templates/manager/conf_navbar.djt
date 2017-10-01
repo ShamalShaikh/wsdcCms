@@ -11,31 +11,39 @@
 <br>
 <div class="ui grid">
   {%include "manager/sidemenu.djt" %}
-  <div class="twelve wide column">
+  <div class="thirteen wide column">
   {% ifequal type '1' %}
     <br>
     <h2 class="ui header">
+    <center>
         <div class="content">
           Registered Users
         </div>
+      </center>
       </h2>
       <br>
-    {% if paidtrans %}
-    <div float="right">
+    {% if users %}
+    <!-- <div float="right">
       <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
-    </div>
+    </div> -->
     <table class="ui celled table">
         <thead>
           <tr>
           <th>Name</th>
-          <th>view DD</th>
+          <th>Institute</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Contact</th>
           </tr>
         </thead>
         <tbody>
-          {% for paidtran in paidtrans %}
+          {% for profile in users %}
             <tr>
-            <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
-            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
+            <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
+            <td>{{profile.institute}}</td>
+            <td>{{profile.department}}</td>
+            <td>{{profile.user.email}}</td>
+            <td>{{profile.contact}}</td>
             </tr>
           {% endfor %}
         </tbody>
@@ -45,13 +53,60 @@
         <center><h3>No Registered Users !!!</h3></center>
       </div>
     {% endif %}
+  {% endifequal %}
+
+  {% ifequal type '5' %}
+    <br>
+    <h2 class="ui header">
+      <center>
+        <div class="content">
+          Users Whose Payment is Approved
+        </div>
+      </center>
+      </h2>
+      <br>
+    {% if paidtrans %}
+    <!-- <div float="right">
+      <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
+    </div> -->
+    <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Institute</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>view DD</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paidtran in paidtrans %}
+            <tr>
+            <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
+            <td>{{paidtran.user.profile.institute}}</td>
+            <td>{{paidtran.user.profile.department}}</td>
+            <td>{{paidtran.user.email}}</td>
+            <td>{{paidtran.user.profile.contact}}</td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+      <div class="ui segment">
+        <center><h3>No Approved DD's !!!</h3></center>
+      </div>
+    {% endif %}
 {% endifequal %}
 {% ifequal type '2' %}
       <br>
       <h2 class="ui header">
+      <center>
         <div class="content">
           Payments for Approval
         </div>
+      </center>
       </h2>
       {% if pending_dds %}
       <table class="ui celled table">
@@ -85,9 +140,11 @@
     {% if rejected_dds %}
     <br><br>
     <h2 class="ui header">
+     <center>
       <div class="content">
-        Rejected Payments
+       Rejected Payments
       </div>
+    </center>
     </h2>
       <table class="ui celled table">
         <thead>
@@ -110,12 +167,15 @@
     {% endif %}
 
 {% endifequal %}
+
 {% ifequal type '3' %}
       <br>
       <h2 class="ui header">
+        <center>
         <div class="content">
           Papers Uploaded by various users
         </div>
+        </center>
       </h2>
       <br>
       {% if papers %}
@@ -123,25 +183,39 @@
         <thead>
           <tr>
           <th>Name</th>
-          <th>Papers</th>
+          <th>RefNum</th>
+          <th>Title of Paper</th>
           <th>Status</th>
+          <th>Date</th>
+          <th>Revision Number</th>
           <th>Manage Paper</th>
           </tr>
         </thead>
         <tbody>
           {% for paper in papers %}
           <tr>
-            <td>{{paper.uid}}</td>
+            <td><h4>{{paper.uid.first_name}} {{paper.uid.last_name}}</h4></td>
+            <td>{{paper.paperRefNum}}</td>
             <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
             <td>
-                {%if paper.is_approved%}
-                  <button class="ui fluid button green">Approved</button>
-                {%elif paper.is_rejected%}
-                  <button class="ui fluid button red">Rejected</button>
-                {%else%}
-                  <button class="ui fluid button yellow">Under Review</button>
-                {%endif%}
+                {%ifequal paper.status 0 %}
+                  <h4>Under Review</h4>
+                {% endifequal %}
+                {%ifequal paper.status 1 %}
+                  <h4>Asked for Revision</h4>
+                {% endifequal %}
+                {%ifequal paper.status 2 %}
+                  <h4>Accepted for Presentation</h4>
+                {% endifequal %}
+                {%ifequal paper.status 3 %}
+                  <h4>Accepted for Publication</h4>
+                {% endifequal %}
+                {%ifequal paper.status 4 %}
+                  <h4>Rejected</h4>
+                {% endifequal %}
             </td>
+            <td>{{paper.submissionDate}}</td>
+            <td>{{paper.revisionNumber}}</td>
             <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui fluid button blue">Manage</button></a></center></td>
           </tr>
           {% endfor %}
@@ -157,9 +231,11 @@
 {% ifequal type '4' %}
       <br>
       <h2 class="ui header">
+      <center>
         <div class="content">
           Final Papers Uploaded by various users
         </div>
+      </center>
       </h2>
       <br>
       {% if papers %}
@@ -167,6 +243,8 @@
         <thead>
           <tr>
           <th>Name</th>
+          <th>RefNum</th>
+          <th>Title</th>
           <th>Final Paper</th>
           <th>Copyright Script</th>
           </tr>
@@ -174,6 +252,8 @@
         <tbody>
           {% for paper in finalpapers %}
           <tr>
+          <td>{{paper.related_paper.uid.first_name}} {{paper.related_paper.uid.last_name}}</td>
+            <td>{{paper.related_paper.paperRefNum}}</td>
             <td>{{paper.papername}}</td>
             <td><a class="ui fluid orange button" href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">Download Paper</a></td>
             <td>

@@ -56,9 +56,11 @@
                     <li>
                         <a href="/conference/nhtff2018/links">Important Links</a>
                     </li>
+                    {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="#">Register</a>
+                        <a href="/register">Register</a>
                     </li>
+                    {% endif %}
                     {% if request.user.is_authenticated %}
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -84,9 +86,9 @@
                         <a href="/signout/">Logout</a>
                     </li>
                     {% else %}
-                    <!-- <li>
+                    <li>
                        <a href="/signin" style="color:red">Login</a> 
-                    </li> -->
+                    </li>
                     {% endif %}
                 </ul>
             </div>

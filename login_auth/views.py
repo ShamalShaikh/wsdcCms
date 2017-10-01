@@ -50,6 +50,9 @@ def register(request):
 		username = request.POST['username']
 		email = request.POST['email']
 		institute = request.POST['institute']
+		department = request.POST['department']
+		conact = request.POST['contact']
+		gender = request.POST['gender']
 		if password1 != password2 :
 			response['message'] = "Password doesn't match"
 			return render(request,'login_auth/sites/register.djt',response)
@@ -65,6 +68,9 @@ def register(request):
 				userprofile = UserProfile()
 				userprofile.user = user
 				userprofile.institute = institute
+				userprofile.department = department
+				userprofile.contact = conact
+				userprofile.gender = gender
 				userprofile.save()
 				response['message'] = "Successfully Registered"
 				return render(request,'login_auth/sites/login.djt',response)
