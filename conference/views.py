@@ -9,6 +9,10 @@ from login_auth.models import *
 from manager.models import *
 import datetime
 from sendfile import sendfile
+from random import randint
+from django.core.mail import send_mail
+import smtplib
+
 # Create your views here.
 @login_required(login_url='/signin')
 def paperdownload(request, paper_id):
@@ -133,11 +137,32 @@ def upload_paper(request,alias):
 			paper.status = 0
 			conference.paperCount += 1
 			conference.save()
-			refnum = '17' + str(conference.paperCount).zfill(4)
-			paper.paperRefNum = refnum
+
+			count = 30
+			tempRefnum = '17'+str(randint(1000, 9999))
+			if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+				print "existing refnum"
+				while count > 0:
+					tempRefnum = '17'+str(randint(1000, 9999))
+					if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+						count -= 1
+						continue
+					else:
+						break
+			if count==0:
+				count = 1
+				tempRefnum = '17' + str(count).zfill(4)
+				while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+					count += 1
+					tempRefnum = '17' + str(count).zfill(4)
+			
+			paper.paperRefNum = tempRefnum
 			paper.save()
 			regconf.papers.add(paper)
 			regconf.save()
+
+			sendTrackingMail(paper)
+
 	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)
 
@@ -316,3 +341,28 @@ def nhtfflinks(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/nhtff/links.djt',response)
+
+def sendTrackingMail(paper):
+	#Mail application ID to applicant
+	receiver = paper.uid.email
+	sender = 'nhtff2018@nitw.ac.in'
+
+	content = "Tracking id : " + paper.paperRefNum+'\n\n'
+	content += "Title : "+ paper.papername + '\n\n'
+	content += "Dear Author\n\n"
+	content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "International Conference on Numerical Heat Transfer and Fluid Flow". \n\n'
+	content += 'Your submission was received in good order.\n\n'
+	content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/conference/nhtff2018.\n\n'
+	content += 'Thank you for submitting your work to the conference.\n\n'
+	content += 'Kind regards,\n\n'
+	content += 'Dr. D. Srinivasacharya\n\n'
+	content += 'Conference Chair, NHTFF-2018" \n\n'
+
+	rlist = []
+	rlist.append(receiver)
+	try:
+		send_mail('Tracking ID for uploaded paper',content,sender,rlist,fail_silently=False,)
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+
+	return
