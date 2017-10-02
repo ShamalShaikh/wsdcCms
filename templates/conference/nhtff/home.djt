@@ -444,30 +444,45 @@
         <h4 class="modal-title">Instructions</h4>
       </div>
       <div class="modal-body">
+        <hr>
         <h4>Steps to register</h4>
+        <hr>
         <ol>
             <li>Click on register tab at the top</li>
             <li>Fill in the details and click on register</li>
             <li>Login with your credentials</li>
             <li>Congrats !!! You are succesfully registered on website</li>
         </ol>
-        <h4>Steps for Upload of Paper</h4>
+        <hr><hr>
+        <h4>Steps to Upload the paper </h4>
+        <hr>
         <ol>
             <li>Select upload paper option from navbar</li>
-            <li>Upload the paper</li>
-            <li>Wait for the response of approval. You will receive an e-mail for the same (There will be no mail for disapproval.)</li>
-            <li>Once you receive the mail, Pay the registration fee and upload it's scanned copy</li>
-            <li>Then from the same upload paper option, go to final paper upload</li>
-            <li>Upload Copyright Form (Get the same from important links page)</li>
-            <li>Upload final paper, and you are done !!!</li>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the tracking id will e sent to you</li>
         </ol>
-        <h4>Steps for Payment</h4>
+        <hr><hr>
+        <h4>Peer review process</h4>
+        <hr>
         <ol>
-            <li>Pay the fee through NEFT ( or in worst case DD )</li>
-            <li>Select "upload payment Receipt" option from the navbar at top</li>
+            <li>The uploaded papers will be checked for similarity index</li>
+            <li>If it satisfy the required similarity index then the papers are sent to reviewers for peer review process.</li>
+            <li>The reviewers' recommendations determine whether a paper will be accepted for publication / accepted subject to change / subject to resubmission with significant changes / accepted for oral presentation / rejected</li>
+            <li>The recommendations of the reviewer will uploaded onto the website and the authors can view and do incorporate the corrections, if any.</li>
+            <li>For papers which require changes, the same reviewers will be used to ensure that the quality of the revised paper is acceptable.</li>
+        </ol>
+        <hr><hr>
+        <h4>"Steps for Payment" is to be replaced with "Final Submission and Payment of Registration fee"</h4>
+        <hr>
+        <ol>
+            <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
+            <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
             <li>Upload picture of ID proof and the payment receipt</li>
-            <li>Now your work is done.Wait for approval/Verification</li>
-            <li>You can check the status using option given in payment dropdown</li>
+            <li>Then from the same upload paper option, go to "final paper upload"</li>
+            <li>Upload Copyright Form (which is available at important links page)</li>
+            <li>Upload final paper, and you are done !!</li>
         </ol>
       </div>
       <div class="modal-footer">
