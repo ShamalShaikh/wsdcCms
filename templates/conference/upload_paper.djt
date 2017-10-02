@@ -31,6 +31,7 @@
         <table class="ui celled table">
           <thead>
             <tr>
+              <th>Tracking ID</th>
               <th>Title</th>
               <th>Status</th>
               <th></th>
@@ -40,6 +41,7 @@
             
             {% for paper in papers %}
               <tr>
+                <td>{{paper.paperRefNum}}</td>
                 <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
                 <td>
                   <b>
@@ -84,7 +86,7 @@
         <form class="ui form" action="/conference/upload_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="field" style="margin-left: 35%; width:250px;">
-                    <input name="paper_name" placeholder="paper name" type="text" id="paper_name" required>
+                    <input name="paper_name" placeholder="Title of Paper" type="text" id="paper_name" required>
               </div>
               <div class="field" style="margin-left: 33%;">
                     <input name="paper_file" type="file" id="paper_file" class="ui button blue">
@@ -128,7 +130,7 @@
             <form class="ui form" action="/conference/upload_final_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
               {% csrf_token %}
                 <div class="field" style="margin-left: 35%; width:250px;">
-                    <input name="paper_name" placeholder="paper name" type="text" id="paper_name" required>
+                    <input name="paper_name" placeholder="Title of Paper" type="text" id="paper_name" required>
                 </div>
 
                  <div class="field" style="margin-left: 35%; width:250px;">
