@@ -172,8 +172,8 @@
             </form>
           {% elif not receipt %}
             <center>
-              <h3>You have not uploaded the payment receipt yet. Please upload it first!!!
-              OR Payment has not been approved.</h3>
+              <h3>You have not uploaded the payment receipt yet. Please upload it first <br>
+              OR <br> Payment has not been approved.</h3>
             </center>
           {% else %}
             <center><h3>You have already uploaded all final papers</h3></center>
