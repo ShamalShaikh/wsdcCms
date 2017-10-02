@@ -10,13 +10,9 @@
         <h4>Steps for Upload of Paper</h4>
         <ol>
             <li>Select upload paper option from navbar</li>
-            <li>Upload the paper</li>
-            <li>Wait for the response of approval. You will receive an e-mail for the same (There will be no mail for disapproval.)</li>
-            <li>Once you receive the mail, Pay the registration fee and upload it's scanned copy</li>
-            <li>After Your Payment is Verified, you will be able to upload the final paper.</li>
-            <li>From the same upload paper option, go to final paper upload</li>
-            <li>Upload Copyright Form (Get the same from important links page)</li>
-            <li>Upload final paper, and you are done !!!</li>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the tracking id will be sent to you</li>
         </ol>
         <div class="ui divider"></div>
         <br>
