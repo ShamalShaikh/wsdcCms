@@ -153,12 +153,37 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Registrations are Open. Last Date of Paper Submission is 8th December 2017 !!!</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">Last Date for Submission of Abstracts for Oral Presentation only (but not full paper for publication) is 30th December 2017 !!!</marquee>
                 </div>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
+	<div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">LAST DATE FOR PAYMENT OF REGISTRATION FEE IS January 05 , 2018. </marquee>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+	<hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <span style="color:red; font-size:20px; font-weight: 900;">Publication:</span> <span style="color:black; font-weight:700; font-size:17px;">  All the papers submitted will be peer reviewed by two independent reviewers and selected papers will be published (without any publication charges) in the form of a special issue of the following journals. Plagiarism in any form is unethical and unacceptable. In order to ensure that the content submitted is original and trustworthy, a similarity check will be done. </span>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="row">
+            <div class="col-sm-12">
+                <p style="color:blue; font-weight:600; font-size:17px;">
+                    Abstract/text/figures/illustrations/photos/tables do not infringe upon or violate any copyrights or intellectual property rights, personal rights or rights of any kinds of others and contains any types of libelous or unlawful statements or material or instructions that may cause harm or injury to a person or property and manuscripts do not contain any plagiarized, fraudulent, copyrighted, and improperly attributed materials whatsoever.
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <hr>
@@ -225,7 +250,7 @@
              <div class="col-md-6">
                 <div class="col-md-7" style="padding-left:50px">
                         <h4><b>Chief Patron</b></h4>
-                        <h5>Prof. G.R.C. Reddy, Director </h5> 
+                        <h5>Prof. N V Ramana Rao, Director </h5> 
                         <h4><b>Chief Advisors</b></h4>
                         <h5>Prof. G. RADHAKRISHNAMACHARYA</h5> 
                         <h5>Prof. Y. N. REDDY</h5> 
@@ -267,16 +292,24 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>08th Dec, 2017</td>
+                        <td>15th Dec, 2017</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance of full length paper</td>
-                        <td>15th Dec, 2017</td>
+                        <td>25th Dec, 2017</td>
                     </tr>  
                     <tr class="active">
                         <td>Final Paper (Camera Ready)<br>Submission & Registration</td>
-                        <td>25th Dec, 2018</td>
-                    </tr>  
+                        <td>30th Dec, 2017</td>
+                    </tr> 
+	 	    <tr class="active">
+                        <td>Submission of Abstract for oral presentation</td>
+                        <td>30th Dec, 2017</td>
+                    </tr>
+		    <tr class="active">
+                        <td>Last Date of Payment of Registration Fee</td>
+                        <td>5th Jan, 2018</td>
+                    </tr>
                 </table>
             </div>
             <div class="col-md-1">
