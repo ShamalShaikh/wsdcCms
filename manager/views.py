@@ -20,6 +20,10 @@ import httplib2
 import os
 from django.core.mail import EmailMessage
 import datetime
+
+from django.core.mail import send_mail
+from email.mime.image import MIMEImage
+from django.core.mail import EmailMultiAlternatives 
 # from mail import main 
 
 def signin(request):
@@ -269,6 +273,10 @@ def isApprovedPaper(request, type,paper_id):
 	paper.under_review = False
 	paper.status = int(type)+1
 	paper.save()
+
+	if int(type) == 2 :
+		sendMailFunction(paper.uid.email,paper.papername,paper.paperRefNum)
+
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
 def isDisapprovedPaper(request, paper_id):
@@ -501,3 +509,75 @@ def sendmail(request):
 #     return message
 #   except errors.HttpError, error:
 #     print 'An error occurred: %s' % error
+
+
+def sendMailFunction(email,papername,trackingID) : 
+	receiver = email
+	sender = 'nhtff2018@nitw.ac.in'
+	
+	####
+	content = "Dear Author<br><br>"
+	content += "Your manuscript was peer reviewed for presentation and publication "
+	content += "in the Proceedings/journal "
+	content += "of the International Conference on Numerical "
+	content += "Heat Transfer and Fluid Flow (NHTFF 2018) "
+	content += "to be held on January 19-21, 2018 at Department of Mathematics, "
+	content += "National Institute of Technology, Warangal, Telangana, India.<br><br>"
+	content += "Based on the evaluations of reviewers, it is my pleasure to "
+	content += "inform that your revised paper entitled "
+	content += '" ' + papername + ' " (' + trackingID + ") "
+	content += "has been accepted for publication in the journal and oral "
+	content += "presentation and will be scheduled in an appropriate session.<br><br>"
+	content += "This letter hereby serves the purpose of your official letter of "
+	content += "invite to the NHTFF-2018 conference.<br><br>"
+	content += "It is to be noted that at least one author of each paper should "
+	content += "be registered for the conference by paying the appropriate "
+	content += "registration fee as well as everybody attending the conference.<br><br>"
+	content += "Further, You are required to pay the registration fee on or before "
+	content += "05/01/2018 and upload the final version of the paper along "
+	content += "with the payment receipt on the conference website.<br><br>"
+	content += "It is expected that you or one of your co-authors (if relevant) should "
+	content += "present the paper in person then only it will be sent for  publication "
+	content += "in the journal.  Otherwise it will not be published in the journal.<br><br>"
+	content += "We are looking forward welcoming you in the Conference.<br><br>"
+	content += "Sincerely yours,<br>"
+
+	content += '<br> <img src="cid:sign.png"> <br>'
+	content += "(D. SRINIVASACHARYA)<br><br>"
+	content += "Conference Chair<br><br>"
+	content += "Instructions for uploading the Final Submission and Payment "
+	content += "of Registration fee : <br><br>"
+	content += "\t 1. Upon acceptance of a manuscript for publication/presentation, "
+	content += "the author has to pay the full registration fee.<br>"
+	content += "\t 2. The payment of the registration fee is through NEFT (or in worst case DD)."
+	content += "The detials of online payment are given on the conference website.<br>"
+	content += '\t 3. Select "upload payment Receipt" (Scanned copy of the '
+	content += "online payment receipt or DD) option from the navbar at top.<br>"
+	content += "\t 4. Upload picture of ID proof and the payment receipt.<br>"
+	content += '\t 5. Then from the same upload paper option, go to "final paper upload".<br>'
+	content += "\t 6. Upload Copyright Form (which is available at important links page).<br>"
+	content += "\t 7. Upload final paper, and you are done !!!<br><br>"
+
+	rlist = []
+	rlist.append(receiver)
+
+	msg = EmailMultiAlternatives('Acceptance of Paper for Publication',content,sender,rlist)
+
+	msg.attach_alternative(content, "text/html")
+
+	msg.mixed_subtype = 'related'
+
+	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	fp = open(os.path.join(BASE_DIR, 'static/sign.png'), 'rb')
+	msg_img = MIMEImage(fp.read())
+	fp.close()
+	msg_img.add_header('Content-ID', '<{}>'.format('sign.png'))
+	msg.attach(msg_img)
+
+	try:
+		msg.send()
+		# send_mail('Acceptance of Paper for Publication',content,sender,rlist,fail_silently=False,)
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+
+	return
