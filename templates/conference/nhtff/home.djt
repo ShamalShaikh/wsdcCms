@@ -160,6 +160,45 @@
         </div>
         <!-- /.row -->
 
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <span style="color:red; font-size:20px; font-weight: 900;">Publication:</span> <span style="color:black; font-weight:700; font-size:17px;">  All the papers submitted will be peer reviewed by two independent reviewers and selected papers will be published (without any publication charges) in the form of a special issue of the following journals Plagiarism in any form is unethical and unacceptable. In order to ensure that the content submitted is original and trustworthy, a similarity check will be done. </span>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="row">
+            <div class="col-sm-12">
+                <p style="color:blue; font-weight:600; font-size:17px;">
+                    Abstract/text/figures/illustrations/photos/tables do not infringe upon or violate any copyrights or intellectual property rights, personal rights or rights of any kinds of others and contains any types of libelous or unlawful statements or material or instructions that may cause harm or injury to a person or property and manuscripts do not contain any plagiarized, fraudulent, copyrighted, and improperly attributed materials whatsoever
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+                <center>
+                <img src="{% static 'images/nhtff/img1.png' %}">
+                <br>
+                <p>
+                <span style="color:red; font-size:17px; font-weight: 900;">ADVANCED SCIENCE, ENGINEERING AND MEDICINE </span> <span style="color:blue; font-weight:500; font-size:15px;">is a SCOPUS indexed journal (see the SCOPUS website) published by American Scientific Publishers.  For the scope, journal policy and details about the journal visit &nbsp; <a href="http://www.aspbs.com/asem" style="color:red;"> www.aspbs.com/asem </a> </span>
+                </p>
+                </center>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <center>
+                <img src="{% static 'images/nhtff/img2.png' %}">
+                <br><br>
+                <p>
+                <span style="color:red; font-size:17px; font-weight: 900;">MATHEMATICAL MODELLING OF ENGINEERING PROBLEMS </span> <span style="color:blue; font-weight:500; font-size:15px;">is published by International Information and Engineering Technology Association (IIETA) is a non-profit scholarly society based in Edmonton, Alberta, Canada.  For the scope, journal policy and details about the journal visit <a href="http://www.iieta.org/Journals/MMEP" style="color:red;"> http://www.iieta.org/Journals/MMEP </a> </span>
+                </p>
+                </center>
+            </div>
+        </div>
+
         <div class="row">
             <hr>
             <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
