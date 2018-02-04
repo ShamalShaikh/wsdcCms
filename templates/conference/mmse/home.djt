@@ -116,7 +116,8 @@
                 <P style="font-size:15px;" >NATIONAL CONFERENCE ON</P>
                 <p style="font-size:25px;"><b>MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING</b></p>
                 <p style="font-size:20px;"><b>(MMSE)</b></p>
-                <p style="font-size:23px; color:red;">on the eve of superannuation of Prof. G. Radhakrishnamacharya</p>
+                <p style="font-size:23px; color:red;">on the eve of superannuation of<br> Prof. G. Radhakrishnamacharya</p>
+                <h4 style="color:blue;"><b>March 27 - 28, 2018</b></h4>
             </center>
             </div>
             <div class="col-sm-3">
@@ -133,7 +134,7 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
-                <center><h3 style="color:blue;"><b>March 27 - 28, 2018</b></h3>
+                <center>
                 <h4>
                      Organised by<br><hr>
                     DEPARTMENT OF MATHEMATICS<br><br>
@@ -156,14 +157,39 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">ABOUT THE CONFERENCE</span></center></h2><br>
+                <p>
+                This conference is expected to be attended by researchers and faculty to exchange innovative ideas, methods and results, and visions of the future related to Mathematical Modeling in Science and Engineering. This conference will focus on the presentation and discussion modeling aspects in Science and Engineering. In addition to the paper presentations there will be invited talks on latest areas/topics of research. The deliberations at the conference are expected to influence the current researchers regarding their academic pursuits. This conference is arranged in honour and on the eve of superannuation of Prof. G. Radhakrishnamacharya.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:17px; color:red;">
+                    <p>Felicitation to Prof. G. Radhakrishnamacharya on the eve of his superannuation is tentatively scheduled on 27/03/2018 at 3.00PM .</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">CALL FOR PAPERS</span></center></h2><br>
+                <p>
+                Authors are invited to <b>submit the Full Papers</b>, not exceeding 6-pages in MS word format (soft copy) and neatly typed on A-4 size paper. Each manuscript will undergo a peer review process. The contributed papers must be original and should not have been published/ accepted in journals/proceedings. Upon the notification of acceptance, the author will have to submit final copy of the manuscript of the paper, copyright transfer agreement and registration fee and registration form on or before the last date. A wide range of topics related to Mathematical Modeling will be welcome.
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <hr>
             <div class="col-sm-6">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
                 <p><b>A wide range of topics related to classical and emerging areas of computational methods in Mathematical Modeling in Science and Engineering will be welcome. Topics include but are not limited to </b></p>
+                <p>Mathematical and Numerical Modeling of the problems in</p>
                 <ul>
-                    <li>Mathematical and Numerical Modeling of the problems in Biomechanics</li>
+                    <li>Biomechanics</li>
                     <li>Fluid Mechanics</li>
                     <li>Porous Media</li>
                     <li>Heat and Mass Transfer</li>
@@ -224,14 +250,13 @@
                         MICR Code        : 506002030<br> 
                         <br>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-sm-5">
-                        DD drawn in favor of “Conference Chair, MMSE - 2018” payable at Warangal.
+                    <div class="col-sm-6">
+                        DD drawn in favor of “Conference Chair” payable at Warangal.
                         <br><br>
                         The filled in registration form along with the DD should be sent to:
                         <br><br>
                         <b>
-                            Dr. D. Srinivasacharya, Head &amp; Conference Chair, MMSE,
+                            Dr. D. Srinivasacharya,<br> Head &amp; Conference Chair, MMSE,
                             Department of Mathematics, National Institute of Technology,
                             Warangal-506 004, Telangana State, India. <br>
                         </b>
@@ -240,30 +265,6 @@
             </div>
         </div>
         <hr>
-
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">ABOUT THE CONFERENCE</span></center></h2><br>
-                <p>
-                This conference is expected to be attended by researchers and faculty to exchange innovative ideas, methods and results, and visions of the future related to Mathematical Modeling in Science and Engineering. This conference will focus on the presentation and discussion modeling aspects in Science and Engineering. In addition to the paper presentations there will be invited talks on latest areas/topics of research. The deliberations at the conference are expected to influence the current researchers regarding their academic pursuits. This conference is arranged in honour and on the eve of superannuation of Prof. G. Radhakrishnamacharya.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="well text-center" style="font-size:17px; color:red;">
-                    <p>Felicitation to Prof. G. Radhakrishnamacharya on the eve of his superannuation is tentatively scheduled on 27/03/2018 at 3.00PM .</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">CALL FOR PAPERS</span></center></h2><br>
-                <p>
-                Authors are invited to <b>submit the Full Papers</b>, not exceeding 6-pages in MS word format (soft copy) and neatly typed on A-4 size paper. Each manuscript will undergo a peer review process. The contributed papers must be original and should not have been published/ accepted in journals/proceedings. Upon the notification of acceptance, the author will have to submit final copy of the manuscript of the paper, copyright transfer agreement and registration fee and registration form on or before the last date. A wide range of topics related to Mathematical Modeling will be welcome.
-                </p>
-            </div>
-        </div>
         <!-- /.row -->
 
         <div class="row">
@@ -287,9 +288,9 @@
             </div>
 
             <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-default">BEST PAPER AWARD</span></center></h2><br>
+                <br><h2><center><span class="label label-default">BEST PAPER PRESENTATION AWARD</span></center></h2><br>
                 <p>
-                    "Best Paper Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                    "Best Paper Presentations Awards" will be conferred on the selected author(s) of full papers presented at the conference.
                 </p>
             </div>
         </div>
