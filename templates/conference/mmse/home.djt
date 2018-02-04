@@ -117,7 +117,6 @@
                 <p style="font-size:25px;"><b>MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING</b></p>
                 <p style="font-size:20px;"><b>(MMSE)</b></p>
                 <p style="font-size:23px; color:red;">on the eve of superannuation of Prof. G. Radhakrishnamacharya</p>
-                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
             <div class="col-sm-3">
@@ -158,123 +157,9 @@
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-lg-12">
-                <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Last Date for Submission of Abstracts for Oral Presentation only (but not full paper for publication) is 30th December 2017 !!!</marquee>
-                </div>
-            </div>
-        </div> -->
-        <!-- /.row -->
-
-        <!-- <div class="row">
-            <div class="col-lg-12">
-                <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">LAST DATE FOR PAYMENT OF REGISTRATION FEE IS January 05 , 2018. </marquee>
-                </div>
-            </div>
-        </div> -->
-
-	<!-- <hr>
-        <div class="row">
-            <div class="col-sm-12">
-                <span style="color:red; font-size:20px; font-weight: 900;">Publication:</span> <span style="color:black; font-weight:700; font-size:17px;">  All the papers submitted will be peer reviewed by two independent reviewers and selected papers will be published (without any publication charges) in the form of a special issue of the following journals. Plagiarism in any form is unethical and unacceptable. In order to ensure that the content submitted is original and trustworthy, a similarity check will be done. </span>
-            </div>
-        </div>
-
-        <br><br>
-        <div class="row">
-            <div class="col-sm-12">
-                <p style="color:blue; font-weight:600; font-size:17px;">
-                    Abstract/text/figures/illustrations/photos/tables do not infringe upon or violate any copyrights or intellectual property rights, personal rights or rights of any kinds of others and contains any types of libelous or unlawful statements or material or instructions that may cause harm or injury to a person or property and manuscripts do not contain any plagiarized, fraudulent, copyrighted, and improperly attributed materials whatsoever.
-                </p>
-            </div>
-        </div> -->
-
         <div class="row">
             <hr>
-            <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
-            <hr>
-            <div class="col-md-6">
-                <center><h3><span class="label label-primary">International</span></h3></center><br>
-                 <div class="col-md-6">
-                    <ul>
-                        <li>Prof. Kambiz Vafai, University of California, USA</li>
-                        <li>Prof. J. N. Reddy,Texas A&M University, USA.</li>
-                        <li>Prof. Rama S.R. Gorla, Cleveland State University, USA</li>
-                        <li>Prof. Yogesh Jaluria, Rutgers University, USA</li>
-                        <li>Prof. Tapas Malick, Heriot-Watt University. U.K.</li>
-                        <li>Prof D. A. S. Rees, University of Bath, U.K..</li>
-                        <li>Prof O. D. Makinde, Stellenbosch University, South Africa</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>Prof. Ioan Pop, Babes-Bolyai University, Romania.</li>
-                        <li>Prof. S.S. Motsa, University of Swaziland, Swaziland</li>
-                        <li>Prof. M. Shiferaw Ayano, University of Swaziland, Swaziland</li>
-                        <li>Prof. A. M. Rashad, Aswan University, Egypt</li>
-                    </ul> 
-                </div> 
-            </div>
-            <div class="col-md-6">
-                   <center><h3 style="margin-left:60px;"><span class="label label-primary">National</span></h3></center> <br>
-                    <div class="col-md-6">
-                        <ul>
-                            <li>Prof. S.V. Raghurama Rao, IISc,  Bangalore</li>
-                            <li>Prof. A.K. Pani, IIT Mumbai</li>
-                            <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
-                            <li>Prof. P. V. S. N. Murthy,  IIT, Kharagpur</li>
-                            <li>Prof. G.P. Rajasekhar, IIT, Kharagpur</li>
-                            <li>Prof. Natesan Srinivasan, IIT Guwahati</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                      <ul>   
-                            <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
-                            <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
-                            <li>Prof. K. S. Reddy, IIT Madras</li>
-                            <li>Prof. P. G. Siddheswar, Bangalore University, Bangalore</li>
-                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
-                        </ul>  
-                    </div>   
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                 <h3 style="margin-left:60px;"><span class="label label-primary">Departmental Organising Committee</span></h3><br>
-                        <ul>
-                            <li>Dr. D. SRINIVASACHARYA, Professor and Head</li>
-                            <li>Dr. P.  Muthu, Associate Professor </li>
-                            <li>Dr. R. S. Selvaraj, Assistant Professor </li>
-                            <li>Dr. H. P. Rani, Assistant Professor </li>
-                            <li>Dr. A. Benerji Babu, Assistant Professor </li>
-                            <li>Dr. D. Bhargavi, Assistant Professor </li>
-                            <li>Dr. T. Kurmayya, Assistant Professor </li>
-                        </ul>
-            </div>
-             <div class="col-md-6">
-                <div class="col-md-7" style="padding-left:50px">
-                        <h4><b>Chief Patron</b></h4>
-                        <h5>Prof. N V Ramana Rao, Director </h5> 
-                        <h4><b>Conference Secretary</b></h4>
-                        <h5>Dr. J. PRANITHA</h5>
-                        <h5>Dr. CH.RAMREDDY</h5>
-                </div>
-                <div class="col-md-5">
-                        <h4><b>Conference Chair</b></h4>
-                        <h5>Dr. D. SRINIVASACHARYA</h5>
-                        <h4><b>Coordinator</b></h4>
-                        <h5>Dr. P. MUTHU</h5> 
-                </div>
-                        
-                        
-            </div>
-          <div id="dates"  ></div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-4">
+            <div class="col-sm-6">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
                 <p><b>A wide range of topics related to classical and emerging areas of computational methods in Mathematical Modeling in Science and Engineering will be welcome. Topics include but are not limited to </b></p>
                 <ul>
@@ -286,10 +171,30 @@
                     <li>Operations Research</li>
                     <li>Statistics</li>
                     <li>Environment</li>
-                </ul>                
+                </ul>
             </div>
-            <!-- /.col-md-4 -->
-            <div class="col-md-4">
+            <div class="col-sm-6">
+                <div class="row">
+                    <h2><center><span class="label label-primary">Committee</span></center></h2><br>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <h4><b>Chief Patron</b></h4>
+                        <h5>Prof. N V Ramana Rao, Director </h5> 
+                        <h4><b>Conference Secretary</b></h4>
+                        <h5>Dr. J. PRANITHA</h5>
+                        <h5>Dr. CH.RAMREDDY</h5>
+                    </div>
+                    <div class="col-md-5">
+                            <h4><b>Conference Chair</b></h4>
+                            <h5>Dr. D. SRINIVASACHARYA</h5>
+                            <h4><b>Coordinator</b></h4>
+                            <h5>Dr. P. MUTHU</h5> 
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
                 <table class="table table-hover">
                     <tr class="active">
@@ -304,38 +209,34 @@
                         <td>Final Paper (Camera Ready)<br>Submission & Registration</td>
                         <td>15th March, 2018</td>
                     </tr> 
-	 	            <!-- <tr class="active">
-                        <td>Submission of Abstract for oral presentation</td>
-                        <td>30th Dec, 2017</td>
-                    </tr>
-		            <tr class="active">
-                        <td>Last Date of Payment of Registration Fee</td>
-                        <td>5th Jan, 2018</td>
-                    </tr> -->
                 </table>
             </div>
-            <div class="col-md-1">
-                
-            </div>
-            <div class="col-md-3">
-                <h2><span class="label label-primary">Mode of Payment</span></h2><br>
-                Account Name     : Conference Chair<br>
-                Account No       : 37494838784<br>
-                Name of the Bank : State Bank of India<br>
-                Branch           : REC Warangal (NIT Campus)<br>
-                Branch Code      : 20149<br>
-                IFSC Code        : SBIN0020149<br>
-                MICR Code        : 506002030<br> 
-                <br>
-                DD drawn in favor of “Conference Chair, MMSE - 2018” payable at Warangal.
-                <br><br>
-                The filled in registration form along with the DD should be sent to:
-                <br><br>
-                <b>
-                    Dr. D. Srinivasacharya, Head &amp; Conference Chair, MMSE,
-                    Department of Mathematics, National Institute of Technology,
-                    Warangal-506 004, Telangana State, India. <br>
-                </b>
+            <div class="col-md-6">
+                <h2><center><span class="label label-primary">Mode of Payment</span></center></h2><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        Account Name     : Conference Chair<br>
+                        Account No       : 37494838784<br>
+                        Name of the Bank : State Bank of India<br>
+                        Branch           : REC Warangal (NIT Campus)<br>
+                        Branch Code      : 20149<br>
+                        IFSC Code        : SBIN0020149<br>
+                        MICR Code        : 506002030<br> 
+                        <br>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-5">
+                        DD drawn in favor of “Conference Chair, MMSE - 2018” payable at Warangal.
+                        <br><br>
+                        The filled in registration form along with the DD should be sent to:
+                        <br><br>
+                        <b>
+                            Dr. D. Srinivasacharya, Head &amp; Conference Chair, MMSE,
+                            Department of Mathematics, National Institute of Technology,
+                            Warangal-506 004, Telangana State, India. <br>
+                        </b>
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
@@ -364,18 +265,6 @@
             </div>
         </div>
         <!-- /.row -->
-       <!--  <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Accomodation</span></center></h2><br>
-                <p>
-                    Limited accommodation may be provided on payment basis in the Institute Visitors Block depending on availability and on first come first serve basis. 
-                </p>
-                <p>
-                    Warangal city covers a wide range of hotels and other accommodation facilities to suit every budget. Participants are advised to contact the hotels directly and book their accommodation. However, in case of difficulty, we will assist on your prior request. 
-                </p>
-                <br>
-            </div>
-        </div> -->
 
         <div class="row">
             <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
@@ -429,7 +318,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b><br>
+                                <b>E-mail : mmse2018.nitw@gmail.com</b><br>
                                 
                             </div>
                             <div class="col-sm-6">
