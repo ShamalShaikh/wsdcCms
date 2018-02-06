@@ -54,7 +54,7 @@
                         <a href="/conference/mmse2018/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/mmse2018/links">Important Links</a>
+                        <a href="/conference/mmse2018/links">Download Links</a>
                     </li>
                     <li>
                         <a href="#dates">Important Dates</a>
@@ -129,19 +129,25 @@
         </div>
         <BR>
         <div class="row">
-            <div class="col-md-6" >
-                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            <div class="col-md-4" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:200px; width:400px; ">
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        Organised by<br><hr>
+                        DEPARTMENT OF MATHEMATICS<br><br>
+                        National Institute of Technology Warangal<br>
+                        Warangal 506 004. <br>
+                        Telangana State, India.
+                    </h4>
+                </center>
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <center>
-                <h4>
-                     Organised by<br><hr>
-                    DEPARTMENT OF MATHEMATICS<br><br>
-                    National Institute of Technology Warangal<br>
-                    Warangal 506 004. <br>
-                    Telangana State, India.
-                </h4></center>
+                <img class="img-responsive img-rounded" src="{% static 'images/mmse/dept_photo.jpg' %}" alt="" style="height:200px; width:400px; ">
+                </center>
             </div>
             <!-- /.col-md-4 -->
         </div>

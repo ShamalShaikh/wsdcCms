@@ -54,7 +54,7 @@
                         <a href="/conference/mmse2018/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/mmse2018/links">Important Links</a>
+                        <a href="/conference/mmse2018/links">Download Links</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
