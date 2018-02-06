@@ -54,7 +54,7 @@
                         <a href="/conference/mmse2018/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/mmse2018/links">Important Links</a>
+                        <a href="/conference/mmse2018/links">Download Links</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -103,7 +103,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
+                <h2><center><span class="label label-default">DOWNLOAD LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
                     <li><a href="{% static 'docs_mmse/mmse-Brochure.pdf' %}">Brochure</a></li><br>
@@ -113,7 +113,6 @@
                     <br>
                     <li><a href="{% static 'docs_mmse/Registration-form.docx' %}">Registration Form</a></li><br>
                     <li><a href="{% static 'docs_mmse/copyright-form.doc' %}">Copyright Transfer Form</a></li><br>
-                    <li><a href="{% static 'docs_mmse/poster.pdf' %}">Poster</a></li><br>
                 </ol></b></h4>
             </div>
             <div class="col-sm-4">

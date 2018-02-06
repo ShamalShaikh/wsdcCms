@@ -12,6 +12,7 @@ from sendfile import sendfile
 from random import randint
 from django.core.mail import send_mail
 import smtplib
+import os
 
 # Create your views here.
 @login_required(login_url='/signin')
@@ -43,7 +44,12 @@ def finalcfdownload(request, final_paper_id):
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, paper.copyright_form.path)
 
-
+def validateFormat(filename):
+    ext = os.path.splitext(filename.name)[1]
+    valid_extentions = ['.pdf','.PDF']
+    if not ext in valid_extentions:
+        return False
+    return True
 
 def index(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
@@ -132,6 +138,8 @@ def upload_paper(request,alias):
 			paper.uid=request.user
 			paper.paperfile=request.FILES['paper_file']
 			paper.papername=request.POST['paper_name']
+			if not validateFormat(paper.paperfile) :
+				return HttpResponse('Only Pdf format is allowed')
 			# paper.submissionDate=now.strftime("%Y-%m-%d")
 			paper.submissionDate = now
 			paper.status = 0
@@ -276,6 +284,8 @@ def reupload_paper(request,alias):
 	if request.method == 'POST' :
 		paper = Conf_Paper.objects.get(paper_id=request.POST['paperid'],uid=request.user)
 		paper.paperfile=request.FILES['paper_file']
+		if not validateFormat(paper.paperfile) :
+				return HttpResponse('Only Pdf format is allowed')
 		# paper.submissionDate=now.strftime("%Y-%m-%d")
 		paper.submissionDate=now
 		paper.status = 0
@@ -293,6 +303,8 @@ def final_paper(request,alias):
 		paper = Conf_Paper.objects.get(paper_id=request.POST['paper'],uid=request.user)
 		copyright_form = request.FILES['copyright_form']
 		final_paper = request.FILES['final_paper']
+		if not validateFormat(final_paper) :
+				return HttpResponse('Only Pdf format is allowed')
 
 		finalpaper = Final_paper()
 		finalpaper.papername = papername
@@ -408,12 +420,12 @@ def mmselinks(request):
 def sendTrackingMail(paper):
 	#Mail application ID to applicant
 	receiver = paper.uid.email
-	sender = 'nhtff2018@nitw.ac.in' ##to be changed
+	sender = 'mmse2018.nitw@gmail.com' ##to be changed
 
 	content = "Tracking id : " + paper.paperRefNum+'\n\n'
 	content += "Title : "+ paper.papername + '\n\n'
 	content += "Dear Author\n\n"
-	content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "International Conference on Numerical Heat Transfer and Fluid Flow". \n\n'
+	content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING". \n\n'
 	content += 'Your submission was received in good order.\n\n'
 	content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/mmse.\n\n'
 	content += 'Thank you for submitting your work to the conference.\n\n'

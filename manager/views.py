@@ -512,15 +512,15 @@ def sendmail(request):
 
 def sendMailFunction(email,papername,trackingID) : 
 	receiver = email
-	sender = 'nhtff2018@nitw.ac.in'
+	sender = 'mmse2018.nitw@gmail.com'
 	
 	####
 	content = "Dear Author<br><br>"
 	content += "Your manuscript was peer reviewed for presentation and publication "
 	content += "in the Proceedings/journal "
-	content += "of the International Conference on Numerical "
-	content += "Heat Transfer and Fluid Flow (NHTFF 2018) "
-	content += "to be held on January 19-21, 2018 at Department of Mathematics, "
+	content += "of the National Conference on "
+	content += "MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING "
+	content += "to be held on March 27-28, 2018 at Department of Mathematics, "
 	content += "National Institute of Technology, Warangal, Telangana, India.<br><br>"
 	content += "Based on the evaluations of reviewers, it is my pleasure to "
 	content += "inform that your revised paper entitled "
@@ -528,12 +528,12 @@ def sendMailFunction(email,papername,trackingID) :
 	content += "has been accepted for publication in the journal and oral "
 	content += "presentation and will be scheduled in an appropriate session.<br><br>"
 	content += "This letter hereby serves the purpose of your official letter of "
-	content += "invite to the NHTFF-2018 conference.<br><br>"
+	content += "invite to the MMSE-2018 conference.<br><br>"
 	content += "It is to be noted that at least one author of each paper should "
 	content += "be registered for the conference by paying the appropriate "
 	content += "registration fee as well as everybody attending the conference.<br><br>"
 	content += "Further, You are required to pay the registration fee on or before "
-	content += "05/01/2018 and upload the final version of the paper along "
+	content += "15/03/2018 and upload the final version of the paper along "
 	content += "with the payment receipt on the conference website.<br><br>"
 	content += "It is expected that you or one of your co-authors (if relevant) should "
 	content += "present the paper in person then only it will be sent for  publication "

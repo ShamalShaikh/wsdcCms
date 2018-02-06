@@ -15,7 +15,7 @@
 	</div>
 	{% endif %}
 
-<!--
+
 	<div class="ui fluid segment">
 		<form class="ui form" action="/register/" method="post">
 			{% csrf_token %}
@@ -68,11 +68,7 @@
 	        </div>
 		</form>
 	</div>
-		-->
-	
-	<div class="ui fluid segment" style="margin-top:100px;">
-		<center><h3>Registrations have been closed !!!</h3></center>
-	</div>
+	<br><br>
 </div>
 
 {% endblock %}
