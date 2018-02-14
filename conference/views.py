@@ -391,6 +391,43 @@ def mmselinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/mmse/links.djt',response)
 
+def ctsem(request):
+	conference = Conference.objects.get(conference_alias='ctsem2018')
+	response = {}
+	response['conference']=conference
+	response['alias']='ctsem2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/ctsem/home.djt',response)
+
+def ctsemabout(request):
+	conference = Conference.objects.get(conference_alias='ctsem2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ctsem2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ctsem/about.djt',response)
+
+def ctsemlinks(request):
+	conference = Conference.objects.get(conference_alias='ctsem2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ctsem2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ctsem/links.djt',response)
+
 ## NHTFF Part
 # def sendTrackingMail(paper):
 # 	#Mail application ID to applicant
