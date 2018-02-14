@@ -1,0 +1,520 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CTSEM'18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/ctsem2018">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/ctsem2018/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/ctsem2018/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+                    <!-- {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                    {% endif %} -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#fee_div">Registration Fee</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul> -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+            </div>
+            <div class="col-sm-6">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:25px;"><b>Colloquium on</b></p>
+                <p style="font-size:25px;"><b>Transportation Systems Engineering and Management</b></p>
+                <p style="font-size:20px;"><b>(CTSEM)</b></p>
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+            </div>
+            <div class="col-sm-3">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>May 10 - 12, 2018</b></h3>
+                <h4>
+                     Organised by<br><hr>
+                     Transportation Division<br><br>
+                    DEPARTMENT OF CIVIL ENGINEERING<br><br>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h4></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations will open soon !!!</marquee>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <hr>
+            
+            <div class="col-md-5">
+                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <ul>
+                            <li>Dr. B.P. Chandrasekhar, Former Director (T), NRRDA</li>
+                            <li>Dr. T. V. Ramanayya, Former Professor, IIM Bangalore</li>
+                            <li>Dr. B. K. Katti, Former Professor, NIT Surat</li>
+                            <li>Dr. S. L. Dhingra, Former Institute Chair Professor, IIT Bombay</li>
+                            <li>Dr. Satish Chandra, Director, CRRI</li>
+                            <li>Dr. Pradip Kumar Sarkar, Professor, SPA, New Delhi</li>
+                            <li>Sri P.R.K. Murthy, Chief, Transport &amp; Communications, MMRDA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <h4><b>Chief Patron</b></h4>
+                        <h5>Prof. N V Ramana Rao, Director </h5> 
+                        <br>
+                        <h4><b>Organising Secretaries</b></h4>
+                        <h5>
+                        <ul>
+                            <li>Dr. Venkaiah Chowdary</li>
+                            <li>Dr. K.V.R. Ravi Shankar</li>
+                            <li>Dr. S. Shankar</li>
+                            <li>Dr. Arpan Mehar</li>
+                        </ul>
+                        </h5>                        
+                    </div>
+                    <div class="col-md-6">
+                        <h4><b>Organising Chair</b></h4>
+                        <h5>Prof. G. Rajesh Kumar<br> Head of the Department <br> Civil Engineering, NIT Warangal</h5>
+                        <h4><b>Convener</b></h4>
+                        <h5>Prof. C.S.R.K. Prasad <br> Head of Transportation Division <br> Department of Civil Engineering, NIT Warangal</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
+                <p><b>CTSEM will cover the conceptual aspects related to transport planning, traffic engineering and pavement technology. The topics include, but are not restricted to </b></p>
+                <ul>
+                    <li>Transportation and Land Use</li>
+                    <li>Urban Transport Planning &amp; Management</li>
+                    <li>Travel Demand Analysis, Forecasting and Management</li>
+                    <li>Travel Behaviour Modelling</li>
+                    <li>Public Transport Planning &amp; Management</li>
+                    <li>Freight Transport</li>
+                    <li>Transportation and ICT</li>
+                    <li>Highway Design and Maintenance</li>
+                    <li>Traffic Modelling and Management</li>
+                    <li>Capacity &amp; Level of Service</li>
+                    <li>Intelligent Transportation Systems</li>
+                    <li>Traffic Crashes and Safety</li>
+                    <li>Pedestrian Facilities &amp; Safety</li>
+                    <li>Non-motorised Transportation</li>
+                    <li>Pavement Materials &amp; Characterisation</li>
+                    <li>Pavement Design and Construction</li>
+                    <li>Pavement Evaluation &amp; Management</li>
+                    <li>Road Asset Management</li>
+                    <li>Transportation Infrastructure Financing</li>
+                    <li>Transportation Economics and Policy</li>
+                    <li>Road Pricing and Parking Charges</li>
+                    <li>Sustainable Transportation</li>
+                    <li>Environmental &amp; Ecological Aspects</li>
+                </ul>                
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Submission of Full Paper</td>
+                        <td>25th March, 2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Acceptance Notification</td>
+                        <td>8th April, 2018</td>
+                    </tr> 
+		            <tr class="active">
+                        <td>Last Date of Payment of Registration Fee</td>
+                        <td>30th April, 2018</td>
+                    </tr>
+                </table>
+                <br>
+                <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
+                <p>
+                    CTSEM will provide great opportunity for interaction among industries, consultants, government agencies, educational institutions, academicians, professionals and decision makers.<br>
+                    Sponsorship with the following tariff is invited.
+                </p>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Platinum Sponsor:</td>
+                        <td>Rs. 1,00,000 (8 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Gold Sponsor:</td>
+                        <td>Rs. 50,000 (6 delegates free)</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Silver Sponsor:</td>
+                        <td>Rs. 25,000 (4 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Co-Sponsor:</td>
+                        <td>Rs. 10,000 (2 delegates free)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-1">
+                
+            </div>
+            <div class="col-md-3">
+                <h2><span class="label label-primary">Mode of Payment</span></h2><br>
+                Account Name     : Conference Chair NHTFF - 2018<br>
+                Account No       : 37172373926<br>
+                Name of the Bank : State Bank of India<br>
+                Branch           : REC Warangal (NIT Campus)<br>
+                Branch Code      : 20149<br>
+                IFSC Code        : SBIN0020149<br>
+                MICR Code        : 506002030<br> 
+                <br>
+                DD drawn in favor of “Conference Chair, NHTFF - 2018” payable at Warangal.
+
+                <br><br>
+                <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
+                <p>
+                    Prof. C.S.R.K. Prasad<br>
+                    Convener (CTSEM)<br>
+                    Department of Civil Engineering <br>
+                    National Institute of Technology, <br>
+                    Warangal – 506 004, Telangana, India <br>
+                    Mobile: 09440347348 <br>
+                    Phone: 0870-2462117 <br>
+                    E-mail: ctsem2018@gmail.com <br>
+                </p>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Introduction</span></center></h2><br>
+                <p>Growing urbanisation, rising vehicle ownership, globalisation of economies and shortage of resources have posed major challenges to the transportation sector. Mobility, accessibility and safety continue to be daunting challenges to transportation professionals’ world over. In this context, cutting edge research that could provide sustainable solutions to transport related problems is the need of the hour.</p>
+                <p>Colloquium on Transportation Systems Engineering and Management (CTSEM) aims to bring together researchers, scientists, engineers, research scholars and post graduate students in different areas of Transportation Engineering and Management.</p>
+                <p>The objectives of CTSEM are to provide an pportunity for the students, research scholars and transportation professionals to present their work and network with the peers; learn about advancements and applications in their fields; minimise the uplication of research efforts and arrive at future directions for research.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
+                <p>Papers are invited on the topics outlined and others falling within the scope of the event. Papers are to be prepared as per the ASCE conference proceedings paper format. Acceptance of the papers will be based on peer review results and if accepted for publication, must be presented at the event. The language of the colloquium is English.</p>
+                <p>
+                    Negotiations with leading publishers are underway to publish some of the selected high quality papers presented in the Colloquium in the form of proceedings.
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
+                <p>
+                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors Block of the Institute on payment of Rs. XXXXX on first come first serve basis.
+                </p>
+                <p> Travelling Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
+                <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Delegates from Industry</td>
+                        <td>Rs. 3000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Delegates from Academic, R&D Institutions</td>
+                        <td>Rs. 2000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Students/Research Scholar</td>
+                        <td>Rs. 1000/- </td>
+                    </tr>
+                </table>
+                <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
+            </div>
+
+            <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-default">BEST PAPER AWARD</span></center></h2><br>
+                <p>
+                    "Best Paper Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                </p>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/ce/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>ctsem2018@gmail.com <br>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Contact:</b></h4>
+                                <b>Prof. C.S.R.K. Prasad</b><br>
+                                Convener (CTSEM)<br>
+                                Department of Civil Engineering<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506 004, TS<br>
+                                <b>Mobile : </b>+91 - 9440347348 
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% elif payment.is_rejected %}
+                <h3>Your payment is rejected due to following problem : <br>
+                <br><center>{{payment.remarks}}</center></h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="instructions" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Instructions</h4>
+      </div>
+      <div class="modal-body">
+        <hr>
+        <h4>Steps to register</h4>
+        <hr>
+        <ol>
+            <li>Click on register tab at the top</li>
+            <li>Fill in the details and click on register</li>
+            <li>Login with your credentials</li>
+            <li>Congrats !!! You are succesfully registered on website</li>
+        </ol>
+        <hr><hr>
+        <h4>Steps to Upload the paper </h4>
+        <hr>
+        <ol>
+            <li>Select upload paper option from navbar</li>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the tracking id will be sent to you</li>
+        </ol>
+        <hr><hr>
+        <h4>Peer review process</h4>
+        <hr>
+        <ol>
+            <li>The uploaded papers will be checked for similarity index</li>
+            <li>If it satisfy the required similarity index then the papers are sent to reviewers for peer review process.</li>
+            <li>The reviewers' recommendations determine whether a paper will be accepted for publication / accepted subject to change / subject to resubmission with significant changes / accepted for oral presentation / rejected</li>
+            <li>The recommendations of the reviewer will uploaded onto the website and the authors can view and do incorporate the corrections, if any.</li>
+            <li>For papers which require changes, the same reviewers will be used to ensure that the quality of the revised paper is acceptable.</li>
+        </ol>
+        <hr><hr>
+        <h4>"Final Submission and Payment of Registration fee"</h4>
+        <hr>
+        <ol>
+            <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
+            <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+            <li>Then from the same upload paper option, go to "final paper upload"</li>
+            <li>Upload Copyright Form (which is available at important links page)</li>
+            <li>Upload final paper, and you are done !!</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
