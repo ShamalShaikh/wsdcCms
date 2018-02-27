@@ -56,11 +56,11 @@
                     <li>
                         <a href="/conference/ctsem2018/links">Important Links</a>
                     </li>
-                    <!-- {% if not request.user.is_authenticated %}
+                    {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="/register">Register</a>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
-                    {% endif %} -->
+                    {% endif %}
                     {% if request.user.is_authenticated %}
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -76,20 +76,20 @@
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
-                <!-- <ul class="nav navbar-nav" style="float:right;">
+                <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
                     <li>
                        <a href="">Hi, {{request.user.username}}</a>
                     </li>
                     <li>
-                        <a href="/signout/">Logout</a>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
                     </li>
                     {% else %}
                     <li>
-                       <a href="/signin" style="color:red">Login</a> 
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
                     </li>
                     {% endif %}
-                </ul> -->
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>

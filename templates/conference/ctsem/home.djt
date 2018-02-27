@@ -59,11 +59,11 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
-                    <!-- {% if not request.user.is_authenticated %}
+                    {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="/register">Register</a>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
-                    {% endif %} -->
+                    {% endif %}
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
@@ -82,20 +82,20 @@
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
-                <!-- <ul class="nav navbar-nav" style="float:right;">
+                <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
                     <li>
                        <a href="">Hi, {{request.user.first_name}}</a>
                     </li>
                     <li>
-                        <a href="/signout/">Logout</a>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
                     </li>
                     {% else %}
                     <li>
-                       <a href="/signin" style="color:red">Login</a> 
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
                     </li>
                     {% endif %}
-                </ul> -->
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -113,7 +113,7 @@
             <div class="col-sm-6">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:25px;"><b>Colloquium on</b></p>
+                <p style="font-size:25px;"><b>5th Colloquium on</b></p>
                 <p style="font-size:25px;"><b>Transportation Systems Engineering and Management</b></p>
                 <p style="font-size:20px;"><b>(CTSEM)</b></p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
@@ -133,7 +133,7 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
-                <center><h3 style="color:blue;"><b>May 10 - 12, 2018</b></h3>
+                <center><h3 style="color:blue;"><b>May 17 - 19, 2018</b></h3>
                 <h4>
                      Organised by<br><hr>
                      Transportation Division<br><br>
@@ -160,49 +160,108 @@
         </div>
         <!-- /.row -->
 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <center>
+                        <h4><b>Chief Patron</b></h4>
+                        <h4>Prof. N V Ramana Rao, Director </h4>
+                    </center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <h4><b>Organising Secretaries</b></h4>
+                    <h5>
+                    <ul>
+                        <li>Dr. Venkaiah Chowdary</li>
+                        <li>Dr. K.V.R. Ravi Shankar</li>
+                        <li>Dr. S. Shankar</li>
+                        <li>Dr. Arpan Mehar</li>
+                    </ul>
+                    </h5>                  
+                </div>
+                <div class="col-md-3">
+                    <h4><b>Organising Chair</b></h4>
+                    <h5>Prof. G. Rajesh Kumar<br> Head of the Department <br> Civil Engineering, NIT Warangal</h5>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <h4><b>Convener</b></h4>
+                    <h5>Prof. C.S.R.K. Prasad <br> Head of Transportation Division <br> Department of Civil Engineering <br> NIT Warangal</h5>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <hr>
             
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
             <br>
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-12">
                         <ul>
-                            <li>Dr. B.P. Chandrasekhar, Former Director (T), NRRDA</li>
-                            <li>Dr. T. V. Ramanayya, Former Professor, IIM Bangalore</li>
-                            <li>Dr. B. K. Katti, Former Professor, NIT Surat</li>
-                            <li>Dr. S. L. Dhingra, Former Institute Chair Professor, IIT Bombay</li>
-                            <li>Dr. Satish Chandra, Director, CRRI</li>
-                            <li>Dr. Pradip Kumar Sarkar, Professor, SPA, New Delhi</li>
-                            <li>Sri P.R.K. Murthy, Chief, Transport &amp; Communications, MMRDA</li>
+                            <li>Prof. A. Veeraragavan, IIT Madras, Chennai</li>
+                            <li>Prof. A.K. Sarkar, Director, BITS Pilani</li>
+                            <li>Prof. B.P. Chandrasekhar, Former Director (T), NRRDA</li>
+                            <li>Prof. Geetam Tiwari, IIT Delhi</li>
+                            <li>Prof. I.K. Pateria, Director (T), NRRDA, New Delhi</li>
+                            <li>Prof. K. Sudhakar Reddy, IIT Kharaghpur</li>
+                            <li>Prof. K.V. Krishna Rao, IIT Bombay, Mumbai</li>
+                            <li>Prof. Partha Chakraborthy, IIT Kanpur</li>
+                            <li>Prof. P.K. Sikdar, ICT, New Delhi</li>
+                            <li>Prof. Praveen Kumar, IIT Roorkee</li>
+                            <li>Prof. Satish Chandra, Director, CRRI</li>
+                            <li>Prof. Shivananda Swamy, CEPT, Ahmedabad</li>
+                            <li>Prof. R. Sivanandan, IIT Madras, Chennai</li>
+                            <li>Dr. M.P. Raju, MD, LASA, New Delhi</li>
+                            <li>Prof. Kuncheria P. Isaac, Kerala Technological University</li>
+                            <li>Sri N.V.S. Reddy, MD, Hyderabad Metro, Hyderabad</li>
+                            <li>Sri P.R.K. Murthy, MMRDA</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-7">
-                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            <div class="col-md-8">
+                <center><h2><span class="label label-success">TECHNICAL COMMITTEE</span></h2></center>
+            <br>
                 <div class="row">
-                    <div class="col-md-5 col-md-offset-1">
-                        <h4><b>Chief Patron</b></h4>
-                        <h5>Prof. N V Ramana Rao, Director </h5> 
-                        <br>
-                        <h4><b>Organising Secretaries</b></h4>
-                        <h5>
+                    <div class="col-md-6">
                         <ul>
-                            <li>Dr. Venkaiah Chowdary</li>
-                            <li>Dr. K.V.R. Ravi Shankar</li>
-                            <li>Dr. S. Shankar</li>
-                            <li>Dr. Arpan Mehar</li>
+                            <li>Dr. A.K. Shukla, Professor, GEC, Lucknow</li>
+                            <li>Dr. Animesh Das, Professor, IIT Kanpur</li>
+                            <li>Dr. Ashish Verma, Associate Professor, IISc Bangalore</li>
+                            <li>Dr. A.U. Ravi Shankar, Professor, NIT Surathkal</li>
+                            <li>Dr. Bino I. Koshy, Professor, RIT Kottayam</li>
+                            <li>Dr. G.J. Joshi, Professor, SVNIT Surat</li>
+                            <li>Dr. K. Gunasekaran, Associate Professor, Anna University</li>
+                            <li>Dr. J. Murali Krishnan, Professor, IIT Madras, Chennai</li>
+                            <li>Dr. K. Ramachandra Rao, Associate Professor, IIT Delhi</li>
+                            <li>Dr. Karthik K. Srinivasan, Professor, IIT Madras</li>
+                            <li>Dr. M. Amarnath Reddy, Professor, IIT Kharagpur</li>
                         </ul>
-                        </h5>                        
                     </div>
                     <div class="col-md-6">
-                        <h4><b>Organising Chair</b></h4>
-                        <h5>Prof. G. Rajesh Kumar<br> Head of the Department <br> Civil Engineering, NIT Warangal</h5>
-                        <h4><b>Convener</b></h4>
-                        <h5>Prof. C.S.R.K. Prasad <br> Head of Transportation Division <br> Department of Civil Engineering, NIT Warangal</h5>
+                        <ul>
+                            <li>Dr. M. Parida, Professor, IIT Roorkee</li>
+                            <li>Dr. M. Satyakumar, Professor, College of Engg., Trivandrum</li>
+                            <li>Dr. Mahabir Panda, Professor, NIT Rourkela</li>
+                            <li>Dr. Moses Shantakumar, Professor, NIT Tiruchirapally</li>
+                            <li>Dr. M.S. Amarnath, Professor, Bangalore University</li>
+                            <li>Dr. M.V.L.R. Anjaneyulu, Professor, NIT Calicut</li>
+                            <li>Dr. P.K. Agarwal, Professor, MANIT, Bhopal</li>
+                            <li>Dr. S. Velmurugan, CRRI, New Delhi</li>
+                            <li>Dr. Samson Mathew, Professor, NIT Tiruchirapally</li>
+                            <li>Dr. Sanjay Gupta, Professor, SPA, New Delhi</li>
+                            <li>Dr. S.N. Sachedeva, Professor, NIT Kurukshetra</li>
+                            <li>Dr. Tom V. Mathew Professor, IIT Bombay</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -213,29 +272,31 @@
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
                 <p><b>CTSEM will cover the conceptual aspects related to transport planning, traffic engineering and pavement technology. The topics include, but are not restricted to </b></p>
                 <ul>
-                    <li>Transportation and Land Use</li>
-                    <li>Urban Transport Planning &amp; Management</li>
-                    <li>Travel Demand Analysis, Forecasting and Management</li>
-                    <li>Travel Behaviour Modelling</li>
-                    <li>Public Transport Planning &amp; Management</li>
-                    <li>Freight Transport</li>
-                    <li>Transportation and ICT</li>
+                    <li>Environmental and Ecological Aspects</li>
+                    <li>Freight Transport and Logistics</li>
+                    <li>GIS for Transportation</li>
+                    <li>Highway Capacity and Level of Service</li>
                     <li>Highway Design and Maintenance</li>
-                    <li>Traffic Modelling and Management</li>
-                    <li>Capacity &amp; Level of Service</li>
                     <li>Intelligent Transportation Systems</li>
-                    <li>Traffic Crashes and Safety</li>
-                    <li>Pedestrian Facilities &amp; Safety</li>
                     <li>Non-motorised Transportation</li>
-                    <li>Pavement Materials &amp; Characterisation</li>
                     <li>Pavement Design and Construction</li>
-                    <li>Pavement Evaluation &amp; Management</li>
+                    <li>Pavement Evaluation and Management</li>
+                    <li>Pavement Materials and Characterisation</li>
+                    <li>Pedestrian Facilities and Safety</li>
+                    <li>Public Transport Planning and Management</li>
                     <li>Road Asset Management</li>
-                    <li>Transportation Infrastructure Financing</li>
-                    <li>Transportation Economics and Policy</li>
                     <li>Road Pricing and Parking Charges</li>
                     <li>Sustainable Transportation</li>
-                    <li>Environmental &amp; Ecological Aspects</li>
+                    <li>Traffic Crashes and Safety</li>
+                    <li>Traffic Modelling and Management</li>
+                    <li>Transit Oriented Development</li>
+                    <li>Transportation and Land Use</li>
+                    <li>Transportation Economics and Policy</li>
+                    <li>Transportation Infrastructure Financing</li>
+                    <li>Travel Behaviour Modelling</li>
+                    <li>Travel Demand Analysis and Forecasting</li>
+                    <li>Urban Mobility</li>
+                    <li>Urban Transport Planning and Management</li>
                 </ul>                
             </div>
             <!-- /.col-md-4 -->
@@ -243,13 +304,17 @@
                 <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
                 <table class="table table-hover">
                     <tr class="active">
-                        <td>Submission of Full Paper</td>
-                        <td>25th March, 2018</td>
+                        <td>Extended Abstract Submission</td>
+                        <td>26th March, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance Notification</td>
-                        <td>8th April, 2018</td>
-                    </tr> 
+                        <td>9th April, 2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Final Paper Submission</td>
+                        <td>23rd April, 2018</td>
+                    </tr>
 		            <tr class="active">
                         <td>Last Date of Payment of Registration Fee</td>
                         <td>30th April, 2018</td>
@@ -285,17 +350,27 @@
             </div>
             <div class="col-md-3">
                 <h2><span class="label label-primary">Mode of Payment</span></h2><br>
-                Account Name     : Conference Chair NHTFF - 2018<br>
-                Account No       : 37172373926<br>
-                Name of the Bank : State Bank of India<br>
-                Branch           : REC Warangal (NIT Campus)<br>
-                Branch Code      : 20149<br>
-                IFSC Code        : SBIN0020149<br>
-                MICR Code        : 506002030<br> 
-                <br>
-                DD drawn in favor of “Conference Chair, NHTFF - 2018” payable at Warangal.
-
+                <b>All the payments are to be made through Online/NEFT to the Bank given below.</b>
                 <br><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Account Name</td>
+                        <td>CTSEM2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Account No</td>
+                        <td>37556833968</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Bank and Branch</td>
+                        <td>State Bank of India, REC Warangal (NIT Campus)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>IFSC Code</td>
+                        <td>SBIN0020149</td>
+                    </tr>
+                </table>
+
                 <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
                 <p>
                     Prof. C.S.R.K. Prasad<br>
@@ -314,9 +389,7 @@
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Introduction</span></center></h2><br>
-                <p>Growing urbanisation, rising vehicle ownership, globalisation of economies and shortage of resources have posed major challenges to the transportation sector. Mobility, accessibility and safety continue to be daunting challenges to transportation professionals’ world over. In this context, cutting edge research that could provide sustainable solutions to transport related problems is the need of the hour.</p>
-                <p>Colloquium on Transportation Systems Engineering and Management (CTSEM) aims to bring together researchers, scientists, engineers, research scholars and post graduate students in different areas of Transportation Engineering and Management.</p>
-                <p>The objectives of CTSEM are to provide an pportunity for the students, research scholars and transportation professionals to present their work and network with the peers; learn about advancements and applications in their fields; minimise the uplication of research efforts and arrive at future directions for research.</p>
+                <p>Growing urbanisation, rising vehicle ownership, globalisation of economies and shortage of resources has posed major challenges to the transportation sector. Mobility, accessibility and safety continue to be daunting challenges to transportation professionals’ world over. In this context, cutting edge research that could provide sustainable solutions to transport related problems is the need of the hour. Colloquium on Transportation Systems Engineering and Management (CTSEM) aims to bring together researchers, scientists, engineers, research scholars and post graduate students in different areas of Transportation Engineering and Management. Earlier CTSEMs was organised in 2014 at NIT Calicut, 2015 at NIT Tiruchirapalli, 2016 at RV College of Engineering, Bangalore and 2017 at Anna University, Chennai. The objectives of this 5th CTSEM are to provide an opportunity for the students, research scholars and transportation professionals to present their work and network with the peers; learn about advancements and applications in their fields; minimise the duplication of research efforts and arrive at future directions for research.
             </div>
         </div>
         <div class="row">
@@ -333,9 +406,7 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
                 <p>
-                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors Block of the Institute on payment of Rs. XXXXX on first come first serve basis.
-                </p>
-                <p> Travelling Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
+                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on payment of Rs. 1500/-. Out stationed scholars and postgraduate students will be provided free boarding and lodging in the Institute Hostels. Travel Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
                 </p>
                 <br>
             </div>
@@ -349,12 +420,12 @@
                         <td>Rs. 3000/- </td>
                     </tr>
                     <tr class="active">
-                        <td>Delegates from Academic, R&D Institutions</td>
-                        <td>Rs. 2000/- </td>
+                        <td>Faculty and Scientists:</td>
+                        <td>Rs. 1500/- </td>
                     </tr>
                     <tr class="active">
-                        <td>Students/Research Scholar</td>
-                        <td>Rs. 1000/- </td>
+                        <td>Research Scholars/Students</td>
+                        <td>Rs. 750/- </td>
                     </tr>
                 </table>
                 <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>

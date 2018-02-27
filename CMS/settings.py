@@ -59,8 +59,8 @@ ROOT_URLCONF = 'CMS.urls'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mmse2018.nitw@gmail.com'
-EMAIL_HOST_PASSWORD = 'mmsenitw2018'
+EMAIL_HOST_USER = 'conference@nitw.ac.in'  #'mmse2018.nitw@gmail.com'
+EMAIL_HOST_PASSWORD = 'cmsnitw2018'  #'mmsenitw2018'
 EMAIL_PORT = 587
 
 TEMPLATES = [
@@ -85,13 +85,13 @@ WSGI_APPLICATION = 'CMS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 #For Production Uncomment the below line
-# from databases import DATABASES
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+from databases import DATABASES
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
