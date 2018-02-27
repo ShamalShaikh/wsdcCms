@@ -61,7 +61,7 @@
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="/register">Register</a>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
                     {% endif %}
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
@@ -89,11 +89,11 @@
                        <a href="">Hi, {{request.user.first_name}}</a>
                     </li>
                     <li>
-                        <a href="/signout/">Logout</a>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
                     </li>
                     {% else %}
                     <li>
-                       <a href="/signin" style="color:red">Login</a> 
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
                     </li>
                     {% endif %}
                 </ul>

@@ -10,21 +10,21 @@ from login_auth.models import *
 from sendfile import sendfile
 
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def dddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
 	if not request.user.is_superuser and request.user != p.user:
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, p.pic_of_dd.path)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def iddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
 	if not request.user.is_superuser and request.user != p.user:
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, p.pic_of_id.path)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def rejectedpaymentdownload(request, rej_payment_id):
 	p = Rejected_payment.objects.get(id=rej_payment_id)
 	if not request.user.is_superuser and request.user != p.user:
@@ -32,16 +32,17 @@ def rejectedpaymentdownload(request, rej_payment_id):
 	return sendfile(request, p.pic_of_dd.path)
 
 # Create your views here.
-def index(request):
-	return redirect('/dashboard')
+# def index(request):
+# 	return redirect('/dashboard')
 
-def Register(request):
+def Register(request,alias):
 	if request.user.is_authenticated():
-	    return redirect('/dashboard')
-	return render(request,'login_auth/sites/register.djt')
+	    return redirect('/dashboard/'+alias)
+	return render(request,'login_auth/sites/register.djt',{'alias':alias})
 
-def register(request):
+def register(request,alias):
 	response={}
+	response['alias'] = alias
 	if request.method=='POST':
 		firstname = request.POST['firstname']
 		lastname = request.POST['lastname']
@@ -77,31 +78,33 @@ def register(request):
 			except :
 				response['message'] = "username already exist"
 				return render(request,'login_auth/sites/register.djt',response)
-	return render(request,'login_auth/sites/register.djt')
+	return render(request,'login_auth/sites/register.djt',response)
 			
-def signin(request):
+def signin(request,alias):
 	response={}
+	response['alias'] = alias
 	if request.user.is_authenticated():
-	    return redirect('/dashboard')
+	    return redirect('/dashboard/'+alias)
 	if request.method == "POST":
 	    username = request.POST['username']
 	    password = request.POST['password']
 	    user = authenticate(username=username, password=password)
 	    if user is not None:
 	        login(request, user)
-	        return redirect('/dashboard')
+	        return redirect('/dashboard/'+alias)
 	    else:
 	        response['message']='User is not registered/Password Incorrect' 
 	return render(request,'login_auth/sites/login.djt',response)
 
-def signout(request):
+def signout(request,alias):
 	logout(request)
-	return redirect('/')
+	return redirect('/dashboard/'+alias)
 
-def dashboard(request):
+def dashboard(request,alias):
 	response={}
-	response['conferences'] = Conference.objects.filter(is_published=True)	
-	return render(request,'login_auth/sites/dashboard.djt',response)
+	# response['conferences'] = Conference.objects.filter(is_published=True)	
+	# return render(request,'login_auth/sites/dashboard.djt',response)
+	return redirect('/conference/'+alias)
 
 
 @login_required(login_url='/signin')
@@ -130,7 +133,3 @@ def profile(request,type):
 			return render(request, 'login_auth/sites/profile.djt',response)
 
 	return render(request, 'login_auth/sites/profile.djt',response)
-
-
-
-

@@ -15,14 +15,14 @@ import smtplib
 import os
 
 # Create your views here.
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def paperdownload(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	if not request.user.is_superuser and request.user != paper.uid:
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, paper.paperfile.path)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def remarkdownload(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
 	remark = Paper_Remark.objects.get(conf_paper=paper)
@@ -30,14 +30,14 @@ def remarkdownload(request, paper_id):
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, remark.remarkFile.path)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def finalpaperdownload(request, final_paper_id):
 	paper = Final_paper.objects.get(id=final_paper_id)
 	if not request.user.is_superuser and request.user != paper.related_paper.uid:
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, paper.final_file.path)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def finalcfdownload(request, final_paper_id):
 	paper = Final_paper.objects.get(id=final_paper_id)
 	if not request.user.is_superuser and request.user != paper.related_paper.uid:
@@ -74,7 +74,7 @@ def index(request,alias):
 	except :
 		return render(request,'conference/conference.djt',response)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def make_payment(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	payments = Payment.objects.filter(user=request.user,conf_id=conference)
@@ -85,7 +85,7 @@ def make_payment(request,alias):
 	response['rejected_payments'] = rejected_payments
 	return render(request,'conference/payment.djt',response)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def payment(request,alias):
 	if request.method == 'POST' :
 		dd_pic = request.FILES['dd_file']
@@ -119,7 +119,7 @@ def payment(request,alias):
 		return redirect(url)
 	return render(request,'conference/payment.djt',{'conference':conference})
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def upload_paper(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	now = datetime.datetime.now()
@@ -169,12 +169,12 @@ def upload_paper(request,alias):
 			regconf.papers.add(paper)
 			regconf.save()
 
-			sendTrackingMail(paper)
+			sendTrackingMail(paper,alias)
 
 	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def dashboard(request,alias):
 	response = {}
 	response['alias']=alias
@@ -277,7 +277,7 @@ def treatlinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/treat/links.djt',response)
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def reupload_paper(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	now = datetime.datetime.now()
@@ -294,7 +294,7 @@ def reupload_paper(request,alias):
 	url = '/conference/'+conference.conference_alias+"/dashboard/"
 	return redirect(url)	
 
-@login_required(login_url='/signin')
+@login_required(login_url='/signin/mmse2018')
 def final_paper(request,alias):
 	conference = Conference.objects.get(conference_alias=alias)
 	now = datetime.datetime.now()
@@ -454,27 +454,52 @@ def ctsemlinks(request):
 
 # 	return
 
-def sendTrackingMail(paper):
+def sendTrackingMail(paper,alias):
 	#Mail application ID to applicant
-	receiver = paper.uid.email
-	sender = 'mmse2018.nitw@gmail.com' ##to be changed
+	if alias == 'mmse2018' :
+		receiver = paper.uid.email
+		sender = 'mmse2018.nitw@gmail.com'
 
-	content = "Tracking id : " + paper.paperRefNum+'\n\n'
-	content += "Title : "+ paper.papername + '\n\n'
-	content += "Dear Author\n\n"
-	content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING". \n\n'
-	content += 'Your submission was received in good order.\n\n'
-	content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/mmse.\n\n'
-	content += 'Thank you for submitting your work to the conference.\n\n'
-	content += 'Kind regards,\n\n'
-	content += 'Dr. D. Srinivasacharya\n\n'
-	content += 'Conference Chair, MMSE-2018" \n\n'
+		content = "Tracking id : " + paper.paperRefNum+'\n\n'
+		content += "Title : "+ paper.papername + '\n\n'
+		content += "Dear Author\n\n"
+		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING". \n\n'
+		content += 'Your submission was received in good order.\n\n'
+		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/mmse.\n\n'
+		content += 'Thank you for submitting your work to the conference.\n\n'
+		content += '\n\n For any queries mail to mmse2018.nitw@gmail.com .\n\n'
+		content += 'Kind regards,\n\n'
+		content += 'Dr. D. Srinivasacharya\n\n'
+		content += 'Conference Chair, MMSE-2018" \n\n'
 
-	rlist = []
-	rlist.append(receiver)
-	try:
-		send_mail('Tracking ID for uploaded paper',content,sender,rlist,fail_silently=False,)
-	except BadHeaderError:
-		return HttpResponse('Invalid header found.')
+		rlist = []
+		rlist.append(receiver)
+		try:
+			send_mail('Tracking ID for uploaded paper for conference MMSE-2018',content,sender,rlist,fail_silently=False,)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+
+	if alias == 'ctsem2018' :
+		receiver = paper.uid.email
+		sender = 'ctsem2018@gmail.com'
+
+		content = "Tracking id : " + paper.paperRefNum+'\n\n'
+		content += "Title : "+ paper.papername + '\n\n'
+		content += "Dear Author\n\n"
+		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING". \n\n'
+		content += 'Your submission was received in good order.\n\n'
+		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/ctsem.\n\n'
+		content += 'Thank you for submitting your work to the conference.\n\n'
+		content += '\n\n For any queries mail to ctsem2018@gmail.com .\n\n'
+		content += 'Kind regards,\n\n'
+		content += 'Prof. G. Rajesh Kumar\n\n'
+		content += 'Conference Chair, CTSEM-2018" \n\n'
+
+		rlist = []
+		rlist.append(receiver)
+		try:
+			send_mail('Tracking ID for uploaded paper for conference CTSEM-2018',content,sender,rlist,fail_silently=False,)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
 
 	return
