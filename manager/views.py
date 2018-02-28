@@ -613,8 +613,8 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		content += "We are looking forward welcoming you in the Conference.\n\n"
 		content += "Sincerely yours,\n\n"
 
-		content += "Prof. G. Rajesh Kumar\n\n"
-		content += "Conference Chair\n\n"
+		content += "Prof. C.S.R.K. Prasad\n\n"
+		content += "Colloquium Chair\n\n"
 		content += "Instructions for uploading the Final Submission and Payment "
 		content += "of Registration fee : \n\n"
 		content += "\t 1. Upon acceptance of a manuscript for publication/presentation, "

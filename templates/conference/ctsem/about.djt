@@ -102,10 +102,10 @@
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">About Institute and Wranagal</span></center></h2><br>
-                <p style="color:black">
+                <p style="color:black; text-align:justify;">
                    National Institute of Technology Warangal, formerly known as Regional Engineering College was established in the year 1959. Over the years it has developed into a premier institute of higher learning and is ranked among the top technical education institutions in India. There are 14 Departments offering eight dergraduate and 32 post-graduate programmes besides doctoral programmes. About 5000 students across the country and about 500 international students study on the campus. It is a fully residential campus sprawling over 250 acres with excellent infrastructure in the form of state of the art laboratories, library, seminar halls, and guest houses and laboratories. 
                 </p>
-                <p style="color:black">
+                <p style="color:black; text-align:justify;">
                     Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 km away) and by Road (NH 163). Warangal is renowned for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is a hub of tourist attractions with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake located within a radius of 80 km.
                 </p>
             </div>
@@ -114,7 +114,7 @@
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br><h2><center><span class="label label-success">Transportation Department</span></center></h2><br>
-            <p>
+            <p style="text-align:justify">
                The Transportation Division of the Department of Civil Engineering started M.Tech programme in Transportation Engineering in the year 1968. This is the first Institution in India, which started a full- fledged M.Tech Degree Program in Transportation Engineering under the able guidance of Prof. Martin Ekse of Washington State University, USA, and Prof. V.V. Sylyanov of Moscow Automobile and Road Construction Institute, USSR, and other distinguished experts in India. Since its inception, the Transportation Division is actively engaged in Research and Consultancy Projects covering Transportation Planning, Traffic Engineering, and Pavement Engineering.
             </p>
             </div>
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br><h2><center><span class="label label-success">Department of Civil Engineering</span></center></h2><br>
-            <p>
+            <p style="text-align:justify">
                The Department of Civil Engineering offers an Undergraduate program in Civil Engineering and seven Postgraduate programs in Engineering Structures, Water Resource Engineering, Geotechnical Engineering, Transportation Engineering, RS &amp; GIS, Construction Technology and Management, and Environmental Engineering. The Department has experienced faculty and well-established laboratories. The Department has liaison with reputed industries and R&amp;D organizations like CRRI, CIRT, Urban Development Authorities, Municipal Corporations, Traffic Police, APSRTC, CES, RITES, LASA, SPAN, STUP, L&amp;T, Singareni Collieries, Roads &amp; Buildings Dept., PR Dept., I &amp; CAD Dept., and AP Genco.
             </p>
             </div>
@@ -159,11 +159,16 @@
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
                                 <b>Prof. C.S.R.K. Prasad</b><br>
-                                Convener (CTSEM)<br>
+                                Colloquium Chair (CTSEM)<br>
                                 Department of Civil Engineering<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506 004, TS<br>
-                                <b>Mobile : </b>+91 - 9440347348 
+                                 <b>Mobile : </b>+91 - 9440347348 <br>
+                                                +91 - 8332969252 <br>
+                                                +91 - 8332969262 <br>
+                                <b>Phone : </b> 0870-2462117 <br>
+                                                0870-2462143 <br>
+                                                0870-2462148 <br>
                             </div>
                         </div>
                     </div>
