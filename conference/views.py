@@ -492,8 +492,8 @@ def sendTrackingMail(paper,alias):
 		content += 'Thank you for submitting your work to the conference.\n\n'
 		content += '\n\n For any queries mail to ctsem2018@gmail.com .\n\n'
 		content += 'Kind regards,\n\n'
-		content += 'Prof. G. Rajesh Kumar\n\n'
-		content += 'Conference Chair, CTSEM-2018" \n\n'
+		content += 'Prof. C.S.R.K. Prasad\n\n'
+		content += 'Colloquium Chair, CTSEM-2018" \n\n'
 
 		rlist = []
 		rlist.append(receiver)

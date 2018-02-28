@@ -162,115 +162,25 @@
 
         <hr>
         <div class="row">
-            <div class="col-md-12">
-                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <center>
-                        <h4><b>Chief Patron</b></h4>
-                        <h4>Prof. N V Ramana Rao, Director </h4>
-                    </center>
-                </div>
-            </div>
-            <br><br>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-1">
-                    <h4><b>Organising Secretaries</b></h4>
-                    <h5>
-                    <ul>
-                        <li>Dr. Venkaiah Chowdary</li>
-                        <li>Dr. K.V.R. Ravi Shankar</li>
-                        <li>Dr. S. Shankar</li>
-                        <li>Dr. Arpan Mehar</li>
-                    </ul>
-                    </h5>                  
-                </div>
-                <div class="col-md-3">
-                    <h4><b>Organising Chair</b></h4>
-                    <h5>Prof. G. Rajesh Kumar<br> Head of the Department <br> Civil Engineering, NIT Warangal</h5>
-                </div>
-                <div class="col-md-3 col-md-offset-1">
-                    <h4><b>Convener</b></h4>
-                    <h5>Prof. C.S.R.K. Prasad <br> Head of Transportation Division <br> Department of Civil Engineering <br> NIT Warangal</h5>
-                </div>
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Introduction</span></center></h2><br>
+                <p style="text-align:justify">Growing urbanisation, rising vehicle ownership, globalisation of economies and shortage of resources has posed major challenges to the transportation sector. Mobility, accessibility and safety continue to be daunting challenges to transportation professionals’ world over. In this context, cutting edge research that could provide sustainable solutions to transport related problems is the need of the hour. Colloquium on Transportation Systems Engineering and Management (CTSEM) aims to bring together researchers, scientists, engineers, research scholars and post graduate students in different areas of Transportation Engineering and Management. Earlier CTSEMs was organised in 2014 at NIT Calicut, 2015 at NIT Tiruchirapalli, 2016 at RV College of Engineering, Bangalore and 2017 at Anna University, Chennai. The objectives of this 5th CTSEM are to provide an opportunity for the students, research scholars and transportation professionals to present their work and network with the peers; learn about advancements and applications in their fields; minimise the duplication of research efforts and arrive at future directions for research.</p>
             </div>
         </div>
-
         <div class="row">
-            <hr>
-            
-            <div class="col-md-4">
-                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
-            <br>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul>
-                            <li>Prof. A. Veeraragavan, IIT Madras, Chennai</li>
-                            <li>Prof. A.K. Sarkar, Director, BITS Pilani</li>
-                            <li>Prof. B.P. Chandrasekhar, Former Director (T), NRRDA</li>
-                            <li>Prof. Geetam Tiwari, IIT Delhi</li>
-                            <li>Prof. I.K. Pateria, Director (T), NRRDA, New Delhi</li>
-                            <li>Prof. K. Sudhakar Reddy, IIT Kharaghpur</li>
-                            <li>Prof. K.V. Krishna Rao, IIT Bombay, Mumbai</li>
-                            <li>Prof. Partha Chakraborthy, IIT Kanpur</li>
-                            <li>Prof. P.K. Sikdar, ICT, New Delhi</li>
-                            <li>Prof. Praveen Kumar, IIT Roorkee</li>
-                            <li>Prof. Satish Chandra, Director, CRRI</li>
-                            <li>Prof. Shivananda Swamy, CEPT, Ahmedabad</li>
-                            <li>Prof. R. Sivanandan, IIT Madras, Chennai</li>
-                            <li>Dr. M.P. Raju, MD, LASA, New Delhi</li>
-                            <li>Prof. Kuncheria P. Isaac, Kerala Technological University</li>
-                            <li>Sri N.V.S. Reddy, MD, Hyderabad Metro, Hyderabad</li>
-                            <li>Sri P.R.K. Murthy, MMRDA</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <center><h2><span class="label label-success">TECHNICAL COMMITTEE</span></h2></center>
-            <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul>
-                            <li>Dr. A.K. Shukla, Professor, GEC, Lucknow</li>
-                            <li>Dr. Animesh Das, Professor, IIT Kanpur</li>
-                            <li>Dr. Ashish Verma, Associate Professor, IISc Bangalore</li>
-                            <li>Dr. A.U. Ravi Shankar, Professor, NIT Surathkal</li>
-                            <li>Dr. Bino I. Koshy, Professor, RIT Kottayam</li>
-                            <li>Dr. G.J. Joshi, Professor, SVNIT Surat</li>
-                            <li>Dr. K. Gunasekaran, Associate Professor, Anna University</li>
-                            <li>Dr. J. Murali Krishnan, Professor, IIT Madras, Chennai</li>
-                            <li>Dr. K. Ramachandra Rao, Associate Professor, IIT Delhi</li>
-                            <li>Dr. Karthik K. Srinivasan, Professor, IIT Madras</li>
-                            <li>Dr. M. Amarnath Reddy, Professor, IIT Kharagpur</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul>
-                            <li>Dr. M. Parida, Professor, IIT Roorkee</li>
-                            <li>Dr. M. Satyakumar, Professor, College of Engg., Trivandrum</li>
-                            <li>Dr. Mahabir Panda, Professor, NIT Rourkela</li>
-                            <li>Dr. Moses Shantakumar, Professor, NIT Tiruchirapally</li>
-                            <li>Dr. M.S. Amarnath, Professor, Bangalore University</li>
-                            <li>Dr. M.V.L.R. Anjaneyulu, Professor, NIT Calicut</li>
-                            <li>Dr. P.K. Agarwal, Professor, MANIT, Bhopal</li>
-                            <li>Dr. S. Velmurugan, CRRI, New Delhi</li>
-                            <li>Dr. Samson Mathew, Professor, NIT Tiruchirapally</li>
-                            <li>Dr. Sanjay Gupta, Professor, SPA, New Delhi</li>
-                            <li>Dr. S.N. Sachedeva, Professor, NIT Kurukshetra</li>
-                            <li>Dr. Tom V. Mathew Professor, IIT Bombay</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
+                <p style="text-align:justify">Papers are invited on the topics outlined and others falling within the scope of the event. Papers are to be prepared as per the ASCE conference proceedings paper format. Acceptance of the papers will be based on peer review results and if accepted for publication, must be presented at the event. The language of the colloquium is English.</p>
+                <p style="text-align:justify">
+                    Negotiations with leading publishers are underway to publish some of the selected high quality papers presented in the Colloquium in the form of proceedings.
+                </p>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
-                <p><b>CTSEM will cover the conceptual aspects related to transport planning, traffic engineering and pavement technology. The topics include, but are not restricted to </b></p>
+                <p style="text-align:justify;"><b>CTSEM will cover the conceptual aspects related to transport planning, traffic engineering and pavement technology. The topics include, but are not restricted to </b></p>
                 <ul>
                     <li>Environmental and Ecological Aspects</li>
                     <li>Freight Transport and Logistics</li>
@@ -300,7 +210,7 @@
                 </ul>                
             </div>
             <!-- /.col-md-4 -->
-            <div class="col-md-4">
+            <div class="col-md-6" id="dates">
                 <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
                 <table class="table table-hover">
                     <tr class="active">
@@ -322,7 +232,7 @@
                 </table>
                 <br>
                 <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
-                <p>
+                <p style="text-align:justify;">
                     CTSEM will provide great opportunity for interaction among industries, consultants, government agencies, educational institutions, academicians, professionals and decision makers.<br>
                     Sponsorship with the following tariff is invited.
                 </p>
@@ -345,10 +255,10 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-md-1">
-                
-            </div>
-            <div class="col-md-3">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <center>
                 <h2><span class="label label-primary">Mode of Payment</span></h2><br>
                 <b>All the payments are to be made through Online/NEFT to the Bank given below.</b>
                 <br><br>
@@ -370,11 +280,14 @@
                         <td>SBIN0020149</td>
                     </tr>
                 </table>
-
+                </center>
+            </div>
+            <div class="col-md-6">
                 <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
+                <center>
                 <p>
                     Prof. C.S.R.K. Prasad<br>
-                    Convener (CTSEM)<br>
+                    Colloquium Chair (CTSEM)<br>
                     Department of Civil Engineering <br>
                     National Institute of Technology, <br>
                     Warangal – 506 004, Telangana, India <br>
@@ -382,35 +295,10 @@
                     Phone: 0870-2462117 <br>
                     E-mail: ctsem2018@gmail.com <br>
                 </p>
+                </center>
             </div>
         </div>
         <hr>
-
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Introduction</span></center></h2><br>
-                <p>Growing urbanisation, rising vehicle ownership, globalisation of economies and shortage of resources has posed major challenges to the transportation sector. Mobility, accessibility and safety continue to be daunting challenges to transportation professionals’ world over. In this context, cutting edge research that could provide sustainable solutions to transport related problems is the need of the hour. Colloquium on Transportation Systems Engineering and Management (CTSEM) aims to bring together researchers, scientists, engineers, research scholars and post graduate students in different areas of Transportation Engineering and Management. Earlier CTSEMs was organised in 2014 at NIT Calicut, 2015 at NIT Tiruchirapalli, 2016 at RV College of Engineering, Bangalore and 2017 at Anna University, Chennai. The objectives of this 5th CTSEM are to provide an opportunity for the students, research scholars and transportation professionals to present their work and network with the peers; learn about advancements and applications in their fields; minimise the duplication of research efforts and arrive at future directions for research.
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
-                <p>Papers are invited on the topics outlined and others falling within the scope of the event. Papers are to be prepared as per the ASCE conference proceedings paper format. Acceptance of the papers will be based on peer review results and if accepted for publication, must be presented at the event. The language of the colloquium is English.</p>
-                <p>
-                    Negotiations with leading publishers are underway to publish some of the selected high quality papers presented in the Colloquium in the form of proceedings.
-                </p>
-            </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
-                <p>
-                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on payment of Rs. 1500/-. Out stationed scholars and postgraduate students will be provided free boarding and lodging in the Institute Hostels. Travel Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
-                </p>
-                <br>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
                 <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
@@ -436,6 +324,124 @@
                 <p>
                     "Best Paper Awards" will be conferred on the selected author(s) of full papers presented at the conference.
                 </p>
+            </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
+                <p style="text-align:justify">
+                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on payment of Rs. 1500/-. Out stationed scholars and postgraduate students will be provided free boarding and lodging in the Institute Hostels. Travel Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <h4><b>Chief Patron</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao, Director </p>
+                    </center>
+                </div>
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Patron</b></h4>
+                    <p style="font-size:15px;">Prof. G. Rajesh Kumar<br> Head of the Department <br> Civil Engineering, NIT Warangal</h5>
+                    </center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Organising Secretaries</b></h4>
+                    <p style="font-size:15px;">Dr. Venkaiah Chowdary</p>
+                    <p style="font-size:15px;">Dr. K.V.R. Ravi Shankar</p>
+                    <p style="font-size:15px;">Dr. S. Shankar</p>
+                    <p style="font-size:15px;">Dr. Arpan Mehar</p>
+                    </center>               
+                </div>
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Colloquium Chair</b></h4>
+                    <p style="font-size:15px;">Prof. C.S.R.K. Prasad <br> Head of Transportation Division <br> Department of Civil Engineering <br> NIT Warangal</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <hr>
+            
+            <div class="col-md-4">
+                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-12" style="font-size:15px;">
+                        <ul>
+                            <li>Prof. A. Veeraragavan, IIT Madras, Chennai</li>
+                            <li>Prof. A.K. Sarkar, Director, BITS Pilani</li>
+                            <li>Prof. B.P. Chandrasekhar, Former Director (T), NRRDA</li>
+                            <li>Prof. Geetam Tiwari, IIT Delhi</li>
+                            <li>Prof. I.K. Pateria, Director (T), NRRDA, New Delhi</li>
+                            <li>Prof. K. Sudhakar Reddy, IIT Kharaghpur</li>
+                            <li>Prof. K.V. Krishna Rao, IIT Bombay, Mumbai</li>
+                            <li>Prof. Partha Chakraborthy, IIT Kanpur</li>
+                            <li>Prof. P.K. Sikdar, ICT, New Delhi</li>
+                            <li>Prof. Praveen Kumar, IIT Roorkee</li>
+                            <li>Prof. Satish Chandra, Director, CRRI</li>
+                            <li>Prof. Shivananda Swamy, CEPT, Ahmedabad</li>
+                            <li>Prof. R. Sivanandan, IIT Madras, Chennai</li>
+                            <li>Dr. M.P. Raju, MD, LASA, New Delhi</li>
+                            <li>Prof. Kuncheria P. Isaac, Kerala Technological University</li>
+                            <li>Sri N.V.S. Reddy, MD, Hyderabad Metro, Hyderabad</li>
+                            <li>Sri P.R.K. Murthy, MMRDA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <center><h2><span class="label label-success">TECHNICAL COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-6" style="font-size:15px;">
+                        <ul>
+                            <li>Dr. A.K. Shukla, Professor, GEC, Lucknow</li>
+                            <li>Dr. Animesh Das, Professor, IIT Kanpur</li>
+                            <li>Dr. Ashish Verma, Associate Professor, IISc Bangalore</li>
+                            <li>Dr. A.U. Ravi Shankar, Professor, NIT Surathkal</li>
+                            <li>Dr. Bino I. Koshy, Professor, RIT Kottayam</li>
+                            <li>Dr. G.J. Joshi, Professor, SVNIT Surat</li>
+                            <li>Dr. K. Gunasekaran, Associate Professor, Anna University</li>
+                            <li>Dr. J. Murali Krishnan, Professor, IIT Madras, Chennai</li>
+                            <li>Dr. K. Ramachandra Rao, Associate Professor, IIT Delhi</li>
+                            <li>Dr. Karthik K. Srinivasan, Professor, IIT Madras</li>
+                            <li>Dr. M. Amarnath Reddy, Professor, IIT Kharagpur</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style="font-size:15px;">
+                        <ul>
+                            <li>Dr. M. Parida, Professor, IIT Roorkee</li>
+                            <li>Dr. M. Satyakumar, Professor, College of Engg., Trivandrum</li>
+                            <li>Dr. Mahabir Panda, Professor, NIT Rourkela</li>
+                            <li>Dr. Moses Shantakumar, Professor, NIT Tiruchirapally</li>
+                            <li>Dr. M.S. Amarnath, Professor, Bangalore University</li>
+                            <li>Dr. M.V.L.R. Anjaneyulu, Professor, NIT Calicut</li>
+                            <li>Dr. P.K. Agarwal, Professor, MANIT, Bhopal</li>
+                            <li>Dr. S. Velmurugan, CRRI, New Delhi</li>
+                            <li>Dr. Samson Mathew, Professor, NIT Tiruchirapally</li>
+                            <li>Dr. Sanjay Gupta, Professor, SPA, New Delhi</li>
+                            <li>Dr. S.N. Sachedeva, Professor, NIT Kurukshetra</li>
+                            <li>Dr. Tom V. Mathew Professor, IIT Bombay</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Footer -->
@@ -469,11 +475,16 @@
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
                                 <b>Prof. C.S.R.K. Prasad</b><br>
-                                Convener (CTSEM)<br>
+                                Colloquium Chair (CTSEM)<br>
                                 Department of Civil Engineering<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506 004, TS<br>
-                                <b>Mobile : </b>+91 - 9440347348 
+                                <b>Mobile : </b>+91 - 9440347348 <br>
+                                                +91 - 8332969252 <br>
+                                                +91 - 8332969262 <br>
+                                <b>Phone : </b> 0870-2462117 <br>
+                                                0870-2462143 <br>
+                                                0870-2462148 <br>
                             </div>
                         </div>
                     </div>
