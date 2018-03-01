@@ -39,6 +39,12 @@
 	<a href="/Register/{{alias}}"><button class="ui button black">Sign up</button></a>
 	</center>
 	</div>
+	<br><br>
+	<div class="ui fluid segment">
+	<center>
+	<a href="/password_reset" target="blank"><button class="ui button black">Forgot Password</button></a>
+	</center>
+	</div>
 
 </div>
 

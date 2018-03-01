@@ -558,7 +558,7 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		content += '\t 5. Then from the same upload paper option, go to "final paper upload".<br>'
 		content += "\t 6. Upload Copyright Form (which is available at important links page).<br>"
 		content += "\t 7. Upload final paper, and you are done !!!<br><br>"
-		content += '\n\n For any queries mail to mmse2018.nitw@gmail.com .\n\n'
+		content += '\n\nIn case of any queries mail to mmse2018.nitw@gmail.com .\n\n'
 
 		rlist = []
 		rlist.append(receiver)
@@ -627,7 +627,7 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		content += '\t 5. Then from the same upload paper option, go to "final paper upload".\n'
 		content += "\t 6. Upload Copyright Form (which is available at important links page).\n"
 		content += "\t 7. Upload final paper, and you are done !!!\n\n"
-		content += '\n\n For any queries mail to ctsem2018@gmail.com .\n\n'
+		content += '\n\nIn case of any queries mail to ctsem2018@gmail.com .\n\n'
 
 		rlist = []
 		rlist.append(receiver)
