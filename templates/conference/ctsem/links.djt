@@ -101,17 +101,17 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-5">
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
                     <li><a href="{% static 'docs_ctsem/CTSEM2018_Brochure.pdf' %}">Brochure</a></li><br>
-                    <li><a>Paper Template</a></li>
+                    <li><a href="{% static 'docs_ctsem/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li>
                     <br>
-                    <li><a> Poster Template </a></li>
+                    <li><a> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li>
                     <br>
-                    <li><a>Registration Form</a></li><br>
+                    <li><a href="{% static 'docs_ctsem/Registration_Form.doc' %}">Registration Form</a></li><br>
                     <li><a>Copyright Transfer Form</a></li><br>
                     <li><a>Poster</a></li><br>
                 </ol></b></h4>
@@ -225,6 +225,16 @@
             <li>Fill in the details and click on register</li>
             <li>Login with your credentials</li>
             <li>Congrats !!! You are succesfully registered on website</li>
+        </ol>
+        <hr><hr>
+        <h4 style="color:red;">Provision for only attending the conference</h4>
+        <hr>
+        <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
+        <ol>
+            <li>After registering on the website, login with your credentials</li>
+            <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
+            <li>Upload picture of ID proof and the payment receipt</li>
         </ol>
         <hr><hr>
         <h4>Steps to Upload the paper </h4>
