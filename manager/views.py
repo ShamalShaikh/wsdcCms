@@ -558,6 +558,8 @@ def assignToReview(request,paper_id):
 		reviewer.papers.add(paper)
 		reviewer.save()
 
+		sendAssignmentMail(reviewer.user.email,paper,"assigned")
+
 		ques = Questions.objects.filter(conference=paper.conf_id)
 		for que in ques:
 			if Answers.objects.filter(question=que,paper=paper,reviewer=reviewer).count() == 0 :
@@ -612,6 +614,30 @@ def reassign(request,revid):
 
 	assignPaperObj.reviewer.papers.add(assignPaperObj.paper)
 
+	sendAssignmentMail(assignPaperObj.reviewer.user.email,assignPaperObj.paper,"reassigned")
+
 	return redirect('/manager/reviewDetails/'+revid)
 
+
+def sendAssignmentMail(email,paper,act):
+	receiver = email
+	sender = 'ctsem2018.nitw@gmail.com'
+
+	content = 'Dear Reviewer,\n\n'
+	content += 'Paper : '+paper.papername+' \n\nReference number : '+paper.paperRefNum
+	content += '\n\n has been '+act+' to you for review by conference manager of '
+	content += paper.conf_id.conference_name+'\n\n'
+	content += 'Kindly go to the following link and review the paper : \n\n'
+	content += 'http://cms.nitw.ac.in/review \n\n'
+	content += 'Thank You'
+
+	rlist = []
+	rlist.append(receiver)
+
+	try:
+		send_mail('Review Paper for '+paper.conf_id.conference_name,content,sender,rlist,fail_silently=False,)
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+
+	return
 ###################
