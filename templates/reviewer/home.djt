@@ -6,10 +6,10 @@
 	<center>
 	<h1>Papers to Review</h1>
 	</center>
-	{% for p in paper %}
+	{% for p in papers %}
 	<div class="ui segment">
 	<center>
-	<a href = "reviewpaper/{{p.paper_id}}"><p>{{p.papername}}</p></a>
+	<a href = "/review/reviewPaper/{{p.paper_id}}"><p>{{p.papername}}</p></a>
 	<p>{{p.conf_id.conference_name}}
 	</center>
 	</div>

@@ -428,6 +428,43 @@ def ctsemlinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/ctsem/links.djt',response)
 
+def rames(request):
+	conference = Conference.objects.get(conference_alias='rames2018')
+	response = {}
+	response['conference']=conference
+	response['alias']='rames2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/rames/home.djt',response)
+
+def ramesabout(request):
+	conference = Conference.objects.get(conference_alias='rames2018')
+	response={}
+	response['conference']=conference
+	response['alias']='rames2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/rames/about.djt',response)
+
+def rameslinks(request):
+	conference = Conference.objects.get(conference_alias='rames2018')
+	response={}
+	response['conference']=conference
+	response['alias']='rames2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/rames/links.djt',response)
+
 ## NHTFF Part
 # def sendTrackingMail(paper):
 # 	#Mail application ID to applicant
@@ -486,7 +523,7 @@ def sendTrackingMail(paper,alias):
 		content = "Tracking id : " + paper.paperRefNum+'\n\n'
 		content += "Title : "+ paper.papername + '\n\n'
 		content += "Dear Author\n\n"
-		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on MATHEMATICAL MODELING IN SCIENCE AND ENGINEERING". \n\n'
+		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "5th Colloquium on Transportation Systems Engineering and Management". \n\n'
 		content += 'Your submission was received in good order.\n\n'
 		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/ctsem.\n\n'
 		content += 'Thank you for submitting your work to the conference.\n\n'

@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
 from conference.models import Conference, Conf_Paper
-from reviews.models import Reviewer, Questions, Answers
+from reviews.models import *
 from manager.models import *
 from login_auth.models import *
 import smtplib
@@ -64,8 +64,8 @@ def home(request):
 @login_required(login_url='/manager/signin/')
 def assign_reviewer(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
-	reviewer = Reviewer.objects.all().exclude(papers=paper)
-	reviewer_assigned = Reviewer.objects.filter(papers=paper)
+	reviewer = Reviewer.objects.filter(conference=paper.conf_id).exclude(papers=paper)
+	reviewer_assigned = Reviewer.objects.filter(papers=paper,conference=paper.conf_id)
 	if paper.is_approved:
 		paper.under_review = False
 	elif paper.is_rejected:
@@ -94,6 +94,14 @@ def assign_reviewer(request, paper_id):
 		'under_review':paper.under_review,
 		'content':content,
 	}
+
+	##new part
+	revs = AssignedPaperStatus.objects.filter(paper=paper)
+	if len(revs) > 0 :
+		context['rev1'] = revs[0]
+	if len(revs) > 1 :
+		context['rev2'] = revs[1]
+
 	return render(request, 'manager/assignreviewer.djt', context)
 
 @login_required(login_url='/manager/signin/')
@@ -289,56 +297,12 @@ def isDisapprovedPaper(request, paper_id):
 	paper.save()
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
-# def export_xls(request, conference_name):
-# 	queryset = UserProfile.objects.all()
-# 	response = HttpResponse(content_type='application/ms-excel')
-# 	response['Content-Disposition'] = 'attachment; filename=UserData.xls'
-# 	wb = xlwt.Workbook(encoding='utf-8')
-# 	ws = wb.add_sheet("MyModel")
-
-# 	row_num = 0
-
-# 	columns = [
-# 	    (u"User", 6000),
-# 	    (u"Gender",6000),
-# 	    (u"Contact",6000),
-# 	    (u"regConferences", 20000),
-# 	]
-
-# 	font_style = xlwt.XFStyle()
-# 	font_style.font.bold = True
-
-# 	for col_num in xrange(len(columns)):
-# 	    ws.write(row_num, col_num, columns[col_num][0], font_style)
-# 	    ws.col(col_num).width = columns[col_num][1]
-
-# 	font_style = xlwt.XFStyle()
-# 	font_style.alignment.wrap = 1
-# 	l = len(queryset)
-
-# 	for query in queryset:
-# 		userp = query
-
-# 		conf = ""
-# 		reg_con = userp.regConferences.all()
-# 		i=1
-# 		for conferences in reg_con:
-# 			if conferences.conf_id.conference_name == conference_name:
-# 				row_num += 1
-# 				conf += str(i) + ": " + conferences.conf_id.conference_name + " "
-# 				i+=1
-# 				rows = [userp.user.username,userp.gender,userp.contact,conf]
-# 				for col_num in xrange(len(rows)):
-# 					ws.write(row_num, col_num, rows[col_num], font_style)
-
-# 	wb.save(response)
-# 	return response
 
 def export_xls(request, cid):
 	response = HttpResponse(content_type='application/ms-excel')
 	response['Content-Disposition'] = 'attachment; filename=UserData.xls'
 	wb = xlwt.Workbook(encoding='utf-8')
-	ws = wb.add_sheet("MyModel")
+	ws = wb.add_sheet("Papers' Data")
 
 	row_num = 0
 
@@ -353,6 +317,9 @@ def export_xls(request, cid):
 	    (u"Tile Of Paper",20000),
 	    (u"TimeStamp",6000),
 	    (u"Conference", 20000),
+	    (u"Reviewer 1",6000),
+	    (u"Reviewer 2",6000),
+	    (u"Average",6000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -385,8 +352,29 @@ def export_xls(request, cid):
 		localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
 		timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
+
 		dataRow = [refnum, nameOfPerson, gender, contact, email, institute, department,
-					title, timestamp, confname ]
+					title, timestamp, confname ,"-","-","-"]
+
+		index = 10
+		finalavg = 0.0
+		assignPaperObj = AssignedPaperStatus.objects.filter(paper=paper)
+		for obj in assignPaperObj :
+			answers = Answers.objects.filter(paper=paper,reviewer=obj.reviewer)
+			avg = 0.0
+			count = 0
+			for answer in answers :
+				if answer.question.que_type == 0 :
+					count += 1
+					avg += answer.marks
+			rev = avg/count
+			finalavg += rev
+			dataRow[index] = str(rev)
+			index += 1
+
+		if index==12:
+			finalavg = (finalavg/2)
+		dataRow[12] = str(finalavg)
 
 		for col_num in xrange(len(dataRow)) :
 			ws.write(row_num, col_num, dataRow[col_num], font_style)
@@ -422,94 +410,6 @@ def paper_remark(request, paper_id):
 
 import smtplib
 import socks
-
-def sendmail(request):
-		
-	#socks.setdefaultproxy(TYPE, ADDR, PORT)
-	socks.setdefaultproxy(socks.SOCKS5, 'http://172.30.0.22', 3128)
-	socks.wrapmodule(smtplib)
-
-	smtpserver = 'smtp.gmail.com'
-	AUTHREQUIRED = 1 
-	smtpuser = 'kiran.kumar.00796@gmail.com'  
-	smtppass = 'lemontrees'  
-
-	RECIPIENTS = 'kiran.kumar.00796@gmail.com'
-	SENDER = 'kiran.kumar.00796@gmail.com'
-	mssg = "test message"
-	s = mssg   
-
-	server = smtplib.SMTP(smtpserver,587)
-	server.ehlo()
-	server.starttls() 
-	server.ehlo()
-	server.login(smtpuser,smtppass)
-	server.set_debuglevel(1)
-	server.sendmail(SENDER, [RECIPIENTS], s)
-	server.quit()
-
-# To-Do Email Part
-# Cannot import name directory error when executed with python 2.7 but works perfectly for python 3.4
-
-# def create_message_with_attachment(request):
-
-# 	message = MIMEMultipart()
-# 	message['to'] = "kiranckonduru@gmail.com"
-# 	message['from'] = "kiranckonduru@gmail.com"
-# 	message['subject'] = "kiranckonduru@gmail.com"
-
-# 	message_text = "message_text"
-# 	msg = MIMEText(message_text)
-	
-# 	message.attach(msg)
-
-# 	# content_type, encoding = mimetypes.guess_type(file)
-
-# 	# if content_type is None or encoding is not None:
-# 	# 	content_type = 'application/octet-stream'
-# 	# 	main_type, sub_type = content_type.split('/', 1)
-# 	# if main_type == 'text':
-# 	# 	fp = open(file, 'rb')
-# 	# 	msg = MIMEText(fp.read(), _subtype=sub_type)
-# 	# 	fp.close()
-# 	# elif main_type == 'image':
-# 	# 	fp = open(file, 'rb')
-# 	# 	msg = MIMEImage(fp.read(), _subtype=sub_type)
-# 	# 	fp.close()
-# 	# elif main_type == 'audio':
-# 	# 	fp = open(file, 'rb')
-# 	# 	msg = MIMEAudio(fp.read(), _subtype=sub_type)
-# 	# 	fp.close()
-# 	# else:
-# 	# 	fp = open(file, 'rb')
-# 	# 	msg = MIMEBase(main_type, sub_type)
-# 	# 	msg.set_payload(fp.read())
-# 	# 	fp.close()
-# 	# filename = os.path.basename(file)
-# 	# msg.add_header('Content-Disposition', 'attachment', filename=filename)
-# 	# message.attach(msg)
-
-# 	return {'raw': base64.urlsafe_b64encode(message.as_string())}
-
-# def send_message(service, user_id, message):
-#   """Send an email message.
-
-#   Args:
-#     service: Authorized Gmail API service instance.
-#     user_id: User's email address. The special value "me"
-#     can be used to indicate the authenticated user.
-#     message: Message to be sent.
-
-#   Returns:
-#     Sent Message.
-#   """
-#   try:
-#     message = (service.users().messages().send(userId=user_id, body=message)
-#                .execute())
-#     print 'Message Id: %s' % message['id']
-#     return message
-#   except errors.HttpError, error:
-#     print 'An error occurred: %s' % error
 
 def sendMailFunction(email,papername,trackingID,alias) : 
 	if alias == 'mmse2018' :
@@ -638,3 +538,80 @@ def sendMailFunction(email,papername,trackingID,alias) :
 			return HttpResponse('Invalid header found.')
 
 	return
+
+
+##Reviewer Assigment part
+@login_required(login_url='/manager/signin/')
+def assignToReview(request,paper_id):
+	paper = Conf_Paper.objects.get(paper_id=paper_id)
+
+	if request.method == 'POST' :
+		username = request.POST.get('username')
+		reviewer = Reviewer.objects.get(user__username=username)
+
+		assignPaperObj = AssignedPaperStatus()
+		assignPaperObj.paper = paper
+		assignPaperObj.reviewStatus = 0
+		assignPaperObj.reviewer = reviewer
+		assignPaperObj.save()
+
+		reviewer.papers.add(paper)
+		reviewer.save()
+
+		ques = Questions.objects.filter(conference=paper.conf_id)
+		for que in ques:
+			if Answers.objects.filter(question=que,paper=paper,reviewer=reviewer).count() == 0 :
+				ansobj = Answers()
+				ansobj.question = que
+				ansobj.answer = ""
+				ansobj.reviewer = reviewer
+				ansobj.paper = paper
+				ansobj.save()
+
+	return redirect('/manager/assignreviewer/'+paper_id)
+
+@login_required(login_url='/manager/signin/')
+def reviewDetails(request,revid):
+	response = {}
+	assignPaperObj = AssignedPaperStatus.objects.get(id=revid)
+	response['reviewDetails'] = assignPaperObj
+	paper = assignPaperObj.paper
+	reviewer = assignPaperObj.reviewer
+
+	ques = Questions.objects.filter(conference=paper.conf_id)
+	for que in ques:
+		if Answers.objects.filter(question=que,paper=paper,reviewer=reviewer).count() == 0 :
+			ansobj = Answers()
+			ansobj.question = que
+			ansobj.answer = ""
+			ansobj.reviewer = reviewer
+			ansobj.paper = paper
+			ansobj.save()
+
+	answers = Answers.objects.filter(paper=assignPaperObj.paper,reviewer=assignPaperObj.reviewer)
+	response['answers'] = answers
+
+	avg = 0.0
+	count = 0
+	for answer in answers :
+		if answer.question.que_type == 0 :
+			count += 1
+			avg += answer.marks
+	response['avg'] = avg/count
+
+	if Remarks.objects.filter(paper=paper,reviewer=reviewer).count() > 0:
+		response['remark'] = Remarks.objects.get(paper=paper,reviewer=reviewer)
+
+	return render(request,'manager/reviewresp.djt',response)
+
+@login_required(login_url='/manager/signin/')
+def reassign(request,revid):
+	assignPaperObj = AssignedPaperStatus.objects.get(id=revid)
+	assignPaperObj.reviewStatus = 0
+	assignPaperObj.save()
+
+	assignPaperObj.reviewer.papers.add(assignPaperObj.paper)
+
+	return redirect('/manager/reviewDetails/'+revid)
+
+###################

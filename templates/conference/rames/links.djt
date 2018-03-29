@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CTSEM'18</title>
+    <title>RAMES'18</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -48,13 +48,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/conference/ctsem2018">Home</a>
+                        <a href="/conference/rames2018">Home</a>
                     </li>
                     <li>
-                        <a href="/conference/ctsem2018/about">About Us</a>
+                        <a href="/conference/rames2018/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/ctsem2018/links">Important Links</a>
+                        <a href="/conference/rames2018/links">Important Links</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -106,12 +106,10 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_ctsem/CTSEM2018_Brochure.pdf' %}">Brochure</a></li><br>
-                    <li><a href="{% static 'docs_ctsem/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li>
-                    <br>
-                    <li><a href="{% static 'docs_ctsem/Fullpaper_Format_CTSEM2018_V01.docx' %}"> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li>
-                    <br>
-                    <li><a href="{% static 'docs_ctsem/Registration_Form.doc' %}">Registration Form</a></li><br>
+                    <li><a>Brochure</a></li><br>
+                    <li><a> Extended Abstract</a></li><br>
+                    <li><a> Final Paper</a></li><br>
+                    <li><a>Registration Form</a></li><br>
                     <li><a>Copyright Transfer Form</a></li><br>
                     <li><a>Poster</a></li><br>
                 </ol></b></h4>
@@ -145,27 +143,23 @@
                             <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="http://www.nitw.ac.in/department/ce/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
+                                <a href="http://www.nitw.ac.in/department/cse/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
                                 <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>E-mail : </b>ctsem2018@gmail.com <br>
+                                <b>E-mail : </b>rames2018@gmail.com <br>
                                 
                             </div>
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                <b>Prof. C.S.R.K. Prasad</b><br>
-                                Colloquium Chair (CTSEM)<br>
-                                Department of Civil Engineering<br>
+                                <b>Dr. R.B.V. Subramanyam</b><br>
+                                Head CSE &amp; Organizing Chair, RAMES<br>
+                                Department of Computer Science &amp; Engineering<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506 004, TS<br>
-                                <b>Mobile : </b>+91 - 9440347348 <br>
-                                                +91 - 8332969252 <br>
-                                                +91 - 8332969262 <br>
-                                <b>Phone : </b> 0870-2462117 <br>
-                                                0870-2462143 <br>
-                                                0870-2462148 <br>
+                                <b>Mobile :</b> 9490165347<br>
+                                <b>Phone :</b> 0870-2462700<br>
                             </div>
                         </div>
                     </div>

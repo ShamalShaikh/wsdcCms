@@ -1,0 +1,69 @@
+{% extends "reviewer/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center><h2>Paper Link : <a target="blank" href="/review/downloadpaper/{{paper.paper_id}}">{{paper.papername}}</a></h2></center>
+
+	<br><br>
+	<center><h3>Reviewer is requested to rate the extended abstract based on the following questions.
+	<br>(Score 1 is Lowest and 5 is Highest)</h3></center>
+	<br><br>
+	<div class="ui fluid segment" style="font-size:15px;">
+		{% for ans in answers %}
+		<div class="ui grid">
+			<div class="eight wide centered column"><b>{{forloop.counter}} )  {{ans.question.question}}</b></div>
+			<div class="four wide centered column">
+				<form class="ui form" action="/review/assignMarks/{{ans.id}}/" method="post">
+					{% csrf_token %}
+					<div class="ui grid">
+						<div class="eight wide centered column">
+							<div class="ui input">
+							{% if ans.question.que_type %}
+								<input type="text" name="answer" value="{{ans.answer}}">
+							{% else %}
+							  <input type="number" min="0" max="5" name="marks" value="{{ans.marks}}">
+							{% endif %}
+							</div>
+						</div>
+						<div class="eight wide centered column">
+							<button class="ui button blue" type="submit">save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	<br><br>
+	<div class="ui fluid segment">
+		<div class="ui grid">
+			<div class="sixteen wide centered column">
+				<form class="ui form" action="/review/submitRemark/{{paper.paper_id}}/" method="post">
+					{% csrf_token %}
+					<div class="ui grid">
+						<div class="ten wide centered column">
+							<div class="field">
+							  <textarea name="remarks">{{remark.answer}}</textarea>
+							</div>
+						</div>
+						<div class="six wide centered column">
+							<button class="ui button blue" type="submit">Submit Remarks</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br><br>
+
+	<div class="ui grid">
+		<div class="four wide column"></div>
+		<div class="eight wide column">
+			<a href="/review/submitReview/{{paper.paper_id}}"><button class="ui fluid button green" type="button">Submit Review</button></a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
