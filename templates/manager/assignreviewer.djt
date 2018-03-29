@@ -3,6 +3,12 @@
 {% block content %}
 
 <div class="ui container">
+	<div class="ui grid">
+		<div class="three wide column">
+			<a href="/manager/conference_landing/{{paper.conf_id.conference_id}}/3"><button class="ui fluid button blue" type="button">Back</button></a>
+		</div>
+	</div>
+
 	<center>
 	<h1>{{paper.papername}}</h1>
 	</center>
@@ -34,84 +40,8 @@
 <center>
 <div class="ui grid stackable columns">
 
-<!--<div class="row">
-	<div class="column">
-		<a href="/manager/allresponses/{{paper.paper_id}}">
-		<button class="ui button">
-		  Average Responses
-		</button>
-		</a>
-	</div>
-</div>
-<br><br>-->
-
 </center>
 <br><br>
-
-<!--
-<div class="ui grid stackable columns">
-	
-	<div class="eight wide column">
-		<center>
-			<h3>Assigned Reviewers</h3>
-		</center>
-		<div class="ui segment">
-			<table class="ui celled table">
-		  		<tbody>
-		  			{%if reviewer_assigned %}
-					    {% for r in reviewer_assigned %}
-					    <tr>
-					      <td>{{r.user.username}}</td>
-					      <td><a href="/manager/reviewcomplete/{{paper.paper_id}}/{{r.id}}/"><button class="ui button green" type="submit" id="assign">Response</button></a></td> 
-					    </tr>
-					    {% endfor %}
-					{%else%}
-						<tr class="center aligned" colspan="3">
-							<h2>No Reviewers Assigned</h2>
-						</tr>
-					{%endif%}	    
-		  		</tbody>
-		 	 </table>
-	 	 </div>
-	</div>
-</div>
-<br> 
--->
-
-
-
-<!-- <br><br>
-<center>
-			<h3>Assign Reviewers</h3>
-		</center>
-<div class="ui fluid segment">
-	<form class="ui form" action="/manager/sendmail/" method="post">
-		{% csrf_token %}
-		
-        <div class="field">
-              <label>Reviewer Name</label>
-              <input name="name" placeholder="Name" type="text" id="username">
-        </div>
-        <div class="field">
-              <label>Email Id</label>
-              <input name="emailid" placeholder="Email Id" type="text" id="password">
-        </div>
-        <div class="field">
-              <label>Subject</label>
-              <input name="subject" placeholder="Subject" type="text" id="subject">
-        </div>
-        <div class="textfield">
-              <label>Review Content</label>
-              <textarea name="content" placeholder="Review Questions and Description" type="text" id="review"></textarea>
-        </div>
-        <br>
-        <div style="margin-left: 40%;">
-        <button class="ui button green" type="submit" id="signin">Send Mail</button>
-        </div>
-	</form>
-</div>
-
-<br><br> -->
 
 <center>
 	<h3> Remarks : Submit Remarks file for asking revision of paper </h3>
@@ -133,13 +63,81 @@
 			</div>
 		</div>
 		
-        <!-- <div class="textfield">
-              <label>Remarks</label><br><br>
-              <textarea name="remark" placeholder="Descriptive Remarks" type="text" id="remark">{{content}}</textarea>
-        </div> -->
 	</form>
 </div>
 
+<br><br>
+
+<center><h3> Reviewers </h3></center>
+<div class="ui fluid segment">
+{% if not rev1 %}
+	<form class="ui form" action="/manager/assignToReview/{{paper.paper_id}}/" method="post">
+	{% csrf_token %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+		<center><b>Reviewer 1</b></center>
+		</div>
+		<div class="four wide centered column">
+			<select name="username" class="ui dropdown">
+				{% for rev in reviewer %}
+				<option value="{{rev.user.username}}">{{rev.user.email}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="four wide centered column">
+			<button class="ui fluid button green">Assign</button>
+		</div>
+	</div>
+	</form>
+{% else %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+			<center><b>Reviewer 1</b></center>
+		</div>
+		<div class="four wide centered column">
+			<center><b>{{rev1.reviewer.user.username}}</b></center>
+		</div>
+		<div class="four wide centered column">
+			<a href="/manager/reviewDetails/{{rev1.id}}"><button class="ui fluid button green" type="button">Details</button></a>
+		</div>
+	</div>
+{% endif %}
+<br>
+<hr>
+<br>
+{% if not rev2 %}
+	<form class="ui form" action="/manager/assignToReview/{{paper.paper_id}}/" method="post">
+	{% csrf_token %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+		<center><b>Reviewer 2</b></center>
+		</div>
+		<div class="four wide centered column">
+			<select name="username" class="ui dropdown">
+				{% for rev in reviewer %}
+				<option value="{{rev.user.username}}">{{rev.user.email}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="four wide centered column">
+			<button class="ui fluid button green">Assign</button>
+		</div>
+	</div>
+	</form>
+{% else %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+			<center><b>Reviewer 2</b></center>
+		</div>
+		<div class="four wide centered column">
+			<center><b>{{rev2.reviewer.user.username}}</b></center>
+		</div>
+		<div class="four wide centered column">
+			<a href="/manager/reviewDetails/{{rev2.id}}"><button class="ui fluid button green" type="button">Details</button></a>
+		</div>
+	</div>
+{% endif %}
+</div>
 <br><br>
 
 <center><h3> Other Actions </h3></center>
