@@ -8,6 +8,8 @@ from .forms import ReviewForm
 import traceback
 import sys
 from sendfile import sendfile
+from django.contrib.auth.models import User
+import os
 
 # Create your views here.
 
@@ -126,6 +128,34 @@ def logoutReviewer(request):
 def err404(request):
 	return render(request, 'reviewer/404.djt', {})
 
+def createRev(request) :
+	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	full_filename = os.path.join(BASE_DIR, 'static/book1.xlsx')
+	wb = xlrd.open_workbook(full_filename)
+	conference = Conference.objects.get(conference_alias='ctsem2018')
+	for s in wb.sheets() :
+	    for row in range(1,s.nrows) :
+	        mailid = str(s.cell(row,0).value)
+	        name = str(s.cell(row,1).value)
 
+	        if mailid=="":
+	        	break
 
+	        if User.objects.filter(username=mailid).count() > 0:
+	        	continue
 
+	        rev = User()
+	        rev.username = mailid
+	        rev.email = mailid
+	        rev.first_name = name
+	        rev.save()
+
+	        rev.set_password("ctsemrev!@#")
+	        rev.save()
+
+	        revobj = Reviewer()
+	        revobj.user = rev
+	        revobj.conference = conference
+	        revobj.save()
+
+	return HttpResponse("Rev id's creation done")
