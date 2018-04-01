@@ -627,9 +627,11 @@ def sendAssignmentMail(email,paper,act):
 	content += 'Paper : '+paper.papername+' \n\nReference number : '+paper.paperRefNum
 	content += '\n\n has been '+act+' to you for review by conference manager of '
 	content += paper.conf_id.conference_name+'\n\n'
-	content += 'Kindly go to the following link and review the paper : \n\n'
+	content += 'Kindly go to the following link and review the paper on '
+	contrnt += 'or before April 7, 2018 : \n\n'
 	content += 'http://cms.nitw.ac.in/review \n\n'
-	content += 'Thank You'
+	content += 'Your username is : '+email+'\nYour password is : ctsemrev!@#\n\n'
+	content += 'Thanking You\nRegards\nOrganizing Committee\nCTSEM 2018\n\n'
 
 	rlist = []
 	rlist.append(receiver)

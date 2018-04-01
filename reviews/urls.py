@@ -13,4 +13,5 @@ urlpatterns = [
 	url(r'^assignMarks/(?P<ansid>[A-Za-z0-9.-]+)/$',views.assignMarks),
 	url(r'^submitRemark/(?P<paper_id>[A-Za-z0-9.-]+)/$',views.submitRemark),
 	url(r'^submitReview/(?P<paper_id>[A-Za-z0-9.-]+)/$',views.submitReview),
+	url(r'^createRev/$', views.createRev),
 ]
