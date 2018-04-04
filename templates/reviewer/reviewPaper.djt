@@ -3,11 +3,19 @@
 {% block content %}
 
 <div class="ui container">
-	<center><h2>Paper Link : <a target="blank" href="/review/downloadpaper/{{paper.paper_id}}">{{paper.papername}}</a></h2></center>
+	<center><h2>Paper Link : <a target="blank" href="/review/downloadpaper/{{paper.paper_id}}"><u>{{paper.papername}}</u></a></h2>
+	<br>
+	<div class="ui label">
+	  <h3><i class="hand point up outline icon"></i> Open the Paper by clicking on paper name</h3>
+	</div>
+	</center>
 
 	<br><br>
 	<center><h3>Reviewer is requested to rate the extended abstract based on the following questions.
-	<br>(Score 1 is Lowest and 5 is Highest)</h3></center>
+	<br>(Score 1 is Lowest and 5 is Highest)<br>
+	<br>1. Save answer to every question one by one
+	<br>2. After reviewing, click on "Submit Review" at the bottom of page for submitting the review.</h3>
+	</center>
 	<br><br>
 	<div class="ui fluid segment" style="font-size:15px;">
 		{% for ans in answers %}
