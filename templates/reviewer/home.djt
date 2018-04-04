@@ -14,6 +14,12 @@
 	</center>
 	</div>
 	{% endfor %}
+
+	<center>
+	<div class="ui green message" style="position:fixed;bottom:30px;">
+		<h3>Thank For Reviewing !!!</h3>
+	</div>
+	</center>
 </div>
 
 {% endblock %}
