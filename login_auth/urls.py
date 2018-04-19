@@ -3,7 +3,9 @@ from django.views.generic import RedirectView
 from . import views
 
 urlpatterns = [
-	url(r'^$',RedirectView.as_view(url='/conference/mmse2018/')),
+	url(r'^$',RedirectView.as_view(url='/conference/ctsem2018/')),
+	url(r'^fccm/$',RedirectView.as_view(url='/conference/fccm2018/')),
+	url(r'^fccm2018/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	url(r'^mmse/$',RedirectView.as_view(url='/conference/mmse2018/')),
 	url(r'^mmse2018/$',RedirectView.as_view(url='/conference/mmse2018/')),
 	url(r'^ctsem/$',RedirectView.as_view(url='/conference/ctsem2018/')),
