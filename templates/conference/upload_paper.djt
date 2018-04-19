@@ -77,6 +77,11 @@
         <center><h3>No Papers Uploaded !!!</h3></center>
         {% endif %}
       </div>
+      {% ifequal conference.conference_alias "ctsem2018" %}
+      <div class="ui fluid segment">
+        <center><h3>Deadline for uploading Abstract has Reached !!!</h3></center>
+      </div>
+      {% else %}
       {%if upload_paper%}
       <div class="ui fluid segment">
         <form class="ui form" action="/conference/upload_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
@@ -95,6 +100,7 @@
       {%else%}
         <h2>You have already uploaded max papers</h2>
       {%endif%}
+      {% endifequal %}
 	<!-- <div class="ui fluid segment">		
 		<center><h3>No new papers can be uploaded now. Deadline for abstract submission is Reached. Only Final Papers can be uploaded now.</h3></center>
 	</div> -->

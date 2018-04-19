@@ -465,6 +465,43 @@ def rameslinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/rames/links.djt',response)
 
+def fccm(request):
+	conference = Conference.objects.get(conference_alias='fccm2018')
+	response = {}
+	response['conference']=conference
+	response['alias']='fccm2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/fccm/home.djt',response)
+
+def fccmabout(request):
+	conference = Conference.objects.get(conference_alias='fccm2018')
+	response={}
+	response['conference']=conference
+	response['alias']='fccm2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/fccm/about.djt',response)
+
+def fccmlinks(request):
+	conference = Conference.objects.get(conference_alias='fccm2018')
+	response={}
+	response['conference']=conference
+	response['alias']='fccm2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/fccm/links.djt',response)
+
 ## NHTFF Part
 # def sendTrackingMail(paper):
 # 	#Mail application ID to applicant
@@ -536,6 +573,29 @@ def sendTrackingMail(paper,alias):
 		rlist.append(receiver)
 		try:
 			send_mail('Tracking ID for uploaded paper for conference CTSEM-2018',content,sender,rlist,fail_silently=False,)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+
+	if alias == 'fccm2018' :
+		receiver = paper.uid.email
+		sender = 'fccm2018nitw@gmail.com'
+
+		content = "Tracking id : " + paper.paperRefNum+'\n\n'
+		content += "Title : "+ paper.papername + '\n\n'
+		content += "Dear Author\n\n"
+		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on Frontiers in Corrosion Control of Materials". \n\n'
+		content += 'Your submission was received in good order.\n\n'
+		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/fccm.\n\n'
+		content += 'Thank you for submitting your work to the conference.\n\n'
+		content += '\n\n For any queries mail to fccm2018nitw@gmail.com .\n\n'
+		content += 'Kind regards,\n\n'
+		content += 'Prof. G. V. S. Nageswara Rao\n\n'
+		content += 'Conference Convener, FCCM-2018" \n\n'
+
+		rlist = []
+		rlist.append(receiver)
+		try:
+			send_mail('Tracking ID for uploaded paper for conference FCCM-2018',content,sender,rlist,fail_silently=False,)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
 
