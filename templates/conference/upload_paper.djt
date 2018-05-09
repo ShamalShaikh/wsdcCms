@@ -18,7 +18,9 @@
         <br>
         <div class="ui top attached tabular menu">
           <a class="active item" data-tab="first">Upload Paper</a>
+          {% ifnotequal conference.conference_alias "rames2018" %}
           <a class="item" data-tab="second">Final Upload</a>
+          {% endifnotequal %}
         </div>
       <div class="ui bottom attached tab active segment" data-tab="first">
           <div class="ui segment">
@@ -105,7 +107,7 @@
 		<center><h3>No new papers can be uploaded now. Deadline for abstract submission is Reached. Only Final Papers can be uploaded now.</h3></center>
 	</div> -->
         </div>
-        
+        {% ifnotequal conference.conference_alias "rames2018" %}
         <div class="ui bottom attached tab segment" data-tab="second">
 
           <div class="ui segment">
@@ -188,6 +190,7 @@
           {% endif %}
           </div>
         </div>
+        {% endifnotequal %}
     </div>
 
 <div class="ui small modal pop_up1">

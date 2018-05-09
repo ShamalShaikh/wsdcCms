@@ -238,6 +238,8 @@ def dashboard(request,alias):
 			response['message'] = "Username already exists"
 			return render(request, 'login_auth/sites/profile.djt',response)
 
+	if alias == 'ctsem2018' :
+		response['receipt'] = True
 	return render(request, 'conference/upload_paper.djt',response)
 
 def treat(request):

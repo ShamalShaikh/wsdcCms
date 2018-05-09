@@ -172,6 +172,13 @@
                 <p style="text-align:justify">Authors are invited to submit the Full Papers, not exceeding 6-pages in MS word format (soft copy) and neatly typed on A-4 size paper. Each manuscript will undergo a peer review process. The contributed papers must be original and should not have been published / accepted in journals/proceedings.</p>
                 <p style="text-align:justify">
                     Upon the notification of acceptance, the author will have to submit final copy of the manuscript of the paper, copyright transfer agreement and registration fee and registration form on or before the last date. A wide range of topics related to Machine Learning, Expert Systems and Distributed Systems will be welcome. Selected and presented papers will be published on the Publisher&#39;s Website.
+                    <br>
+                    
+                    <ol>
+                        <li>Register (Signup) using the register tab in navbar.</li>
+                        <li>Login using the username and password.</li>
+                        <li>Upload the Full paper using the upload paper option.</li>
+                    </ol>
                 </p>
             </div>
         </div>
@@ -206,19 +213,19 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>15th May, 2018</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Notification of Acceptance</td>
                         <td>30th May, 2018</td>
                     </tr>
                     <tr class="active">
+                        <td>Notification of Acceptance</td>
+                        <td>10th June, 2018</td>
+                    </tr>
+                    <tr class="active">
                         <td>Final Paper (Camera Ready) Submission &amp; Registration</td>
-                        <td>05th June, 2018</td>
+                        <td>15th June, 2018</td>
                     </tr>
 		            <tr class="active">
                         <td>Last Date of Payment of Registration Fee</td>
-                        <td>10th June, 2018</td>
+                        <td>15th June, 2018</td>
                     </tr>
                 </table>
                 <br>
@@ -318,33 +325,6 @@
                 </p>
                 </center>
             </div>
-            <!-- <div class="col-sm-4">
-                <table class="table table-hover">
-                    <tr class="active"><td>Prof T. Ramesh</td></tr>
-                    <tr class="active"><td>Prof D.V.L.N. Somayajulu</td></tr>
-                    <tr class="active"><td>Prof B.B. Amberker</td></tr>
-                    <tr class="active"><td>Prof S.G. Sanjeevi</td></tr>
-                    <tr class="active"><td>Dr K. Ramesh</td></tr>
-                </table>
-            </div>
-            <div class="col-md-4" style="font-size:15px;">
-                <table class="table table-hover">
-                    <tr class="active"><td>Dr R.B.V. Subramanyam</td></tr>
-                    <tr class="active"><td>Dr Chapram Sudhakar</td></tr>
-                    <tr class="active"><td>Dr S. Ravichandra</td></tr>
-                    <tr class="active"><td>Dr B. Raju</td></tr>
-                    <tr class="active"><td>Dr T. Ramakrishnudu</td></tr>                    
-                </table>
-            </div>
-            <div class="col-md-4" style="font-size:15px;">
-                <table class="table table-hover">
-                    <tr class="active"><td>Dr R. Padmavathi</td></tr>
-                    <tr class="active"><td>Dr K.V. Kadambari</td></tr>
-                    <tr class="active"><td>Dr U.S.N. Raju</td></tr>
-                    <tr class="active"><td>Dr P.V. Subba Reddy</td></tr>
-                    <tr class="active"><td>Dr Rashmi Ranjan Rout</td></tr>
-                </table>
-            </div> -->
         </div>
         <hr>
         <div class="row">
@@ -363,7 +343,7 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
                 <p style="text-align:justify">
-                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on payment of Rs. 1500/-. Out stationed scholars and postgraduate students will be provided free boarding and lodging in the Institute Hostels. Travel Allowance will not be provided and the participants have to make their own travel arrangements to reach the Institute.
+                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on minimal payment.
                 </p>
                 <br>
             </div>
@@ -389,7 +369,7 @@
                             <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="http://www.nitw.ac.in/department/cse/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
+                                <a href="http://www.nitw.ac.in/department/cse/" target="_blank">Department of Computer Science & Engineering, NIT Warangal</a><br>
                                 <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
@@ -470,7 +450,7 @@
             <li>Congrats !!! You are succesfully registered on website</li>
         </ol>
         <hr><hr>
-        <h4 style="color:red;">Provision for only attending the conference</h4>
+        <!-- <h4 style="color:red;">Provision for only attending the conference</h4>
         <hr>
         <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
         <ol>
@@ -479,7 +459,7 @@
             <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
             <li>Upload picture of ID proof and the payment receipt</li>
         </ol>
-        <hr><hr>
+        <hr><hr> -->
         <h4>Steps to Upload the paper </h4>
         <hr>
         <ol>
@@ -489,7 +469,7 @@
             <li>A confirmation mail stating the tracking id will be sent to you</li>
         </ol>
         <hr><hr>
-        <h4>Peer review process</h4>
+        <!-- <h4>Peer review process</h4>
         <hr>
         <ol>
             <li>The uploaded papers will be checked for similarity index</li>
@@ -509,7 +489,7 @@
             <li>Then from the same upload paper option, go to "final paper upload"</li>
             <li>Upload Copyright Form (which is available at important links page)</li>
             <li>Upload final paper, and you are done !!</li>
-        </ol>
+        </ol> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
