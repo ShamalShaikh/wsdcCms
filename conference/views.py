@@ -504,6 +504,46 @@ def fccmlinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/fccm/links.djt',response)
 
+@login_required(login_url='/signin/mmse2018')
+def metallography_contest(request):
+	conference = Conference.objects.get(conference_alias='fccm2018')
+	response = {}
+	response['conference']=conference
+	response['alias']='fccm2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	
+	response['filled'] = 0
+	if Contest.objects.filter(contestant=request.user).count()>0 :
+		response['filled'] = 1
+
+	return render(request, 'conference/contest.djt',response)
+
+@login_required(login_url='/signin/mmse2018')
+def registerForContest(request):
+	conference = Conference.objects.get(conference_alias='fccm2018')
+	if request.method == 'POST' :
+		category = request.POST.get('category','')
+		zipfile = request.FILES['zipfile']
+
+		contestObj = Contest()
+		contestObj.contestant = request.user
+		if category == '1':
+			contestObj.category = 'Transmission Electron Microscopy (TEM)'
+		elif category == '2':
+			contestObj.category = 'Scanning Electron Microscopy (SEM)'
+		else :
+			contestObj.category = 'Other Micrographs'
+
+		contestObj.zipfile = zipfile
+
+		contestObj.save()
+
+	return redirect('/conference/metallography_contest')
+
+
 ## NHTFF Part
 # def sendTrackingMail(paper):
 # 	#Mail application ID to applicant

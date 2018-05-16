@@ -11,10 +11,17 @@
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
 
+		{% ifequal conference.alias 'fccm2018' %}
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/6">MetallographyContest<div class="ui teal left pointing label">{{contestantCount}}</div></a>
+		{% endifequal %}
+
 		<!--<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a> -->
 
 		<a class="item" href="/manager/exportdata/{{conference.conference_id}}">
-		<button class="ui fluid button blue">Export Data</button></a>
+		<button class="ui fluid button blue">Export Data</button></a><br>
+
+		<a class="item" href="/manager/contestantList">
+		<button class="ui fluid button blue">Export Contestants List</button></a>
 
 	</div>
 </div>

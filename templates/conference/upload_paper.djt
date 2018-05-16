@@ -17,9 +17,11 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          <a class="active item" data-tab="first">Upload Paper</a>
           {% ifnotequal conference.conference_alias "rames2018" %}
-          <a class="item" data-tab="second">Final Upload</a>
+          <a class="active item" data-tab="first">Upload Abstract</a>
+          <a class="item" data-tab="second">Upload Final Paper</a>
+          {% else %}
+          <a class="active item" data-tab="first">Upload Paper</a>
           {% endifnotequal %}
         </div>
       <div class="ui bottom attached tab active segment" data-tab="first">

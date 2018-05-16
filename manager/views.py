@@ -140,6 +140,8 @@ def conference_landing(request,cid,type):
 			for obj in rejected_dd:
 				rejected_dds.append(obj)
 
+	contestants = Contest.objects.all()
+
 	response={}
 	response['users']=users
 	response['regusercount']=len(users)
@@ -154,6 +156,8 @@ def conference_landing(request,cid,type):
 	response['conference']=conference
 	response['finalpapers']=final_papers
 	response['finalsubcount']=len(final_papers)
+	response['contestants'] = contestants
+	response['contestantCount'] = len(contestants)
 	return render(request,'manager/conf_navbar.djt',response)
 
 def reviewerAssigned(request, paper_id, u_id):
@@ -643,3 +647,44 @@ def sendAssignmentMail(email,paper,act):
 
 	return
 ###################
+
+def contestantList(request):
+	response = HttpResponse(content_type='application/ms-excel')
+	response['Content-Disposition'] = 'attachment; filename=ContestantsList.xls'
+	wb = xlwt.Workbook(encoding='utf-8')
+	ws = wb.add_sheet("List")
+
+	row_num = 0
+
+	columns = [
+		(u"Name",6000),
+	    (u"Category",6000),
+	]
+
+	font_style = xlwt.XFStyle()
+	font_style.font.bold = True
+
+	for col_num in xrange(len(columns)):
+	    ws.write(row_num, col_num, columns[col_num][0], font_style)
+	    ws.col(col_num).width = columns[col_num][1]
+
+	font_style = xlwt.XFStyle()
+	font_style.alignment.wrap = 1
+
+	contestants = Contest.objects.all()
+	totalRows = len(contestants)
+
+	for con in contestants:
+
+		row_num += 1
+
+		nameOfPerson = con.contestant.first_name + ' ' + con.contestant.last_name
+		category = con.category
+
+		dataRow = [nameOfPerson, category]
+
+		for col_num in xrange(len(dataRow)) :
+			ws.write(row_num, col_num, dataRow[col_num], font_style)
+
+	wb.save(response)
+	return response

@@ -24,4 +24,5 @@ urlpatterns = [
 	url(r'^assignToReview/(?P<paper_id>[A-Za-z0-9.-]+)/$',views.assignToReview),
 	url(r'^reviewDetails/(?P<revid>[0-9]+)/$',views.reviewDetails),
 	url(r'^reassign/(?P<revid>[0-9]+)/$',views.reassign),
+	url(r'^contestantList/$',views.contestantList),
 ]
