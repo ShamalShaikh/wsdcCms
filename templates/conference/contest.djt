@@ -1,0 +1,207 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FCCM'18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/fccm2018">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/fccm2018/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/fccm2018/links">Important Links</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    {% endif %}
+                    
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <center><h3 style="color:red; font-weight:900;">Metallography Contest</h3></center><br><br>
+
+                {% if filled %}
+                <h4><center>You have successfully registered for this contest !!!</center></h4>
+                {% else %}
+                <form action="/conference/registerForContest/" method="post" enctype="multipart/form-data" onsubmit="return validate()">
+                {% csrf_token %}
+                    <div class="form-group required">
+                      <label class="control-label">Select Category for Contest</label>
+                      <select class="form-control" name="category">
+                        <option>---</option>
+                        <option value="1">Transmission Electron Microscopy (TEM)</option>
+                        <option value="2">Scanning Electron Microscopy (SEM)</option>
+                        <option value="3">Other Micrographs</option>
+                      </select>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label">Upload Zip file containing micrographs images</label>
+                        <input type="file" class="form-control-file" name="zipfile">
+                    </div>
+                    <center>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </center>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+       
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/mme/" target="_blank">Department of Metallurgical and Materials Engineering, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>Phone:</b> 0870-2462521 (O) <br>
+                                <b>Fax :</b>&nbsp;&nbsp;&nbsp;&nbsp; 0870-2459547 <br>
+                                <b>E-mail:</b> fccm2018nitw@gmail.com <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gvsnr@nitw.ac.in (Convener)<br>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Contact:</b></h4>
+                                Prof. G. V. S. Nageswara Rao<br>
+                                Professor and Convener of National Conference FCCM-2018<br>
+                                Department of Metallurgical and Materials Engineering <br>
+                                National Institute of Technology, <br>
+                                Warangal – 506 004, Telangana, India <br>
+                                Mobile: 08332969382 (Convener) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969385 (Co-Converner) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969479 (Co-Converner) <br>
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+    function validate(){
+        valid = true;
+        if($('input[type="file"]').val() == ''){
+            valid = false;
+            alert('choose some file');
+        }
+        if (valid && $('input[type="file"]').val().split('.')[1] != 'zip'){
+            valid = false;
+            alert('only zip file is allowed');
+        }
+        return valid;
+    }
+</script>
+</body>
+
+</html>

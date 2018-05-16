@@ -22,6 +22,7 @@
     <script src="{% static 'bs/js/navbar.js' %}"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -133,6 +134,13 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
+                <CENTER>
+                    <a href="/conference/metallography_contest">
+                    <i class="fa fa-hand-o-right" style="font-size:40px;color:red"></i>
+                    <button type="button" class="btn btn-info" style="margin-top:10px; font-size:15px; color:red; font-weight:700;">Register for Metallography Contest</button>
+                    </a>
+                </CENTER>
+                <br>
                 <center><h3 style="color:blue;"><b>June 28 - 29, 2018</b></h3>
                 <h4>
                     Organised by<br><hr>
@@ -152,7 +160,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                    <marquee BEHAVIOR="scroll">The last date to submit abstracts is extended to 31.05.2018 and Final paper submission is extended to 15.06.2018 !!!</marquee>
                 </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -210,19 +218,19 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Abstract</td>
-                        <td>12th May, 2018</td>
+                        <td>31th May, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance of Abstract</td>
-                        <td>21th May, 2018</td>
+                        <td>10th June, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Final paper (Camera-ready) submission and Registration</td>
-                        <td>10th June, 2018</td>
+                        <td>15th June, 2018</td>
                     </tr>
 		            <tr class="active">
                         <td>Last Date of Payment of Registration Fee</td>
-                        <td>10th June, 2018</td>
+                        <td>15th June, 2018</td>
                     </tr>
                 </table>
                 <br>

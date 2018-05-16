@@ -22,6 +22,9 @@ def get_final_paper_path(instance,filename):
 def get_remark_file_path(instance,filename):
 	return 'conference_papers/remarks/{0}/{1}'.format("".join(instance.conf_paper.conf_id.conference_name.split()),filename)
 
+def get_zip_file_path(instance,filename):
+	return 'conference_zips/{0}/{1}'.format("".join(instance.contestant.username.split()),filename)
+
 def validate(value):
 	    import os
 	    ext = os.path.splitext(value.name)[1]
@@ -100,3 +103,11 @@ class Paper_Remark(models.Model):
 
 	def __str__(self):
 		return str(str(self.manager) + " " + self.content[:20] + "....")
+
+class Contest(models.Model):
+	contestant = models.ForeignKey(User,on_delete = models.CASCADE)
+	category = models.CharField(max_length=255)
+	zipfile = models.FileField(upload_to=get_zip_file_path, null=True, blank=True)
+
+	def __str__(self):
+		return str(self.contestant.username)

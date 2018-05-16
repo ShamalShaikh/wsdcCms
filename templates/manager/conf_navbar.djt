@@ -271,6 +271,44 @@
       {% endif %}
 {% endifequal %}
 
+{% ifequal type '6' %}
+      <br>
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Contestants List for Metallography Contest
+        </div>
+      </center>
+      </h2>
+      <br>
+      {% if contestants %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Download Zip of images</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for con in contestants %}
+          <tr>
+          <td>{{con.contestant.first_name}} {{con.contestant.last_name}}</td>
+          <td>{{con.category}}</td>
+          <td>
+            <a class="ui fluid orange button" href="/media/{{con.zipfile}}" target="blank">Download ZipFile</a></td>
+          </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Contestants yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+
 </div>
 </div>
 </div>

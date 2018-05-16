@@ -20,6 +20,8 @@ urlpatterns = [
 	url(r'^fccm2018/$',views.fccm),
 	url(r'^fccm2018/about/$',views.fccmabout),
 	url(r'^fccm2018/links/$',views.fccmlinks),
+	url(r'^metallography_contest/$',views.metallography_contest),
+	url(r'^registerForContest/$',views.registerForContest),
 	url(r'^(?P<alias>[A-Za-z0-9.-]+)/$',views.index),
 	url(r'^make_payment/(?P<alias>[A-Za-z0-9.-]+)/$',views.make_payment,name='make_payment'),
 	url(r'^payment/(?P<alias>[A-Za-z0-9.-]+)/$',views.payment,name='payment'),
