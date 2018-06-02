@@ -488,28 +488,28 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		sender = 'fccm2018nitw@gmail.com'
 		
 		####
-		content = "Dear Author<br><br>"
+		content = "Dear Author\n\n"
 		content += "Your manuscript was peer reviewed for presentation and publication "
 		content += "in the Proceedings/journal "
 		content += "of the National Conference on "
 		content += "FRONTIERS IN CORROSION CONTROL OF MATERIALS (FCCM-2018) "
 		content += "to be held on June 28-29, 2018 at Department of Metallurgical and Materials Engineering "
-		content += "National Institute of Technology, Warangal, Telangana, India.<br><br>"
+		content += "National Institute of Technology, Warangal, Telangana, India.\n\n"
 		content += "Based on the evaluations of reviewers, it is my pleasure to "
 		content += "inform that your revised paper entitled "
 		content += '" ' + papername + ' " (' + trackingID + ") "
 		content += "has been accepted for "
-		content += "presentation and will be scheduled in an appropriate session.<br><br>"
+		content += "presentation and will be scheduled in an appropriate session.\n\n"
 		content += "This letter hereby serves the purpose of your official letter of "
-		content += "invite to the FCCM-2018 conference.<br><br>"
+		content += "invite to the FCCM-2018 conference.\n\n"
 		content += "It is to be noted that at least one author of each paper should "
 		content += "be registered for the conference by paying the appropriate "
-		content += "registration fee as well as everybody attending the conference.<br><br>"
+		content += "registration fee as well as everybody attending the conference.\n\n"
 		content += "Further, You are required to pay the registration fee "
 		content += "upload the final version of the paper along "
-		content += "with the payment receipt on the conference website.<br><br>"
-		content += "We are looking forward welcoming you in the Conference.<br><br>"
-		content += "Sincerely yours,<br>"
+		content += "with the payment receipt on the conference website.\n\n"
+		content += "We are looking forward welcoming you in the Conference.\n\n"
+		content += "Sincerely yours,\n"
 
 		rlist = []
 		rlist.append(receiver)
