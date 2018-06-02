@@ -169,6 +169,13 @@
 
         <hr>
         <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:19px;">
+                <center>
+                <p style="font-weight:800;">
+                    <span style="color:blue;">"Selected papers from the papers presented at FCCM conference will be published in the</span> <br> <span style="color:red;">Elsevier's Materials Today: Proceedings (“Journal”)</span> <span style="color:blue;">after a thorough peer-review process".</span>
+                </p>
+                </center>
+            </div>
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">ABOUT THE CONFERENCE</span></center></h2><br>
                 <p style="text-align:justify">
