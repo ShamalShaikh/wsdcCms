@@ -35,7 +35,7 @@ class Payment(models.Model):
 
 class Registered_Conference(models.Model):
 	conf_id = models.ForeignKey(Conference)
-	papers = models.ManyToManyField(Conf_Paper,null=True,blank=True)
+	papers = models.ManyToManyField(Conf_Paper,blank=True)
 	user = models.ForeignKey(User)
 
 	def __unicode__(self):
@@ -47,7 +47,7 @@ class UserProfile(models.Model):
 	institute = models.CharField(max_length=255,null=True)
 	profilepic = models.ImageField(upload_to=get_user_profile_picture_path ,null=True, blank=True)
 	gender = models.CharField(max_length=10,null=True)
-	regConferences = models.ManyToManyField(Registered_Conference,null=True,blank=True)
+	regConferences = models.ManyToManyField(Registered_Conference,blank=True)
 	department = models.CharField(max_length=255,null=True,blank=True)
 
 	def __unicode__(self):

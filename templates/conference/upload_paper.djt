@@ -97,6 +97,7 @@
                     <input name="paper_file" type="file" id="paper_file" class="ui button blue">
               </div>
               <div style="margin-left: 40%;">
+              <b>Note :</b> Only pdf files are allowed<br><br>
               <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
               </div>
         </form>

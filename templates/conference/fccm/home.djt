@@ -104,7 +104,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" style="margin-top:70px;">
 
         <!-- Heading Row -->
         <div class="row">
@@ -160,7 +160,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="scroll">The last date to submit abstracts is extended to 31.05.2018 and Final paper submission is extended to 15.06.2018 !!!</marquee>
+                    <p>Abstract Submission has been closed. Due to some technical issues , Final/Full paper can't be uploaded on website,<br> You need to send the Full/Final paper to the mail id : fccm2018nitw@gmail.com <br> with your complete details and title of the paper. </p>
                 </div>
             </div>
             <!-- /.col-lg-12 -->

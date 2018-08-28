@@ -36,7 +36,7 @@
 	<div class="ui fluid segment">
 	<center>
 	<p>Don't have an account ??? ...</p>
-	<a href="/Register/{{alias}}"><button class="ui button black">Sign up</button></a>
+	<a href="/register/{{alias}}"><button class="ui button black">Sign up</button></a>
 	</center>
 	</div>
 	<br><br>

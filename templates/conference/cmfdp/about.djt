@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FCCM'18</title>
+    <title>CTSEM'18</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -48,13 +48,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/conference/fccm2018">Home</a>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
                     </li>
                     <li>
-                        <a href="/conference/fccm2018/about">About Us</a>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/fccm2018/links">Important Links</a>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -101,26 +101,47 @@
 
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">About Institute</span></center></h2><br>
+                <br><h2><center><span class="label label-success">About Institute and Wranagal</span></center></h2><br>
                 <p style="color:black; text-align:justify;">
-                   The National Institute of Technology Warangal, an Institute of National Importance (formerly known as the Regional Engineering College Warangal) established in the year 1959, is the first among the 31 NITs in the country setup as joint venture of the Government of India and the state government. The institute offers 8 undergraduate programmes in Engineering and 29 Postgraduate programmes leading to M. Tech., M.Sc. (Tech.), MCA and MBA degrees. All the Departments of the institute conduct research programmes leading to Ph.D. degrees. NIT Warangal is consistently ranked among top 10 technical institutes in the country. It is located on the Hyderabad-Warangal National Highway at a distance of 3 km from Kazipet railway station and 12 km from Warangal railway station. It is spread over 250 acres and is totally residential campus. Participant are advised to alight either at Kazipet or Warangal depending upon the train of travel. 
+                   National Institute of Technology Warangal, formerly known as Regional Engineering College was established in the year 1959. Over the years it has developed into a premier institute of higher learning and is ranked among the top technical education institutions in India. There are 14 Departments offering eight dergraduate and 32 post-graduate programmes besides doctoral programmes. About 5000 students across the country and about 500 international students study on the campus. It is a fully residential campus sprawling over 250 acres with excellent infrastructure in the form of state of the art laboratories, library, seminar halls, and guest houses and laboratories. 
+                </p>
+                <p style="color:black; text-align:justify;">
+                    Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 km away) and by Road (NH 163). Warangal is renowned for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is a hub of tourist attractions with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake located within a radius of 80 km.
                 </p>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-            <br><h2><center><span class="label label-success">About The Department</span></center></h2><br>
+            <br><h2><center><span class="label label-success">ABOUT THE DEPARTMENT</span></center></h2><br>
             <p style="text-align:justify">
-               The Department of Metallurgical and Materials Engineering (MME) was established in the year 1965 and presently offers an Undergraduate program in MME and two Postgraduate programs with specialization in Industrial Metallurgy and Materials Technology. The department is consistently receiving accreditation by NBA since past several years for its excellent academic and research activities. The Department has experienced faculty and well established laboratories with state-of-the-art facilities in various areas of research. The department also offers Ph.D. programme in MME and presently about 32 scholars are working in key areas of research. The Department is also in collaborative research with organizations such as DMRL, ARCI, IGCAR, BARC, BHEL etc. Presently the department is engaged with research projects received from DAE-BRNS; DRDO-NRB, ERIPR, ARDB; AUSC Mission Directorate, etc.
-            </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-            <br><h2><center><span class="label label-success">ABOUT WARANGAL</span></center></h2><br>
-            <p style="text-align:justify">
-               Warangal is about 135 km from Hyderabad, the capital of Telangana. It is well connected by rail and road. It is well known as an educational centre. Once, the capital of the great Kakatiya Kingdom and earlier known as Orugallu or Ekasilanagaram, Warangal still retains its importance as the cultural centre of the Telangana. It finds an important place in the tourist map of Telangana with sites of archaeological significance like the Warangal Fort, Thousand Pillars Temple, Bhadrakali Temple and Ramappa Temple. The three lakes namely Ramappa, Pakhal and Laknavaram and the Wild Life Sanctuaries at Tadwai and Pakhal are famous for sightseeing.
+               The Department of Mathematics is a highly reputed
+                    Department which functions with excellence as its
+                    motto. The Department was started in the year 1959
+                    along with other Engineering and Science
+                    Departments, and has established itself as a dynamic
+                    center for academic and research activities. In
+                    addition to the teaching of courses in Mathematics for
+                    B.Tech. and M.Tech. Programs, the Department offers
+                    two P.G. Programs, M.Sc.(Applied Mathematics) and
+                    M.Sc.(Mathematics and Scientific Computing). The
+                    faculty is actively engaged in Research in diverse fields
+                    such as Fluid Dynamics, Bio Mechanics, Numerical
+                    Analysis, Differential Equations, Finite Element
+                    Method, Operations Research, Functional Analysis,
+                    Linear Algebra, Cryptography and Coding Theory. At
+                    present, 20 Research Scholars are working for their
+                    Ph.D. The Department has a full-fledged computation
+                    laboratory to meet the requirements of the M.Sc.
+                    students, research scholars and the faculty. The
+                    Department has so far produced 105 Ph.D.'s and
+                    conducted more than 53 Conferences/ Seminars/
+                    Workshops/STTP's, two international conferences and
+                    Three GIAN programs. AICTE recognized the
+                    Department as QIP center for Ph.D. It is proud to say
+                    that Department of Mathematics at NIT Warangal has
+                    identified as National Resource Centre for
+                    Mathematics to develop online courses to train
+                    faculty within India.
             </p>
             </div>
         </div>        
@@ -145,27 +166,27 @@
                             <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="http://www.nitw.ac.in/department/mme/" target="_blank">Department of Metallurgical and Materials Engineering, NIT Warangal</a><br>
-                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>Phone:</b> 0870-2462521 (O) <br>
-                                <b>Fax :</b>&nbsp;&nbsp;&nbsp;&nbsp; 0870-2459547 <br>
-                                <b>E-mail:</b> fccm2018nitw@gmail.com <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gvsnr@nitw.ac.in (Convener)<br>
+                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
                                 
                             </div>
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                Prof. G. V. S. Nageswara Rao<br>
-                                Professor and Convener of National Conference FCCM-2018<br>
-                                Department of Metallurgical and Materials Engineering <br>
-                                National Institute of Technology, <br>
-                                Warangal – 506 004, Telangana, India <br>
-                                Mobile: 08332969382 (Convener) <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969385 (Co-Converner) <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969479 (Co-Converner) <br>
+                                <b>Prof. D. Srinivasacharya</b><br>
+                                    Head of the Department & Conference Chair<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <!-- <b>Mobile : </b>+91 -  <br>
+                                                +91 -  <br>
+                                                +91 -  <br>
+                                <b>Phone : </b>  <br>
+                                                 <br>
+                                                 <br> -->
                             </div>
                         </div>
                     </div>

@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FCCM'18</title>
+    <title>CMFDP'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -30,7 +30,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -48,13 +48,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/conference/fccm2018">Home</a>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
                     </li>
                     <li>
-                        <a href="/conference/fccm2018/about">About Us</a>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/fccm2018/links">Important Links</a>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -106,13 +106,16 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_fccm/FCCM-Brochure.pdf' %}">Brochure</a></li><br>
-                    <li><a href="#"> Extended Abstract</a></li>
-                    <br>
-                    <li><a href="#"> Final Paper</a></li>
-                    <br>
-                    <li><a href="{% static 'docs_fccm/FCCM-RegistrationForm.docx' %}">Registration Form</a></li><br>
-                    <li><a>Copyright Transfer Form</a></li><br>
+                    <li><a href="{% static 'docs_cmfdp/CMFDP_Brochure-2019.pdf' %}">Brochure</a></li><br>
+                    <!-- <li><a href="{% static 'docs_cmfdp/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li> -->
+                    <!-- <br> -->
+                    <!-- <li><a href="{% static 'docs_cmfdp/Fullpaper_Format_CTSEM2018_V01.docx' %}"> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li> -->
+                    <!-- <br> -->
+                    <li><a href="{% static 'docs_cmfdp/Registration_form.docx' %}">Registration Form</a></li><br>
+                    <li><a href="{% static 'docs_cmfdp/copyright_form.doc' %}">Copyright Form</a></li><br>
+                    <li><a href="{% static 'docs_cmfdp/CMFDP_Paper_Template.docx' %}">Paper Template</a></li><br>
+                    <li><a href="{% static 'docs_cmfdp/CMFDP_PosterTemplate.pptx' %}">Poster Template</a></li><br>
+                    
                 </ol></b></h4>
             </div>
             <div class="col-sm-4">
@@ -144,27 +147,27 @@
                             <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="http://www.nitw.ac.in/department/mme/" target="_blank">Department of Metallurgical and Materials Engineering, NIT Warangal</a><br>
-                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>Phone:</b> 0870-2462521 (O) <br>
-                                <b>Fax :</b>&nbsp;&nbsp;&nbsp;&nbsp; 0870-2459547 <br>
-                                <b>E-mail:</b> fccm2018nitw@gmail.com <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gvsnr@nitw.ac.in (Convener)<br>
+                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
                                 
                             </div>
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                Prof. G. V. S. Nageswara Rao<br>
-                                Professor and Convener of National Conference FCCM-2018<br>
-                                Department of Metallurgical and Materials Engineering <br>
-                                National Institute of Technology, <br>
-                                Warangal – 506 004, Telangana, India <br>
-                                Mobile: 08332969382 (Convener) <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969385 (Co-Converner) <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  08332969479 (Co-Converner) <br>
+                                <b>Prof. D. Srinivasacharya</b><br>
+                                    Head of the Department & Conference Chair<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <!-- <b>Mobile : </b>+91 -  <br>
+                                                +91 -  <br>
+                                                +91 -  <br>
+                                <b>Phone : </b>  <br>
+                                                 <br>
+                                                 <br> -->
                             </div>
                         </div>
                     </div>
