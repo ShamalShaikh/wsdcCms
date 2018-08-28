@@ -54,7 +54,7 @@
     <a class="item" href="/signout/{{alias}}">Logout</a>
     {%else%}
     <a class="item" href="/signin/{{alias}}">Login</a>
-    <a class="item" href="/Register/{{alias}}">Signup</a>
+    <a class="item" href="/register/{{alias}}">Signup</a>
     {% endif %}
   </div>
 </div>

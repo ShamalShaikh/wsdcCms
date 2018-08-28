@@ -83,6 +83,8 @@ def register(request,alias):
 def signin(request,alias):
 	response={}
 	response['alias'] = alias
+	print "ok"
+	print alias
 	if request.user.is_authenticated():
 	    return redirect('/dashboard/'+alias)
 	if request.method == "POST":

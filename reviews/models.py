@@ -6,7 +6,7 @@ from conference.models import Conf_Paper, Conference
 
 class Reviewer(models.Model):
 	user = models.ForeignKey(User)
-	papers = models.ManyToManyField(Conf_Paper, null=True, blank=True)
+	papers = models.ManyToManyField(Conf_Paper, blank=True)
 	conference = models.ForeignKey(Conference,null=True)
 
 	def __str__(self):

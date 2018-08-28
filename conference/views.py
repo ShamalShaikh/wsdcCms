@@ -395,11 +395,15 @@ def mmselinks(request):
 
 def ctsem(request):
 	conference = Conference.objects.get(conference_alias='ctsem2018')
+	print conference
+	print"hai"
 	response = {}
 	response['conference']=conference
 	response['alias']='ctsem2018'
 	images = Conf_Image.objects.filter(conf_id=conference)
 	response['images']=images
+	print images
+	print request.user.is_authenticated
 
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
@@ -642,3 +646,46 @@ def sendTrackingMail(paper,alias):
 			return HttpResponse('Invalid header found.')
 
 	return
+
+
+# CMFDP
+def cmfdp(request):
+	conference = Conference.objects.get(conference_alias='cmfdp2019')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='cmfdp2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/cmfdp/home.djt',response)
+
+def cmfdpabout(request):
+	conference = Conference.objects.get(conference_alias='cmfdp2019')
+	response={}
+	response['conference']=conference
+	response['alias']='cmfdp2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/cmfdp/about.djt',response)
+
+def cmfdplinks(request):
+	conference = Conference.objects.get(conference_alias='cmfdp2019')
+	response={}
+	response['conference']=conference
+	response['alias']='cmfdp2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/cmfdp/links.djt',response)

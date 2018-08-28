@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>RAMES'18</title>
+    <title>CMFDP'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -48,13 +48,13 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/conference/rames2018">Home</a>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
                     </li>
                     <li>
-                        <a href="/conference/rames2018/about">About Us</a>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/rames2018/links">Important Links</a>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     <li>
                         <a href="#dates">Important Dates</a>
@@ -113,9 +113,10 @@
             <div class="col-sm-6">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:20px;"><b>NATIONAL CONFERENCE ON</b></p>
-                <p style="font-size:25px;"><b>RECENT ADVANCES IN MODELING EXPERT SYSTEMS</b></p>
-                <p style="font-size:20px;"><b>(RAMES)</b></p>
+                <p style="font-size:25px;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:25px;"><b>COMPUTATIONAL MODELING OF FLUID DYNAMICS PROBLEMS</b></p>
+                <p style="font-size:20px;"><b>(CMFDP-2019)</b></p>
+                <p style="font-size:15px;">In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
@@ -133,10 +134,11 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
-                <center><h3 style="color:blue;"><b>June 26 - 28, 2018</b></h3>
+                <center><h3 style="color:blue;"><b>January 18 - 20, 2019</b></h3>
                 <h4>
                      Organised by<br><hr>
-                    DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING<br><br>
+                     <!-- Transportation Division<br><br> -->
+                    Department of Mathematics<br><br>
                     National Institute of Technology Warangal<br>
                     Warangal 506 004. <br>
                     Telangana State, India.
@@ -162,98 +164,106 @@
         <hr>
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">About the Conference</span></center></h2><br>
-                <p style="text-align:justify">This conference is expected to be attended by researchers and faculty in the field of Computer Science and allied areas of Science and Engineering. It will provide a platform to exchange innovative ideas, methods and results, and visions of the future related to Computer Science and Information Technology. This conference will focus on the presentation and discussion on Machine Learning, Expert Systems, Distributed Systems Modeling, Implementation and Testing Tools. In addition to the paper presentations there will be invited talks on latest areas/topics of research. The deliberations at the conference are expected to influence the current researchers regarding their academic pursuits.</p>
+                <br><h2><center><span class="label label-success">Objective</span></center></h2><br>
+                            This conference is expected to be attended by
+                    researchers and faculty to exchange innovative ideas,
+                    methods and results, and visions of the future related to
+                    advanced concepts in computational modeling of fluid
+                    dynamics problems. This conference will focus on the
+                    presentation and discussion computational modeling
+                    aspects in heat and mass transfer, fluid dynamics and
+                    porous media. In addition to the paper presentations
+                    there will be invited talks on latest areas/topics of
+                    research. The deliberations at the conference are
+                    expected to influence the current researchers regarding
+                    their academic pursuits.
+                </div>
             </div>
-        </div>
+        
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
-                <p style="text-align:justify">Authors are invited to submit the Full Papers, not exceeding 6-pages in MS word format (soft copy) and neatly typed on A-4 size paper. Each manuscript will undergo a peer review process. The contributed papers must be original and should not have been published / accepted in journals/proceedings.</p>
+                <p style="text-align:justify">Authors are invited to submit the Full Papers, not
+                    exceeding 6-pages in MS word format (soft copy) and
+                    neatly typed on A-4 size paper. Each manuscript will
+                    undergo a peer review process. The contributed papers
+                    must be original and should not have been
+                    published/accepted in journals/proceedings.</p>
                 <p style="text-align:justify">
-                    Upon the notification of acceptance, the author will have to submit final copy of the manuscript of the paper, copyright transfer agreement and registration fee and registration form on or before the last date. A wide range of topics related to Machine Learning, Expert Systems and Distributed Systems will be welcome. Selected and presented papers will be published on the Publisher&#39;s Website.
-                    <br>
-                    
-                    <ol>
-                        <li>Register (Signup) using the register tab in navbar.</li>
-                        <li>Login using the username and password.</li>
-                        <li>Upload the Full paper using the upload paper option.</li>
-                    </ol>
+                    CMFDP – 2019 is planning to bring out Conference
+                    Proceedings and in the form of a special issue of
+                    journal form from a reputed publisher with SCOPUS
+                    /SCI/Web of Sciences indexed. Plagiarism in any form is
+                    unethical and unacceptable. In order to ensure that the
+                    content submitted is original and trustworthy, a
+                    similarity check will be done.
                 </p>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-5" style="font-size:17px;">
+            <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
-                <p style="text-align:justify;"><b>A wide range of topics related to Machine Learning, Expert Systems and Distributed Systems will be welcome. The topics include, but are not restricted to </b></p>
+                <p style="text-align:justify;"><b>A wide range of topics related to classical and emerging
+                    areas of computational modeling of fluid dynamics
+                    problems will be welcome. The topics include, but are not restricted to </b></p>
                 <ul>
-                    <li>Machine Learning</li>
-                    <li>Deep Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Learning in Distributed Systems</li>
-                    <li>Software Engineering</li>
-                    <li>Software Architectures Design and Modeling</li>
-                    <li>Grid and Cloud Computing</li>
-                    <li>Expert Systems in Wireless and Mobile Networks</li>
-                    <li>Algorithms for Distributed Computing</li>
-                    <li>Modeling Adaptive Bio-Informatic Systems</li>
-                    <li>Expert Systems in IoT</li>
-                    <li>Data Analytics</li>
-                    <li>Expert Systems in Image and Video Processing</li>
-                    <li>Adaptive and Reliable Software Systems</li>
-                    <li>Big Data</li>
-                    <li>Data Mining</li>
+                    <li>Newtonian and Non-Newtonian fluid flows</li>
+                    <li>Transport phenomena in porous media</li>
+                    <li>Convective Heat and Mass Transfer</li>
+                    <li>Laminar, Turbulent and Complex flows</li>
+                    <li>Micropolar, Couple Stress and Nanofluid flows</li>
+                    <li>Numerical Modeling of the problems in Fluid & Biofluid Mechanics</li>
                 </ul>                
             </div>
-            <div class="col-md-1"></div>
             <!-- /.col-md-4 -->
             <div class="col-md-6" id="dates">
                 <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>30th May, 2018</td>
+                        <td>10 th Dec, 2018</td>
                     </tr>
                     <tr class="active">
-                        <td>Notification of Acceptance</td>
-                        <td>10th June, 2018</td>
+                        <td>Acceptance of full length paper</td>
+                        <td>20 th Dec, 2018</td>
                     </tr>
                     <tr class="active">
-                        <td>Final Paper (Camera Ready) Submission &amp; Registration</td>
-                        <td>15th June, 2018</td>
-                    </tr>
-		            <tr class="active">
-                        <td>Last Date of Payment of Registration Fee</td>
-                        <td>15th June, 2018</td>
+                        <td>Final Paper (Camera Ready) Submission & Registration</td>
+                        <td>25 th Dec, 2018</td>
                     </tr>
                 </table>
                 <br>
-                <div id="fee_div"></div>
-                <h2><center><span class="label label-primary">REGISTRATION FEE</span></center></h2><br>
+                <!-- <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
+                <p style="text-align:justify;">
+                    CTSEM will provide great opportunity for interaction among industries, consultants, government agencies, educational institutions, academicians, professionals and decision makers.<br>
+                    Sponsorship with the following tariff is invited.
+                </p>
                 <table class="table table-hover">
                     <tr class="active">
-                        <td>Delegates from Industry</td>
-                        <td>Rs. 3000/- </td>
+                        <td>Platinum Sponsor:</td>
+                        <td>Rs. 1,00,000 (8 delegates free)</td>
                     </tr>
                     <tr class="active">
-                        <td>Delegates from Academic and R &amp;D Institutions</td>
-                        <td>Rs. 2000/- </td>
+                        <td>Gold Sponsor:</td>
+                        <td>Rs. 50,000 (6 delegates free)</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Silver Sponsor:</td>
+                        <td>Rs. 25,000 (4 delegates free)</td>
                     </tr>
                     <tr class="active">
-                        <td>Students/Research Scholar/Faculty</td>
-                        <td>Rs. 2000/- </td>
+                        <td>Co-Sponsor:</td>
+                        <td>Rs. 10,000 (2 delegates free)</td>
                     </tr>
-                </table>
-                <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
+                </table> -->
             </div>
         </div>
-        <hr>
         <div class="row">
             <div class="col-md-6">
                 <center>
                 <h2><span class="label label-primary">Mode of Payment</span></h2><br>
-                <b>All the payments are to be made through Online/NEFT to the Bank given below.</b>
+                <b>Payments to be made through Online/NEFT to the Bank given below.</b>
                 <br><br>
                 <table class="table table-hover">
                     <tr class="active">
@@ -262,79 +272,84 @@
                     </tr>
                     <tr class="active">
                         <td>Account No</td>
-                        <td></td>
+                        <td>37494838784</td>
                     </tr> 
                     <tr class="active">
                         <td>Bank and Branch</td>
                         <td>State Bank of India, REC Warangal (NIT Campus)</td>
                     </tr>
+                    
+                    <tr class="active">
+                        <td>Branch Code</td>
+                        <td>20149</td>
+                    </tr>
                     <tr class="active">
                         <td>IFSC Code</td>
                         <td>SBIN0020149</td>
                     </tr>
+                    <tr class="active">
+                        <td>MICR Code</td>
+                        <td>506002030</td>
+                    </tr>
+                    
                 </table>
+                <b>Payments to be made through DD.</b>
+                <br><br>
+                <p>DD is to be drawn in favor of “Conference Chair, CMFDP-2019” payable at Warangal.</p>
                 </center>
+
             </div>
             <div class="col-md-6">
                 <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
                 <center>
+                <b>The filled in registration form along with the DD/Online
+                Receipt should be sent to:</b><br><br>
                 <p>
-                    Dr. R.B.V. Subramanyam<br>
-                    Head CSE &amp; Organizing Chair, RAMES<br>
-                    Department of Computer Science &amp; Engineering <br>
-                    National Institute of Technology, <br>
-                    Warangal – 506 004, Telangana, India <br>
-                    Mobile : 9490165347<br>
-                    Phone: 0870-2462700<br>
-                    E-mail: rames2018@gmail.com <br>
+                Conference Chair, CMFDP - 2019,<br>
+                Department of Mathematics,<br>
+                National Institute of Technology Warangal,<br>
+                Warangal-506 004, Telangana State, India.<br>
+                Phone: 09849187249(DSC) / 09491824301 (CHRR),<br>
+                E-mail: cmfdp2019.nitw@gmail.com; dsc@nitw.ac.in;<br>
+                chramreddy@nitw.ac.in<br>
                 </p>
                 </center>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-12">
-                 <center><h2><span class="label label-success">Conference Committees</span></h2></center><br>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
+                <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
                 <table class="table table-hover">
-                    <tr class="active"><td><b>Chief Patron : </b>&nbsp;&nbsp;</td><td> Prof N. V. Ramana Rao</td></tr>
-                    <tr class="active"><td><b>Honorary Chair : </b>&nbsp;&nbsp;</td><td> Prof T. Ramesh</td></tr>
-                    <tr class="active"><td><b>General Chair : </b>&nbsp;&nbsp;</td><td> Prof D.V.L.N. Somayajulu</td></tr>
-                    <tr class="active"><td><b>Program Committee Chair : </b>&nbsp;&nbsp;</td><td> Prof B. B. Amberker</td></tr>
-                    <tr class="active"><td><b>Program Committee Co-Chair : </b>&nbsp;&nbsp;</td><td> Dr Rashmi Ranjan Rout</td></tr>
-                    <tr class="active"><td><b>Publication Chair : </b>&nbsp;&nbsp;</td><td> Prof S.G. Sanjeevi</td></tr>
-                    <tr class="active"><td><b>Tutorial Chair : </b>&nbsp;&nbsp;</td><td> Dr K. Ramesh</td></tr>
+                    <tr class="active">
+                        <td>Delegates from Academic and R &D Institutions</td>
+                        <td>Rs. 3000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Delegates from Industry</td>
+                        <td>Rs. 5000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Students/Research Scholar</td>
+                        <td>Rs. 2500/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Foreign Participants</td>
+                        <td>USD 250 </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Foreign Students</td>
+                        <td>USD 200 </td>
+                    </tr>
                 </table>
+                <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
             </div>
-            <div class="col-md-6">
-                <table class="table table-hover">
-                    <tr class="active"><td><b>Organizing Chair : </b>&nbsp;&nbsp;</td><td> Dr R.B.V. Subramanyam</td></tr>
-                    <tr class="active"><td><b>Convener : </b>&nbsp;&nbsp;</td><td> Dr Chapram Sudhakar</td></tr>
-                    <tr class="active"><td><b>Finance Chair : </b>&nbsp;&nbsp;</td><td> Dr S. Ravichandra</td></tr>
-                    <tr class="active"><td><b>Media and Publicity Chair : </b>&nbsp;&nbsp;</td><td> Dr R. Padamavathi</td></tr>
-                    <tr class="active"><td><b>Website Chair : </b>&nbsp;&nbsp;</td><td> Dr T. Ramakrishnudu</td></tr>
-                    <tr class="active"><td><b>Registration Chair(s) : </b>&nbsp;&nbsp;</td><td>Dr K.V. Kadambari, Dr P.V. Subba Reddy</td></tr>
-                </table>
-            </div>
-            <div class="col-md-12">
-                <br><h3><center><span class="label label-success">Organizing Committee</span></center></h3><br>
-                <center>
-                <p style="font-size:18px;">
-                    Members of Faculty and Alumni of Computer Science and Engineering Department, NIT Warangal
-                </p>
-                </center>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <h2><center><span class="label label-primary">BEST PAPER AWARD</span></center></h2><br>
-                <center>
+
+            <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-default">BEST PAPER AWARD</span></center></h2><br>
                 <p>
                     "Best Paper Awards" will be conferred on the selected author(s) of full papers presented at the conference.
                 </p>
-                </center>
             </div>
         </div>
         <hr>
@@ -343,12 +358,106 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
                 <p style="text-align:justify">
-                    Participants will be provided with boarding and lodging facilities on twin sharing basis in the Visitors’ Block of the Institute on minimal payment.
+                    Limited accommodation may be provided on payment
+                    basis in the Institute Visitors Block/DASA Hostel
+                    depending on availability and on first come first serve
+                    basis. However, Warangal city covers a wide range of
+                    hotels and other accommodation facilities to suit every
+                    budget. Participants are advised to contact the hotels
+                    directly and book their accommodation. However, in
+                    case of difficulty, we will assist on your prior request.
                 </p>
                 <br>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <h4><b>Patron</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao, Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Conference Chair</b></h4>
+                    <p style="font-size:15px;">Prof. D. SRINIVASACHARYA<br> Head of the Department <br> DEPARTMENT OF MATHEMATICS, NIT Warangal</h5>
+                    </center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Conference Coordinator</b></h4>
+                    <p style="font-size:15px;">Dr. CH.RAMREDDY</p>
+                    </center>               
+                </div>
 
+            </div>
+        </div>
+
+        <div class="row">
+            <hr>
+            
+            <div class="col-md-4">
+                <center><h2><span class="label label-success">NATIONAL ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-12" style="font-size:15px;">
+                        <ul>
+                            <li>Prof. A.K. Pani, IIT Mumbai</li>
+                            <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
+                            <li>Prof. P.V.S.N. Murthy, IIT, Kharagpur</li>
+                            <li>Prof. G.P. Rajasekhar, IIT, Kharagpur</li>
+                            <li>Prof. Natesan Srinivasan, IIT Guwahati</li>
+                            <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
+                            <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
+                            <li>Prof. Ch. Srinivasa Rao, IIT Madras</li>
+                            <li>Prof. K.S. Reddy, IIT Madras</li>
+                            <li>Prof. P.Aanatha Lakshmi Narayana, IIT Hyderabad</li>
+                            <li>Prof A. Kandasamy, NIT Suratkal</li>
+                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <center><h2><span class="label label-success">DEPARTMENTAL COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-6" style="font-size:15px;">
+                        <center><b>Chief Advisors</b></center>
+                        <br>
+                        <ul>
+                            <li>Prof. Y. N. Reddy, Professor</li>
+                            <li>Prof. K.N.S.K.Viswanadham, Professor</li>
+                            <li>Prof. J. V. Ramana Murthy, Professor</li>
+                            <li>Prof. Debashish Dutta, Professor</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style="font-size:15px;">
+                        <center><b>Organizing Committee</b></center><br>
+                        <ul>
+                            <li>Dr. P. Muthu, Associate Professor</li>
+                            <li>Dr. H.P. Rani, Associate Professor</li>
+                            <li>Dr. A. Benerji Babu, Associate Professor</li>
+                            <li>Dr. R.S. Selvaraj, Associate Professor</li>
+                            <li>Dr. T. Kurmayya, Assistant Professor</li>
+                            <li>Dr. J. Pranitha, Assistant Professor</li>
+                            <li>Dr. D. Bhargavi, Assistant Professor</li>
+                            <li>Dr. E. Satyanarayana, Assistant Professor</li>
+                            <li>Dr. Y. Sreenivasa Rao, Assistant Professor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer -->
         <footer>
          <hr>
@@ -369,23 +478,27 @@
                             <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="http://www.nitw.ac.in/department/cse/" target="_blank">Department of Computer Science & Engineering, NIT Warangal</a><br>
-                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>E-mail : </b>rames2018@gmail.com <br>
+                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
                                 
                             </div>
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                <b>Dr. R.B.V. Subramanyam</b><br>
-                                Head CSE &amp; Organizing Chair, RAMES<br>
-                                Department of Computer Science &amp; Engineering<br>
+                                <b>Prof. D. Srinivasacharya</b><br>
+                                    Head of the Department & Conference Chair<br>
+                                Department of Mathematics<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
-                                WARANGAL - 506 004, TS<br>
-                                <b>Mobile :</b> 9490165347<br>
-                                <b>Phone :</b> 0870-2462700<br>
+                                WARANGAL - 506004, TS<br>
+                                <!-- <b>Mobile : </b>+91 -  <br>
+                                                +91 -  <br>
+                                                +91 -  <br>
+                                <b>Phone : </b>  <br>
+                                                 <br>
+                                                 <br> -->
                             </div>
                         </div>
                     </div>
@@ -450,7 +563,7 @@
             <li>Congrats !!! You are succesfully registered on website</li>
         </ol>
         <hr><hr>
-        <!-- <h4 style="color:red;">Provision for only attending the conference</h4>
+        <h4 style="color:red;">Provision for only attending the conference</h4>
         <hr>
         <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
         <ol>
@@ -459,7 +572,7 @@
             <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
             <li>Upload picture of ID proof and the payment receipt</li>
         </ol>
-        <hr><hr> -->
+        <hr><hr>
         <h4>Steps to Upload the paper </h4>
         <hr>
         <ol>
@@ -469,7 +582,7 @@
             <li>A confirmation mail stating the tracking id will be sent to you</li>
         </ol>
         <hr><hr>
-        <!-- <h4>Peer review process</h4>
+        <h4>Peer review process</h4>
         <hr>
         <ol>
             <li>The uploaded papers will be checked for similarity index</li>
@@ -489,7 +602,7 @@
             <li>Then from the same upload paper option, go to "final paper upload"</li>
             <li>Upload Copyright Form (which is available at important links page)</li>
             <li>Upload final paper, and you are done !!</li>
-        </ol> -->
+        </ol>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -67,7 +67,7 @@ class Conf_Image(models.Model):
 class Conf_Paper(models.Model):
 	paper_id = models.AutoField(primary_key = True)
 	paperRefNum = models.CharField(max_length=15,blank=True)
-	papername = models.CharField(max_length=50)
+	papername = models.CharField(max_length=250)
 	conf_id = models.ForeignKey(Conference, on_delete = models.CASCADE)
 	uid = models.ForeignKey(User,on_delete = models.CASCADE)
 	description = models.CharField(max_length = 100)
