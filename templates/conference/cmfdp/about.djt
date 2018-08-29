@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CTSEM'18</title>
+    <title>CMFDP'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -156,14 +156,14 @@
                     <div class="col-sm-2">
                         <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
                     </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-8" align="left">
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
                     <br>
                         Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
                         <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
                         <br><br>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
                                 <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
@@ -174,19 +174,25 @@
                                 <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
                                 
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <h4><b>Contact:</b></h4>
                                 <b>Prof. D. Srinivasacharya</b><br>
                                     Head of the Department & Conference Chair<br>
                                 Department of Mathematics<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <!-- <b>Mobile : </b>+91 -  <br>
-                                                +91 -  <br>
-                                                +91 -  <br>
-                                <b>Phone : </b>  <br>
-                                                 <br>
-                                                 <br> -->
+                                <b>Email : </b>dsc@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9849187247  <br>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b><br></b></h4>
+                                 <b>Dr. Ch. Ramreddy</b><br>
+                                    Conference Coordinator<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b>chramreddy@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9491824301  <br>
                             </div>
                         </div>
                     </div>
