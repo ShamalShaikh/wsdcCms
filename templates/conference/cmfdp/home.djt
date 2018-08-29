@@ -107,20 +107,23 @@
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-3">
+            <center>
+            <div class="col-md-2">
                 <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
             </div>
-            <div class="col-sm-6">
+            </center>
+            <div class="col-sm-8">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:25px;"><b>NATIONAL CONFERENCE ON</b></p>
-                <p style="font-size:25px;"><b>COMPUTATIONAL MODELING OF FLUID DYNAMICS PROBLEMS</b></p>
-                <p style="font-size:20px;"><b>(CMFDP-2019)</b></p>
-                <p style="font-size:15px;">In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</p>
+                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px; color: #31b150;"><b>COMPUTATIONAL MODELING OF FLUID DYNAMICS PROBLEMS</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(CMFDP-2019)</b></p>
+                <p style="font-size:15px;color: #ff0300;"><b>In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</b></p>
+                <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <center>
                 <p style="color:red;">Please Find Instructions here</p>
                 <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
@@ -375,26 +378,23 @@
                  <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <center>
                         <h4><b>Patron</b></h4>
-                        <p style="font-size:17px;">Prof. N V Ramana Rao, Director <br>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
                             National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <center>
                     <h4><b>Conference Chair</b></h4>
-                    <p style="font-size:15px;">Prof. D. SRINIVASACHARYA<br> Head of the Department <br> DEPARTMENT OF MATHEMATICS, NIT Warangal</h5>
+                    <p style="font-size:17px;">Prof. D. Srinicasacharya<br> Head, Department of Mathematics<br>National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-            </div>
-            <br><br>
-            <div class="row">
-                <div class="col-md-6">
+               <div class="col-md-4">
                     <center>
                     <h4><b>Conference Coordinator</b></h4>
-                    <p style="font-size:15px;">Dr. CH.RAMREDDY</p>
+                    <p style="font-size:17px;">Dr. Ch.Ramreddy<br>Department of Mathematics<br>National Institute of Technology, Warangal</p>
                     </center>               
                 </div>
 
@@ -475,7 +475,7 @@
                         <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
                         <br><br>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
                                 <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
@@ -486,10 +486,24 @@
                                 <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
                                 
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <h4><b>Contact:</b></h4>
                                 <b>Prof. D. Srinivasacharya</b><br>
                                     Head of the Department & Conference Chair<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <!-- <b>Mobile : </b>+91 -  <br>
+                                                +91 -  <br>
+                                                +91 -  <br>
+                                <b>Phone : </b>  <br>
+                                                 <br>
+                                                 <br> -->
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b><br></b></h4>
+                                 <b>Dr. Ch. Ramreddy</b><br>
+                                    Conference Coordinator<br>
                                 Department of Mathematics<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
