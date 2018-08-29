@@ -1,7 +1,7 @@
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'NAME': 'confrence_db',
+        'NAME': 'treat17',
         'USER': 'root',
         'PASSWORD': 'wsdcadmin',
         'HOST': 'localhost',
