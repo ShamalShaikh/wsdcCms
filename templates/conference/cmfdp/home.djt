@@ -298,7 +298,7 @@
                 </table>
                 <b>Payments to be made through DD.</b>
                 <br><br>
-                <p>DD is to be drawn in favor of “Conference Chair, CMFDP-2019” payable at Warangal.</p>
+                <p>DD is to be drawn in favor of “Conference Chair” payable at Warangal.</p>
                 </center>
 
             </div>
@@ -468,8 +468,8 @@
                     <div class="col-sm-2">
                         <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
                     </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-8" align="left">
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
                     <br>
                         Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
                         <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
@@ -493,12 +493,8 @@
                                 Department of Mathematics<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <!-- <b>Mobile : </b>+91 -  <br>
-                                                +91 -  <br>
-                                                +91 -  <br>
-                                <b>Phone : </b>  <br>
-                                                 <br>
-                                                 <br> -->
+                                <b>Email : </b> dsc@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9849187247  <br>
                             </div>
                             <div class="col-sm-4">
                                 <h4><b><br></b></h4>
@@ -507,12 +503,8 @@
                                 Department of Mathematics<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <!-- <b>Mobile : </b>+91 -  <br>
-                                                +91 -  <br>
-                                                +91 -  <br>
-                                <b>Phone : </b>  <br>
-                                                 <br>
-                                                 <br> -->
+                                <b>Email : </b> chramreddy@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9491824301  <br>
                             </div>
                         </div>
                     </div>
