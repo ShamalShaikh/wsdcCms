@@ -663,6 +663,7 @@ def cmfdp(request):
 
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
 		if len(payment)==1 :
 			response['payment'] = payment[0]
 
