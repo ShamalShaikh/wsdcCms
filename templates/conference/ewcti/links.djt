@@ -56,41 +56,7 @@
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
-                    {% if not request.user.is_authenticated %}
-                    <li>
-                        <a href="/register/{{conference.conference_alias}}">Register</a>
-                    </li>
-                    {% endif %}
-                    {% if request.user.is_authenticated %}
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav" style="float:right;">
-                    {% if request.user.is_authenticated %}
-                    <li>
-                       <!-- <a href="/profile/1/">Profile</a>  -->
-                       <a href="">Hi, {{request.user.first_name}}</a>
-                    </li>
-                    <li>
-                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li>
-                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
-                    </li>
-                    {% endif %}
-                </ul>
+                    </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -145,7 +111,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewct2018@nitw.ac.in <br>
+                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">

@@ -59,42 +59,6 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
-                    {% if not request.user.is_authenticated %}
-                    <li>
-                        <a href="/register/{{conference.conference_alias}}">Register</a>
-                    </li>
-                    {% endif %}
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#fee_div">Registration Fee</a></li>
-                            {% if request.user.is_authenticated %}
-                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
-                            {% endif %}
-                        </ul>
-                    </li>
-                    {% if request.user.is_authenticated %}
-                    <li>
-                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav" style="float:right;">
-                    {% if request.user.is_authenticated %}
-                    <li>
-                       <a href="">Hi, {{request.user.first_name}}</a>
-                    </li>
-                    <li>
-                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li>
-                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
-                    </li>
-                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -368,6 +332,30 @@ Souvenir + 1 Delegate Free</td>
         <hr>
         
         <hr>
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                    <li>Shri S.S. Sandhu, Addl Secretary, MHRD</li>
+                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE.</li>
+                    <li>Prof. Sandeep Sancheti, President, AIU.</li>
+                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore.</li>
+                    <li>Prof. Abhay Karandikar, Director, IIT Kanpur</li>
+                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore.</li>
+                    <li>Prof. Furqan Quamar, Secretary General, AIU.</li>
+                    <li>Prof. D. K. Tripathi, former Director, NIT Warangal.</li>
+                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode.</li>
+                    <li>Prof. D.R. Vaman, DR, Tele Communications, M.D., USA</li>
+                    <li>Mr. Daniel Cartlo, Research Intelligence Elsevia.</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <br>
         <!-- /.row -->
         
         <div class="row">
@@ -385,7 +373,7 @@ Souvenir + 1 Delegate Free</td>
                 <div class="col-md-4">
                     <center>
                     <h4><b>Co-Chairman</b></h4>
-                    <p style="font-size:17px;">Prof. K. V. Jayakumar</br> Dean (IRAA)<br>
+                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
                         National Institute of Technology, Warangal
                        </p>
                     </center>
@@ -398,7 +386,17 @@ Souvenir + 1 Delegate Free</td>
                         <br>National Institute of Technology, Warangal</p>
                     </center>               
                 </div>
+                <br>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                <br>
 
+                    <center>
+                    <h4><b>Members</b></h4>
+                    <p style="font-size:17px;">All the Heads of the Departments, Registrar
+                       </p>
+                    </center>
+                </div>
             </div>
         </div>
 
@@ -409,7 +407,21 @@ Souvenir + 1 Delegate Free</td>
                 <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
             <br>
                 <div class="row">
-                    <div class="col-md-4"></div>
+                     <div class="col-md-4">
+                    <center>
+                        <h4><b>Chairman</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Co-Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
                     <div class="col-md-4" style="font-size:15px;">
                         <h4><b>Members</b></h4>
                         <ul>
@@ -458,7 +470,7 @@ Souvenir + 1 Delegate Free</td>
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewct2018@nitw.ac.in <br>
+                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
