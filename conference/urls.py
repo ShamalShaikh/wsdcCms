@@ -24,6 +24,10 @@ urlpatterns = [
 	url(r'^cmfdp2019/$',views.cmfdp),
 	url(r'^cmfdp2019/about/$',views.cmfdpabout),
 	url(r'^cmfdp2019/links/$',views.cmfdplinks),
+	#EWCTI2018
+	url(r'^ewcti2018/$',views.ewcti),
+	url(r'^ewcti2018/about/$',views.ewctiabout),
+	url(r'^ewcti2018/links/$',views.ewctilinks),
 
 	# url(r'^metallography_contest/$',views.metallography_contest),
 	# url(r'^registerForContest/$',views.registerForContest),

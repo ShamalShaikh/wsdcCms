@@ -690,3 +690,46 @@ def cmfdplinks(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/cmfdp/links.djt',response)
+
+#ewcti
+def ewcti(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/ewcti/home.djt',response)
+
+def ewctiabout(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ewcti/about.djt',response)
+
+def ewctilinks(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ewcti/links.djt',response)
