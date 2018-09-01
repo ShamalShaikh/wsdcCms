@@ -381,15 +381,32 @@ Souvenir + 1 Delegate Free</td>
                     </center>               
                 </div>
                 <br>
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                 <br>
 
                     <center>
                     <h4><b>Members</b></h4>
-                    <p style="font-size:17px;">All the Heads of the Departments, Registrar
-                       </p>
                     </center>
+                    <ul style="font-size:15px;">
+                        <li>Dr. M. Chandrasekhar, Head (Civil Engineering)</li>
+                        <li>Dr. V. T. Somasekhar, Head (Electrical Engineering)</li>
+                        <li>Dr. Popuri Bangarubabu, Head (Mechanical Engineering) </li>
+                        <li>Dr. N. Bheema Rao, Head(Electronic & Comm. Engg)</li>
+                        <li>Dr. C. Vanitha, Head (Metallurgy & Materials Engg.)</li>
+                        <li>Dr. SaratBabu Anne, Head (Chemical Engineering)</li>
+                        <li>Dr. R. B. V. Subramaanyam, Head (Computer Science Engineering)</li>
+                        <li>Dr. Onkara Perumal P, Head (Biotechnology)</li>
+                        <li>Dr. P. Ramlal, Head (School of Management)</li>
+                        <li>Dr. D. Srinivasacharya, Head (Mathematics)</li>
+                        <li>Dr. K. Venugopal Reddy, Head (Physics)</li>
+                        <li>Dr. P. Venkata Sri Laxmi, Head (Chemistry)</li>
+                        <li>Dr. M. Raja Vishwanathan, Head (Humanities & Social Sciences)</li>
+                        <li>Dr. T. Kishore Kumar, Head (Computer Centre)</li>
+                        <li>Dr. P. Madhusudhana Reddy, Head (Physical Education)</li>
+                        <li>Sri S. Goverdhan Rao, Registrar</li>
+                    </ul>
+                    
                 </div>
             </div>
         </div>
