@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMFDP'19</title>
+    <title>EWCTI'18</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -106,15 +106,8 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_cmfdp/CMFDP_Brochure-2019.pdf' %}">Brochure</a></li><br>
-                    <!-- <li><a href="{% static 'docs_cmfdp/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li> -->
-                    <!-- <br> -->
-                    <!-- <li><a href="{% static 'docs_cmfdp/Fullpaper_Format_CTSEM2018_V01.docx' %}"> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li> -->
-                    <!-- <br> -->
-                    <li><a href="{% static 'docs_cmfdp/Registration_form.docx' %}">Registration Form</a></li><br>
-                    <li><a href="{% static 'docs_cmfdp/copyright_form.doc' %}">Copyright Form</a></li><br>
-                    <li><a href="{% static 'docs_cmfdp/CMFDP_Paper_Template.docx' %}">Paper Template</a></li><br>
-                    <li><a href="{% static 'docs_cmfdp/CMFDP_PosterTemplate.pptx' %}">Poster Template</a></li><br>
+                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure.pdf' %}">Brochure</a></li><br>
+
                     
                 </ol></b></h4>
             </div>
@@ -147,34 +140,24 @@
                             <div class="col-sm-4">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                
                                 <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
+                                <b>E-mail : </b>ewct2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
                                 <h4><b>Contact:</b></h4>
-                                <b>Prof. D. Srinivasacharya</b><br>
-                                    Head of the Department & Conference Chair<br>
-                                Department of Mathematics<br>
+                                <b>Prof. CSRK Prasad<br>
+                                    Organising Secretary, EWCTI2018<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b>dsc@nitw.ac.in    <br>
-                                <b>Phone : </b> +91-9849187247  <br>
+                                <b>Email : </b> ewct2018@nitw.ac.in   <br>
+                                <b>Phone : </b> +91-9440347348  <br>
                             </div>
-                            <div class="col-sm-4">
-                                <h4><b><br></b></h4>
-                                 <b>Dr. Ch. Ramreddy</b><br>
-                                    Conference Coordinator<br>
-                                Department of Mathematics<br>
-                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
-                                WARANGAL - 506004, TS<br>
-                                <b>Email : </b>chramreddy@nitw.ac.in    <br>
-                                <b>Phone : </b> +91-9491824301  <br>
-                            </div>
+                           
                         </div>
                     </div>
                      <br><br>
