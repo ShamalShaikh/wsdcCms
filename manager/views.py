@@ -106,6 +106,8 @@ def assign_reviewer(request, paper_id):
 
 @login_required(login_url='/manager/signin/')
 def conference_landing(request,cid,type):
+	#here we need to check whether this conference belongs to this manager or not
+	#also we need to check whether this user is manager.
 	conference = Conference.objects.get(conference_id=cid)
 	regconfs = Registered_Conference.objects.filter(conf_id=conference)
 	users = []
