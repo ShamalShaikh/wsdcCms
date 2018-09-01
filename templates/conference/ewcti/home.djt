@@ -88,12 +88,6 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
-            <div class="col-sm-2">
-                <center>
-                <p style="color:red;">Please Find Instructions here</p>
-                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
-                </center>
-            </div>
         </div>
         <BR>
         <div class="row">
@@ -133,35 +127,35 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Overview</span></center></h2><br>
                             World class universities revolve around excellence
-in research, academic freedom and an intellectually
-stimulating environment, internal self-governance
-by academics over key aspects of academic life and
-adequate facilities and funding. Higher education
-systems across the world have been going through
-significant restructuring processes to enhance their
-position and competitiveness and within their own
-countries and in the global market.
-<br><br>
-Universities and Institutions in India are also
-competing with each other to get an exalted status in
-academic excellence. This includes both the state
-funded as well as the private universities. Knowing
-what constitutes world-class educational standards,
-measuring ourselves against them and matching
-them and finally 'being a global partner overseas'
-the 'world-class' notion has become everyday
-language in many universities. Making the higher
-education and the research area 'more visible and
-attractive in the world' and rewarding excellence
-have also become the focus of the present day.<br><br>
-With this background, it is proposed to bring leading
-educationist, academicians, academic administrators
-and researchers onto a common platform to discuss
-on various issues related to “world-class” institution.
-The various themes for discussion would revolve
-around Policy matters, national and international
-ranking, accreditation, teaching learning process
-and research in technical education.
+                        in research, academic freedom and an intellectually
+                        stimulating environment, internal self-governance
+                        by academics over key aspects of academic life and
+                        adequate facilities and funding. Higher education
+                        systems across the world have been going through
+                        significant restructuring processes to enhance their
+                        position and competitiveness and within their own
+                        countries and in the global market.
+                        <br><br>
+                        Universities and Institutions in India are also
+                        competing with each other to get an exalted status in
+                        academic excellence. This includes both the state
+                        funded as well as the private universities. Knowing
+                        what constitutes world-class educational standards,
+                        measuring ourselves against them and matching
+                        them and finally 'being a global partner overseas'
+                        the 'world-class' notion has become everyday
+                        language in many universities. Making the higher
+                        education and the research area 'more visible and
+                        attractive in the world' and rewarding excellence
+                        have also become the focus of the present day.<br><br>
+                        With this background, it is proposed to bring leading
+                        educationist, academicians, academic administrators
+                        and researchers onto a common platform to discuss
+                        on various issues related to “world-class” institution.
+                        The various themes for discussion would revolve
+                        around Policy matters, national and international
+                        ranking, accreditation, teaching learning process
+                        and research in technical education.
                 </div>
             </div>
         
@@ -445,7 +439,10 @@ Souvenir + 1 Delegate Free</td>
 
             
         </div>
-        <!-- Footer -->
+        
+
+    </div>
+<!-- Footer -->
         <footer>
          <hr>
             <div style="background-color:#adebeb;font-size:15px;" id="contact">
@@ -491,109 +488,8 @@ Souvenir + 1 Delegate Free</td>
             </div>
 
         </footer>
-
-    </div>
     <!-- /.container -->
 
-<div id="status" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Status of Payment</h4>
-      </div>
-      <div class="modal-body">
-        {% if payment %}
-            {% if payment.is_aprooved %}
-                <h3>Your payment has been verified !!!</h3>
-            {% elif payment.is_rejected %}
-                <h3>Your payment is rejected due to following problem : <br>
-                <br><center>{{payment.remarks}}</center></h3>
-            {% else %}
-                <h3>Your payment is not verified yet. Please Wait !!!</h3>
-            {% endif %}
-        {% else %}
-            <h3>You have not uploaded the payment receipt yet</h3>
-        {% endif %}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div id="instructions" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Instructions</h4>
-      </div>
-      <div class="modal-body">
-        <hr>
-        <h4>Steps to register</h4>
-        <hr>
-        <ol>
-            <li>Click on register tab at the top</li>
-            <li>Fill in the details and click on register</li>
-            <li>Login with your credentials</li>
-            <li>Congrats !!! You are succesfully registered on website</li>
-        </ol>
-        <hr><hr>
-        <h4 style="color:red;">Provision for only attending the conference</h4>
-        <hr>
-        <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
-        <ol>
-            <li>After registering on the website, login with your credentials</li>
-            <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
-            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
-            <li>Upload picture of ID proof and the payment receipt</li>
-        </ol>
-        <hr><hr>
-        <h4>Steps to Upload the paper </h4>
-        <hr>
-        <ol>
-            <li>Select upload paper option from navbar</li>
-            <li>Enter the title of the paper</li>
-            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
-            <li>A confirmation mail stating the tracking id will be sent to you</li>
-        </ol>
-        <hr><hr>
-        <h4>Peer review process</h4>
-        <hr>
-        <ol>
-            <li>The uploaded papers will be checked for similarity index</li>
-            <li>If it satisfy the required similarity index then the papers are sent to reviewers for peer review process.</li>
-            <li>The reviewers' recommendations determine whether a paper will be accepted for publication / accepted subject to change / subject to resubmission with significant changes / accepted for oral presentation / rejected</li>
-            <li>The recommendations of the reviewer will uploaded onto the website and the authors can view and do incorporate the corrections, if any.</li>
-            <li>For papers which require changes, the same reviewers will be used to ensure that the quality of the revised paper is acceptable.</li>
-        </ol>
-        <hr><hr>
-        <h4>"Final Submission and Payment of Registration fee"</h4>
-        <hr>
-        <ol>
-            <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
-            <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
-            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
-            <li>Upload picture of ID proof and the payment receipt</li>
-            <li>Then from the same upload paper option, go to "final paper upload"</li>
-            <li>Upload Copyright Form (which is available at important links page)</li>
-            <li>Upload final paper, and you are done !!</li>
-        </ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
