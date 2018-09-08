@@ -56,7 +56,38 @@
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
-    
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    <li>
+                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -69,16 +100,16 @@
 
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">About Institute and Wranagal</span></center></h2><br>
+                <br><h2><center><span class="label label-success">About Institute</span></center></h2><br>
                 <p style="color:black; text-align:justify;">
-                   The National Institute of Technology (NIT),
-Warangal is the first in the chain of 31 NITs,
-Institutes of National Importance established by Act
-of Parliament. Late Pandit Jawaharlal Nehru laid the
+                   The National Institute of Technology (NIT), Warangal
+is the first in the chain of 31 NITs, Institutes of
+National Importance established by Act of
+Parliament. Late Pandit Jawaharlal Nehru laid the
 foundation stone for this institute on October 10,
-1959. 
+1959.
                 </p>
-                <p>
+                <p style="color:black; text-align:justify;">
                     The Institute offers eight B.Tech. programmes in
 engineering, twenty five M.Tech. programmes and
 seven other post graduate programmes (M.Sc.,
@@ -88,21 +119,27 @@ about 100 well equipped laboratories and well
 established supporting infrastructure. The institute
 is well-known for its Research and Development,
 Industrial Consultancy, Continuing Education and
-Training programmes for teachers and industrial personnel.
+Training programmes for teachers and industrial
+personnel.
+
                 </p>
-                <p>The institute houses about 600 foreign students
+                <p style="color:black; text-align:justify;">
+                    The institute houses about 600 foreign students
 from as many as 40 countries. It has strong
 academic and research collaborations with several
 leading foreign universities and programs like
 HERITAGE, EUPHRATES, HORIZON 2020, etc.
 Students and faculty used to enjoy several short
-term international mobility.</p>
-<p>The institute is about to enter its 60 th year of
+term international mobility.
+                </p>
+        <p style="color:black; text-align:justify;">
+            The institute is about to enter its 60 th year of
 establishment on 10 th October 2018. A year-long
 Diamond Jubilee Celebrations are planned
 commencing with a national conference on
 “Evolution of World Class Technical Institutions
-– Issues & Concerns” during October 10-12, 2018.</p>
+– Issues & Concerns” during October 10-12, 2018.
+    </p>
                 <!-- p style="color:black; text-align:justify;">
                     Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 km away) and by Road (NH 163). Warangal is renowned for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is a hub of tourist attractions with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake located within a radius of 80 km.
                 </p> -->
@@ -119,20 +156,89 @@ monuments built by the Kakatiyas in this region.
 The 1000 pillar Temple, the Warangal fort and the
 Ramappa Temple bear testimony to the historic
 period. Warangal has been identified as a heritage
-reason by the UNESCO.<br><br>
-
+city by the UNESCO.</p>
+<p style="text-align:justify">
 Laknavaram Lake, Pakhal Lake and the Eturu
 Nagaram Reserve Forests are excellent tourist
 attractions. There are also many scenic water falls
-near by. <br><br>
+near by.</p>
+<p style="text-align:justify">
 The city is well connected by road and rail network
 to the rest of the country. The nearest Airport is at
 Hyderabad, another historic city and capital of
-Telangana State.
+Telangana, at a distance of about 170 km from
+Warangal.
             </p>
             </div>
         </div>        
-</div>
+
+
+
+
+
+<!-- historical plaes in warangal  start-->
+    <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">Historical Places Near Warangal</span></center></h2><br>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Ramappa Temple</span></center></h2><br>
+                <p style="text-align:justify;">The Ramappa temple has been referred as the brightest star in the network of medieval temples in the Deccan region. Another striking feature of this temple is that it is built with bricks that are so light that they can easily float on water. The temple which is situated in a valley took nearly 40 years to be completed. The Ramappa temple finds its hold on a 6 feet high platform on a cruciform plan. The temple's chamber is crowned with a shikharam and is surrounded by pradakshinapatha.</p>
+                <a href="http://www.telanganatourism.gov.in/partials/destinations/divine-destinations/jayashankar-bhoopalpally/ramappa-temple.html" target="_blank">Click here for more details </a>                               
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Warangal Fort</span></center></h2><br>
+                <p style="text-align:justify;">Warangal is recognized as one of the best heritage cities of India. It is 145 km away from the state capital Hyderabad. It is also the second largest city in the state of Telangana. The city's name is derived from the Telugu word Orugallu \96 'Oru' which means one and the word 'gallu' meaning stone. The city was the capital of the great Kakatiya rulers who reigned between 12th and 14th centuries.</p>                     
+            </div>
+    </div>
+        <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Bhadrakali Temple</span></center></h2><br>
+                <p style="text-align:justify;">The temple is believed to be built in 625 A.D by the King Pulakeshin II of Chalukya dynasty to commemorate his victory over Vengi region of Andhra Desham, as per the writings on the temple wall.</p>
+                <p style="text-align:justify;">
+
+Kakatiya kings later have adopted the temple and considered Goddess Bhadrakali as their "Kula Devatha". A lake was also built by Ganapatideva adjacent to the temple. Due to the fall of Kakatiya dynasty to the Muslim rulers of Delhi, the temple lost its prominence. In 1950, the temple was renovated by Sri Ganapathi Sastri a devi upasaka along with the help of a local merchant and other affluent locals.  </p>
+                                              
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Thousand Pillar Temple</span></center></h2><br>
+                <p style="text-align:justify;">Many Hindu temples were developed under the patronage of Ganapati Deva, Rudrama Devi and Prataparudra who were of Kakatiya dynasty. The Thousand Pillar Temple was believed to be constructed during the period between 1175-1324 CE by order of the king, Rudra Deva. It stands out to be a masterpiece and achieved major heights in terms of architectural skills by the ancient Kakatiya vishwakarma sthapathis.</p>                     
+            </div>
+    </div>
+    <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Bogatha Waterfall</span></center></h2><br>
+                <p style="text-align:justify;">Situated in Koyaveerapuram G, (Wazeedu Mandal) in Khammam district, Bogatha Waterfall is 120 km away from Bhadrachalam, and 329 km away from Hyderabad. The distance has come down from 440 km because of the newly constructed Eturnagaram bridge on National Highway 202.</p>        
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Medaram (Sammakka Saralamma)</span></center></h2><br>
+                <p style="text-align:justify;">Sammakka Saralamma Jatara or Medaram Jatara is a tribal Hindu festival of honouring the goddesses celebrated in the state of Telangana, India. This Jatara is known for witnessing one of the largest people gatherings in the world. The Jatara begins at Medaram.</p>                     
+            </div>
+    </div>
+    <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Laknavaram Lake</span></center></h2><br>
+                <p style="text-align:justify;">Laknavaram Lake is a lake located in Govindaraopet mandal, about 80km from Warangal, Telangana. The lake is spread over an area of 10,000 acres and holds about 2.135 tmcft of water. It irrigates over 3,500 acres of land. It was built by Kakatiya kings. It has about 13 islands in it and has a 160 metres long hanging bridge, which connects three islands. It is surrounded by a thick deciduous forest and it is a very popular tourist spot. The new facilities including cottages, a viewing tower, a pantry, and a ferry from the main banks to the island amidst the serene waters has been opened for the nature loving tourists.</p>        
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary"></span></center></h2><br>
+                                     
+            </div>
+    </div>
+    <!-- continer ends -->
+    </div>
+
+
+
+<!-- Historical Places in warangal end -->
+
         <!-- Footer -->
         <footer>
          <hr>

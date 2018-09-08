@@ -59,6 +59,12 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
                     {% if not request.user.is_authenticated %}
                     <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
@@ -81,6 +87,7 @@
                        <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
                     </li>
                     {% endif %}
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -110,6 +117,12 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
+            <div class="col-sm-2">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
         </div>
         <BR>
         <div class="row">
@@ -131,23 +144,25 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
         </div>
         <!-- /.row -->
 
-        <hr>
+        
 
         <!-- Call to Action Well -->
+        <!-- <hr>
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
                     <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
                 </div>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
+        <hr> -->
         <!-- /.row -->
 
-        <hr>
+        
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Overview</span></center></h2><br>
+                           <p style="color:black; text-align:justify;"> 
                             World class universities revolve around excellence
                         in research, academic freedom and an intellectually
                         stimulating environment, internal self-governance
@@ -157,7 +172,8 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
                         significant restructuring processes to enhance their
                         position and competitiveness and within their own
                         countries and in the global market.
-                        <br><br>
+                        </p>
+                        <p style="color:black; text-align:justify;">
                         Universities and Institutions in India are also
                         competing with each other to get an exalted status in
                         academic excellence. This includes both the state
@@ -169,7 +185,9 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
                         language in many universities. Making the higher
                         education and the research area 'more visible and
                         attractive in the world' and rewarding excellence
-                        have also become the focus of the present day.<br><br>
+                        have also become the focus of the present day.
+                        </p>
+                        <p style="color:black; text-align:justify;">
                         With this background, it is proposed to bring leading
                         educationist, academicians, academic administrators
                         and researchers onto a common platform to discuss
@@ -178,9 +196,10 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
                         around Policy matters, national and international
                         ranking, accreditation, teaching learning process
                         and research in technical education.
+                        </p>
                 </div>
             </div>
-        
+         <hr>
         <div class="row">
             <div class="col-md-12"></div>
             
@@ -235,8 +254,8 @@ Accord</li>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-12" style="font-size:15px;">
-                <h2><center><span class="label label-primary">Who Can Participate</span></center></h2><br>
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Who Can Participate?</span></center></h2><br>
                 <p style="text-align:justify;">Vice-Chancellors, Directors, Policymakers, Academic
 Administrators, Senior Academicians, Educationists,
 Management/Secretaries/ Principals/Directors of
@@ -245,10 +264,23 @@ Personnel, Professionals, Educational Technology
 providers can participate in this conference.</p>
                                
             </div>
-            <!-- /.col-md-4 -->
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" id="dates">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Closure of Registartion of Application</td>
+                        <td>30th Sep, 2018</td>
+                    </tr>
+                </table>
+                <br>
+                
+            </div>
+        </div>
             
         </div>
         <br><br>
+         <hr>
         <div class="row">
             <div class="col-md-6">
                 <center>
@@ -347,34 +379,211 @@ Souvenir + 1 Delegate Free</td>
         </div>
         <hr>
         
-        <hr>
         <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
             </div>
             <div class="row" style="font-size:15px;">
-                <div class="col-md-4"></div>
+                <div class="col-md-2"></div>
                 <div class="col-md-8">
-                <ul>
-                    <li>Shri S.S. Sandhu, Addl Secretary, MHRD</li>
-                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE.</li>
-                    <li>Prof. Sandeep Sancheti, President, AIU.</li>
-                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore.</li>
+
+                    <table class="table table-hover">
+                    <tr>
+                        <th>Name of the Speaker</th>
+                        <th>Designation</th>
+                        
+                    </tr>
+                    <tr class="active">
+                        <td>Dr. Abhay Jere</td>
+                        <td>Chief Innovation Officer (CIO), MHRD, GOI</td>
+                        
+                    </tr>
+                    <tr class="active">
+                        <td>Dr. Anil Kumar Nassa</td>
+                        <td>Member Secretary, NBA</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Ms. DeepanwitaChattopadhyay</td>
+                        <td>Chairman & CEO, IKP Knowledge Park, Hyderabad</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Ms. Shalini S. Sharma</td>
+                        <td>Head-Higher Education, CII, Gurugram</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. AbhayKarandikar</td>
+                        <td>Director, IIT Kanpur</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Andrew Thangaraj</td>
+                        <td>National MOOCS Coordinator for SWAYAM, IITM</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Anil D. Sahasrabudhe</td>
+                        <td>Chairman, AICTE</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Debashish Chatterjee</td>
+                        <td>Director, IIM Kozhikode</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. DK Tripathi</td>
+                        <td>Former Director, NIT Warangal</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. DR Vaman</td>
+                        <td>DR Telecommunications, MD, USA</td>
+                    </tr>
+                    <tr  class="active">
+                        <td>Prof. FurquanQamar</td>
+                        <td>Secretary General, AIU</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. K. Srinivas</td>
+                        <td>Head ICT & PMU, NIEPA, New Delhi</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. KannanMoudgalva</td>
+                        <td>IITB</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. PVM Rao</td>
+                        <td>IIT Delhi</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Rishikesh T Krishnan</td>
+                        <td>Director, IIM Indore</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. S Sadagopan</td>
+                        <td>Director, IIIT Bangalore</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Sandeep Sancheti</td>
+                        <td>VC, SRMIST & President, AIU</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. SC Shasrabudhe</td>
+                        <td>Former Director, DAIICT</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Prof. Surendra Prasad</td>
+                        <td>Chairperson, NBA</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri Daniel Cartlo</td>
+                        <td>Research Intelligence Elsevier</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri Navin Mittal, IAS</td>
+                        <td>Commissioner, CE&TE, GoT, Hyderabad</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri Sujiv Nair</td>
+                        <td>CEO TASK</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri Sukhbir Singh Sandhu</td>
+                        <td>AS(TE) & CVO, MHRD</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri Vijaysekhar Reddy</td>
+                        <td>Elsevier</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Shri VLVSS Subba Rao</td>
+                        <td>Sr. Economic Advisor, MHRD</td>
+                    </tr>
+
+
+
+                </table>
+                <!-- <ul>
+                    <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
+                    <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
+                    <li>Shri Ramanathan Ramanan, Mission Director & AS, Atal Innovation Mission</li>
+                    <li>Shri SS Sandhu, IAS, Addl. Secretary,HE, MHRD</li>
+                    <li>Shri Sujiv Nair, CEO, TASK, GoT</li>
+                    <li>Shri Vijaysekhar Reddy, Elsevier</li>
                     <li>Prof. Abhay Karandikar, Director, IIT Kanpur</li>
-                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore.</li>
-                    <li>Prof. Furqan Quamar, Secretary General, AIU.</li>
-                    <li>Prof. D. K. Tripathi, former Director, NIT Warangal.</li>
-                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode.</li>
-                    <li>Prof. D.R. Vaman, DR, Tele Communications, M.D., USA</li>
-                    <li>Mr. Daniel Cartlo, Research Intelligence Elsevia.</li>
-                </ul>
+                    <li>Prof. Andrew Thangaraj, National MOOCS Coordinator for SWAYAM, IITM</li>
+                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
+                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode</li>
+                    <li>Prof. DK Tripathi, Former Director, NITW</li>
+                    <li>Prof. DR Vaman, DR Tele Communications, MD USA</li>
+                    <li>Prof. Furqan Qamar, Secretary General, AIU</li>
+                    <li>Prof. K. Srinivas, Head ICT & PMU, NIEPA, New Delhi</li>
+                    <li>Prof. Kannan Moudgalva, IITB Mumbai</li>
+                    <li>Prof. PVM Rao, IIT Delhi</li>
+                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore</li>
+                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore</li>
+                    <li>Prof. Sandeep Sancheti, President, AIU</li>
+                    <li>Prof. SC Shasrabudhe, Former, DAIICT</li>
+                    <li>Prof. Surendra Prasad, Chairperson, NBA</li>
+                    <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
+                    <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
+                    </ul> -->
                 </div>
             </div>
         </div>
         <br>
+         <hr>
         <!-- /.row -->
         
-        <div class="row">
+                    
+            <div class="col-md-12">
+                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+
+                     <div class="col-md-offset-1 col-md-5">
+                    <center>
+                        <h4><b>Chairman</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <center>
+                    <h4><b>Co-Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
+                        National Institute of Technology, Warangal<br>
+                        Mob.: 9652901237, Email: kvj@nitw.ac.in
+                       </p>
+                    </center>
+                </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                 <center><h4><b>Members</b></h4></center>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                            <li>Dr. S. SSandhu, IAS, Addl Secretary, MHRD</li>
+                            <li>Dr. Ram Bhoj, Advisor, UNESCO</li>
+                            <li>Prof. Sandeep Sancheti, President, Association of Indian Universities</li>
+                            <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
+                            <li>Prof. D.P. Singh, Chairman, UGC</li>
+                            <li>Prof. K.Uma Maheshwar Rao, Director, NITK, Surathkal</li>
+                            <li>Prof. Mini S. Thomas, Director, NIT Trichy</li>
+                            <li>Prof. P. Anandraj, Dean (P&D), NITW</li>
+                            <li>Prof. Y. Pydisetty, Dean(AA), NITW</li>
+                            <li>Prof. LRG Reddy, Dean (SW), NITW</li>
+                            <li>Prof. DVS Siva Sarma, Dean (FW), NITW</li>
+                            <li>Prof. G. Rajesh Kumar, Dean (R&C), NITW</li>
+      
+                </ul>
+                </div>
+            </div>
+        </div>
+         <hr>
+
+            <!-- row -->
+            <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
             </div>
@@ -390,7 +599,7 @@ Souvenir + 1 Delegate Free</td>
                     <center>
                     <h4><b>Co-Chairman</b></h4>
                     <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
-                        National Institute of Technology, Warangal
+                        National Institute of Technology, Warangal<br>Mob.: 9652901237, Email: kvj@nitw.ac.in
                        </p>
                     </center>
                 </div>
@@ -403,15 +612,21 @@ Souvenir + 1 Delegate Free</td>
                     </center>               
                 </div>
                 <br>
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                <br>
+            </div>
+                <!-- <div class="col-md-3"></div> -->
+                
+        </div>
 
-                    <center>
-                    <h4><b>Members</b></h4>
-                    </center>
-                    <ul style="font-size:15px;">
-                        <li>Dr. M. Chandrasekhar, Head (Civil Engineering)</li>
+      
+      <div class="row">
+            <div class="col-md-12">
+                 <center><h4><b>Members</b></h4></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                  <li>Dr. M. Chandrasekhar, Head (Civil Engineering)</li>
                         <li>Dr. V. T. Somasekhar, Head (Electrical Engineering)</li>
                         <li>Dr. Popuri Bangarubabu, Head (Mechanical Engineering) </li>
                         <li>Dr. N. Bheema Rao, Head(Electronic & Comm. Engg)</li>
@@ -424,61 +639,35 @@ Souvenir + 1 Delegate Free</td>
                         <li>Dr. K. Venugopal Reddy, Head (Physics)</li>
                         <li>Dr. P. Venkata Sri Laxmi, Head (Chemistry)</li>
                         <li>Dr. M. Raja Vishwanathan, Head (Humanities & Social Sciences)</li>
-                        <li>Dr. T. Kishore Kumar, Head (Computer Centre)</li>
                         <li>Dr. P. Madhusudhana Reddy, Head (Physical Education)</li>
-                        <li>Sri S. Goverdhan Rao, Registrar</li>
-                    </ul>
-                    
+                        <li>Sri S. Goverdhan Rao, Registrar</li>  
+                </ul>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <hr>
-            
-            <div class="col-md-12">
-                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+        <br>  
+        <hr>
+        <div class="col-md-12">
+                <center><h2><span class="label label-success">Partner Organizations</span></h2></center>
             <br>
-                <div class="row">
-                     <div class="col-md-4">
-                    <center>
-                        <h4><b>Chairman</b></h4>
-                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
-                            National Institute of Technology, Warangal</p>
-                    </center>
-                </div>
-                <div class="col-md-4">
-                    <center>
-                    <h4><b>Co-Chairman</b></h4>
-                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
-                        National Institute of Technology, Warangal
-                       </p>
-                    </center>
-                </div>
-                    <div class="col-md-4" style="font-size:15px;">
-                        <h4><b>Members</b></h4>
-                        <ul>
-                            <li>Dr. S. SSandhu, IAS, Addl Secretary, MHRD</li>
-                            <li>Dr. Ram Bhoj, Advisor, UNESCO</li>
-                            <li>Prof. Sandeep Sancheti, President, Association of Indian Universities</li>
-                            <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
-                            <li>Prof. D.P. Singh, Chairman, UGC</li>
-                            <li>Prof. K.Uma Maheshwar Rao, Director, NITK, Surathkal</li>
-                            <li>Prof. Mini S. Thomas, Director, NIT Trichy</li>
-                            <li>Prof. P. Anandraj, Dean (P&D), NITW</li>
-                            <li>Prof. Y. Pydisetty, Dean(AA), NITW</li>
-                            <li>Prof. LRG Reddy, Dean (SW), NITW</li>
-                            <li>Prof. DVS Siva Sarma, Dean (FW), NITW</li>
-                            <li>Prof. G. Rajesh Kumar, Dean (R&C), NITW</li>
-
-                        </ul>
-                    </div>
+          </div>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                            <li>All India Council for Technical Education</li>
+                            <li>Association of Indian Universities</li>
+                            <li>Telangana State Council for Higher Education</li>
+                            <li>Andhra Pradesh State Council for Higher Education</li>
+                      </ul>
                 </div>
             </div>
-
-            
         </div>
-        
+        <br>
+         
+
+
 
     </div>
 <!-- Footer -->
@@ -506,7 +695,7 @@ Souvenir + 1 Delegate Free</td>
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
@@ -515,7 +704,7 @@ Souvenir + 1 Delegate Free</td>
                                     Organising Secretary, EWCTI2018<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> ewcti2018@nitw.ac.in   <br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
                                 <b>Phone : </b> +91-9440347348  <br>
                             </div>
                            
@@ -528,6 +717,68 @@ Souvenir + 1 Delegate Free</td>
 
         </footer>
     <!-- /.container -->
+
+
+    <!-- INSTRUCTION LIST  -->
+    <div id="instructions" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Instructions</h4>
+          </div>
+          <div class="modal-body">
+            <hr>
+            <h4>Steps to register</h4>
+            <hr>
+            <ol>
+                <li>Click on register tab at the top</li>
+                <li>Fill in the details and click on register</li>
+                <li>Login with your credentials</li>
+                <li>Congrats !!! You are succesfully registered on website</li>
+            </ol>
+            <hr><hr>
+            <h4 style="color:red;">Provision for only attending the conference</h4>
+            <hr>
+             <ol>
+                <li>After registering on the website, login with your credentials</li>
+                <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
+                <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
+                <li>Upload picture of ID proof and the payment receipt</li>
+            </ol>
+            <hr><hr>
+            <!-- <h4>Steps to Upload the paper </h4>
+            <hr>
+            <ol>
+                <li>Select upload paper option from navbar</li>
+                <li>Enter the title of the paper</li>
+                <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+                <li>A confirmation mail stating the tracking id will be sent to you</li>
+            </ol>
+            <hr><hr>
+             -->
+            
+            <h4>"Final Submission and Payment of Registration fee"</h4>
+            <hr>
+            <ol>
+                <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
+                <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
+                <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
+                <li>Upload picture of ID proof and the payment receipt</li>
+                <li>Then from the same upload paper option, go to "final paper upload"</li>
+                <li>Upload Copyright Form (which is available at important links page)</li>
+                <li>Upload final paper, and you are done !!</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
