@@ -72,7 +72,7 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure.pdf' %}">Brochure</a></li><br>
+                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure1.pdf' %}">Brochure</a></li><br>
 
                     
                 </ol></b></h4>
@@ -104,7 +104,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
@@ -113,7 +113,7 @@
                                     Organising Secretary, EWCTI2018<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> ewct2018@nitw.ac.in   <br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
                                 <b>Phone : </b> +91-9440347348  <br>
                             </div>
                            

@@ -733,3 +733,14 @@ def ewctilinks(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/ewcti/links.djt',response)
+
+def ewctihotels(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ewcti/hotels.djt',response)
