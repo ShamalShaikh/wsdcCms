@@ -30,7 +30,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -56,7 +56,39 @@
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
-                    </ul>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    <li>
+                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                    
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -72,7 +104,7 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure.pdf' %}">Brochure</a></li><br>
+                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure1.pdf' %}">Brochure</a></li><br>
 
                     
                 </ol></b></h4>
@@ -104,7 +136,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
@@ -113,7 +145,7 @@
                                     Organising Secretary, EWCTI2018<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> ewct2018@nitw.ac.in   <br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
                                 <b>Phone : </b> +91-9440347348  <br>
                             </div>
                            
