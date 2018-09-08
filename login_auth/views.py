@@ -54,6 +54,11 @@ def register(request,alias):
 		department = request.POST['department']
 		conact = request.POST['contact']
 		gender = request.POST['gender']
+		designation = request.POST['designation']
+		qualification = request.POST['qualification']
+		alumani = request.POST.get('alumaniCheck','off')
+		print request.POST
+
 		if password1 != password2 :
 			response['message'] = "Password doesn't match"
 			return render(request,'login_auth/sites/register.djt',response)
@@ -72,6 +77,13 @@ def register(request,alias):
 				userprofile.department = department
 				userprofile.contact = conact
 				userprofile.gender = gender
+				if(alumani == 'on'):
+					alumani = Alumani()
+					alumani.degree = request.POST['degree']
+					alumani.year = request.POST['brach']
+					alumani.branch = request.POST['yearPass']
+					alumani.save()
+					userprofile.alumani = alumani
 				userprofile.save()
 				response['message'] = "Successfully Registered"
 				return render(request,'login_auth/sites/login.djt',response)
@@ -79,6 +91,76 @@ def register(request,alias):
 				response['message'] = "username already exist"
 				return render(request,'login_auth/sites/register.djt',response)
 	return render(request,'login_auth/sites/register.djt',response)
+
+def registerSpons(request,alias):
+	response={}
+	response['alias'] = alias
+	if request.method=='POST':
+		print request.POST
+		conf = Conference.objects.get(alias = alias)
+		orgname = request.POST['orgname']
+		orgType = request.POST['orgType']
+		mc_ccd = request.POST['mc_ccd']
+		addr1 = request.POST['addr1']
+		addr2 = request.POST['addr2']
+		email = request.POST['email']
+		contact = request.POST['contact']
+		sponsCategory = request.POST['sponsCategory']
+		if request.FILES:
+			advertFile = request.FILES['advertFile']
+		
+		numDelegates = request.POST['numDelegates']
+		username = request.POST['username']
+		password1 = request.POST['password']
+		password2 = request.POST['confirm_password']
+
+		if password1 != password2 :
+			response['message'] = "Password doesn't match"
+			return render(request,'login_auth/sites/register.djt',response)
+		else :
+			user = User()
+			user.first_name = orgname
+			# user.last_name = lastname
+			user.username = username
+			user.email = email
+			user.set_password(password1)
+			try:
+				user.save()
+			except :
+				response['message'] = "username already exist"
+				return render(request,'login_auth/sites/register.djt',response)
+			sponsprofile = SponsorProfile()
+			sponsprofile.user = user
+			sponsprofile.conf = conf
+			sponsprofile.orgName = orgname
+			sponsprofile.orgType = orgType
+			sponsprofile.md_cco = mc_ccd
+			sponsprofile.address1 = addr1
+			sponsprofile.address2 = addr2
+			sponsprofile.contact = contact
+			sponsprofile.category = sponsCategory
+			if request.FILES:
+				sponsprofile.advertisement = advertFile
+			sponsprofile.save()
+
+			print "spons save"
+			# Now save all delegates
+			for i in range(1,int(numDelegates) + 1):
+				delegatename = request.POST['delegatename' + str(i)]
+				delegeate = request.POST['delegeate' + str(i)]
+				delegatecontact = request.POST['delegatecontact' + str(i)]
+				delegateemail = request.POST['delegateemail' + str(i)]
+				print delegatename
+				delegate = Delegates(sponsor = sponsprofile,
+									name = delegatename,
+									delegate = delegeate,
+									contact = delegatecontact,
+									email = delegateemail)
+				delegate.save()
+			response['message'] = "Successfully Registered"
+			return render(request,'login_auth/sites/login.djt',response)
+			
+	return render(request,'login_auth/sites/registerSpons.djt',response)
 			
 def signin(request,alias):
 	response={}

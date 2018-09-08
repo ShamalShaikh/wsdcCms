@@ -59,6 +59,28 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    <li>
+                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

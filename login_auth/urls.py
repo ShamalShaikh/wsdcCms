@@ -20,6 +20,8 @@ urlpatterns = [
 	# url(r'^treat2017/$',RedirectView.as_view(url='/conference/treat17/')),
 	#url(r'^Register/(?P<alias>[A-Za-z0-9.-]+)/$',views.Register,name='Register'),
 	url(r'^register/(?P<alias>[A-Za-z0-9.-]+)/$',views.register,name='register'),
+	url(r'^registerspons/(?P<alias>[A-Za-z0-9.-]+)/$',views.registerSpons,name='registerSpons'),
+
 	url(r'^signin/(?P<alias>[A-Za-z0-9.-]+)/$',views.signin,name='signin'),
 	#url(r'^signin/(?P<alias>[A-Za-z0-9.-]+)/$',views.signin,name='signin'),
 	url(r'^signout/(?P<alias>[A-Za-z0-9.-]+)/$',views.signout,name='signout'),
