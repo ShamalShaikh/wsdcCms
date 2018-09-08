@@ -27,10 +27,7 @@
 	              <label>Last Name</label>
 	              <input name="lastname" placeholder="LastName" type="text" id="lastname" required>
 	        </div>
-	        <div class="field">
-	              <label>UserName</label>
-	              <input name="username" placeholder="Username" type="text" id="username" required>
-	        </div>
+	        
 	        <div class="field">
 	              <label>Email-id</label>
 	              <input name="email" placeholder="Email-id" type="text" id="email" required>
@@ -44,6 +41,32 @@
 	              <input name="department" placeholder="Department" type="text" id="department" required>
 	        </div>
 	        <div class="field">
+	              <label>Designation</label>
+	              <input name="designation" placeholder="Designation" type="text" id="designation" required>
+	        </div>
+	        <div class="field">
+	              <label>Highest Qualification - Specialization</label>
+	              <input name="qualification" placeholder="Qualification" type="text" id="qualification" required>
+	        </div>
+	        <div class="field">
+				<strong>Are you an alumani of REC/NITW:</strong>
+				<input name="alumaniCheck" type="checkbox" id="alumaniCheck">
+			</div>
+			<div id="alumaniForm">
+				<div class="field">
+		              <label>Degree</label>
+		              <input name="degree" placeholder="Degree" type="text" id="degree">
+		        </div>
+		        <div class="field">
+		              <label>Branch</label>
+		              <input name="brach" placeholder="Brach" type="text" id="brach">
+		        </div>
+		        <div class="field">
+		              <label>Year of passing</label>
+		              <input name="yearPass" placeholder="Year of passing" type="text" id="yearPass">
+		        </div>
+	        </div>
+	        <div class="field">
 	              <label>Contact</label>
 	              <input name="contact" placeholder="contact" type="text" id="contact" required>
 	        </div>
@@ -54,6 +77,10 @@
 					<option value="male">Male</option>
 					<option value="female">Female</option>
 				  </select>
+	        </div>
+	        <div class="field">
+	              <label>Login Username</label>
+	              <input name="username" placeholder="Username" type="text" id="username" required>
 	        </div>
 	        <div class="field">
 	              <label>Password</label>
@@ -76,5 +103,27 @@
 {% block script %}
 	<script type="text/javascript">
 		$('.ui.dropdown').dropdown();
+		$('#alumaniForm').hide();
+		
+
+		// Alumani checkbox clicked
+		$('#alumaniCheck').click(function(){
+	    if (this.checked) {
+    		$('#alumaniForm').show();
+    		$('#degree').attr('required', 'required');
+    		$('#brach').attr('required', 'required');
+    		$('#yearPass').attr('required', 'required');
+	    }
+	    else
+	    {
+	    	$('#degree').removeAttr('required');
+	    	$('#brach').removeAttr('required');
+	    	$('#yearPass').removeAttr('required');
+
+
+    		$('#alumaniForm').hide();
+	    }
+	});
+
 	</script>
 {% endblock %}

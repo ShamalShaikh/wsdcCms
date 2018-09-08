@@ -1,0 +1,328 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	{% if message %}
+	<div class="ui negative message" id="errormessage">
+		<i class="close icon"></i>
+		<div class="header">
+		  Network Error
+		</div>
+		<div>
+		  <p>{{message}}</p>
+		</div>
+	</div>
+	{% endif %}
+
+
+	<div class="ui fluid segment">
+		<form class="ui form" action="/registerspons/{{alias}}/" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="field">
+	              <label>Name of Organisation</label>
+	              <input name="orgname" placeholder="Name of Organisation" type="text" id="orgname" required maxlength="255">
+	        </div>
+	        <div class="field">
+	              <label>Type of Organisation</label>
+	              <input name="orgType" placeholder="Type of Organisation" type="text" id="orgType" required>
+	        </div>
+	        <div class="field">
+	              <label>MD/CCD</label>
+	              <input name="mc_ccd" placeholder="MD/CCD" type="text" id="mc_ccd" required>
+	        </div>
+	        
+	        <div class="field">
+	              <label>Address Line 1</label>
+	              <input name="addr1" placeholder="Address Line 1" type="text" id="addr1" required maxlength="255">
+	        </div>
+	        <div class="field">
+	              <label>Address Line 2</label>
+	              <input name="addr2" placeholder="Address Line 2" type="text" id="addr2" required maxlength="255">
+	        </div>
+	        <div class="field">
+	              <label>Email-id</label>
+	              <input name="email" placeholder="Email-id" type="text" id="email" required>
+	        </div>
+	        <div class="field">
+	              <label>Contact</label>
+	              <input name="contact" placeholder="contact" type="text" id="contact" required>
+	        </div>
+	       	<div class="field">
+	              <label>Category of sponsorship</label>
+				  <select id="sponsCategory" onchange="showDelegateList(this.value)" class="ui dropdown" name="sponsCategory" required>
+					<option value="">category</option>
+					<option value="Platinum">Platinum</option>
+					<option value="Diamond">Diamond</option>
+					<option value="Gold">Gold</option>
+					<option value="Silver">Silver</option>
+					<option value="Bronze">Bronze</option>
+
+				  </select>
+	        </div>
+	        <div id="delegateList" class="ui segment">
+		        <label>List of delegated</label>
+		        <div class="ui form">
+				  <div class="inline fields" id="delagateDiv1">
+				    <div class="five wide field">
+				    <label>1</label>
+				      <input type="text" placeholder="Name" name="delegatename1">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate1">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact1">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail1">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv2">
+				    <div class="five wide field">
+				    <label>2</label>
+				      <input type="text" placeholder="Name" name="delegatename2">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate2">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact2">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail2">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv3">
+				    <div class="five wide field">
+				    <label>3</label>
+				      <input type="text" placeholder="Name" name="delegatename3">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate3">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact3">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail3">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv4">
+				    <div class="five wide field">
+				    <label>4</label>
+				      <input type="text" placeholder="Name" name="delegatename4">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate4">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact4">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail4">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv5">
+				    <div class="five wide field">
+				    <label>5</label>
+				      <input type="text" placeholder="Name" name="delegatename5">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate5">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact5">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail5">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv6">
+				    <div class="five wide field">
+				    <label>6</label>
+				      <input type="text" placeholder="Name" name="delegatename6">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate6">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact6">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail6">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv7">
+				    <div class="five wide field">
+				    <label>7</label>
+				      <input type="text" placeholder="Name" name="delegatename7">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate7">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact7">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail7">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv8">
+				    <div class="five wide field">
+				    <label>8</label>
+				      <input type="text" placeholder="Name" name="delegatename8">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate8">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact8">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail8">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv9">
+				    <div class="five wide field">
+				    <label>9</label>
+				      <input type="text" placeholder="Name" name="delegatename9">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate9">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact9">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail9">
+				    </div>
+				  </div>
+				  <div class="inline fields" id="delagateDiv10">
+				    <div class="five wide field">
+				    <label>10</label>
+				      <input type="text" placeholder="Name" name="delegatename10">
+				    </div>
+				    <div class="four wide field">
+				      <input type="text" placeholder="Delegate" name="delegeate10">
+				    </div>
+				    <div class="three wide field">
+				      <input type="number" placeholder="Contact" name="delegatecontact10">
+				    </div>
+				    <div class="four wide field">
+				      <input type="email" placeholder="Email" name="delegateemail10">
+				    </div>
+				  </div>
+				</div>
+	        </div>
+
+	        <div class="field">
+	              <label>Advertisement matter (pdf file)</label>
+	              <div class="field">
+	              	<input name="advertFile" type="file" id="advertFile" class="ui button blue">
+	        	</div>
+	        </div>
+	        
+	        <div class="field">
+	              <label>Login Username</label>
+	              <input name="username" placeholder="Username" type="text" id="username" required>
+	        </div>
+	        <div class="field">
+	              <label>Password</label>
+	              <input name="password" placeholder="Password" type="password" id="password" required>
+	        </div>
+	        <div class="field">
+	              <label>Confirm-Password</label>
+	              <input name="confirm_password" placeholder="ConfirmPassword" type="password" id="confirm_password" required>
+	        </div>
+	        <input type="number" name="numDelegates" id="numDelegates" hidden>
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="register">Register</button>
+	        </div>
+		</form>
+	</div>
+	<br><br>
+</div>
+
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript">
+		$('.ui.dropdown').dropdown();
+		$('#delegateList').hide();
+
+		function showDelegateList(value) {
+			$('#delegateList').show();
+			// body...
+			if(value == "Platinum")
+			{
+				$('#numDelegates').val(10);
+
+				for(var i = 1; i <= 10; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).show();
+				}
+			}
+			else if(value == "Diamond")
+			{
+				$('#numDelegates').val(6);
+				for(var i = 1; i <= 6; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).show();
+				}
+				for(var i = 7; i <= 10; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).hide();
+				}
+			}
+			else if(value == "Gold")
+			{
+				$('#numDelegates').val(4);
+				for(var i = 1; i <= 4; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).show();
+				}
+				for(var i = 5; i <= 10; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).hide();
+				}
+			}
+			else if(value == "Silver")
+			{
+				$('#numDelegates').val(2);
+
+				for(var i = 1; i <= 2; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).show();
+				}
+				for(var i = 3; i <= 10; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).hide();
+				}
+			}
+			else if(value == "Bronze")
+			{
+				$('#numDelegates').val(1);
+
+				for(var i = 1; i <= 1; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).show();
+				}
+				for(var i = 2; i <= 10; i++)
+				{
+					var div = "#delagateDiv" + i;
+					$(div).hide();
+				}
+			}
+		}
+
+	</script>
+{% endblock %}
