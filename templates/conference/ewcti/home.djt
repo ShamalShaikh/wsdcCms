@@ -72,6 +72,10 @@
                     <li>
                         <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
                     </li>
+                    {% else %}
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
+                    </li>
                     {% endif %}
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
@@ -112,7 +116,7 @@
                 <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
                 <p style="font-size:20px; color: #31b150;"><b>EVOLUTION OF WORLD CLASS TECHNICAL
 INSTITUTIONS – ISSUES & CONCERNS</b></p>
-                <p style="font-size:20px;color: #002360;"><b>(EWCTI-2019)</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(EWCTI-2018)</b></p>
                 
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
@@ -719,6 +723,8 @@ Souvenir + 1 Delegate Free</td>
     <!-- /.container -->
 
 
+
+
     <!-- INSTRUCTION LIST  -->
     <div id="instructions" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -740,36 +746,23 @@ Souvenir + 1 Delegate Free</td>
                 <li>Congrats !!! You are succesfully registered on website</li>
             </ol>
             <hr><hr>
-            <h4 style="color:red;">Provision for only attending the conference</h4>
+            <h4 style="color:red;">Steps for applying for confrence</h4>
             <hr>
              <ol>
                 <li>After registering on the website, login with your credentials</li>
-                <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
-                <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
-                <li>Upload picture of ID proof and the payment receipt</li>
+                <li>Click on the Apply tab at the top</li>
+                <li>Click on the apply button</li>
             </ol>
             <hr><hr>
-            <!-- <h4>Steps to Upload the paper </h4>
-            <hr>
-            <ol>
-                <li>Select upload paper option from navbar</li>
-                <li>Enter the title of the paper</li>
-                <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
-                <li>A confirmation mail stating the tracking id will be sent to you</li>
-            </ol>
-            <hr><hr>
-             -->
+
             
             <h4>"Final Submission and Payment of Registration fee"</h4>
             <hr>
             <ol>
-                <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
-                <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
-                <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
+                <li>Upon acceptance of participation , the author has to pay the full registration fee.</li>
+                <li>The payment of the registration fee is through Online/NEFT.  The detials of online payment are given on the conference webiste</li>
+                <li>Select "upload payment Receipt" (Scanned copy of the online payment Receipt)in apply tab  option from the navbar at top </li>
                 <li>Upload picture of ID proof and the payment receipt</li>
-                <li>Then from the same upload paper option, go to "final paper upload"</li>
-                <li>Upload Copyright Form (which is available at important links page)</li>
-                <li>Upload final paper, and you are done !!</li>
             </ol>
           </div>
           <div class="modal-footer">

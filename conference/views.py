@@ -88,6 +88,7 @@ def make_payment(request,alias):
 @login_required(login_url='/signin/mmse2018')
 def payment(request,alias):
 	if request.method == 'POST' :
+		# validation
 		dd_pic = request.FILES['dd_file']
 		id_pic = request.FILES['id_file']
 		user = request.user
@@ -744,3 +745,64 @@ def ewctihotels(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/ewcti/hotels.djt',response)
+
+@login_required(login_url='/signin/ewcti2019')
+def ewctiapply(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	payment = Payment.objects.filter(user=request.user, conf_id=conference)
+	# print payment.is_aprooved
+	if len(payment)==1 :
+		response['payment'] = payment.first()
+
+	if request.method == 'POST' :
+		now = datetime.datetime.now()
+		applyConf = request.POST.get('applyConf','off')
+		print applyConf
+		if applyConf == 'on':
+			# apply only if no request is present.
+			if  Conf_Paper.objects.filter(uid=request.user, conf_id=conference).count() == 0:
+				regconf = Registered_Conference()
+				regconf.conf_id = conference
+				regconf.user = request.user
+				regconf.save()
+				paper = Conf_Paper()
+				paper.conf_id=conference
+				paper.uid=request.user
+				paper.papername="Applying for conference"
+				paper.submissionDate = now
+				paper.status = 0
+				conference.paperCount += 1
+				conference.save()
+
+				count = 30
+				tempRefnum = '18'+str(randint(1000, 9999))
+				if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+					print "existing refnum"
+					while count > 0:
+						tempRefnum = '18'+str(randint(1000, 9999))
+						if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+							count -= 1
+							continue
+						else:
+							break
+				if count==0:
+					count = 1
+					tempRefnum = '18' + str(count).zfill(4)
+					while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+						count += 1
+						tempRefnum = '18' + str(count).zfill(4)
+				
+				paper.paperRefNum = tempRefnum
+				paper.save()
+				regconf.papers.add(paper)
+				regconf.save()
+	try:
+		paper = Conf_Paper.objects.get(uid=request.user, conf_id=conference)
+		response['paper'] = paper
+	except:
+		response['nopaper'] = True
+
+	return render(request, 'conference/ewcti/apply.djt',response)

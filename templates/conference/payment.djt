@@ -37,7 +37,7 @@
 				{% if not pay.is_rejected %}
 				<tr>
 				<td>{{pay.date}}</td>
-				<td>{% if pay.is_aprooved %}Aprooved {%else%} Not yet Verified {% endif %}</td>
+				<td>{% if pay.is_aprooved %}Approved {%else%} Not yet Verified {% endif %}</td>
 				<td></td>
 				</tr>
 				{% endif %}
