@@ -30,6 +30,7 @@ urlpatterns = [
 	url(r'^ewcti2018/links/$',views.ewctilinks),
 	url(r'^ewcti2018/hotels/$',views.ewctihotels),
 	url(r'^ewcti2018/apply$$',views.ewctiapply),
+	url(r'^ewcti2018/profiles/$',views.ewctiprofiles),
 
 
 	# url(r'^metallography_contest/$',views.metallography_contest),

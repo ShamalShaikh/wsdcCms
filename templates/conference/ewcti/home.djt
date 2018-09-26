@@ -60,6 +60,9 @@
                         <a href="#dates">Important Dates</a>
                     </li>
                     <li>
+                        <a href="/conference/{{conference.conference_alias}}/profiles">Speakers Profile</a>
+                    </li>
+                    <li>
                         <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
                     </li>
                     <li>
@@ -67,10 +70,10 @@
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                        <a href="/register/{{conference.conference_alias}}">Registration</a>
                     </li>
                     <li>
-                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
+                        <a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
                     </li>
                     {% else %}
                     <li>
@@ -106,7 +109,7 @@
         <div class="row">
             <center>
             <div class="col-md-2">
-                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px">
                 <b>Diamond Jubilee Year 2018-2019</b>
             </div>
             </center>
@@ -205,9 +208,10 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
             </div>
          <hr>
         <div class="row">
-            <div class="col-md-12"></div>
+            <div class="col-md-12">
             
                 <br><h2><center><span class="label label-success">Conference Themes</span></center></h2><br>
+            </div>
                 <div class="row">
                   <div class="col-md-4"></div>
                 <div class="col-md-8" style="line-height:30px;font-size:17px;">
@@ -282,13 +286,13 @@ providers can participate in this conference.</p>
             </div>
         </div>
             
-        </div>
+        
         <br><br>
          <hr>
         <div class="row">
             <div class="col-md-6">
                 <center>
-                <h2><span class="label label-primary">Registeration</span></h2><br>
+                <h2><span class="label label-primary">Registration</span></h2><br>
                 <p>Each delegate has to pay an amount of Rs. 3,000/-
 as registration fee. This registration fee includes
 conference kit, conference proceedings, session
@@ -397,109 +401,244 @@ Souvenir + 1 Delegate Free</td>
                         <th>Designation</th>
                         
                     </tr>
+                   
                     <tr class="active">
-                        <td>Dr. Abhay Jere</td>
-                        <td>Chief Innovation Officer (CIO), MHRD, GOI</td>
-                        
-                    </tr>
-                    <tr class="active">
-                        <td>Dr. Anil Kumar Nassa</td>
-                        <td>Member Secretary, NBA</td>
-                    </tr> 
-                    <tr class="active">
-                        <td>Ms. DeepanwitaChattopadhyay</td>
-                        <td>Chairman & CEO, IKP Knowledge Park, Hyderabad</td>
-                    </tr> 
-                    <tr class="active">
-                        <td>Ms. Shalini S. Sharma</td>
-                        <td>Head-Higher Education, CII, Gurugram</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. AbhayKarandikar</td>
-                        <td>Director, IIT Kanpur</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Andrew Thangaraj</td>
-                        <td>National MOOCS Coordinator for SWAYAM, IITM</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Anil D. Sahasrabudhe</td>
-                        <td>Chairman, AICTE</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Debashish Chatterjee</td>
-                        <td>Director, IIM Kozhikode</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. DK Tripathi</td>
-                        <td>Former Director, NIT Warangal</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. DR Vaman</td>
-                        <td>DR Telecommunications, MD, USA</td>
-                    </tr>
-                    <tr  class="active">
-                        <td>Prof. FurquanQamar</td>
-                        <td>Secretary General, AIU</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. K. Srinivas</td>
-                        <td>Head ICT & PMU, NIEPA, New Delhi</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. KannanMoudgalva</td>
-                        <td>IITB</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. PVM Rao</td>
-                        <td>IIT Delhi</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Rishikesh T Krishnan</td>
-                        <td>Director, IIM Indore</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. S Sadagopan</td>
-                        <td>Director, IIIT Bangalore</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Sandeep Sancheti</td>
-                        <td>VC, SRMIST & President, AIU</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. SC Shasrabudhe</td>
-                        <td>Former Director, DAIICT</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Prof. Surendra Prasad</td>
-                        <td>Chairperson, NBA</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri Daniel Cartlo</td>
-                        <td>Research Intelligence Elsevier</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri Navin Mittal, IAS</td>
-                        <td>Commissioner, CE&TE, GoT, Hyderabad</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri Sujiv Nair</td>
-                        <td>CEO TASK</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri Sukhbir Singh Sandhu</td>
-                        <td>AS(TE) & CVO, MHRD</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri Vijaysekhar Reddy</td>
-                        <td>Elsevier</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Shri VLVSS Subba Rao</td>
-                        <td>Sr. Economic Advisor, MHRD</td>
-                    </tr>
-
-
+                    <td > 
+                        <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#one">
+                        Dr.Sukhbir Singh Sandhu, IAS</a>
+                    </td>
+            <td >
+            <p>AS(TE) &amp; CVO, MHRD</p>
+            </td>
+        </tr>
+        <tr class="active">
+            <td><a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#two">
+            Shri Navin Mittal, IAS</a>
+            </td>
+            <td ">
+            Commissioner, CE&amp;TE, GoT, Hyderabad
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+            <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#3">
+            Shri VLVSS Subba Rao
+             </a>
+            </td>
+            <td>
+           Sr. Economic Advisor, MHRD
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#4">
+            Prof. Anil D. Sahasrabudhe
+        </a>
+            </td>
+            <td >
+            Chairman, AICTE
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#5">
+            Prof. Surendra Prasad
+        </a>
+            </td>
+            <td >
+            Chairperson, NBA
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#6">
+            Prof. Sandeep Sancheti
+        </a>
+            </td>
+            <td >
+            VC, SRMIST &amp; President, AIU
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#7">
+            Prof. S Sadagopan
+        </a>
+            </td>
+            <td >
+           Director, IIIT Bangalore
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#8">
+           Prof. Debashish Chatterjee
+       </a>
+            </td>
+            <td >
+            Director, IIM Kozhikode
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#9">
+            Prof. AbhayKarandikar
+        </a>
+            </td>
+            <td >
+            Director, IIT Kanpur
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#10">
+            Prof. Rishikesh T Krishnan
+        </a>
+            </td>
+            <td >
+            Director, IIM Indore
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#">
+            Prof. DK Tripathi
+        </a>
+            </td>
+            <td >
+            Former Director, NIT Warangal
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#11">
+            Dr. Anil Kumar Nassa
+        </a>
+            </td>
+            <td >
+            Member Secretary, NBA
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#12">
+            Dr. AbhayJere
+        </a>
+            </td>
+            <td >
+            Chief Innovation Officer (CIO), MHRD, GOI
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#13">
+            Prof. FurquanQamar
+        </a>
+            </td>
+            <td >
+            Secretary General, AIU
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#14">
+            Shri Sujiv Nair
+        </a>
+            </td>
+            <td >
+            CEO TASK
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#15">
+            Prof. SC Shasrabudhe
+        </a>
+            </td>
+            <td >
+            Former Director, DAIICT
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#16">
+            Prof. DR Vaman
+        </a>
+            </td>
+            <td>
+            DR Telecommunications, MD, USA
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#17">
+            Prof. Andrew Thangaraj
+        </a>
+            </td>
+            <td >
+            National MOOCS Coordinator for SWAYAM, IITM
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#18">
+            Prof. KannanMoudgalva
+        </a>
+            </td>
+            <td >
+            IITB Mumbai
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#19">
+            Prof. K. Srinivas
+        </a>
+            </td>
+            <td >
+            Head ICT &amp; PMU, NIEPA, New Delhi
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#">
+            Ms. Shalini S. Sharma
+        </a>
+            </td>
+            <td >
+            Head-Higher Education, CII, Gurugram
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#20">
+            Ms. DeepanwitaChattopadhyay
+        </a>
+            </td>
+            <td >
+            Chairman &amp; CEO, IKP Knowledge Park, Hyderabad
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#21">
+            Shri Daniel Cartlo
+        </a>
+            </td>
+            <td >
+            Research Intelligence Elsevier, New York
+            </td>
+        </tr>
+        <tr class="active">
+            <td ">
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#22">
+            Shri Vijaysekhar Reddy
+        </a>
+            </td>
+            <td >
+            Elsevier, New Delhi
+            </td>
+        </tr>
 
                 </table>
                 <!-- <ul>
@@ -651,13 +790,16 @@ Souvenir + 1 Delegate Free</td>
         </div>
         <br>  
         <hr>
+        <div class="row">
         <div class="col-md-12">
                 <center><h2><span class="label label-success">Partner Organizations</span></h2></center>
             <br>
           </div>
+      </div>
+      </BR>
             <div class="row">
                <div class="row" style="font-size:15px;">
-                <div class="col-md-4"></div>
+                <!-- <div class="col-md-4"></div>
                 <div class="col-md-8">
                 <ul>
                             <li>All India Council for Technical Education</li>
@@ -665,13 +807,58 @@ Souvenir + 1 Delegate Free</td>
                             <li>Telangana State Council for Higher Education</li>
                             <li>Andhra Pradesh State Council for Higher Education</li>
                       </ul>
-                </div>
+                </div> -->
+                <center><h3> <span class="label label-primary">All India Council for Technical Education (AICTE)</h3></span>
+                <img src="{% static 'docs_ewcti/1.png'%}" width="130px" height="30%"></center>
+                <P style="text-align:justify;">All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level apex advisory body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner. And to ensure the same, as stipulated in the National Policy of Education (1986), AICTE was vested with: <b>More details at: https://www.aicte-india.org/</b></P>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-3">
+                <ul>
+                            <li>Statutory authority for planning, formulation, and maintenance of norms & standards</li>
+                            <li>Quality assurance through accreditation</li>
+                            <li>Funding in priority areas, monitoring, and evaluation</li>
+                            <li>Maintaining parity of certification & awards</li>
+                            <li>The management of technical education in the country </li>
+                      </ul>
+
+                  </div>
+              </div>
+            </div>
+            </div>
+            </BR>
+             <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Association of Indian Universities (AIU)</span></h3>
+                <img src="{% static 'docs_ewcti/2.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The idea of bringing together all the universities on a common platform emerged from the deliberations of a Conference of the Vice Chancellors of Universities convened by Lord Reading, the then Viceroy of India at Shimla in 1924. The Inter-University Board (IUB) of India was subsequently formed on March 23, 1925, with the view of promoting university activities, especially by way of sharing information and co-operation in the field of education, culture, sports and allied areas. The Inter-University Board acquired a legal status with its registration in 1967 as a Society under the Societies Registration Act, 1860. In 1973, it assumed its present name: The Association of Indian Universities (AIU). The membership includes traditional universities, open universities, professional universities, Institutes of National Importance and deemed-to-be universities. In addition, there is a provision of granting of Associate Membership to universities of neighboring countries. <b>More details at: www.aiu.ac.in/ </b></p></div>
+            </div>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Telangana State Council for Higher Education (TSCHE)</span></h3>
+                <img src="{% static 'docs_ewcti/3.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The Telangana State Council for Higher Education (TSCHE) came into existance by the order of the State Governament of Telangana by adopting the APSCHE Act 16 of 1988 for the provision of the AP Reorganiztion Act of 2014.</p>
+                <p style="text-align:justify;">The Telangana State Council for Higher Education (TSCHE) is primarly a coordinating body between University Grants Commission (UGC), the State Government and the Universities. It is the general duty of the council to coordinate and determine standards in Institutions of Higher Education, Research Scientific and Technical Institutions in accordance with the guidlines issued by University Grants Commisisons from time to time. The Act 16 of 1998 envicages three distinct functions (a) Planning and coordination, (b) Academic Functions and (c) Advisory Functions More details at: <b>https://www.tsche.ac.in</b></p>
+                
+
+            </div>
+            </div>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Andhra Pradesh State Council for Higher Education (APSCHE)</span></h3>
+                <img src="{% static 'docs_ewcti/4.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The A P State Council of Higher Education (APSCHE) came into existence w.e.f. 20.05.1988 through Act 16 of 1988 to advise the Government in matters relating to Higher Education in the State and to oversee its development with perspective planning and for matters connected therewith and incidental thereto.</p>
+                <p style="text-align:justify;">
+                    The Andhra Pradesh State Council of Higher Education, the first of its kind in the country, set up as per the recommendations of the National Education Policy 1986, is primarily a coordinating body between the University Grants Commission (UGC), the State Government and the Universities. It is the general duty of the Council to coordinate and determine standards in institutions of Higher Education, Research, Scientific and Technical Institutions in accordance with the guidelines issued by the University Grants Commission from time to time. The Act 16 of 1988 envisages three distinct functions (a) Planning and Coordination, (b) Academic Functions and (c) Advisory Functions. <b>More details at: http://www.apsche.org/apsche_new/ </b>
+                </p>
+
+            </div>
+            </div>
             </div>
         </div>
         <br>
          
 
-
+</div>
 
     </div>
 <!-- Footer -->

@@ -806,3 +806,13 @@ def ewctiapply(request):
 		response['nopaper'] = True
 
 	return render(request, 'conference/ewcti/apply.djt',response)
+def ewctiprofiles(request):
+	conference = Conference.objects.get(conference_alias='ewcti2018')
+	response={}
+	response['conference']=conference
+	response['alias']='ewcti2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/ewcti/profiles.djt',response)

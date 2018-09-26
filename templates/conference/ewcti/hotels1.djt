@@ -1,0 +1,305 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EWCTI'18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+                    </li>
+    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Hotels</span></center></h2>
+                <br>
+                <table class="table table-hover">
+                    <tr class="active">
+            <th>S.No</th>
+            <th>Hotel</th>
+            <th>
+            Contact No
+            </th>
+            <th>
+            Address
+            </th>
+            <th>
+            Distance from NIT Warangal
+            (km)
+            </th>
+        </tr>
+        <tr>
+            <td>
+            <p>1</p>
+            </td>
+            <td>
+            <p>Sri Hima Residency</p>
+            </td>
+            <td>
+            <p>(0870)-2456522,&nbsp;<br />
+            9000341177,&nbsp;<br />
+            9550570993</p>
+            </td>
+            <td>
+            <p>Opp to NITW Main gate</p>
+            </td>
+            <td>
+            <p>0.1</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>3</p>
+            </td>
+            <td>
+            <p>Haritha Kakatita,&nbsp;<br />
+            AP Tourism</p>
+            </td>
+            <td>
+            <p>(0870) 2562236<br />
+            AP Tourism Online Payment</p>
+            </td>
+            <td>
+            <p>Nakkalagutta, Hanamkonda</p>
+            </td>
+            <td>
+            <p>2.5</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>4</p>
+            </td>
+            <td>
+            <p>Suprabha Hotel</p>
+            </td>
+            <td>
+            <p>(0870) 2573888,<br />
+            9293783781</p>
+            </td>
+            <td>
+            <p>Nakkalagutta, Hanamkonda</p>
+            </td>
+            <td>
+            <p>2.5</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>5</p>
+            </td>
+            <td>
+            <p>Hotel Landmark</p>
+            </td>
+            <td>
+            <p>(0870)-2546222</p>
+            </td>
+            <td>
+            <p>Nakkalagutta, Hanamkonda</p>
+            </td>
+            <td>
+            <p>3</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>7</p>
+            </td>
+            <td>
+            <p>Ashoka Hotel</p>
+            </td>
+            <td>
+            <p>+91-870-2578491 /&nbsp;<br />
+            2578492 /&nbsp;<br />
+            2578493 / 2578494</p>
+            </td>
+            <td>
+            <p>Main Road, Hanamkonda</p>
+            </td>
+            <td>
+            <p>5</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>9</p>
+            </td>
+            <td>
+            <p>City Grand Hotel</p>
+            </td>
+            <td>
+            <p>(0870)-2454587</p>
+            </td>
+            <td>
+            <p>Near Kakatiya Medical College, Warangal</p>
+            </td>
+            <td>
+            <p>8</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>10</p>
+            </td>
+            <td>
+            <p>Ratna Hotel</p>
+            </td>
+            <td>
+            <p>(0870)-2500645</p>
+            </td>
+            <td>
+            <p>Pochamma Maidan, Warangal</p>
+            </td>
+            <td>
+            <p>10</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p>11</p>
+            </td>
+            <td>
+            <p>Surya Hotel</p>
+            </td>
+            <td>
+            <p>(0870) 2441834</p>
+            </td>
+            <td>
+            <p>Railway Station Road, Warangal</p>
+            </td>
+            <td>
+            <p>11</p>
+            </td>
+        </tr>
+                </table>
+                
+                
+               
+                
+        </div>
+          
+</div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b>Contact:</b></h4>
+                                <b>Prof. CSRK Prasad<br>
+                                    Organising Secretary, EWCTI2018<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
+                                <b>Phone : </b> +91-9440347348  <br>
+                            </div>
+                           
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    
+    <!-- /.container -->
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</body>
+
+</html>

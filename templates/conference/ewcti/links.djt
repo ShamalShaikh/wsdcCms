@@ -67,10 +67,10 @@
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
-                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                        <a href="/register/{{conference.conference_alias}}">Registration</a>
                     </li>
                     <li>
-                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
+                        <a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
                     </li>
                     {% endif %}
                 </ul>
