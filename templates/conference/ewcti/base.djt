@@ -58,7 +58,10 @@
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     <li>
-                        <a href="#dates">Important Dates</a>
+                        <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/profiles">Speakers Profile</a>
                     </li>
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
@@ -74,9 +77,12 @@
                         <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
                     </li>
                     {% else %}
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
+                    </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <!-- <li><a href="#fee_div">Registration Fee</a></li> -->
+                            <li><a href="/conference/{{conference.conference_alias}}/#fee_div">Registration Fee</a></li>
                             <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#statusModal">Status of payment</a></li>
                         </ul>
@@ -133,7 +139,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
                                 
                             </div>
                             <div class="col-sm-4">
@@ -142,7 +148,7 @@
                                     Organising Secretary, EWCTI2018<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
+                                <b>Email : </b> ewcti2018@nitw.ac.in   <br>
                                 <b>Phone : </b> +91-9440347348  <br>
                             </div>
                            

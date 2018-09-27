@@ -18,7 +18,7 @@ urlpatterns = [
 	url(r'^approvepaper/(?P<type>[0-9]+)/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.isApprovedPaper),
 	url(r'^disapprovepaper/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.isDisapprovedPaper),
 	url(r'^exportdata/(?P<cid>[0-9]+)/$', views.export_xls),
-	# url(r'^sendmail/$', views.sendmail),
+	url(r'^conference_landing/(?P<cid>[0-9]+)/(?P<type>[0-9])/sendmail/$', views.sendmail),
 	url(r'^paper_remark/(?P<paper_id>[A-Za-z0-9.-]+)/$', views.paper_remark),
 	##reviewUrls
 	url(r'^assignToReview/(?P<paper_id>[A-Za-z0-9.-]+)/$',views.assignToReview),

@@ -32,8 +32,9 @@
           <th>Name</th>
           <th>Institute</th>
           <th>Department</th>
-          <th>Email</th>
           <th>Contact</th>
+          <th>Email</th>
+          <th>Send Registration Mail</th>
           </tr>
         </thead>
         <tbody>
@@ -42,8 +43,20 @@
             <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
             <td>{{profile.institute}}</td>
             <td>{{profile.department}}</td>
-            <td>{{profile.user.email}}</td>
             <td>{{profile.contact}}</td>
+            <td>{{profile.user.email}}</td>
+            
+            <td>
+                <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{profile.pk}}" />
+                    {% if not profile.mail_sent_register %}
+                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                    {% else %}
+                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                    {% endif %}
+                </form>
+            </td>
             </tr>
           {% endfor %}
         </tbody>
@@ -75,9 +88,10 @@
           <th>Name</th>
           <th>Institute</th>
           <th>Department</th>
-          <th>Email</th>
-          <th>Contact</th>
           <th>view DD</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Send Invitation Mail</th>
           </tr>
         </thead>
         <tbody>
@@ -86,16 +100,27 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td>{{paidtran.user.email}}</td>
-            <td>{{paidtran.user.profile.contact}}</td>
             <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
+            <td>{{paidtran.user.profile.contact}}</td>
+            <td>{{paidtran.user.email}}</td>
+            <td>
+                <form action="/manager/conference_landing/{{conference.conference_id}}/5/sendmail/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{paidtran.user.profile.pk}}" />
+                    {% if not paidtran.user.profile.mail_sent_accept %}
+                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                    {% else %}
+                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                    {% endif %}
+                  </form>
+            </td>
             </tr>
           {% endfor %}
         </tbody>
     </table>
     {% else %}
       <div class="ui segment">
-        <center><h3>No Approved DD's !!!</h3></center>
+        <center><h3>No Verified Users!!!</h3></center>
       </div>
     {% endif %}
 {% endifequal %}
@@ -104,7 +129,7 @@
       <h2 class="ui header">
       <center>
         <div class="content">
-          Payments for Approval
+          Payments Pending Approval
         </div>
       </center>
       </h2>
@@ -124,8 +149,15 @@
             <tr>
             <td>{{pendingdd.user.username}}</td>
             <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show dd</a></td>
-            <td><center><a href="/manager/approve_payment/{{pendingdd.id}}"><button class="ui button green">Approve</button></a></center></td>
-            <td><center><button class="ui button red disapprove_btn" payid={{pendingdd.id}}>Disapprove</button></center></td>
+            <td><center>
+                <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{pendingdd.user.profile.pk}}" />
+                    <input type="hidden" name="mail_action" value="approve"/>
+                    <input type="submit" class="ui button green" value="Approve" name="mybtn">
+                </form>
+            </center></td>
+            <td><center><button class="ui button red disapprove_btn" payid={{pendingdd.id}} user={{pendingdd.user.profile.pk}}>Disapprove</button></center></td>
             </tr>
           {% endif %}
           {% endfor %}
@@ -133,7 +165,7 @@
       </table>
       {% else %}
       <div class="ui segment">
-        <center><h3>No Pending DD's to be approved !!!</h3></center>
+        <center><h3>No Payments to approve!!!</h3></center>
       </div>
     {% endif %}
 
@@ -151,7 +183,10 @@
           <tr>
           <th>Name</th>
           <th>Date</th>
-          <th>view DD</th>
+          <th>View DD</th>
+          <th>Issue</th>
+          <th>Email</th>
+          <th>Send Re-payment Mail</th>
           </tr>
         </thead>
         <tbody>
@@ -160,6 +195,20 @@
             <td>{{rejected_dd.user.username}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
             <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show dd</a></td>
+            <td>{{rejected_dd.remarks}}</td>
+            <td>{{rejected_dd.user.email}}</td>
+            <td>
+                <form action="/manager/conference_landing/{{conference.conference_id}}/2/sendmail/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{rejected_dd.user.profile.pk}}" />
+                    <input type="hidden" name="remark" value="{{rejected_dd.remarks}}" />
+                    {% if not rejected_dd.user.profile.mail_sent_reject %}
+                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                    {% else %}
+                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                    {% endif %}
+                  </form>
+            </td>            
           </tr>
         {% endfor %}
         </tbody>
@@ -326,7 +375,13 @@
           <input type="hidden" id="payid" name="payid">
         </div>
         <div class="field">
-          <input type="hidden" id="cid" name="cid">
+          <input type="hidden" id="user" name="user">
+        </div>
+        <div class="field">
+            <input type="hidden" id="cid" name="cid">
+          </div>
+        <div class="field">
+          <input type="hidden" name="mail_action" value="disapprove"/>
         </div>
         <button class="ui submit button" type="submit">Submit</button>
       </form>
@@ -341,9 +396,11 @@
 $(".disapprove_btn").click(function(){
   $('.small.modal.pop_up1').modal('show');
   var pid=$(this).attr('payid');
+  var user=$(this).attr('user');
   $('#payid').val(pid);
+  $('#user').val(user);
   $('#cid').val({{conference.conference_id}});
-})
+});
 
 </script>
 {% endblock %}
