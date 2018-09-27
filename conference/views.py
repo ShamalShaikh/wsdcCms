@@ -816,3 +816,59 @@ def ewctiprofiles(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/ewcti/profiles.djt',response)
+
+
+#TSSC-2018
+#ewcti
+def tssc(request):
+	conference = Conference.objects.get(conference_alias='tssc2018')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/tssc/home.djt',response)
+
+def tsscabout(request):
+	conference = Conference.objects.get(conference_alias='tssc2018')
+	response={}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/tssc/about.djt',response)
+
+def tssclinks(request):
+	conference = Conference.objects.get(conference_alias='tssc2018')
+	response={}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/tssc/links.djt',response)
+
+def tsschotels(request):
+	conference = Conference.objects.get(conference_alias='tssc2018')
+	response={}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/tssc/hotels.djt',response)
