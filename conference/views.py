@@ -872,3 +872,4 @@ def tsschotels(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/tssc/hotels.djt',response)
+	return render(request, 'conference/ewcti/profiles.djt',response)

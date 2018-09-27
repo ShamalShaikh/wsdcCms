@@ -70,7 +70,9 @@ class UserProfile(models.Model):
 	designation = models.CharField(max_length=255, blank=True)
 	qualification = models.CharField(max_length=255, blank=True)
 	alumani = models.ForeignKey(Alumani, null = True)
-
+	mail_sent_register = models.BooleanField(default=False)
+	mail_sent_accept = models.BooleanField(default=False)
+	mail_sent_reject = models.BooleanField(default=False)
 
 	def __unicode__(self):
 		return self.user.username

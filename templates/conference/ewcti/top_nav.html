@@ -1,0 +1,69 @@
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/profiles">Speakers Profile</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Registration</a>
+                    </li>
+                    <li>
+                        <a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->

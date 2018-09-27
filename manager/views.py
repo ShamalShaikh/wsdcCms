@@ -218,9 +218,10 @@ def approve_payment(request,payid):
 		regconf.user = payment.user
 		regconf.conf_id = payment.conf_id
 		regconf.save()
-	print regconf.conf_id.conference_id
-	url = '/manager/conference_landing/'+str(regconf.conf_id.conference_id)+'/1/'
-	return redirect(url)
+	#print regconf.conf_id.conference_id
+	print request.POST
+	sendmail(request,str(regconf.conf_id.conference_id),'2')
+	return redirect('/manager/conference_landing/' + str(regconf.conf_id.conference_id) + "/" + '2' + "/")
 
 def disapproval(request):
 	if request.method=='POST':
@@ -237,8 +238,9 @@ def disapproval(request):
 		rejected_payment.date = now.strftime("%Y-%m-%d")
 		rejected_payment.remarks = payment.remarks
 		rejected_payment.save()
-		url = '/manager/conference_landing/'+request.POST['cid']+'/2/'
-	return redirect(url)
+		print request.POST
+		sendmail(request,request.POST['cid'],'2')
+		return redirect('/manager/conference_landing/' + request.POST['cid'] + "/" + '2' + "/")
 
 
 def questionnaire(request,cid):
@@ -312,20 +314,31 @@ def export_xls(request, cid):
 
 	row_num = 0
 
+	# columns = [
+	# 	(u"Reference Number",6000),
+	#     (u"User", 6000),
+	#     (u"Gender",6000),
+	#     (u"Contact",6000),
+	#     (u"Email",6000),
+	#     (u"Institute",10000),
+	#     (u"Department",6000),
+	#     (u"Tile Of Paper",20000),
+	#     (u"TimeStamp",6000),
+	#     (u"Conference", 20000),
+	#     (u"Reviewer 1",6000),
+	#     (u"Reviewer 2",6000),
+	#     (u"Average",6000),
+	# ]
+
 	columns = [
-		(u"Reference Number",6000),
 	    (u"User", 6000),
 	    (u"Gender",6000),
 	    (u"Contact",6000),
 	    (u"Email",6000),
 	    (u"Institute",10000),
 	    (u"Department",6000),
-	    (u"Tile Of Paper",20000),
-	    (u"TimeStamp",6000),
 	    (u"Conference", 20000),
-	    (u"Reviewer 1",6000),
-	    (u"Reviewer 2",6000),
-	    (u"Average",6000),
+		(u"Payment Status", 6000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -339,48 +352,98 @@ def export_xls(request, cid):
 	font_style.alignment.wrap = 1
 
 	conference = Conference.objects.get(conference_id=cid)
-	papers = Conf_Paper.objects.filter(conf_id=conference)
+	# papers = Conf_Paper.objects.filter(conf_id=conference)
+	reg_confs = Registered_Conference.objects.filter(conf_id=cid)
+	# totalRows = len(papers)
+	totalRows = len(reg_confs)
 
-	totalRows = len(papers)
+	# for paper in papers:
 
-	for paper in papers:
+	# 	row_num += 1
+
+	# 	refnum = str(paper.paperRefNum)
+	# 	nameOfPerson = paper.uid.first_name + " " + paper.uid.last_name
+	# 	gender = paper.uid.profile.gender
+	# 	contact = paper.uid.profile.contact
+	# 	email = paper.uid.email
+	# 	institute = paper.uid.profile.institute
+	# 	department = paper.uid.profile.department
+	# 	title = paper.papername
+	# 	localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
+	# 	timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
+	# 	confname = conference.conference_name
+
+	# 	dataRow = [refnum, nameOfPerson, gender, contact, email, institute, department,
+	# 				title, timestamp, confname ,"-","-","-"]
+
+	# 	index = 10
+	# 	finalavg = 0.0
+	# 	assignPaperObj = AssignedPaperStatus.objects.filter(paper=paper)
+	# 	for obj in assignPaperObj :
+	# 		answers = Answers.objects.filter(paper=paper,reviewer=obj.reviewer)
+	# 		avg = 0.0
+	# 		count = 0
+	# 		for answer in answers :
+	# 			if answer.question.que_type == 0 :
+	# 				count += 1
+	# 				avg += answer.marks
+	# 		rev = avg/count
+	# 		finalavg += rev
+	# 		dataRow[index] = str(rev)
+	# 		index += 1
+
+	# 	if index==12:
+	# 		finalavg = (finalavg/2)
+	# 	dataRow[12] = str(finalavg)
+
+	# 	for col_num in xrange(len(dataRow)) :
+	# 		ws.write(row_num, col_num, dataRow[col_num], font_style)
+
+	# wb.save(response)
+	for reg_conf in reg_confs:
 
 		row_num += 1
 
-		refnum = str(paper.paperRefNum)
-		nameOfPerson = paper.uid.first_name + " " + paper.uid.last_name
-		gender = paper.uid.profile.gender
-		contact = paper.uid.profile.contact
-		email = paper.uid.email
-		institute = paper.uid.profile.institute
-		department = paper.uid.profile.department
-		title = paper.papername
-		localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
-		timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
+		# refnum = str(paper.paperRefNum)
+		nameOfPerson = reg_conf.user.first_name + " " + reg_conf.user.last_name
+		gender = reg_conf.user.profile.gender
+		contact = reg_conf.user.profile.contact
+		email = reg_conf.user.email
+		institute = reg_conf.user.profile.institute
+		department = reg_conf.user.profile.department
+		# title = paper.papername
+		# localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
+		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
+		if reg_conf.user.profile.mail_sent_register:
+			payment = "NOT PAID"
+		if reg_conf.user.profile.mail_sent_reject:
+			payment = "PAYMENT REJECTED"
+		if reg_conf.user.profile.mail_sent_accept:
+			payment = "PAYMENT ACCEPTED"
 
-		dataRow = [refnum, nameOfPerson, gender, contact, email, institute, department,
-					title, timestamp, confname ,"-","-","-"]
+		dataRow = [nameOfPerson, gender, contact, email, institute, department,
+					confname, payment]
 
-		index = 10
-		finalavg = 0.0
-		assignPaperObj = AssignedPaperStatus.objects.filter(paper=paper)
-		for obj in assignPaperObj :
-			answers = Answers.objects.filter(paper=paper,reviewer=obj.reviewer)
-			avg = 0.0
-			count = 0
-			for answer in answers :
-				if answer.question.que_type == 0 :
-					count += 1
-					avg += answer.marks
-			rev = avg/count
-			finalavg += rev
-			dataRow[index] = str(rev)
-			index += 1
+		# index = 8
+		# finalavg = 0.0
+		# assignPaperObj = AssignedPaperStatus.objects.filter(paper=paper)
+		# for obj in assignPaperObj :
+		# 	answers = Answers.objects.filter(paper=paper,reviewer=obj.reviewer)
+		# 	avg = 0.0
+		# 	count = 0
+		# 	for answer in answers :
+		# 		if answer.question.que_type == 0 :
+		# 			count += 1
+		# 			avg += answer.marks
+		# 	rev = avg/count
+		# 	finalavg += rev
+		# 	dataRow[index] = str(rev)
+		# 	index += 1
 
-		if index==12:
-			finalavg = (finalavg/2)
-		dataRow[12] = str(finalavg)
+		# if index==12:
+		# 	finalavg = (finalavg/2)
+		# dataRow[12] = str(finalavg)
 
 		for col_num in xrange(len(dataRow)) :
 			ws.write(row_num, col_num, dataRow[col_num], font_style)
@@ -416,6 +479,63 @@ def paper_remark(request, paper_id):
 
 import smtplib
 import socks
+
+def sendmail(request,cid,type) :
+	profile = UserProfile.objects.get(pk=request.POST['user'])
+	receiver = profile.user.email
+	print "HELLLO....."+request.POST['user'] + receiver
+	sender = 'conference@.nitw.ac.in'
+	mail_Action = request.POST.get('mail_action',0)
+
+	if type == '1':
+		subject = 'Application approved but payment pending'
+		content = "Hello " + profile.user.first_name + ",\n\n" 
+		content += "Your details have been reviewed and verified by us.\n\n"
+		content += "Please pay the registration fee to proceed further.\n\n"
+		content += "Thank you!"
+
+	if type == '2':
+		if mail_Action == "approve":	
+			subject = 'Payment verified.Invitation to Conference EWCTI2018 '
+			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content += "Your payement has been successfully verified.\n\n"
+			content += "You are invited to the Conference on 10th October.\n\n"
+			content += "Thank you!"
+
+		else:
+			subject = 'Payment verification Failed'
+			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content += "There was an issue in verifying your payment.\n"
+			content += "Issue: " + request.POST['remark'] + "\n\n"
+			content += "Please send the payment details again."
+
+	rlist = []
+	rlist.append(receiver)
+	try:
+		send_mail(subject,content,sender,rlist,fail_silently=False,)
+		print "tpe:"+type
+		if type == '1':
+			profile.mail_sent_register=True
+
+		if type == '2' and mail_Action == "approve":
+			profile.mail_sent_reject=False
+			profile.mail_sent_accept=True
+			print "type:"+type
+		if type == '2' and mail_Action == "disapprove":
+			profile.mail_sent_reject=True
+			profile.mail_sent_accept=False
+			print "type:"+type
+
+		if type == '5':
+			profile.mail_sent_accept=True
+			print "type:"+type
+		profile.save()
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+
+	return redirect('/manager/conference_landing/' + cid + "/" + type + "/")
+
+
 
 def sendMailFunction(email,papername,trackingID,alias) : 
 	# if alias == 'mmse2018' :

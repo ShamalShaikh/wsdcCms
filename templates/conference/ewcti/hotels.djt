@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +65,11 @@
         <!-- /.container -->
     </nav>
 
+=======
+{% extends "conference/ewcti/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+>>>>>>> 6902be86434737f11b9bea07601b3d57f6bac1b1
     <!-- Page Content -->
     <div class="container"></div>
 
@@ -300,6 +306,7 @@
         </div>
           
 </div>
+<<<<<<< HEAD
         <!-- Footer -->
         <footer>
          <hr>
@@ -366,3 +373,6 @@
 </body>
 
 </html>
+=======
+{% endblock %}
+>>>>>>> 6902be86434737f11b9bea07601b3d57f6bac1b1
