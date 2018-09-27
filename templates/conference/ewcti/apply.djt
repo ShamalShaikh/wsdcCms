@@ -13,21 +13,22 @@
 	<div class="row">
 	{% if paper %}
 
-		{% if paper.status == 0 %}
-
-		<div class="alert alert-info">
-		  Your application status is under review.
-		</div>
-		{% elif paper.status == 2 or paper.status == 3 %}
-		<div class="alert alert-success">
+		{% if paper.uid.profile.mail_sent_accept %}
+			<div class="alert alert-success">
 		  <strong>Congratulations</strong>
-		  Your application is approved. You can now proceed with payment.
+		  Your Payment is verified. Check your e-mail for invitation.
 		</div>
+		
+		{% elif paper.uid.profile.mail_sent_reject %}
+				<div class="alert alert-danger">
+					<strong>Sorry</strong>
+					Your application is rejected.
+				</div>
+	
 		{% else %}
-		<div class="alert alert-danger">
-		  <strong>Sorry</strong>
-		  Your application is rejected.
-		</div>
+			<div class="alert alert-info">
+				Applied successfully. Pay the <a href="/conference/{{conference.conference_alias}}/#fee_div"><u>Registration Fee</u></a> and <a href="/conference/make_payment/{{conference.conference_alias}}"><u>Upload Payment Receipt</u></a>
+			</div>
 		{% endif %}
 
 	{% else %}
@@ -44,38 +45,5 @@
 	</div>
 </div>
 
-<!-- payment modal -->
-    
-    <div id="statusModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Status of Payment</h4>
-      </div>
-      <div class="modal-body">
-      {{payment.is_aprooved}}awd
-        {% if payment %}
-
-            {% if payment.is_aprooved %}
-                <h3>Your payment has been verified !!!</h3>
-            {% elif payment.is_rejected %}
-                <h3>Your payment is rejected due to following problem : <br>
-                <br><center>{{payment.remarks}}</center></h3>
-            {% else %}
-                <h3>Your payment is not verified yet. Please Wait !!!</h3>
-            {% endif %}
-        {% else %}
-            <h3>You have not uploaded the payment receipt yet</h3>
-        {% endif %}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
 </div>
 {% endblock %}

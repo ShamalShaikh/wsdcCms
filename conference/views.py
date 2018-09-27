@@ -801,6 +801,7 @@ def ewctiapply(request):
 				regconf.save()
 	try:
 		paper = Conf_Paper.objects.get(uid=request.user, conf_id=conference)
+
 		response['paper'] = paper
 	except:
 		response['nopaper'] = True

@@ -6,13 +6,13 @@
 		<form class="ui form" action="/conference/payment/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 			<div class="field">
-	              <label>Upload dd picture</label>
+	              <label>Upload Payment Receipt</label>
 	        </div>
 	        <div class="field">
 	              <input name="dd_file" type="file" id="dd_file" class="ui button blue">
 	        </div>
 	        <div class="field">
-	              <label>Upload id proof picture</label>
+	              <label>Upload id proof</label>
 	        </div>
 	        <div class="field">
 	              <input name="id_file" type="file" id="id_file" class="ui button blue">
