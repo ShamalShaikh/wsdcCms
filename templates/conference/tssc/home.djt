@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EWCTI'18</title>
+    <title>TSSC'18</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -110,42 +110,52 @@
             <center>
             <div class="col-md-2">
                 <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px">
-                <b>Diamond Jubilee Year 2018-2019</b>
+                <br><br>
+                <b>NIT WARANGAL</b>
             </div>
             </center>
             <div class="col-sm-8">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
-                <p style="font-size:20px; color: #31b150;"><b>EVOLUTION OF WORLD CLASS TECHNICAL
-INSTITUTIONS – ISSUES & CONCERNS</b></p>
-                <p style="font-size:20px;color: #002360;"><b>(EWCTI-2018)</b></p>
+                <p style="font-size:16px;color: #002360;"><b>TELANGANA ACADEMY OF SCIENCES</b></p>
+                <p style="font-size:15px;color: #002360;"><b>and</b></p>
+                <p style="font-size:16px;color: #002360;"><b>NATIONAL INSTITUTE OF TECHNOLOGY, WARANGAL</b></p>
+                <p style="font-size:15px;color: #002360;"><b>jointly hosts the prestigious</b></p>
+                <p style="font-size:23px; color: #31b150;"><b>TELANGANA STATE SCIENCE CONGRESS</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(TSSC-2018)</b></p>
+                <p style="font-size:16px;color: #002360;"><b>to mark the 131st Birth Anniversary of Sir Srinivasa Ramanujan, FRS and Diamond Jublee Celebrations (60 Years) of NIT Warangal</b></p>
+
                 
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
             <div class="col-sm-2">
-                <center>
-                <p style="color:red;">Please Find Instructions here</p>
-                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
-                </center>
+            <center>
+                <img src="{% static 'tssc/tas.png' %}" height="110px" style="margin-top:20px">
+                <br><br>
+                <b>TAS</b>
+            </center>
             </div>
         </div>
         <BR>
         <div class="row">
             <div class="col-md-6" >
                 <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
-                           
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
-                <center><h3 style="color:blue;"><b>10 -12 October, 2018</b></h3>
+                <center><h3 style="color:blue;"><b>22 - 24 December, 2018</b></h3>
                 <h4>
-                     Organised by<br><hr>
-                    National Institute of Technology Warangal<br>
+                     organised at<br/><br>
+                    <b>National Institute of Technology Warangal<br>
                     Warangal 506 004. <br>
-                    Telangana State, India.
+                    Telangana State, India.</b>
                 </h4></center>
+                <center>
+                <br/>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
             </div>
             <!-- /.col-md-4 -->
         </div>
@@ -165,34 +175,29 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
         <hr> -->
         <!-- /.row -->
 
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px; font-size:17px">
+                <br><h2><center><span class="label label-success">Focal Theme</span></center></h2><br>
+                <i><center>
+                    <b>"Vijnana Vinu Veedhulapai Bangaru Telangana"</b>
+                    <br>
+                    Golden Telangana on the Highways of Science and Technology
+                    </center>
+                </i>
+
+            </div>
+        </div>
+
         
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Overview</span></center></h2><br>
                            <p style="color:black; text-align:justify;"> 
-                            World class universities revolve around excellence
-                        in research, academic freedom and an intellectually
-                        stimulating environment, internal self-governance
-                        by academics over key aspects of academic life and
-                        adequate facilities and funding. Higher education
-                        systems across the world have been going through
-                        significant restructuring processes to enhance their
-                        position and competitiveness and within their own
-                        countries and in the global market.
+                            The Telangana Academy of Sciences (TAS) has come into existence by Secession from the Andhra Pradesh State Akademi of Sciences (APAS) immediately after the formation of the Telangana State through Andhra Pradesh State Re-organization Act. Continuing with the legacy of the APAS, the TAS has been performing and organizing various academic activities with the support of Government of Telangana State and active involvement of hundreds of its Fellows, Associate Fellows and well-wishers
                         </p>
                         <p style="color:black; text-align:justify;">
-                        Universities and Institutions in India are also
-                        competing with each other to get an exalted status in
-                        academic excellence. This includes both the state
-                        funded as well as the private universities. Knowing
-                        what constitutes world-class educational standards,
-                        measuring ourselves against them and matching
-                        them and finally 'being a global partner overseas'
-                        the 'world-class' notion has become everyday
-                        language in many universities. Making the higher
-                        education and the research area 'more visible and
-                        attractive in the world' and rewarding excellence
-                        have also become the focus of the present day.
+                        As part of its most major and flagship activities, this year during 22nd – 24th December, 2018 the TAS is conducting the Telangana State Science Congress (TSSC-2018) with the primary objective of promoting interaction among the scientific community in Telangana State. The TSSC-2018 will be providing a forum for scientists and engineers in various fields of academia to present their original research findings besides organizing invited lectures and deliberations by scientists and engineers of national and international repute on the cutting edge areas of science and technology. The TSSC-2018 also envisages popularization of science among masses with the involvement scientists, engineers, teachers and students through a set of well-designed scientific activities. The Telangana State Science Congress (TSSC) is being organized by Telangana Academy of Sciences (TAS) in association with the National Institute of Technology (NIT) Warangal as part of the latter’s Diamond Jubilee Celebrations. The event also marks the 131st Birth Anniversary of the Indian Mathematical prodigal genius, Sir Srinivasa Ramanujan (22nd December, 1887-26th April, 1920). The TSSC-2018 will have scientific sessions on Eight (8) major themes of Science and Technology besides some Special Sessions.
+
                         </p>
                         <p style="color:black; text-align:justify;">
                         With this background, it is proposed to bring leading
@@ -209,7 +214,7 @@ INSTITUTIONS – ISSUES & CONCERNS</b></p>
          <hr>
         <div class="row">
             <div class="col-md-12">
-            
+            <!--
                 <br><h2><center><span class="label label-success">Conference Themes</span></center></h2><br>
             </div>
                 <div class="row">
@@ -260,25 +265,29 @@ Accord</li>
             </div>
         </div>
         </div>
-        <hr>
+        <hr>-->
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Who Can Participate?</span></center></h2><br>
-                <p style="text-align:justify;">Vice-Chancellors, Directors, Policymakers, Academic
-Administrators, Senior Academicians, Educationists,
-Management/Secretaries/ Principals/Directors of
-Technical Institutes, Researchers, Innovators, Industry
-Personnel, Professionals, Educational Technology
-providers can participate in this conference.</p>
+                <p style="text-align:justify;">The TSSC 2018 invites innovative and quality papers from engineers, scientists, industrialists and other technocrats and all those with a scientific temper to take part in this mega event.
+</p>
                                
             </div>
             <!-- /.col-md-6 -->
             <div class="col-md-6" id="dates">
-                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <h2><center><span class="label label-primary">Important Deadlines</span></center></h2><br>
                 <table class="table table-hover">
                     <tr class="active">
-                        <td>Closure of Registartion of Application</td>
-                        <td>30th Sep, 2018</td>
+                        <td>Abstract Submission</td>
+                        <td>10th Nov, 2018</td>
+                    </tr>
+                    <tr class="">
+                        <td>Acceptance of Abstracts</td>
+                        <td>15th Nov, 2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Payment of Regsitration Fee</td>
+                        <td>20th Sep, 2018</td>
                     </tr>
                 </table>
                 <br>
@@ -293,15 +302,34 @@ providers can participate in this conference.</p>
             <div class="col-md-6">
                 <center>
                 <h2><span class="label label-primary">Registration</span></h2><br>
-                <p>Each delegate has to pay an amount of Rs. 3,000/-
-as registration fee. This registration fee includes
-conference kit, conference proceedings, session
-teas, breakfast, lunch and dinner. Delegates are
-required to make their own arrangements for their
-accommodation and local travel. However,
-organizers will facilitate the delegates for booking of
-hotels for their stay. The Registration details can be
-found at www.nitw.ac.in</p>
+                <p>All the delegates who wish to participate in Telangana State Science Congress-2018 must register. As this is a platform where people from several scientific/technical back ground will be participating, the participants are encouraged to register well with in the deadlines. Each delegate has to pay the following as per the category she/he falls in</p>
+<table class="table table-hover">
+                    <tr>
+                        <th>Category</th>
+                        <th>On or Before 20-11-2018</th>
+                        <th>After 20-11-2018</th>
+                    </tr>
+                    <tr class="active">
+                        <td>College Teachers & Students</td>
+                        <td>Rs. 1,000/-</td>
+                        <td>Rs. 1,200/-</td>
+                    </tr>
+                    <tr class="">
+                        <td>University Teachers & Research Scholars</td>
+                        <td>Rs. 2,000/-</td>
+                        <td>Rs. 2,500/-</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Scientists from Labs/Research Institutions</td>
+                        <td>Rs. 3,000/-</td>
+                        <td>Rs. 3,500/-</td>
+                    </tr>
+                    <tr class="">
+                        <td>Industry Representatives</td>
+                        <td>Rs. 5,000/-</td>
+                        <td>Rs. 6,200/-</td>
+                    </tr>
+                </table>
                 <b>Payments to be made through Online/NEFT to the Bank given below.</b>
                 <br><br>
                 <table class="table table-hover">
@@ -350,43 +378,30 @@ Private funded organizations<br>
                         <th>Benefits</th>
                     </tr>
                     <tr class="active">
-                        <td>Platinum</td>
-                        <td>5.0</td>
-                        <td>15 Minutes presentation and 1
-Full Page Advertisement in
-Souvenir + 10 Delegates Free</td>
+                        <td>Conference Sponsor</td>
+                        <td>2.0</td>
+                        <td>One Full page multi color advertisment in Souvenir and Five delegates free plus one complementary stall in Exhibition</td>
                     </tr>
-                    <tr class="active">
-                        <td>Diamond</td>
-                        <td>3.0</td>
-                        <td>10 Minutes presentation 1 Full
-Page Advertisement in
-Souvenir + 6 Delegates Free</td>
+                    <tr class="">
+                        <td>Lunch/Dinner/Kit</td>
+                        <td>1.0</td>
+                        <td>One Full page multi color advertisment in Souvenir and Two delegates free</td>
                     </tr> 
                     <tr class="active">
-                        <td>Gold</td>
-                        <td>2.0</td>
-                        <td>5 Minutes presentation 1 Full
-Page Advertisement in
-Souvenir + 4 Delegates Free</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Silver</td>
-                        <td>1.0</td>
-                        <td>Half Page Advertisement in
-Souvenir + 2 Delegates Free</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Bronze</td>
+                        <td>Event Transfer</td>
                         <td>0.5</td>
-                        <td>Half Page Advertisement in
-Souvenir + 1 Delegate Free</td>
+                        <td>One Full page Black and White advertisment in Souvenir</td>
+                    </tr>
+                    <tr class="">
+                        <td>High Tea</td>
+                        <td>0.25</td>
+                        <td>Half page Black and White advertisment in Souvenir</td>
                     </tr>
                 </table>
             </div>
         </div>
         <hr>
-        
+        <!--
         <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
@@ -641,7 +656,7 @@ Souvenir + 1 Delegate Free</td>
         </tr>
 
                 </table>
-                <!-- <ul>
+                <ul>
                     <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
                     <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
                     <li>Shri Ramanathan Ramanan, Mission Director & AS, Atal Innovation Mission</li>
@@ -665,13 +680,13 @@ Souvenir + 1 Delegate Free</td>
                     <li>Prof. Surendra Prasad, Chairperson, NBA</li>
                     <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
                     <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
-                    </ul> -->
+                    </ul>
                 </div>
             </div>
         </div>
         <br>
          <hr>
-        <!-- /.row -->
+        -->
         
                     
             <div class="col-md-12">
@@ -679,45 +694,81 @@ Souvenir + 1 Delegate Free</td>
             <br>
                 <div class="row">
 
-                     <div class="col-md-offset-1 col-md-5">
+                     <div class="col-md-4">
                     <center>
-                        <h4><b>Chairman</b></h4>
+                        <h4><b>Patron</b></h4>
                         <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
                             National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-4">
                     <center>
-                    <h4><b>Co-Chairman</b></h4>
-                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
-                        National Institute of Technology, Warangal<br>
-                        Mob.: 9652901237, Email: kvj@nitw.ac.in
+                    <h4><b>Patron</b></h4>
+                    <p style="font-size:17px;">Prof. K. Narasimha Reddy<br> President, TAS<br>
+                        former VC, Mahatma Gandhi University, Nalgonda<br>
+                       </p>
+                    </center>
+                </div>
+                <div class="col-md-4 ">
+                    <center>
+                    <h4><b>Patron</b></h4>
+                    <p style="font-size:17px;">Principal Secretary<br>Department of Higher Education<br>
+                        Government of Telangana<br>
                        </p>
                     </center>
                 </div>
                     
                 </div>
             </div>
+
             <div class="row">
             <div class="col-md-12">
+                                <br/>
                  <center><h4><b>Members</b></h4></center>
             </div>
             <div class="row" style="font-size:15px;">
                 <div class="col-md-4"></div>
                 <div class="col-md-8">
+
                 <ul>
-                            <li>Dr. S. SSandhu, IAS, Addl Secretary, MHRD</li>
-                            <li>Dr. Ram Bhoj, Advisor, UNESCO</li>
-                            <li>Prof. Sandeep Sancheti, President, Association of Indian Universities</li>
-                            <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
-                            <li>Prof. D.P. Singh, Chairman, UGC</li>
-                            <li>Prof. K.Uma Maheshwar Rao, Director, NITK, Surathkal</li>
-                            <li>Prof. Mini S. Thomas, Director, NIT Trichy</li>
-                            <li>Prof. P. Anandraj, Dean (P&D), NITW</li>
-                            <li>Prof. Y. Pydisetty, Dean(AA), NITW</li>
-                            <li>Prof. LRG Reddy, Dean (SW), NITW</li>
-                            <li>Prof. DVS Siva Sarma, Dean (FW), NITW</li>
-                            <li>Prof. G. Rajesh Kumar, Dean (R&C), NITW</li>
+                    <li>Prof. P. Appa Rao Vice Chancellor, UoH, Hyderabad </li>
+<li>Prof. S. Ramachandram, Vice Chancellor, Osmania University, Hyderabad</li> 
+<li>Prof. U.B. Desai, Director, IIT, Hyderabad</li>
+<li>Prof. A. Venugopal Reddy, Vice Chancellor, JNTU-H, Hyderabad </li>
+<li>Prof. R. Sayanna, Vice Chancellor, Kakatiya University, Warangal </li>
+<li>Prof. V. Praveen Rao, Vice Chancellor, Prof. Jayashankar Agri. University, Hyderabad</li> 
+<li>Prof. Khaja Althaf Hussain, Vice Chancellor, MG. University, Nalgonda </li>
+<li>Prof. B. Raja Ratnam, Vice Chancellor, Palamuru University, Mahabubnagar </li>
+<li>Prof. P. Sambaiah, Vice Chancellor, Telangana University, Nizamabad </li>
+<li>Sri. T. Chiranjeevulu, I/c. Vice Chancellor,Satavahana University, Karimnagar </li>
+<li>Prof. K. Seetharama Rao, Vice Chancellor, Dr. B.R. Ambedkar Open University </li>
+<li>Sri Sandeep Kumar Sultania, P.V. N. Rao Telangana Vet. University, Rajendranagar, Hyd’bad </li>
+<li>Sri. C. Parthasarathi, IAS, APC, I/C Vice-Chancellor, Sri KL Telangana Harti. University, Hyd’bad </li>
+<li>Dr. B. Karunakar Reddy, Vice Chancellor, Kaloji N Rao Health University, Warangal</li> 
+<li>Dr. M. Lakshmi Kantham, Former Director, IICT, Hyderabad</li> 
+<li>Dr. A.V. Rama Rao, Chairman AVRA Labs, Hyderabad </li>
+<li>Dr. S. Chandrasekhar Director, IICT, Hyderabad</li>
+<li>Dr. Ch. Mohan Rao Former President, TAS, Former Director, CCMB</li>
+<li>Dr. V. M. Tiwari Director, NGRI, Hyderabad</li>
+<li>Dr. Rakesh K Mishra Director, CCMB, Hyderabad</li>
+<li>Dr. Tessy Thomas Director General, AERO, Bengaluru</li>
+<li>Dr. R. Hemalatha Director, NIN, Hyderabad</li>
+<li>Dr. Santanu Chowdhury Director, NRSC, Hyderabad</li>
+<li>Dr. G. Padmanabham Director, ARCI, Hyderabad</li>
+<li>Dr. A. Ashok, IAS, I/c Vice Chancellor, RGUKT, Basara</li> 
+<li>Dr. M.S.R. Prasad Director, DRDL, Hyderabad</li>
+<li>Dr. Anil Kumar Singh Director, DLRL, Hyderabad</li>
+<li>Dr. N.R. Muniratnam Director General, C-MET, Hyderabad</li>
+<li>Dr. Dinesh Kumar Likhi, CMD, MIDHANI, Hyderabad</li> 
+<li>Dr. M.B. Verma Director, AMD, Hyderabad</li>
+<li>Dr Vikas Kumar Director, DMRL, Hyderabad</li>
+<li>Dr. Sanjay Chaubey CMD, ECIL, Hyderabad</li>
+<li>Dr. Dinesh Srivastava Chief Executive, NFC, Hyderabad</li>
+<li>Dr. Sateesh Chandra Shenoi Director, INCOIS, Hyderabad</li>
+<li>Prof. P. Ravi Kumar Member Secretary, TSCOST, Govt of Telangana</li>
+<li>Dr. B. G. Sidharth Director, B. M. Birla Science Centre, Hyderabad</li>
+<li>Prof. P. J. Narayanan Director, IIIT, Hyderabad</li>
+
       
                 </ul>
                 </div>
@@ -728,30 +779,38 @@ Souvenir + 1 Delegate Free</td>
             <!-- row -->
             <div class="row">
             <div class="col-md-12">
-                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+                 <center><h2><span class="label label-success">State Organising Committee</span></h2></center><br>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <center>
                         <h4><b>Chairman</b></h4>
                         <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
                             National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <center>
-                    <h4><b>Co-Chairman</b></h4>
-                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
-                        National Institute of Technology, Warangal<br>Mob.: 9652901237, Email: kvj@nitw.ac.in
+                    <h4><b>Chairman</b></h4>
+                    <p style="font-size:17px;">Dr. S. Chandrasekhar<br> Hon. Secretary<br>
+                        TAS, Hyderabad
                        </p>
                     </center>
                 </div>
-               <div class="col-md-4">
+               <div class="col-md-3">
                     <center>
-                    <h4><b>Convener &Organising Secretary</b></h4>
-                    <p style="font-size:17px;">Prof CSRK Prasad<br>
-                        Department of Civil Engineering
-                        <br>National Institute of Technology, Warangal</p>
+                    <h4><b>Organising Secretary</b></h4>
+                    <p style="font-size:17px;">Dr. Y. Purushotham<br>
+                        Hon. Treasurer
+                        <br>TAS, Hyderabad</p>
+                    </center>               
+                </div>
+               <div class="col-md-3">
+                    <center>
+                    <h4><b>Organising Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. K. Laxma Reddy<br>
+                        District Coordinator, TAS Warangal
+                        <br>Professor, Department of Chemistry, NIT Warangal</p>
                     </center>               
                 </div>
                 <br>
@@ -769,28 +828,174 @@ Souvenir + 1 Delegate Free</td>
                 <div class="col-md-4"></div>
                 <div class="col-md-8">
                 <ul>
-                  <li>Dr. M. Chandrasekhar, Head (Civil Engineering)</li>
-                        <li>Dr. V. T. Somasekhar, Head (Electrical Engineering)</li>
-                        <li>Dr. Popuri Bangarubabu, Head (Mechanical Engineering) </li>
-                        <li>Dr. N. Bheema Rao, Head(Electronic & Comm. Engg)</li>
-                        <li>Dr. C. Vanitha, Head (Metallurgy & Materials Engg.)</li>
-                        <li>Dr. SaratBabu Anne, Head (Chemical Engineering)</li>
-                        <li>Dr. R. B. V. Subramaanyam, Head (Computer Science Engineering)</li>
-                        <li>Dr. Onkara Perumal P, Head (Biotechnology)</li>
-                        <li>Dr. P. Ramlal, Head (School of Management)</li>
-                        <li>Dr. D. Srinivasacharya, Head (Mathematics)</li>
-                        <li>Dr. K. Venugopal Reddy, Head (Physics)</li>
-                        <li>Dr. P. Venkata Sri Laxmi, Head (Chemistry)</li>
-                        <li>Dr. M. Raja Vishwanathan, Head (Humanities & Social Sciences)</li>
-                        <li>Dr. P. Madhusudhana Reddy, Head (Physical Education)</li>
-                        <li>Sri S. Goverdhan Rao, Registrar</li>  
+ <li>Prof. P. Venugopal Reddy, Vice-President, TAS</li>
+<li>Prof. Ch. Sanjeeva Reddy, Vice- President, TAS</li>
+<li>Dr. S.M. Reddy, Editor of publications, TAS</li>
+<li>Dr. G. Sundararajan, E.C. Member, TAS</li>
+<li>Dr. G. Parthasarathy, E.C. Member, TAS</li>
+<li>Dr. G. Bhanuprakash Reddy, E.C. Member, TAS</li>
+<li>Prof. K. JeevanRao, E.C. Member, TAS</li>
+<li>Dr. G. Madhushudhan Reddy, E.C. Member, TAS</li>
+<li>Prof. G. Bagyanarayana, EC Member, TAS</li>
+<li>Prof. K. Janardhan Reddy, E.C. Member, TAS</li>
+<li>Prof. V. Chakravarthy, E.C. Member, TAS</li>
+<li>Prof. Arjula Ramachandra Reddy, Former VC, YVU, Kadapa</li>
+<li>Prof. B. N. Reddy, FTAS, OU</li>
+<li>Prof. M. Vittal, Regional Coordinator, Karimnagar, TAS</li>
+<li>Dr. G. Malakondaiah, FTAS </li>
+<li>Dr. Mahatab S. Bamji, FTAS</li>
+<li>Dr. G. Narahari Sastry, FTAS, IICT </li>
+<li>Dr. B. Mahipal Reddy, FTAS, IICT</li>
+<li>Prof. A. Rramachandraiah, FTAS, RAA, NITW</li> 
+<li>Ms. Madhavi, I/C Secretary, TAS, Hyderabad</li>
+
                 </ul>
                 </div>
             </div>
         </div>
         <br>  
         <hr>
-        <div class="row">
+
+        <!-- row -->
+            <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Local Organising Committee</span></h2></center><br>
+            </div>
+
+            <div class="col-md-12">
+                    <center>
+                        <h4><b>Chairman</b></h4>
+                        <p style="font-size:17px;">Prof. K V Jayakumar<br> Dean, IRAA and Coordinator <br>
+                           GIAN, NITW</p>
+                    </center>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Vice Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. A. Ramachandraiah, FTAS<br>Member, Board of Governers<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Vice Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. CSRK Prasad<br>Organising Secretary<br>
+                        Diamond Jubilee Celebrations, NITW
+                       </p>
+                    </center>
+                </div>
+               <div class="col-md-3">
+                    <center>
+                    <h4><b>Organising Secretary</b></h4>
+                    <p style="font-size:17px;">Dr. Y. Purushotham<br>
+                        Hon. Treasurer
+                        <br>TAS, Hyderabad</p>
+                    </center>               
+                </div>
+               <div class="col-md-3">
+                    <center>
+                    <h4><b>Organising Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. K. Laxma Reddy<br>
+                        District Coordinator, TAS Warangal
+                        <br>Professor, Department of Chemistry, NIT Warangal</p>
+                    </center>               
+                </div>
+                <br>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Joint Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. Shirish Sonawane, FTAS<br>Chemical Engineering<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Joint Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. P. Rathish Kumar<br>Civil Engineering<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Joint Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. L. Anjaneyulu<br>Electronics & Communications Engineering<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                    <h4><b>Joint Secretary</b></h4>
+                    <p style="font-size:17px;">Prof. N. Narasaiah<br>Metullurgical & Materials Engineering<br>
+                        National Institute of Technology, Warangal
+                       </p>
+                    </center>
+                </div>
+                
+            </div>
+                <!-- <div class="col-md-3"></div> -->
+                
+        </div>
+
+      
+      <div class="row">
+            <div class="col-md-12">
+                 <center><h4><b>Members</b></h4></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+<li>Prof. Y. Pydisetty, Dean, AA, NITW </li>
+<li>Prof. DVSS Siva Sarma, Dean, FW, NITW</li>
+<li>Pr Prof. P. Anand Raj, Dean, P & D, NITW </li>
+<li>Prof. LRG Reddy, Dean, SW, NITW</li>
+<li>Prof. G. Rajesh Kumar, Dean, R& C, NITW </li>
+<li>Sri. S. Goverdhan Rao. Registrar, NITW</li>
+<li>Prof. M. Chandrasekhar, Head, Civil Engg, NITW </li>
+<li>Prof. T. Somasekhar, Head, EEE, NITW</li>
+<li>Prof. P. Bangaru Babu, Head, MED, NITW </li>
+<li>Prof. N. Bheema Rao, Head, ECE, NITW</li>
+<li>Dr. C. Vanitha, Head, MME, NITW </li>
+<li>Prof. A. Sarath Babu, Head, Chemical, NITW</li>
+<li>Prof. R. B. V. Subramanyam, Head, CSE, NITW </li>
+<li>Dr Onkar Perumal, Head, Biotechnology, NITW</li>
+<li>Prof. D. Srinivasa Charya, Head, Mathametics, NITW</li> 
+<li>Prof. KVG Reddy, Head, Physics, NITW</li>
+<li>Prof. PV Srilakshmi, Head, Chemistry, NITW </li>
+<li>Dr. M. Raja Viswanathan, Head, HSS, NITW.</li>
+<li>Dr. Ramalal, Head, SOM, NITW </li>
+<li>Prof. L. Krishnanand, Coordinator, TEQIP, NITW</li>
+<li>Prof. T. Kishore Kumar, Head, CC, NITW </li>
+<li>Prof. A. Venu Vinod, Chief Warden, NITW</li>
+<li>Prof. K. Neelakanteshwara Rao, Chairman, EWC, NITW </li>
+<li>Prof. D. M. Vinod Kumar, Chairman, Library, NITW</li>
+<li>Dr. S. Venkateswara Rao, I/C Civil, PE Office, NITW </li>
+<li>Prof. S. SriHari, FTAS, KUC</li>
+<li>Prof. S. Jagannadha Swamy, FTAS, KUC</li> 
+<li>Prof. M. Komal Reddy, FTAS, SU</li>
+<li>Prof. B. V. Appa Rao, NITW, FTAS</li>
+
+
+                </ul>
+                </div>
+            </div>
+        </div>
+        <br>  
+        <hr>
+       
+       <div class="row">
+       <!--
         <div class="col-md-12">
                 <center><h2><span class="label label-success">Partner Organizations</span></h2></center>
             <br>
@@ -799,7 +1004,7 @@ Souvenir + 1 Delegate Free</td>
       </BR>
             <div class="row">
                <div class="row" style="font-size:15px;">
-                <!-- <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
                 <div class="col-md-8">
                 <ul>
                             <li>All India Council for Technical Education</li>
@@ -807,7 +1012,7 @@ Souvenir + 1 Delegate Free</td>
                             <li>Telangana State Council for Higher Education</li>
                             <li>Andhra Pradesh State Council for Higher Education</li>
                       </ul>
-                </div> -->
+                </div>
                 <center><h3> <span class="label label-primary">All India Council for Technical Education (AICTE)</h3></span>
                 <img src="{% static 'docs_ewcti/1.png'%}" width="130px" height="30%"></center>
                 <P style="text-align:justify;">All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level apex advisory body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner. And to ensure the same, as stipulated in the National Policy of Education (1986), AICTE was vested with: <b>More details at: https://www.aicte-india.org/</b></P>
@@ -852,7 +1057,9 @@ Souvenir + 1 Delegate Free</td>
                 </p>
 
             </div>
-            </div>
+            </div>-->
+
+            
             </div>
         </div>
         <br>
@@ -875,7 +1082,7 @@ Souvenir + 1 Delegate Free</td>
                     <div class="col-sm-9" align="left">
                     <br>
                         Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
-                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <span class="right"> Designed and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
                         <br><br>
                         <div class="row">
                             <div class="col-sm-4">
@@ -886,17 +1093,18 @@ Souvenir + 1 Delegate Free</td>
 
                                 <br><br>
 
-                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>tssc-2018@nitw.ac.in<br>
                                 
                             </div>
                             <div class="col-sm-4">
                                 <h4><b>Contact:</b></h4>
-                                <b>Prof. CSRK Prasad<br>
-                                    Organising Secretary, EWCTI2018<br>
+                                <b>Prof. K. Laxma Reddy<br>
+                                    Organising Secretary, TSSC-2018<br>
+                                    Department of Chemistry<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
-                                <b>Phone : </b> +91-9440347348  <br>
+                                <b>Email : </b> tssc-2018@nitw.ac.in   <br>
+                                <b>Phone : </b> +91-08702462663  <br>
                             </div>
                            
                         </div>

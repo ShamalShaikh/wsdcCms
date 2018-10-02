@@ -3,15 +3,16 @@
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">{{regusercount}}</div></a>
 
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/5">Approved DD's <br><br> (Paid Users)<div class="ui teal left pointing label">{{paidusers}}</div></a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/5">Verified Users<div class="ui teal left pointing label">{{paidusers}}</div></a>
 
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">DD's to be Approved<div class="ui teal left pointing label">{{ddcount}}</div></a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">Un-verified Users<div class="ui teal left pointing label">{{ddcount}}</div></a>
+		
+		{% ifequal conference.alias 'fccm2018' %}
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
 
-		{% ifequal conference.alias 'fccm2018' %}
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/6">MetallographyContest<div class="ui teal left pointing label">{{contestantCount}}</div></a>
 		{% endifequal %}
 

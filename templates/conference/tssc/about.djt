@@ -98,9 +98,32 @@
 	<!-- Page Content -->
 	<div class="container">
 
+  <div class="row">
+      <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <br><h2><center><span class="label label-success">About the Telangana Academy of Sciences</span></center></h2><br>
+        <p style="color:black; text-align:justify;">
+          Consequent to A.P. reorganization Act: 2014, the Andhra Pradesh Akademi of Sciences established in the year 1963, is also bifurcated into Telangana Academy of Sciences (TAS) & Andhra Pradesh Akademi of Sciences (APAS). Accordingly, the new Telangana Academy of Sciences came into existence in place of APAS from 30th April, 2015. The registered office of Telangana Academy of Sciences is located in Osmania University (OU) Qtr. No: L-68, besides International Hostel, Tarnaka, Hyderabad - 500017.
+        </p>
+        <p style="color:black; text-align:justify;">
+          The aims and objectives of the Academy are mainly advancement of Science and Technology by providing a forum for discussing scientific developments, propagating scientific knowledge among the people and publication of books & journals on science. In addition to this, the other objectives include securing and managing funds, endowment for the promotion of science, providing opportunity to interact with eminent scientists of national and international repute, discussing on matters of common scientific interest to motivate youngsters towards basic research with interdisciplinary approach and recreate interest to enrich the capabilities of the research scholars of Telangana for the development of the state.
+
+
+        </p>
+        <p style="color:black; text-align:justify;">
+          For the last 53 years, the activities of the Academy have added immense value to the scientific community and could successfully sensitize the general public. The Academy in a bid to reach wider community and extend its activities, it has established Five Regional Centres at Nizamabad, Karimnagar, Hyderabad, Nalgonda and Warangal, covering all the districts of Telangana State. These Regional centers are actively engaged in realizing the Academy’s goals.
+        </p>
+        <p style="color:black; text-align:justify;">
+          
+The Academy, has an established tradition of electing Fellows annually in recognition of the contributions made by them to the scientific excellence and propagation. The election of the Fellows is by nomination by the Fellows of the Academy. The elected Fellows represent a cross section of Academicians, Professionals, Scientists and Industrialists who have made significant contributions. TAS has several Fellows from different parts of the country. The TAS also promotes Scientific activities for children, encourages young scientists inventions, investigations and research in pursuit of excellence in the fields of Science and Technology. Its activities also include organizing lectures, seminars, symposia, popular exhibitions and programs on overall perception of science and societyConsequent to A.P. reorganization Act: 2014, the Andhra Pradesh Akademi of Sciences established in the year 1963, is also bifurcated into Telangana Academy of Sciences (TAS) & Andhra Pradesh Akademi of Sciences (APAS). Accordingly, the new Telangana Academy of Sciences came into existence in place of APAS from 30th April, 2015. The registered office of Telangana Academy of Sciences is located in Osmania University (OU) Qtr. No: L-68, besides International Hostel, Tarnaka, Hyderabad - 500017.
+
+        </p>
+                
+              </div>
+           </div>
+
 		<div class="row">
 			<div class="col-md-12" style="line-height:30px;font-size:17px;">
-				<br><h2><center><span class="label label-success">About Institute</span></center></h2><br>
+				<br><h2><center><span class="label label-success">About NIT Warangal</span></center></h2><br>
 				<p style="color:black; text-align:justify;">
 					The National Institute of Technology (NIT), Warangal is the first in the chain of 31 NITs, Institutes of National Importance established by Act of Parliament. Late Pandit Jawaharlal Nehru laid the foundation stone for this institute on October 10, 1959.
 				</p>
@@ -127,9 +150,11 @@
 					“Evolution of World Class Technical Institutions
 					– Issues & Concerns” during October 10-12, 2018.
 				</p>
-                <!-- p style="color:black; text-align:justify;">
-                    Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 km away) and by Road (NH 163). Warangal is renowned for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is a hub of tourist attractions with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake located within a radius of 80 km.
-                 </p> -->
+                <p style="color:black; text-align:justify;">
+                    
+A year-long Diamond Jubilee Celebrations are planned with the kick start of a grand Inaugural Function on 8th October with none other than the Honorable, the Vice President of India, Sri M. Venkaiah Naidu as the Chief Guest starting with a Curtain Raiser event, The National Conference on “Evolution of World Class Technical Institutions – Issues and Concerns” during 10th-12th October, 2018.
+
+                 </p>
               </div>
            </div>
            <div class="row">
@@ -168,7 +193,7 @@
 
 
 
-           <!-- historical plaes in warangal  start-->
+           <!-- historical places in warangal  start-->
            <div class="row">
            	<div class="col-md-12" style="line-height:30px;font-size:17px;">
            		<br><h2><center><span class="label label-success">Historical Places Near Warangal</span></center></h2><br>

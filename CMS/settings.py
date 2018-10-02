@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+print "Hello: " + BASE_DIR
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -23,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k0^zs=bb=l-sw2avt$yt&fdo3t#1l6u)^e+ftpw*7+01pcqv69'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -134,10 +136,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ('./static',)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'protected/')
 
 # SENDFILE_BACKEND = 'sendfile.backends.development'
 SENDFILE_BACKEND = 'sendfile.backends.xsendfile'
 #SENDFILE_BACKEND = 'sendfile.backends.nginx'
-SENDFILE_ROOT = os.path.join(BASE_DIR, 'protected')
-SENDFILE_URL = '/protected'
+SENDFILE_ROOT = os.path.join(BASE_DIR, 'protected/')
+SENDFILE_URL = '/protected/'

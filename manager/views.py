@@ -415,6 +415,7 @@ def export_xls(request, cid):
 		# localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
 		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
+		payment = ""
 		if reg_conf.user.profile.mail_sent_register:
 			payment = "NOT PAID"
 		if reg_conf.user.profile.mail_sent_reject:
