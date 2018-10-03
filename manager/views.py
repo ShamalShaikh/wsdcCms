@@ -485,12 +485,15 @@ def sendmail(request,cid,type) :
 	profile = UserProfile.objects.get(pk=request.POST['user'])
 	receiver = profile.user.email
 	print "HELLLO....."+request.POST['user'] + receiver
-	sender = 'conference@.nitw.ac.in'
-	mail_Action = request.POST.get('mail_action',0)
-
+	sender = 'conference@nitw.ac.in'	
+	mail_Action = request.POST.get('mail_action',0) 
+	subject = ''
+	content = ''
+	print sender
+	print type
 	if type == '1':
 		subject = 'Application approved but payment pending'
-		content = "Hello " + profile.user.first_name + ",\n\n" 
+		content = "Dear " + profile.user.first_name + ",\n\n" 
 		content += "Your details have been reviewed and verified by us.\n\n"
 		content += "Please pay the registration fee to proceed further.\n\n"
 		content += "Thank you!"
@@ -498,22 +501,34 @@ def sendmail(request,cid,type) :
 	if type == '2':
 		if mail_Action == "approve":	
 			subject = 'Payment verified.Invitation to Conference EWCTI2018 '
-			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content = "Dear " + profile.user.first_name + ",\n\n" 
 			content += "Your payement has been successfully verified.\n\n"
 			content += "You are invited to the Conference on 10th October.\n\n"
+			content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
 			content += "Thank you!"
 
 		else:
 			subject = 'Payment verification Failed'
-			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content = "Dear " + profile.user.first_name + ",\n\n" 
 			content += "There was an issue in verifying your payment.\n"
 			content += "Issue: " + request.POST['remark'] + "\n\n"
 			content += "Please send the payment details again."
 
+	if type == '5':
+		subject = 'Payment verified.Invitation to Conference EWCTI2018 '
+		content = "Dear " + profile.user.first_name + ",\n\n" 
+		content += "Your payement has been successfully verified.\n\n"
+		content += "You are invited to the Conference on 10th October.\n\n"
+		content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
+		content += "Thank you!"
+
 	rlist = []
 	rlist.append(receiver)
+	print subject
+	print content
+	print rlist
 	try:
-		send_mail(subject,content,sender,rlist,fail_silently=False,)
+		send_mail(subject,content,sender,rlist,fail_silently=False)
 		print "tpe:"+type
 		if type == '1':
 			profile.mail_sent_register=True
