@@ -2,4 +2,4 @@
 *.pyc
 media/*
 protected/*
-CMS/database.py
+CMS/databases.py

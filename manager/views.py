@@ -423,12 +423,27 @@ def export_xls(request, cid):
 		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
 		payment = ""
-		if reg_conf.user.profile.mail_sent_register:
+
+		if Payment.objects.filter(conf_id=cid,user=reg_conf.user).exists():
+			user = Payment.objects.get(conf_id=cid,user=reg_conf.user)
+			if user.is_aprooved==True:
+				payment= "PAYMENT VERIFIED"
+			if user.is_aprooved==False and user.is_rejected==False:
+				payment = "VERIFICATION PENDING"
+			if user.is_rejected==True:
+				payment = "PAYMENT REJECTED"
+		
+		else:
 			payment = "NOT PAID"
-		if reg_conf.user.profile.mail_sent_reject:
-			payment = "PAYMENT REJECTED"
-		if reg_conf.user.profile.mail_sent_accept:
-			payment = "PAYMENT ACCEPTED"
+
+
+
+		# if reg_conf.user.profile.mail_sent_register:
+		# 	payment = "NOT PAID"
+		# if reg_conf.user.profile.mail_sent_reject:
+		# 	payment = "PAYMENT REJECTED"
+		# if reg_conf.user.profile.mail_sent_accept:
+		# 	payment = "PAYMENT ACCEPTED"
 
 		dataRow = [nameOfPerson, gender, contact, email, institute, department,
 					confname, payment]
