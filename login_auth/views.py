@@ -10,17 +10,20 @@ from login_auth.models import *
 from sendfile import sendfile
 
 
-@login_required(login_url='/signin/mmse2018')
+@login_required(login_url='/signin/')
 def dddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
 	if not request.user.is_superuser and request.user != p.user:
+		print "1"
 		return HttpResponseForbidden('Sorry, you cannot access this file')
+	print p.pic_of_dd.path
 	return sendfile(request, p.pic_of_dd.path)
 
 @login_required(login_url='/signin/mmse2018')
 def iddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
 	if not request.user.is_superuser and request.user != p.user:
+		print "2"
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, p.pic_of_id.path)
 
@@ -28,6 +31,7 @@ def iddownload(request, payment_id):
 def rejectedpaymentdownload(request, rej_payment_id):
 	p = Rejected_payment.objects.get(id=rej_payment_id)
 	if not request.user.is_superuser and request.user != p.user:
+		print "3"
 		return HttpResponseForbidden('Sorry, you cannot access this file')
 	return sendfile(request, p.pic_of_dd.path)
 

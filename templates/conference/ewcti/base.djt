@@ -161,7 +161,7 @@
 
         </footer>
 
-         <div id="statusModal" class="modal fade" role="dialog">
+  <div id="statusModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->

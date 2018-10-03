@@ -12,7 +12,7 @@
 	              <input name="dd_file" type="file" id="dd_file" class="ui button blue">
 	        </div>
 	        <div class="field">
-	              <label>Upload id proof</label>
+	              <label>Upload id proof picture</label>
 	        </div>
 	        <div class="field">
 	              <input name="id_file" type="file" id="id_file" class="ui button blue">

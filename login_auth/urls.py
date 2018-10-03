@@ -3,11 +3,17 @@ from django.views.generic import RedirectView
 from . import views
 
 urlpatterns = [
+    #CMFD-2019
 	url(r'^$',RedirectView.as_view(url='/conference/cmfdp2019/')),
 	url(r'^cmfdp/$',RedirectView.as_view(url='/conference/cmfdp2019/')),
 	url(r'^cmfdp2019/$',RedirectView.as_view(url='/conference/cmfdp2019/')),
+	#ewcti2018
 	url(r'^ewcti/$',RedirectView.as_view(url='/conference/ewcti2018/')),
 	url(r'^ewcti2018/$',RedirectView.as_view(url='/conference/ewcti2018/')),
+	#TSSC-2018
+	url(r'^tssc/$',RedirectView.as_view(url='/conference/tssc-2018/')),
+	url(r'^tssc2018/$',RedirectView.as_view(url='/conference/tssc-2018/')),
+
 	# url(r'^fccm/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	# url(r'^fccm2018/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	# url(r'^mmse/$',RedirectView.as_view(url='/conference/mmse2018/')),
