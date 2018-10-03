@@ -339,12 +339,12 @@ def export_xls(request, cid):
 
 	columns = [
 	    (u"User", 6000),
-	    (u"Gender",6000),
+	    (u"Gender",3000),
 	    (u"Contact",6000),
 	    (u"Email",6000),
 	    (u"Institute",10000),
 	    (u"Department",6000),
-	    (u"Conference", 20000),
+	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
 	]
 
