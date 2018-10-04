@@ -34,6 +34,7 @@ class Payment(models.Model):
 	payment_mode = models.CharField(max_length=20,choices=payment_choice)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
 	pic_of_id = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
+	refno = models.CharField(max_length=20,null=False,default='NA')
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	remarks = models.CharField(max_length=50,null=True,blank=True)
@@ -106,6 +107,7 @@ class Rejected_payment(models.Model):
 	conf_id = models.ForeignKey(Conference)
 	user = models.ForeignKey(User)
 	pic_of_dd = models.ImageField(upload_to=get_dd_path,null=True,blank=True,storage=sendfile_storage)
+	refno = models.CharField(max_length=20,null=False,default='NA')
 	date = models.DateField()
 	remarks = models.CharField(max_length=50,null=True,blank=True)
 

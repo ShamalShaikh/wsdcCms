@@ -242,6 +242,7 @@ def disapproval(request):
 		rejected_payment.conf_id = payment.conf_id
 		rejected_payment.user = payment.user
 		rejected_payment.pic_of_dd = payment.pic_of_dd
+		rejected_payment.refno = payment.regno
 		rejected_payment.date = now.strftime("%Y-%m-%d")
 		rejected_payment.remarks = payment.remarks
 		rejected_payment.save()
@@ -346,6 +347,7 @@ def export_xls(request, cid):
 	    (u"Department",6000),
 	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
+		(u"Reference Number", 9000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -423,18 +425,23 @@ def export_xls(request, cid):
 		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
 		payment = ""
+		refno = ''
 
 		if Payment.objects.filter(conf_id=cid,user=reg_conf.user).exists():
 			user = Payment.objects.get(conf_id=cid,user=reg_conf.user)
 			if user.is_aprooved==True:
 				payment= "PAYMENT VERIFIED"
+				refno = user.refno
 			if user.is_aprooved==False and user.is_rejected==False:
 				payment = "VERIFICATION PENDING"
+				refno = user.refno
 			if user.is_rejected==True:
 				payment = "PAYMENT REJECTED"
+				refno = user.refno
 		
 		else:
 			payment = "NOT PAID"
+			refno = "NA"
 
 
 
@@ -446,7 +453,7 @@ def export_xls(request, cid):
 		# 	payment = "PAYMENT ACCEPTED"
 
 		dataRow = [nameOfPerson, gender, contact, email, institute, department,
-					confname, payment]
+					confname, payment,refno]
 
 		# index = 8
 		# finalavg = 0.0
@@ -499,10 +506,6 @@ def paper_remark(request, paper_id):
 
 	return redirect('/manager/assignreviewer/' + paper_id +"/")
 
-
-import smtplib
-import socks
-
 def sendmail(request,cid,type) :
 	profile = UserProfile.objects.get(pk=request.POST['user'])
 	receiver = profile.user.email
@@ -550,7 +553,9 @@ def sendmail(request,cid,type) :
 	print content
 	print rlist
 	try:
-		send_mail(subject,content,sender,rlist,fail_silently=False)
+		# send_mail(subject,content,sender,rlist,fail_silently=False)
+		mail = EmailMultiAlternatives(subject, content, sender, rlist)
+		mail.send()
 		print "tpe:"+type
 		if type == '1':
 			profile.mail_sent_register=True
