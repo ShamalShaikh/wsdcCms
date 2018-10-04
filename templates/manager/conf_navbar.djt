@@ -136,7 +136,8 @@
           <th>Name</th>
           <th>Institute</th>
           <th>Department</th>
-          <th>view DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Contact</th>
           <th>Email</th>
           <th>Send Invitation Mail</th>
@@ -148,7 +149,8 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a></td>
+            <td>{{paidtran.refno}}</td>
             <td>{{paidtran.user.profile.contact}}</td>
             <td>{{paidtran.user.email}}</td>
             <td>
@@ -185,7 +187,8 @@
         <thead>
           <tr>
           <th>Name</th>
-          <th>view DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Approve</th>
           <th>Disapprove</th>
           </tr>
@@ -195,7 +198,8 @@
           {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
+            <td>{{pendingdd.refno}}</td>
             <td><center>
                 <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
                   {% csrf_token %}
@@ -230,7 +234,8 @@
           <tr>
           <th>Name</th>
           <th>Date</th>
-          <th>View DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Issue</th>
           <th>Email</th>
           <th>Send Re-payment Mail</th>
@@ -241,7 +246,8 @@
           <tr>
             <td>{{rejected_dd.user.username}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
-            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show receipt</a></td>
+            <td>{{rejected_dd.refno}}</td>
             <td>{{rejected_dd.remarks}}</td>
             <td>{{rejected_dd.user.email}}</td>
             <td>
