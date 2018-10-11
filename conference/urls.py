@@ -31,11 +31,11 @@ urlpatterns = [
 	url(r'^ewcti2018/hotels/$',views.ewctihotels),
 	url(r'^ewcti2018/apply$$',views.ewctiapply),
 	url(r'^ewcti2018/profiles/$',views.ewctiprofiles),
-    #TSSC-2018
-	url(r'^tssc-2018/$',views.tssc),
-	url(r'^tssc-2018/about/$',views.tsscabout),
-	url(r'^tssc-2018/links/$',views.tssclinks),
-	url(r'^tssc-2018/hotels/$',views.tsschotels),
+    #tssc2018
+	url(r'^tssc2018/$',views.tssc),
+	url(r'^tssc2018/about/$',views.tsscabout),
+	url(r'^tssc2018/links/$',views.tssclinks),
+	url(r'^tssc2018/hotels/$',views.tsschotels),
 
 
 	# url(r'^metallography_contest/$',views.metallography_contest),

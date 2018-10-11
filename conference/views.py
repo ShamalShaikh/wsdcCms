@@ -818,7 +818,7 @@ def ewctiprofiles(request):
 	return render(request, 'conference/ewcti/profiles.djt',response)
 
 
-#TSSC-2018
+#tssc2018
 #ewcti
 def tssc(request):
 	conference = Conference.objects.get(conference_alias='tssc2018')

@@ -266,6 +266,17 @@ Accord</li>
         </div>
         </div>
         <hr>-->
+         <div class="row">
+                <div class="col-md-6">
+                    <h3><center>Abstract Submission:</center></h3>
+                    <p>Abstracts of Scientific/Technical papers not exceeding 500 words are to be submitted online (http://cms.nitw.ac.in/TSSC-2018 ) on or<b> before 10th November, 2018. Please Indicate the theme of the session on top right of the abstract page to be considered for review.</b></p>
+                </div>
+                <div class="col-md-6">
+                    <h3><center>Acceptance of Abstracts:</center></h3>
+                    <p>Abstracts of Scientific/Technical papers accepted for presentation at the congress will be communicated to the corresponding author on or <b>before 15th November, 2018,</b> after being recommended by the Sectional Committees.</p>
+                </div>
+            </div>
+            <hr>
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Who Can Participate?</span></center></h2><br>
@@ -273,6 +284,7 @@ Accord</li>
 </p>
                                
             </div>
+            <!--change made-->
             <!-- /.col-md-6 -->
             <div class="col-md-6" id="dates">
                 <h2><center><span class="label label-primary">Important Deadlines</span></center></h2><br>
@@ -287,7 +299,7 @@ Accord</li>
                     </tr>
                     <tr class="active">
                         <td>Payment of Regsitration Fee</td>
-                        <td>20th Sep, 2018</td>
+                        <td>20th Nov, 2018</td>
                     </tr>
                 </table>
                 <br>
@@ -335,15 +347,15 @@ Accord</li>
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Account Name</td>
-                        <td>EWCTI 2018 SBI, NITW</td>
+                        <td>xxxx</td>
                     </tr>
                     <tr class="active">
                         <td>Account No</td>
-                        <td>37908248756</td>
+                        <td>xxxx</td>
                     </tr> 
                     <tr class="active">
                         <td>Bank and Branch</td>
-                        <td>State Bank of India, REC Warangal (NIT Campus)</td>
+                        <td>State Bank of India, NIT Warangal (NIT Campus)</td>
                     </tr>
                     
                     <tr class="active">
@@ -398,6 +410,37 @@ Private funded organizations<br>
                         <td>Half page Black and White advertisment in Souvenir</td>
                     </tr>
                 </table>
+                <!--change made-->
+                
+                    <h2><center><span class="label label-primary">S & T Exhibition Tarrif</center></span></h2><br>
+                <p>Equipment manufacturers, suppliers, service providers, Educational Institutions, Industries can participate in the exhibition. Standard stall space (6’ X 9’) along with power supply are provided for display by paying Rs. 50,000 per each stall for 3 days. Two free registrations will be provided for each exhibitor. For any specific facility/requirement, the exhibitors may contact the Organizing Secretary well in advance.</p>
+                <b>Advertisement Tariff for the Souvenir</b>
+                <br><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Back Page Cover (Multi Color)</td>
+                        <td>Rs. 40,000/-</td>
+                    </tr>
+                    <tr class="">
+                        <td>Front Inner (Multi Color)</td>
+                        <td>Rs. 30,000/-</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Back Inner (Multi Color)</td>
+                        <td>Rs. 20,000/-</td>
+                    </tr>
+                    <tr class="">
+                        <td>Inner Page (Multi Color)</td>
+                        <td>Rs. 10,000/-</td>
+                    </tr>
+                     <tr class="active">
+                        <td>Inner Half Page (Color)</td>
+                        <td>Rs. 5,000/-</td>
+                    </tr>
+                </table>
+             
+                <!--end-->
+
             </div>
         </div>
         <hr>
@@ -861,15 +904,24 @@ Private funded organizations<br>
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Local Organising Committee</span></h2></center><br>
             </div>
-
-            <div class="col-md-12">
+            <!--changes made-->
+            <div class="row">
+            <div class="col-md-6">
                     <center>
                         <h4><b>Chairman</b></h4>
                         <p style="font-size:17px;">Prof. K V Jayakumar<br> Dean, IRAA and Coordinator <br>
                            GIAN, NITW</p>
                     </center>
             </div>
-
+             <div class="col-md-6">
+                    <center>
+                        <h4><b>Treasurer</b></h4>
+                        <p style="font-size:17px;">Dr. R. Sathish Babu<br> AFTAS, Department of Biotechnology<br>
+                           NITW</p>
+                    </center>
+            </div>
+            </div>
+            <!--end-->
             <div class="row">
 
                 <div class="col-md-3">
@@ -993,7 +1045,192 @@ Private funded organizations<br>
         </div>
         <br>  
         <hr>
-       
+        <div class="row">
+            <div class="col-md-12">
+                <center>
+                <h2><span class="label label-success">Telangana State Science Congress - 2018</span></h2><br>
+               
+                <table class="table table-hover">
+                    <tr>
+                        <th>Theme Sessions</th>
+                        <th>Sectional Presidents</th>
+                        <th>Sectional Secretaries</th>
+                    </tr>
+                    <tr class="active">
+                        <td>Mathematical Science</td>
+                        <td>Prof. P. Malla Reddy, KUC, Warangal</td>
+                        <td>Prof. KNS Kasi Viswanadham, NITW<br>
+                            Prof. J. V. Ramanamurthy, NITW<br>
+                            Dr. L. Raj Kumar, KUC
+                         </td>
+                    </tr>
+                    <tr class="">
+                        <td>Physical Sciences,  Materials Sciences & Engg.</td>
+                        <td>Prof. RLN Sai Prasad, NITW</td>
+                        <td>Dr. Vishnu Shanker, NITW<br>
+                            Dr. G. Raghavendra, NITW<br>
+                            Dr. Paul Joseph, NITW
+                         </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Engineering, Technology, Energy and Natural Resources</td>
+                        <td>Prof. M. Sydulu, NITW</td>
+                        <td>
+                            Dr. A. Veeresh Babu, NITW<br>
+                            Dr. Asit Kumar Khanra, NITW<br>
+                            Dr. T. Tezaswi, NITW
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Information & Communication Technology</td>
+                        <td>Prof. DVLN Somayajulu,
+                            E&ICT Academy, NITW
+                        </td>
+                        <td>Prof. T. Kishore Kumar, NITW <br>
+                            Dr. P. Srihari Rao, NITW<br>
+                            Dr. S. Ravichandra, NITW
+                        </td>
+                    </tr>
+                     <tr class="active">
+                        <td>Chemical Sciences</td>
+                        <td> Prof. Ch. Sanjeeva Reddy, KUC</td>
+                        <td>
+                           Dr. D. Kashinath, NITW<br>
+                            Dr. B. Srinivas, NITW<br>
+                            Dr. S. Jyothi, KUC
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Life Sciences & Agricultural Sciences</td>
+                        <td>Prof. M. Singaracharya, KUC </td>
+                        <td>Dr. G. Shamita, KUC<br>
+                            Dr. M. Surekha, KUC <br>
+                            Dr. D. Ramaraj, NITW
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Medical, Health & Pharmaceutical Sciences</td>
+                        <td>Prof. G. Achaiah, KUC</td>
+                        <td>
+                           Dr. P. Srinivasa Rao, NITW<br>
+                            Dr. Prakash Saudagar, NITW<br>
+                            Dr. Shayeda, KUC
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Earth, Ocean, Atmospheric & Environmental Sciences <br>and Disaster Management</td>
+                        <td>Prof. K.V. Jayakumar, NITW</td>
+                        <td>Dr. S. Srinath, NITW<br>
+                            Dr. T. Shasthree, KUC<br>
+                            Dr. P. Hariprasad Reddy, NITW
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="table table-hover">
+                    <tr>
+                        <th>Special Theme Sessions</th>
+                        <th>Sectional Presidents</th>
+                        <th>Sectional Secretaries</th>
+                    </tr>
+                    <tr class="active">
+                        <td>Smart Cities</td>
+                        <td>Prof. CSRK Prasad, NITW</td>
+                        <td>Dr. Venkaiah Chowdary, NITW<br>
+                            Dr. R. Mallikarjuna Reddy, KUC
+                         </td>
+                    </tr>
+                    <tr class="">
+                        <td>Renewable Energy Sources</td>
+                        <td>Prof. P. Anand Raj, NITW</td>
+                        <td>Dr. G. Nagasrinivasulu, NITW<br>
+                            Dr. V. Hari Kumar, NITW
+                         </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Science in the Service of Society</td>
+                        <td>Prof. A. Ramachandraiah, NITW</td>
+                        <td>
+                           Prof. D. Dinakar, NITW<br>
+                            Dr. C. P. Vardhani, OU<br>
+                            Dr. K. Madhavi Reddy, NITW
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Women Scientists Meet</td>
+                        <td>Prof.  M.Sailaja Kumari, NITW </td>
+                        <td>Dr. H. P. Rani, NITW<br>
+                            Dr. G. Brahmeswari, KUC<br>
+                            Dr. V. Venkatamani, NITW
+                        </td>
+                    </tr>
+                     <tr class="active">
+                        <td>Interaction of Students with Scientists</td>
+                        <td> Prof. L. Krishnanand, NITW</td>
+                        <td>
+                          Dr. A. Seshagiri Rao, NITW<br>
+                        Dr. Md. Musthafa, KUC
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Science Teachers Meet</td>
+                        <td>Prof. DVSS Siva Sarma, NITW</td>
+                        <td>Prof. K. Anand Kishore, NITW<br>
+                            Dr. M. Joseph Davidson, NITW
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table class="table table-hover">
+                    <tr>
+                        <th>Other Activities</th>
+                        <th>Coordinators</th>
+                    </tr>
+                    <tr class="active">
+                        <td>Distinguished Lectures</td>
+                        <td>Prof. Y. Pydisetty, NITW</td>
+                    </tr>
+                    <tr class="">
+                        <td>Panel Discussion</td>
+                        <td>Prof. LRG Reddy, NITW</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Young Scientist Meet</td>
+                        <td>Prof. G. Rajesh Kumar, NITW</td>
+                    </tr>
+                    <tr class="">
+                        <td>Poster Session</td>
+                        <td>Prof. V.  Krishna Reddy, KUC<br>
+                        Dr. T. Venatappa Rao, NITW<br>
+                        Dr. K. Hariprasad, NITW
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td>S &T  Expo</td>
+                        <td>Dr. Y. Venkaiah, KUC <br>
+                        Dr. P. Abdul Azeem, NITW<br>
+                        Dr. B. Divakar, NITW
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>Web Coordination</td>
+                        <td>Dr. B. Lakshmi, NITW<br>
+                        Dr. Rashmi Ranjan Rout, NITW <br>
+                        Dr T.  Ramakrishnudu , NITW
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Press & Publicity</td>
+                        <td>Dr. K. Kiran Kumar, PRO, NITW</td>
+                    </tr>
+                </table>
+                </center>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <h3><center><span class="label label-success">Accommodation</span></center></h3>
+        <p>Limited accommodation is available in the NIT Guest House, Visitors block and Students Hostels. There are several <b><a href="/conference/{{conference.conference_alias}}/hotels">hotels</a></b> close to NIT campus, the details of which are available on the conference website. Contact for accommodation: Prof. N. Narasaiah, E-mail: nn@nitw.ac.in, Phone: 08332969384</p>
        <div class="row">
        <!--
         <div class="col-md-12">
