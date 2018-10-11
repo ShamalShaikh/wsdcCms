@@ -27,19 +27,132 @@
 	
 		{% else %}
 			<div class="alert alert-info">
-				Applied successfully. Pay the <a href="/conference/{{conference.conference_alias}}/#fee_div"><u>Registration Fee</u></a> and <a href="/conference/make_payment/{{conference.conference_alias}}"><u>Upload Payment Receipt</u></a>
+				You've already applied for the conference. Please wait for acceptance mail.
 			</div>
 		{% endif %}
 
 	{% else %}
 		<div class="alert alert-info">
-		  <strong>Info!</strong> <p>You have not applied for the conference. Please apply by clicking the button below.</p>
+		  <strong>You have not applied for the conference. Please apply by clicking the button below.</strong>
 		</div>
 		
 		<form style="margin-top:3%;" method="post" action="">
 			{% csrf_token %}
 			<input type="checkbox" name="applyConf" checked hidden>
-			<button type="submit" class="btn btn-info">Apply</button>
+			<div class="form-group">
+				    <label for="name" disabled>Name</label>
+				    <input type="text" class="form-control" id="name" name='name' placeholder="some@example.com" disabled>
+		  	</div>
+
+			<div class="form-group">
+				    <label for="email" disabled>Designation</label>
+				    <input type="text" class="form-control" id="email" name='email' placeholder="" disabled>
+		  	</div>
+
+
+			<div class="form-group">
+				    <label for="email" disabled>Affiliation</label>
+				    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+		  	</div>
+
+			<div class="form-group">
+				    <label for="email" disabled>Email address</label>
+				    <input type="email" class="form-control" id="email" name='email' placeholder="" disabled>
+		  	</div>
+
+		  	<div class="form-group">
+				    <label for="email" disabled>Mailing Address</label>
+				    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+		  	</div>
+
+		  	<div class="form-group row">
+
+		  	<div class="form-group col-md-3">
+				    <label for="email" disabled>Phone</label>
+				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+		  	</div>
+
+		  	<div class="form-group col-md-3">
+				    <label for="email" disabled>Fax</label>
+				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+		  	</div>
+
+		  	<div class="form-group col-md-3">
+				    <label for="email" disabled>Mobile</label>
+				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+		  	</div>
+
+		  </div>
+
+		  <div class="form-group">
+		    <label for="exampleFormControlSelect1">Example select</label>
+		    <select class="form-control" id="exampleFormControlSelect1">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlSelect2">Please select the sections applicable to the abstract being submitted</label>
+		    <select multiple class="form-control" id="exampleFormControlSelect2" name='sections[]'>
+		      <option>Mathematical Sciences</option>
+		      <option>Physical Sciences, Material Sciences &amp; Engg.</option>
+		      <option>Engineering, Technology, Energy and Natural Resources</option>
+		      <option>Information &amp; Communication Technology</option>
+		      <option>Chemical Sciences</option>
+		      <option>Life Sciences &amp; Agricultural Sciences</option>
+		      <option>Medical, Health &amp; Pharmaceutical SciencesEarth, Ocean, Atmospheric &amp; Environmental Sciences and Disaster Management</option>
+		      <option>Smart Cities</option>
+		      <option>Renewable Energy Sources</option>
+		    </select>
+		  </div>
+
+		  <strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
+			2000/- ; Scientists from R&amp;D/ National Labs : Rs 3000/- ; Industry participants : Rs 5000/-)</strong>
+
+			<br/>
+			<br/>
+
+			<div class="row">
+		  	<div class="form-group col-md-3">
+				    <label for="title" disabled>Title of Paper</label>
+				    <input type="text" class="form-control" id="title" name='title' placeholder="" >
+		  	</div>
+
+		  	<div class="form-group col-md-3">
+				    <label for="abstract" disabled>Attach Abstract (PDF)</label>
+				    <input type="file" class="form-control" id="abstract" name='abstract' placeholder="" >
+		  	</div>
+		  	</div>
+
+		  	<strong style='font-size:1.2em'> Payment Details</strong>
+
+		  	<div class="row">
+		  		<br/>
+			  	<div class="form-group col-md-3">
+					    <label for="email" disabled>NEFT/ UTR No./ Draft No.</label>
+					    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+			  	</div>
+			  	<div class="form-group col-md-3">
+					    <label for="email" disabled>Bank/Branch</label>
+					    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+			  	</div>
+			  	<div class="form-group col-md-3">
+					    <label for="email" disabled>Amount</label>
+					    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+			  	</div>
+		  	</div>
+
+		  	<div class="form-group">
+				    <label for="abstract" disabled>Attach scanned copy of DD/ NEFT transfer (pdf format only)</label>
+				    <input type="file" class="form-control" id="abstract" name='paymentFile' placeholder="" >
+		  	</div>
+
+		  	<strong>The original DDs are to be submitted at the help desk on the day of conference.</strong>
+		  	<br/><br/>
+			<center><button type="submit" class="btn btn-info">Apply</button></center>
 		</form>
 	{% endif %}
 	</div>
