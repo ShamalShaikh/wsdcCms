@@ -91,6 +91,7 @@ def payment(request,alias):
 		# validation
 		dd_pic = request.FILES['dd_file']
 		id_pic = request.FILES['id_file']
+		refno = request.POST['refno']
 		user = request.user
 		conf_id = Conference.objects.get(conference_alias=alias)
 		amount = 0
@@ -101,6 +102,7 @@ def payment(request,alias):
 		if len(previousPayment)==1:
 			previousPayment[0].pic_of_dd = dd_pic
 			previousPayment[0].pic_of_id = id_pic
+			previousPayment[0].refno = refno
 			previousPayment[0].is_rejected = False
 			previousPayment[0].remarks = ""
 			previousPayment[0].date = now.strftime("%Y-%m-%d")
@@ -112,6 +114,7 @@ def payment(request,alias):
 			pay.conf_id = conf_id
 			pay.pic_of_dd = dd_pic
 			pay.pic_of_id = id_pic
+			pay.refno = refno
 			pay.is_approved = False
 			pay.payment_mode = 'dd'
 			pay.date = now.strftime("%Y-%m-%d")

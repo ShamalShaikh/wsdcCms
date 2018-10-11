@@ -42,6 +42,15 @@
   <script src="{% static 'main/components/dropdown.js' %}"></script>
    <script src="{% static 'main/components/accordion.js' %}"></script>
    <script src="{% static 'main/semantic.min.js' %}"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/dataTables.semanticui.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css">
 </head>
 <body>
 <div class="ui inverted stackable menu" style="background: black; height:50px;">

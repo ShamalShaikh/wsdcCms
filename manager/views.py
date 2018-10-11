@@ -116,14 +116,20 @@ def conference_landing(request,cid,type):
 	papers = []
 	final_papers = []
 	rejected_dds = []
+	unpaid_users = []
 	for regconf in regconfs:
 		user = regconf.user
 		users.append(UserProfile.objects.get(user=user))
 		try:
+			payment = Payment.objects.get(user=user,conf_id=conference)
+		except:
+			unpaid_users.append(UserProfile.objects.get(user=user))
+			print "Payment not done"
+		try:
 			payment = Payment.objects.get(user=user,conf_id=conference,is_aprooved=True)
 			paidtrans.append(payment)
 		except:
-			print "Payment not done"
+			print "Payment not approved"
 	paper_conf = Conf_Paper.objects.filter(conf_id=cid)
 	for paper in paper_conf:
 		papers.append(paper)
@@ -149,6 +155,7 @@ def conference_landing(request,cid,type):
 	response['regusercount']=len(users)
 	response['paidtrans']=paidtrans
 	response['paidusers'] = len(paidtrans)
+	response['unpaid_users'] = unpaid_users
 	response['papers']=papers
 	response['papercount']=len(papers)
 	response['pending_dds']=pending_dds
@@ -235,6 +242,7 @@ def disapproval(request):
 		rejected_payment.conf_id = payment.conf_id
 		rejected_payment.user = payment.user
 		rejected_payment.pic_of_dd = payment.pic_of_dd
+		rejected_payment.refno = payment.regno
 		rejected_payment.date = now.strftime("%Y-%m-%d")
 		rejected_payment.remarks = payment.remarks
 		rejected_payment.save()
@@ -332,13 +340,14 @@ def export_xls(request, cid):
 
 	columns = [
 	    (u"User", 6000),
-	    (u"Gender",6000),
+	    (u"Gender",3000),
 	    (u"Contact",6000),
 	    (u"Email",6000),
 	    (u"Institute",10000),
 	    (u"Department",6000),
-	    (u"Conference", 20000),
+	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
+		(u"Reference Number", 9000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -416,15 +425,35 @@ def export_xls(request, cid):
 		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
 		payment = ""
-		if reg_conf.user.profile.mail_sent_register:
+		refno = ''
+
+		if Payment.objects.filter(conf_id=cid,user=reg_conf.user).exists():
+			user = Payment.objects.get(conf_id=cid,user=reg_conf.user)
+			if user.is_aprooved==True:
+				payment= "PAYMENT VERIFIED"
+				refno = user.refno
+			if user.is_aprooved==False and user.is_rejected==False:
+				payment = "VERIFICATION PENDING"
+				refno = user.refno
+			if user.is_rejected==True:
+				payment = "PAYMENT REJECTED"
+				refno = user.refno
+		
+		else:
 			payment = "NOT PAID"
-		if reg_conf.user.profile.mail_sent_reject:
-			payment = "PAYMENT REJECTED"
-		if reg_conf.user.profile.mail_sent_accept:
-			payment = "PAYMENT ACCEPTED"
+			refno = "NA"
+
+
+
+		# if reg_conf.user.profile.mail_sent_register:
+		# 	payment = "NOT PAID"
+		# if reg_conf.user.profile.mail_sent_reject:
+		# 	payment = "PAYMENT REJECTED"
+		# if reg_conf.user.profile.mail_sent_accept:
+		# 	payment = "PAYMENT ACCEPTED"
 
 		dataRow = [nameOfPerson, gender, contact, email, institute, department,
-					confname, payment]
+					confname, payment,refno]
 
 		# index = 8
 		# finalavg = 0.0
@@ -477,20 +506,19 @@ def paper_remark(request, paper_id):
 
 	return redirect('/manager/assignreviewer/' + paper_id +"/")
 
-
-import smtplib
-import socks
-
 def sendmail(request,cid,type) :
 	profile = UserProfile.objects.get(pk=request.POST['user'])
 	receiver = profile.user.email
 	print "HELLLO....."+request.POST['user'] + receiver
-	sender = 'conference@.nitw.ac.in'
-	mail_Action = request.POST.get('mail_action',0)
-
+	sender = 'conference@nitw.ac.in'	
+	mail_Action = request.POST.get('mail_action',0) 
+	subject = ''
+	content = ''
+	print sender
+	print type
 	if type == '1':
 		subject = 'Application approved but payment pending'
-		content = "Hello " + profile.user.first_name + ",\n\n" 
+		content = "Dear " + profile.user.first_name + ",\n\n" 
 		content += "Your details have been reviewed and verified by us.\n\n"
 		content += "Please pay the registration fee to proceed further.\n\n"
 		content += "Thank you!"
@@ -498,22 +526,36 @@ def sendmail(request,cid,type) :
 	if type == '2':
 		if mail_Action == "approve":	
 			subject = 'Payment verified.Invitation to Conference EWCTI2018 '
-			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content = "Dear " + profile.user.first_name + ",\n\n" 
 			content += "Your payement has been successfully verified.\n\n"
 			content += "You are invited to the Conference on 10th October.\n\n"
+			content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
 			content += "Thank you!"
 
 		else:
 			subject = 'Payment verification Failed'
-			content = "Hello " + profile.user.first_name + ",\n\n" 
+			content = "Dear " + profile.user.first_name + ",\n\n" 
 			content += "There was an issue in verifying your payment.\n"
 			content += "Issue: " + request.POST['remark'] + "\n\n"
 			content += "Please send the payment details again."
 
+	if type == '5':
+		subject = 'Payment verified.Invitation to Conference EWCTI2018 '
+		content = "Dear " + profile.user.first_name + ",\n\n" 
+		content += "Your payement has been successfully verified.\n\n"
+		content += "You are invited to the Conference on 10th October.\n\n"
+		content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
+		content += "Thank you!"
+
 	rlist = []
 	rlist.append(receiver)
+	print subject
+	print content
+	print rlist
 	try:
-		send_mail(subject,content,sender,rlist,fail_silently=False,)
+		# send_mail(subject,content,sender,rlist,fail_silently=False)
+		mail = EmailMultiAlternatives(subject, content, sender, rlist)
+		mail.send()
 		print "tpe:"+type
 		if type == '1':
 			profile.mail_sent_register=True

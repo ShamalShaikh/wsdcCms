@@ -13,7 +13,6 @@
   {%include "manager/sidemenu.djt" %}
   <div class="thirteen wide column">
   {% ifequal type '1' %}
-    <br>
     <h2 class="ui header">
     <center>
         <div class="content">
@@ -21,55 +20,105 @@
         </div>
       </center>
       </h2>
-      <br>
-    {% if users %}
-    <!-- <div float="right">
-      <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
-    </div> -->
-    <table class="ui celled table">
-        <thead>
-          <tr>
-          <th>Name</th>
-          <th>Institute</th>
-          <th>Department</th>
-          <th>Contact</th>
-          <th>Email</th>
-          <th>Send Registration Mail</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for profile in users %}
-            <tr>
-            <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
-            <td>{{profile.institute}}</td>
-            <td>{{profile.department}}</td>
-            <td>{{profile.contact}}</td>
-            <td>{{profile.user.email}}</td>
-            
-            <td>
-                <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
-                  {% csrf_token %}
-                    <input type="hidden" name="user" value="{{profile.pk}}" />
-                    {% if not profile.mail_sent_register %}
-                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
-                    {% else %}
-                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
-                    {% endif %}
-                </form>
-            </td>
-            </tr>
-          {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-      <div class="ui segment">
-        <center><h3>No Registered Users !!!</h3></center>
+
+      <div class="ui two item menu">
+        <a class="item active" id="all">All Users</a>
+        <a class="item" id="unpaid">Registered but not paid</a>
       </div>
-    {% endif %}
+
+    <div id="allUsers">
+      {% if users %}
+      <!-- <div float="right">
+        <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
+      </div> -->
+      <table class="ui celled table" id="allTable">
+          <thead>
+            <tr>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Department</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Send Registration Mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for profile in users %}
+              <tr>
+              <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
+              <td>{{profile.institute}}</td>
+              <td>{{profile.department}}</td>
+              <td>{{profile.contact}}</td>
+              <td>{{profile.user.email}}</td>
+              
+              <td>
+                  <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
+                    {% csrf_token %}
+                      <input type="hidden" name="user" value="{{profile.pk}}" />
+                      {% if not profile.mail_sent_register %}
+                      <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                      {% else %}
+                      <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                      {% endif %}
+                  </form>
+              </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      {% else %}
+        <div class="ui segment">
+          <center><h3>No Registered Users !!!</h3></center>
+        </div>
+      {% endif %}
+    </div>
+
+    <div id="unpaidUsers">
+      {% if unpaid_users %}
+      <table class="ui celled table" id="unpaidTable">
+          <thead>
+            <tr>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Department</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Send Registration Mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for profile in unpaid_users %}
+              <tr>
+              <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
+              <td>{{profile.institute}}</td>
+              <td>{{profile.department}}</td>
+              <td>{{profile.contact}}</td>
+              <td>{{profile.user.email}}</td>
+              
+              <td>
+                  <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
+                    {% csrf_token %}
+                      <input type="hidden" name="user" value="{{profile.pk}}" />
+                      {% if not profile.mail_sent_register %}
+                      <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                      {% else %}
+                      <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                      {% endif %}
+                  </form>
+              </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      {% else %}
+        <div class="ui segment">
+          <center><h3>No Unpaid Users !!!</h3></center>
+        </div>
+      {% endif %}
+    </div>
   {% endifequal %}
 
   {% ifequal type '5' %}
-    <br>
     <h2 class="ui header">
       <center>
         <div class="content">
@@ -77,18 +126,18 @@
         </div>
       </center>
       </h2>
-      <br>
     {% if paidtrans %}
     <!-- <div float="right">
       <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
     </div> -->
-    <table class="ui celled table">
+    <table class="ui celled table" id="paidTable">
         <thead>
           <tr>
           <th>Name</th>
           <th>Institute</th>
           <th>Department</th>
-          <th>view DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Contact</th>
           <th>Email</th>
           <th>Send Invitation Mail</th>
@@ -100,7 +149,8 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a></td>
+            <td>{{paidtran.refno}}</td>
             <td>{{paidtran.user.profile.contact}}</td>
             <td>{{paidtran.user.email}}</td>
             <td>
@@ -125,7 +175,6 @@
     {% endif %}
 {% endifequal %}
 {% ifequal type '2' %}
-      <br>
       <h2 class="ui header">
       <center>
         <div class="content">
@@ -134,11 +183,12 @@
       </center>
       </h2>
       {% if pending_dds %}
-      <table class="ui celled table">
+      <table class="ui celled table" id="pendingTable">
         <thead>
           <tr>
           <th>Name</th>
-          <th>view DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Approve</th>
           <th>Disapprove</th>
           </tr>
@@ -148,7 +198,8 @@
           {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
+            <td>{{pendingdd.refno}}</td>
             <td><center>
                 <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
                   {% csrf_token %}
@@ -178,12 +229,13 @@
       </div>
     </center>
     </h2>
-      <table class="ui celled table">
+      <table class="ui celled table" id="rejectedTable">
         <thead>
           <tr>
           <th>Name</th>
           <th>Date</th>
-          <th>View DD</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
           <th>Issue</th>
           <th>Email</th>
           <th>Send Re-payment Mail</th>
@@ -194,7 +246,8 @@
           <tr>
             <td>{{rejected_dd.user.username}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
-            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show dd</a></td>
+            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show receipt</a></td>
+            <td>{{rejected_dd.refno}}</td>
             <td>{{rejected_dd.remarks}}</td>
             <td>{{rejected_dd.user.email}}</td>
             <td>
@@ -400,6 +453,46 @@ $(".disapprove_btn").click(function(){
   $('#payid').val(pid);
   $('#user').val(user);
   $('#cid').val({{conference.conference_id}});
+});
+
+ $(document).ready(function() {
+        $('#allTable').DataTable({
+            "info": true,
+            // "responsive" : true
+        });
+
+        $('#unpaidTable').DataTable({
+            "info": true
+        });
+
+        $('#paidTable').DataTable({
+            "info": true
+        });
+
+        $('#pendingTable').DataTable({
+            "info": true
+        });
+
+        $('#rejectedTable').DataTable({
+            "info": true
+        });
+} );
+
+$('#unpaidUsers').hide();
+$('#allUsers').show();
+
+ $('#all').click(function(){
+        $(this).addClass('active');
+        $('#unpaid').removeClass('active');
+        $('#unpaidUsers').hide();
+        $('#allUsers').show();
+    });
+
+    $('#unpaid').click(function(){
+        $(this).addClass('active');
+        $('#all').removeClass('active');
+        $('#unpaidUsers').show();
+        $('#allUsers').hide();
 });
 
 </script>
