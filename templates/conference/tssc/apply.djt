@@ -39,6 +39,69 @@
 		<form style="margin-top:3%;" method="post" action="">
 			{% csrf_token %}
 			<input type="checkbox" name="applyConf" checked hidden>
+			<div class="field">
+	              <label>First Name</label>
+	              <input name="firstname" placeholder="FirstName" type="text" id="firstname" required>
+	        </div>
+	        <div class="field">
+	              <label>Last Name</label>
+	              <input name="lastname" placeholder="LastName" type="text" id="lastname" required>
+	        </div>
+	        
+	        <div class="field">
+	              <label>Email-id</label>
+	              <input name="email" placeholder="Email-id" type="text" id="email" required>
+	        </div>
+	        <div class="field">
+	              <label>Institute Name</label>
+	              <input name="institute" placeholder="Institute" type="text" id="institute" required>
+	        </div>
+	        <div class="field">
+	              <label>Department</label>
+	              <input name="department" placeholder="Department" type="text" id="department" required>
+	        </div>
+	        <div class="field">
+	              <label>Designation</label>
+	              <input name="designation" placeholder="Designation" type="text" id="designation" required>
+	        </div>
+	        <div class="field">
+	              <label>Highest Qualification - Specialization</label>
+	              <input name="qualification" placeholder="Qualification" type="text" id="qualification" required>
+	        </div>
+	        <div class="field">
+				<strong>Are you an alumani of REC/NITW:</strong>
+				<input name="alumaniCheck" type="checkbox" id="alumaniCheck">
+			</div>
+			<div id="alumaniForm">
+				<div class="field">
+		              <label>Degree</label>
+		              <input name="degree" placeholder="Degree" type="text" id="degree">
+		        </div>
+		        <div class="field">
+		              <label>Branch</label>
+		              <input name="brach" placeholder="Brach" type="text" id="brach">
+		        </div>
+		        <div class="field">
+		              <label>Year of passing</label>
+		              <input name="yearPass" placeholder="Year of passing" type="text" id="yearPass">
+		        </div>
+	        </div>
+	        <div class="field">
+	              <label>Contact</label>
+	              <input name="contact" placeholder="contact" type="text" id="contact" required>
+	        </div>
+	        <div class="field">
+	              <label>Gender</label>
+				  <select class="ui dropdown" name="gender" required>
+					<option value="">Gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				  </select>
+	        </div>
+	        <div class="field">
+	              <label>Login Username</label>
+	              <input name="username" placeholder="Username" type="text" id="username" required>
+	        </div>
 			<button type="submit" class="btn btn-info">Apply</button>
 		</form>
 	{% endif %}
