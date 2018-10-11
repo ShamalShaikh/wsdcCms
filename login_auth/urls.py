@@ -11,8 +11,8 @@ urlpatterns = [
 	url(r'^ewcti/$',RedirectView.as_view(url='/conference/ewcti2018/')),
 	url(r'^ewcti2018/$',RedirectView.as_view(url='/conference/ewcti2018/')),
 	#TSSC-2018
-	url(r'^tssc/$',RedirectView.as_view(url='/conference/tssc-2018/')),
-	url(r'^tssc2018/$',RedirectView.as_view(url='/conference/tssc-2018/')),
+	url(r'^tssc/$',RedirectView.as_view(url='/conference/tssc2018/')),
+	url(r'^tssc2018/$',RedirectView.as_view(url='/conference/tssc2018/')),
 
 	# url(r'^fccm/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	# url(r'^fccm2018/$',RedirectView.as_view(url='/conference/fccm2018/')),

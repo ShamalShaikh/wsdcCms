@@ -36,6 +36,8 @@ urlpatterns = [
 	url(r'^tssc2018/about/$',views.tsscabout),
 	url(r'^tssc2018/links/$',views.tssclinks),
 	url(r'^tssc2018/hotels/$',views.tsschotels),
+	url(r'^tssc2018/apply/$',views.tsscapply),
+
 
 
 	# url(r'^metallography_contest/$',views.metallography_contest),

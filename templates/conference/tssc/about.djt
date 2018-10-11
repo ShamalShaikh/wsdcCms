@@ -10,7 +10,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>EWCTI'18</title>
+	<title>TSSC 2018</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -54,7 +54,7 @@
 						<a href="/conference/{{conference.conference_alias}}/about">About Us</a>
 					</li>
 					<li>
-						<a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+						<a href="/conference/{{conference.conference_alias}}/links">Download Links</a>
 					</li>
 					<li>
 						<a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
@@ -100,59 +100,115 @@
 
   <div class="row">
       <div class="col-md-12" style="line-height:30px;font-size:17px;">
-        <br><h2><center><span class="label label-success">About the Telangana Academy of Sciences</span></center></h2><br>
+        <br><h2><center><span class="label label-success">About the Telangana Academy of Sciences (TAS)</span></center></h2><br>
+         
         <p style="color:black; text-align:justify;">
-          Consequent to A.P. reorganization Act: 2014, the Andhra Pradesh Akademi of Sciences established in the year 1963, is also bifurcated into Telangana Academy of Sciences (TAS) & Andhra Pradesh Akademi of Sciences (APAS). Accordingly, the new Telangana Academy of Sciences came into existence in place of APAS from 30th April, 2015. The registered office of Telangana Academy of Sciences is located in Osmania University (OU) Qtr. No: L-68, besides International Hostel, Tarnaka, Hyderabad - 500017.
-        </p>
-        <p style="color:black; text-align:justify;">
-          The aims and objectives of the Academy are mainly advancement of Science and Technology by providing a forum for discussing scientific developments, propagating scientific knowledge among the people and publication of books & journals on science. In addition to this, the other objectives include securing and managing funds, endowment for the promotion of science, providing opportunity to interact with eminent scientists of national and international repute, discussing on matters of common scientific interest to motivate youngsters towards basic research with interdisciplinary approach and recreate interest to enrich the capabilities of the research scholars of Telangana for the development of the state.
-
-
-        </p>
-        <p style="color:black; text-align:justify;">
-          For the last 53 years, the activities of the Academy have added immense value to the scientific community and could successfully sensitize the general public. The Academy in a bid to reach wider community and extend its activities, it has established Five Regional Centres at Nizamabad, Karimnagar, Hyderabad, Nalgonda and Warangal, covering all the districts of Telangana State. These Regional centers are actively engaged in realizing the Academy’s goals.
-        </p>
-        <p style="color:black; text-align:justify;">
-          
-The Academy, has an established tradition of electing Fellows annually in recognition of the contributions made by them to the scientific excellence and propagation. The election of the Fellows is by nomination by the Fellows of the Academy. The elected Fellows represent a cross section of Academicians, Professionals, Scientists and Industrialists who have made significant contributions. TAS has several Fellows from different parts of the country. The TAS also promotes Scientific activities for children, encourages young scientists inventions, investigations and research in pursuit of excellence in the fields of Science and Technology. Its activities also include organizing lectures, seminars, symposia, popular exhibitions and programs on overall perception of science and societyConsequent to A.P. reorganization Act: 2014, the Andhra Pradesh Akademi of Sciences established in the year 1963, is also bifurcated into Telangana Academy of Sciences (TAS) & Andhra Pradesh Akademi of Sciences (APAS). Accordingly, the new Telangana Academy of Sciences came into existence in place of APAS from 30th April, 2015. The registered office of Telangana Academy of Sciences is located in Osmania University (OU) Qtr. No: L-68, besides International Hostel, Tarnaka, Hyderabad - 500017.
+         Telangana Academy of Sciences has been working relentlessly to
+         promote scientific temper in Telangana State. It has been recognizing
+         eminent scientists / Professors and electing them to the fellowship of
+         the Academy. TAS also promotes children science activities,
+         encourages young scientists towards inventions, investigations and
+         research in pursuit of excellence in the fields of Science and
+         Technology. Its activities include organizing endowment lectures,
+         seminars, symposia, popular exhibitions and programs on overall
+         perception of science and society.
 
         </p>
-                
-              </div>
-           </div>
+        <p style="color:black; text-align:justify;">
+          For the last 55 years, the activities of the Academy have immensely
+          helped in sharing the academic scholarship among its Fellows and
+          Associate Fellows, in particular and the scientific community, in
+          general. They have also catalyzed popularization of science and
+          inculcation of scientific temper among children and general public.
+          The Academy, in a bid to reach the wider community and to extend its
+          activities, has established Five Regional Centers at Nizamabad,
+          Karimnagar, Hyderabad, Nalgonda and Warangal covering all the
+          Districts of Telangana State.
+        </p>  
+      </div>
+  </div>
+    
+    <div class="row">
+      <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <br><h2><center><span class="label label-success">About the Focal Theme</span></center></h2><br>
+        <p style="color:black; text-align:justify;">The Focal theme for the Telangana State Science Congress-2018 is
+          <b><i>"Science & Technology for an All Round and Sustainable
+          Development of the Telangana State".</i></b> The State of Telangana is the
+          th nd youngest and the 29 State in India. It has been formed on 2 June,
+          2014 through the AP Reorganization Act. Being an infantile federal
+          state with rich cultural heritage and abundant natural and human
+          resources but low industrial and literacy, the State of Telangana is
+          poised to leap into an all round and sustainable development.
+          Sustainable development addresses the socio-economic
+          development catalysed by scientific, technological and industrial
+          advances. The proactive cooperation and positive support of the
+          scientific community would augment and empower the Government
+          for a sustainable development of the Telangana State. The
+          development of the State is intertwined with the advancements in
+          Science and Technology in different fields, namely, cleaner & fuel
+          efficient technogies, de-fluoridation of drinking water, solar energy
+          harnessing housing technology, entrepreneurship development,
+          human health, water resources, information technology,
+          biotechnology, sustainable human resource management, etc. The
+          TSSC-2018 will identify the key areas in the activities of planning for an
+        all round and sustainable development of the Telangana State.</p>
 
+       </div>
+     </div>
 		<div class="row">
 			<div class="col-md-12" style="line-height:30px;font-size:17px;">
 				<br><h2><center><span class="label label-success">About NIT Warangal</span></center></h2><br>
 				<p style="color:black; text-align:justify;">
-					The National Institute of Technology (NIT), Warangal is the first in the chain of 31 NITs, Institutes of National Importance established by Act of Parliament. Late Pandit Jawaharlal Nehru laid the foundation stone for this institute on October 10, 1959.
+					The National Institute of Technology Warangal (NITW), formerly
+          known as the Regional Engineering College Warangal, is the first
+          among the chain of 31 NITs crowned as Institutes of National
+          Importance. It was established by an Act of Parliament. The country's
+          first Prime Minister, Pandit Jawaharlal Nehru laid the foundation stone
+          th th on 10 October, 1959 for this Institute. Thus, 10 October, 2018 marks
+          the commencement of the <b><span style="color:blue;">Diamond Jubliee Celebrations</span></b> of NITW.
 				</p>
 				<p style="color:black; text-align:justify;">
-					The Institute offers eight B.Tech. programmes in engineering, twenty five M.Tech. programmes and seven other post graduate programmes (M.Sc.,
-					MCA and MBA) and research programmes through thirteen academic departments. NIT Warangal has
-					about 100 well equipped laboratories and well established supporting infrastructure. The institute is well-known for its Research and Development, Industrial Consultancy, Continuing Education and Training programmes for teachers and industrial personnel.
+					The Institute presently offers eight B.Tech Programmes in Engineering, twenty-five
+          M.Tech Programmes and seven other Postgraduate Programmes (M.Sc.,
+          M.Sc (Tech)., MCA and MBA) and PhD Programmes in all the thirteen
+          Departments including Engineering, Sciences, Humanities,
+          Management and Physical Education. The institute is well-known for
+          its Research and Development, state of the art laboratories, Industrial
+          consultancy, Continuing Education Programmes for teachers and
+          industrial personnel.
 
 				</p>
+        <p style="color:black; text-align: justify;">
+          The World Bank supports the Institute through Technical Education
+          Quality Improvement Programme (TEQIP) and currently Phase III is in
+          progress. The MHRD has recognized NITW as one of the six E&ICT
+          Academies in the country. NITW also hosts scores of advanced shortterm
+          training courses conducted by International academicians under
+          the MHRD's Global Initiative for Academic Network (GIAN)
+          Programme.
+        </p>
 				<p style="color:black; text-align:justify;">
-					The institute houses about 600 foreign students
-					from as many as 40 countries. It has strong
-					academic and research collaborations with several
-					leading foreign universities and programs like
-					HERITAGE, EUPHRATES, HORIZON 2020, etc.
-					Students and faculty used to enjoy several short
-					term international mobility.
+					The institute has about 600 foreign students from as many as 40
+          countries. It has strong academic and research collaborations with
+          several leading foreign universities and through programs like
+          HERITAGE, EUPHRATES, HORIZON-2020, etc. Students and faculty avail
+          themselves of several short-term international exchange and mobility
+          programs through these channels.
 				</p>
-				<p style="color:black; text-align:justify;">
-					The institute is about to enter its 60 th year of
-					establishment on 10 th October 2018. A year-long
-					Diamond Jubilee Celebrations are planned
-					commencing with a national conference on
-					“Evolution of World Class Technical Institutions
-					– Issues & Concerns” during October 10-12, 2018.
-				</p>
+        <p style="color:black; text-align: justify;">
+          The Institute is recognized by the MHRD to run a Teaching Learning
+          Centre (TLC) for Higher Education and is recognized as a National
+          Resource Centre (NRC) in Mathematics under the Pandit Madan
+          Mohan Malaviya National Mission on Teachers and Teaching
+          (PMMMNMTT). The MHRD has also recognized NIT Warangal as a
+          Mentoring Institute under its very proactive mission, the Rasthtriya
+          Avishkar Abhyan (RAA) to mentor the school science education in the
+          State of Telangana.
+        </p>
                 <p style="color:black; text-align:justify;">
-                    
-A year-long Diamond Jubilee Celebrations are planned with the kick start of a grand Inaugural Function on 8th October with none other than the Honorable, the Vice President of India, Sri M. Venkaiah Naidu as the Chief Guest starting with a Curtain Raiser event, The National Conference on “Evolution of World Class Technical Institutions – Issues and Concerns” during 10th-12th October, 2018.
+                    A year-long <b><span style="color:blue;">Diamond Jubliee Celebrations (DJC)</span></b> are planned with the kick start of a grand Inaugural Function on 8<sup>th</sup> October with none other than the Honorable Vice President of India, Sri M. Venkaiah Naidu as
+                  the Chief Guest followed by a National Conference on
+                  <b><span style="color:blue;">" Evolution of World Class Technical Institutions - Issues And Concerns "</span></b> during 10<sup>th</sup> - <sup>12</sup> October, 2018.
 
                  </p>
               </div>
@@ -161,25 +217,25 @@ A year-long Diamond Jubilee Celebrations are planned with the kick start of a gr
            	<div class="col-md-12" style="line-height:30px;font-size:17px;">
            		<br><h2><center><span class="label label-success">About Warangal City</span></center></h2><br>
            		<p style="text-align:justify">
-           			Warangal, a historic city, was the capital city of the
-           			famous Kakatiya Kingdom during the 12th to 14th
-           			century A.D. There are many Intricately carved
-           			monuments built by the Kakatiyas in this region.
-           			The 1000 pillar Temple, the Warangal fort and the
-           			Ramappa Temple bear testimony to the historic
-           			period. Warangal has been identified as a heritage
-           		city by the UNESCO.</p>
+           			Warangal is a historical city with rich cultural and diverse heritage. It
+                was the capital city of the famous Kakatiya Kingdom during the 12th -14th
+                Century AD. There are many intricately carved monuments built by the
+                Kakatiyas in this region. The 1000 Pillar Temple, Warangal Fort,
+                Ramappa Temple,etc.,bear testimony to the historic period. Warangal
+                has been identified as a heritage city by the UNESCO. The biennial
+                Medaram Fair, the most populous 3-day cultural fair, Laknavaram Lake,
+                Pakhal Lake and Eturunagaram Reserve Forests are excellent tourist
+                attractions and are just within 100 kms from the City. There are also
+              many other scenic waterfalls nearby.</p>
            		<p style="text-align:justify">
-           			Laknavaram Lake, Pakhal Lake and the Eturu
-           			Nagaram Reserve Forests are excellent tourist
-           			attractions. There are also many scenic water falls
-           		near by.</p>
-           		<p style="text-align:justify">
-           			The city is well connected by road and rail network
-           			to the rest of the country. The nearest Airport is at
-           			Hyderabad, another historic city and capital of
-           			Telangana, at a distance of about 170 km from
-           			Warangal.
+           			The city is well connected by road and rail network to the rest of the
+                Country. Warangal Railway Station is 12 kms and Kazipet Railway
+                Station is just 2 kms away from NIT campus. The nearest Airport is Rajiv
+                Gandhi International Airport at Hyderabad, another historic city and
+                capital of Telangana State, at a distance of about 170 kms from NIT
+                campus. Warangal City is adapted as one of the Smart Cities by the
+                Government of India and is destined to be a highly happening city in
+                the very near days to come.
            		</p>
            		<ul>
            			<li><b><a href="https://en.wikipedia.org/wiki/Warangal"> https://en.wikipedia.org/wiki/Waranga</a></b>l</li>
