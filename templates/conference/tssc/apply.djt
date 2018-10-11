@@ -39,6 +39,7 @@
 		<form style="margin-top:3%;" method="post" action="">
 			{% csrf_token %}
 			<input type="checkbox" name="applyConf" checked hidden>
+
 			<div class="form-group">
 				    <label for="name" disabled>Name</label>
 				    <input type="text" class="form-control" id="name" name='name' placeholder="some@example.com" disabled>
@@ -150,7 +151,7 @@
 				    <input type="file" class="form-control" id="abstract" name='paymentFile' placeholder="" >
 		  	</div>
 
-		  	<strong>The original DDs are to be submitted at the help desk on the day of conference.</strong>
+		  	<strong> <em>NOTE :The original DDs are to be submitted at the help desk on the day of conference. </em></strong>
 		  	<br/><br/>
 			<center><button type="submit" class="btn btn-info">Apply</button></center>
 		</form>
