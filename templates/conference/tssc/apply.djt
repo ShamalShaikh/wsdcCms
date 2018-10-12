@@ -91,7 +91,7 @@
 
 		      <input type='checkbox' name='themes' value='Physical & Mathematical Sciences'> Physical & Mathematical Sciences</input>
 		      <br/>
-		      <input type='checkbox' name='themes' value='Engineering, Technology, Energy and Natural Resources'> Engineering, Technology, Energy and Natural Resources</input>
+		      <input type='checkbox' name='themes' value='Engineering & Technology'> Engineering &amp; Technology</input>
 		      <br/>
 		      <input type='checkbox' name='themes' value='Information Communication Technology'> Information &amp; Communication Technology</input>
 		      <br/>
@@ -111,12 +111,8 @@
 		      <br/>
 
 		  </div>
-
-		  <strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
-			2000/- ; Scientists from R&amp;D/ National Labs : Rs 3000/- ; Industry participants : Rs 5000/-)</strong>
-
-			<br/>
-			<br/>
+		  	
+		  	<br/>
 
 			<div class="row">
 		  	<div class="form-group col-md-3">
@@ -131,6 +127,9 @@
 		  	</div>
 
 		  	<strong style='font-size:1.2em'> Payment Details</strong>
+
+		  	<strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
+			2000/- ; Scientists from R&amp;D/ National Labs : Rs 3000/- ; Industry participants : Rs 5000/-)</strong>
 
 		  	<div class="row">
 		  		<br/>
