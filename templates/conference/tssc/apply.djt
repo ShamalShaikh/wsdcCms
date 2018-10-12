@@ -1,4 +1,8 @@
+
 {% extends "conference/tssc/base.djt" %}
+
+{% load staticfiles %}
+
 
 {% block head %}
 <style>
@@ -10,6 +14,10 @@
 {% block content %}
 
 <div class="container" id="main">
+
+	<img src="{% static 'tssc/tssc_apply_header.png' %}">
+	<br/><br/>
+
 	<div class="row">
 	{% if paper %}
 
@@ -122,7 +130,7 @@
 
 		  	<div class="form-group col-md-3">
 				    <label for="abstract" disabled>Attach Abstract (PDF)</label>
-				    <input type="file" class="form-control" id="abstract" name='abstract' placeholder="" >
+				    <input type="file" class="form-control" id="abstract" name='abstract' placeholder="" accept=".pdf">
 		  	</div>
 		  	</div>
 
@@ -156,7 +164,7 @@
 
 		  	<div class="form-group">
 				    <label for="abstract" disabled>Attach scanned copy of DD/ NEFT transfer (jpg format only)</label>
-				    <input type="file" class="form-control" id="abstract" name='paymentFile' placeholder="" >
+				    <input type="file" class="form-control" id="abstract" name='paymentFile' accept=".jpg, .jpeg" placeholder="" >
 		  	</div>
 
 		  	<strong> <em>NOTE :The original DDs are to be submitted at the help desk on the day of conference. </em></strong>
