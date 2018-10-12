@@ -86,28 +86,30 @@
 		  </div>
 
 		  <div class="form-group">
-		    <label for="exampleFormControlSelect1">Example select</label>
-		    <select class="form-control" id="exampleFormControlSelect1">
-		      <option>1</option>
-		      <option>2</option>
-		      <option>3</option>
-		      <option>4</option>
-		      <option>5</option>
-		    </select>
-		  </div>
-		  <div class="form-group">
 		    <label for="exampleFormControlSelect2">Please select the sections applicable to the abstract being submitted</label>
-		    <select multiple class="form-control" id="exampleFormControlSelect2" name='sections[]'>
-		      <option>Mathematical Sciences</option>
-		      <option>Physical Sciences, Material Sciences &amp; Engg.</option>
-		      <option>Engineering, Technology, Energy and Natural Resources</option>
-		      <option>Information &amp; Communication Technology</option>
-		      <option>Chemical Sciences</option>
-		      <option>Life Sciences &amp; Agricultural Sciences</option>
-		      <option>Medical, Health &amp; Pharmaceutical SciencesEarth, Ocean, Atmospheric &amp; Environmental Sciences and Disaster Management</option>
-		      <option>Smart Cities</option>
-		      <option>Renewable Energy Sources</option>
-		    </select>
+    		<br/>
+
+		      <input type='checkbox' name='themes' value='Physical & Mathematical Sciences'> Physical & Mathematical Sciences</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Engineering, Technology, Energy and Natural Resources'> Engineering, Technology, Energy and Natural Resources</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Information Communication Technology'> Information &amp; Communication Technology</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Chemical Sciences'> Chemical Sciences</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Life Sciences Agricultural Sciences'> Life Sciences &amp; Agricultural Sciences</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Medical, Health & Pharmaceutical Sciences'> Medical, Health &amp; Pharmaceutical Sciences</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Earth, Ocean, Atmospheric & Environmental Sciences'> Earth, Ocean, Atmospheric &amp; Environmental Sciences</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Smart Cities'> Smart Cities</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Renewable Energy Sources'> Renewable Energy Sources</input>
+		      <br/>
+		      <input type='checkbox' name='themes' value='Science in the Service of Society'> Science in the Service of Society </input>
+		      <br/>
+
 		  </div>
 
 		  <strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
@@ -132,6 +134,13 @@
 
 		  	<div class="row">
 		  		<br/>
+		  		<div class="form-group col-md-3">
+	    			<label for="exampleFormControlSelect1">Payment Mode</label>
+			    		<select class="form-control" id="paymentMode" name="paymentMode">
+					      <option value='neft'>NEFT</option>
+					      <option value='dd'>Demand Draft</option>
+			    		</select>
+			  	</div>
 			  	<div class="form-group col-md-3">
 					    <label for="email" disabled>NEFT/ UTR No./ Draft No.</label>
 					    <input type="text" class="form-control" id="email" name='email' placeholder="" >

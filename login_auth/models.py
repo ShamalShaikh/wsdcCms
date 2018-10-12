@@ -27,6 +27,7 @@ class Payment(models.Model):
 	payment_choice = (
 		('net','Net Banking'),
 		('dd','Through DD'),
+		('neft', 'NEFT'),
 	)
 	user = models.ForeignKey(User)
 	conf_id = models.ForeignKey(Conference)
@@ -62,13 +63,16 @@ class Alumani(models.Model):
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User,related_name='profile')
-	contact = models.CharField(max_length=20,null=True)
+	contact = models.CharField(max_length=20,null=True) # mobile
+	phone = models.CharField(max_length=20, null=True) # fax
 	institute = models.CharField(max_length=255,null=True)
 	profilepic = models.ImageField(upload_to=get_user_profile_picture_path ,null=True, blank=True)
 	gender = models.CharField(max_length=10,null=True)
 	regConferences = models.ManyToManyField(Registered_Conference,blank=True)
 	department = models.CharField(max_length=255,null=True,blank=True)
 	designation = models.CharField(max_length=255, blank=True)
+	affiliation = models.CharField(max_length=255, blank=True)
+	address = models.CharField(max_length=1000, blank=True)
 	qualification = models.CharField(max_length=255, blank=True)
 	alumani = models.ForeignKey(Alumani, null = True)
 	mail_sent_register = models.BooleanField(default=False)

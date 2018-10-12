@@ -71,6 +71,7 @@ class Conf_Paper(models.Model):
 	conf_id = models.ForeignKey(Conference, on_delete = models.CASCADE)
 	uid = models.ForeignKey(User,on_delete = models.CASCADE)
 	description = models.CharField(max_length = 100)
+	themes = models.CharField(max_length=1000, blank=True)
 	submissionDate = models.DateTimeField()
 	is_approved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
