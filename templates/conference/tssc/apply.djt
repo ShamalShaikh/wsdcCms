@@ -156,7 +156,7 @@
 		  	</div>
 
 		  	<div class="form-group">
-				    <label for="abstract" disabled>Attach scanned copy of DD/ NEFT transfer (pdf format only)</label>
+				    <label for="abstract" disabled>Attach scanned copy of DD/ NEFT transfer (jpg format only)</label>
 				    <input type="file" class="form-control" id="abstract" name='paymentFile' placeholder="" >
 		  	</div>
 
