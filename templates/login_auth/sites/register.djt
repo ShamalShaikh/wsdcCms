@@ -48,10 +48,14 @@
 	              <label>Highest Qualification - Specialization</label>
 	              <input name="qualification" placeholder="Qualification" type="text" id="qualification" required>
 	        </div>
+
+	        {% ifnotequal alias "tssc2018" %}
 	        <div class="field">
-				<strong>Are you an alumani of REC/NITW:</strong>
+				<strong>Are you an alumni of REC/NITW:</strong>
 				<input name="alumaniCheck" type="checkbox" id="alumaniCheck">
 			</div>
+			{% endifnotequal %}
+			
 			<div id="alumaniForm">
 				<div class="field">
 		              <label>Degree</label>

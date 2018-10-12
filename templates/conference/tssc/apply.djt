@@ -35,7 +35,7 @@
 	
 		{% else %}
 			<div class="alert alert-info">
-				You've already applied for the conference. Please wait for acceptance mail.
+				Your registration is complete. Please wait for acceptance mail.
 			</div>
 		{% endif %}
 
@@ -88,7 +88,7 @@
 
 		  	<div class="form-group col-md-3">
 				    <label for="email" disabled>Mobile</label>
-				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+				    <input type="number" class="form-control" id="email" name='email' placeholder="" disabled>
 		  	</div>
 
 		  </div>
@@ -135,7 +135,7 @@
 		  	</div>
 
 		  	<strong style='font-size:1.2em'> Payment Details</strong>
-
+		  	<br/><br/>
 		  	<strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
 			2000/- ; Scientists from R&amp;D/ National Labs : Rs 3000/- ; Industry participants : Rs 5000/-)</strong>
 
