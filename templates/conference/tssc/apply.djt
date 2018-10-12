@@ -30,9 +30,21 @@
 		{% elif paper.uid.profile.mail_sent_reject %}
 				<div class="alert alert-danger">
 					<strong>Sorry</strong>
-					Your application is rejected.
+					Your payment was rejected.
 				</div>
-	
+		{% elif paper.uid.profile.mail_sent_register %}
+				{% if not payment %}
+				<div class="alert alert-success">
+					Your application is submitted and reviewed. 
+					<a href='/conference/make_payment/{{alias}}'><b>Please proceed for payment.</b></a>
+				</div>
+				{% else %}
+				<div class="alert alert-info">
+					Your payment details are under review.
+				</div>
+				{% endif %}				
+
+
 		{% else %}
 			<div class="alert alert-info">
 				Your registration is complete. Please wait for acceptance mail.
@@ -44,51 +56,51 @@
 		  <strong>You have not applied for the conference. Please apply by clicking the button below.</strong>
 		</div>
 		
-		<form style="margin-top:3%;" method="post" action="">
+		<form style="margin-top:3%;" method="POST" action="" enctype="multipart/form-data">
 			{% csrf_token %}
 			<input type="checkbox" name="applyConf" checked hidden>
 
 			<div class="form-group">
 				    <label for="name" disabled>Name</label>
-				    <input type="text" class="form-control" id="name" name='name' placeholder="some@example.com" disabled>
+				    <input type="text" class="form-control" id="name" name='name' placeholder="some@example.com" value='{{name}}' disabled>
 		  	</div>
 
 			<div class="form-group">
 				    <label for="email" disabled>Designation</label>
-				    <input type="text" class="form-control" id="email" name='email' placeholder="" disabled>
+				    <input type="text" class="form-control" id="email" name='designation' placeholder="" value='{{designation}}' disabled>
 		  	</div>
 
 
 			<div class="form-group">
 				    <label for="email" disabled>Affiliation</label>
-				    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+				    <input type="text" class="form-control" id="email" name='affiliation' placeholder="" >
 		  	</div>
 
 			<div class="form-group">
 				    <label for="email" disabled>Email address</label>
-				    <input type="email" class="form-control" id="email" name='email' placeholder="" disabled>
+				    <input type="email" class="form-control" id="email" name='email' placeholder="" value={{email}} disabled>
 		  	</div>
 
 		  	<div class="form-group">
 				    <label for="email" disabled>Mailing Address</label>
-				    <input type="text" class="form-control" id="email" name='email' placeholder="" >
+				    <input type="text" class="form-control" id="email" name='address' placeholder="" >
 		  	</div>
 
 		  	<div class="form-group row">
 
 		  	<div class="form-group col-md-3">
 				    <label for="email" disabled>Phone</label>
-				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+				    <input type="number" class="form-control" id="phone" name='phone' placeholder="" >
 		  	</div>
 
 		  	<div class="form-group col-md-3">
 				    <label for="email" disabled>Fax</label>
-				    <input type="number" class="form-control" id="email" name='email' placeholder="" >
+				    <input type="number" class="form-control" id="fax" name='fax' placeholder="" >
 		  	</div>
 
 		  	<div class="form-group col-md-3">
 				    <label for="email" disabled>Mobile</label>
-				    <input type="number" class="form-control" id="email" name='email' placeholder="" disabled>
+				    <input type="number" class="form-control" id="email" name='mobile' placeholder=""  value='{{mobile}}' disabled>
 		  	</div>
 
 		  </div>
@@ -125,12 +137,12 @@
 			<div class="row">
 		  	<div class="form-group col-md-3">
 				    <label for="title" disabled>Title of Paper</label>
-				    <input type="text" class="form-control" id="title" name='title' placeholder="" >
+				    <input type="text" class="form-control" id="title" name='papaername' placeholder="" >
 		  	</div>
 
 		  	<div class="form-group col-md-3">
 				    <label for="abstract" disabled>Attach Abstract (PDF)</label>
-				    <input type="file" class="form-control" id="abstract" name='abstract' placeholder="" accept=".pdf">
+				    <input type="file" class="form-control" id="abstract" name='file' placeholder="" accept=".pdf">
 		  	</div>
 		  	</div>
 

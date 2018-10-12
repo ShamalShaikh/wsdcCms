@@ -877,12 +877,39 @@ def tsschotels(request):
 	return render(request, 'conference/tssc/hotels.djt',response)
 	return render(request, 'conference/ewcti/profiles.djt',response)
 
+def get_temp_ref_num():
+	count = 30
+	tempRefnum = '18'+str(randint(1000, 9999))
+	if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+		print "existing refnum"
+		while count > 0:
+			tempRefnum = '18'+str(randint(1000, 9999))
+			if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+				count -= 1
+				continue
+			else:
+				break
+	if count==0:
+		count = 1
+		tempRefnum = '18' + str(count).zfill(4)
+		while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+			count += 1
+			tempRefnum = '18' + str(count).zfill(4)
+	return tempRefnum
+
 @login_required(login_url='/signin/tssc2018')
 def tsscapply(request):
 	conference = Conference.objects.get(conference_alias='tssc2018')
+	
 	response={}
-	response['conference']=conference
-	response['alias']='tssc2018'
+	response['conference'] = conference
+	response['alias'] = 'tssc2018'
+	name = request.user.first_name + " " + request.user.last_name
+	response['name'] = name
+	response['email'] = request.user.email
+	response['mobile'] = request.user.profile.contact
+	response['designation'] = request.user.profile.designation
+
 	payment = Payment.objects.filter(user=request.user, conf_id=conference)
 	# print payment.is_aprooved
 	if len(payment)==1 :
@@ -898,35 +925,30 @@ def tsscapply(request):
 				regconf = Registered_Conference()
 				regconf.conf_id = conference
 				regconf.user = request.user
-				regconf.save()
 				paper = Conf_Paper()
 				paper.conf_id=conference
 				paper.uid=request.user
-				paper.papername="Applying for conference"
+				paper.papername=request.POST.get('papername', 'Applying for conference')
 				paper.submissionDate = now
+				paper.themes = ','.join(str(e) for e in request.POST.getlist('themes', []))
 				paper.status = 0
+				if request.FILES.get('file', None) is None:
+						return HttpResponse('Please upload abstract document. Press back button to try again.')
+				paper.paperfile=request.FILES.get('file', None)
+				if not validateFormat(paper.paperfile) :
+						return HttpResponse('Only PDF format is allowed for abstract submission. Press back button to try again.')
+				regconf.save()
 				conference.paperCount += 1
 				conference.save()
 
-				count = 30
-				tempRefnum = '18'+str(randint(1000, 9999))
-				if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-					print "existing refnum"
-					while count > 0:
-						tempRefnum = '18'+str(randint(1000, 9999))
-						if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-							count -= 1
-							continue
-						else:
-							break
-				if count==0:
-					count = 1
-					tempRefnum = '18' + str(count).zfill(4)
-					while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
-						count += 1
-						tempRefnum = '18' + str(count).zfill(4)
-				
+				tempRefnum = get_temp_ref_num()
 				paper.paperRefNum = tempRefnum
+
+				profile = request.user.profile
+				profile.affiliation = request.POST.get('affiliation', '')
+				profile.address = request.POST.get('address', '')
+				profile.save()
+
 				paper.save()
 				regconf.papers.add(paper)
 				regconf.save()

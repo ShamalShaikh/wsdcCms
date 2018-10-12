@@ -81,6 +81,7 @@ def register(request,alias):
 				userprofile.department = department
 				userprofile.contact = conact
 				userprofile.gender = gender
+				userprofile.designation = designation
 				if(alumani == 'on'):
 					alumani = Alumani()
 					alumani.degree = request.POST['degree']
