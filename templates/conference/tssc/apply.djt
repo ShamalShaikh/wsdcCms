@@ -134,6 +134,7 @@
 		  	</div>
 		  	</div>
 
+		  	<!--
 		  	<strong style='font-size:1.2em'> Payment Details</strong>
 		  	<br/><br/>
 		  	<strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
@@ -168,6 +169,7 @@
 		  	</div>
 
 		  	<strong> <em>NOTE :The original DDs are to be submitted at the help desk on the day of conference. </em></strong>
+		  -->
 		  	<br/><br/>
 			<center><button type="submit" class="btn btn-info">Apply</button></center>
 		</form>
