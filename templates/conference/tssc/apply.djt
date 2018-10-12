@@ -15,7 +15,7 @@
 
 <div class="container" id="main">
 
-	<img src="{% static 'tssc/tssc_apply_header.png' %}">
+	<img src="{% static 'tssc/tssc_apply_header.PNG' %}">
 	<br/><br/>
 
 	<div class="row">
