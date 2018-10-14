@@ -699,7 +699,6 @@ def cmfdplinks(request):
 def ewcti(request):
 	conference = Conference.objects.get(conference_alias='ewcti2018')
 	print conference
-	print"hai"
 	response = {}
 	response['conference']=conference
 	response['alias']='ewcti2018'
@@ -809,6 +808,7 @@ def ewctiapply(request):
 		response['nopaper'] = True
 
 	return render(request, 'conference/ewcti/apply.djt',response)
+
 def ewctiprofiles(request):
 	conference = Conference.objects.get(conference_alias='ewcti2018')
 	response={}
@@ -958,3 +958,117 @@ def tsscapply(request):
 	except:
 		response['nopaper'] = True
 	return render(request, 'conference/tssc/apply.djt',response)
+
+#noieas
+def noieas(request):
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
+	print conference
+	response = {}
+	response['conference']=conference
+	response['alias']='NOIEAS-2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/noieas/home.djt',response)
+
+def noieasabout(request):
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
+	response={}
+	response['conference']=conference
+	response['alias']='NOIEAS-2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/noieas/about.djt',response)
+
+def noieaslinks(request):
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
+	response={}
+	response['conference']=conference
+	response['alias']='NOIEAS-2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/noieas/links.djt',response)
+
+def noieashotels(request):
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
+	response={}
+	response['conference']=conference
+	response['alias']='NOIEAS-2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/noieas/hotels.djt',response)
+
+@login_required(login_url='/signin/NOIEAS-2019')
+def noieasapply(request):
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
+	response={}
+	response['conference']=conference
+	response['alias']='NOIEAS-2019'
+	payment = Payment.objects.filter(user=request.user, conf_id=conference)
+	# print payment.is_aprooved
+	if len(payment)==1 :
+		response['payment'] = payment.first()
+
+	if request.method == 'POST' :
+		now = datetime.datetime.now()
+		applyConf = request.POST.get('applyConf','off')
+		print applyConf
+		if applyConf == 'on':
+			# apply only if no request is present.
+			if  Conf_Paper.objects.filter(uid=request.user, conf_id=conference).count() == 0:
+				regconf = Registered_Conference()
+				regconf.conf_id = conference
+				regconf.user = request.user
+				regconf.save()
+				paper = Conf_Paper()
+				paper.conf_id=conference
+				paper.uid=request.user
+				paper.papername="Applying for conference"
+				paper.submissionDate = now
+				paper.status = 0
+				conference.paperCount += 1
+				conference.save()
+
+				count = 30
+				tempRefnum = '18'+str(randint(1000, 9999))
+				if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+					print "existing refnum"
+					while count > 0:
+						tempRefnum = '18'+str(randint(1000, 9999))
+						if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+							count -= 1
+							continue
+						else:
+							break
+				if count==0:
+					count = 1
+					tempRefnum = '18' + str(count).zfill(4)
+					while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+						count += 1
+						tempRefnum = '18' + str(count).zfill(4)
+				
+				paper.paperRefNum = tempRefnum
+				paper.save()
+				regconf.papers.add(paper)
+				regconf.save()
+	try:
+		paper = Conf_Paper.objects.get(uid=request.user, conf_id=conference)
+		response['paper'] = paper
+	except:
+		response['nopaper'] = True
+
+	return render(request, 'conference/noieas/apply.djt',response)

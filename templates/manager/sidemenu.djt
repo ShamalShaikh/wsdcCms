@@ -11,7 +11,15 @@
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
 		{% endifequal %}
-		
+
+
+		{% ifequal conference.alias 'noieas2019' %}
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
+		{% endifequal %}
+
 		{% ifequal conference.alias 'fccm2018'%}
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>

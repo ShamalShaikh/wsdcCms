@@ -37,6 +37,12 @@ urlpatterns = [
 	url(r'^tssc2018/links/$',views.tssclinks),
 	url(r'^tssc2018/hotels/$',views.tsschotels),
 	url(r'^tssc2018/apply/$',views.tsscapply),
+	#noieas2019
+	url(r'^NOIEAS-2019/$',views.noieas),
+	url(r'^NOIEAS-2019/about/$',views.noieasabout),
+	url(r'^NOIEAS-2019/links/$',views.noieaslinks),
+	url(r'^NOIEAS-2019/hotels/$',views.noieashotels),
+	url(r'^NOIEAS-2019/apply$$',views.noieasapply),
 
 
 
