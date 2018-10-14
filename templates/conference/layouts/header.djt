@@ -50,7 +50,9 @@
   <div class="right menu">
     <a class="item" href="/conference/{{conference.conference_alias}}/">Home</a>
     {% if request.user.is_authenticated %}
+    {% ifnotequal conference.conference_alias "tssc2018" %}
     <a class="item" href="/conference/{{conference.conference_alias}}/dashboard/">Upload Paper</a>
+    {% endifnotequal %}
     <a class="item" href="/signout/{{conference.conference_alias}}">Logout</a>
     {%else%}
     <a class="item" href="/signin/{{conference.conference_alias}}">Login</a>

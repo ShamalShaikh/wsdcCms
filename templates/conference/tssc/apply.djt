@@ -47,7 +47,7 @@
 
 		{% else %}
 			<div class="alert alert-info">
-				Your registration is complete. Please wait for acceptance mail.
+				 Congratulations! The abstract is received successfully. Please wait for acceptance e-mail.
 			</div>
 		{% endif %}
 
