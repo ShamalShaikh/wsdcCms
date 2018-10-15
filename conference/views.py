@@ -822,7 +822,6 @@ def ewctiprofiles(request):
 
 
 #tssc2018
-#ewcti
 def tssc(request):
 	conference = Conference.objects.get(conference_alias='tssc2018')
 	print conference
@@ -1072,3 +1071,141 @@ def noieasapply(request):
 		response['nopaper'] = True
 
 	return render(request, 'conference/noieas/apply.djt',response)
+
+
+#####################icee2019 starting page###########################################################################
+def inceee(request):
+	print "INCEEE-2019"
+	conference = Conference.objects.get(conference_alias='inceee2019')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='inceee2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/inceee/home.djt',response)
+
+def inceeeabout(request):
+	conference = Conference.objects.get(conference_alias='inceee2019')
+	response={}
+	response['conference']=conference
+	response['alias']='inceee2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/inceee/about.djt',response)
+
+def inceeelinks(request):
+	conference = Conference.objects.get(conference_alias='inceee2019')
+	response={}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/inceee/links.djt',response)
+
+def inceeehotels(request):
+	conference = Conference.objects.get(conference_alias='inceee2019')
+	response={}
+	response['conference']=conference
+	response['alias']='inceee2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/inceee/hotels.djt',response)
+
+def get_temp_ref_num():
+	count = 30
+	tempRefnum = '18'+str(randint(1000, 9999))
+	if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+		print "existing refnum"
+		while count > 0:
+			tempRefnum = '18'+str(randint(1000, 9999))
+			if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+				count -= 1
+				continue
+			else:
+				break
+	if count==0:
+		count = 1
+		tempRefnum = '18' + str(count).zfill(4)
+		while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+			count += 1
+			tempRefnum = '18' + str(count).zfill(4)
+	return tempRefnum
+
+@login_required(login_url='/signin/inceee2019')
+def inceeeapply(request):
+	conference = Conference.objects.get(conference_alias='inceee2019')
+	print conference.alias
+	response={}
+	response['conference'] = conference
+	response['alias'] = 'inceee2019'
+	name = request.user.first_name + " " + request.user.last_name
+	response['name'] = name
+	response['email'] = request.user.email
+	response['mobile'] = request.user.profile.contact
+	response['designation'] = request.user.profile.designation
+
+	payment = Payment.objects.filter(user=request.user, conf_id=conference)
+	# print payment.is_aprooved
+	if len(payment)==1 :
+		response['payment'] = payment.first()
+
+	if request.method == 'POST' :
+		now = datetime.datetime.now()
+		applyConf = request.POST.get('applyConf','off')
+		print applyConf
+		if applyConf == 'on':
+			# apply only if no request is present.
+			if  Conf_Paper.objects.filter(uid=request.user, conf_id=conference).count() == 0:
+				regconf = Registered_Conference()
+				regconf.conf_id = conference
+				regconf.user = request.user
+				paper = Conf_Paper()
+				paper.conf_id=conference
+				paper.uid=request.user
+				paper.papername=request.POST.get('papername', 'Applying for conference')
+				paper.submissionDate = now
+				paper.themes = ','.join(str(e) for e in request.POST.getlist('themes', []))
+				paper.status = 0
+				if request.FILES.get('file', None) is None:
+						return HttpResponse('Please upload abstract document. Press back button to try again.')
+				paper.paperfile=request.FILES.get('file', None)
+				if not validateFormat(paper.paperfile) :
+						return HttpResponse('Only PDF format is allowed for abstract submission. Press back button to try again.')
+				regconf.save()
+				conference.paperCount += 1
+				conference.save()
+
+				tempRefnum = get_temp_ref_num()
+				paper.paperRefNum = tempRefnum
+
+				profile = request.user.profile
+				profile.affiliation = request.POST.get('affiliation', '')
+				profile.address = request.POST.get('address', '')
+				profile.save()
+
+				paper.save()
+				regconf.papers.add(paper)
+				regconf.save()
+	try:
+		paper = Conf_Paper.objects.get(uid=request.user, conf_id=conference)
+		response['paper'] = paper
+	except:
+		response['nopaper'] = True
+	return render(request, 'conference/inceee/apply.djt',response)

@@ -55,14 +55,14 @@
                         <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
-                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+                        <a href="/conference/{{conference.conference_alias}}/links">Downloads</a>
                     </li>
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="/conference/{{conference.conference_alias}}/profiles">Speakers Profile</a>
-                    </li>
+                    </li>-->
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
                     </li>
@@ -128,10 +128,10 @@
                     <div class="col-sm-9" align="left">
                     <br>
                         Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
-                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <span class="right"> Designed and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
                         <br><br>
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
                                 
@@ -139,17 +139,28 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>ewcti2018@nitw.ac.in <br>
+                                <b>E-mail : </b>tssc-2018@nitw.ac.in<br>
                                 
                             </div>
                             <div class="col-sm-4">
-                                <h4><b>Contact:</b></h4>
-                                <b>Prof. CSRK Prasad<br>
-                                    Organising Secretary, EWCTI2018<br>
+                                <h4><b>For Correspondence and e-Contact:</b></h4>
+                                <b>Prof. K. Laxma Reddy<br>
+                                    Organising Secretary, TSSC-2018<br>
+                                    Department of Chemistry<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b> ewcti2018@nitw.ac.in   <br>
-                                <b>Phone : </b> +91-9440347348  <br>
+                                <b>Email : </b> tssc-2018@nitw.ac.in   <br>
+                                <b>Phone : </b>0870 2462008 <br>
+                                <b>Mobile: </b>08332969493 , 08332969439
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b>For Direct Personal Contact/Visit:</b></h4>
+                                <b>Prof. K. Laxma Reddy or<br>
+                                    The Staff at the Camp Office at<br>
+                                    Dean,IRAA Office,Ground Floor,SOM Building<br>
+                                <b>Email : </b> tssc-2018@nitw.ac.in   <br>
+                                <b>Phone : </b>0870 2462008 <br>
+                                <b>Mobile: </b>08332969493 , 08332969439
                             </div>
                            
                         </div>

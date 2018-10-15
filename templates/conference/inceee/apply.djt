@@ -1,0 +1,49 @@
+{% extends "conference/inceee/base.djt" %}
+
+{% block head %}
+<style>
+	#main{
+		min-height: 60vh;
+	}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container" id="main">
+	<div class="row">
+	{% if paper %}
+
+		{% if paper.uid.profile.mail_sent_accept %}
+			<div class="alert alert-success">
+		  <strong>Congratulations</strong>
+		  Your Payment is verified. Check your e-mail for invitation.
+		</div>
+		
+		{% elif paper.uid.profile.mail_sent_reject %}
+				<div class="alert alert-danger">
+					<strong>Sorry</strong>
+					Your application is rejected.
+				</div>
+	
+		{% else %}
+			<div class="alert alert-info">
+				Applied successfully. Pay the <a href="/conference/{{conference.conference_alias}}/#fee_div"><u>Registration Fee</u></a> and <a href="/conference/make_payment/{{conference.conference_alias}}"><u>Upload Payment Receipt</u></a>
+			</div>
+		{% endif %}
+
+	{% else %}
+		<div class="alert alert-info">
+		  <strong>Info!</strong> <p>You have not applied for the conference. Please apply by clicking the button below.</p>
+		</div>
+		
+		<form style="margin-top:3%;" method="post" action="">
+			{% csrf_token %}
+			<input type="checkbox" name="applyConf" checked hidden>
+			<button type="submit" class="btn btn-info">Apply</button>
+		</form>
+	{% endif %}
+	</div>
+</div>
+
+</div>
+{% endblock %}
