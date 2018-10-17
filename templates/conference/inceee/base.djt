@@ -71,9 +71,6 @@
                     <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
-                    <li>
-                        <a href="/registerspons/{{conference.conference_alias}}">Register as Sponser</a>
-                    </li>
                     {% else %}
                     <li>
                             <a href="/conference/{{conference.alias}}/dashboard/">UploadPaper</a>

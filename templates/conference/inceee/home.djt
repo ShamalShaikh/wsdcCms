@@ -433,14 +433,7 @@
 
     <!-- row -->
     <div class="row">
-        <div class="col-md-12">
-            <center>
-                <h2>
-                    <span class="label label-success">ORGANIZING COMMITTEE</span>
-                </h2>
-            </center>
-            <br>
-        </div>
+	<br>
         <div class="row">
             <div class="col-md-4">
                 <center>
@@ -459,7 +452,6 @@
                     </h4>
                     <p style="font-size:17px;">Prof. A. Sarath Babu
                         <br>Head of the Department
-                        <br> National Institute of Technology, Warangal
                     </p>
                 </center>
             </div>
@@ -470,8 +462,7 @@
                     </h4>
                     <p style="font-size:17px;">Prof. A. Venu Vinod
                         <br>Dr. P. V. Suresh
-                        <br>Dr, S, Muralimohan
-                        <br> National Institute of Technology, Warangal</p>
+                        <br>Dr. S. Muralimohan
                 </center>
             </div>
             <br>
@@ -484,13 +475,14 @@
     <br>
 
     <div class="row">
-        <div class="col-md-12">
+	<div class="col-md-12">
             <center>
-                <h4>
-                    <b>Organizing Committee</b>
-                </h4>
+                <h2>
+                    <span class="label label-success">ORGANIZING COMMITTEE</spa$
+                </h2>
             </center>
             <br>
+        </div>
             <div class="row" style="font-size:15px;">
                 <div class="col-md-7 col-md-offset-5">
                     <ul>
@@ -562,7 +554,7 @@
                     <li>The payment of the registration fee is through NEFT/Demand Draft. The detials of online payment are given on
                         the conference webiste. (
                         <a href="/conference/{{conference.conference_alias}}/#fee_div" target="blank">click here</a>)
-			<br><b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.<br>The details of the author must be written on the back side of the Demand Draft)</b></li>
+			<br><b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.The details of the author must be written on the back side of the Demand Draft)</b></li>
                     <li>Select "Upload payment Receipt" in Payment tab option from
                         the top menu bar. </li>
                     <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
