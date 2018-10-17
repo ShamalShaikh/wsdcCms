@@ -7,12 +7,11 @@
           Paper Upload
         </h2>
         <div class="ui divider"></div>
-        <h4>Steps for Upload of Paper</h4>
+        <h4>Steps to Upload Paper</h4>
         <ol>
-            <li>Select upload paper option from navbar</li>
             <li>Enter the title of the paper</li>
-            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
-            <li>A confirmation mail stating the tracking id will be sent to you</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at Download links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the paper id will be sent to you</li>
         </ol>
         <div class="ui divider"></div>
         <br>
@@ -51,8 +50,14 @@
                   {% ifequal paper.status 1 %}
                     Asked for Revision
                   {% endifequal %}
-                  {% ifequal paper.status 2 %}
-                    Accepted for Presentation
+                  {% ifequal conference.conference_alias "inceee2019" %}
+                    {% ifequal paper.status 2 %}
+                      Accepted
+                    {% endifequal %}
+                  {% else %}
+                    {% ifequal paper.status 2 %}
+                      Accepted for Presentation
+                    {% endifequal %}
                   {% endifequal %}
                   {% ifequal paper.status 3 %}
                     Accepted for Publication

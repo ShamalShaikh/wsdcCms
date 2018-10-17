@@ -308,9 +308,15 @@
                 {%ifequal paper.status 1 %}
                   <h4>Asked for Revision</h4>
                 {% endifequal %}
-                {%ifequal paper.status 2 %}
-                  <h4>Accepted for Presentation</h4>
-                {% endifequal %}
+                {% ifequal conference.conference_alias "inceee2019" %}
+                    {% ifequal paper.status 2 %}
+                      Accepted
+                    {% endifequal %}
+                  {% else %}
+                    {% ifequal paper.status 2 %}
+                      Accepted for Presentation
+                    {% endifequal %}
+                    {% endifequal %}
                 {%ifequal paper.status 3 %}
                   <h4>Accepted for Publication</h4>
                 {% endifequal %}

@@ -149,24 +149,32 @@ def upload_paper(request,alias):
 			paper.status = 0
 			conference.paperCount += 1
 			conference.save()
-
-			count = 30
-			tempRefnum = '18'+str(randint(1000, 9999))
-			if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-				print "existing refnum"
-				while count > 0:
-					tempRefnum = '18'+str(randint(1000, 9999))
-					if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-						count -= 1
-						continue
-					else:
-						break
-			if count==0:
+			tempRefnum = ''
+			if alias == 'inceee2019':
+				timeRef = str(now.year)[2]+str(now.year)[3]+str(now.month).zfill(2)+str(now.day).zfill(2)
 				count = 1
-				tempRefnum = '18' + str(count).zfill(4)
-				while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+				tempRefnum = timeRef + str(count).zfill(2)
+				while Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0:
 					count += 1
+					tempRefnum = timeRef + str(count).zfill(2)
+			else:
+				count = 30
+				tempRefnum = '18'+str(randint(1000, 9999))
+				if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+					print "existing refnum"
+					while count > 0:
+						tempRefnum = '18'+str(randint(1000, 9999))
+						if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
+							count -= 1
+							continue
+						else:
+							break
+				if count==0:
+					count = 1
 					tempRefnum = '18' + str(count).zfill(4)
+					while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
+						count += 1
+						tempRefnum = '18' + str(count).zfill(4)
 			
 			paper.paperRefNum = tempRefnum
 			paper.save()
@@ -180,6 +188,7 @@ def upload_paper(request,alias):
 
 @login_required(login_url='/signin/mmse2018')
 def dashboard(request,alias):
+	now = datetime.datetime.now()
 	response = {}
 	response['alias']=alias
 	conference = Conference.objects.filter(conference_alias=alias)[0]
@@ -653,22 +662,23 @@ def sendTrackingMail(paper,alias):
 		receiver = paper.uid.email
 		sender = 'inceee2019@gmail.com'
 
-		content = "Tracking id : " + paper.paperRefNum+'\n\n'
+		content = "Paper ID : " + paper.paperRefNum+'\n\n'
 		content += "Title : "+ paper.papername + '\n\n'
 		content += "Dear Author\n\n"
-		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on Frontiers in Corrosion Control of Materials". \n\n'
+		content += 'Thank you for submitting your abstract for INCEEE2019. \n\n'
 		content += 'Your submission was received in good order.\n\n'
-		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/fccm.\n\n'
-		content += 'Thank you for submitting your work to the conference.\n\n'
-		content += '\n\n For any queries mail to inceee2019@gmail.com .\n\n'
+		content += 'To track the status of your submission, please login into Conference website  at: cms.nitw.ac.in/inceee2019 and go to uploadPaper tab. \n\n'
+		content += 'In any future correspondence please mention your Paper ID.\n\n'
+		content += 'The acceptance of your submission will be notified by email.\n\n'
+		content += '\nFor any queries mail to inceee2019@gmail.com .\n\n'
 		content += 'Kind regards,\n\n'
-		content += 'Prof. G. V. S. Nageswara Rao\n\n'
-		content += 'Conference Convener, FCCM-2018" \n\n'
-
+		content += 'Department of Chemical Engineering,\n'
+		content += 'National Institute of Technology,\nWarangal - 506 004, Telangana State, India. \n'
+		content += 'Mobile: +91-8332969396, 402, 403'
 		rlist = []
 		rlist.append(receiver)
 		try:
-			send_mail('Tracking ID for uploaded paper for conference FCCM-2018',content,sender,rlist,fail_silently=False,)
+			send_mail('Paper ID for uploaded paper for conference INCEEE-2019',content,sender,rlist,fail_silently=False,)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
 
@@ -1150,26 +1160,6 @@ def inceeehotels(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/inceee/hotels.djt',response)
-
-def get_temp_ref_num():
-	count = 30
-	tempRefnum = '18'+str(randint(1000, 9999))
-	if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-		print "existing refnum"
-		while count > 0:
-			tempRefnum = '18'+str(randint(1000, 9999))
-			if Conf_Paper.objects.filter(paperRefNum=tempRefnum).count() > 0 :
-				count -= 1
-				continue
-			else:
-				break
-	if count==0:
-		count = 1
-		tempRefnum = '18' + str(count).zfill(4)
-		while Conf_Paper.objects.filter(paperRefNum=temprefnum).count() > 0 :
-			count += 1
-			tempRefnum = '18' + str(count).zfill(4)
-	return tempRefnum
 
 @login_required(login_url='/signin/inceee2019')
 def inceeeapply(request):
