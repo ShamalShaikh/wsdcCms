@@ -91,6 +91,18 @@ def register(request,alias):
 					userprofile.alumani = alumani
 				userprofile.save()
 				response['message'] = "Successfully Registered"
+				if alias == 'inceee2019':
+					conference = Conference.objects.get(conference_alias='inceee2019')
+					print firstname + "registered"
+					regconf = None
+					try:
+						regconf = Registered_Conference.objects.get(conf_id=conference,user=request.user)
+					except:
+						regconf = Registered_Conference()
+						regconf.conf_id = conference
+						regconf.user = user
+						regconf.save()
+
 				return render(request,'login_auth/sites/login.djt',response)
 			except :
 				response['message'] = "username already exist"
