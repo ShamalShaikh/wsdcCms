@@ -75,9 +75,9 @@
                     <li>
                             <a href="/conference/{{conference.alias}}/dashboard/">UploadPaper</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
-                    </li>
+                    </li> -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Payment
                             <span class="caret"></span>

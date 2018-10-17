@@ -49,7 +49,7 @@ urlpatterns = [
 	url(r'^inceee2019/about/$',views.inceeeabout),
 	url(r'^inceee2019/links/$',views.inceeelinks),
 	url(r'^inceee2019/hotels/$',views.inceeehotels),
-	url(r'^inceee2019/apply/$',views.inceeeapply),
+	#url(r'^inceee2019/apply/$',views.inceeeapply),
 
 
 
