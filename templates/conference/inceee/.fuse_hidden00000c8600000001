@@ -1,0 +1,583 @@
+{% extends "conference/inceee/base.djt" %} {% load staticfiles %} {% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="110px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+        </center>
+        <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;">
+                    <b>2nd International Conference on</b>
+                </p>
+                <p style="font-size:20px; color: #31b150;">
+                    <b>New Frontiers in Chemical, Energy and Environmental Engineering</b>
+                </p>
+                <p style="font-size:20px;color: #002360;">
+                    <b>(INCEEE - 2019)</b>
+                </p>
+                <p style="font-size:15px;color: #ff0300;">
+                    <b>On the occasion of Diamond Jubilee of NIT Warangal</b>
+                </p>
+
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+            </center>
+        </div>
+    </div>
+    <BR>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-6">
+            <center>
+                <h3 style="color:blue;">
+                    <b>February 15 - 16, 2019</b>
+                </h3>
+                <hr>
+                <h4>
+                    <b>Organised by</b>
+                    <br>
+                    <br> Department of Chemical Engineering
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+                <hr>
+                <h4>
+                    <b>Sponsored By</b>
+                    <br>
+                    <br> TEQIP III
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+            </center>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+
+    <!-- Call to Action Well -->
+    <!-- <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:10px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                </div>
+            </div>
+        </div>
+        <hr> -->
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Overview of the Conference</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                This conference is the second in series of International Conference on New Frontiers in Chemical, Energy and Environmental
+                Engineering (INCEEE). The first edition of INCEEE was conducted during 20-21, March 2015 as a part of Golden
+                Jubilee Celebrations of the Department. INCEEE-2019 is being conducted as a part of Diamond Jubilee Celebrations
+                of the Institute. Sustainability is the key Mantra for equitable growth for very long periods of time. Sustainability
+                is all pervasive, that is it finds its place in chemical processing, energy harnessing, mineral exploration,
+                material development and all related technologies. Product and process development, simulation and modelling
+                have added new dimensions to the advancements in these fields of research. Chemical Engineering has more
+                recently embraced biomolecular engineering concepts to widen its scope. Chemical Engineers shoulder the responsibility
+                of ensuring that their activities are environmentally benign, while improving the health and wellbeing of
+                all citizens. In this context, the second international conference on chemical, energy and environmental
+                engineering is planned to provide a platform for comprehensive dissemination of knowledge and exchange of
+                ideas in related fields among the academicians, scientists and industry professionals.
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Thematic Areas</span>
+                </center>
+            </h2>
+            <br>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-4">
+                    <p style="color:black; text-align:justify;">
+                        INCEEE-2019 welcomes research papers on the following topics but not limited to:
+                    </p>
+                    <ol>
+                        <li>Carbon Capture, Utilization, Sequestration</li>
+                        <li>Composite Materials</li>
+                        <li>Environmental Biotechnology and Biochemical Engineering</li>
+                        <li>Environmental Pollution Control</li>
+                        <li>Green Technology</li>
+                        <li>Instrumentation and Process Control</li>
+                        <li>Molecular Dynamic Simulations</li>
+                        <li>NanomaterialsSynthesis &Characterization</li>
+                        <li>Petroleum Refinery and Petrochemicals</li>
+                        <li>Pharmaceutical Engineering</li>
+                        <li>Process and Product Development</li>
+                        <li>Process Intensification</li>
+                        <li>Process Modeling, Simulation & Optimization</li>
+                        <li>Reaction Engineering and Catalysis </li>
+                        <li>Renewable Energy Resources</li>
+                        <li>Transport Processes</li>
+                        <li>Waste Management</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- /.col-md-6 -->
+        <div class="col-md-6" id="dates">
+            <h2>
+                <center>
+                    <span class="label label-primary">Call for abstracts</span>
+                </center>
+            </h2>
+            <br>
+            <p style="text-align:justify;">
+                Authors should submit an abstract of their original, unpublished work in not exceeding 300 words. The abstract format can
+                be downloaded from the conference website. The abstract must be mailed to
+                <b>inceee2019@gmail.com</b>.
+            </p>
+        </div>
+        <div class="col-md-6" id="dates">
+            <h2>
+                <center>
+                    <span class="label label-primary">Important Dates</span>
+                </center>
+            </h2>
+            <br>
+            <table class="table table-hover">
+                <tr class="active">
+                    <td>Abstract submission:</td>
+                    <td>30th Nov 2018</td>
+                </tr>
+                <tr class="active">
+                    <td>Notification of Acceptance:</td>
+                    <td>15th Dec 2018</td>
+                </tr>
+                <tr class="active">
+                    <td>Full paper submission:</td>
+                    <td>15th Jan 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Early bird Registration:</td>
+                    <td>01st Jan 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Registration Deadline:</td>
+                    <td>20th Jan 2019</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12" id="fee_div">
+            <center>
+                <h2>
+                    <span class="label label-success">Proceedings</span>
+                </h2>
+                <br>
+                <p style="text-align:justify;">
+                    All the abstracts accepted after peer review from registered participants will be published in the conference proceedings
+                    with ISBN number. Efforts are on for publishing select papers presented at INCEEE 2019 in SCI and Scopus
+                    indexed journals (as special issue).
+                    <br>
+                    <b>Select papers will be rewarded with Best paper (Oral and Poster) Awards at the conference.</b>
+                </p>
+            </center>
+        </div>
+
+
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6" id="fee_div">
+            <center>
+                <h2>
+                    <span class="label label-primary">Registration</span>
+                </h2>
+                <br>
+                <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab
+                    and pay the requisite registration fee (as per the details given below). Atleast one author should register
+                    per paper.</p>
+
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td rowspan="2">Category</td>
+                        <td colspan="2">Early bird registration</td>
+                        <td colspan="2">Regular registration</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Indian (INR)</td>
+                        <td>Others (USD)</td>
+                        <td>Indian (INR)</td>
+                        <td>Others (USD)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Academia and R&D centers</td>
+                        <td>2500</td>
+                        <td>200</td>
+                        <td>3000</td>
+                        <td>250</td>
+
+                    </tr>
+
+                    <tr class="active">
+                        <td>Industry delegates</td>
+                        <td>5000</td>
+                        <td>300</td>
+                        <td>6000</td>
+                        <td>350</td>
+                    </tr>
+                    <tr class="active">
+                        <td>PG &Research Scholars</td>
+                        <td>1500</td>
+                        <td>100</td>
+                        <td>2000</td>
+                        <td>150</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Accompanying /Non-presenting Persons</td>
+                        <td>1500</td>
+                        <td>100</td>
+                        <td>2000</td>
+                        <td>150</td>
+                    </tr>
+
+                </table>
+
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <h2>
+                <center>
+                    <span class="label label-primary">Account Details</span>
+                </center>
+            </h2>
+            <br>
+
+            <p style="text-align:left;">Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Convener
+                – INCEEE-2019 payable at Warangal or remitted through On-line / NEFT to the below mentioned Bank Account.</p>
+
+
+            <table class="table table-hover">
+                <tr rowspan="6" class="active">
+                    <td>Account Namee</td>
+                    <td>Convener – INCEEE-2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Account No.</td>
+                    <td>38011574154</td>
+                </tr>
+                <tr class="active">
+                    <td>Bank</td>
+                    <td>State Bank of India</td>
+                </tr>
+
+                <tr class="active">
+                    <td>Branch</td>
+                    <td>RECWarangal (NIT Campus)</td>
+                </tr>
+                <tr class="active">
+                    <td>Branch Code</td>
+                    <td>20149</td>
+                </tr>
+                <tr class="active">
+                    <td>IFSC</td>
+                    <td>SBIN0020149</td>
+                </tr>
+                <tr class="active">
+                    <td>MICR Code</td>
+                    <td>506002030</td>
+                </tr>
+                <tr class="active">
+                    <td>SWIFT Code</td>
+                    <td>SBININBBH14</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Keynote Speakers</span>
+                </center>
+            </h2>
+            <br>
+        </div>
+        <div class="col-md-6" style="line-height:30px;font-size:17px;">
+            <center>
+                <div>
+                    <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150">
+                    <br>
+                </div>
+                <a href="http://www.engineering.uoit.ca/people/amme/faculty/ibrahim.dincer.php" target="-blank">
+                    <b>
+                        <u>Prof. Ibrahim Dincer</u>
+                    </b>
+                </a>
+                <br>University of Ontorio Institute of Technology, Canada</center>
+            <br>
+        </div>
+        <div class="col-md-6" style="line-height:30px;font-size:17px;">
+            <center>
+                <div>
+                    <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150">
+                    <br>
+                </div>
+                <a href="http://www.chbe.nus.edu.sg/faculty/cheiak" target="blank">
+                    <b>
+                        <u>Prof. Iftekhar Abubakar KARIMI</u>
+                    </b>
+                </a>
+                <br>National University of Singapore, Singapore</center>
+            <br>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h2>
+                    <span class="label label-success">Technical Advisory Committee</span>
+                </h2>
+            </center>
+            <br>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-8 col-md-offset-4">
+                    <strong>
+                        <ul>
+                            <li>
+                                <a href="http://www.che.iitm.ac.in/~chidam/" target="blank">Prof (Rtd.). M. Chidambaram, IIT Madras, Chennai</a>
+                            </li>
+                            <li>
+                                <a href="http://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=26" target="blank">Prof. A. B. Pandit, ICT Mumbai, Mumbai</a>
+                            </li>
+                            <li>
+                                <a href="http://www.fvt.bci.tu-dortmund.de/cms/en/staff/Prof/index.html" target="blank">Prof. Andrzej Górak, TU Dortmund University,Germany</a>
+                            </li>
+                            <li>
+                                <a href="https://chemeng.mines.edu/project/anuj-chauhan/" target="blank">Prof. Anuj Chauhan, Colorado School of Mines, USA</a>
+                            </li>
+                            <li>
+                                <a href="https://www.chalmers.se/en/staff/Pages/henrik-leion.aspx" target="blank">Prof. Henrik Leion, Chalmers University of Technology, Sweden</a>
+                            </li>
+                            <li>
+                                <a href="https://biblio.ugent.be/person/801001371090" target="blank">Prof. Ingmar Nopens, Ghent University, Belgium</a>
+                            </li>
+                            <li>
+                                <a href="http://iittp.ac.in/dr-k-krishnaiah" target="blank">Prof. K. Krishnaiah, IIT Tirupathi, India</a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://findanexpert.unimelb.edu.au/display/person1590" target="blank">Prof. M. Ashok Kumar, University of Melbourne, Australia</a>
+                            </li>
+                            <li>
+                                <a href="http://icems.ist.utl.pt/chemistry/memb.html" target="blank">Prof. Maria Norberta de Pinho, Instituto Superio Technico, Lisbon, Portugal</a>
+                            </li>
+                            <li>
+                                <a href="https://egr.vcu.edu/directory/ramgupta/" target="blank">Prof. Ram B. Gupta, Virginia Commonwealth Univ., USA</a>
+                            </li>
+                            <li>
+                                <a href="https://che.iitm.ac.in/~psts/" target="blank">Prof. P. S. T Sai, IIT Madras, Chennai</a>
+                            </li>
+                            <li>
+                                <a href="https://www.che.iitb.ac.in/online/faculty/ravindra-d-gudi" target="blank">Prof. Ravindra Gudi, IIT Bombay, Mumbai</a>
+                            </li>
+                            <li>
+                                <a href="https://che.iitm.ac.in/~sjayanti/" target="blank">Prof. Sreenivas Jayanti, IIT Madras, Chennai</a>
+                            </li>
+                            <li>
+                                <a href="https://engineering.purdue.edu/ChE/news/2018/che-professor-zoltan-k-nagy-receives-2018-aiche-process-development-division-research-award-"
+                                    target="blank">Prof. Zoltan K Nagy, Purdue University, USA</a>
+                            </li>
+
+                        </ul>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h2>
+                    <span class="label label-success">ORGANIZING COMMITTEE</span>
+                </h2>
+            </center>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Patron</b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. N V Ramana Rao
+                        <br> Director
+                        <br> National Institute of Technology, Warangal</p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Convener </b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. A. Sarath Babu
+                        <br>Head of the Department
+                        <br> National Institute of Technology, Warangal
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Coordinators</b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. A. Venu Vinod
+                        <br>Dr. P. V. Suresh
+                        <br>Dr, S, Muralimohan
+                        <br> National Institute of Technology, Warangal</p>
+                </center>
+            </div>
+            <br>
+        </div>
+        <!-- <div class="col-md-3"></div> -->
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h4>
+                    <b>Organizing Committee</b>
+                </h4>
+            </center>
+            <br>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-7 col-md-offset-5">
+                    <ul>
+                        <li>Prof. Y. Pydi Setty</li>
+                        <li>Prof. Shirish H Sonawane</li>
+                        <li>Prof. K. Anand Kishore</li>
+                        <li>Dr. K. Srivani</li>
+                        <li>Dr. S. Srinath</li>
+                        <li>Dr. A. Seshagiri Rao</li>
+                        <li>Dr. S. Vidyasagar</li>
+                        <li>Dr. T. Sunil Kumar</li>
+                        <li>Dr. G. Uday Bhaskar Babu</li>
+                        <li>Dr. V. Ramsagar</li>
+                        <li>Dr. K. Raghu Raja Pandiyan</li>
+                        <li>Dr. S. Manigandan</li>
+                        <li>Dr. K. S. Rajmohan</li>
+                        <li>Dr. K. Manohar</li>
+                        <li>Dr. P. M. Satya Sai</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</BR>
+</div>
+</BR>
+
+<!-- INSTRUCTION LIST  -->
+<div id="instructions" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <br>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <h4 style="color:black;">&#9679 Steps to register</h4>
+                <hr>
+                <ol>
+                    <li>Click on register tab at the top</li>
+                    <li>Fill in the details and click on register</li>
+                    <li>Login with your credentials</li>
+                    <li>Congrats !!! You are succesfully registered on website</li>
+                </ol>
+                <hr>
+                <hr>
+                <h4 style="color:black;">&#9679; Steps for applying for confrence</h4>
+                <hr>
+                <ol>
+                    <li>After registering on the website, login with your credentials</li>
+                    <li>Click on UploadPaper tab to upload the abstract of your paper.<br>
+                    <b>(*In case you are not presenting the paper skip to the payment step.)</b></li>
+                    <li>You can then check the status of your abstract there.</li>
+                    <li>After the acceptance of your abstract you can proceed to the payment step.</li>
+                </ol>
+                <hr>
+                <hr>
+
+
+                <h4 style="color:black;">&#9679; Steps for Payment</h4>
+                <hr>
+                <ol>
+                    <li>Upon acceptance of your abstract, the author has to pay the full registration fee along with 
+                        a soft copy of fully filled registration form which can be downloaded from the download link 
+                        of this website. (<a href="/conference/{{conference.conference_alias}}/links" target="blank">click here</a>)</li>
+                    <li>The payment of the registration fee is through Online/NEFT. The detials of online payment are given on
+                        the conference webiste. (
+                        <a href="/conference/{{conference.conference_alias}}/#fee_div">click here</a>)</li>
+                    <li>Select "Upload payment Receipt" in Payment tab option from
+                        the navbar at top. </li>
+                    <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
+                    <li>You can check the status of your payment approval there.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

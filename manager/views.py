@@ -64,8 +64,7 @@ def home(request):
 @login_required(login_url='/manager/signin/')
 def assign_reviewer(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
-	conf = Conference.objects.get(conference_id=paper.conf_id.conference_id)
-	conf_name = conf.conference_name
+	conf_name = paper.conf_id.conference_name
 	reviewer = Reviewer.objects.filter(conference=paper.conf_id).exclude(papers=paper)
 	reviewer_assigned = Reviewer.objects.filter(papers=paper,conference=paper.conf_id)
 	if paper.is_approved:
@@ -342,7 +341,7 @@ def export_xls(request, cid):
 	# ]
 
 	columns = [
-	    (u"User", 6000),
+	    (u"Registered Users", 6000),
 	    (u"Gender",3000),
 	    (u"Contact",6000),
 	    (u"Email",6000),
@@ -528,10 +527,10 @@ def sendmail(request,cid,type) :
 
 	if type == '2':
 		if mail_Action == "approve":	
-			subject = 'Payment verified.Invitation to Conference EWCTI2018 '
+			subject = 'Payment verified.Invitation to Conference INCEEE2019 '
 			content = "Dear " + profile.user.first_name + ",\n\n" 
 			content += "Your payement has been successfully verified.\n\n"
-			content += "You are invited to the Conference on 10th October.\n\n"
+			# content += "You are invited to the Conference on 10th October.\n\n"
 			content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
 			content += "Thank you!"
 
@@ -543,10 +542,10 @@ def sendmail(request,cid,type) :
 			content += "Please send the payment details again."
 
 	if type == '5':
-		subject = 'Payment verified.Invitation to Conference EWCTI2018 '
+		subject = 'Payment verified.Invitation to Conference INCEEE2019 '
 		content = "Dear " + profile.user.first_name + ",\n\n" 
 		content += "Your payement has been successfully verified.\n\n"
-		content += "You are invited to the Conference on 10th October.\n\n"
+		# content += "You are invited to the Conference on 10th October.\n\n"
 		content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
 		content += "Thank you!"
 
@@ -692,6 +691,47 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
 
+	# if alias == 'inceee2019' :
+	# 	receiver = email
+	# 	sender = 'inceee2019@gmail.com'
+		
+	# 	####
+	# 	content = "Dear Author\n\n"
+	# 	content += "Your abstract was peer reviewed for presentation "
+	# 	content += "at the National Conference on "
+	# 	content += "FRONTIERS IN CORROSION CONTROL OF MATERIALS (FCCM-2018) "
+	# 	content += "to be held on June 28-29, 2018 at Department of Metallurgical and Materials Engineering "
+	# 	content += "National Institute of Technology, Warangal, Telangana, India.\n\n"
+	# 	content += "Based on the evaluations of reviewers, it is my pleasure to "
+	# 	content += "inform that your full paper entitled "
+	# 	content += '" ' + papername + ' " (' + trackingID + ") "
+	# 	content += "has been accepted for "
+	# 	content += "presentation and will be scheduled in an appropriate session.\n\n"
+	# 	content += "This letter hereby serves the purpose of your official letter of "
+	# 	content += "invite to the FCCM-2018 conference.\n\n"
+	# 	content += "The selected papers from the papers presented at FCCM conference will be published in "
+	# 	content += "Elsevier's journal entitled Materials Today: Proceedings (Journal) "
+	# 	content += "after a thorough peer-review process. "
+	# 	content += "Hence, authors are requested to submit original research work of high quality and standards. "
+	# 	content += "Upon the notification of acceptance for publication in the journal Materials Today: Proceedings (Journal), "
+	# 	content += "the authors will have to submit copyright transfer agreement.\n\n"
+	# 	content += "It is to be noted that at least one author of each paper should "
+	# 	content += "be registered for the conference by paying the appropriate "
+	# 	content += "registration fee as well as everybody attending the conference.\n\n"
+	# 	content += "Further, You are required to pay the registration fee and "
+	# 	content += "upload the final version of the paper along "
+	# 	content += "with the payment receipt on the conference website.\n\n"
+	# 	content += "We are looking forward welcoming you in the Conference.\n\n"
+	# 	content += "Sincerely yours,\n"
+
+	# 	rlist = []
+	# 	rlist.append(receiver)
+
+	# 	try:
+	# 		send_mail('Acceptance of Paper for Presentation in FCCM-2018',content,sender,rlist,fail_silently=False,)
+	# 	except BadHeaderError:
+	# 		return HttpResponse('Invalid header found.')
+
 	return
 
 
@@ -699,7 +739,7 @@ def sendMailFunction(email,papername,trackingID,alias) :
 @login_required(login_url='/manager/signin/')
 def assignToReview(request,paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
-
+	alias = paper.conf_id.alias
 	if request.method == 'POST' :
 		username = request.POST.get('username')
 		reviewer = Reviewer.objects.get(user__username=username)
@@ -776,17 +816,17 @@ def reassign(request,revid):
 
 def sendAssignmentMail(email,paper,act):
 	receiver = email
-	sender = 'ctsem2018.nitw@gmail.com'
+	sender = 'inceee2019@gmail.com'
 
 	content = 'Dear Reviewer,\n\n'
 	content += 'Paper : '+paper.papername+' \n\nReference number : '+paper.paperRefNum
 	content += '\n\n has been '+act+' to you for review by conference manager of '
 	content += paper.conf_id.conference_name+'\n\n'
 	content += 'Kindly go to the following link and review the paper on '
-	content += 'or before April 7, 2018 : \n\n'
+	# content += 'or before April 7, 2018 : \n\n'
 	content += 'http://cms.nitw.ac.in/review \n\n'
 	content += 'Your username is : '+email+'\nYour password is : ctsemrev!@#\n\n'
-	content += 'Thanking You\nRegards\nOrganizing Committee\nCTSEM 2018\n\n'
+	content += 'Thanking You\nRegards\nOrganizing Committee\nINCEEE2019\n\n'
 
 	rlist = []
 	rlist.append(receiver)
