@@ -380,14 +380,11 @@
                     <strong>
                         <ul>
                             <li>
-                                <a href="http://www.che.iitm.ac.in/~chidam/" target="blank">Prof (Rtd.). M. Chidambaram, IIT Madras, Chennai</a>
-                            </li>
-                            <li>
                                 <a href="http://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=26" target="blank">Prof. A. B. Pandit, ICT Mumbai, Mumbai</a>
                             </li>
                             <li>
                                 <a href="http://www.fvt.bci.tu-dortmund.de/cms/en/staff/Prof/index.html" target="blank">Prof. Andrzej Górak, TU Dortmund University,Germany</a>
-                            </li>
+                            </li>                 
                             <li>
                                 <a href="https://chemeng.mines.edu/project/anuj-chauhan/" target="blank">Prof. Anuj Chauhan, Colorado School of Mines, USA</a>
                             </li>
@@ -400,7 +397,9 @@
                             <li>
                                 <a href="http://iittp.ac.in/dr-k-krishnaiah" target="blank">Prof. K. Krishnaiah, IIT Tirupathi, India</a>
                             </li>
-                            
+                            <li>
+                                <a href="http://www.che.iitm.ac.in/~chidam/" target="blank">Prof (Rtd.). M. Chidambaram, IIT Madras, Chennai</a>
+                            </li>
                             <li>
                                 <a href="https://findanexpert.unimelb.edu.au/display/person1590" target="blank">Prof. M. Ashok Kumar, University of Melbourne, Australia</a>
                             </li>
@@ -408,10 +407,10 @@
                                 <a href="http://icems.ist.utl.pt/chemistry/memb.html" target="blank">Prof. Maria Norberta de Pinho, Instituto Superio Technico, Lisbon, Portugal</a>
                             </li>
                             <li>
-                                <a href="https://egr.vcu.edu/directory/ramgupta/" target="blank">Prof. Ram B. Gupta, Virginia Commonwealth Univ., USA</a>
+                                <a href="https://che.iitm.ac.in/~psts/" target="blank">Prof. P. S. T Sai, IIT Madras, Chennai</a>
                             </li>
                             <li>
-                                <a href="https://che.iitm.ac.in/~psts/" target="blank">Prof. P. S. T Sai, IIT Madras, Chennai</a>
+                                <a href="https://egr.vcu.edu/directory/ramgupta/" target="blank">Prof. Ram B. Gupta, Virginia Commonwealth Univ., USA</a>
                             </li>
                             <li>
                                 <a href="https://www.che.iitb.ac.in/online/faculty/ravindra-d-gudi" target="blank">Prof. Ravindra Gudi, IIT Bombay, Mumbai</a>
