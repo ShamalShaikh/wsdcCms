@@ -136,7 +136,7 @@
           <th>Name</th>
           <th>Institute</th>
           <th>Department</th>
-          <th>Payment Receipt</th>
+          <th>Documents</th>
           <th>Reference No</th>
           <th>Contact</th>
           <th>Email</th>
@@ -149,7 +149,9 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a></td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a><br>
+              <a href="/downloadid/{{paidtran.id}}" target="blank">show form</a>
+            </td>
             <td>{{paidtran.refno}}</td>
             <td>{{paidtran.user.profile.contact}}</td>
             <td>{{paidtran.user.email}}</td>
@@ -189,6 +191,7 @@
           <th>Name</th>
           <th>Payment Receipt</th>
           <th>Reference No</th>
+          <th>Registration Form</th>
           <th>Approve</th>
           <th>Disapprove</th>
           </tr>
@@ -200,6 +203,7 @@
             <td>{{pendingdd.user.username}}</td>
             <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
             <td>{{pendingdd.refno}}</td>
+            <td><a href="/downloadid/{{pendingdd.id}}" target="blank">show form</a></td>
             <td><center>
                 <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
                   {% csrf_token %}
@@ -271,7 +275,6 @@
 {% endifequal %}
 
 {% ifequal type '3' %}
-      <br>
       <h2 class="ui header">
         <center>
         <div class="content">
@@ -279,9 +282,8 @@
         </div>
         </center>
       </h2>
-      <br>
       {% if papers %}
-      <table class="ui celled table">
+      <table class="ui celled table" id="papersTable">
         <thead>
           <tr>
           <th>Name</th>
@@ -318,7 +320,7 @@
             </td>
             <td>{{paper.submissionDate}}</td>
             <td>{{paper.revisionNumber}}</td>
-            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui fluid button blue">Manage</button></a></center></td>
+            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui button blue">Manage</button></a></center></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -331,7 +333,6 @@
 {% endifequal %}
 
 {% ifequal type '4' %}
-      <br>
       <h2 class="ui header">
       <center>
         <div class="content">
@@ -339,9 +340,8 @@
         </div>
       </center>
       </h2>
-      <br>
       {% if papers %}
-      <table class="ui celled table">
+      <table class="ui celled table" id="FpapersTable">
         <thead>
           <tr>
           <th>Name</th>
@@ -357,9 +357,9 @@
           <td>{{paper.related_paper.uid.first_name}} {{paper.related_paper.uid.last_name}}</td>
             <td>{{paper.related_paper.paperRefNum}}</td>
             <td>{{paper.papername}}</td>
-            <td><a class="ui fluid orange button" href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">Download Paper</a></td>
+            <td><a class="ui orange button" href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">Download Paper</a></td>
             <td>
-                <a class="ui fluid orange button" href="/conference/downloadfinalcf/{{paper.id}}">Download Copyright form</button>
+                <a class="ui orange button" href="/conference/downloadfinalcf/{{paper.id}}" target="blank">Download Copyright form</button>
                 
             </td>
           </tr>
@@ -474,6 +474,14 @@ $(".disapprove_btn").click(function(){
         });
 
         $('#rejectedTable').DataTable({
+            "info": true
+        });
+
+        $('#papersTable').DataTable({
+            "info": true
+        });
+
+        $('#FpapersTable').DataTable({
             "info": true
         });
 } );

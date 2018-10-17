@@ -3,32 +3,36 @@
 
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/1">Registered Users<div class="ui teal left pointing label">{{regusercount}}</div></a>
 
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/5">Verified Users<div class="ui teal left pointing label">{{paidusers}}</div></a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/5">Verified Payments<div class="ui teal left pointing label">{{paidusers}}</div></a>
 
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">Un-verified Users<div class="ui teal left pointing label">{{ddcount}}</div></a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">Un-verified Payments<div class="ui teal left pointing label">{{ddcount}}</div></a>
 
+		<!-- CMFDP-2019 Conference -->
 		{% ifequal conference.alias 'cmfdp2019'%}
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
 		{% endifequal %}
 
-
+		<!-- NOIEAS-2019 Conference -->
 		{% ifequal conference.alias 'noieas2019' %}
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
 		{% endifequal %}
 
+		<!-- FCCM2018 Conference -->
 		{% ifequal conference.alias 'fccm2018'%}
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
-
-		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/6">MetallographyContest<div class="ui teal left pointing label">{{contestantCount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
+			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/6">MetallographyContest<div class="ui teal left pointing label">{{contestantCount}}</div></a>
 		{% endifequal %}
 
+		<!-- INCEEE-2019 Conference -->
+		{% ifequal conference.alias 'inceee2019'%}
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
+		<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a>
+		{% endifequal %}
+
+		<!-- for adding questions for review criterion -->
 		<!--<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a> -->
 
 		<a class="item" href="/manager/exportdata/{{conference.conference_id}}">

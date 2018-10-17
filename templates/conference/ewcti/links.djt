@@ -11,8 +11,6 @@
                 <br><br>
                 <h4><b><ol>
                     <li><a href="{% static 'docs_ewcti/ewcti2018_brochure1.pdf' %}">Brochure</a></li><br>
-
-                    
                 </ol></b></h4>
             </div>
         </div>

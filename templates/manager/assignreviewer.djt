@@ -50,15 +50,15 @@
 	<form class="ui form" action="/manager/paper_remark/{{paper.paper_id}}/" method="post" enctype="multipart/form-data" id="remarkForm">
 		{% csrf_token %}
 		<div class="ui grid">
-			<div class="three wide centered column">
+			<div class="four wide centered column">
 				<b>Upload Remarks File <br> (PDF Only)</b>
 			</div>
-			<div class="three wide centered column">
+			<div class="four wide centered column">
 				<div class="field">
 					<input type="file" id="remfile" name="remarkFile">
 				</div>
 			</div>
-			<div class="six wide centered column">
+			<div class="four wide centered column">
 				<button class="ui fluid button green" type="button" id="remarkbtn">Submit</button>
 			</div>
 		</div>
@@ -85,7 +85,7 @@
 			</select>
 		</div>
 		<div class="four wide centered column">
-			<button class="ui fluid button green">Assign</button>
+			<button class="ui fluid button orange">Assign</button>
 		</div>
 	</div>
 	</form>
@@ -98,7 +98,7 @@
 			<center><b>{{rev1.reviewer.user.username}} - {{rev1.reviewer.user.first_name}}</b></center>
 		</div>
 		<div class="four wide centered column">
-			<a href="/manager/reviewDetails/{{rev1.id}}"><button class="ui fluid button green" type="button">Details</button></a>
+			<a href="/manager/reviewDetails/{{rev1.id}}"><button class="ui fluid button blue" type="button">Details</button></a>
 		</div>
 	</div>
 {% endif %}
@@ -120,7 +120,7 @@
 			</select>
 		</div>
 		<div class="four wide centered column">
-			<button class="ui fluid button green">Assign</button>
+			<button class="ui fluid button orange">Assign</button>
 		</div>
 	</div>
 	</form>
@@ -133,7 +133,7 @@
 			<center><b>{{rev2.reviewer.user.username}} - {{rev2.reviewer.user.first_name}}</b></center>
 		</div>
 		<div class="four wide centered column">
-			<a href="/manager/reviewDetails/{{rev2.id}}"><button class="ui fluid button green" type="button">Details</button></a>
+			<a href="/manager/reviewDetails/{{rev2.id}}"><button class="ui fluid button blue" type="button">Details</button></a>
 		</div>
 	</div>
 {% endif %}
@@ -141,6 +141,22 @@
 <br><br>
 
 <center><h3> Other Actions </h3></center>
+
+{% ifequal conf_name "inceee2019" %}
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/1/{{paper.paper_id}}">
+			<button class="ui fluid button green">
+			  Approve Paper
+			</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+{% else %}
 
 <div class="ui fluid segment">
 	<div class="row">
@@ -166,6 +182,8 @@
 	</div>
 </div>
 
+{% endifequal %}
+
 <div class="ui fluid segment">
 	<div class="row">
 		<div class="eight wide column">
@@ -177,6 +195,7 @@
 		</div>
 	</div>
 </div>
+<br>
 
 </div>
 {% endblock %}

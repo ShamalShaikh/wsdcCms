@@ -64,6 +64,8 @@ def home(request):
 @login_required(login_url='/manager/signin/')
 def assign_reviewer(request, paper_id):
 	paper = Conf_Paper.objects.get(paper_id=paper_id)
+	conf = Conference.objects.get(conference_id=paper.conf_id.conference_id)
+	conf_name = conf.conference_name
 	reviewer = Reviewer.objects.filter(conference=paper.conf_id).exclude(papers=paper)
 	reviewer_assigned = Reviewer.objects.filter(papers=paper,conference=paper.conf_id)
 	if paper.is_approved:
@@ -93,6 +95,7 @@ def assign_reviewer(request, paper_id):
 		'is_rejected':paper.is_rejected,
 		'under_review':paper.under_review,
 		'content':content,
+		'conf_name':conf_name,
 	}
 
 	##new part
@@ -198,7 +201,7 @@ def averageResponses(request, paper_id):
 		sum=0
 		count=0
 		for i in ans:
-			sum = sum+int(i.answer)
+			sum = sum+int(i.marks)
 			count = count+1
 		if count>0:
 			average = sum/count

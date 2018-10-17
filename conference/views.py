@@ -90,7 +90,7 @@ def payment(request,alias):
 	if request.method == 'POST' :
 		# validation
 		dd_pic = request.FILES['dd_file']
-		id_pic = request.FILES['id_file']
+		id_pic = request.FILES.get('id_file','')
 		refno = request.POST['refno']
 		user = request.user
 		conf_id = Conference.objects.get(conference_alias=alias)
@@ -638,6 +638,29 @@ def sendTrackingMail(paper,alias):
 		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/fccm.\n\n'
 		content += 'Thank you for submitting your work to the conference.\n\n'
 		content += '\n\n For any queries mail to fccm2018nitw@gmail.com .\n\n'
+		content += 'Kind regards,\n\n'
+		content += 'Prof. G. V. S. Nageswara Rao\n\n'
+		content += 'Conference Convener, FCCM-2018" \n\n'
+
+		rlist = []
+		rlist.append(receiver)
+		try:
+			send_mail('Tracking ID for uploaded paper for conference FCCM-2018',content,sender,rlist,fail_silently=False,)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+
+	if alias == 'inceee2019' :
+		receiver = paper.uid.email
+		sender = 'inceee2019@gmail.com'
+
+		content = "Tracking id : " + paper.paperRefNum+'\n\n'
+		content += "Title : "+ paper.papername + '\n\n'
+		content += "Dear Author\n\n"
+		content += 'Thank you for submitting your manuscript for consideration for publication / presentation at  "National Conference on Frontiers in Corrosion Control of Materials". \n\n'
+		content += 'Your submission was received in good order.\n\n'
+		content += 'To track the status of your manuscript, please log into Conference website  at: cms.nitw.ac.in/fccm.\n\n'
+		content += 'Thank you for submitting your work to the conference.\n\n'
+		content += '\n\n For any queries mail to inceee2019@gmail.com .\n\n'
 		content += 'Kind regards,\n\n'
 		content += 'Prof. G. V. S. Nageswara Rao\n\n'
 		content += 'Conference Convener, FCCM-2018" \n\n'
