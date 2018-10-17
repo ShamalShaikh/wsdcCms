@@ -103,8 +103,11 @@ def assign_reviewer(request, paper_id):
 		context['rev1'] = revs[0]
 	if len(revs) > 1 :
 		context['rev2'] = revs[1]
-
-	return render(request, 'manager/assignreviewer.djt', context)
+	if manager == paper.conf_id.manager:
+		return render(request, 'manager/assignreviewer.djt', context)
+	else:
+		return render(request,'manager/404.djt',{})
+	
 
 @login_required(login_url='/manager/signin/')
 def conference_landing(request,cid,type):
@@ -112,6 +115,7 @@ def conference_landing(request,cid,type):
 	#also we need to check whether this user is manager.
 	conference = Conference.objects.get(conference_id=cid)
 	regconfs = Registered_Conference.objects.filter(conf_id=conference)
+	manager = Manager.objects.get(user=request.user)
 	users = []
 	paidtrans = []
 	pending_dds= []
@@ -169,7 +173,11 @@ def conference_landing(request,cid,type):
 	response['finalsubcount']=len(final_papers)
 	response['contestants'] = contestants
 	response['contestantCount'] = len(contestants)
-	return render(request,'manager/conf_navbar.djt',response)
+	if manager == conference.manager:
+		return render(request,'manager/conf_navbar.djt',response)
+	else:
+		return render(request,'manager/404.djt',{})
+
 
 def reviewerAssigned(request, paper_id, u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
