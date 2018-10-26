@@ -156,8 +156,8 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a><br>
-              <a href="/downloadid/{{paidtran.id}}" target="blank">show form</a>
+            <td><a href="/downloaddd/{{paidtran.pic_of_dd.url}}" target="blank">show receipt</a><br>
+              <a href="/downloadid/{{paidtran.pic_of_id.url}}" target="blank">show id</a>
             </td>
             <td>{{paidtran.refno}}</td>
             <td>{{paidtran.user.profile.contact}}</td>
@@ -208,9 +208,9 @@
           {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td><a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
+            <td><a href="/downloaddd/{{pendingdd.pic_of_dd.url}}" target="blank">show receipt</a></td>
             <td>{{pendingdd.refno}}</td>
-            <td><a href="/downloadid/{{pendingdd.id}}" target="blank">show form</a></td>
+            <td><a href="/downloadid/{{pendingdd.pic_of_id.url}}" target="blank">show id</a></td>
             <td><center>
                 <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
                   {% csrf_token %}
@@ -257,7 +257,7 @@
           <tr>
             <td>{{rejected_dd.user.username}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
-            <td><a href="/downloadrejdd/{{rejected_dd.id}}" target="blank">show receipt</a></td>
+            <td><a href="/downloadrejdd/{{rejected_dd.pic_of_dd.url}}" target="blank">show receipt</a></td>
             <td>{{rejected_dd.refno}}</td>
             <td>{{rejected_dd.remarks}}</td>
             <td>{{rejected_dd.user.email}}</td>
