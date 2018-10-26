@@ -164,8 +164,8 @@
             <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
             <td>{{paidtran.user.profile.institute}}</td>
             <td>{{paidtran.user.profile.department}}</td>
-            <td><a href="/downloaddd/{{paidtran.pic_of_dd.url}}" target="blank">show receipt</a><br>
-              <a href="/downloadid/{{paidtran.pic_of_id.url}}" target="blank">show id</a>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a><br>
+              <a href="/downloadid/{{paidtran.id}}" target="blank">show id</a>
             </td>
             <td>{{paidtran.refno}}</td>
             <td>{{paidtran.user.profile.contact}}</td>
@@ -217,9 +217,9 @@
             <tr>
             <td>{{pendingdd.user.username}}</td>
             <td>
-                <a href="/downloaddd/{{pendingdd.pic_of_dd.url}}" target="blank">show receipt</a></td>
+                <a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
             <td>{{pendingdd.refno}}</td>
-            <td><a href="/downloadid/{{pendingdd.pic_of_id.url}}" target="blank">show id</a></td>
+            <td><a href="/downloadid/{{pendingdd.id}}" target="blank">show id</a></td>
             <td><center>
                 <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
                   {% csrf_token %}
