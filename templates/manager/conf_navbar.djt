@@ -51,7 +51,11 @@
               <td>{{profile.department}}</td>
               <td>{{profile.contact}}</td>
               <td>{{profile.user.email}}</td>
-              <td><a href="{{paper.paperfile.url}}">Download</a></td>
+              <td>
+                {% if paper.paperfile %}
+                <a href="{{paper.paperfile.url}}">Download</a>
+                {% endif %}
+              </td>
 
               <td>
                   <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
@@ -98,7 +102,11 @@
               <td>{{profile.department}}</td>
               <td>{{profile.contact}}</td>
               <td>{{profile.user.email}}</td>
-              <td><a href="{{paper.paperfile.url}}">Download</a></td>
+              <td>
+                {% if paper.paperfile %}
+                    <a href="{{paper.paperfile.url}}">Download</a>
+                {% endif %}
+              </td>
 
 
               
@@ -208,7 +216,8 @@
           {% if not pendingdd.is_rejected %}
             <tr>
             <td>{{pendingdd.user.username}}</td>
-            <td><a href="/downloaddd/{{pendingdd.pic_of_dd.url}}" target="blank">show receipt</a></td>
+            <td>
+                <a href="/downloaddd/{{pendingdd.pic_of_dd.url}}" target="blank">show receipt</a></td>
             <td>{{pendingdd.refno}}</td>
             <td><a href="/downloadid/{{pendingdd.pic_of_id.url}}" target="blank">show id</a></td>
             <td><center>
