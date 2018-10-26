@@ -535,77 +535,78 @@ def paper_remark(request, paper_id):
 
 	return redirect('/manager/assignreviewer/' + paper_id +"/")
 
-def sendmail(request,cid,type) :
-	profile = UserProfile.objects.get(pk=request.POST['user'])
-	receiver = profile.user.email
-	print "HELLLO....."+request.POST['user'] + receiver
-	sender = 'conference@nitw.ac.in'	
-	mail_Action = request.POST.get('mail_action',0) 
-	subject = ''
-	content = ''
-	print sender
-	print type
-	if type == '1':
-		subject = 'Application approved but payment pending'
-		content = "Dear " + profile.user.first_name + ",\n\n" 
-		content += "Your details have been reviewed and verified by us.\n\n"
-		content += "Please pay the registration fee to proceed further.\n\n"
-		content += "Thank you!"
+def sendmail(request,cid,type):
+    profile = UserProfile.objects.get(pk=request.POST['user'])
+    conference = Conference.objects.get(pk=cid)
+    receiver = profile.user.email
+    print "HELLLO....."+request.POST['user'] + receiver
+    sender = 'conference@nitw.ac.in'
+    mail_Action = request.POST.get('mail_action',0)
+    subject = ''
+    content = ''
+    print sender
+    print type
+    if type == '1':
+        subject = 'Application approved but payment pending'
+        content = "Dear " + profile.user.first_name + ",\n\n"
+        content += "Your details have been reviewed and verified by us.\n\n"
+        content += "Please pay the registration fee to proceed further.\n\n"
+        content += "Thank you!"
 
-	if type == '2':
-		if mail_Action == "approve":	
-			subject = 'Payment verified.Invitation to Conference INCEEE2019 '
-			content = "Dear " + profile.user.first_name + ",\n\n"
-			content += "Your payement has been successfully verified.\n\n"
-			# content += "You are invited to the Conference on 10th October.\n\n"
-			content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
-			content += "Thank you!"
+    if type == '2':
+        if mail_Action == "approve":
+            subject = 'Payment verified.Invitation to Conference ' + conference.conference_name
+            content = "Dear " + profile.user.first_name + ",\n\n"
+            content += "Your payement has been successfully verified.\n\n"
+            # content += "You are invited to the Conference on 10th October.\n\n"
+            content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
+            content += "Thank you!"
 
-		else:
-			subject = 'Payment verification Failed'
-			content = "Dear " + profile.user.first_name + ",\n\n" 
-			content += "There was an issue in verifying your payment.\n"
-			content += "Issue: " + request.POST['remark'] + "\n\n"
-			content += "Please send the payment details again."
+        else:
+            subject = 'Payment verification Failed'
+            content = "Dear " + profile.user.first_name + ",\n\n"
+            content += "There was an issue in verifying your payment.\n"
+            content += "Issue: " + request.POST['remark'] + "\n\n"
+            content += "Please send the payment details again."
 
-	if type == '5':
-		subject = 'Payment verified.Invitation to Conference INCEEE2019 '
-		content = "Dear " + profile.user.first_name + ",\n\n"
-		content += "Your payement has been successfully verified.\n\n"
-		# content += "You are invited to the Conference on 10th October.\n\n"
-		content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
-		content += "Thank you!"
+    if type == '5':
+        subject = 'Payment verified.Invitation to Conference ' + conference.conference_name
+        content = "Dear " + profile.user.first_name + ",\n\n"
+        content += "Your payement has been successfully verified.\n\n"
+        # content += "You are invited to the Conference on 10th October.\n\n"
+        content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
+        content += "Thank you!"
 
-	rlist = []
-	rlist.append(receiver)
-	print subject
-	print content
-	print rlist
-	try:
-		# send_mail(subject,content,sender,rlist,fail_silently=False)
-		mail = EmailMultiAlternatives(subject, content, sender, rlist)
-		mail.send()
-		print "tpe:"+type
-		if type == '1':
-			profile.mail_sent_register=True
+    rlist = []
+    rlist.append(receiver)
+    print subject
+    print content
+    print rlist
+    try:
+        # send_mail(subject,content,sender,rlist,fail_silently=False)
+        mail = EmailMultiAlternatives(subject, content, sender, rlist)
+        mail.send()
+        print "tpe:"+type
+        if type == '1':
+            profile.mail_sent_register=True
 
-		if type == '2' and mail_Action == "approve":
-			profile.mail_sent_reject=False
-			profile.mail_sent_accept=True
-			print "type:"+type
-		if type == '2' and mail_Action == "disapprove":
-			profile.mail_sent_reject=True
-			profile.mail_sent_accept=False
-			print "type:"+type
+        if type == '2' and mail_Action == "approve":
+            profile.mail_sent_reject=False
+            profile.mail_sent_accept=True
+            print "type:"+type
+        if type == '2' and mail_Action == "disapprove":
+            profile.mail_sent_reject=True
+            profile.mail_sent_accept=False
+            print "type:"+type
 
-		if type == '5':
-			profile.mail_sent_accept=True
-			print "type:"+type
-		profile.save()
-	except BadHeaderError:
-		return HttpResponse('Invalid header found.')
+        if type == '5':
+            profile.mail_sent_accept=True
+            print "type:"+type
+        profile.save()
+    except BadHeaderError:
+        return HttpResponse('Invalid header found.')
 
-	return redirect('/manager/conference_landing/' + cid + "/" + type + "/")
+    return redirect('/manager/conference_landing/' + cid + "/" + type + "/")
 
 
 
