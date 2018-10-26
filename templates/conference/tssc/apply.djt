@@ -78,7 +78,7 @@
 
 			<div class="form-group">
 				    <label for="email" disabled>Email address</label>
-				    <input type="email" class="form-control" id="email" name='email' placeholder="" value={{email}} disabled>
+				    <input type="email" class="form-control" id="email" name='email' placeholder="" value="{{email}}" disabled>
 		  	</div>
 
 		  	<div class="form-group">

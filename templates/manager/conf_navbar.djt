@@ -39,18 +39,20 @@
             <th>Department</th>
             <th>Contact</th>
             <th>Email</th>
+            <th>View Abstract</th>
             <th>Send Registration Mail</th>
             </tr>
           </thead>
           <tbody>
-            {% for profile in users %}
+            {% for profile, paper in displayUsers %}
               <tr>
               <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
               <td>{{profile.institute}}</td>
               <td>{{profile.department}}</td>
               <td>{{profile.contact}}</td>
               <td>{{profile.user.email}}</td>
-              
+              <td><a href="{{paper.paperfile.url}}">Download</a></td>
+
               <td>
                   <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
                     {% csrf_token %}
@@ -83,17 +85,22 @@
             <th>Department</th>
             <th>Contact</th>
             <th>Email</th>
+            <th>View Abstract</th>
+
             <th>Send Registration Mail</th>
             </tr>
           </thead>
           <tbody>
-            {% for profile in unpaid_users %}
+            {% for profile, papers in unpaidUsersPapers %}
               <tr>
               <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
               <td>{{profile.institute}}</td>
               <td>{{profile.department}}</td>
               <td>{{profile.contact}}</td>
               <td>{{profile.user.email}}</td>
+              <td><a href="{{paper.paperfile.url}}">Download</a></td>
+
+
               
               <td>
                   <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">

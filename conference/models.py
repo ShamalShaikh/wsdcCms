@@ -69,7 +69,7 @@ class Conf_Paper(models.Model):
 	paperRefNum = models.CharField(max_length=15,blank=True)
 	papername = models.CharField(max_length=250)
 	conf_id = models.ForeignKey(Conference, on_delete = models.CASCADE)
-	uid = models.ForeignKey(User,on_delete = models.CASCADE)
+	uid = models.ForeignKey(User,on_delete = models.CASCADE, related_name='paper')
 	description = models.CharField(max_length = 100)
 	themes = models.CharField(max_length=1000, blank=True)
 	submissionDate = models.DateTimeField()

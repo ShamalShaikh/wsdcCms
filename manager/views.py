@@ -29,6 +29,7 @@ from django.core.mail import EmailMultiAlternatives
 def signin(request):
 	return render(request,'login_auth/sites/manager_signin.djt')
 
+
 def signin_auth(request):
 	response={}
 	username = request.POST['username']
@@ -107,44 +108,55 @@ def assign_reviewer(request, paper_id):
 		return render(request, 'manager/assignreviewer.djt', context)
 	else:
 		return render(request,'manager/404.djt',{})
-	
+
+
 
 @login_required(login_url='/manager/signin/')
-def conference_landing(request,cid,type):
-	#here we need to check whether this conference belongs to this manager or not
-	#also we need to check whether this user is manager.
-	conference = Conference.objects.get(conference_id=cid)
-	regconfs = Registered_Conference.objects.filter(conf_id=conference)
-	manager = Manager.objects.get(user=request.user)
-	users = []
-	paidtrans = []
-	pending_dds= []
-	papers = []
-	final_papers = []
-	rejected_dds = []
-	unpaid_users = []
-	for regconf in regconfs:
-		user = regconf.user
-		users.append(UserProfile.objects.get(user=user))
-		try:
-			payment = Payment.objects.get(user=user,conf_id=conference)
-		except:
-			unpaid_users.append(UserProfile.objects.get(user=user))
-			print "Payment not done"
-		try:
-			payment = Payment.objects.get(user=user,conf_id=conference,is_aprooved=True)
-			paidtrans.append(payment)
-		except:
-			print "Payment not approved"
-	paper_conf = Conf_Paper.objects.filter(conf_id=cid)
-	for paper in paper_conf:
-		papers.append(paper)
-		try:
-			finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
-			final_papers.append(finalpaper)
-		except Exception as e:
-			print str(e)
-			print "No final paper for this yet"
+def conference_landing(request, cid, type):
+    # here we need to check whether this conference belongs to this manager or not
+    # also we need to check whether this user is manager.
+    conference = Conference.objects.get(conference_id=cid)
+    manager = Manager.objects.get(user=request.user)
+    regconfs = Registered_Conference.objects.filter(conf_id=conference)
+    users = []
+    paidtrans = []
+    pending_dds = []
+    papers = []
+    final_papers = []
+    rejected_dds = []
+    unpaid_users = []
+    displayPapers = []
+    unpaidPapers = []
+
+    for regconf in regconfs:
+        user = regconf.user
+        users.append(UserProfile.objects.get(user=user))
+        paper_conf = Conf_Paper.objects.filter(conf_id=cid, uid=user)
+
+        if paper_conf.count() > 0:
+            displayPapers.append(paper_conf.first())
+        else:
+            displayPapers.append(None)
+        try:
+            payment = Payment.objects.get(user=user, conf_id=conference)
+        except:
+            unpaid_users.append(UserProfile.objects.get(user=user))
+            unpaidPapers.append(paper_conf.first())
+            print "Payment not done"
+        try:
+            payment = Payment.objects.get(user=user, conf_id=conference, is_aprooved=True)
+            paidtrans.append(payment)
+        except:
+            print "Payment not approved"
+    paper_conf = Conf_Paper.objects.filter(conf_id=cid)
+    for paper in paper_conf:
+        papers.append(paper)
+        try:
+            finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
+            final_papers.append(finalpaper)
+        except Exception as e:
+            print str(e)
+            print "No final paper for this yet"
 
 	for pendingtrans in Payment.objects.filter(conf_id=conference):
 		if pendingtrans.is_aprooved==False and pendingtrans.is_rejected==False:
@@ -156,28 +168,35 @@ def conference_landing(request,cid,type):
 
 	contestants = Contest.objects.all()
 
-	response={}
-	response['users']=users
-	response['regusercount']=len(users)
-	response['paidtrans']=paidtrans
-	response['paidusers'] = len(paidtrans)
-	response['unpaid_users'] = unpaid_users
-	response['papers']=papers
-	response['papercount']=len(papers)
-	response['pending_dds']=pending_dds
-	response['ddcount']=len(pending_dds)
-	response['rejected_dds']=rejected_dds
-	response['type']=type
-	response['conference']=conference
-	response['finalpapers']=final_papers
-	response['finalsubcount']=len(final_papers)
-	response['contestants'] = contestants
-	response['contestantCount'] = len(contestants)
-	if manager == conference.manager:
-		return render(request,'manager/conf_navbar.djt',response)
-	else:
-		return render(request,'manager/404.djt',{})
 
+
+
+    response = {}
+    response['users'] = users
+    response['regusercount'] = len(users)
+    response['paidtrans'] = paidtrans
+    response['paidusers'] = len(paidtrans)
+    response['unpaid_users'] = unpaid_users
+    response['unpaidUsersPapers'] = zip(unpaid_users, unpaidPapers)
+
+    response['papers'] = papers
+    response['papercount'] = len(papers)
+    response['pending_dds'] = pending_dds
+    response['ddcount'] = len(pending_dds)
+    response['rejected_dds'] = rejected_dds
+    response['type'] = type
+    response['conference'] = conference
+    response['finalpapers'] = final_papers
+    response['finalsubcount'] = len(final_papers)
+    response['contestants'] = contestants
+    response['contestantCount'] = len(contestants)
+    response['displayUsers'] = zip(users, displayPapers)
+
+    print manager
+    if manager == conference.manager:
+        return render(request, 'manager/conf_navbar.djt', response)
+    else:
+        return render(request, 'manager/404.djt', {})
 
 def reviewerAssigned(request, paper_id, u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
@@ -536,7 +555,7 @@ def sendmail(request,cid,type) :
 	if type == '2':
 		if mail_Action == "approve":	
 			subject = 'Payment verified.Invitation to Conference INCEEE2019 '
-			content = "Dear " + profile.user.first_name + ",\n\n" 
+			content = "Dear " + profile.user.first_name + ",\n\n"
 			content += "Your payement has been successfully verified.\n\n"
 			# content += "You are invited to the Conference on 10th October.\n\n"
 			content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
@@ -551,7 +570,7 @@ def sendmail(request,cid,type) :
 
 	if type == '5':
 		subject = 'Payment verified.Invitation to Conference INCEEE2019 '
-		content = "Dear " + profile.user.first_name + ",\n\n" 
+		content = "Dear " + profile.user.first_name + ",\n\n"
 		content += "Your payement has been successfully verified.\n\n"
 		# content += "You are invited to the Conference on 10th October.\n\n"
 		content += "Time Table for the conference will be uploaded in the website shortly.\n\n"
@@ -702,7 +721,7 @@ def sendMailFunction(email,papername,trackingID,alias) :
 	# if alias == 'inceee2019' :
 	# 	receiver = email
 	# 	sender = 'inceee2019@gmail.com'
-		
+
 	# 	####
 	# 	content = "Dear Author\n\n"
 	# 	content += "Your abstract was peer reviewed for presentation "
