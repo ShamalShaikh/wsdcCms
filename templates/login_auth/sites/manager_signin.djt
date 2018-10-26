@@ -21,11 +21,11 @@
 			
 	        <div class="field">
 	              <label>UserName</label>
-	              <input name="username" placeholder="Username" type="text" id="username">
+	              <input name="username" placeholder="Username" type="text" id="username" required="">
 	        </div>
 	        <div class="field">
 	              <label>Password</label>
-	              <input name="password" placeholder="Password" type="password" id="password">
+	              <input name="password" placeholder="Password" type="password" id="password" required="">
 	        </div>
 	        <div style="margin-left: 40%;">
 	        <button class="ui button green" type="submit" id="signin">Sign In</button>

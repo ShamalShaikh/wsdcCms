@@ -31,23 +31,28 @@ def signin(request):
 
 
 def signin_auth(request):
+	print "signin_auth module"
 	response={}
-	username = request.POST['username']
-	user = User.objects.get(username=username)
-	manager = Manager.objects.filter(user=user)
-	if request.user.is_authenticated() and manager:
-	    return redirect('/manager')
-	if request.method == "POST" and manager:
-	    password = request.POST['password']
-	    user = authenticate(username=username, password=password)
-	    if user is not None:
-	        login(request, user)
-	        return redirect('/manager')
-	    else:
-	        response['message']='User is not registered/Password Incorrect'
-	if not manager:
-		response['message']='Only Manager can Login'
-	return render(request,'login_auth/sites/manager_signin.djt',response)
+	if request.method==POST:
+		username = request.POST['username']
+		user = User.objects.get(username=username)
+		manager = Manager.objects.filter(user=user)
+		if request.user.is_authenticated() and manager:
+		    return redirect('/manager')
+		if request.method == "POST" and manager:
+		    password = request.POST['password']
+		    user = authenticate(username=username, password=password)
+		    if user is not None:
+		        login(request, user)
+		        return redirect('/manager')
+		    else:
+		    	print "he is not a manger"
+		        response['message']='User is not registered/Password Incorrect'
+		if not manager and user is None:
+			response['message']='Only Manager can Login'
+		return render(request,'login_auth/sites/manager_signin.djt',response)
+	else:
+		return render(request,'login_auth/sites/manager_signin.djt',response)
 
 def signout(request):
 	logout(request)
