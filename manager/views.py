@@ -33,10 +33,13 @@ def signin(request):
 def signin_auth(request):
 	print "signin_auth module"
 	response={}
-	if request.method==POST:
+	if request.method=='POST':
 		username = request.POST['username']
-		user = User.objects.get(username=username)
-		manager = Manager.objects.filter(user=user)
+		try:
+			usr = User.objects.get(username=username)
+		except:
+			usr = None
+		manager = Manager.objects.filter(user=usr)
 		if request.user.is_authenticated() and manager:
 		    return redirect('/manager')
 		if request.method == "POST" and manager:
@@ -46,10 +49,9 @@ def signin_auth(request):
 		        login(request, user)
 		        return redirect('/manager')
 		    else:
-		    	print "he is not a manger"
-		        response['message']='User is not registered/Password Incorrect'
-		if not manager and user is None:
-			response['message']='Only Manager can Login'
+		        response['message']='Incorrect Password!'
+		if not manager or usr is None:
+			response['message']='Only Managers can login!'
 		return render(request,'login_auth/sites/manager_signin.djt',response)
 	else:
 		return render(request,'login_auth/sites/manager_signin.djt',response)
