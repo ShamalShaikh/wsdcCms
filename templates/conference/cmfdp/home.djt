@@ -182,28 +182,50 @@
                     their academic pursuits.
                 </div>
             </div>
+	<hr>
         
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
+                <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
                 <p style="text-align:justify">Authors are invited to submit the Full Papers, not
-                    exceeding 6-pages in MS word format (soft copy) and
+                    exceeding 8-pages in MS word format (soft copy) and
                     neatly typed on A-4 size paper. Each manuscript will
                     undergo a peer review process. The contributed papers
                     must be original and should not have been
-                    published/accepted in journals/proceedings.</p>
+                    published/accepted in journals/proceedings.Plagiarism in
+		    any form is unethical and unacceptable. In order to ensure
+		    that the content submitted is original and trustworthy, a
+		    similarity check will be done.</p>
                 <p style="text-align:justify">
-                    CMFDP – 2019 is planning to bring out Conference
-                    Proceedings and in the form of a special issue of
-                    journal form from a reputed publisher with SCOPUS
-                    /SCI/Web of Sciences indexed. Plagiarism in any form is
-                    unethical and unacceptable. In order to ensure that the
-                    content submitted is original and trustworthy, a
-                    similarity check will be done.
+                    Upon the notification of acceptance, the author will have 
+		    to submit final copy of the manuscript of the paper, 
+		    copyright transfer agreement and registration fee and 
+		    registration form on or before the last date.   
                 </p>
             </div>
         </div>
         <hr>
+	<div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Publication Announcement</center></h2><br>
+                <p style="text-align:justify">
+		    The accepted full length paper for presentation in the 
+		    conference will be considered for possible publication 
+		    in one of the following SCOPUS indexed journals without 
+		    any charge. All the Papers will be reviewed by at least 
+		    two reviewers in a double blind review process. The 
+		    similarity of each paper must be below 15%. The length of 
+		    the Manuscript should not exceed 8 pages as per journal 
+		    format. If a paper has more than eight pages as per 
+		    journal format, the corresponding author must pay Rs. 1500 
+		    per each additional page (for Domestic) & 25 USD per each 
+		    additional page (for Foreign). Each accepted paper should 
+		    be registered by at least one author to appear in the 
+		    proceedings of the conference as well as in the journal. 
+		</p>
+	    </div>
+	</div>
+	<hr>
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
@@ -326,7 +348,7 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Delegates from Academic and R &D Institutions</td>
-                        <td>Rs. 3000/- </td>
+                        <td>Rs. 3500/- </td>
                     </tr>
                     <tr class="active">
                         <td>Delegates from Industry</td>
@@ -334,7 +356,7 @@
                     </tr>
                     <tr class="active">
                         <td>Students/Research Scholar</td>
-                        <td>Rs. 2500/- </td>
+                        <td>Rs. 3000/- </td>
                     </tr>
                     <tr class="active">
                         <td>Foreign Participants</td>
