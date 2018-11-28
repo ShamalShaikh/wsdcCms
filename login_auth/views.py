@@ -13,6 +13,14 @@ from sendfile import sendfile
 @login_required(login_url='/signin/')
 def dddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
+
+	# Manager opening the dd
+	manager = Manager.objects.filter(user=request.user)
+	if manager.count() > 0:
+		if p.conf_id.manager == manager[0]:
+			print p.pic_of_dd.path
+			return sendfile(request, p.pic_of_dd.path)
+
 	if not request.user.is_superuser and request.user != p.user:
 		print "1"
 		return HttpResponseForbidden('Sorry, you cannot access this file')
@@ -22,6 +30,14 @@ def dddownload(request, payment_id):
 @login_required(login_url='/signin/mmse2018')
 def iddownload(request, payment_id):
 	p = Payment.objects.get(id=payment_id)
+
+	# Manager opening the dd
+	manager = Manager.objects.filter(user=request.user)
+	if manager.count() > 0:
+		if p.conf_id.manager == manager[0]:
+			print p.pic_of_id.path
+			return sendfile(request, p.pic_of_id.path)
+			
 	if not request.user.is_superuser and request.user != p.user:
 		print "2"
 		return HttpResponseForbidden('Sorry, you cannot access this file')

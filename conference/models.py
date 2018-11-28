@@ -83,7 +83,7 @@ class Conf_Paper(models.Model):
 	paperfile = models.FileField(upload_to=get_conf_paper_path, validators=[validate], null=True, blank=True,storage=sendfile_storage)
 
 	def __str__(self):
-	    return str(self.papername)
+	    return str(self.uid)
 
 class Final_paper(models.Model):
 	papername = models.CharField(max_length=50)

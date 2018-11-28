@@ -109,7 +109,7 @@
         <div class="row">
             <center>
             <div class="col-md-2">
-                <img src="{% static 'images/60_logo.png' %}" height="150px" style="margin-top:20px"></a>
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
             </div>
             </center>
             <div class="col-sm-8">
@@ -119,8 +119,6 @@
                 <p style="font-size:20px; color: #31b150;"><b>COMPUTATIONAL MODELING OF FLUID DYNAMICS PROBLEMS</b></p>
                 <p style="font-size:20px;color: #002360;"><b>(CMFDP-2019)</b></p>
                 <p style="font-size:15px;color: #ff0300;"><b>In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</b></p>
-                <p style="font-size:15px;color: #002360;"><b>&</b></p>
-                <p style="font-size:15px;color: #002360;"><b>On the occasion of Diamond Jubliee Celebrations Of NIT Warangal</b></p>
                 <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
@@ -189,10 +187,9 @@
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
-                <p style="text-align:justify">
-                	<b style="color:red;">Authors are invited to submit the Full Papers, not
+                <p style="text-align:justify">Authors are invited to submit the Full Papers, not
                     exceeding 8-pages in MS word format (soft copy) and
-                    neatly typed on A-4 size paper</b>. Each manuscript will
+                    neatly typed on A-4 size paper. Each manuscript will
                     undergo a peer review process. The contributed papers
                     must be original and should not have been
                     published/accepted in journals/proceedings.Plagiarism in
@@ -210,35 +207,12 @@
         <hr>
 	<div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <h2><center><span class="label label-success">Publication Announcement</center></h2><br>
-                <p style="text-align:justify;">
-		    The accepted full length paper for presentation in the 
-		    conference will be considered for possible publication 
-		    in one of the following <b style="color:red;" >SCOPUS indexed journals without 
-		    any charge</b>. All the Papers will be reviewed by at least 
-		    two reviewers in a double blind review process. The 
-		    similarity of each paper must be below 15%. The length of 
-		    the Manuscript should not exceed 8 pages as per journal 
-		    format. If a paper has more than eight pages as per 
-		    journal format, the corresponding author must pay Rs. 1500 
-		    per each additional page (for Domestic) & 25 USD per each 
-		    additional page (for Foreign). Each accepted paper should 
-		    be registered by at least one author to appear in the 
-		    proceedings of the conference as well as in the journal. 
+                <h2><center><span class="label label-success">Publication Announcement</center></h2>
+                <p style="text-align:justify">
+		    PUBLICATION ANNOUNCEMENT
 		</p>
 	    </div>
-	    <center>
-	    <div class="col-md-12">
-	    	<img src="{% static 'docs_cmfdp/ijmems.jpg' %}">
-	    </div>
-	</center>
-	<center>
-	    <div class="col-md-12">
-	    	<img src="{% static 'docs_cmfdp/iieta.jpg' %}">
-	    </div>
-	</center>
 	</div>
-	<hr>
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
                 <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>

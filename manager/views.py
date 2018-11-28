@@ -120,90 +120,93 @@ def assign_reviewer(request, paper_id):
 
 @login_required(login_url='/manager/signin/')
 def conference_landing(request, cid, type):
-    # here we need to check whether this conference belongs to this manager or not
-    # also we need to check whether this user is manager.
-    conference = Conference.objects.get(conference_id=cid)
-    manager = Manager.objects.get(user=request.user)
-    regconfs = Registered_Conference.objects.filter(conf_id=conference)
-    users = []
-    paidtrans = []
-    pending_dds = []
-    papers = []
-    final_papers = []
-    rejected_dds = []
-    unpaid_users = []
-    displayPapers = []
-    unpaidPapers = []
+	# here we need to check whether this conference belongs to this manager or not
+	# also we need to check whether this user is manager.
+	conference = Conference.objects.get(conference_id=cid)
+	manager = Manager.objects.get(user=request.user)
+	regconfs = Registered_Conference.objects.filter(conf_id=conference)
+	users = []
+	paidtrans = []
+	pending_dds = []
+	papers = []
+	final_papers = []
+	rejected_dds = []
+	unpaid_users = []
+	displayPapers = []
+	unpaidPapers = []
 
-    for regconf in regconfs:
-        user = regconf.user
-        users.append(UserProfile.objects.get(user=user))
-        paper_conf = Conf_Paper.objects.filter(conf_id=cid, uid=user)
+	for regconf in regconfs:
+	    user = regconf.user
+	    users.append(UserProfile.objects.get(user=user))
+	    paper_conf = Conf_Paper.objects.filter(conf_id=cid, uid=user)
 
-        if paper_conf.count() > 0:
-            displayPapers.append(paper_conf.first())
-        else:
-            displayPapers.append(None)
-        try:
-            payment = Payment.objects.get(user=user, conf_id=conference)
-        except:
-            unpaid_users.append(UserProfile.objects.get(user=user))
-            unpaidPapers.append(paper_conf.first())
-            print "Payment not done"
-        try:
-            payment = Payment.objects.get(user=user, conf_id=conference, is_aprooved=True)
-            paidtrans.append(payment)
-        except:
-            print "Payment not approved"
-    paper_conf = Conf_Paper.objects.filter(conf_id=cid)
-    for paper in paper_conf:
-        papers.append(paper)
-        try:
-            finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
-            final_papers.append(finalpaper)
-        except Exception as e:
-            print str(e)
-            print "No final paper for this yet"
+	    if paper_conf.count() > 0:
+	        displayPapers.append(paper_conf.first())
+	    else:
+	        displayPapers.append(None)
+	    try:
+	        payment = Payment.objects.get(user=user, conf_id=conference)
+	    except:
+	        unpaid_users.append(UserProfile.objects.get(user=user))
+	        unpaidPapers.append(paper_conf.first())
+	        print "Payment not done"
+	    try:
+	        payment = Payment.objects.get(user=user, conf_id=conference, is_aprooved=True)
+	        paidtrans.append(payment)
+	    except:
+	        print "Payment not approved"
+	paper_conf = Conf_Paper.objects.filter(conf_id=cid)
+	for paper in paper_conf:
+	    papers.append(paper)
+	    try:
+	        finalpaper = Final_paper.objects.get(related_paper__paper_id=paper.paper_id)
+	        final_papers.append(finalpaper)
+	    except Exception as e:
+	        print str(e)
+	        print "No final paper for this yet"
 
-	for pendingtrans in Payment.objects.filter(conf_id=conference):
+	for pendingtrans in Payment.objects.filter(conf_id=cid):
+		print 2
 		if pendingtrans.is_aprooved==False and pendingtrans.is_rejected==False:
 			pending_dds.append(pendingtrans)
-		if pendingtrans.is_rejected==True:
-			rejected_dd = Rejected_payment.objects.filter(conf_id=conference,user=pendingtrans.user)
-			for obj in rejected_dd:
-				rejected_dds.append(obj)
+			print 1
+			# print pendingtrans
+		# if pendingtrans.is_rejected==True:
+			# rejected_dd = Rejected_payment.objects.filter(conf_id=cid,user=pendingtrans.user)
+			# for obj in rejected_dd:
+			# 	rejected_dds.append(obj)
 
 	contestants = Contest.objects.all()
 
+	print Payment.objects.filter(conf_id=cid).count()
 
 
+	response = {}
+	response['users'] = users
+	response['regusercount'] = len(users)
+	response['paidtrans'] = paidtrans
+	response['paidusers'] = len(paidtrans)
+	response['unpaid_users'] = unpaid_users
+	response['unpaidUsersPapers'] = zip(unpaid_users, unpaidPapers)
 
-    response = {}
-    response['users'] = users
-    response['regusercount'] = len(users)
-    response['paidtrans'] = paidtrans
-    response['paidusers'] = len(paidtrans)
-    response['unpaid_users'] = unpaid_users
-    response['unpaidUsersPapers'] = zip(unpaid_users, unpaidPapers)
+	response['papers'] = papers
+	response['papercount'] = len(papers)
+	response['pending_dds'] = pending_dds
+	response['ddcount'] = len(pending_dds)
+	response['rejected_dds'] = rejected_dds
+	response['type'] = type
+	response['conference'] = conference
+	response['finalpapers'] = final_papers
+	response['finalsubcount'] = len(final_papers)
+	response['contestants'] = contestants
+	response['contestantCount'] = len(contestants)
+	response['displayUsers'] = zip(users, displayPapers)
 
-    response['papers'] = papers
-    response['papercount'] = len(papers)
-    response['pending_dds'] = pending_dds
-    response['ddcount'] = len(pending_dds)
-    response['rejected_dds'] = rejected_dds
-    response['type'] = type
-    response['conference'] = conference
-    response['finalpapers'] = final_papers
-    response['finalsubcount'] = len(final_papers)
-    response['contestants'] = contestants
-    response['contestantCount'] = len(contestants)
-    response['displayUsers'] = zip(users, displayPapers)
-
-    print manager
-    if manager == conference.manager:
-        return render(request, 'manager/conf_navbar.djt', response)
-    else:
-        return render(request, 'manager/404.djt', {})
+	print manager
+	if manager == conference.manager:
+	    return render(request, 'manager/conf_navbar.djt', response)
+	else:
+	    return render(request, 'manager/404.djt', {})
 
 def reviewerAssigned(request, paper_id, u_id):
 	reviewer = Reviewer.objects.get(id=u_id)
@@ -556,7 +559,7 @@ def sendmail(request,cid,type):
     if type == '1':
         subject = 'Application approved but payment pending'
         content = "Dear " + profile.user.first_name + ",\n\n"
-        content += "Your details have been reviewed and verified by us.\n\n"
+        content += "Your details have been reviewed and verified by us, and paper is accepted for presentation\n\n"
         content += "Please pay the registration fee to proceed further.\n\n"
         content += "Thank you!"
 
