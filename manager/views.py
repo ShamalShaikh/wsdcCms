@@ -336,10 +336,13 @@ def isApprovedPaper(request, type,paper_id):
 	paper.under_review = False
 	paper.status = int(type)+1
 	paper.save()
-	
+	# for inceee2019 conference
+	# status = 2 means for oral presentation
+	# status = 3 means for poster presentation
 	alias = paper.conf_id.alias
-	if int(type) == 1 :
-		sendMailFunction(paper.uid.email,paper.papername,paper.paperRefNum,alias)
+	print("Paper status: "+ str(paper.status))
+	if paper.status == 2 or paper.status == 3 :
+		sendMailFunction(paper.uid.email,paper.papername,paper.paperRefNum,paper.status,alias)
 
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
@@ -350,6 +353,7 @@ def isDisapprovedPaper(request, paper_id):
 	paper.under_review = False
 	paper.status = 4
 	paper.save()
+	sendMailFunction(paper.uid.email,paper.papername,paper.paperRefNum,paper.status,paper.conf_id.alias)
 	return HttpResponseRedirect('/manager/conference_landing/'+str(paper.conf_id.conference_id)+'/3/')
 
 
@@ -575,7 +579,7 @@ def sendmail(request,cid,type):
         else:
             subject = 'Payment verification Failed'
             content = "Dear " + profile.user.first_name + ",\n\n"
-            content += "There was an issue in verifying your payment.\n"
+            content += "There was an issue in verifying your payment for the conference: " + conference.conference_name + "\n"
             content += "Issue: " + request.POST['remark'] + "\n\n"
             content += "Please send the payment details again."
 
@@ -620,7 +624,7 @@ def sendmail(request,cid,type):
 
 
 
-def sendMailFunction(email,papername,trackingID,alias) : 
+def sendMailFunction(email,papername,trackingID,presentation_type,alias) : 
 	# if alias == 'mmse2018' :
 	# 	receiver = email
 	# 	sender = 'mmse2018.nitw@gmail.com'
@@ -729,46 +733,50 @@ def sendMailFunction(email,papername,trackingID,alias) :
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
 
-	# if alias == 'inceee2019' :
-	# 	receiver = email
-	# 	sender = 'inceee2019@gmail.com'
+	if alias == 'inceee2019' :
+		receiver = email
+		sender = 'krishu@student.nitw.ac.in'
+		subject = ''
+		content = "Dear Author,\n\n"
+		content += "Paper: " + trackingID + "\n"
+		content += "Title: " + papername + "\n\n"
+		if presentation_type == 2 :
+			subject = 'Acceptance of Paper for Oral Presentation in INCEEE-2019'
+			content += "We are happy to inform you that your abstract of the above-mentioned paper has been accepted "
+			content += "for oral presentation at INCEEE2019. You are requested to confirm your registration by uploading\n\n"
+			content += "(i) full paper and copyright form as per the template (available at http://cms.nitw.ac.in/conference/inceee2019/links/) "
+			content += "in the upload paper tab of the website.\n"
+			content += "(ii) proof of payment after paying registration fee (details at http://cms.nitw.ac.in/inceee2019#fee_div) and\n"
+			content += "(iii) filled-in registration form.\n" 
+			content += "(iv) Upload the proof of payment and registration form in the Payment Section of the Website.\n\n"
+		if presentation_type == 3 :
+			subject = 'Acceptance of Paper for Poster Presentation in INCEEE-2019'
+			content += "We are happy to inform you that your abstract of the above-mentioned paper has been accepted "
+			content += "for poster presentation at INCEEE2019. You are requested to confirm your registration by uploading\n\n"
+			content += "(i) proof of payment after paying registration fee (details at http://cms.nitw.ac.in/inceee2019#fee_div) and\n"
+			content += "(ii) filled-in registration form.\n" 
+			content += "(iii) Upload the proof of payment and registration form in the Payment Section of the Website.\n\n"
+		if presentation_type == 4 :
+			subject = 'Non-Acceptance of Paper for Presentation in INCEEE-2019'
+			content += "We regret to inform you that your abstract of the above-mentioned paper has not been accepted "
+			content += "for presentation at INCEEE2019. However, you are welcome to participate (as nonpresenting author) by uploading \n\n"
+			content += "(i) proof of payment after paying registration fee (details at http://cms.nitw.ac.in/inceee2019#fee_div) and\n"
+			content += "(ii) filled-in registration form.\n" 
+			content += "(iii) Upload the proof of payment and registration form in the Payment Section of the Website.\n\n\n"
+		content += "Thank you for considering INCEEE-2019 for presenting your research. We look forward to your participation at INCEEE-2019.\n\n"
+		content += "Please do not reply to this mail.For any query mail at inceee2019@gmail.com\n\n"
+		content += "Coordinators \nINCEEE2019"
 
-	# 	####
-	# 	content = "Dear Author\n\n"
-	# 	content += "Your abstract was peer reviewed for presentation "
-	# 	content += "at the National Conference on "
-	# 	content += "FRONTIERS IN CORROSION CONTROL OF MATERIALS (FCCM-2018) "
-	# 	content += "to be held on June 28-29, 2018 at Department of Metallurgical and Materials Engineering "
-	# 	content += "National Institute of Technology, Warangal, Telangana, India.\n\n"
-	# 	content += "Based on the evaluations of reviewers, it is my pleasure to "
-	# 	content += "inform that your full paper entitled "
-	# 	content += '" ' + papername + ' " (' + trackingID + ") "
-	# 	content += "has been accepted for "
-	# 	content += "presentation and will be scheduled in an appropriate session.\n\n"
-	# 	content += "This letter hereby serves the purpose of your official letter of "
-	# 	content += "invite to the FCCM-2018 conference.\n\n"
-	# 	content += "The selected papers from the papers presented at FCCM conference will be published in "
-	# 	content += "Elsevier's journal entitled Materials Today: Proceedings (Journal) "
-	# 	content += "after a thorough peer-review process. "
-	# 	content += "Hence, authors are requested to submit original research work of high quality and standards. "
-	# 	content += "Upon the notification of acceptance for publication in the journal Materials Today: Proceedings (Journal), "
-	# 	content += "the authors will have to submit copyright transfer agreement.\n\n"
-	# 	content += "It is to be noted that at least one author of each paper should "
-	# 	content += "be registered for the conference by paying the appropriate "
-	# 	content += "registration fee as well as everybody attending the conference.\n\n"
-	# 	content += "Further, You are required to pay the registration fee and "
-	# 	content += "upload the final version of the paper along "
-	# 	content += "with the payment receipt on the conference website.\n\n"
-	# 	content += "We are looking forward welcoming you in the Conference.\n\n"
-	# 	content += "Sincerely yours,\n"
+		rlist = []
+		rlist.append(receiver)
+		cc_list = []
+		cc_list.append(sender)
 
-	# 	rlist = []
-	# 	rlist.append(receiver)
-
-	# 	try:
-	# 		send_mail('Acceptance of Paper for Presentation in FCCM-2018',content,sender,rlist,fail_silently=False,)
-	# 	except BadHeaderError:
-	# 		return HttpResponse('Invalid header found.')
+		try:
+			mail = EmailMultiAlternatives(subject, content, sender, rlist, cc=cc_list)
+			mail.send()
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
 
 	return
 
