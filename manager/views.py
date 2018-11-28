@@ -735,7 +735,7 @@ def sendMailFunction(email,papername,trackingID,presentation_type,alias) :
 
 	if alias == 'inceee2019' :
 		receiver = email
-		sender = 'krishu@student.nitw.ac.in'
+		sender = 'inceee2019@gmail.com'
 		subject = ''
 		content = "Dear Author,\n\n"
 		content += "Paper: " + trackingID + "\n"
