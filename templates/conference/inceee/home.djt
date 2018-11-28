@@ -210,14 +210,27 @@
             <h2>
                 <span class="label label-success">Proceedings</span>
             </h2>
+	</center>
             <br>
             <p style="text-align:justify;">
                 All the abstracts accepted after peer review from registered participants will be published in the conference proceedings
                 with ISBN number.
                 <br>
                 <b>
-                    <i>&#9679; Select papers presented at INCEEE 2019 will be published in Chemical Product and Process Modeling
-                        (SCOPUS). Efforts are on for publishing select papers in SCI and other Scopus indexed journals.
+                   <i>
+			<p>
+		      	&#9679;Select papers of the conference will be published
+		       	in the following journals:</p>
+			</i>
+			<p style="color:#ff9900;">
+			1. Special issue of ‘Chemical Product and Process Modeling’ journal (Scopus), De Gruyter
+			<br>2. Energy Sources, Part A (SCI), Taylor & Francis
+			</p>
+			<i>
+			<p style="color:#990000;">
+			Efforts are on for publishing select papers in other 
+			SCI and Scopus indexed journals.
+			</p>
                     </i>
                 </b>
                 <br>
@@ -225,7 +238,6 @@
                     <i>&#9679; Select papers will be rewarded with Best paper (Oral and Poster) Awards at the conference.</i>
                 </b>
             </p>
-        </center>
     </div>
 
 

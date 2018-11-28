@@ -141,6 +141,9 @@
             </div>
         </div>
         <br/>
+        <div class="row">
+        	<marquee style="font-size:20px;color:red">Abstract submission deadline extended to 30th Nov ,2018</marquee>
+        </div>
         <br/>
         <div class="row">
             <div class="col-md-3">
@@ -308,7 +311,7 @@ Accord</li>
                 </div>
                 <div class="col-md-6">
                     <h3><center>Abstract Submission:</center></h3>
-                   <p style="text-align: justify">Abstracts of Scientific/Technical papers not exceeding 500 words are to be submitted online (<a href="/conference/{{conference.conference_alias}}">http://cms.nitw.ac.in/tssc2018/ </a>) on or<b> before 15th November, 2018. Please Indicate the theme of the session on top right of the Abstract page to be considered for review.</b></p>
+                   <p style="text-align: justify">Abstracts of Scientific/Technical papers not exceeding 500 words are to be submitted online (<a href="/conference/{{conference.conference_alias}}">http://cms.nitw.ac.in/tssc2018/ </a>) on or<b> before 30th November, 2018. Please Indicate the theme of the session on top right of the Abstract page to be considered for review.</b></p>
                 </div>
                 <div class="col-md-3">
                 </div>
@@ -330,15 +333,15 @@ Accord</li>
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Online Abstract Submission,on or before</td>
-                        <td>15th Nov, 2018</td>
+                        <td>30th Nov, 2018</td>
                     </tr>
                     <tr class="">
                         <td>Communication of acceptance of Abstracts by</td>
-                        <td>20th Nov, 2018</td>
+                        <td>05th Dec, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Payment of Regsitration Fee,on or before</td>
-                        <td>30th Nov, 2018</td>
+                        <td>08th Dec, 2018</td>
                     </tr>
                 </table>
                 <br>
@@ -357,8 +360,8 @@ Accord</li>
 <table class="table table-hover">
                     <tr>
                         <th>Category</th>
-                        <th>On or Before 30-11-2018</th>
-                        <th>After 30-11-2018</th>
+                        <th>On or Before 08-12-2018</th>
+                        <th>After 08-12-2018</th>
                     </tr>
                     <tr class="active">
                         <td>Students and Research Scholars</td>
@@ -404,7 +407,7 @@ Accord</li>
                 </table>
                 <br><br>
                 <i style="color:red;font-weight: bold;"> * Online
-                registration has to be done through the conference portal after fee payment. If the Registration Fee is not paid on or before 30-11-2018, those abstracts will not be included in the conference proceedings. If anybody is interested to attend the Congress without presenting a paper,
+                registration has to be done through the conference portal after fee payment. If the Registration Fee is not paid on or before <span style="font-size:20px;background-color:yellow">08-12-2018</span>, those abstracts will not be included in the conference proceedings. If anybody is interested to attend the Congress without presenting a paper,
              he/she is also permitted to register by paying the above mentioned Registration Fee.
                 </i>
                 </center>

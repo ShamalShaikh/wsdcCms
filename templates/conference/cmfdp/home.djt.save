@@ -1,0 +1,641 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CMFDP'19</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    {% endif %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#fee_div">Registration Fee</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <center>
+            <div class="col-md-2">
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+            </div>
+            </center>
+            <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px; color: #31b150;"><b>COMPUTATIONAL MODELING OF FLUID DYNAMICS PROBLEMS</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(CMFDP-2019)</b></p>
+                <p style="font-size:15px;color: #ff0300;"><b>In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</b></p>
+                <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p>
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+            </div>
+            <div class="col-sm-2">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>January 18 - 20, 2019</b></h3>
+                <h4>
+                     Organised by<br><hr>
+                     <!-- Transportation Division<br><br> -->
+                    Department of Mathematics<br><br>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h4></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Objective</span></center></h2><br>
+                            This conference is expected to be attended by
+                    researchers and faculty to exchange innovative ideas,
+                    methods and results, and visions of the future related to
+                    advanced concepts in computational modeling of fluid
+                    dynamics problems. This conference will focus on the
+                    presentation and discussion computational modeling
+                    aspects in heat and mass transfer, fluid dynamics and
+                    porous media. In addition to the paper presentations
+                    there will be invited talks on latest areas/topics of
+                    research. The deliberations at the conference are
+                    expected to influence the current researchers regarding
+                    their academic pursuits.
+                </div>
+            </div>
+	<hr>
+        
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
+                <p style="text-align:justify">Authors are invited to submit the Full Papers, not
+                    exceeding 8-pages in MS word format (soft copy) and
+                    neatly typed on A-4 size paper. Each manuscript will
+                    undergo a peer review process. The contributed papers
+                    must be original and should not have been
+                    published/accepted in journals/proceedings.Plagiarism in
+		    any form is unethical and unacceptable. In order to ensure
+		    that the content submitted is original and trustworthy, a
+		    similarity check will be done.</p>
+                <p style="text-align:justify">
+                    Upon the notification of acceptance, the author will have 
+		    to submit final copy of the manuscript of the paper, 
+		    copyright transfer agreement and registration fee and 
+		    registration form on or before the last date.   
+                </p>
+            </div>
+        </div>
+        <hr>
+	<div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Publication Announcement</center></h2>
+                <p style="text-align:justify">
+		    PUBLICATION ANNOUNCEMENT
+		</p>
+	    </div>
+	</div>
+        <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
+                <p style="text-align:justify;"><b>A wide range of topics related to classical and emerging
+                    areas of computational modeling of fluid dynamics
+                    problems will be welcome. The topics include, but are not restricted to </b></p>
+                <ul>
+                    <li>Newtonian and Non-Newtonian fluid flows</li>
+                    <li>Transport phenomena in porous media</li>
+                    <li>Convective Heat and Mass Transfer</li>
+                    <li>Laminar, Turbulent and Complex flows</li>
+                    <li>Micropolar, Couple Stress and Nanofluid flows</li>
+                    <li>Numerical Modeling of the problems in Fluid & Biofluid Mechanics</li>
+                </ul>                
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-6" id="dates">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Submission of Full Paper</td>
+                        <td>10th Dec, 2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Acceptance of full length paper</td>
+                        <td>20th Dec, 2018</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Final Paper (Camera Ready) Submission & Registration</td>
+                        <td>25th Dec, 2018</td>
+                    </tr>
+                </table>
+                <br>
+                <!-- <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
+                <p style="text-align:justify;">
+                    CTSEM will provide great opportunity for interaction among industries, consultants, government agencies, educational institutions, academicians, professionals and decision makers.<br>
+                    Sponsorship with the following tariff is invited.
+                </p>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Platinum Sponsor:</td>
+                        <td>Rs. 1,00,000 (8 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Gold Sponsor:</td>
+                        <td>Rs. 50,000 (6 delegates free)</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Silver Sponsor:</td>
+                        <td>Rs. 25,000 (4 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Co-Sponsor:</td>
+                        <td>Rs. 10,000 (2 delegates free)</td>
+                    </tr>
+                </table> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <center>
+                <h2><span class="label label-primary">Mode of Payment</span></h2><br>
+                <b>Payments to be made through Online/NEFT to the Bank given below.</b>
+                <br><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Account Name</td>
+                        <td>Conference Chair</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Account No</td>
+                        <td>37494838784</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Bank and Branch</td>
+                        <td>State Bank of India, REC Warangal (NIT Campus)</td>
+                    </tr>
+                    
+                    <tr class="active">
+                        <td>Branch Code</td>
+                        <td>20149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>IFSC Code</td>
+                        <td>SBIN0020149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>MICR Code</td>
+                        <td>506002030</td>
+                    </tr>
+                    
+                </table>
+                <b>Payments to be made through DD.</b>
+                <br><br>
+                <p>DD is to be drawn in favor of “Conference Chair” payable at Warangal.</p>
+                </center>
+
+            </div>
+            <div class="col-md-6">
+                <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
+                <center>
+                <b>The filled in registration form along with the DD/Online
+                Receipt should be sent to:</b><br><br>
+                <p>
+                Conference Chair, CMFDP - 2019,<br>
+                Department of Mathematics,<br>
+                National Institute of Technology Warangal,<br>
+                Warangal-506 004, Telangana State, India.<br>
+                Phone: 09849187249(DSC) / 09491824301 (CHRR),<br>
+                E-mail: cmfdp2019.nitw@gmail.com; dsc@nitw.ac.in;<br>
+                chramreddy@nitw.ac.in<br>
+                </p>
+                </center>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
+                <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Delegates from Academic and R &D Institutions</td>
+                        <td>Rs. 3500/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Delegates from Industry</td>
+                        <td>Rs. 5000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Students/Research Scholar</td>
+                        <td>Rs. 3000/- </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Foreign Participants</td>
+                        <td>USD 250 </td>
+                    </tr>
+                    <tr class="active">
+                        <td>Foreign Students</td>
+                        <td>USD 200 </td>
+                    </tr>
+                </table>
+                <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
+            </div>
+
+            <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-default">BEST PAPER PRESENTATION AWARD</span></center></h2><br>
+                <p>
+                    "Best Paper Presentataion Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
+                <p style="text-align:justify">
+                    Limited accommodation may be provided on payment
+                    basis in the Institute Visitors Block/DASA Hostel
+                    depending on availability and on first come first serve
+                    basis. However, Warangal city covers a wide range of
+                    hotels and other accommodation facilities to suit every
+                    budget. Participants are advised to contact the hotels
+                    directly and book their accommodation. However, in
+                    case of difficulty, we will assist on your prior request.
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <center>
+                        <h4><b>Patron</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Conference Chair</b></h4>
+                    <p style="font-size:17px;">Prof. D. Srinicasacharya<br> Head, Department of Mathematics<br>National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+               <div class="col-md-4">
+                    <center>
+                    <h4><b>Conference Coordinator</b></h4>
+                    <p style="font-size:17px;">Dr. Ch.Ramreddy<br>Department of Mathematics<br>National Institute of Technology, Warangal</p>
+                    </center>               
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <hr>
+            
+            <div class="col-md-4">
+                <center><h2><span class="label label-success">NATIONAL ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-12" style="font-size:15px;">
+                        <ul>
+                            <li>Prof. A.K. Pani, IIT Mumbai</li>
+                            <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
+                            <li>Prof. P.V.S.N. Murthy, IIT, Kharagpur</li>
+                            <li>Prof. G.P. Rajasekhar, IIT, Kharagpur</li>
+                            <li>Prof. Natesan Srinivasan, IIT Guwahati</li>
+                            <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
+                            <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
+                            <li>Prof. Ch. Srinivasa Rao, IIT Madras</li>
+                            <li>Prof. K.S. Reddy, IIT Madras</li>
+                            <li>Prof. P.Aanatha Lakshmi Narayana, IIT Hyderabad</li>
+                            <li>Prof A. Kandasamy, NIT Suratkal</li>
+                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <center><h2><span class="label label-success">DEPARTMENTAL COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+                    <div class="col-md-6" style="font-size:15px;">
+                        <center><b>Chief Advisors</b></center>
+                        <br>
+                        <ul>
+                            <li>Prof. Y. N. Reddy, Professor</li>
+                            <li>Prof. K.N.S.K.Viswanadham, Professor</li>
+                            <li>Prof. J. V. Ramana Murthy, Professor</li>
+                            <li>Prof. Debashish Dutta, Professor</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style="font-size:15px;">
+                        <center><b>Organizing Committee</b></center><br>
+                        <ul>
+                            <li>Dr. P. Muthu, Associate Professor</li>
+                            <li>Dr. H.P. Rani, Associate Professor</li>
+                            <li>Dr. A. Benerji Babu, Associate Professor</li>
+                            <li>Dr. R.S. Selvaraj, Associate Professor</li>
+                            <li>Dr. T. Kurmayya, Assistant Professor</li>
+                            <li>Dr. J. Pranitha, Assistant Professor</li>
+                            <li>Dr. D. Bhargavi, Assistant Professor</li>
+                            <li>Dr. E. Satyanarayana, Assistant Professor</li>
+                            <li>Dr. Y. Sreenivasa Rao, Assistant Professor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b>Contact:</b></h4>
+                                <b>Prof. D. Srinivasacharya</b><br>
+                                    Head of the Department & Conference Chair<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b> dsc@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9849187247  <br>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b><br></b></h4>
+                                 <b>Dr. Ch. Ramreddy</b><br>
+                                    Conference Coordinator<br>
+                                Department of Mathematics<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b> chramreddy@nitw.ac.in    <br>
+                                <b>Phone : </b> +91-9491824301  <br>
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% elif payment.is_rejected %}
+                <h3>Your payment is rejected due to following problem : <br>
+                <br><center>{{payment.remarks}}</center></h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="instructions" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Instructions</h4>
+      </div>
+      <div class="modal-body">
+        <hr>
+        <h4>Steps to register</h4>
+        <hr>
+        <ol>
+            <li>Click on register tab at the top</li>
+            <li>Fill in the details and click on register</li>
+            <li>Login with your credentials</li>
+            <li>Congrats !!! You are succesfully registered on website</li>
+        </ol>
+        <hr><hr>
+        <h4 style="color:red;">Provision for only attending the conference</h4>
+        <hr>
+        <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
+        <ol>
+            <li>After registering on the website, login with your credentials</li>
+            <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+        </ol>
+        <hr><hr>
+        <h4>Steps to Upload the paper </h4>
+        <hr>
+        <ol>
+            <li>Select upload paper option from navbar</li>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the tracking id will be sent to you</li>
+        </ol>
+        <hr><hr>
+        <h4>Peer review process</h4>
+        <hr>
+        <ol>
+            <li>The uploaded papers will be checked for similarity index</li>
+            <li>If it satisfy the required similarity index then the papers are sent to reviewers for peer review process.</li>
+            <li>The reviewers' recommendations determine whether a paper will be accepted for publication / accepted subject to change / subject to resubmission with significant changes / accepted for oral presentation / rejected</li>
+            <li>The recommendations of the reviewer will uploaded onto the website and the authors can view and do incorporate the corrections, if any.</li>
+            <li>For papers which require changes, the same reviewers will be used to ensure that the quality of the revised paper is acceptable.</li>
+        </ol>
+        <hr><hr>
+        <h4>"Final Submission and Payment of Registration fee"</h4>
+        <hr>
+        <ol>
+            <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
+            <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+            <li>Then from the same upload paper option, go to "final paper upload"</li>
+            <li>Upload Copyright Form (which is available at important links page)</li>
+            <li>Upload final paper, and you are done !!</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '121923426-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
