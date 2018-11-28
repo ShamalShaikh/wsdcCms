@@ -324,17 +324,18 @@
                 {%ifequal paper.status 1 %}
                   <h4>Asked for Revision</h4>
                 {% endifequal %}
-                {% ifequal conference.conference_alias "inceee2019" %}
+                <!-- This condition is added for conference with one type of presentation -->
+                {% ifequal conference.conference_alias "conf_name" %}
                     {% ifequal paper.status 2 %}
                       Accepted
                     {% endifequal %}
                   {% else %}
                     {% ifequal paper.status 2 %}
-                      Accepted for Presentation
+                      <h4>Accepted for Oral</h4>
                     {% endifequal %}
                     {% endifequal %}
                 {%ifequal paper.status 3 %}
-                  <h4>Accepted for Publication</h4>
+                  <h4>Accepted for Poster</h4>
                 {% endifequal %}
                 {%ifequal paper.status 4 %}
                   <h4>Rejected</h4>

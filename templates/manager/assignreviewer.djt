@@ -22,11 +22,16 @@
 	    {%ifequal paper.status 1 %}
 	      <h3> Status :  Asked for Revision </h3>
 	    {% endifequal %}
-	    {%ifequal paper.status 2 %}
-	      <h3> Status :  Accepted for Presentation </h3>
+		{%ifequal paper.status 2 %}
+			<!-- these changes made for inceee2019
+			If you are changing according to your conference 
+			please put if else condition on conference names -->
+		  <!-- <h3> Status :  Accepted for Presentation </h3> -->
+		  <h3> Status :  Accepted for Oral </h3>
 	    {% endifequal %}
 	    {%ifequal paper.status 3 %}
-	      <h3> Status :  Accepted for Publication </h3>
+		  <!-- <h3> Status :  Accepted for Publication </h3> -->
+		  <h3> Status :  Accepted for Poster </h3>
 	    {% endifequal %}
 	    {%ifequal paper.status 4 %}
 	      <h3> Status :  Rejected </h3>
@@ -142,7 +147,9 @@
 
 <center><h3> Other Actions </h3></center>
 
-{% ifequal conf_name "inceee2019" %}
+<!-- this if condition is for conference having only one type of Presentation
+put the conference name in place of conf_name -->
+{% ifequal conf_name "conf_name" %}
 
 <div class="ui fluid segment">
 	<div class="row">
@@ -161,10 +168,11 @@
 <div class="ui fluid segment">
 	<div class="row">
 		<div class="eight wide column">
-			<a href="/manager/approvepaper/1/{{paper.paper_id}}">
+			<a href="/manager/approvepaper/1/{{paper.paper_id}}" 
+			   onclick="return confirm('Are you sure you want to approve this abstract for Oral Presentation?')">
 			<button class="ui fluid button green">
-			  Approve Paper for Presentation
-			</button>
+			  Approve Paper for Oral
+			</button>	
 			</a>
 		</div>
 	</div>
@@ -173,9 +181,10 @@
 <div class="ui fluid segment">
 	<div class="row">
 		<div class="eight wide column">
-			<a href="/manager/approvepaper/2/{{paper.paper_id}}">
+			<a href="/manager/approvepaper/2/{{paper.paper_id}}"
+			onclick="return confirm('Are you sure you want to approve this abstract for Poster Presentation?')">
 			<button class="ui fluid button green">
-			  Approve Paper for Publication
+			  Approve Paper for Poster
 			</button>
 			</a>
 		</div>
@@ -185,15 +194,16 @@
 {% endifequal %}
 
 <div class="ui fluid segment">
-	<div class="row">
+	<!-- <div class="row"> -->
 		<div class="eight wide column">
-			<a href="/manager/disapprovepaper/{{paper.paper_id}}">
+			<a href="/manager/disapprovepaper/{{paper.paper_id}}"
+			onclick="return confirm('Are you sure you want to reject this abstract?')">
 			<button class="ui fluid button red">
 			  Reject Paper
 			</button>
 			</a>
 		</div>
-	</div>
+	<!-- </div> -->
 </div>
 <br>
 
