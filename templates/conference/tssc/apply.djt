@@ -26,7 +26,7 @@
 		  <strong>Congratulations</strong>
 		  Your Payment is verified. Check your e-mail for invitation.
 		</div>
-		
+
 		{% elif paper.uid.profile.mail_sent_reject %}
 				<div class="alert alert-danger">
 					<strong>Sorry</strong>
@@ -35,14 +35,14 @@
 		{% elif paper.uid.profile.mail_sent_register %}
 				{% if not payment %}
 				<div class="alert alert-success">
-					Your application is submitted and reviewed. 
+					Your application is submitted and reviewed.
 					<a href='/conference/make_payment/{{alias}}'><b>Please proceed for payment.</b></a>
 				</div>
 				{% else %}
 				<div class="alert alert-info">
 					Your payment details are under review.
 				</div>
-				{% endif %}				
+				{% endif %}
 
 
 		{% else %}
@@ -52,139 +52,10 @@
 		{% endif %}
 
 	{% else %}
-		<div class="alert alert-info">
-		  <strong>You have not applied for the conference. Please apply by clicking the button below.</strong>
-		</div>
-		
-		<form style="margin-top:3%;" method="POST" action="" enctype="multipart/form-data">
-			{% csrf_token %}
-			<input type="checkbox" name="applyConf" checked hidden>
+			<div class="alert alert-info">
+				 Applications are closed.
+			</div>
 
-			<div class="form-group">
-				    <label for="name" disabled>Name</label>
-				    <input type="text" class="form-control" id="name" name='name' placeholder="some@example.com" value='{{name}}' disabled>
-		  	</div>
-
-			<div class="form-group">
-				    <label for="email" disabled>Designation</label>
-				    <input type="text" class="form-control" id="email" name='designation' placeholder="" value='{{designation}}' disabled>
-		  	</div>
-
-
-			<div class="form-group">
-				    <label for="email" disabled>Affiliation</label>
-				    <input type="text" class="form-control" id="email" name='affiliation' placeholder="" >
-		  	</div>
-
-			<div class="form-group">
-				    <label for="email" disabled>Email address</label>
-				    <input type="email" class="form-control" id="email" name='email' placeholder="" value="{{email}}" disabled>
-		  	</div>
-
-		  	<div class="form-group">
-				    <label for="email" disabled>Mailing Address</label>
-				    <input type="text" class="form-control" id="email" name='address' placeholder="" >
-		  	</div>
-
-		  	<div class="form-group row">
-
-		  	<div class="form-group col-md-3">
-				    <label for="email" disabled>Phone</label>
-				    <input type="number" class="form-control" id="phone" name='phone' placeholder="" >
-		  	</div>
-
-		  	<div class="form-group col-md-3">
-				    <label for="email" disabled>Fax</label>
-				    <input type="number" class="form-control" id="fax" name='fax' placeholder="" >
-		  	</div>
-
-		  	<div class="form-group col-md-3">
-				    <label for="email" disabled>Mobile</label>
-				    <input type="number" class="form-control" id="email" name='mobile' placeholder=""  value='{{mobile}}' disabled>
-		  	</div>
-
-		  </div>
-
-		  <div class="form-group">
-		    <label for="exampleFormControlSelect2">Please select the sections applicable to the abstract being submitted</label>
-    		<br/>
-
-		      <input type='checkbox' name='themes' value='Physical & Mathematical Sciences'> Physical & Mathematical Sciences</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Engineering & Technology'> Engineering &amp; Technology</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Information Communication Technology'> Information &amp; Communication Technology</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Chemical Sciences'> Chemical Sciences</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Life Sciences Agricultural Sciences'> Life Sciences &amp; Agricultural Sciences</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Medical, Health & Pharmaceutical Sciences'> Medical, Health &amp; Pharmaceutical Sciences</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Earth, Ocean, Atmospheric & Environmental Sciences'> Earth, Ocean, Atmospheric &amp; Environmental Sciences</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Smart Cities'> Smart Cities</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Renewable Energy Sources'> Renewable Energy Sources</input>
-		      <br/>
-		      <input type='checkbox' name='themes' value='Science in the Service of Society'> Science in the Service of Society </input>
-		      <br/>
-
-		  </div>
-		  	
-		  	<br/>
-
-			<div class="row">
-		  	<div class="form-group col-md-3">
-				    <label for="title" disabled>Title of Paper</label>
-				    <input type="text" class="form-control" id="title" name='papaername' placeholder="" >
-		  	</div>
-
-		  	<div class="form-group col-md-3">
-				    <label for="abstract" disabled>Attach Abstract (PDF)</label>
-				    <input type="file" class="form-control" id="abstract" name='file' placeholder="" accept=".pdf">
-		  	</div>
-		  	</div>
-
-		  	<!--
-		  	<strong style='font-size:1.2em'> Payment Details</strong>
-		  	<br/><br/>
-		  	<strong>(Registration Fee : Students/Research Scholars : Rs 1000; University/College Teachers: Rs
-			2000/- ; Scientists from R&amp;D/ National Labs : Rs 3000/- ; Industry participants : Rs 5000/-)</strong>
-
-		  	<div class="row">
-		  		<br/>
-		  		<div class="form-group col-md-3">
-	    			<label for="exampleFormControlSelect1">Payment Mode</label>
-			    		<select class="form-control" id="paymentMode" name="paymentMode">
-					      <option value='neft'>NEFT</option>
-					      <option value='dd'>Demand Draft</option>
-			    		</select>
-			  	</div>
-			  	<div class="form-group col-md-3">
-					    <label for="email" disabled>NEFT/ UTR No./ Draft No.</label>
-					    <input type="text" class="form-control" id="email" name='email' placeholder="" >
-			  	</div>
-			  	<div class="form-group col-md-3">
-					    <label for="email" disabled>Bank/Branch</label>
-					    <input type="text" class="form-control" id="email" name='email' placeholder="" >
-			  	</div>
-			  	<div class="form-group col-md-3">
-					    <label for="email" disabled>Amount</label>
-					    <input type="number" class="form-control" id="email" name='email' placeholder="" >
-			  	</div>
-		  	</div>
-
-		  	<div class="form-group">
-				    <label for="abstract" disabled>Attach scanned copy of DD/ NEFT transfer (jpg format only)</label>
-				    <input type="file" class="form-control" id="abstract" name='paymentFile' accept=".jpg, .jpeg" placeholder="" >
-		  	</div>
-
-		  	<strong> <em>NOTE :The original DDs are to be submitted at the help desk on the day of conference. </em></strong>
-		  -->
-		  	<br/><br/>
-			<center><button type="submit" class="btn btn-info">Apply</button></center>
-		</form>
 	{% endif %}
 	</div>
 </div>
