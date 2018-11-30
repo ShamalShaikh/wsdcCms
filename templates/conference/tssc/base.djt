@@ -78,12 +78,12 @@
                     </li>
                     {% else %}
                     <li>
-                        <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
+                        <!--<a href="/conference/{{conference.conference_alias}}/apply">Apply</a>-->
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/conference/{{conference.conference_alias}}/#fee_div">Registration Fee</a></li>
-                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <!--<li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>-->
                             <li><a href="#" data-toggle="modal" data-target="#statusModal">Status of payment</a></li>
                         </ul>
                     </li>
