@@ -52,15 +52,18 @@
                   {% endifequal %}
                   {% ifequal conference.conference_alias "inceee2019" %}
                     {% ifequal paper.status 2 %}
-                      Accepted
+                      Accepted for Oral Presentation
+                    {% endifequal %}
+                    {% ifequal paper.status 3 %}
+                      Accepted for Poster Presentation
                     {% endifequal %}
                   {% else %}
                     {% ifequal paper.status 2 %}
                       Accepted for Presentation
                     {% endifequal %}
-                  {% endifequal %}
-                  {% ifequal paper.status 3 %}
-                    Accepted for Publication
+                    {% ifequal paper.status 3 %}
+                      Accepted for Publication
+                    {% endifequal %}
                   {% endifequal %}
                   {% ifequal paper.status 4 %}
                     Rejected
@@ -99,10 +102,10 @@
                     <input name="paper_name" placeholder="Title of Paper" type="text" id="paper_name" required>
               </div>
               <div class="field" style="margin-left: 33%;">
-                    <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+                    <input name="paper_file" type="file" id="paper_file" class="ui button blue" required>
               </div>
               <div style="margin-left: 40%;">
-              <b>Note :</b> Only pdf files are allowed<br><br>
+              <b>Note :</b> Only pdf and doc files are allowed<br><br>
               <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
               </div>
         </form>
@@ -174,7 +177,7 @@
                 </div>
 
                 <div class="field" style="margin-left: 33%;">
-                      <input name="copyright_form" type="file" id="copyright_form" class="ui button blue">
+                      <input name="copyright_form" type="file" id="copyright_form" class="ui button blue" required>
                 </div>
 
                 <div class="field" style="margin-left: 35%; width:250px;">
@@ -182,7 +185,7 @@
                 </div>
 
                 <div class="field" style="margin-left: 33%;">
-                      <input name="final_paper" type="file" id="final_paper" class="ui button blue">
+                      <input name="final_paper" type="file" id="final_paper" class="ui button blue" required>
                 </div>
                 <div style="margin-left: 40%;">
                 <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
