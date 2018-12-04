@@ -78,9 +78,9 @@
                         <a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
                     </li>
                     {% else %}
-                    <li>
+                    <!--<li>
                         <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
-                    </li>
+                    </li>-->
                     {% endif %}
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
