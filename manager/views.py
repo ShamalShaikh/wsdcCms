@@ -402,6 +402,7 @@ def export_xls(request, cid):
 	for col_num in xrange(len(columns)):
 	    ws.write(row_num, col_num, columns[col_num][0], font_style)
 	    ws.col(col_num).width = columns[col_num][1]
+	row_num += 1
 
 	font_style = xlwt.XFStyle()
 	font_style.alignment.wrap = 1
@@ -455,9 +456,10 @@ def export_xls(request, cid):
 	# 		ws.write(row_num, col_num, dataRow[col_num], font_style)
 
 	# wb.save(response)
+
 	for reg_conf in reg_confs:
 
-		row_num += 1
+		# row_num += 1
 
 		# refnum = str(paper.paperRefNum)
 		papers = Conf_Paper.objects.filter(conf_id=cid,uid=reg_conf.user)
@@ -466,21 +468,27 @@ def export_xls(request, cid):
 		paperRefNo = "NA"
 		paperStatus = -1
 		paperType = "NA"
-		if papers.exists() : 
-			paperName = papers[0].papername
-			paperRefNo = papers[0].paperRefNum
-			paperStatus = papers[0].status
-			paperType = ""
-			if paperStatus == 0 :
-				paperType = "Under Review"
-			if paperStatus == 1 :
-				paperType = "Asked for Revision"
-			if paperStatus == 2 :
-				paperType = "Oral Presentation"
-			if paperStatus == 3 :
-				paperType = "Poster Presentation"
-			if paperStatus == 4 :
-				paperType = "Rejected"
+		multiple_paper = [[0 for x in range(3)] for y in range(len(papers))]
+		i=0
+		if papers.exists() :
+			for paper in papers :  
+				paperName = paper.papername
+				paperRefNo = paper.paperRefNum
+				paperStatus = paper.status
+				paperType = ""
+				if paperStatus == 0 :
+					paperType = "Under Review"
+				if paperStatus == 1 :
+					paperType = "Asked for Revision"
+				if paperStatus == 2 :
+					paperType = "Oral Presentation"
+				if paperStatus == 3 :
+					paperType = "Poster Presentation"
+				if paperStatus == 4 :
+					paperType = "Rejected"
+				
+				multiple_paper[i] = [paperName, paperRefNo, paperType]
+				i=i+1
 		
 		gender = reg_conf.user.profile.gender
 		contact = reg_conf.user.profile.contact
@@ -520,8 +528,8 @@ def export_xls(request, cid):
 		# if reg_conf.user.profile.mail_sent_accept:
 		# 	payment = "PAYMENT ACCEPTED"
 
-		dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
-					confname, payment,refno]
+		# dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
+		# 			confname, payment,refno]
 
 		# index = 8
 		# finalavg = 0.0
@@ -543,8 +551,19 @@ def export_xls(request, cid):
 		# 	finalavg = (finalavg/2)
 		# dataRow[12] = str(finalavg)
 
-		for col_num in xrange(len(dataRow)) :
-			ws.write(row_num, col_num, dataRow[col_num], font_style)
+		if multiple_paper : 
+			for paper in multiple_paper : 
+				dataRow = [nameOfPerson, paper[0], paper[1], paper[2], gender, contact, email, institute, department,
+							confname, payment,refno]
+				for col_num in xrange(len(columns)) :
+					ws.write(row_num, col_num, dataRow[col_num], font_style)
+				row_num += 1
+		else :
+			dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
+							confname, payment,refno]
+			for col_num in xrange(len(columns)) :
+					ws.write(row_num, col_num, dataRow[col_num], font_style)
+			row_num +=1
 
 	wb.save(response)
 	return response
