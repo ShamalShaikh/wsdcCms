@@ -215,7 +215,7 @@
           {% for pendingdd in pending_dds %}
           {% if not pendingdd.is_rejected %}
             <tr>
-            <td>{{pendingdd.user.username}}</td>
+            <td>{{pendingdd.user.first_name}}  {{pendingdd.user.last_name}}</td>
             <td>
                 <a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
             <td>{{pendingdd.refno}}</td>
@@ -264,7 +264,7 @@
         <tbody>
         {% for rejected_dd in rejected_dds %}
           <tr>
-            <td>{{rejected_dd.user.username}}</td>
+            <td>{{rejected_dd.user.first_name}} {{rejected_dd.user.last_name}}</td>
             <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
             <td><a href="/downloadrejdd/{{rejected_dd.pic_of_dd.url}}" target="blank">show receipt</a></td>
             <td>{{rejected_dd.refno}}</td>

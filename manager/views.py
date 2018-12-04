@@ -383,6 +383,9 @@ def export_xls(request, cid):
 
 	columns = [
 	    (u"Registered Users", 6000),
+		(u"Paper Name",10000),
+		(u"Paper Ref No.",6000),
+		(u"Paper Type",6000),
 	    (u"Gender",3000),
 	    (u"Contact",6000),
 	    (u"Email",6000),
@@ -390,7 +393,7 @@ def export_xls(request, cid):
 	    (u"Department",6000),
 	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
-		(u"Reference Number", 9000),
+		(u"Payment Ref No.", 9000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -457,7 +460,28 @@ def export_xls(request, cid):
 		row_num += 1
 
 		# refnum = str(paper.paperRefNum)
+		papers = Conf_Paper.objects.filter(conf_id=cid,uid=reg_conf.user)
 		nameOfPerson = reg_conf.user.first_name + " " + reg_conf.user.last_name
+		paperName = "NA"
+		paperRefNo = "NA"
+		paperStatus = -1
+		paperType = "NA"
+		if papers.exists() : 
+			paperName = papers[0].papername
+			paperRefNo = papers[0].paperRefNum
+			paperStatus = papers[0].status
+			paperType = ""
+			if paperStatus == 0 :
+				paperType = "Under Review"
+			if paperStatus == 1 :
+				paperType = "Asked for Revision"
+			if paperStatus == 2 :
+				paperType = "Oral Presentation"
+			if paperStatus == 3 :
+				paperType = "Poster Presentation"
+			if paperStatus == 4 :
+				paperType = "Rejected"
+		
 		gender = reg_conf.user.profile.gender
 		contact = reg_conf.user.profile.contact
 		email = reg_conf.user.email
@@ -470,17 +494,18 @@ def export_xls(request, cid):
 		payment = ""
 		refno = ''
 
+		#showing only first payment of the user
 		if Payment.objects.filter(conf_id=cid,user=reg_conf.user).exists():
-			user = Payment.objects.get(conf_id=cid,user=reg_conf.user)
-			if user.is_aprooved==True:
+			user = Payment.objects.all().filter(conf_id=cid,user=reg_conf.user)
+			if user[0].is_aprooved==True:
 				payment= "PAYMENT VERIFIED"
-				refno = user.refno
-			if user.is_aprooved==False and user.is_rejected==False:
+				refno = user[0].refno
+			if user[0].is_aprooved==False and user[0].is_rejected==False:
 				payment = "VERIFICATION PENDING"
-				refno = user.refno
-			if user.is_rejected==True:
+				refno = user[0].refno
+			if user[0].is_rejected==True:
 				payment = "PAYMENT REJECTED"
-				refno = user.refno
+				refno = user[0].refno
 		
 		else:
 			payment = "NOT PAID"
@@ -495,7 +520,7 @@ def export_xls(request, cid):
 		# if reg_conf.user.profile.mail_sent_accept:
 		# 	payment = "PAYMENT ACCEPTED"
 
-		dataRow = [nameOfPerson, gender, contact, email, institute, department,
+		dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
 					confname, payment,refno]
 
 		# index = 8

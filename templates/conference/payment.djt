@@ -9,14 +9,14 @@
 	              <label>Upload Payment Receipt</label>
 	        </div>
 	        <div class="field">
-	              <input name="dd_file" type="file" id="dd_file" class="ui button blue">
+	              <input name="dd_file" type="file" id="dd_file" class="ui button blue" required>
 	        </div>
 			{% ifequal conference.conference_alias "inceee2019" %}
 	        <div class="field">
 	              <label>Upload soft copy of Registration form</label>
 	        </div>
 	        <div class="field">
-	              <input name="id_file" type="file" id="id_file" class="ui button blue">
+	              <input name="id_file" type="file" id="id_file" class="ui button blue" required>
 		  </div>
 		  {% else %}
 	        <div class="field">
@@ -30,7 +30,7 @@
 			<label>Transaction Id / Reference Number</label>
 		</div>
 		  <div class="four wide field">
-			<input name="refno" type="text" id="refno" >
+			<input name="refno" type="text" id="refno">
 		</div>
 
 	        <div style="margin-left: 40%;">

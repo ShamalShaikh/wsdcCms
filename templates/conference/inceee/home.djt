@@ -463,7 +463,7 @@
 <div class="row">
     <br>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <center>
                 <h4>
                     <b>Patron</b>
@@ -473,23 +473,24 @@
                     <br> National Institute of Technology, Warangal</p>
             </center>
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-4">
             <center>
                 <h4>
                     <b>Head Of Department </b>
                 </h4>
                 <p style="font-size:17px;">Prof. Shirish H. Sonawane</p>
             </center>
-        </div>
-        <div class="col-md-3">
+        </div> -->
+        <div class="col-md-4">
             <center>
                 <h4>
-                    <b>Convener </b>
+                    <b>Conveners</b>
                 </h4>
-                <p style="font-size:17px;">Prof. A. Sarath Babu</p>
+                <p style="font-size:17px;">Prof. A. Sarath Babu
+                <br> Prof. Shirish H. Sonawane, Head Of Department</p>
             </center>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <center>
                 <h4>
                     <b>Coordinators</b>

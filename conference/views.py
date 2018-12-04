@@ -46,7 +46,7 @@ def finalcfdownload(request, final_paper_id):
 
 def validateFormat(filename):
     ext = os.path.splitext(filename.name)[1]
-    valid_extentions = ['.pdf','.PDF']
+    valid_extentions = ['.pdf','.PDF','.docx','.docs','.doc']
     if not ext in valid_extentions:
         return False
     return True
@@ -99,26 +99,27 @@ def payment(request,alias):
 
 		previousPayment = Payment.objects.filter(user=request.user,conf_id=conf_id)
 		print previousPayment
-		if len(previousPayment)==1:
-			previousPayment[0].pic_of_dd = dd_pic
-			previousPayment[0].pic_of_id = id_pic
-			previousPayment[0].refno = refno
-			previousPayment[0].is_rejected = False
-			previousPayment[0].remarks = ""
-			previousPayment[0].date = now.strftime("%Y-%m-%d")
-			previousPayment[0].save()
-		else:
-			pay = Payment()
-			pay.amount = amount
-			pay.user = user
-			pay.conf_id = conf_id
-			pay.pic_of_dd = dd_pic
-			pay.pic_of_id = id_pic
-			pay.refno = refno
-			pay.is_approved = False
-			pay.payment_mode = 'dd'
-			pay.date = now.strftime("%Y-%m-%d")
-			pay.save()
+		#This was overwriting the previous payment of the user
+		# if len(previousPayment)==1:
+		# 	previousPayment[0].pic_of_dd = dd_pic
+		# 	previousPayment[0].pic_of_id = id_pic
+		# 	previousPayment[0].refno = refno
+		# 	previousPayment[0].is_rejected = False
+		# 	previousPayment[0].remarks = ""
+		# 	previousPayment[0].date = now.strftime("%Y-%m-%d")
+		# 	previousPayment[0].save()
+		# else:
+		pay = Payment()
+		pay.amount = amount
+		pay.user = user
+		pay.conf_id = conf_id
+		pay.pic_of_dd = dd_pic
+		pay.pic_of_id = id_pic
+		pay.refno = refno
+		pay.is_approved = False
+		pay.payment_mode = 'dd'
+		pay.date = now.strftime("%Y-%m-%d")
+		pay.save()
 		url = '/conference/'+alias
 		return redirect(url)
 	return render(request,'conference/payment.djt',{'conference':conference})
