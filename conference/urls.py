@@ -51,6 +51,13 @@ urlpatterns = [
 	url(r'^inceee2019/hotels/$',views.inceeehotels),
 	#url(r'^inceee2019/apply/$',views.inceeeapply),
 
+	#sep2019 dated 04-dec-2018 Bhargava Reddy
+	url(r'^sep2019/$',views.sep),
+	url(r'^sep2019/about/$',views.sepabout),
+	url(r'^sep2019/links/$',views.seplinks),
+	url(r'^sep2019/hotels/$',views.sephotels),
+	url(r'^sep2019/apply/$',views.sepapply),
+
 
 
 	# url(r'^metallography_contest/$',views.metallography_contest),

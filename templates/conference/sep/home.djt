@@ -1,4 +1,4 @@
-{% extends "conference/inceee/base.djt" %} {% load staticfiles %} {% block content %}
+{% extends "conference/sep/base.djt" %} {% load staticfiles %} {% block content %}
 <!-- Page Content -->
 <div class="container">
 
@@ -14,13 +14,14 @@
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
                 <p style="font-size:20px;color: #002360;">
-                    <b>2nd International Conference on</b>
+                    <b>National Conference on</b>
                 </p>
                 <p style="font-size:20px; color: #31b150;">
-                    <b>New Frontiers in Chemical, Energy and Environmental Engineering</b>
+                    <b>Sport and Exercise Psychology:</b><br>
+                    Practices, Pursuits and Promises
                 </p>
                 <p style="font-size:20px;color: #002360;">
-                    <b>(INCEEE - 2019)</b>
+                    <b>(SEP- 2019)</b>
                 </p>
                 <p style="font-size:15px;color: #ff0300;">
                     <b>On the occasion of Diamond Jubilee of NIT Warangal</b>
@@ -46,13 +47,13 @@
         <div class="col-md-6">
             <center>
                 <h3 style="color:blue;">
-                    <b>February 15 - 16, 2019</b>
+                    <b>March 29-31, 2019</b>
                 </h3>
                 <hr>
                 <h4>
                     <b>Organised by</b>
                     <br>
-                    <br> Department of Chemical Engineering
+                    <br> Department of Physical Education
                     <br>
                     <br> National Institute of Technology Warangal
                     <br> Warangal 506004.
@@ -78,7 +79,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:25px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Abstract submission date extended till 15th Dec 2018 !!!</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
                 </div>
             </div>
         </div>
@@ -93,18 +94,9 @@
             </h2>
             <br>
             <p style="color:black; text-align:justify;">
-                This conference is the second in series of International Conference on New Frontiers in Chemical, Energy and Environmental
-                Engineering (INCEEE). The first edition of INCEEE was conducted during 20-21, March 2015 as a part of Golden
-                Jubilee Celebrations of the Department. INCEEE-2019 is being conducted as a part of Diamond Jubilee Celebrations
-                of the Institute. Sustainability is the key Mantra for equitable growth for very long periods of time. Sustainability
-                is all pervasive, that is it finds its place in chemical processing, energy harnessing, mineral exploration,
-                material development and all related technologies. Product and process development, simulation and modelling
-                have added new dimensions to the advancements in these fields of research. Chemical Engineering has more
-                recently embraced biomolecular engineering concepts to widen its scope. Chemical Engineers shoulder the responsibility
-                of ensuring that their activities are environmentally benign, while improving the health and wellbeing of
-                all citizens. In this context, the second international conference on chemical, energy and environmental
-                engineering is planned to provide a platform for comprehensive dissemination of knowledge and exchange of
-                ideas in related fields among the academicians, scientists and industry professionals.
+                NIT Warangal, celebrating its Diamond Jubilee year, collaborates with Sports Psychology Association of India to organise the national conference on "Sport and Exercise Psychology: Practices, Pursuits and Promises" to cover a wide range of topics related to sport, play, exercise, motor behaviour and physical activity.
+
+                The conference aims at addressing the new perspectives on the science and art of sports and exercise psychology and issues related to the athelete's mental training and management and social changes. The Conference aims at facilitating fruitful exchange of knowledge and experience and to further the feeling of identity by creating a platform for the sports psychologists, physical educationists, coaches, sports administrators, sport scientists etc., in the field.
             </p>
         </div>
     </div>
@@ -123,25 +115,28 @@
             <div class="col-md-12">
                 <center>
                     <p style="color:black;">
-                        INCEEE-2019 welcomes research papers on the following topics but not limited to:
+                        SEP-2019 welcomes research papers on the following topics but not limited to:
                     </p>
                 </center>
             </div>
             <br>
-            <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-1">
                 <ul>
-                    <li>Carbon Capture, Utilization, Sequestration</li>
-                    <li>Composite Materials</li>
-                    <li>Environmental Biotechnology and Biochemical Engineering</li>
-                    <li>Environmental Pollution Control</li>
-                    <li>Green Technology</li>
-                    <li>Instrumentation and Process Control</li>
-                    <li>Molecular Dynamic Simulations</li>
-                    <li>NanomaterialsSynthesis &Characterization</li>
-                    <li>Petroleum Refinery and Petrochemicals</li>
+                    <li>Motor skill learning and sports skills learning</li>
+                    <li>    Intrinsic and extrinsic motivations in sport and exercise scenario</li>
+                    <li>    Societal influences on sporting activities - psychological perspective</li>
+                    <li>    Psychological intervention techniques in elite sport</li>
+                    <li>    Applied sport psychology support to high performance sports</li>
+                    <li>    Elite sport - pursuits, priorities and problems</li>
+                    <li>    Sport psychology in school and youth sport perspective</li>
+                    <li>    Mind training techniques and strategies</li>
+                    <li>    Performance psychology - sport and exercise environments</li>
+                    <li>    Yogic practices in sport psychology perspective</li>
+                    <li>    Measurement constructs and issues in sport psychology</li>
+                    <li>    Underlying issues in the practice of sport psychology - values and attitudes</li>
                 </ul>
             </div>
-            <div class="col-md-5 col-md-offset-1">
+            <!-- <div class="col-md-5 col-md-offset-1">
             <ul>
                 <li>Pharmaceutical Engineering</li>
                 <li>Process and Product Development</li>
@@ -152,7 +147,7 @@
                 <li>Transport Processes</li>
                 <li>Waste Management</li>
             </ul>
-        </div>
+        </div> -->
     </div>
 </div>
 <hr>
@@ -166,9 +161,8 @@
         </h2>
         <br>
         <p style="text-align:justify;">
-            Authors should submit an abstract of their original, unpublished work in not exceeding 300 words. The abstract format can
-            be downloaded from the conference website. The abstract must be mailed to
-            <b>inceee2019@gmail.com</b>.
+            Authors should submit an abstract of their original, unpublished work in not exceeding 300 words. The abstract format can be downloaded from the conference website. The abstract must be mailed to sep19@nitw.ac.in
+            <b>sep19@nitw.ac.in</b>.
         </p>
     </div>
     <div class="col-md-6" id="dates">
@@ -181,23 +175,23 @@
         <table class="table table-hover">
             <tr class="active">
                 <td>Abstract submission:</td>
-                <td>extended to 15th Dec 2018</td>
+                <td>20th  Jan.  2019</td>
             </tr>
             <tr class="active">
                 <td>Notification of Acceptance:</td>
-                <td>15th Dec 2018</td>
+                <td>1st  Feb.  2019</td>
             </tr>
             <tr class="active">
                 <td>Full paper submission:</td>
-                <td>15th Jan 2019</td>
+                <td>15th  Feb.  2019</td>
             </tr>
             <tr class="active">
                 <td>Early bird Registration:</td>
-                <td>01st Jan 2019</td>
+                <td>5th  Feb.  2019</td>
             </tr>
             <tr class="active">
                 <td>Registration Deadline:</td>
-                <td>20th Jan 2019</td>
+                <td></td>
             </tr>
         </table>
         <br>
@@ -213,30 +207,7 @@
 	</center>
             <br>
             <p style="text-align:justify;">
-                All the abstracts accepted after peer review from registered participants will be published in the conference proceedings
-                with ISBN number.
-                <br>
-                <b>
-                   <i>
-			<p>
-		      	&#9679;Select papers of the conference will be published
-		       	in the following journals:</p>
-			</i>
-			<p style="color:#ff9900;">
-			1. Special issue of ‘Chemical Product and Process Modeling’ journal (Scopus), De Gruyter
-			<br>2. Energy Sources, Part A (SCI), Taylor & Francis
-			</p>
-			<i>
-			<p style="color:#990000;">
-			Efforts are on for publishing select papers in other 
-			SCI and Scopus indexed journals.
-			</p>
-                    </i>
-                </b>
-                <br>
-                <b>
-                    <i>&#9679; Select papers will be rewarded with Best paper (Oral and Poster) Awards at the conference.</i>
-                </b>
+               All the abstracts accepted after peer review from registered participants will be published in the conference proceedings.
             </p>
     </div>
 
@@ -251,9 +222,7 @@
                 <span class="label label-primary">Registration</span>
             </h2>
             <br>
-            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and
-                pay the requisite registration fee (as per the details given below). Atleast one author should register per
-                paper.
+            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and pay the requisite registration fee (as per the details given below).
             </p>
 
             <table class="table table-hover">
@@ -312,18 +281,17 @@
         </h2>
         <br>
 
-        <p style="text-align:left;">Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Convener
-            – INCEEE-2019 payable at Warangal or remitted through On-line / NEFT to the below mentioned Bank Account.</p>
+        <p style="text-align:left;">Registration fee may be remitted through On-line / NEFT to the below mentioned Bank Account</p>
 
 
         <table class="table table-hover">
             <tr rowspan="6" class="active">
                 <td>Account Namee</td>
-                <td>Convener – INCEEE-2019</td>
+                <td>Director  NITW</td>
             </tr>
             <tr class="active">
                 <td>Account No.</td>
-                <td>38011574154</td>
+                <td>52109375198</td>
             </tr>
             <tr class="active">
                 <td>Bank</td>
@@ -367,94 +335,30 @@
     <div class="col-md-6" style="line-height:30px;font-size:17px;">
         <center>
             <div>
-                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150">
+               <!--  <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150"> -->
                 <br>
             </div>
-            <a href="http://www.engineering.uoit.ca/people/amme/faculty/ibrahim.dincer.php" target="-blank">
+            <a href="#" target="-blank">
                 <b>
-                    <u>Prof. Ibrahim Dincer</u>
+                    <u>Prof. M.L.Kamlesh</u>
                 </b>
             </a>
-            <br>University of Ontorio Institute of Technology, Canada</center>
+            <br>Patron, Sport Psychology Association of India</center>
         <br>
     </div>
     <div class="col-md-6" style="line-height:30px;font-size:17px;">
         <center>
             <div>
-                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150">
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
                 <br>
             </div>
-            <a href="http://www.chbe.nus.edu.sg/faculty/cheiak" target="blank">
+            <a href="#" target="blank">
                 <b>
-                    <u>Prof. Iftekhar Abubakar KARIMI</u>
+                    <u>Prof. Jaya Shree Acharya</u>
                 </b>
             </a>
-            <br>National University of Singapore, Singapore</center>
+            <br>Lakshmibai National Institute of Physical Education</center>
         <br>
-    </div>
-</div>
-
-<hr>
-<div class="row">
-    <div class="col-md-12">
-        <center>
-            <h2>
-                <span class="label label-success">Technical Advisory Committee</span>
-            </h2>
-        </center>
-        <br>
-        <div class="row" style="font-size:15px;">
-            <div class="col-md-8 col-md-offset-4">
-                <strong>
-                    <ul>
-                        <li>
-                            <a href="http://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=26" target="blank">Prof. A. B. Pandit, ICT Mumbai, Mumbai</a>
-                        </li>
-                        <li>
-                            <a href="http://www.fvt.bci.tu-dortmund.de/cms/en/staff/Prof/index.html" target="blank">Prof. Andrzej Górak, TU Dortmund University,Germany</a>
-                        </li>
-                        <li>
-                            <a href="https://chemeng.mines.edu/project/anuj-chauhan/" target="blank">Prof. Anuj Chauhan, Colorado School of Mines, USA</a>
-                        </li>
-                        <li>
-                            <a href="https://www.chalmers.se/en/staff/Pages/henrik-leion.aspx" target="blank">Prof. Henrik Leion, Chalmers University of Technology, Sweden</a>
-                        </li>
-                        <li>
-                            <a href="https://biblio.ugent.be/person/801001371090" target="blank">Prof. Ingmar Nopens, Ghent University, Belgium</a>
-                        </li>
-                        <li>
-                            <a href="http://iittp.ac.in/dr-k-krishnaiah" target="blank">Prof. K. Krishnaiah, IIT Tirupathi, India</a>
-                        </li>
-                        <li>
-                            <a href="http://www.che.iitm.ac.in/~chidam/" target="blank">Prof (Rtd.). M. Chidambaram, IIT Madras, Chennai</a>
-                        </li>
-                        <li>
-                            <a href="https://findanexpert.unimelb.edu.au/display/person1590" target="blank">Prof. M. Ashok Kumar, University of Melbourne, Australia</a>
-                        </li>
-                        <li>
-                            <a href="http://icems.ist.utl.pt/chemistry/memb.html" target="blank">Prof. Maria Norberta de Pinho, Instituto Superio Technico, Lisbon, Portugal</a>
-                        </li>
-                        <li>
-                            <a href="https://che.iitm.ac.in/~psts/" target="blank">Prof. P. S. T Sai, IIT Madras, Chennai</a>
-                        </li>
-                        <li>
-                            <a href="https://egr.vcu.edu/directory/ramgupta/" target="blank">Prof. Ram B. Gupta, Virginia Commonwealth Univ., USA</a>
-                        </li>
-                        <li>
-                            <a href="https://www.che.iitb.ac.in/online/faculty/ravindra-d-gudi" target="blank">Prof. Ravindra Gudi, IIT Bombay, Mumbai</a>
-                        </li>
-                        <li>
-                            <a href="https://che.iitm.ac.in/~sjayanti/" target="blank">Prof. Sreenivas Jayanti, IIT Madras, Chennai</a>
-                        </li>
-                        <li>
-                            <a href="https://engineering.purdue.edu/ChE/news/2018/che-professor-zoltan-k-nagy-receives-2018-aiche-process-development-division-research-award-"
-                                target="blank">Prof. Zoltan K Nagy, Purdue University, USA</a>
-                        </li>
-
-                    </ul>
-                </strong>
-            </div>
-        </div>
     </div>
 </div>
 <hr>
@@ -463,7 +367,7 @@
 <div class="row">
     <br>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <center>
                 <h4>
                     <b>Patron</b>
@@ -473,15 +377,16 @@
                     <br> National Institute of Technology, Warangal</p>
             </center>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <center>
                 <h4>
-                    <b>Head Of Department </b>
+                    <b>Head Of Department and  Convener</b>
                 </h4>
-                <p style="font-size:17px;">Prof. Shirish H. Sonawane</p>
+                <p style="font-size:17px;">Prof. P.Madhusudan Reddy
+                <br>Head of the Department, Physical Education</p>
             </center>
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             <center>
                 <h4>
                     <b>Convener </b>
@@ -498,7 +403,7 @@
                     <br>Dr. P. V. Suresh
                     <br>Dr. S. Muralimohan
             </center>
-        </div>
+        </div> -->
         <br>
     </div>
     <!-- <div class="col-md-3"></div> -->
@@ -519,21 +424,24 @@
     <div class="row" style="font-size:15px;">
         <div class="col-md-7 col-md-offset-5">
             <ul>
-                <li>Prof. Y. Pydi Setty</li>
-                <li>Prof. Shirish H Sonawane</li>
-                <li>Prof. K. Anand Kishore</li>
-                <li>Dr. K. Srivani</li>
-                <li>Dr. S. Srinath</li>
-                <li>Dr. A. Seshagiri Rao</li>
-                <li>Dr. S. Vidyasagar</li>
-                <li>Dr. T. Sunil Kumar</li>
-                <li>Dr. G. Uday Bhaskar Babu</li>
-                <li>Dr. V. Ramsagar</li>
-                <li>Dr. K. Raghu Raja Pandiyan</li>
-                <li>Dr. S. Manigandan</li>
-                <li>Dr. K. S. Rajmohan</li>
-                <li>Dr. K. Manohar</li>
-                <li>Dr. P. M. Satya Sai</li>
+                <li>Prof.DVSS Sarma, Chairman</li>
+                <li>Prof.Dilip K Dureha Co-Chairman</li>
+                <li>Dr. Anuradha Solanki Co-convener</li>
+                <li>Dr.K.S. Gurjar</li>
+                <li>Prof.L.R.G. Reddy</li>
+                <li>Prof.M Sydulu</li>
+                <li>Prof.Y. N. Reddy</li>
+                <li>Prof.K. Laxma Reddy</li>
+                <li>Prof.L. Krishnaanand</li>
+                <li>Prof.A.Venu Gopal</li>
+                <li>Prof.A. Venu Vinod</li>
+                <li>Prof.D. Dinakar</li>
+                <li>Prof.P. Rathish Kumar</li>
+                <li>Shri.S. Goverdhan Rao,</li>
+                <li>Shri.R. Mohan</li>
+                <li>Shri.I. A. K. Reddy</li>
+                
+
 
             </ul>
         </div>

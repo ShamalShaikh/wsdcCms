@@ -17,6 +17,8 @@ urlpatterns = [
 	#TSSC-2018
 	url(r'^inceee/$',RedirectView.as_view(url='/conference/inceee2019/')),
 	url(r'^inceee2019/$',RedirectView.as_view(url='/conference/inceee2019/')),
+	#SEP2019
+	url(r'^sep2019/$',RedirectView.as_view(url='/conference/sep2019/')),
 
 	# url(r'^fccm/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	# url(r'^fccm2018/$',RedirectView.as_view(url='/conference/fccm2018/')),
