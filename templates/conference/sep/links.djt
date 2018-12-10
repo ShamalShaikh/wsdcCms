@@ -10,11 +10,11 @@
                 <br>
                 <h4><b>
                     <ol>
-                        <li><a href="{% static 'docs_sep/sep.pdf' %}" target="_blank">Brochure</a></li><br>
+                        <li><a href="{% static 'docs_sep/sep2019.pdf' %}" target="_blank">Brochure</a></li><br>
                         <li>Registration Form (<!-- ( <a href="{% static 'docs_inceee/inceee2019_reg_form.pdf' %}" target="_blank">pdf</a> --> <a href="{% static 'docs_sep/SEP19_Regform.docx' %}" target="_blank">doc</a> )</li><br> 
                         <li>Abstract Template (<!--  <a href="{% static 'docs_inceee/inceee2019_abstract_template.pdf' %}" target="_blank">pdf</a> , --><a href="{% static 'docs_sep/sep_abstract.doc' %}" target="_blank">doc</a> )</li><br>            
                         <li><a href="{% static 'docs_sep/SEP19_full_paper.doc' %}" target="_blank">Full Paper Template </a></li><br>
-                        <li><a href="{% static 'docs_sep/inceee2019_copyright-transfer.doc' %}" target="_blank">Copyright Transfer From </a></li><br>
+                        <!-- <li><a href="{% static 'docs_sep/inceee2019_copyright-transfer.doc' %}" target="_blank">Copyright Transfer From </a></li> --><br>
                     </ol>
                 </b></h4>
             </div>

@@ -13,12 +13,12 @@
         <div class="col-sm-8">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:20px;color: #002360;">
+                <p style="font-size:20px;color:blue;">
                     <b>National Conference on</b>
                 </p>
                 <p style="font-size:20px; color: #31b150;">
                     <b>Sport and Exercise Psychology:</b><br>
-                    Practices, Pursuits and Promises
+                    <span style="color:#ff8000"><b>Practices, Pursuits and Promises<b></span>
                 </p>
                 <p style="font-size:20px;color: #002360;">
                     <b>(SEP- 2019)</b>
@@ -54,7 +54,6 @@
                     <b>Organised by</b>
                     <br>
                     <br> Department of Physical Education
-                    <br>
                     <br> National Institute of Technology Warangal
                     <br> Warangal 506004.
                     <br> Telangana State, India.
@@ -64,7 +63,6 @@
                     <b>Sponsored By</b>
                     <br>
                     <br> TEQIP III
-                    <br>
                     <br> National Institute of Technology Warangal
                     <br> Warangal 506004.
                     <br> Telangana State, India.
@@ -114,13 +112,13 @@
 
             <div class="col-md-12">
                 <center>
-                    <p style="color:black;">
-                        SEP-2019 welcomes research papers on the following topics but not limited to:
+                    <p style="color:black;"><b>
+                        SEP-2019 welcomes research papers on the following topics but not limited to:</b>
                     </p>
                 </center>
             </div>
             <br>
-            <div class="col-md-12 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-2">
                 <ul>
                     <li>Motor skill learning and sports skills learning</li>
                     <li>    Intrinsic and extrinsic motivations in sport and exercise scenario</li>
@@ -161,8 +159,7 @@
         </h2>
         <br>
         <p style="text-align:justify;">
-            Authors should submit an abstract of their original, unpublished work in not exceeding 300 words. The abstract format can be downloaded from the conference website. The abstract must be mailed to sep19@nitw.ac.in
-            <b>sep19@nitw.ac.in</b>.
+            Authors should submit an abstract (Paper and Poster) of their original, unpublished work in not exceeding 300 words. The abstract format can be downloaded from the conference website. The poster format will be A0 (118.9 cm / 46.8” height x 84.1 cm / 31.1” width). The abstract must be mailed to <b>sep19@nitw.ac.in</b>.
         </p>
     </div>
     <div class="col-md-6" id="dates">
@@ -189,10 +186,10 @@
                 <td>Early bird Registration:</td>
                 <td>5th  Feb.  2019</td>
             </tr>
-            <tr class="active">
+            <!-- <tr class="active">
                 <td>Registration Deadline:</td>
                 <td></td>
-            </tr>
+            </tr> -->
         </table>
         <br>
     </div>
@@ -227,47 +224,44 @@
 
             <table class="table table-hover">
                 <tr class="active">
-                    <td rowspan="2">Category</td>
-                    <td colspan="2">Early bird registration</td>
-                    <td colspan="2">Regular registration</td>
+                    <td>Category</td>
+                    <td>Early</td> 
+                    <td>Standard</td>
+                    <td>Late</td>
+                    <td>On Site</td>
                 </tr>
                 <tr class="active">
-                    <td>Indian (INR)</td>
-                    <td>Others (USD)</td>
-                    <td>Indian (INR)</td>
-                    <td>Others (USD)</td>
+                    <td></td>
+                    <td>5-2-19</td>
+                    <td>20-2-19</td> 
+                    <td>15-3-19</td>
+                    <td>29-3-19</td>
+                    
                 </tr>
                 <tr class="active">
-                    <td>Academia and R&D centers</td>
-                    <td>2500</td>
-                    <td>200</td>
-                    <td>3000</td>
-                    <td>250</td>
+                    <td>Delegates</td>
+                    <td>Rs. 2,000</td>
+                    <td>Rs.2,500</td> 
+                    <td>Rs.3,000</td>
+                    <td>Rs. 3,500</td>
 
                 </tr>
 
                 <tr class="active">
-                    <td>Industry delegates</td>
-                    <td>5000</td>
-                    <td>300</td>
-                    <td>6000</td>
-                    <td>350</td>
+                    <td>SPAI Member</td>
+                    <td>Rs.1,500</td>
+                    <td>Rs.2,000</td>
+                    <td>Rs.2,500</td> 
+                    <td>Rs.3,000</td>
                 </tr>
                 <tr class="active">
-                    <td>PG &Research Scholars</td>
-                    <td>1500</td>
-                    <td>100</td>
-                    <td>2000</td>
-                    <td>150</td>
+                   <td>Scholars/  Students</td>
+                    <td>Rs.1,000</td>
+                    <td>Rs. 1,200</td> 
+                    <td>Rs.1,500</td>
+                    <td>Rs. 2,000</td>
                 </tr>
-                <tr class="active">
-                    <td>Accompanying /Non-presenting Persons</td>
-                    <td>1500</td>
-                    <td>100</td>
-                    <td>2000</td>
-                    <td>150</td>
-                </tr>
-
+                
             </table>
 
         </center>
@@ -332,18 +326,50 @@
         </h2>
         <br>
     </div>
-    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+    <div class="col-md-12" style="line-height:30px;font-size:17px;">
         <center>
             <div>
                <!--  <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150"> -->
                 <br>
             </div>
             <a href="#" target="-blank">
+                <img src="{% static 'docs_sep/1.jpg' %}"><br>
                 <b>
                     <u>Prof. M.L.Kamlesh</u>
                 </b>
             </a>
             <br>Patron, Sport Psychology Association of India</center>
+        <br>
+    </div>
+
+</div>
+<hr>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>
+            <center>
+                <span class="label label-success">Invited Speakers</span>
+            </center>
+        </h2>
+        <br>
+    </div>
+    
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/2.jpg' %}"><br>
+                <b>
+                    <u>Prof. Jaya Shree Acharya</u>
+                </b>
+            </a>
+            <br>Dean, National Sports University, Imphal</center>
         <br>
     </div>
     <div class="col-md-6" style="line-height:30px;font-size:17px;">
@@ -353,12 +379,131 @@
                 <br>
             </div>
             <a href="#" target="blank">
+                <img src="{% static 'docs_sep/3.jpg' %}"><br>
                 <b>
-                    <u>Prof. Jaya Shree Acharya</u>
+                    <u>Prof. Jolly Roy</u>
                 </b>
             </a>
-            <br>Lakshmibai National Institute of Physical Education</center>
+            <br> Manava Rachana University, Faridabad</center>
         <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/4.jpg' %}"><br>
+                <b>
+                    <u>Dr. Anuradha Solanki</u>
+                </b>
+            </a>
+            <br>Scientic Officer, Sports Authority of India, New Delhi</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/5.jpg' %}"><br>
+                <b>
+                    <u>Dr. Reena Kaul</u>
+                </b>
+            </a>
+            <br> Kolkata</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/6.jpg' %}"><br>
+                <b>
+                    <u>Dr. Suresh Kutty</u>
+                </b>
+            </a>
+            <br>Kannur University</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/7.jpg' %}"><br>
+                <b>
+                    <u>Dr.Anil Ramachandran</u>
+                </b>
+            </a>
+            <br>Kannur University </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/8.jpg' %}"><br>
+                <b>
+                    <u>Dr. Lalit Sharma</u>
+                </b>
+            </a>
+            <br>New Delhi</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/9.jpg' %}"><br>
+                <b>
+                    <u>Prof. Bipin Bhattacharya</u>
+                </b>
+            </a>
+            <br> U.K</center>
+        <br>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">Technical Advisory Committee</span> </h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-8 col-md-offset-4">
+            <ul>
+                <li>Prof.M.L. Kamlesh, Patron, SPAI</li>
+                <li>Prof.N.S. Mann, Patron, SPAI</li>
+                <li>Prof.Avinash Sidhu, Patron, SPAI</li>
+                <li>Prof.D.K. Dureha, President, SPAI</li>
+                <li>Dr.Anuradha Solanki, Secretary, SPAI</li>
+                <li>Dr.K. S. Gurjar, Finance Sec., SPAI</li>
+                <li>Prof. Barid Bhattacharya, UK</li>
+                <li>Shri.VVBN Rao, SPAI</li>
+                <li>Prof.K. Madhu Murthy, NITW</li>
+                <li>Prof.CCSRK Prasad, NITW</li>
+                <li>Prof.A. Sarath Babu, NITW</li>       
+
+            </ul>
+        </div>
     </div>
 </div>
 <hr>
@@ -380,7 +525,7 @@
         <div class="col-md-6">
             <center>
                 <h4>
-                    <b>Head Of Department and  Convener</b>
+                    <b>Convener</b>
                 </h4>
                 <p style="font-size:17px;">Prof. P.Madhusudan Reddy
                 <br>Head of the Department, Physical Education</p>
@@ -417,12 +562,12 @@
     <div class="col-md-12">
         <center>
             <h2>
-                <span class="label label-success">ORGANIZING COMMITTEE</spa$ </h2>
+                <span class="label label-success">ORGANIZING COMMITTEE</span> </h2>
         </center>
         <br>
     </div>
     <div class="row" style="font-size:15px;">
-        <div class="col-md-7 col-md-offset-5">
+        <div class="col-md-8 col-md-offset-4">
             <ul>
                 <li>Prof.DVSS Sarma, Chairman</li>
                 <li>Prof.Dilip K Dureha Co-Chairman</li>
@@ -439,9 +584,7 @@
                 <li>Prof.P. Rathish Kumar</li>
                 <li>Shri.S. Goverdhan Rao,</li>
                 <li>Shri.R. Mohan</li>
-                <li>Shri.I. A. K. Reddy</li>
-                
-
+                <li>Shri.I. A. K. Reddy</li>        
 
             </ul>
         </div>
