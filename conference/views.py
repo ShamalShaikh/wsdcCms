@@ -1223,3 +1223,145 @@ def inceeeapply(request):
 	except:
 		response['nopaper'] = True
 	return render(request, 'conference/inceee/apply.djt',response)
+
+
+########################################################### ICAMER - 2019 ###############################################################
+
+def icamer(request):
+	print "ICAMER-2019"
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	print conference
+	response = {}
+	response['conference']=conference
+	response['alias']=alias
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/icamer/home.djt', response)
+
+def icamerabout(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response={}
+	response['conference']=conference
+	response['alias']=alias
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/about.djt',response)
+
+def icamerlinks(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response={}
+	response['conference']=conference
+	response['alias']=alias
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/links.djt',response)
+
+def icamerhotels(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response= {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/hotels.djt',response)
+
+def icamerdates(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response = {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated:
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment) == 1:
+			response['payment'] = payment
+	return render(request, 'conference/icamer/dates.djt', response)
+
+def icamerfees(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response = {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated:
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment) == 1:
+			response['payment'] = payment
+	return render(request, 'conference/icamer/fee_details.djt', response)
+
+
+@login_required(login_url='/signin/icamer2019')
+def icamerapply(request):
+	alias='icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	print conference.alias
+	response={}
+	response['conference'] = conference
+	response['alias'] = alias
+	name = request.user.first_name + " " + request.user.last_name
+	response['name'] = name
+	response['email'] = request.user.email
+	response['mobile'] = request.user.profile.contact
+	response['designation'] = request.user.profile.designation
+
+	payment = Payment.objects.filter(user=request.user, conf_id=conference)
+	# print payment.is_aprooved
+	if len(payment)==1 :
+		response['payment'] = payment.first()
+
+	if request.method == 'POST' :
+		now = datetime.datetime.now()
+		applyConf = request.POST.get('applyConf','off')
+		print applyConf
+		if applyConf == 'on':
+			# apply only if no request is present.
+			if  Conf_Paper.objects.filter(uid=request.user, conf_id=conference).count() == 0:
+				regconf = Registered_Conference()
+				regconf.conf_id = conference
+				regconf.user = request.user
+				paper = Conf_Paper()
+				paper.conf_id=conference
+				paper.uid=request.user
+				paper.papername=request.POST.get('papername', 'Applying for conference')
+				paper.submissionDate = now
+				paper.themes = ','.join(str(e) for e in request.POST.getlist('themes', []))
+				paper.status = 0
+				if request.FILES.get('file', None) is None:
+						return HttpResponse('Please upload abstract document. Press back button to try again.')
+				paper.paperfile=request.FILES.get('file', None)
+				if not validateFormat(paper.paperfile) :
+						return HttpResponse('Only PDF format is allowed for abstract submission. Press back button to try again.')
+				regconf.save()
+				conference.paperCount += 1
+				conference.save()
+
+				tempRefnum = get_temp_ref_num()
+				paper.paperRefNum = tempRefnum
+
+				profile = request.user.profile
+				profile.affiliation = request.POST.get('affiliation', '')
+				profile.address = request.POST.get('address', '')
+				profile.save()
+
+				paper.save()
+				regconf.papers.add(paper)
+				regconf.save()
+	try:
+		paper = Conf_Paper.objects.get(uid=request.user, conf_id=conference)
+		response['paper'] = paper
+	except:
+		response['nopaper'] = True
+	return render(request, 'conference/icamer/apply.djt',response)

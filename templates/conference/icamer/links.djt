@@ -1,0 +1,88 @@
+{% extends "conference/icamer/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <!-- Page Content -->
+    <div class="container" style="padding-top: 10px;min-height: 60vh;">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-5">
+                <h2><center><span class="label label-primary">IMPORTANT DOCUMENTS</span></center></h2>
+                <br>
+                <h4><b>
+                    <ol>
+                        <li><a href="{% static 'icamer/ic_amer_brochure.pdf' %}" target="_blank">Brochure</a></li><br>
+                        <!--<li>Registration Form ( <a href="{% static 'docs_inceee/inceee2019_reg_form.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_reg_form.docx' %}" target="_blank">doc</a> )</li><br>
+                        <li>Abstract Template ( <a href="{% static 'docs_inceee/inceee2019_abstract_template.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_abstract_template.doc' %}" target="_blank">doc</a> )</li><br>            
+                        <li><a href="{% static 'docs_inceee/inceee2019_full_paper_template.doc' %}" target="_blank">Full Paper Template </a></li><br>
+                        <li><a href="{% static 'docs_inceee/inceee2019_copyright-transfer.doc' %}" target="_blank">Copyright Transfer From </a></li><br>-->
+                    </ol>
+                </b></h4>
+            </div>
+        <div class="col-sm-4">
+                <br><br><br>
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+        </div>
+    </div>
+</div> 
+
+           <!-- INSTRUCTION LIST  -->
+<div id="instructions" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+	<br>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <h4 style="color:black;">&#9679 Steps to register</h4>
+                <hr>
+                <ol>
+                    <li>Click on register tab at the top</li>
+                    <li>Fill in the details and click on register</li>
+                    <li>Login with your credentials</li>
+                    <li>Congrats !!! You are succesfully registered on website</li>
+                </ol>
+                <hr>
+                <hr>
+                <h4 style="color:black;">&#9679; Steps for applying for conference</h4>
+                <hr>
+                <ol>
+                    <li>After registering on the website, login with your credentials</li>
+                    <li>Click on UploadPaper tab to upload the abstract of your paper.<br>
+                    <b>(*In case you are not presenting the paper skip to the payment step.)</b></li>
+                    <li>You can then check the status of your abstract there.</li>
+                    <li>After the acceptance of your abstract you can proceed to the payment step.</li>
+                </ol>
+                <hr>
+                <hr>
+
+
+                <h4 style="color:black;">&#9679; Steps for Payment</h4>
+                <hr>
+                <ol>
+                    <li>Upon acceptance of the abstract, the author has to pay the full registration fee and submit filled-in registration form which can be downloaded from the website. (<a href="/conference/{{conference.conference_alias}}/links" target="blank">click here</a>)</li>
+                    <li>The payment of the registration fee is through NEFT/Demand Draft. The detials of online payment are given on
+                        the conference webiste. (
+                        <a href="/conference/{{conference.conference_alias}}/#fee_div" target="blank">click here</a>)
+			<br><b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.<br>The details of the author must be written on the back side of the Demand Draft)</b></li>
+                    <li>Select "Upload payment Receipt" in Payment tab option from
+                        the top menu bar. </li>
+                    <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
+                    <li>You can check the status of your payment approval there.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+{% endblock %}

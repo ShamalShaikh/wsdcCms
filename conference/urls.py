@@ -52,6 +52,13 @@ urlpatterns = [
 	#url(r'^inceee2019/apply/$',views.inceeeapply),
 
 
+	#icamer2019
+	url(r'^icamer2019/$', views.icamer),
+	url(r'^icamer2019/about/$', views.icamerabout),
+	url(r'^icamer2019/links/$', views.icamerlinks),
+	url(r'^icamer2019/hotels/$', views.icamerhotels),
+	url(r'^icamer2019/dates/$', views.icamerdates),
+	url(r'^icamer2019/fees/$', views.icamerfees),
 
 	# url(r'^metallography_contest/$',views.metallography_contest),
 	# url(r'^registerForContest/$',views.registerForContest),
