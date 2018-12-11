@@ -1226,7 +1226,7 @@ def inceeeapply(request):
 
 
 
-######SEP2019 Starting page ##########################################
+
 def sep(request):
 	print "INCEEE-2019"
 	conference = Conference.objects.get(conference_alias='sep2019')
@@ -1235,18 +1235,6 @@ def sep(request):
 	response = {}
 	response['conference']=conference
 	response['alias']='sep2019'
-	images = Conf_Image.objects.filter(conf_id=conference)
-	response['images']=images
-	print images
-	print request.user.is_authenticated
-
-	if request.user.is_authenticated : 
-		payment = Payment.objects.filter(user=request.user, conf_id=conference)
-		print payment
-		if len(payment)==1 :
-			response['payment'] = payment[0]
-
-	return render(request, 'conference/sep/home.djt',response)
 
 def sepabout(request):
 	conference = Conference.objects.get(conference_alias='sep2019')
@@ -1288,6 +1276,96 @@ def sepapply(request):
 	response={}
 	response['conference'] = conference
 	response['alias'] = 'sep2019'
+	return render(request, 'conference/icamer/home.djt', response)
+
+
+########################################################### ICAMER - 2019 ###############################################################
+
+def icamer(request):
+	print "ICAMER-2019"
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	print conference
+	response = {}
+	response['conference']=conference
+	response['alias']=alias
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/icamer/home.djt',response)
+
+
+def icamerabout(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response={}
+	response['conference']=conference
+	response['alias']=alias
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/about.djt',response)
+
+def icamerlinks(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response={}
+	response['conference']=conference
+	response['alias']=alias
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/links.djt',response)
+
+def icamerhotels(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response= {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated :
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icamer/hotels.djt',response)
+
+def icamerdates(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response = {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated:
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment) == 1:
+			response['payment'] = payment
+	return render(request, 'conference/icamer/dates.djt', response)
+
+def icamerfees(request):
+	alias = 'icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	response = {'conference': conference, 'alias': alias}
+	if request.user.is_authenticated:
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment) == 1:
+			response['payment'] = payment
+	return render(request, 'conference/icamer/fee_details.djt', response)
+
+
+@login_required(login_url='/signin/icamer2019')
+def icamerapply(request):
+	alias='icamer2019'
+	conference = Conference.objects.get(conference_alias=alias)
+	print conference.alias
+	response={}
+	response['conference'] = conference
+	response['alias'] = alias
 	name = request.user.first_name + " " + request.user.last_name
 	response['name'] = name
 	response['email'] = request.user.email
@@ -1341,4 +1419,4 @@ def sepapply(request):
 		response['paper'] = paper
 	except:
 		response['nopaper'] = True
-	return render(request, 'conference/sep/apply.djt',response)
+	return render(request, 'conference/icamer/apply.djt',response)

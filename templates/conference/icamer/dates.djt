@@ -1,0 +1,32 @@
+{% extends 'conference/icamer/base.djt' %} {% load static %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-12" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">Important Dates</span>
+            </center>
+        </h2>
+        <br>
+        <table class="table table-hover">
+            <tr class="active">
+                <td>Submission of full papers:</td>
+                <td>25th Jan 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Peer review intimation to authors:</td>
+                <td>25th Feb 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Submission of revised paper:</td>
+                <td>10th Mar 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Registration Deadline:</td>
+                <td>10th Apr 2019</td>
+            </tr>
+        </table>
+        <br/>
+    </div>
+    </div>
+{% endblock %}
