@@ -56,7 +56,7 @@
                     <br> Department of Mechanical Engineering
                     <br>
                     <br> National Institute of Technology Warangal
-                    <br><small>An Institute of National Importance</small>
+                    <br><small>(An Institute of National Importance)</small>
                     <br> Warangal 506004.
                     <br> Telangana State, India.
                 </h4>
@@ -102,6 +102,9 @@
                 /technologists engaged in basic as well as applied research from the Universities, Research
                 Institutions and Industries to participate. The scientific sessions will comprise plenary talks, invited
                 talks, technical talks and contributed papers (both oral and posters).
+            </p>
+            <p style="color:black; text-align:justify;">
+                Note: Participants from outside India will be allowed to present their papers through online.
             </p>
         </div>
     </div>
@@ -149,7 +152,7 @@ Materials etc.</li>
     <div class="col-md-12" id="dates">
         <h2>
             <center>
-                <span class="label label-primary">Call for abstracts</span>
+                <span class="label label-primary">Call for Papers</span>
             </center>
         </h2>
         <br>
@@ -197,11 +200,9 @@ authors.
                 <img class="img-thumbnail" src="{% static 'icamer/pn_rao.PNG'%}" height="100" width="150">
                 <br>
             </div>
-            <a href="#" target="-blank">
                 <b>
                     <u>Prof P.N.Rao</u>
                 </b>
-            </a>
             <br/>Department of Technology, University of Northern Iowa,USA.</center>
         <br/>
     </div>
@@ -211,11 +212,9 @@ authors.
                 <img class="img-thumbnail" src="{% static 'icamer/g_Padmanabham.PNG'%}" height="100" width="150">
                 <br>
             </div>
-            <a href="#" target="blank">
                 <b>
                     <u>Dr. G. Padmanabham</u>
                 </b>
-            </a>
             <br>Director, ARCI, Hyderabad, India</center>
         <br/>
     </div>
@@ -225,11 +224,9 @@ authors.
                 <img class="img-thumbnail" src="{% static 'icamer/ps_lee.jpg'%}" height="100" width="150">
                 <br/>
             </div>
-            <a href="#" target="blank">
                 <b>
                     <u>P. S. Lee</u>
                 </b>
-            </a>
             <br/>Department of Mechanical Engineering, National University of Singapore, Singapore</center>
         <br/>
     </div>
@@ -341,6 +338,7 @@ authors.
                 <li>Dr. Ekta Singla, IIT Ropar.</li>
                 <li>Dr. Sachin Singh Gautam, IIT Guwahati.</li>
                 <li>Dr. Saravan Kumar, IIT Madras.</li>
+                <li>Dr. L. Rama Krishna , Scientist-F, ARCI Hyderabad</li>
                 <li>Dr. Xiaoliang Jin, The Univ. of British Columbia, Canada.</li>
                 <li>Dr. Rukmini Srikant Revuru, Univ. of Northern Iowa, USA.</li>
                 <li>Mr. D Uma Maheshwar, GE Aviation India.</li>
@@ -370,67 +368,6 @@ authors.
 </BR>
 
 <!-- INSTRUCTION LIST  -->
-<div id="instructions" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <br>
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Instructions</h4>
-            </div>
-            <div class="modal-body">
-                <hr>
-                <h4 style="color:black;">&#9679 Steps to register</h4>
-                <hr>
-                <ol>
-                    <li>Click on register tab at the top</li>
-                    <li>Fill in the details and click on register</li>
-                    <li>Login with your credentials</li>
-                    <li>Congrats !!! You are succesfully registered on website</li>
-                </ol>
-                <hr>
-                <hr>
-                <h4 style="color:black;">&#9679; Steps for applying for conference</h4>
-                <hr>
-                <ol>
-                    <li>After registering on the website, login with your credentials</li>
-                    <li>Click on UploadPaper tab to upload the abstract of your paper.
-                        <br>
-                        <b>(*In case you are not presenting the paper skip to the payment step.)</b>
-                    </li>
-                    <li>You can then check the status of your abstract there.</li>
-                    <li>After the acceptance of your abstract you can proceed to the payment step.</li>
-                </ol>
-                <hr>
-                <hr>
-
-
-                <h4 style="color:black;">&#9679; Steps for Payment</h4>
-                <hr>
-                <ol>
-                    <li>Upon acceptance of the abstract, the author has to pay the full registration fee and submit filled-in
-                        registration form which can be downloaded from the website. (
-                        <a href="/conference/{{conference.conference_alias}}/links" target="blank">click here</a>)</li>
-                    <li>The payment of the registration fee is through NEFT/Demand Draft. The detials of online payment are given
-                        on the conference webiste. (
-                        <a href="/conference/{{conference.conference_alias}}/#fee_div" target="blank">click here</a>)
-                        <br>
-                        <b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.The details of the
-                            author must be written on the back side of the Demand Draft)</b>
-                    </li>
-                    <li>Select "Upload payment Receipt" in Payment tab option from the top menu bar. </li>
-                    <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
-                    <li>You can check the status of your payment approval there.</li>
-                </ol>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
+{% include 'conference/icamer/instructions_modal.djt' %}
 
 {% endblock %}
