@@ -1225,6 +1225,60 @@ def inceeeapply(request):
 	return render(request, 'conference/inceee/apply.djt',response)
 
 
+
+
+def sep(request):
+	print "INCEEE-2019"
+	conference = Conference.objects.get(conference_alias='sep2019')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='sep2019'
+
+def sepabout(request):
+	conference = Conference.objects.get(conference_alias='sep2019')
+	response={}
+	response['conference']=conference
+	response['alias']='sep2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/sep/about.djt',response)
+
+def seplinks(request):
+	conference = Conference.objects.get(conference_alias='sep2019')
+	response={}
+	response['conference']=conference
+	response['alias']='tssc2018'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/sep/links.djt',response)
+
+def sephotels(request):
+	conference = Conference.objects.get(conference_alias='sep2019')
+	response={}
+	response['conference']=conference
+	response['alias']='sep2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/sep/hotels.djt',response)
+
+@login_required(login_url='/signin/sep2019')
+def sepapply(request):
+	conference = Conference.objects.get(conference_alias='sep2019')
+	print conference.alias
+	response={}
+	response['conference'] = conference
+	response['alias'] = 'sep2019'
+	return render(request, 'conference/icamer/home.djt', response)
+
+
 ########################################################### ICAMER - 2019 ###############################################################
 
 def icamer(request):
@@ -1246,7 +1300,8 @@ def icamer(request):
 		if len(payment)==1 :
 			response['payment'] = payment[0]
 
-	return render(request, 'conference/icamer/home.djt', response)
+	return render(request, 'conference/icamer/home.djt',response)
+
 
 def icamerabout(request):
 	alias = 'icamer2019'
