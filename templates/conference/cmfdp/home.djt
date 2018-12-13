@@ -159,7 +159,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">Last date for full length paper submission is extended to 25th December ss2018</marquee>
                 </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -260,11 +260,11 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>10th Dec, 2018</td>
+                        <td>25th Dec, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance of full length paper</td>
-                        <td>20th Dec, 2018</td>
+                        <td>25th Dec, 2018</td>
                     </tr>
                     <tr class="active">
                         <td>Final Paper (Camera Ready) Submission & Registration</td>
