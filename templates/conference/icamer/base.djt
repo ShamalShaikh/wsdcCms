@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IC-AMERR 2019</title>
+    <title>IC-AMER 2019</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
