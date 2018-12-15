@@ -142,7 +142,9 @@
         </div>
         <br/>
         <div class="row">
-        	<marquee style="font-size:20px;"><a href="{% static 'tssc/tsc-2018.pdf'%}" style="color: red">  Instructions to presenting authors </a></marquee>
+        	<marquee behavior="ALTERNATE" style="font-size:20px;"><a href="{% static 'tssc/tssc-2018.pdf'%}" style="color: red">  Instructions to presenting authors </a></marquee><br>
+            <marquee direction="right" Behavior="Alternate" style="font-size:20px;"><a href="{% static 'tssc/schedule.pdf'%}" style="color: green">  TSSC-2018 programme Schedule </a></marquee>
+
         </div>
         <br/>
         <div class="row">

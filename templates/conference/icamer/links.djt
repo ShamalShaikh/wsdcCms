@@ -10,11 +10,11 @@
                 <br>
                 <h4><b>
                     <ol>
-                        <li><a href="{% static 'icamer/ic_amer_brochure.pdf' %}" target="_blank">Brochure</a></li><br>
+                        <li><a href="{% static 'icamer/broucher.pdf' %}" target="_blank">Brochure</a></li><br>
                         <li>Registration Form ( <a href="#">pdf</a> ,<a href="#" target="_blank">doc</a> )</li><br>
 {#                        <li>Abstract Template ( <a href="{% static 'docs_inceee/inceee2019_abstract_template.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_abstract_template.doc' %}" target="_blank">doc</a> )</li><br>            #}
-                        <li><a href="#" target="_blank">Full Paper Template </a></li><br>
-{#                        <li><a href="{% static 'docs_inceee/inceee2019_copyright-transfer.doc' %}" target="_blank">Copyright Transfer From </a></li><br>#}
+                        <li><a href="{% static 'icamer/template.docx' %}" target="_blank">Full Paper Template </a></li><br>
+{#                        <li><a href="{% static 'icamer/template.docx' %}" target="_blank">Copyright Transfer From </a></li><br>#}
                     </ol>
                 </b></h4>
             </div>
