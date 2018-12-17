@@ -1,0 +1,243 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="ui container">
+        <h2 class="ui center aligned icon header dash_header">
+          <i class="circular file text icon"></i>
+          Paper Upload
+        </h2>
+        <div class="ui divider"></div>
+        <h4>Steps to Upload Paper</h4>
+        <ol>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at Download links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the paper id will be sent to you</li>
+        </ol>
+        <div class="ui divider"></div>
+        <br>
+        <div class="ui top attached tabular menu">
+          {% ifnotequal conference.conference_alias "rames
+2018" %}
+          <a class="active item" data-tab="first">Upload Abstract</a>
+          <a class="item" data-tab="second">Upload Final Paper</a>
+          {% else %}
+          <a class="active item" data-tab="first">Upload Paper</a>
+          {% endifnotequal %}
+        </div>
+      <div class="ui bottom attached tab active segment" data-tab="first">
+          <div class="ui segment">
+        {% if papers %}
+        <h3>Papers Uploaded</h3><hr><br>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Tracking ID</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {% for paper in papers %}
+              <tr>
+                <td>{{paper.paperRefNum}}</td>
+                <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
+                <td>
+                  <b>
+                  {% ifequal paper.status 0 %}
+                    Under Review
+                  {% endifequal %}
+                  {% ifequal paper.status 1 %}
+                    Asked for Revision
+                  {% endifequal %}
+                  {% ifequal conference.conference_alias "inceee2019" %}
+                    {% ifequal paper.status 2 %}
+                      Accepted for Oral Presentation
+                    {% endifequal %}
+                    {% ifequal paper.status 3 %}
+                      Accepted for Poster Presentation
+                    {% endifequal %}
+                  {% else %}
+                    {% ifequal paper.status 2 %}
+                      Accepted for Presentation
+                    {% endifequal %}
+                    {% ifequal paper.status 3 %}
+                      Accepted for Publication
+                    {% endifequal %}
+                  {% endifequal %}
+                  {% ifequal paper.status 4 %}
+                    Rejected
+                  {% endifequal %}
+                  </b>
+                </td>
+                <td>
+                  <center>
+                    {% ifequal paper.status 1 %}
+                      <a class="ui button blue" href="/conference/downloadremark/{{paper.paper_id}}" target="blank">Remark</a>
+                    {% endifequal %}
+                    {% ifnotequal paper.status 4 %}
+                    <button class="ui button green reupload_btn" pid="{{paper.paper_id}}">Upload Again</button>
+                    {% endifnotequal %}
+                  </center>
+                </td>
+              </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+        {%else%}
+        <center><h3>No Papers Uploaded !!!</h3></center>
+        {% endif %}
+      </div>
+      {% ifequal conference.conference_alias "ctsem2018" %}
+      <div class="ui fluid segment">
+        <center><h3>Deadline for uploading Abstract has Reached !!!</h3></center>
+      </div>
+      {% else %}
+      {%if upload_paper%}
+      <div class="ui fluid segment">
+        <form class="ui form" action="/conference/upload_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="field" style="margin-left: 35%; width:250px;">
+                    <input name="paper_name" placeholder="Title of Paper" type="text" id="paper_name" required>
+              </div>
+              <div class="field" style="margin-left: 33%;">
+                    <input name="paper_file" type="file" id="paper_file" class="ui button blue" required>
+              </div>
+              <div style="margin-left: 40%;">
+              <b>Note :</b> Only pdf and doc files are allowed<br><br>
+              <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+              </div>
+        </form>
+      </div>
+      {%else%}
+        <h2>You have already uploaded max papers</h2>
+      {%endif%}
+      {% endifequal %}
+	<!-- <div class="ui fluid segment">		
+		<center><h3>No new papers can be uploaded now. Deadline for abstract submission is Reached. Only Final Papers can be uploaded now.</h3></center>
+	</div> -->
+        </div>
+        {% ifnotequal conference.conference_alias "rames2018" %}
+        <div class="ui bottom attached tab segment" data-tab="second">
+
+          <div class="ui segment">
+              {% if finalpapers %}
+              <table class="ui celled table">
+                <thead>
+                  <tr>
+                    <th>Paper</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  {% for paper in finalpapers %}
+                  <tr>
+                    <td><a href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">{{paper.papername}}</a></td>
+                  </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+              {%else%}
+              <center><h3>No Final Papers Uploaded !!!</h3></center>
+              {% endif %}
+            </div>
+
+          <div class="ui fluid segment">
+            {% if final_paper and receipt %}
+            <form class="ui form" action="/conference/upload_final_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="field" style="margin-left: 35%; width:250px;">
+                    <input name="paper_name" placeholder="Title of Paper" type="text" id="paper_name" required>
+                </div>
+
+                 <div class="field" style="margin-left: 35%; width:250px;">
+                    <label>Paper to be finalised</label>
+                </div>
+
+                <div class="ui selection dropdown" style="margin-left: 35%; width:250px;">
+                  <input type="hidden" name="paper">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Related Paper</div>
+                  <div class="menu">
+                    {% for paper in papers %}
+                    {% ifequal paper.status 2 %}
+                    <div class="item" data-value="{{paper.paper_id}}">{{paper.papername}}</div>
+                    {% endifequal %}
+                    {% ifequal paper.status 3 %}
+                    <div class="item" data-value="{{paper.paper_id}}">{{paper.papername}}</div>
+                    {% endifequal %}
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <div class="field" style="margin-left: 35%; margin-bottom: 2%; margin-top:2%; width:250px;">
+                    <label>Copyright Transfer Form</label>
+                </div>
+
+                <div class="field" style="margin-left: 33%;">
+                      <input name="copyright_form" type="file" id="copyright_form" class="ui button blue" required>
+                </div>
+
+                <div class="field" style="margin-left: 35%; width:250px;">
+                    <label>Final Paper</label>
+                </div>
+
+                <div class="field" style="margin-left: 33%;">
+                      <input name="final_paper" type="file" id="final_paper" class="ui button blue" required>
+                </div>
+                <div style="margin-left: 40%;">
+                <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+                </div>
+            </form>
+          {% elif not receipt %}
+            <center>
+              <h3>You have not uploaded the payment receipt yet. Please upload it first <br>
+              OR <br> Payment has not been approved.</h3>
+            </center>
+          {% else %}
+            <center><h3>You have already uploaded all final papers</h3></center>
+          {% endif %}
+          </div>
+        </div>
+        {% endifnotequal %}
+    </div>
+
+<div class="ui small modal pop_up1">
+  <div class="content">
+    <form class="ui form" action="/conference/reupload_paper/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+              <div class="field" style="margin-left: 33%;">
+                    <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+              </div>
+              <div style="margin-left: 40%;">
+              <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+              </div>
+              <div class="field">
+                <input type="hidden" id="paperid" name="paperid">
+              </div>
+        </form>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    $('.menu .item')
+  .tab()
+;
+  $('.ui.dropdown')
+  .dropdown()
+;
+
+$(".reupload_btn").click(function(){
+  $('.small.modal.pop_up1').modal('show');
+  var pid=$(this).attr('pid');
+  $('#paperid').val(pid);
+})
+
+</script>
+{% endblock %}
+                    
