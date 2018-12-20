@@ -1225,16 +1225,37 @@ def inceeeapply(request):
 	return render(request, 'conference/inceee/apply.djt',response)
 
 
+########################################################### SEP - 2019 ###############################################################
 
 
 def sep(request):
-	print "INCEEE-2019"
 	conference = Conference.objects.get(conference_alias='sep2019')
 	print conference
 	print"hai"
 	response = {}
 	response['conference']=conference
 	response['alias']='sep2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/sep/home.djt',response)
+# def sep(request):
+# 	print "INCEEE-2019"
+# 	conference = Conference.objects.get(conference_alias='sep2019')
+# 	print conference
+# 	print"hai"
+# 	response = {}
+# 	response['conference']=conference
+# 	response['alias']='sep2019'
+
 
 def sepabout(request):
 	conference = Conference.objects.get(conference_alias='sep2019')
