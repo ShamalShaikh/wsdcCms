@@ -30,6 +30,7 @@
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
 		<a class="item" href="/manager/questionnaire/{{conference.conference_id}}">Review Questions</a>
+		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/7">Accomodation<div class="ui teal left pointing label">{{accomo_count}}</div></a>
 		{% endifequal %}
 
 		<!-- for adding questions for review criterion -->

@@ -16,6 +16,9 @@ def get_dd_path(instance,filename):
 def get_adv_path(instance,filename):
 	return 'spons/{0}/{1}'.format("".join(instance.conf.conference_name.split()),filename)
 
+def get_acc_path(instance, filename):
+	return 'accomodation/{0}/{1}'.format("".join(instance.conf_id.conference_name.split()), filename)
+
 def validate(value):
 	    import os
 	    ext = os.path.splitext(value.name)[1]
@@ -117,3 +120,31 @@ class Rejected_payment(models.Model):
 
 	def __unicode__(self):
 		return (self.user.username+" for "+self.conf_id.conference_name+" - "+self.date.strftime("%Y-%m-%d"))
+
+class Accomodation(models.Model):
+	houseName = models.CharField(max_length=255)
+	tariff = models.IntegerField()
+	house_id = models.IntegerField()
+	gender_choices = (
+			('male', "Male"),
+			('female', "female"),
+		)
+	gender = models.CharField(max_length=15, choices=gender_choices)
+	seatsAvailable = models.IntegerField(default=0)
+
+	def __unicode__(self):
+		return self.houseName
+
+class AccomodationPayment(models.Model):
+	user = models.ForeignKey(User)
+	conf_id = models.ForeignKey(Conference, null=True)
+	payment_receipt = models.FileField(upload_to=get_acc_path,null=True,blank=True,storage=sendfile_storage)
+	house_choice = models.ForeignKey(Accomodation)
+	is_aprooved = models.BooleanField(default=False)
+	is_rejected = models.BooleanField(default=False)
+
+	def __unicode__(self):
+		return self.user.username + " for " + self.house_choice.houseName
+
+
+

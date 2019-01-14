@@ -179,9 +179,10 @@ def conference_landing(request, cid, type):
 	contestants = Contest.objects.all()
 
 	print Payment.objects.filter(conf_id=cid).count()
-
-
+	registered_payments = AccomodationPayment.objects.filter(is_rejected=False,is_aprooved=False)
 	response = {}
+	response["reg_pays"] = registered_payments
+	response["accomo_count"] = registered_payments.count()
 	response['users'] = users
 	response['regusercount'] = len(users)
 	response['paidtrans'] = paidtrans
@@ -925,6 +926,20 @@ def sendAssignmentMail(email,paper,act):
 		return HttpResponse('Invalid header found.')
 
 	return
+
+def approveaccomo(request,user, type, house_choice):
+	user = User.objects.get(username=user)
+	house_choice = Accomodation.objects.get(houseName=house_choice)
+	payment = AccomodationPayment.objects.get(user=user, house_choice=house_choice)
+	if type == "approve":
+		payment.house_choice.seatsAvailable-=1
+		payment.house_choice.save()
+		payment.is_aprooved = True
+	if type == "reject":
+		payment.is_rejected = True
+	payment.save()
+	return redirect('/manager/conference_landing/2/7/')
+
 ###################
 
 def contestantList(request):

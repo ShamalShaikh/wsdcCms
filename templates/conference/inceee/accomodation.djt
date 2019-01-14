@@ -1,0 +1,129 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="ui container">
+        <h2 class="ui center aligned icon header dash_header">
+          <i class="circular file text icon"></i>
+          Accomodation Upload
+        </h2>
+        <div class="ui divider"></div>
+        <h4>Steps to Upload Paper</h4>
+        <ol>
+            <li>See the options of accomodation and number of seats available</li>
+            <li>Choose your accomodation accordingly</li>
+            <li>Upload your pay slip and wait for approval</li>
+            <li>You can check your status below</li>
+        </ol>
+        <div class="ui divider"></div>
+        <br>
+        <div class="ui top attached tabular menu">
+          <a class="active item" data-tab="first">Upload Payment Receipt</a>
+          <a class="item" data-tab="second">Uploaded Receipts</a>
+        </div>
+      <div class="ui bottom attached tab active segment" data-tab="first">
+          <div class="ui segment">
+        <h3>Available Houses</h3><hr><br>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Seats Available</th>
+              <th>Gender</th>
+              <th>Tariff(Rs.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {% for house in houses %}
+            <tr>
+              <td>{{house.houseName}}</td>
+              <td>{{house.seatsAvailable}}</td>
+              <td style="text-transform: capitalize;">{{house.gender}}</td>
+              <td>{{house.tariff}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="ui fluid segment">
+        <form class="ui form" action="/conference/inceee2019/accomodation/" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="field" style="margin-left: 33%;">
+              <select name="house" style="width: 300px;">
+                {% for house in houses %}
+                <option value="{{house}}">{{house.houseName}}</option>
+                {%endfor%}
+              </select>
+            </div>
+              <br><br>
+              <div class="field" style="margin-left: 33%;">
+                    <input name="pay_receipt" type="file" id="pay_receipt" class="ui button blue" required>
+              </div>
+              <div style="margin-left: 40%;"><br><br>
+              <button class="ui button green" type="submit" id="uploadPaper">Submit</button>
+              </div>
+        </form>
+      </div>
+	<!-- <div class="ui fluid segment">		
+		<center><h3>No new papers can be uploaded now. Deadline for abstract submission is Reached. Only Final Papers can be uploaded now.</h3></center>
+	</div> -->
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+
+          <div class="ui segment">
+              {% if paid %}
+              <table class="ui celled table">
+                <thead>
+                  <tr>
+                    <th>House Choice</th>
+                    <th>Receipt</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for paid in paid %}
+                    <tr>
+                      <td>{{paid.house_choice}}</td>
+                      <td><a href="/media/{{paid.payment_receipt}}">Receipt</a></td>
+                      <td>
+                        {% if not paid.is_aprooved and not paid.is_rejected %}
+                          Review Pending
+                        {% endif %}
+                        {% if paid.is_aprooved %}
+                        Approved
+                        {% endif %}
+                        {% if paid.is_rejected %}
+                        Rejected
+                        {% endif %}
+                      </td>
+                    </tr>
+                  {%endfor%}
+
+                </tbody>
+              </table>
+              {%else%}
+              <center><h3>No Receipts Uploaded !!!</h3></center>
+              {% endif %}
+            </div>
+
+          
+
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    $('.menu .item')
+  .tab()
+;
+  $('.ui.dropdown')
+  .dropdown()
+;
+
+$(".reupload_btn").click(function(){
+  $('.small.modal.pop_up1').modal('show');
+  var pid=$(this).attr('pid');
+  $('#paperid').val(pid);
+})
+
+</script>
+{% endblock %}
+                    
