@@ -1,4 +1,28 @@
 {% extends "conference/inceee/base.djt" %} {% load staticfiles %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style type="text/css">
+    .speakers {
+        font-family: 'Raleway', sans-serif;
+    }
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+</style>
 <!-- Page Content -->
 <div class="container">
 
@@ -83,6 +107,95 @@
             </div>
         </div>
      <hr> 
+     <div class="row speakers fade-in">
+    <div class="col-md-12">
+        <br>
+        <h2>
+            <center>
+                <span class="label label-success">Keynote Speakers</span>
+            </center>
+        </h2>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150" style="background0.: url('{% static 'docs_inceee/gold-frame.png' %}');">
+            </div>
+            <a href="http://www.engineering.uoit.ca/people/amme/faculty/ibrahim.dincer.php" target="-blank">
+                <b>
+                    <u>Prof. Ibrahim Dincer</u>
+                </b>
+            </a><br>
+            University of Ontorio Institute of Technology, Canada <br>
+            <b>Title: </b>New Paradigms in Energy Solutions
+        </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150" style="border-radius: 50%;">
+                <br>
+            </div>
+            <a href="http://www.chbe.nus.edu.sg/faculty/cheiak" target="blank">
+                <b>
+                    <u>Prof. Iftekhar Abubakar KARIMI</u>
+                </b>
+            </a>
+            <br>National University of Singapore, Singapore<br>
+            <b>Title: </b>Advances in the Design and Operation of LNG Terminals
+        </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker3.png'%}" height="100" width="150" style="border-radius: 50%;">
+                <br>
+            </div>
+            <a href="https://che.iitm.ac.in/?page_id=401" target="blank">
+                <b>
+                    <u>Prof. Sreenivas Jayanti</u>
+                </b>
+            </a>
+            <br>Indian Institute of Technology Madras
+        </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker4.png'%}" height="100" width="150" style="border-radius: 50%;">
+            </div>
+                <b>
+                    Dr. C. P. Kaushik
+                </b>
+            <br>Outstanding Scientist - Bhabha Atomic Research Centre, Mumbai
+            Professor - Homi Bhabha National Institute
+            <br>
+        </center>
+        <br>
+    </div>
+    <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker5.png'%}" height="100" width="150" style="border-radius: 50%;">
+                <br>
+            </div>
+            <a href="https://che.iitm.ac.in/?page_id=421" target="blank">
+                <b>
+                    <u>Prof. Tanmay Basak</u>
+                </b>
+            </a>
+            <br>Indian Institute of Technology Madras<br>
+            <b>Title: </b>On the aspects of microwave material processing
+        </center>
+        <br>
+    </div>
+</div>
+
+<hr>
     <div class="row">
         <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br>
@@ -356,47 +469,6 @@
         </table>
     </div>
 </div>
-<hr>
-<div class="row">
-    <div class="col-md-12">
-        <br>
-        <h2>
-            <center>
-                <span class="label label-success">Keynote Speakers</span>
-            </center>
-        </h2>
-        <br>
-    </div>
-    <div class="col-md-6" style="line-height:30px;font-size:17px;">
-        <center>
-            <div>
-                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150">
-                <br>
-            </div>
-            <a href="http://www.engineering.uoit.ca/people/amme/faculty/ibrahim.dincer.php" target="-blank">
-                <b>
-                    <u>Prof. Ibrahim Dincer</u>
-                </b>
-            </a>
-            <br>University of Ontorio Institute of Technology, Canada</center>
-        <br>
-    </div>
-    <div class="col-md-6" style="line-height:30px;font-size:17px;">
-        <center>
-            <div>
-                <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150">
-                <br>
-            </div>
-            <a href="http://www.chbe.nus.edu.sg/faculty/cheiak" target="blank">
-                <b>
-                    <u>Prof. Iftekhar Abubakar KARIMI</u>
-                </b>
-            </a>
-            <br>National University of Singapore, Singapore</center>
-        <br>
-    </div>
-</div>
-
 <hr>
 <div class="row">
     <div class="col-md-12">
