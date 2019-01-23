@@ -418,14 +418,32 @@
         </thead>
         <tbody>
           {% for reg_pay in reg_pays %}
+          {% if reg_pay.house_choice.seatsAvailable <= 0 %}
+          <script type="text/javascript">alert("seats are completed in "+ {{reg_pay.house_choice.houseName}} );</script>
+          {% endif %}
           <tr>
           <td>{{reg_pay.user.first_name}} {{reg_pay.user.last_name}}</td>
           <td>{{reg_pay.house_choice}}</td>
           <td>
             <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
-          <td><a href="/manager/accomo/{{reg_pay.user.username}}/approve/{{reg_pay.house_choice}}" class="ui button green">Approve</a></td>
-          <td><a href="/manager/accomo/{{reg_pay.user.username}}/reject/{{reg_pay.house_choice}}" class="ui button red">Reject</a></td>
+          <td><form method="POST" action="/manager/accomo/">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="approve">
+            <input type="hidden" name="user" value="{{reg_pay.user.username}}">
+            <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
+            <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
+            <input type="submit" class="ui button green" value="Approve">
+          </form></td>
+          <td><form method="POST" action="/manager/accomo/">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="reject">
+            <input type="hidden" name="user" value="{{reg_pay.user.username}}">
+            <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
+            <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
+            <input type="hidden" name="review" value="" class="rejection_accomo">
+            <input type="submit" class="ui button red" value="Reject" id="reject_accomo">
+          </form></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -436,7 +454,42 @@
       </div>
       {% endif %}
 {% endifequal %}
-
+{% ifequal type '8' %}
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Verified Accomodations
+        </div>
+      </center>
+      </h2>
+      <br>
+      {% if app_accomo %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>User</th>
+          <th>House Choice</th>
+          <th>Receipt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for accomo in app_accomo %}
+          <tr>
+          <td>{{accomo.user.first_name}} {{accomo.user.last_name}}</td>
+          <td>{{accomo.house_choice}}</td>
+          <td>
+            <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
+          </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Payments yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
 </div>
 </div>
 </div>
@@ -647,6 +700,11 @@ $('#allUsers').show();
         $('#all').removeClass('active');
         $('#unpaidUsers').show();
         $('#allUsers').hide();
+});
+
+$("#reject_accomo").click(function() {
+  var review = prompt("please enter the reason for rejection to inform the candidate");
+  $(".rejection_accomo").val(review)
 });
 
 </script>

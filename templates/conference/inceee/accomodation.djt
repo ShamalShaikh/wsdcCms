@@ -7,7 +7,7 @@
           Accomodation Upload
         </h2>
         <div class="ui divider"></div>
-        <h4>Steps to Upload Paper</h4>
+        <h4>Steps to Upload Accomodation Reciept</h4>
         <ol>
             <li>See the options of accomodation and number of seats available</li>
             <li>Choose your accomodation accordingly</li>
@@ -17,7 +17,7 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          <a class="active item" data-tab="first">Upload Payment Receipt</a>
+          <a class="active item" data-tab="first">Upload Accomodation Receipt</a>
           <a class="item" data-tab="second">Uploaded Receipts</a>
         </div>
       <div class="ui bottom attached tab active segment" data-tab="first">
@@ -55,7 +55,17 @@
                 {%endfor%}
               </select>
             </div>
-              <br><br>
+              <br>
+              <center>
+              <div class="field" style="margin-left: :33%;">
+                <label  for="startDate">Select start Date:</label>
+                <input type="date" name="startDate" style="width: 300px;" id="startDate">
+          
+                <label for="endDate" >Enter End Date:</label>
+                <input type="date" name="endDate" style="width: 300px;" id="endDate">
+              </div>
+            </center>
+              <br>
               <div class="field" style="margin-left: 33%;">
                     <input name="pay_receipt" type="file" id="pay_receipt" class="ui button blue" required>
               </div>
@@ -78,6 +88,7 @@
                     <th>House Choice</th>
                     <th>Receipt</th>
                     <th>Status</th>
+                    <th>Remark</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -95,6 +106,12 @@
                         {% if paid.is_rejected %}
                         Rejected
                         {% endif %}
+                      </td>
+                      <td>{% if paid.review %}
+                            {{paid.review}}
+                          {% else %}
+                            No remark yet
+                          {% endif %}
                       </td>
                     </tr>
                   {%endfor%}

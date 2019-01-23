@@ -25,5 +25,5 @@ urlpatterns = [
 	url(r'^reviewDetails/(?P<revid>[0-9]+)/$',views.reviewDetails),
 	url(r'^reassign/(?P<revid>[0-9]+)/$',views.reassign),
 	url(r'^contestantList/$',views.contestantList),
-	url(r'accomo/(?P<user>[A-Za-z0-9.-]+)/(?P<type>[A-Za-z0-9.-]+)/(?P<house_choice>[A-Za-z0-9.-]+)/$', views.approveaccomo),
+	url(r'^accomo/$', views.approveaccomo),
 ]

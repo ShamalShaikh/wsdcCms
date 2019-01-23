@@ -1240,12 +1240,16 @@ def inceeeaccomodation(request):
 		house = request.POST["house"]
 		house = Accomodation.objects.get(houseName=house)
 		slip = request.FILES.get("pay_receipt","")
+		startDate = request.POST["startDate"]
+		endDate = request.POST["endDate"]
 		payment = AccomodationPayment()
 		payment.user = request.user
 		conf = Conference.objects.get(conference_alias='inceee2019')
 		payment.conf_id = conf
 		payment.payment_receipt = slip
 		payment.house_choice = house
+		payment.start_date = startDate
+		payment.end_date = endDate
 		payment.save()
 		print type(house)
 	return render(request,'conference/inceee/accomodation.djt', response)

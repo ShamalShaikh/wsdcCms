@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from conference.models import *
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+import datetime
 
 sendfile_storage = FileSystemStorage(location=settings.SENDFILE_ROOT)
 
@@ -142,6 +143,9 @@ class AccomodationPayment(models.Model):
 	house_choice = models.ForeignKey(Accomodation)
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
+	review = models.CharField(max_length=500, default="")
+	start_date = models.DateField(default=datetime.datetime.now())
+	end_date = models.DateField(default=datetime.datetime.now())
 
 	def __unicode__(self):
 		return self.user.username + " for " + self.house_choice.houseName
