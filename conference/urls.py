@@ -49,6 +49,7 @@ urlpatterns = [
 	url(r'^inceee2019/about/$',views.inceeeabout),
 	url(r'^inceee2019/links/$',views.inceeelinks),
 	url(r'^inceee2019/hotels/$',views.inceeehotels),
+	url(r'^inceee2019/accomodation/$', views.inceeeaccomodation),
 	#url(r'^inceee2019/apply/$',views.inceeeapply),
 
 	#sep2019 dated 04-dec-2018 Bhargava Reddy

@@ -112,3 +112,4 @@ class Contest(models.Model):
 
 	def __str__(self):
 		return str(self.contestant.username)
+
