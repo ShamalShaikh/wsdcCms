@@ -946,8 +946,35 @@ def approveaccomo(request):
 		if type == "reject":
 			payment.review = request.POST["review"]
 			payment.is_rejected = True
+		email = payment.email
+		review = payment.review
+		start = str(payment.start_date)
+		end = str(payment.end_date)
 		payment.save()
+		send_accomodation_mail(email,type,review, payment.house_choice.houseName,start,end)
 	return redirect('/manager/conference_landing/2/7/')
+
+def send_accomodation_mail(email, type, review,house,start,end):
+	reciever = email
+	sender = 'conference@nitw.ac.in'
+	content = ""
+	if type == "approve":
+		content += "Congrats you have been alloted " + house + "\n"
+		content += "You can be in room from "+start + " to " + end
+	if type == "reject":
+		content += "Your Request is rejected for House: "+house+"\n"
+		content +="For the Reason" + review+"\n"
+	content += "Thank you for considering INCEEE-2019 for presenting your research. We look forward to your participation at INCEEE-2019.\n\n"
+	content += "Please do not reply to this mail.For any query mail at inceee2019@gmail.com\n\n"
+	content += "Coordinators \nINCEEE2019"
+	rlist = []
+	rlist.append(reciever)
+
+	try:
+		send_mail('Accomodation INCEEE2019',content,sender,rlist,fail_silently=False,)
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+
 
 def accomodationData(request):
 	response = HttpResponse(content_type='application/ms-excel')
@@ -962,6 +989,7 @@ def accomodationData(request):
 		(u"Paper Ref No.",6000),
 		(u"Payment Status", 6000),
 		(u"Payment Ref No.", 9000),
+		(u"Alloted House",9000)
 	]
 
 	font_style = xlwt.XFStyle()
@@ -987,7 +1015,8 @@ def accomodationData(request):
 		else:
 			payment_status = "In Review"
 		paymentRefNo = accomo.reference_number
-		dataRow = [nameOfPerson,paperRefNo,payment_status,paymentRefNo]
+		alloted_house = accomo.house_choice.houseName
+		dataRow = [nameOfPerson,paperRefNo,payment_status,paymentRefNo,alloted_house]
 		for col_num in xrange(len(columns)) :
 				ws.write(row_num, col_num, dataRow[col_num], font_style)
 		row_num +=1

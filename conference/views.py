@@ -1233,6 +1233,7 @@ def inceeeaccomodation(request):
 	if request.method == "POST":
 		house = request.POST["house"]
 		Name = request.POST["Name"]
+		email = request.POST["email"]
 		paper_id = request.POST["paper_id"]
 		house = Accomodation.objects.get(houseName=house)
 		slip = request.FILES.get("pay_receipt","")
@@ -1248,6 +1249,7 @@ def inceeeaccomodation(request):
 		payment.house_choice = house
 		payment.start_date = startDate
 		payment.end_date = endDate
+		payment.email = email
 		payment.save()
 		print type(house)
 	return render(request,'conference/inceee/accomodation.djt', response)

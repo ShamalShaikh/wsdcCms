@@ -56,6 +56,10 @@
             <label for="Name" >Your Name:</label>
             <input name="Name" type="text" id="Name">
           </div>
+          <div class="four wide field" style="margin-left: 33%;">
+            <label for="email" >Your Email:</label>
+            <input name="email" type="text" id="email">
+          </div>
           <div class="field" style="margin-left: 33%;">
               <label  for="hostelType">Select Hostel:</label>
               <select name="house" style="width: 300px;">
