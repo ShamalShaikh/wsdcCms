@@ -52,6 +52,10 @@
       <div class="ui fluid segment">
         <form class="ui form" action="/conference/inceee2019/accomodation/" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
+          <div class="four wide field" style="margin-left: 33%;">
+            <label for="Name" >Your Name:</label>
+            <input name="Name" type="text" id="Name">
+          </div>
           <div class="field" style="margin-left: 33%;">
               <label  for="hostelType">Select Hostel:</label>
               <select name="house" style="width: 300px;">
@@ -74,6 +78,10 @@
               <div class="four wide field" style="margin-left: 33%;">
                   <label for="paper_id" >PaperID (if any)</label>
                   <input name="paper_id" type="text" id="paper_id">
+              </div>
+              <div class="four wide field" style="margin-left: 33%;">
+                  <label for="refno" >Reference Number</label>
+                  <input name="refno" type="text" id="refno">
               </div>
               <br>
               <div class="field" style="margin-left: 33%;">

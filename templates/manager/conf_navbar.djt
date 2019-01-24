@@ -409,9 +409,10 @@
       <table class="ui celled table">
         <thead>
           <tr>
-          <th>User</th>
+          <th>Name</th>
           <th>House Choice</th>
-          <th>Number of rooms</th>
+          <th>Ref No:</th>
+          <th>Paper Id</th>
           <th>Receipt</th>
           <th>Tariff(Each room)</th>
           <th>Approve</th>
@@ -420,13 +421,11 @@
         </thead>
         <tbody>
           {% for reg_pay in reg_pays %}
-          {% if reg_pay.house_choice.seatsAvailable <= 0 %}
-          <script type="text/javascript">alert("seats are completed in "+ {{reg_pay.house_choice.houseName}} );</script>
-          {% endif %}
           <tr>
-          <td>{{reg_pay.user.first_name}} {{reg_pay.user.last_name}}</td>
+          <td>{{reg_pay.Name}}</td>
           <td>{{reg_pay.house_choice}}</td>
-          <td>{{reg_pay.numer_of_rooms}}</td>
+          <td>{{reg_pay.reference_number}}</td>
+          <td>{{reg_pay.paper_id}}</td>
           <td>
             <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
@@ -434,7 +433,7 @@
           <td><form method="POST" action="/manager/accomo/">
             {% csrf_token %}
             <input type="hidden" name="type" value="approve">
-            <input type="hidden" name="user" value="{{reg_pay.user.username}}">
+            <input type="hidden" name="Name" value="{{reg_pay.Name}}">
             <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
             <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
             <input type="submit" class="ui button green" value="Approve">
@@ -442,7 +441,7 @@
           <td><form method="POST" action="/manager/accomo/">
             {% csrf_token %}
             <input type="hidden" name="type" value="reject">
-            <input type="hidden" name="user" value="{{reg_pay.user.username}}">
+            <input type="hidden" name="Name" value="{{reg_pay.Name}}">
             <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
             <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
             <input type="hidden" name="review" value="" class="rejection_accomo">
@@ -474,16 +473,20 @@
           <th>User</th>
           <th>House Choice</th>
           <th>Receipt</th>
+          <th>Ref No:</th>
+          <th>Paper Id</th>
           </tr>
         </thead>
         <tbody>
           {% for accomo in app_accomo %}
           <tr>
-          <td>{{accomo.user.first_name}} {{accomo.user.last_name}}</td>
+          <td>{{accomo.Name}}</td>
           <td>{{accomo.house_choice}}</td>
           <td>
-            <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
+            <a class="ui fluid blue button" href="/media/{{accomo.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
+          <td>{{accomo.reference_number}}</td>
+          <td>{{accomo.paper_id}}</td>
           </tr>
           {% endfor %}
         </tbody>

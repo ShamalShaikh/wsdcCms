@@ -932,13 +932,12 @@ def sendAssignmentMail(email,paper,act):
 
 def approveaccomo(request):
 	if request.method == "POST":
-		user = request.POST["user"]
+		Name = request.POST["Name"]
 		type = request.POST["type"]
 		house_choice = request.POST["house"]
 		slip = request.POST["slip"]
-		user = User.objects.get(username=user)
 		house_choice = Accomodation.objects.get(houseName=house_choice)
-		payment = AccomodationPayment.objects.get(user=user, house_choice=house_choice, payment_receipt=slip)
+		payment = AccomodationPayment.objects.get(Name=Name, house_choice=house_choice, payment_receipt=slip)
 		if type == "approve":
 			payment.house_choice.seatsAvailable-=1
 			payment.house_choice.save()

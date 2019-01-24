@@ -1228,22 +1228,20 @@ def inceeeaccomodation(request):
 	response = {}
 	houses = Accomodation.objects.all()
 	conference = Conference.objects.get(conference_alias='inceee2019')
-	try: 
-		user = request.user
-		paid = AccomodationPayment.objects.filter(user=user)
-		response["paid"] = paid
-	except:
-		pass
 	response["conference"] = conference
 	response["houses"] = houses
 	if request.method == "POST":
 		house = request.POST["house"]
+		Name = request.POST["Name"]
+		paper_id = request.POST["paper_id"]
 		house = Accomodation.objects.get(houseName=house)
 		slip = request.FILES.get("pay_receipt","")
 		startDate = request.POST["startDate"]
 		endDate = request.POST["endDate"]
 		payment = AccomodationPayment()
-		payment.user = request.user
+		payment.Name = Name
+		payment.paper_id = paper_id
+		payment.reference_number = request.POST["refno"]
 		conf = Conference.objects.get(conference_alias='inceee2019')
 		payment.conf_id = conf
 		payment.payment_receipt = slip

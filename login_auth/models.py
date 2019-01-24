@@ -137,7 +137,9 @@ class Accomodation(models.Model):
 		return self.houseName
 
 class AccomodationPayment(models.Model):
-	user = models.ForeignKey(User)
+	Name = models.CharField(max_length=255,default=None)
+	paper_id = models.CharField(max_length=255,default=None, blank=True)
+	reference_number = models.CharField(max_length=255, default=None)
 	conf_id = models.ForeignKey(Conference, null=True)
 	payment_receipt = models.FileField(upload_to=get_acc_path,null=True,blank=True,storage=sendfile_storage)
 	house_choice = models.ForeignKey(Accomodation)
@@ -149,7 +151,8 @@ class AccomodationPayment(models.Model):
 	end_date = models.DateField(default=datetime.datetime.now)
 
 	def __unicode__(self):
-		return self.user.username + " for " + self.house_choice.houseName
+		return self.Name + " " + self.house_choice.houseName
+
 
 
 
