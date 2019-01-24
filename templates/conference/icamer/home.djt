@@ -168,6 +168,7 @@ and tables. The paper template can be downloaded from downloads page.
             <h2>
                 <span class="label label-success">Proceedings</span>
             </h2>
+                <img src="{% static 'icamer/Springer.jpg' %}" height="150px">
 	</center>
             <br>
             <p style="text-align:justify;">

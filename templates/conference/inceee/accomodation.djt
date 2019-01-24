@@ -29,7 +29,7 @@
               <th>Name</th>
               <th>Number of Seats Available</th>
               <th>Gender</th>
-              <th>Tariff(Rs.)</th>
+              <th>Tariff(Rs. per day)</th>
             </tr>
           </thead>
           <tbody>
