@@ -949,6 +949,50 @@ def approveaccomo(request):
 		payment.save()
 	return redirect('/manager/conference_landing/2/7/')
 
+def accomodationData(request):
+	response = HttpResponse(content_type='application/ms-excel')
+	response['Content-Disposition'] = 'attachment; filename=AccomodationData.xls'
+	wb = xlwt.Workbook(encoding='utf-8')
+	ws = wb.add_sheet("Papers' Data")
+
+	row_num = 0
+
+	columns = [
+	    (u"Name", 6000),
+		(u"Paper Ref No.",6000),
+		(u"Payment Status", 6000),
+		(u"Payment Ref No.", 9000),
+	]
+
+	font_style = xlwt.XFStyle()
+	font_style.font.bold = True
+
+	for col_num in xrange(len(columns)):
+	    ws.write(row_num, col_num, columns[col_num][0], font_style)
+	    ws.col(col_num).width = columns[col_num][1]
+	row_num += 1
+
+	font_style = xlwt.XFStyle()
+	font_style.alignment.wrap = 1
+
+	accomo_pay = AccomodationPayment.objects.all()
+	for accomo in accomo_pay:
+		nameOfPerson = accomo.Name
+		paperRefNo = accomo.paper_id
+		payment_status = ""
+		if accomo.is_aprooved :
+			payment_status = "Approved"
+		elif accomo.is_rejected :
+			payment_status = "Rejected"
+		else:
+			payment_status = "In Review"
+		paymentRefNo = accomo.reference_number
+		dataRow = [nameOfPerson,paperRefNo,payment_status,paymentRefNo]
+		for col_num in xrange(len(columns)) :
+				ws.write(row_num, col_num, dataRow[col_num], font_style)
+		row_num +=1
+	wb.save(response)
+	return response
 
 ###################
 

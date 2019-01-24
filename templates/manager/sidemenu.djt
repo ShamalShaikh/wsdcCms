@@ -40,6 +40,9 @@
 		<a class="item" href="/manager/exportdata/{{conference.conference_id}}">
 		<button class="ui fluid button blue">Export Data</button></a><br>
 
+		<a class="item" href="/manager/exportaccomo">
+		<button class="ui fluid button blue">Export Accomodation Data</button></a><br>
+
 		<!-- <a class="item" href="/manager/contestantList">
 		<button class="ui fluid button blue">Export Contestants List</button></a> -->
 
