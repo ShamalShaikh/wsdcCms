@@ -144,8 +144,8 @@ class AccomodationPayment(models.Model):
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	review = models.CharField(max_length=500, default="")
-	start_date = models.DateField(default=datetime.datetime.now())
-	end_date = models.DateField(default=datetime.datetime.now())
+	start_date = models.DateField(default=datetime.datetime.now)
+	end_date = models.DateField(default=datetime.datetime.now)
 
 	def __unicode__(self):
 		return self.user.username + " for " + self.house_choice.houseName

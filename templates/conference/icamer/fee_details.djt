@@ -8,29 +8,29 @@
                 <span class="label label-primary">Registration Fee</span>
             </h2>
             <br>
-{#            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and#}
-{#                pay the requisite registration fee (as per the details given below). Atleast one author should register per#}
-{#                paper.#}
-{#            </p>#}
+            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and
+                pay the requisite registration fee (as per the details given below). Atleast one author should register per
+                paper.
+            </p>
 
             <table class="table table-hover">
                 <tr class="active">
                     <td rowspan="2">Category</td>
-{#                    <td colspan="2">Early bird registration</td>#}
-{#                    <td colspan="2">Regular registration</td>#}
+                    <td colspan="2">Early bird registration</td>
+                    <td colspan="2">Regular registration</td>
                 </tr>
                 <tr class="active">
                     <td>Indian (INR)</td>
                     <td>Others (USD)</td>
-                    <!--<td>Indian (INR)</td>
-                    <td>Others (USD)</td>-->
+                    <td>Indian (INR)</td>
+                    <td>Others (USD)</td>
                 </tr>
                 <tr class="active">
                     <td>UG & PG Students</td>
                     <td>2000</td>
                     <td>50</td>
-{#                    <td>3000</td>#}
-{#                    <td>250</td>#}
+                    <td>3000</td>
+                    <td>250</td>
 
                 </tr>
 
@@ -38,27 +38,31 @@
                     <td>Full Time Research Scholars</td>
                     <td>3000</td>
                     <td>100</td>
-{#                    <td>6000</td>#}
-{#                    <td>350</td>#}
+                    <td>6000</td>
+                    <td>350</td>
                 </tr>
                 <tr class="active">
                     <td>Faculty/ Academia</td>
                     <td>5000</td>
                     <td>200</td>
-{#                    <td>2000</td>#}
-{#                    <td>150</td>#}
+                    <td>2000</td>
+                    <td>150</td>
                 </tr>
                 <tr class="active">
                     <td>Delegates from Industry persons</td>
                     <td>8000</td>
                     <td>300</td>
-{#                    <td>2000</td>#}
-{#                    <td>150</td>#}
+                    <td>2000</td>
+                    <td>150</td>
                 </tr>
 
             </table>
 
         </center>
+        <p style="text-align:justify;">Registration fee covers to access all the sessions, conference kit, lunch and coffee breaks during conference.  It also includes local tour and grand dinner. 
+        The registration fees is non-refundable. Please note that registration fee does not include the cost of accommodation. 
+        <br><b>Limited accommodation is available on the campus on payment basis.</b>  
+</p>
     </div>
 
     <div class="col-md-6">
