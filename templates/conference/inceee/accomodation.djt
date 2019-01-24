@@ -7,12 +7,16 @@
           Accomodation Upload
         </h2>
         <div class="ui divider"></div>
-        <h4>Steps to Upload Accomodation Reciept</h4>
+        <h4>Accomodation Details:</h4>
         <ol>
             <li>See the options of accomodation and number of seats available</li>
             <li>Choose your accomodation accordingly</li>
             <li>Upload your pay slip and wait for approval</li>
-            <li>You can check your status below</li>
+            <li>You can check your status below in the uploded receipts setion.</li>
+            <li>Accomodation at ISH (Dasa) Hostel is only for males. It is double occupancy per room.</li>
+            <li>Accomodation at Ladies Hostel is only for females. It's a common room with 5 beds per room.</li>
+            <li>Accomodation will be provided subject to availability and first comr first serve basis.</li>
+            <li>If all rooms are booked and accomodation is not available the payment will be refunded.</li>
         </ol>
         <div class="ui divider"></div>
         <br>
@@ -29,7 +33,7 @@
               <th>Name</th>
               <th>Number of Seats Available</th>
               <th>Gender</th>
-              <th>Tariff(Rs.)</th>
+              <th>Tariff (per person per day in Rs.)</th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +53,7 @@
         <form class="ui form" action="/conference/inceee2019/accomodation/" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="field" style="margin-left: 33%;">
+              <label  for="hostelType">Select Hostel:</label>
               <select name="house" style="width: 300px;">
                 {% for house in houses %}
                 <option value="{{house}}">{{house.houseName}}</option>
@@ -66,8 +71,14 @@
               </div>
             </center>
               <br>
+              <div class="four wide field" style="margin-left: 33%;">
+                  <label for="paper_id" >PaperID (if any)</label>
+                  <input name="paper_id" type="text" id="paper_id">
+              </div>
+              <br>
               <div class="field" style="margin-left: 33%;">
-                    <input name="pay_receipt" type="file" id="pay_receipt" class="ui button blue" required>
+                  <label for="pay_receipt" >Upload Payment Receipt</label>
+                  <input name="pay_receipt" type="file" id="pay_receipt" class="ui button blue" required>
               </div>
               <div style="margin-left: 40%;"><br><br>
               <button class="ui button green" type="submit" id="uploadPaper">Submit</button>

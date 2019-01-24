@@ -141,7 +141,7 @@ class AccomodationPayment(models.Model):
 	conf_id = models.ForeignKey(Conference, null=True)
 	payment_receipt = models.FileField(upload_to=get_acc_path,null=True,blank=True,storage=sendfile_storage)
 	house_choice = models.ForeignKey(Accomodation)
-	numer_of_rooms = models.IntegerField(default=1)
+	# numer_of_rooms = models.IntegerField(default=1)
 	is_aprooved = models.BooleanField(default=False)
 	is_rejected = models.BooleanField(default=False)
 	review = models.CharField(max_length=500, default="")
