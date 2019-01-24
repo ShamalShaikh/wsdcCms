@@ -411,7 +411,9 @@
           <tr>
           <th>User</th>
           <th>House Choice</th>
+          <th>Number of rooms</th>
           <th>Receipt</th>
+          <th>Tariff(Each room)</th>
           <th>Approve</th>
           <th>Reject</th>
           </tr>
@@ -424,9 +426,11 @@
           <tr>
           <td>{{reg_pay.user.first_name}} {{reg_pay.user.last_name}}</td>
           <td>{{reg_pay.house_choice}}</td>
+          <td>{{reg_pay.numer_of_rooms}}</td>
           <td>
             <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
+          <td>{{reg_pay.house_choice.tariff}}</td>
           <td><form method="POST" action="/manager/accomo/">
             {% csrf_token %}
             <input type="hidden" name="type" value="approve">
