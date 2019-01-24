@@ -3,3 +3,7 @@
 media/*
 protected/*
 CMS/databases.py
+conference/migrations
+login_auth/migrations
+manager/migrations
+reviews/migrations

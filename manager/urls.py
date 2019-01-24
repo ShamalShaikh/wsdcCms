@@ -26,4 +26,5 @@ urlpatterns = [
 	url(r'^reassign/(?P<revid>[0-9]+)/$',views.reassign),
 	url(r'^contestantList/$',views.contestantList),
 	url(r'^accomo/$', views.approveaccomo),
+	url(r'^exportaccomo/$', views.accomodationData),
 ]
