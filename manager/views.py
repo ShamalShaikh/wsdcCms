@@ -947,7 +947,7 @@ def approveaccomo(request):
 			payment.review = request.POST["review"]
 			payment.is_rejected = True
 		payment.save()
-	return redirect('/manager/conference_landing/2/7/')
+	return redirect('/manager/conference_landing/13/7/')
 
 def accomodationData(request):
 	response = HttpResponse(content_type='application/ms-excel')

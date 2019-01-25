@@ -67,9 +67,9 @@
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="/conference/{{conference.conference_alias}}/accomodation">Accomodation</a>
-                    </li> -->
+                    </li>
                     {% if not request.user.is_authenticated %}
                     <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
