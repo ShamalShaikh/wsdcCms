@@ -4,6 +4,6 @@ DATABASES = {
         'NAME': 'treat17',
         'USER': 'root',
         'PASSWORD': 'wsdcadmin',
-        'HOST': 'localhost',
+        'HOST': 'localhost', 
     }
 }
