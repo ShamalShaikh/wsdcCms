@@ -960,10 +960,10 @@ def send_accomodation_mail(email, type, review,house,start,end):
 	content = ""
 	if type == "approve":
 		content += "Congrats you have been alloted " + house + "\n"
-		content += "You can be in room from "+start + " to " + end
+		content += "You can be in room from "+start + " to " + end + "\n\n"
 	if type == "reject":
 		content += "Your Request is rejected for House: "+house+"\n"
-		content +="For the Reason" + review+"\n"
+		content +="For the Reason: " + review+"\n\n"
 	content += "Thank you for considering INCEEE-2019 for presenting your research. We look forward to your participation at INCEEE-2019.\n\n"
 	content += "Please do not reply to this mail.For any query mail at inceee2019@gmail.com\n\n"
 	content += "Coordinators \nINCEEE2019"

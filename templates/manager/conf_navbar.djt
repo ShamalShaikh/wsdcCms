@@ -430,7 +430,7 @@
             <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
           <td>{{reg_pay.house_choice.tariff}}</td>
-          <td><form method="POST" action="/manager/accomo/">
+          <td><form method="POST" action="/manager/accomo/" onclick="return confirm('Are you sure you want to approve this request?')">
             {% csrf_token %}
             <input type="hidden" name="type" value="approve">
             <input type="hidden" name="Name" value="{{reg_pay.Name}}">
@@ -438,7 +438,7 @@
             <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
             <input type="submit" class="ui button green" value="Approve">
           </form></td>
-          <td><form method="POST" action="/manager/accomo/">
+          <td><form method="POST" action="/manager/accomo/" onclick="return confirm('Are you sure you want to reject request?')">
             {% csrf_token %}
             <input type="hidden" name="type" value="reject">
             <input type="hidden" name="Name" value="{{reg_pay.Name}}">
