@@ -415,6 +415,8 @@
           <th>Paper Id</th>
           <th>Receipt</th>
           <th>Tariff(Each room)</th>
+          <th>Start Date</th>
+          <th>End Date</th>
           <th>Approve</th>
           <th>Reject</th>
           </tr>
@@ -430,6 +432,8 @@
             <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
           </td>
           <td>{{reg_pay.house_choice.tariff}}</td>
+          <td>{{reg_pay.start_date}}</td>
+          <td>{{reg_pay.end_date}}</td>
           <td><form method="POST" action="/manager/accomo/" onclick="return confirm('Are you sure you want to approve this request?')">
             {% csrf_token %}
             <input type="hidden" name="type" value="approve">
