@@ -952,7 +952,7 @@ def approveaccomo(request):
 		end = str(payment.end_date)
 		payment.save()
 		send_accomodation_mail(email,type,review, payment.house_choice.houseName,start,end)
-	return redirect('/manager/conference_landing/2/7/')
+	return redirect('/manager/conference_landing/13/7/')
 
 def send_accomodation_mail(email, type, review,house,start,end):
 	reciever = email
