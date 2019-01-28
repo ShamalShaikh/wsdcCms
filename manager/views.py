@@ -398,14 +398,16 @@ def export_xls(request, cid):
 	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
 		(u"Payment Ref No.", 9000),
+		# (u"Submission Date.", 6000),
+		#(u" Submitted Date.", 6000),
 	]
 
 	font_style = xlwt.XFStyle()
 	font_style.font.bold = True
 
 	for col_num in xrange(len(columns)):
-	    ws.write(row_num, col_num, columns[col_num][0], font_style)
-	    ws.col(col_num).width = columns[col_num][1]
+	    ws.write(row_num, col_num, columns[col_num][0], font_style) # writing header of the file
+	    ws.col(col_num).width = columns[col_num][1] # width of the column
 	row_num += 1
 
 	font_style = xlwt.XFStyle()
@@ -499,9 +501,9 @@ def export_xls(request, cid):
 		email = reg_conf.user.email
 		institute = reg_conf.user.profile.institute
 		department = reg_conf.user.profile.department
-		# title = paper.papername
-		# localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
-		# timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
+		#title = paper.papername
+		#localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
+		#timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 		confname = conference.conference_name
 		payment = ""
 		refno = ''

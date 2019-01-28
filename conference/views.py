@@ -198,16 +198,17 @@ def dashboard(request,alias):
 	response['conference']= conference
 	response['conferences'] = conferences
 	response['payments'] = payments
-
+	print(conference)
+	print(payments)
 	try:
 		receipt = Payment.objects.get(user=request.user,conf_id=conference)
 		if receipt.is_aprooved :
 			response['receipt'] = True
 		else :
 			response['receipt'] = False
+		print(receipt)
 	except:
 		response['receipt'] = False
-
 	papers = {}
 	finalpapers =[]
 	try :
