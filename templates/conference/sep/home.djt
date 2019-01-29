@@ -82,6 +82,42 @@
             </div>
         </div>
      <hr> 
+     <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Welcome message by the Patron, Prof.N.V.Ramana Rao</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                I feel it a privilege to host the National Conference on "Sports and Excercise Psychology",  the first ever Conference organised by the Department of Physical Education of NIT Warangal, more so as it is being organised during the Diamond Jubilee Celebrations of the Institute. The Institute has excellent sports & games facility and a mandatory physical education activity is a part of the curriculum of NITW. The conference organised in colloboration with Sports Psychology Association of India, will provide an excellent platform for researchers, academicians, practitioners, sports person and other interested in this discipline to exchange their ideas and updated information on research findings and their application. Being held in an institute of technology of national importance, the conference set the trend for discussion on development and application of Science and Technology for human health, fitness and welfare. I am sure that the deliberations at this conference will be inspiring and creative for everyone and that will make a contribution to the progress of Sport Psychology.
+                <br>
+                I convey my best wishes for the success of this conference, which will be a trend setter for similar and related activities in future.
+
+
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Prof. Dilip K Dreaha, President SPAI, welcome message</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                I am delighted to know that 29th National conference of Sport Psychology is being organised by the National Institute of Technology Warangal Telangana. the conference programme reminds us all, the importance of inclusivity and witness immense development of sport psychology to provide an atmosphere conducive to learn for its practitioners and students. The field boasts of many initiatives to make it one of the most sought after field for the elite performance in sports and facing the routine hazards of this competitive society. I would like to convey my warmest greetings to all those associated with this conference specially management and event organiser.
+                <br>
+                I also convey my very best wishes to SPAI executive members, SPAI members, participants and staff and students on this mega event.
+
+
+        </div>
+    </div>
+    <hr>
     <div class="row">
         <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br>
@@ -456,10 +492,10 @@
             <a href="#" target="blank">
                 <img src="{% static 'docs_sep/8.jpg' %}"><br>
                 <b>
-                    <u>Dr. Lalit Sharma</u>
+                    <u>Prof Rajesh kumar</u>
                 </b>
             </a>
-            <br>New Delhi</center>
+            <br>Principal, OU college of Physical Education</center>
         <br>
     </div>
     <div class="col-md-6" style="line-height:30px;font-size:17px;">
@@ -471,10 +507,10 @@
             <a href="#" target="blank">
                 <img src="{% static 'docs_sep/9.jpg' %}"><br>
                 <b>
-                    <u>Prof. Bipin Bhattacharya</u>
+                    <u>Prof. P.Rajasekar</u>
                 </b>
             </a>
-            <br> U.K</center>
+            <br>Director of Physical Eduction, University of Hyderabad </center>
         <br>
     </div>
 </div>
@@ -514,6 +550,7 @@
     <div class="row">
         <div class="col-md-6">
             <center>
+                <img src="{% static 'docs_sep/director.jpg' %}"><br>
                 <h4>
                     <b>Patron</b>
                 </h4>
@@ -524,6 +561,7 @@
         </div>
         <div class="col-md-6">
             <center>
+                <img src="{% static 'docs_sep/hod.jpg' %}"><br>
                 <h4>
                     <b>Convener</b>
                 </h4>
