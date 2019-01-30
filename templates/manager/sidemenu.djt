@@ -8,9 +8,9 @@
 		<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/2">Un-verified Payments<div class="ui teal left pointing label">{{ddcount}}</div></a>
 
 		<!-- CMFDP-2019 Conference -->
-		{% ifequal conference.alias 'cmfdp2019'%}
+		{% if conference.alias == 'cmfdp2019' or conference.alias == 'sep2019'%}
 			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
-		{% endifequal %}
+		{% endif %}
 
 		<!-- NOIEAS-2019 Conference -->
 		{% ifequal conference.alias 'noieas2019' %}
@@ -39,9 +39,10 @@
 
 		<a class="item" href="/manager/exportdata/{{conference.conference_id}}">
 		<button class="ui fluid button blue">Export Data</button></a><br>
-
+		{% ifequal conference.alias 'inceee2019'%}
 		<a class="item" href="/manager/exportaccomo">
 		<button class="ui fluid button blue">Export Accomodation Data</button></a><br>
+		{% endifequal %}
 
 		<!-- <a class="item" href="/manager/contestantList">
 		<button class="ui fluid button blue">Export Contestants List</button></a> -->

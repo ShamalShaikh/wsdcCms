@@ -613,7 +613,7 @@ def sendmail(request,cid,type):
     if type == '1':
         subject = 'Application approved but payment pending'
         content = "Dear " + profile.user.first_name + ",\n\n"
-        content += "Your details have been reviewed and verified by us, and paper is accepted for presentation\n\n"
+        content += "Your details have been reviewed and verified by us.\n\n"
         content += "Please pay the registration fee to proceed further.\n\n"
         content += "Thank you!"
 

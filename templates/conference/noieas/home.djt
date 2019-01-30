@@ -198,8 +198,8 @@
                 online. Authors of accepted papers will be allowed to resubmit their camera ready papers after incorporating
                 blind peer review comments within the stipulated deadline. Authors need to register themselves in the conference
                 and present their papers personally. Papers presented at NOIEAS 2019 will be published in SCI / Scopus indexed
-                Journals. Each paper should satisfy the Plagiarism test of the respective journals. Website:
-                <a href="http://cms.nitw.ac.in/conference/NOIEAS-2019">http://cms.nitw.ac.in/conference/NOIEAS-2019</a>
+                Journals. Each paper should satisfy the Plagiarism test of the respective journals. Template:
+                <a href="{% static 'docs_noieas/template.pdf' %}" target="_blank">click here</a>
             </p>
         </div>
     </div>

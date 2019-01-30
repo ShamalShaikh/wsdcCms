@@ -55,6 +55,9 @@
                         <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Downloads</a>
+                    </li>
+                    <li>
                         <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
                     </li>
                     <li>
