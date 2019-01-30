@@ -398,8 +398,8 @@ def export_xls(request, cid):
 	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
 		(u"Payment Ref No.", 9000),
-		# (u"Submission Date.", 6000),
-		#(u" Submitted Date.", 6000),
+		(u"Submission Date.", 6000),
+		# (u" Submitted Date.", 6000),
 	]
 
 	font_style = xlwt.XFStyle()
@@ -474,7 +474,8 @@ def export_xls(request, cid):
 		paperRefNo = "NA"
 		paperStatus = -1
 		paperType = "NA"
-		multiple_paper = [[0 for x in range(3)] for y in range(len(papers))]
+		localTime = "NA"
+		multiple_paper = [[0 for x in range(4)] for y in range(len(papers))]
 		i=0
 		if papers.exists() :
 			for paper in papers :  
@@ -482,6 +483,8 @@ def export_xls(request, cid):
 				paperRefNo = paper.paperRefNum
 				paperStatus = paper.status
 				paperType = ""
+				localTime =  str(paper.submissionDate)
+				#timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
 				if paperStatus == 0 :
 					paperType = "Under Review"
 				if paperStatus == 1 :
@@ -493,7 +496,7 @@ def export_xls(request, cid):
 				if paperStatus == 4 :
 					paperType = "Rejected"
 				
-				multiple_paper[i] = [paperName, paperRefNo, paperType]
+				multiple_paper[i] = [paperName, paperRefNo, paperType,localTime]
 				i=i+1
 		
 		gender = reg_conf.user.profile.gender
@@ -560,13 +563,13 @@ def export_xls(request, cid):
 		if multiple_paper : 
 			for paper in multiple_paper : 
 				dataRow = [nameOfPerson, paper[0], paper[1], paper[2], gender, contact, email, institute, department,
-							confname, payment,refno]
+							confname, payment,refno,localTime]
 				for col_num in xrange(len(columns)) :
 					ws.write(row_num, col_num, dataRow[col_num], font_style)
 				row_num += 1
 		else :
 			dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
-							confname, payment,refno]
+							confname, payment,refno,localTime]
 			for col_num in xrange(len(columns)) :
 					ws.write(row_num, col_num, dataRow[col_num], font_style)
 			row_num +=1
