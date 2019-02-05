@@ -87,7 +87,8 @@
             <br>
             <h2>
                 <center>
-                    <span class="label label-success">Welcome message by the Patron, Prof.N.V.Ramana Rao</span>
+                    <span class="label label-success">Welcome message by the Patron, Prof.N.V.Ramana Rao</span><br><br>
+                    <img src="{% static 'docs_sep/director.jpg' %}">
                 </center>
             </h2>
             <br>
@@ -208,11 +209,11 @@
         <table class="table table-hover">
             <tr class="active">
                 <td>Abstract submission:</td>
-                <td>20th  Jan.  2019</td>
+                <td>15th  Feb.  2019</td>
             </tr>
             <tr class="active">
                 <td>Notification of Acceptance:</td>
-                <td>1st  Feb.  2019</td>
+                <td>17th  Feb.  2019</td>
             </tr>
             <tr class="active">
                 <td>Full paper submission:</td>
@@ -220,7 +221,7 @@
             </tr>
             <tr class="active">
                 <td>Early bird Registration:</td>
-                <td>5th  Feb.  2019</td>
+                <td>15th  Feb.  2019</td>
             </tr>
             <!-- <tr class="active">
                 <td>Registration Deadline:</td>

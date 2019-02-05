@@ -15,45 +15,29 @@
 
             <table class="table table-hover">
                 <tr class="active">
-                    <td rowspan="2">Category</td>
-                    <td colspan="2">Early bird registration</td>
-                    <td colspan="2">Regular registration</td>
+                    <td>Category</td>
+                    <td>Indian(In Rupees)</td>
+                    <td>Foreign(In USD)</td>
                 </tr>
                 <tr class="active">
-                    <td>Indian (INR)</td>
-                    <td>Others (USD)</td>
-                    <td>Indian (INR)</td>
-                    <td>Others (USD)</td>
-                </tr>
-                <tr class="active">
-                    <td>UG & PG Students</td>
+                    <td>UG and PG Students</td>
                     <td>2000</td>
                     <td>50</td>
-                    <td>3000</td>
-                    <td>250</td>
-
                 </tr>
-
                 <tr class="active">
                     <td>Full Time Research Scholars</td>
                     <td>3000</td>
                     <td>100</td>
-                    <td>6000</td>
-                    <td>350</td>
                 </tr>
                 <tr class="active">
                     <td>Faculty/ Academia</td>
                     <td>5000</td>
                     <td>200</td>
-                    <td>2000</td>
-                    <td>150</td>
                 </tr>
                 <tr class="active">
                     <td>Delegates from Industry persons</td>
                     <td>8000</td>
                     <td>300</td>
-                    <td>2000</td>
-                    <td>150</td>
                 </tr>
 
             </table>
