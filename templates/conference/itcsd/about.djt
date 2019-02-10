@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMFDP'19</title>
+    <title>ITCSD'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -114,34 +114,7 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br><h2><center><span class="label label-success">ABOUT THE DEPARTMENT</span></center></h2><br>
             <p style="text-align:justify">
-               The Department of Mathematics is a highly reputed
-                    Department which functions with excellence as its
-                    motto. The Department was started in the year 1959
-                    along with other Engineering and Science
-                    Departments, and has established itself as a dynamic
-                    center for academic and research activities. In
-                    addition to the teaching of courses in Mathematics for
-                    B.Tech. and M.Tech. Programs, the Department offers
-                    two P.G. Programs, M.Sc.(Applied Mathematics) and
-                    M.Sc.(Mathematics and Scientific Computing). The
-                    faculty is actively engaged in Research in diverse fields
-                    such as Fluid Dynamics, Bio Mechanics, Numerical
-                    Analysis, Differential Equations, Finite Element
-                    Method, Operations Research, Functional Analysis,
-                    Linear Algebra, Cryptography and Coding Theory. At
-                    present, 20 Research Scholars are working for their
-                    Ph.D. The Department has a full-fledged computation
-                    laboratory to meet the requirements of the M.Sc.
-                    students, research scholars and the faculty. The
-                    Department has so far produced 105 Ph.D.'s and
-                    conducted more than 53 Conferences/ Seminars/
-                    Workshops/STTP's, two international conferences and
-                    Three GIAN programs. AICTE recognized the
-                    Department as QIP center for Ph.D. It is proud to say
-                    that Department of Mathematics at NIT Warangal has
-                    identified as National Resource Centre for
-                    Mathematics to develop online courses to train
-                    faculty within India.
+               The Department of Civil Engineering offers B.Tech programme in Civil Engineering, 7 M.Tech programmes and PhD programme. The Department is a recognized QIP centre since 1978. The Department has well established and well equipped laboratories. The Department has experienced faculty engaged in teaching, research, capacity building activities and industry extension services. Faculty members represent several policy making and professional bodies. The Department has liaison with reputed industries and R&D organizations.
             </p>
             </div>
         </div>        
@@ -163,37 +136,29 @@
                         <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
                         <br><br>
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <h4><b>Quick Links:</b></h4>
                                 <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
-                                <a href="https://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="https://www.nitw.ac.in/department/ce/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
                                 <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
 
                                 <br><br>
 
-                                <b>E-mail : </b>cmfdp2019.nitw@gmail.com <br>
+                                <b>E-mail : </b>itcsd2019@nitw.ac.inw<br>
                                 
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                <b>Prof. D. Srinivasacharya</b><br>
-                                    Head of the Department & Conference Chair<br>
-                                Department of Mathematics<br>
-                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                <b>Organising Secretary</b><br>
+                                    Department of Civil Engineering <br>
+                                    National Institute of Technology Warangal - 506 004, <br>
+                                    Telangana State, India<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b>dsc@nitw.ac.in    <br>
-                                <b>Phone : </b> +91-9849187247  <br>
+                                <b>Email : </b>itcsd2019@nitw.ac.in  <br>
+                                <b>Phone : </b> +91-8332969241 <br>
+                                <b>Fax: </b>+91-870-2459547 <br>
                             </div>
-                            <div class="col-sm-4">
-                                <h4><b><br></b></h4>
-                                 <b>Dr. Ch. Ramreddy</b><br>
-                                    Conference Coordinator<br>
-                                Department of Mathematics<br>
-                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
-                                WARANGAL - 506004, TS<br>
-                                <b>Email : </b>chramreddy@nitw.ac.in    <br>
-                                <b>Phone : </b> +91-9491824301  <br>
-                            </div>
+                            
                         </div>
                     </div>
                      <br><br>
