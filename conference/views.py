@@ -1499,3 +1499,47 @@ def icamerapply(request):
 	except:
 		response['nopaper'] = True
 	return render(request, 'conference/icamer/apply.djt',response)
+
+
+# ITCSD
+def itcsd(request):
+	conference = Conference.objects.get(conference_alias='itcsd2019')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='itcsd2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/itcsd/home.djt',response)
+
+def itcsdabout(request):
+	conference = Conference.objects.get(conference_alias='itcsd2019')
+	response={}
+	response['conference']=conference
+	response['alias']='itcsd2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/itcsd/about.djt',response)
+
+def itcsdlinks(request):
+	conference = Conference.objects.get(conference_alias='itcsd2019')
+	response={}
+	response['conference']=conference
+	response['alias']='itcsd2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/itcsd/links.djt',response)
