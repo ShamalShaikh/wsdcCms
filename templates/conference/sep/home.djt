@@ -549,6 +549,9 @@
 <div class="row">
     <br>
     <div class="row">
+       <!--  <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div> -->
         <div class="col-md-6">
             <center>
                 <img src="{% static 'docs_sep/director.jpg' %}"><br>
