@@ -80,7 +80,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:18px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">*All the authors from abroad can present their papers via video conference. This facility will not be extended for authors from India.*</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">*All the authors from abroad can present their papers via video conference. This facility will not be extended for authors from India.*</marquee><br>
+                    <marquee BEHAVIOR="ALTERNATE">*Submission of full papers(Final call):20th Feb 2019*</marquee>
                 </div>
             </div>
         </div>

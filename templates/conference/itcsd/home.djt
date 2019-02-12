@@ -115,7 +115,7 @@
             <div class="col-sm-8">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px;color: #002360;"><b>INTERNATIONAL CONFERENCE ON</b></p>
                 <p style="font-size:20px; color: #31b150;"><b>INNOVATIVE TRENDS IN CIVIL ENGINEERING FOR SUSTAINABLE DEVELOPMENT </b></p>
                 <p style="font-size:20px;color: #002360;"><b>(ITCSD - 2019)</b></p>
                 <p style="font-size:15px;color: #002360;"><b>On the occasion of Diamond Jubliee Celebrations Of NIT Warangal</b></p>
@@ -150,8 +150,6 @@
             <!-- /.col-md-4 -->
         </div>
         <!-- /.row -->
-
-        <hr>
 
         <!-- Call to Action Well -->
         <!-- <div class="row">
@@ -231,18 +229,9 @@
 	<hr>
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
-                <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
-                <p style="text-align:justify;"><b>A wide range of topics related to classical and emerging
-                    areas of computational modeling of fluid dynamics
-                    problems will be welcome. The topics include, but are not restricted to </b></p>
-                <ul>
-                    <li>Newtonian and Non-Newtonian fluid flows</li>
-                    <li>Transport phenomena in porous media</li>
-                    <li>Convective Heat and Mass Transfer</li>
-                    <li>Laminar, Turbulent and Complex flows</li>
-                    <li>Micropolar, Couple Stress and Nanofluid flows</li>
-                    <li>Numerical Modeling of the problems in Fluid & Biofluid Mechanics</li>
-                </ul>                
+                <h2><center><span class="label label-primary">Conference Language</span></center></h2><br>
+                <p style="text-align:justify;">The conference presentations and deliberations will be in English</p>
+                               
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-6" id="dates">
@@ -339,7 +328,7 @@
                 <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
                 <center>
                 
-                <p>
+                <p style="font-size:17px;">
                     <b>Organising Secretary</b><br>
                     <b>Department of Civil Engineering </b> <br>
                     National Institute of Technology Warangal - 506 004, <br>
@@ -417,7 +406,7 @@ Registration fee along with the accommodation fee (if required) may be sent in t
         </div>
         <hr>
         <!-- /.row -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
                 <p style="text-align:justify">
@@ -432,7 +421,7 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                 </p>
                 <br>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
@@ -452,71 +441,110 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                         Head of the Department<br>National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-               <!-- <div class="col-md-4">
+                <br>
+                <br>
+                <hr>
+               <div class="col-md-4">
                     <center>
-                    <h4><b>Conference Coordinator</b></h4>
-                    <p style="font-size:17px;">Dr. Ch.Ramreddy<br>Department of Mathematics<br>National Institute of Technology, Warangal</p>
-                    </center>               
-                </div> -->
+                        <h4><b>Organising Secretary</b></h4>
+                        <p style="font-size:17px;">Prof. N V Umamahesh<br> 
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    
+                    <h4><b>Joint Secretaries</b></h4> 
+                    <p style="font-size:17px;">Dr. P. Venkateswara rao<br>
+                        Dr. S. Shankar<br>Dr. D. Ravi Prasad <br>Dr. Rakesh J Pillai
+
+                    </p>
+                   
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Treasurer</b></h4> 
+                    <p style="font-size:17px;">Prof. T.D. Gunneswara Rao <br>
+                        National Institute of Technology, Warangal
+
+                    </p>
+                   </center>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    
+                    <h4><b>Organizing Committee</b></h4> 
+                    <p style="font-size:17px;">
+
+                    
+                        Prof. C.B Kameswara Rao<br>
+                        Prof. K V Jayakumar<br>
+                        Prof. P Anand Raj<br>
+                        Prof. D Ramseshu<br>
+                        Prof. G Rajesh Kumar<br>
+                        Prof. CSRK Prasad<br>
+                        Prof. P Ratish Kumar<br>
+                        Prof. E. Venkatarathnam<br>
+                        Prof. V Ramanamurthy<br>
+                        Mr. VN Kameswara Rao<br>
+                        Mr. M. Sudhakar<br>
+                        Dr. P Harikrishna<br>
+                        Dr. M Heeralal<br>
+                        Dr. K Venkata Reddy<br>
+                        Dr. Venkaiah Chowdary<br>
+                        Dr. P Hari Prasad Reddy<br>
+                        Dr. S.Venkateswara Rao<br>
+                        Dr. Arif Baig
+
+                    </ul>
+                   
+                </div>
 
             </div>
         </div>
 
-        <div class="row">
-            <hr>
+        <div class="row" style="font-size:17px;">
             
-            <div class="col-md-4">
+            
+            <div class="col-md-12">
                 <center><h2><span class="label label-success">Technical Advisory Committee</span></h2></center>
             <br>
-                <div class="row">
-                    <div class="col-md-12" style="font-size:15px;">
-                        <ul>
-                            <li>Prof. A.K. Pani, IIT Mumbai</li>
-                            <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
-                            <li>Prof. P.V.S.N. Murthy, IIT, Kharagpur</li>
-                            <li>Prof. G.P. Rajasekhar, IIT, Kharagpur</li>
-                            <li>Prof. Natesan Srinivasan, IIT Guwahati</li>
-                            <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
-                            <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
-                            <li>Prof. Ch. Srinivasa Rao, IIT Madras</li>
-                            <li>Prof. K.S. Reddy, IIT Madras</li>
-                            <li>Prof. P.Aanatha Lakshmi Narayana, IIT Hyderabad</li>
-                            <li>Prof A. Kandasamy, NIT Suratkal</li>
-                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <center><h2><span class="label label-success">DEPARTMENTAL COMMITTEE</span></h2></center>
-            <br>
-                <div class="row">
-                    <div class="col-md-6" style="font-size:15px;">
-                        <center><b>Chief Advisors</b></center>
+                
+                    <div class="col-md-6" style="font-size:17px;">
+                        <center><h3><span class="label label-info">National</span></h3></center>
                         <br>
                         <ul>
-                            <li>Prof. Y. N. Reddy, Professor</li>
-                            <li>Prof. K.N.S.K.Viswanadham, Professor</li>
-                            <li>Prof. J. V. Ramana Murthy, Professor</li>
-                            <li>Prof. Debashish Dutta, Professor</li>
+                            <li>Prof. D.Nagesh Kumar, IISC Bangalore</li>
+                            <li>Prof. S K Jain, NIH, Roorkee</li>
+                            <li>Prof. Rajesh Gupta, NIT Nagpur</li>
+                            <li>Prof. K Srinivasa Raju, BITS Hyderabad</li>
+                            <li>Prof. K. P. Sudheer, IIT Madras</li>
+                            <li>Prof. J. Murali Krishnan, IIT Madras</li>
+                            <li>Prof. Tom V. Mathew, IIT Bombay</li>
+                            <li>Prof. Partha Chakraborty, IIT Kanpur</li>
+                            <li>Prof Yedla Sudhakar, IDIGR, Bombay</li>
+                            <li>Prof Mukhesh Khare, IIT Delhi</li>
+                            
                         </ul>
                     </div>
-                    <div class="col-md-6" style="font-size:15px;">
-                        <center><b>Organizing Committee</b></center><br>
+                
+           
+
+            <div class="col-md-6">
+                <center><h3><span class="label label-info">International</span></h3></center>
+            <br>
                         <ul>
-                            <li>Dr. P. Muthu, Associate Professor</li>
-                            <li>Dr. H.P. Rani, Associate Professor</li>
-                            <li>Dr. A. Benerji Babu, Associate Professor</li>
-                            <li>Dr. R.S. Selvaraj, Associate Professor</li>
-                            <li>Dr. T. Kurmayya, Assistant Professor</li>
-                            <li>Dr. J. Pranitha, Assistant Professor</li>
-                            <li>Dr. D. Bhargavi, Assistant Professor</li>
-                            <li>Dr. E. Satyanarayana, Assistant Professor</li>
-                            <li>Dr. Y. Sreenivasa Rao, Assistant Professor</li>
+                            <li>Prof. Irini Angelidaki, DTU Denmark</li>
+                            <li>Prof. Venkatesh Marwade, Purdue University</li>
+                            <li>Prof. Alfred Kalyanapu, Tennessee Tech</li>
+                            <li>Prof. Sangam Shreshta, AIT</li>
+                            <li>Prof. Athanassios Nikolaides, AUT, Greece</li>
+                            <li>Prof. Ram Pendyala, Arizona State University</li>
+                            <li>Prof. Srinivas Peeta, Purdue University</li>
+                            <li>Prof. Garrick E. Louis, University of Virginia</li>
+                            <li>Dr. Olga Shuvaeva, Novosibirsk State University</li>
+                            <li>Prof. Ing. André Niemann, University of Duisburg-Essen</li>
+                            <li>Dr Lucia Rigamonti, Politecnico di Milano</li>
                         </ul>
                     </div>
-                </div>
             </div>
         </div>
         <!-- Footer -->
