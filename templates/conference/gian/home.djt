@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Nitw Gian</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<br>
+	<div class="container">
+		<center><h1>GIAN Initiative - Approved Courses Offered by NITW</h1></center><br>
+		<div class="row">
+			<div class="col-md-3"><img src="{% static 'images/gian.jpg' %}"></div>
+			<div class="col-md-6">
+				<h2>Objectives and Guidelines.</h2>
+				<p>Union Cabinet has approved a programme titled Global Initiative for Academic Networks (GIAN) in Higher Education aimed at tapping the talent pool of scientists and entrepreneurs internationally to encourage their engagement with the institutes of Higher Education in India so as to augment the country's existing academic resources, accelerate the pace of quality reform, and elevate India's scientific and technological capacity to global excellence. GIAN is envisaged to catalyse higher education institutions in the country, and that it will initially include all IITs, IIMs, Central Universities, IISc Bangalore, IISERs, NITs and IIITs subsequently cover good State Universities where the spinoff is vast. GIAN is an evolving scheme which will initially include participation of foreign faculty in Institutes as Distinguished / Adjunct / Visiting faculty / Professors of Practice, etc., to participate in delivering Short or Semester-long Courses. Other activities will be included in due course.</p>
+				<h3>Details of approved courses from NIT Warangal</h3>
+				<h4>Advances in Wireless Communication and antennas</h4>
+				<b>Foreign Faculty: </b> John L. Volakis, Director, Electroscience Laboratory, Ohio State University, Columbia <br>
+				<b>Host Faculty:</b>  Prof. N.V.S.N. Sarma ECE <br>
+				<b>Dates: </b> 06-16  june 2016 (2 Weeks) <br>
+				<b>Brochure: Advances in Wireless Communication and antennas</b><br><br>
+				<h3>Distributed Generation  under Renewable Integration: forecasting tools and EMS towards SmartGrid / SmartCity paradigm </h3>
+				<b>Foreign Faculty: </b> Francesco Grimaccia, Electrical Engineering at Energy Department, Politecnico di <br>
+				<b>Host Faculty: </b> Dr. M. Sailaja Kumari ,Prof. M. Sydulu Electrical Engg <br>
+				<b>Dates: </b> May 23- June 03 (2016) <br>
+				<b>Brochure: Distributed Generation  under Renewable Integration: forecasting tools and EMS towards SmartGrid / SmartCity paradigm </b><br><br>
+				<h3>Sonoprocess Engineering
+					Foreign Faculty Muthupandian Ashokkumar, School of Chemistry, University of Melbourne., Australia
+				</h3>
+				<b>Host Faculty: </b> Dr Shirish H Sonawane Chemical Engg <br>
+				<b>Dates: </b> 22--26 February (2016) <br>
+				<b>Brochure: Sonoprocess Engineering
+				Synthesis characterization , processing and applications of Nanomaterials
+				</b>
+				<b>Foreign Faculty: </b> Vicente Rodolfo Hernandez Garcia Colon, Mexican Electrical and Clean Energy Institute (INEEL) Mexico <br>
+				<b>Host Faculty: </b> Nandini Gupta, Electrical Engineering <br>
+				<b>Dates: 7-11 March (2016)  </b>
+				<b>Brochure: </b> Synthesis characterization , processing and applications of Nanomaterials <br><br>
+
+				<h3>Crystal Structure Determination: Principle and Application</h3>
+				<b>Foreign Faculty: </b> C. Suryanarayana, University of Central Florida, Orlando, FL 32816-2450, United States <br>
+				<b>Host Faculty: </b> Prof. G.V.S. Nageswara Rao MM Engg <br>
+				<b>Dates: </b> 29th November 2017 to 9th December 2017 <br>
+				<b>Brochure: </b> <a href="http://www.gian.iitkgp.ac.in/files/brochures/BR1504871516brochure_SPRath.pdf">Crystal Structure Determination: Principle and Application</a><br><br>
+
+				<h3>Membrane separation processes</h3>
+				<b>Foreign Faculty: </b> Maria Norberta de Pinho, Instituto Superior T?cnico, Portugal <br>
+				<b>Host Faculty: </b> Dr. K. Anand Kishore Chemical Engg <br>
+				<b>Dates: </b> 9-18 May (2016) <br>
+				<b>Brochure: </b> Membrane separation processes <br> <br>
+
+				<h3>Broch and Developing Flipped Classroom, e-Learning Instruction for Engineering and Science Education</h3>
+				<b>Foreign Faculty: </b> Barry Sponder, Professor of Instructional Technology & Educational Leadership  <br>
+				<b>Host Faculty: </b> Prof. I. Ajit Kumar Reddy Chemistry Professional StudiesCentral Connecticut State University New Britain, Connecticut, United States <br>
+				<b>Dates: </b> 9-18 May (2016) <br>
+				<b>Brochure: </b> Broch and Developing Flipped Classroom, e-Learning Instruction for Engineering and Science Education <br> <br>
+				<h3>Advance Meterials For Sustainable Energy And Storage </h3>
+				<b>Foreign Faculty: </b> K.V. Ramanujachary, United States of America <br>
+				<b>Host Faculty: </b> Prof. A. Ramachandraiah Chemistry <br>
+				<b>Dates: </b> 23may-03june (2016) <br>
+				<b>Brochure: </b> Advance Meterials For Sustainable Energy And Storage <br> <br> <br>
+				<h3>Wireless sensor Networks Sensor  Networks</h3>
+				<b>Foreign Faculty: </b> Sajal K. Das, United States of America  <br>
+				<b>Host Faculty: </b> Dr. Rashmi Ranjan Rout CSE <br>
+				<b>Dates: </b> 30May - 8 June (2016)  <br>
+				<b>Brochure: </b> Wireless sensor Networks Sensor  Networks  <br> <br><br>
+				<h3>Diynamic Material Failure </h3>
+				<b>Foreign Faculty: </b> A.M. Rajendran, University of Mississippi, United States of America <br>
+				<b>Host Faculty: </b> Dr. T.P. Tezeswi Civil Engg <br>
+				<b>Dates: </b> 20-23 June (2016) <br>
+				<b>Brochure: </b> Diynamic Material Failure <br> <br> <br>
+
+				<h3>3D Printing and Additing Manufacturing</h3>
+				<b>Foreign Faculty: </b> Ian Gibson, Deakin University, Australia <br>
+				<b>Host Faculty: </b> Dr. Y. Ravikumar Mech Engg <br>
+				<b>Dates: </b> 20-24 June (2016) <br>
+				<b>Brochure:  </b> <a href="http://www.gian.iitkgp.ac.in/files/brochures/BR1503635677brochure_gian.pdf">3D Printing and Additing Manufacturing</a> <br> <br><br>
+				<h3>Mechanics and Dynamics of Precision Procecess  Machining Process</h3>
+				<b>Foreign Faculty: </b> Xiaoliang Jin, School of Mechanical and Aerospace Engineering, Oklahoma State <br>
+				<b>Host Faculty: </b> Dr. Vamsi Krishna Mech Engg <br>
+				<b>Dates: </b> 25-29 July (2016) <br>
+				<b>Brochure: </b> Mechanics and Dynamics of Precision Procecess  Machining Process <br> <br> <br>
+
+				<h3>Ground Improvements TECHNIQUES Hyphen – Classification, Case Studies and Trends</h3>
+				<b>Foreign Faculty: </b> Hemanta Hazarika, Kyushu University, Japan <br>
+				<b>Host Faculty: </b> Dr. V. Ramana Murthy Civil Engg <br>
+				<b>Dates: </b> 30Aug -9 September (2016) <br>
+				<b>Brochure: </b> Ground Improvements TECHNIQUES Hyphen – Classification, Case Studies and Trends <br>
+				<a href="https://www.iitk.ac.in/new/gian-initiative-approved-courses-offered-by-iit-kanpur">Courses approved in Phase I (2016)</a><br> <br> <br>
+			</div>
+			<div class="col-md-3" style="background-color: #ffe0bd;"><br><br><a href="http://www.gian.iitkgp.ac.in/">GIAN Website</a></div>
+		</div>
+	</div>
+
+</body>
+</html>

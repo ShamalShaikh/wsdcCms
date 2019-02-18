@@ -1543,3 +1543,8 @@ def itcsdlinks(request):
 		if len(payment)==1 :
 			response['payment'] = payment
 	return render(request, 'conference/itcsd/links.djt',response)
+
+#NITW GIAN SITE SINGLE PAGE RENDERING 
+def gian(request):
+	return render(request, 'conference/gian/home.djt')
+
