@@ -40,7 +40,7 @@
           <tbody>
             
             {% for house in houses %}
-            <tr>
+		<tr>
               <td>{{house.houseName}}</td>
               <td>{{house.seatsAvailable}}</td>
               <td style="text-transform: capitalize;">{{house.gender}}</td>
@@ -65,7 +65,9 @@
               <label  for="hostelType">Select Hostel:</label>
               <select name="house" style="width: 300px;">
                 {% for house in houses %}
+		{% if house.seatsAvailable > 0 %}
                 <option value="{{house}}">{{house.houseName}}</option>
+		{% endif %}
                 {%endfor%}
               </select>
             </div>

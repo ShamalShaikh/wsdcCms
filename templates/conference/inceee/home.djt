@@ -85,7 +85,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">To Download the Tentative Schedule of the conference <a href="{% static 'docs_inceee/Tentative_Overall_Schedule_INCEEE2019.docx' %}" target="_blank"> <u>click here.</u> </a></marquee>
+			<b><u>UPDATES</u></b>
+                    <br><a href="{% static 'docs_inceee/INCEEE_CULTURAL_EVENT.docx' %}" target="_blank"> <u>INCEEE 2019 Cultural Programme</u> </a>
+                    <br><a href="{% static 'docs_inceee/Instructions.docx' %}" target="_blank"> <u>General Instructions</u> </a>
+                    <br><a href="{% static 'docs_inceee/nitw_route_map.jpg' %}" target="_blank"> <u>NITW Campus Route Map</u> </a>
+                    <br><a href="{% static 'docs_inceee/Overall_Schedule_INCEEE2019.docx' %}" target="_blank"> <u>Overall Schedule of the conference</u> </a>
+                    <br><a href="{% static 'docs_inceee/Session_wise_presentation_details.docx' %}" target="_blank"> <u>Session-wise presentation details</u> </a>
                 </div>
             </div>
         </div>

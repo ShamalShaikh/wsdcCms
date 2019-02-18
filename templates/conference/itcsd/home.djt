@@ -115,11 +115,11 @@
             <div class="col-sm-8">
             <center>
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
-                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px;color: #002360;"><b>INTERNATIONAL CONFERENCE ON</b></p>
                 <p style="font-size:20px; color: #31b150;"><b>INNOVATIVE TRENDS IN CIVIL ENGINEERING FOR SUSTAINABLE DEVELOPMENT </b></p>
                 <p style="font-size:20px;color: #002360;"><b>(ITCSD - 2019)</b></p>
                 <p style="font-size:15px;color: #002360;"><b>On the occasion of Diamond Jubliee Celebrations Of NIT Warangal</b></p>
-                <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p>
+                <!-- <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p> -->
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
             </div>
@@ -151,8 +151,6 @@
         </div>
         <!-- /.row -->
 
-        <hr>
-
         <!-- Call to Action Well -->
         <!-- <div class="row">
             <div class="col-lg-12">
@@ -167,57 +165,57 @@
         <hr>
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-success">Objective</span></center></h2><br>
-                            This conference is expected to be attended by
-                    researchers and faculty to exchange innovative ideas,
-                    methods and results, and visions of the future related to
-                    advanced concepts in computational modeling of fluid
-                    dynamics problems. This conference will focus on the
-                    presentation and discussion computational modeling
-                    aspects in heat and mass transfer, fluid dynamics and
-                    porous media. In addition to the paper presentations
-                    there will be invited talks on latest areas/topics of
-                    research. The deliberations at the conference are
-                    expected to influence the current researchers regarding
-                    their academic pursuits.
+                <br><h2><center><span class="label label-success">Overview of the Conference</span></center></h2><br>
+                <p style="text-align:justify">
+                            Civil Engineers are the builders of the nation.  They provide basic infrastructure facilities needed for the society.  While providing these basic infrastructure facilities, a civil engineer is concerned with four aspects, namely, Quality, Productivity, Safety and Economy (QPSE). There has been a noticeable change in the environment within which civil engineers carry out their work. There is a growing concern on the adverse consequences of the development activities. Global warming and climate change and their impacts on the various sectors of the society are also of major concern. In this changing environment the specifications for meeting the QPSE requirement are becoming more and more complicated. 
+                        </p><br>
+                        <p style="text-align:justify">
+                            A multitude of threats confront us in our effort to achieve sustainability. Civil engineers have always been looking for innovative tools and techniques for solving the challenging problems that they face during planning, analysis, design and construction of civil engineering structures. This conference is aimed to provide a forum to all Civil Engineers to deliberate on the innovative tools and techniques that are needed to face the challenge of sustainable development.
+                        </p>
                 </div>
             </div>
 	<hr>
-        
+         <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Thematic Areas</span></center></h2><br>
+               <div class="col-md-offset-4 col-md-5">
+               <li>Water and wastewater treatment</li>
+               <li>Solid and Hazardous waste management</li>
+               <li>Air Pollution and Control</li>
+               <li>Sustainable water resources management</li>
+               <li>Impact of Climate Change</li>
+               <li>Urban water management</li>
+               <li>Performance of concrete making materials </li>
+               <li>Advances in structural analysis
+               <li>Structural dynamics </li>
+               <li>Earthquake engineering</li>
+               <li>Sustainable construction materials</li>
+               <li>Rehabilitation of structures</li>
+               <li>Sustainable Transportation </li>
+               <li>Urban Transportation Planning and Management</li>
+               <li>Traffic Engineering and Safety</li>
+               <li>Pavement Engineering</li>
+               </div>
+            </div>
+        </div>
+        <hr>
+
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
                 <p style="text-align:justify">
-                	<b style="color:red;">Authors should   submit  an extended abstract of   their original, unpublished work in the template given on the website.  The abstract must be mailed to itcsd2019@nitw.ac.in</p>
-                <p style="text-align:justify">
-                    Upon the notification of acceptance, the author will have 
-		    to submit final copy of the manuscript of the paper, 
-		    copyright transfer agreement and registration fee and 
-		    registration form on or before the last date.   
-                </p>
+                	Authors should   submit  an extended abstract of   their original, unpublished work in the template given on the website.  The abstract must be mailed to itcsd2019@nitw.ac.in</p>
+                
             </div>
         </div>
         <hr>
 	<div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <h2><center><span class="label label-success">Publication Announcement</center></h2><br>
-                <p style="text-align:justify;">
-		    The accepted full length paper for presentation in the 
-		    conference will be considered for possible publication 
-		    in one of the following <b style="color:red;" >SCOPUS indexed journals without 
-		    any charge</b>. All the Papers will be reviewed by at least 
-		    two reviewers in a double blind review process. The 
-		    similarity of each paper must be below 15%. The length of 
-		    the Manuscript should not exceed 8 pages as per journal 
-		    format. If a paper has more than eight pages as per 
-		    journal format, the corresponding author must pay Rs. 1500 
-		    per each additional page (for Domestic) & 25 USD per each 
-		    additional page (for Foreign). Each accepted paper should 
-		    be registered by at least one author to appear in the 
-		    proceedings of the conference as well as in the journal. 
-		</p>
+                <p style="text-align:justify">All the abstracts accepted after peer review from registered participants will be published in the conference proceedings with ISBN number. Selected papers of the conference will be published in the SCI / Scopus indexed Journals.
+                </p>
 	    </div>
-	    <center>
+	    <!-- <center>
 	    <div class="col-md-12">
 	    	<img src="{% static 'docs_cmfdp/ijmems.jpg' %}">
 	    </div>
@@ -226,23 +224,14 @@
 	    <div class="col-md-12">
 	    	<img src="{% static 'docs_cmfdp/iieta.jpg' %}">
 	    </div>
-	</center>
+	</center> -->
 	</div>
 	<hr>
         <div class="row">
             <div class="col-md-6" style="font-size:15px;">
-                <h2><center><span class="label label-primary">Topics of Interest</span></center></h2><br>
-                <p style="text-align:justify;"><b>A wide range of topics related to classical and emerging
-                    areas of computational modeling of fluid dynamics
-                    problems will be welcome. The topics include, but are not restricted to </b></p>
-                <ul>
-                    <li>Newtonian and Non-Newtonian fluid flows</li>
-                    <li>Transport phenomena in porous media</li>
-                    <li>Convective Heat and Mass Transfer</li>
-                    <li>Laminar, Turbulent and Complex flows</li>
-                    <li>Micropolar, Couple Stress and Nanofluid flows</li>
-                    <li>Numerical Modeling of the problems in Fluid & Biofluid Mechanics</li>
-                </ul>                
+                <h2><center><span class="label label-primary">Conference Language</span></center></h2><br>
+                <p style="text-align:justify;">The conference presentations and deliberations will be in English</p>
+                               
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-6" id="dates">
@@ -257,7 +246,7 @@
                         <td>15th April, 2019</td>
                     </tr>
                     <tr class="active">
-                        <td>Full paper submission:  31st May, 2019</td>
+                        <td>Full paper submission</td>
                         <td>31st May, 2019</td>
                     </tr>
                     <tr class="active">
@@ -338,16 +327,16 @@
             <div class="col-md-6">
                 <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
                 <center>
-                <b>The filled in registration form along with the DD/Online
-                Receipt should be sent to:</b><br><br>
-                <p>
-                Conference Chair, CMFDP - 2019,<br>
-                Department of Mathematics,<br>
-                National Institute of Technology Warangal,<br>
-                Warangal-506 004, Telangana State, India.<br>
-                Phone: 09849187249(DSC) / 09491824301 (CHRR),<br>
-                E-mail: cmfdp2019.nitw@gmail.com; dsc@nitw.ac.in;<br>
-                chramreddy@nitw.ac.in<br>
+                
+                <p style="font-size:17px;">
+                    <b>Organising Secretary</b><br>
+                    <b>Department of Civil Engineering </b> <br>
+                    National Institute of Technology Warangal - 506 004, <br>
+                    Telangana State, India.<br>
+                    Phone: +91-8332969241 Fax: +91-870-2459547<br>
+                    E-mail: itcsd2019@nitw.ac.in<br>
+                    Website: http://cms.nitw.ac.in/conference/itcsd2019/
+
                 </p>
                 </center>
             </div>
@@ -357,28 +346,55 @@
             <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
                 <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
                 <table class="table table-hover">
-                    <tr class="active">
-                        <td>Delegates from Academic and R &D Institutions</td>
-                        <td>Rs. 3500/- </td>
-                    </tr>
-                    <tr class="active">
-                        <td>Delegates from Industry</td>
-                        <td>Rs. 5000/- </td>
-                    </tr>
-                    <tr class="active">
-                        <td>Students/Research Scholar</td>
-                        <td>Rs. 3000/- </td>
-                    </tr>
-                    <tr class="active">
-                        <td>Foreign Participants</td>
-                        <td>USD 250 </td>
-                    </tr>
-                    <tr class="active">
-                        <td>Foreign Students</td>
-                        <td>USD 200 </td>
-                    </tr>
-                </table>
-                <p><b>Registration fee includes</b> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
+                <tr class="active">
+                    <td rowspan="2">Category</td>
+                    <td colspan="2">Early bird registration</td>
+                    <td colspan="2">Regular registration</td>
+                </tr>
+                <tr class="active">
+                    <td>Indian (INR)</td>
+                    <td>Others (USD)</td>
+                    <td>Indian (INR)</td>
+                    <td>Others (USD)</td>
+                </tr>
+                <tr class="active">
+                    <td>Academia and R&D centers</td>
+                    <td>2500</td>
+                    <td>200</td>
+                    <td>3000</td>
+                    <td>250</td>
+
+                </tr>
+
+                <tr class="active">
+                    <td>Industry delegates</td>
+                    <td>4000</td>
+                    <td>250</td>
+                    <td>5000</td>
+                    <td>300</td>
+                </tr>
+                <tr class="active">
+                    <td>PG &Research Scholars</td>
+                    <td>1500</td>
+                    <td>100</td>
+                    <td>2000</td>
+                    <td>150</td>
+                </tr>
+                <tr class="active">
+                    <td>Accompanying /Non-presenting Persons</td>
+                    <td>1500</td>
+                    <td>100</td>
+                    <td>2000</td>
+                    <td>150</td>
+                </tr>
+
+            </table>
+                <p>For registration, please send the filled-in registration form along with payment to the Organizing Secretary. The registration fee details are given above table. At least one author should register per paper. Conference registration fee includes kit, proceedings and admission to all technical sessions, 
+
+lunch, conference dinner, tea/coffee and snacks. It does not include accommodation. Accommodation details, list of nearby Hotels and their tariff will be updated on the conference website.
+</p><br>
+<p>
+Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Organising SecretaryITCSD-2019 payable at Warangal or remitted through On-line / NEFT to the above mentioned Bank Account.</p>
             </div>
 
             <div class="col-md-6" style="line-height:30px;font-size:17px;">
@@ -390,7 +406,7 @@
         </div>
         <hr>
         <!-- /.row -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
                 <p style="text-align:justify">
@@ -405,90 +421,130 @@
                 </p>
                 <br>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <center>
                         <h4><b>Patron</b></h4>
                         <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
                             National Institute of Technology, Warangal</p>
                     </center>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <center>
                     <h4><b>Conference Chair</b></h4>
-                    <p style="font-size:17px;">Prof. D. Srinicasacharya<br> Head, Department of Mathematics<br>National Institute of Technology, Warangal</p>
+                    <p style="font-size:17px;">Prof. M. Chandrasekhar<br> 
+                        Head of the Department<br>National Institute of Technology, Warangal</p>
                     </center>
                 </div>
+                <br>
+                <br>
+                <hr>
                <div class="col-md-4">
                     <center>
-                    <h4><b>Conference Coordinator</b></h4>
-                    <p style="font-size:17px;">Dr. Ch.Ramreddy<br>Department of Mathematics<br>National Institute of Technology, Warangal</p>
-                    </center>               
+                        <h4><b>Organising Secretary</b></h4>
+                        <p style="font-size:17px;">Prof. N V Umamahesh<br> 
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    
+                    <h4><b>Joint Secretaries</b></h4> 
+                    <p style="font-size:17px;">Dr. P. Venkateswara rao<br>
+                        Dr. S. Shankar<br>Dr. D. Ravi Prasad <br>Dr. Rakesh J Pillai
+
+                    </p>
+                   
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Treasurer</b></h4> 
+                    <p style="font-size:17px;">Prof. T.D. Gunneswara Rao <br>
+                        National Institute of Technology, Warangal
+
+                    </p>
+                   </center>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    
+                    <h4><b>Organizing Committee</b></h4> 
+                    <p style="font-size:17px;">
+
+                    
+                        Prof. C.B Kameswara Rao<br>
+                        Prof. K V Jayakumar<br>
+                        Prof. P Anand Raj<br>
+                        Prof. D Ramseshu<br>
+                        Prof. G Rajesh Kumar<br>
+                        Prof. CSRK Prasad<br>
+                        Prof. P Ratish Kumar<br>
+                        Prof. E. Venkatarathnam<br>
+                        Prof. V Ramanamurthy<br>
+                        Mr. VN Kameswara Rao<br>
+                        Mr. M. Sudhakar<br>
+                        Dr. P Harikrishna<br>
+                        Dr. M Heeralal<br>
+                        Dr. K Venkata Reddy<br>
+                        Dr. Venkaiah Chowdary<br>
+                        Dr. P Hari Prasad Reddy<br>
+                        Dr. S.Venkateswara Rao<br>
+                        Dr. Arif Baig
+
+                    </ul>
+                   
                 </div>
 
             </div>
         </div>
 
-        <div class="row">
-            <hr>
+        <div class="row" style="font-size:17px;">
             
-            <div class="col-md-4">
-                <center><h2><span class="label label-success">NATIONAL ADVISORY COMMITTEE</span></h2></center>
+            
+            <div class="col-md-12">
+                <center><h2><span class="label label-success">Technical Advisory Committee</span></h2></center>
             <br>
-                <div class="row">
-                    <div class="col-md-12" style="font-size:15px;">
-                        <ul>
-                            <li>Prof. A.K. Pani, IIT Mumbai</li>
-                            <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
-                            <li>Prof. P.V.S.N. Murthy, IIT, Kharagpur</li>
-                            <li>Prof. G.P. Rajasekhar, IIT, Kharagpur</li>
-                            <li>Prof. Natesan Srinivasan, IIT Guwahati</li>
-                            <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
-                            <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
-                            <li>Prof. Ch. Srinivasa Rao, IIT Madras</li>
-                            <li>Prof. K.S. Reddy, IIT Madras</li>
-                            <li>Prof. P.Aanatha Lakshmi Narayana, IIT Hyderabad</li>
-                            <li>Prof A. Kandasamy, NIT Suratkal</li>
-                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <center><h2><span class="label label-success">DEPARTMENTAL COMMITTEE</span></h2></center>
-            <br>
-                <div class="row">
-                    <div class="col-md-6" style="font-size:15px;">
-                        <center><b>Chief Advisors</b></center>
+                
+                    <div class="col-md-6" style="font-size:17px;">
+                        <center><h3><span class="label label-info">National</span></h3></center>
                         <br>
                         <ul>
-                            <li>Prof. Y. N. Reddy, Professor</li>
-                            <li>Prof. K.N.S.K.Viswanadham, Professor</li>
-                            <li>Prof. J. V. Ramana Murthy, Professor</li>
-                            <li>Prof. Debashish Dutta, Professor</li>
+                            <li>Prof. D.Nagesh Kumar, IISC Bangalore</li>
+                            <li>Prof. S K Jain, NIH, Roorkee</li>
+                            <li>Prof. Rajesh Gupta, NIT Nagpur</li>
+                            <li>Prof. K Srinivasa Raju, BITS Hyderabad</li>
+                            <li>Prof. K. P. Sudheer, IIT Madras</li>
+                            <li>Prof. J. Murali Krishnan, IIT Madras</li>
+                            <li>Prof. Tom V. Mathew, IIT Bombay</li>
+                            <li>Prof. Partha Chakraborty, IIT Kanpur</li>
+                            <li>Prof Yedla Sudhakar, IDIGR, Bombay</li>
+                            <li>Prof Mukhesh Khare, IIT Delhi</li>
+                            
                         </ul>
                     </div>
-                    <div class="col-md-6" style="font-size:15px;">
-                        <center><b>Organizing Committee</b></center><br>
+                
+           
+
+            <div class="col-md-6">
+                <center><h3><span class="label label-info">International</span></h3></center>
+            <br>
                         <ul>
-                            <li>Dr. P. Muthu, Associate Professor</li>
-                            <li>Dr. H.P. Rani, Associate Professor</li>
-                            <li>Dr. A. Benerji Babu, Associate Professor</li>
-                            <li>Dr. R.S. Selvaraj, Associate Professor</li>
-                            <li>Dr. T. Kurmayya, Assistant Professor</li>
-                            <li>Dr. J. Pranitha, Assistant Professor</li>
-                            <li>Dr. D. Bhargavi, Assistant Professor</li>
-                            <li>Dr. E. Satyanarayana, Assistant Professor</li>
-                            <li>Dr. Y. Sreenivasa Rao, Assistant Professor</li>
+                            <li>Prof. Irini Angelidaki, DTU Denmark</li>
+                            <li>Prof. Venkatesh Marwade, Purdue University</li>
+                            <li>Prof. Alfred Kalyanapu, Tennessee Tech</li>
+                            <li>Prof. Sangam Shreshta, AIT</li>
+                            <li>Prof. Athanassios Nikolaides, AUT, Greece</li>
+                            <li>Prof. Ram Pendyala, Arizona State University</li>
+                            <li>Prof. Srinivas Peeta, Purdue University</li>
+                            <li>Prof. Garrick E. Louis, University of Virginia</li>
+                            <li>Dr. Olga Shuvaeva, Novosibirsk State University</li>
+                            <li>Prof. Ing. André Niemann, University of Duisburg-Essen</li>
+                            <li>Dr Lucia Rigamonti, Politecnico di Milano</li>
                         </ul>
                     </div>
-                </div>
             </div>
         </div>
         <!-- Footer -->
