@@ -89,7 +89,7 @@
         <center><h3>No Papers Uploaded !!!</h3></center>
         {% endif %}
       </div>
-      {% if conference.conference_alias == "ctsem2018" or conference.conference_alias == "inceee2019" %}
+      {% if conference.conference_alias == "ctsem2018" or conference.conference_alias == "inceee2019" or conference.conference_alias == "icamer2019"  %}
       <div class="ui fluid segment">
         <center><h3>Deadline for uploading Abstract has Reached !!!</h3></center>
       </div>
