@@ -28,6 +28,10 @@ urlpatterns = [
 	url(r'^itcsd2019/$',views.itcsd),
 	url(r'^itcsd2019/about/$',views.itcsdabout),
 	url(r'^itcsd2019/links/$',views.itcsdlinks),
+	#ITCSD2019
+	url(r'^icam2019/$',views.icam),
+	url(r'^icam2019/about/$',views.icamabout),
+	url(r'^icam2019/links/$',views.icamlinks),
 	#EWCTI2018
 	url(r'^ewcti2018/$',views.ewcti),
 	url(r'^ewcti2018/about/$',views.ewctiabout),

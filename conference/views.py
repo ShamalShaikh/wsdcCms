@@ -1548,3 +1548,46 @@ def itcsdlinks(request):
 def gian(request):
 	return render(request, 'conference/gian/home.djt')
 
+# ITCSD
+def icam(request):
+	conference = Conference.objects.get(conference_alias='icam2019')
+	print conference
+	print"hai"
+	response = {}
+	response['conference']=conference
+	response['alias']='icam2019'
+	images = Conf_Image.objects.filter(conf_id=conference)
+	response['images']=images
+	print images
+	print request.user.is_authenticated
+
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		print payment
+		if len(payment)==1 :
+			response['payment'] = payment[0]
+
+	return render(request, 'conference/icam/home.djt',response)
+
+def icamabout(request):
+	conference = Conference.objects.get(conference_alias='icam2019')
+	response={}
+	response['conference']=conference
+	response['alias']='icam2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icam/about.djt',response)
+
+def icamlinks(request):
+	conference = Conference.objects.get(conference_alias='icam2019')
+	response={}
+	response['conference']=conference
+	response['alias']='icam2019'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/icam/links.djt',response)
+
