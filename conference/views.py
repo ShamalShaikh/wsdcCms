@@ -1591,3 +1591,12 @@ def icamlinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/icam/links.djt',response)
 
+def home(request):
+	response = {}
+	now = datetime.datetime.now()
+	upcoming_conferences_inter = Conference.objects.filter(endDate__gte=now, national=False)
+	upcoming_conferences_nation = Conference.objects.filter(endDate__gte=now, national=True)
+	response["upcoming_inter"] = upcoming_conferences_inter
+	response["upcoming_nation"] = upcoming_conferences_nation
+	return render(request, "home.djt",response)
+

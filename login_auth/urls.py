@@ -4,7 +4,6 @@ from . import views
 
 urlpatterns = [
     #CMFD-2019
-	url(r'^$',RedirectView.as_view(url='/conference/cmfdp2019/')),
 	url(r'^cmfdp/$',RedirectView.as_view(url='/conference/cmfdp2019/')),
 	url(r'^cmfdp2019/$',RedirectView.as_view(url='/conference/cmfdp2019/')),
 	#ewcti2018

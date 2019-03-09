@@ -25,6 +25,9 @@ def get_remark_file_path(instance,filename):
 def get_zip_file_path(instance,filename):
 	return 'conference_zips/{0}/{1}'.format("".join(instance.contestant.username.split()),filename)
 
+def get_image_path(instance, filename):
+	return 'home_image/{0}/{1}'.format("".join(instance.conference.conference_alias, filename))
+
 def validate(value):
 	    import os
 	    ext = os.path.splitext(value.name)[1]
@@ -52,6 +55,7 @@ class Conference(models.Model):
 	max_papers = models.IntegerField(default=1)
 	branch = models.ForeignKey(Branch,null=True,blank=True)
 	paperCount = models.IntegerField(default=0)
+	national = models.BooleanField(default=True)
 	def __str__(self):
 		return str(self.conference_name)
 
@@ -112,4 +116,11 @@ class Contest(models.Model):
 
 	def __str__(self):
 		return str(self.contestant.username)
+
+class HomePageImage(models.Model):
+	conference = models.ForeignKey(Conference)
+	image = models.ImageField(upload_to=get_image_path,null=True, blank=True)
+
+	def __str__(self):
+		return conference.conference_alias
 
