@@ -1598,5 +1598,6 @@ def home(request):
 	upcoming_conferences_nation = Conference.objects.filter(endDate__gte=now, national=True)
 	response["upcoming_inter"] = upcoming_conferences_inter
 	response["upcoming_nation"] = upcoming_conferences_nation
+	
 	return render(request, "home.djt",response)
 
