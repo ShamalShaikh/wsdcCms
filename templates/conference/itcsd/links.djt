@@ -106,8 +106,8 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_itcsd/ITCSD2019.doc' %}" target="blank">Brochure</a></li><br>
-                    <!-- <li><a href="{% static 'docs_cmfdp/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li> -->
+                    <li><a href="{% static 'docs_itcsd/b.doc' %}" target="blank">Brochure</a></li><br>
+                    <li><a href="{% static 'docs_itcsd/Template.doc' %}"> Abstract Template </a></li>
                     <!-- <br> -->
                     <!-- <li><a href="{% static 'docs_cmfdp/Fullpaper_Format_CTSEM2018_V01.docx' %}"> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li> -->
                     <!-- <br> -->

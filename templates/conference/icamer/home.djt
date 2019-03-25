@@ -82,7 +82,8 @@
                 <div class="well text-center" style="font-size:18px; color:red;">
                     <!-- <marquee BEHAVIOR="ALTERNATE">*All the authors from abroad can present their papers via video conference. This facility will not be extended for authors from India.*</marquee><br>
                     <marquee BEHAVIOR="ALTERNATE">*No further submission is allowed.*</marquee><br> -->
-                    <marquee BEHAVIOR="ALTERNATE">*Because of the tremondous response to the conference, there is a delay in the intimation of the decision. Papers are in review. Decision emails are being sent in a phased manner.*</marquee>
+                    <!-- <marquee BEHAVIOR="ALTERNATE">*Because of the tremondous response to the conference, there is a delay in the intimation of the decision. Papers are in review. Decision emails are being sent in a phased manner.*</marquee> -->
+                    <marquee BEHAVIOR="ALTERNATE">"The decision emails have been sent to all the authors who have submitted full papers for the conference".</marquee>
                 </div>
             </div>
         </div>

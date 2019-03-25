@@ -530,6 +530,21 @@
             <br>Psychologist</center>
         <br>
     </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/Veerenderdfs.jpg' %}" height="140px" width="110px"><br>
+                <b>
+                    <u>Prof. V.Satyanarayana</u>
+                </b>
+            </a>
+            <br>Principal uni. college of physical education kakatiya university waranga</center>
+        <br>
+    </div>
 </div>
 <hr>
 <div class="row">

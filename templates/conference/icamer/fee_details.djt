@@ -8,11 +8,11 @@
                 <span class="label label-primary">Registration Fee</span>
             </h2>
             <br>
-            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and
+           <!--  <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and
                 pay the requisite registration fee (as per the details given below). Atleast one author should register per
                 paper.
             </p>
-
+ -->
             <table class="table table-hover">
                 <tr class="active">
                     <td>Category</td>
@@ -52,11 +52,11 @@
     <div class="col-md-6">
         <h2>
             <center>
-                <span class="label label-primary">Account Details</span>
+                <span class="label label-primary">Registration Procedure</span>
             </center>
         </h2>
         <br/>
-        <b><center>Coming Soon</center></b>
+        <b><center><a href="{% static 'icamer/S_ ICAMER 2019.pdf' %}" target="_blank">Registration Procedure</a></center></b>
 
         <!--<p style="text-align:left;">Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Convener
             – INCEEE-2019 payable at Warangal or remitted through On-line / NEFT to the below mentioned Bank Account.</p>

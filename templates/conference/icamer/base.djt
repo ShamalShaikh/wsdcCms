@@ -56,7 +56,7 @@
                         <a href="/conference/{{conference.conference_alias}}/links">Downloads</a>
                     </li>
                     <li>
-                        <a href="/conference/{{conference.conference_alias}}/fees">Registration Fee</a>
+                        <a href="/conference/{{conference.conference_alias}}/fees">Registration</a>
                     </li>
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/dates">Important Dates</a>
@@ -70,18 +70,18 @@
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    {% if not request.user.is_authenticated %}
+                    <!-- {% if not request.user.is_authenticated %}
                     <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
                     {% else %}
                     <li>
                             <a href="/conference/{{conference.alias}}/dashboard/">UploadPaper</a>
-                    </li>
+                    </li> -->
                     <!--<li>
                         <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
                     </li> -->
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Payment
                             <span class="caret"></span>
                         </a>
@@ -97,7 +97,7 @@
                             </li>
                         </ul>
                     </li>
-                    {% endif %}
+                    {% endif %} -->
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
