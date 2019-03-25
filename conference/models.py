@@ -26,12 +26,22 @@ def get_zip_file_path(instance,filename):
 	return 'conference_zips/{0}/{1}'.format("".join(instance.contestant.username.split()),filename)
 
 def get_image_path(instance, filename):
+	import os
+	ext = os.path.splitext(value.name)[1]
+	filename = str(instance.conference.conference_alias) + "." + ext
 	return 'home_image/{0}/{1}'.format("".join(instance.conference.conference_alias, filename))
 
 def validate(value):
 	    import os
 	    ext = os.path.splitext(value.name)[1]
 	    valid_extentions = ['.pdf']
+	    if not ext in valid_extentions:
+	        raise ValidationError(u'File type is not supported')
+
+def validate_image(value):
+	    import os
+	    ext = os.path.splitext(value.name)[1]
+	    valid_extentions = ['.jpg','jpeg','.png']
 	    if not ext in valid_extentions:
 	        raise ValidationError(u'File type is not supported')
 
@@ -119,7 +129,7 @@ class Contest(models.Model):
 
 class HomePageImage(models.Model):
 	conference = models.ForeignKey(Conference)
-	image = models.ImageField(upload_to=get_image_path,null=True, blank=True)
+	image = models.ImageField(upload_to=get_image_path,null=True, blank=True,validators=[validate_image])
 
 	def __str__(self):
 		return conference.conference_alias
