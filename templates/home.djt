@@ -43,10 +43,10 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                        <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                        <a href="#">About Us</a>
                     </li>
                 </ul>
 
@@ -63,7 +63,7 @@
     		<div class="col-md-4 ">
 				<div class="grid mask">
 					<figure>
-						<img class="img-responsive" src="{% static 'images/gian.jpg' %}" alt="" width="200" height="200">
+						<h1 style="font-size: 50px;">{{upcoming_conf}}</h1>
 						<figcaption>
 							<b><p style="text-transform: capitalize; font-weight: bold;">{{upcoming_conf}}</p></b>
 						</figcaption>
@@ -73,6 +73,7 @@
 			</div>
 		{% endfor %}
 		{% endif %}
+        <!-- NAtiional Conference -->
 		{% if upcoming_nation %}
 		<h2><center><span class="label label-success">National Conferences</span></center></h2><br>
 		{% for upcoming_conf in upcoming_nation %}
@@ -80,9 +81,9 @@
 				<div class="grid mask">
 					
 					<figure>
-						<img class="img-responsive" src="{% static 'images/gian.jpg' %}" alt="" width="200" height="200">
+						<a href="/conference/{{upcoming_conf}}" style="font-size: 50px; text-transform: uppercase; text-decoration: none;">{{upcoming_conf}}</a>
 						<figcaption>
-							<b><p style="text-align: center; text-transform: uppercase; font-weight: bold;">{{upcoming_conf}}</p></b>	
+							<b><a href="/conference/{{upcoming_conf}}" style="text-align: center; text-transform: uppercase; font-weight: bold;">{{upcoming_conf}}</a></b>	
 						</figcaption>
 					</figure>
 					<br>
@@ -90,14 +91,5 @@
 			</div>
 		{% endfor %}
 		{% endif %}<br>
-
-		<div class="col-md-4 ">
-				<div class="grid mask">
-					<h1 style="font-size: 50px;">ICAM 2019</h1>
-					<p></p>
-				</div>
-			</div>
-
-		</div>
 </body>
 </html>
