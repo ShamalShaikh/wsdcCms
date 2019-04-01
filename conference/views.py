@@ -995,7 +995,7 @@ def tsscapply(request):
 
 #noieas
 def noieas(request):
-	conference = Conference.objects.get(conference_alias='noieas2019')
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
 	print conference
 	response = {}
 	response['conference']=conference
@@ -1014,7 +1014,7 @@ def noieas(request):
 	return render(request, 'conference/noieas/home.djt',response)
 
 def noieasabout(request):
-	conference = Conference.objects.get(conference_alias='noieas2019')
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
 	response={}
 	response['conference']=conference
 	response['alias']='NOIEAS-2019'
@@ -1025,7 +1025,7 @@ def noieasabout(request):
 	return render(request, 'conference/noieas/about.djt',response)
 
 def noieaslinks(request):
-	conference = Conference.objects.get(conference_alias='noieas2019')
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
 	response={}
 	response['conference']=conference
 	response['alias']='NOIEAS-2019'
@@ -1036,7 +1036,7 @@ def noieaslinks(request):
 	return render(request, 'conference/noieas/links.djt',response)
 
 def noieashotels(request):
-	conference = Conference.objects.get(conference_alias='noieas2019')
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
 	response={}
 	response['conference']=conference
 	response['alias']='NOIEAS-2019'
@@ -1048,7 +1048,7 @@ def noieashotels(request):
 
 @login_required(login_url='/signin/NOIEAS-2019')
 def noieasapply(request):
-	conference = Conference.objects.get(conference_alias='noieas2019')
+	conference = Conference.objects.get(conference_alias='NOIEAS-2019')
 	response={}
 	response['conference']=conference
 	response['alias']='NOIEAS-2019'
