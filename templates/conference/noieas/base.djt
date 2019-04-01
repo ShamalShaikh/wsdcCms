@@ -72,7 +72,7 @@
                     </li>
                     {% else %}
                     <li>
-                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                        <a href="/conference/{{conference.conference_alias}}/dashboard/">UploadPaper</a>
                     </li>
                     <li>
                         <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
