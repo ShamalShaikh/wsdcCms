@@ -1,0 +1,171 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="ui container">
+        <h2 class="ui center aligned icon header dash_header">
+          <i class="circular file text icon"></i>
+          Accomodation Upload
+        </h2>
+        <div class="ui divider"></div>
+        <h4>Accomodation Details:</h4>
+        <ol>
+            <li>See the options of accomodation and number of seats available</li>
+	    <li>You have to apply for accomodation individually,i.e, every member of the team has to fill the form and pay the accomodation charges.</li>
+            <li>Choose your accomodation accordingly and pay the applicable room fees to the account shown in account details in home page.</li>
+            <li>Fill the details below and upload your accomodation payment slip and wait for approval.</li>
+            <li>On approval of your accomodation you will receive an mail in the email id provided by you in the section below.</li>
+            <li>Accomodation at ISH (Dasa) Hostel is only for males. It is double occupancy per room.</li>
+            <li>Accomodation at Ladies Hostel is only for females. It's a common room with 5 beds per room.</li>
+            <li>Accomodation will be provided subject to availability and first comr first serve basis.</li>
+            <li>If all rooms are booked and accomodation is not available the payment will be refunded.</li>
+        </ol>
+        <div class="ui divider"></div>
+        <br>
+        <div class="ui top attached tabular menu">
+          <a class="active item" data-tab="first">Upload Accomodation Receipt</a>
+          <!--<a class="item" data-tab="second">Uploaded Receipts</a>--!>
+        </div>
+      <div class="ui bottom attached tab active segment" data-tab="first">
+          <div class="ui segment">
+        <h3>Available Houses</h3><hr><br>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Seats Available</th>
+              <th>Gender</th>
+              <th>Tariff (per person per day in Rs.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {% for house in houses %}
+		<tr>
+              <td>{{house.houseName}}</td>
+              <td>{{house.seatsAvailable}}</td>
+              <td style="text-transform: capitalize;">{{house.gender}}</td>
+              <td>{{house.tariff}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="ui fluid segment">
+        <form class="ui form" action="/conference/inceee2019/accomodation/" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="four wide field" style="margin-left: 33%;">
+            <label for="Name" >Your Name:</label>
+            <input name="Name" type="text" id="Name" required>
+          </div>
+          <div class="four wide field" style="margin-left: 33%;">
+            <label for="email" >Your Email: (confirmation will be sent to this email id)</label>
+            <input name="email" type="text" id="email" required>
+          </div>
+          <div class="field" style="margin-left: 33%;">
+              <label  for="hostelType">Select Hostel:</label>
+              <select name="house" style="width: 300px;">
+                {% for house in houses %}
+		{% if house.seatsAvailable > 0 %}
+                <option value="{{house}}">{{house.houseName}}</option>
+		{% endif %}
+                {%endfor%}
+              </select>
+            </div>
+              <br> 
+              <div class="field" style="margin-left:20%;margin-right:5%;display: inline-block;">
+                <label  for="startDate">Select Start Date:</label>
+                <input type="date" name="startDate" style="width: 300px;" id="startDate" required>
+              </div>
+	      <div class="field" style="display: inline-block;">
+                <label for="endDate" >Select End Date:</label>
+                <input type="date" name="endDate" style="width: 300px;" id="endDate" required>
+              </div>
+              <br>
+              <div class="four wide field" style="margin-left: 33%;">
+                  <label for="paper_id" >PaperID (if any)</label>
+                  <input name="paper_id" type="text" id="paper_id">
+              </div>
+              <div class="four wide field" style="margin-left: 33%;">
+                  <label for="refno" >Accomodation Payment Reference Number</label>
+                  <input name="refno" type="text" id="refno" required>
+              </div>
+              <br>
+              <div class="field" style="margin-left: 33%;">
+                  <label for="pay_receipt" >Upload Accomodation Payment Receipt</label>
+                  <input name="pay_receipt" type="file" id="pay_receipt" class="ui button blue" required>
+              </div>
+              <div style="margin-left: 40%;"><br><br>
+              <button class="ui button green" type="submit" id="uploadPaper">Submit</button>
+              </div>
+        </form>
+      </div>
+	<!-- <div class="ui fluid segment">		
+		<center><h3>No new papers can be uploaded now. Deadline for abstract submission is Reached. Only Final Papers can be uploaded now.</h3></center>
+	</div> -->
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+
+          <div class="ui segment">
+              {% if paid %}
+              <table class="ui celled table">
+                <thead>
+                  <tr>
+                    <th>House Choice</th>
+                    <th>Receipt</th>
+                    <th>Status</th>
+                    <th>Remark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for paid in paid %}
+                    <tr>
+                      <td>{{paid.house_choice}}</td>
+                      <td><a href="/media/{{paid.payment_receipt}}">Receipt</a></td>
+                      <td>
+                        {% if not paid.is_aprooved and not paid.is_rejected %}
+                          Review Pending
+                        {% endif %}
+                        {% if paid.is_aprooved %}
+                        Approved
+                        {% endif %}
+                        {% if paid.is_rejected %}
+                        Rejected
+                        {% endif %}
+                      </td>
+                      <td>{% if paid.review %}
+                            {{paid.review}}
+                          {% else %}
+                            No remark yet
+                          {% endif %}
+                      </td>
+                    </tr>
+                  {%endfor%}
+
+                </tbody>
+              </table>
+              {%else%}
+              <center><h3>No Receipts Uploaded !!!</h3></center>
+              {% endif %}
+            </div>
+
+          
+
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    $('.menu .item')
+  .tab()
+;
+  $('.ui.dropdown')
+  .dropdown()
+;
+
+$(".reupload_btn").click(function(){
+  $('.small.modal.pop_up1').modal('show');
+  var pid=$(this).attr('pid');
+  $('#paperid').val(pid);
+})
+
+</script>
+{% endblock %}
+                    

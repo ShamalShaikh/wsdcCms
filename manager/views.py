@@ -395,6 +395,7 @@ def export_xls(request, cid):
 	    (u"Email",6000),
 	    (u"Institute",10000),
 	    (u"Department",6000),
+	    (u"Designation",6000),
 	    (u"Conference", 9000),
 		(u"Payment Status", 6000),
 		(u"Payment Ref No.", 9000),
@@ -504,6 +505,7 @@ def export_xls(request, cid):
 		email = reg_conf.user.email
 		institute = reg_conf.user.profile.institute
 		department = reg_conf.user.profile.department
+		designation = reg_conf.user.profile.designation
 		#title = paper.papername
 		#localTime =  paper.submissionDate+datetime.timedelta(hours=5,minutes=30)
 		#timestamp = str(localTime.strftime('%d-%m-%Y %I:%M %p'))
@@ -562,13 +564,13 @@ def export_xls(request, cid):
 
 		if multiple_paper : 
 			for paper in multiple_paper : 
-				dataRow = [nameOfPerson, paper[0], paper[1], paper[2], gender, contact, email, institute, department,
+				dataRow = [nameOfPerson, paper[0], paper[1], paper[2], gender, contact, email, institute, department,designation,
 							confname, payment,refno,localTime]
 				for col_num in xrange(len(columns)) :
 					ws.write(row_num, col_num, dataRow[col_num], font_style)
 				row_num += 1
 		else :
-			dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,
+			dataRow = [nameOfPerson, paperName, paperRefNo, paperType, gender, contact, email, institute, department,designation,
 							confname, payment,refno,localTime]
 			for col_num in xrange(len(columns)) :
 					ws.write(row_num, col_num, dataRow[col_num], font_style)

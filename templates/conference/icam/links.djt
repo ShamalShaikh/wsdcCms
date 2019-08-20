@@ -106,8 +106,8 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-                    <li><a href="{% static 'docs_icam/icam.docx' %}" target="blank">Brochure</a></li><br>
-                    <!-- <li><a href="{% static 'docs_cmfdp/Extended_Abstract_CTSEM2018_Format.docx' %}"> Extended Abstract <span style="color:red;">(Last Date: March 26, 2018)</span></a></li> -->
+                    <li><a href="{% static 'docs_icam/ICAM5_1.pdf' %}" target="blank">Brochure</a></li><br>
+                    <li><a href="{% static 'docs_icam/ICAM_2.docx' %}">Abstract <span style="color:red;">(Last Date: 31-7-2019)</span></a></li>
                     <!-- <br> -->
                     <!-- <li><a href="{% static 'docs_cmfdp/Fullpaper_Format_CTSEM2018_V01.docx' %}"> Final Paper <span style="color:red;">(April 23, 2018)</span> </a></li> -->
                     <!-- <br> -->
@@ -152,7 +152,7 @@
 
                                 <br><br>
 
-                                <b>E-mail : </b>icam5nitw@gmail.com<br>
+                                <b>E-mail : </b>icam5@nitw.ac.in<br>
                                 gvsnr@nitw.ac.in <br>
                                 nn@nitw.ac.in <br>
                                 

@@ -46,11 +46,11 @@ urlpatterns = [
 	url(r'^tssc2018/hotels/$',views.tsschotels),
 	url(r'^tssc2018/apply/$',views.tsscapply),
 	#noieas2019
-	url(r'^noieas2019/$',views.noieas),
-	url(r'^noieas2019/about/$',views.noieasabout),
-	url(r'^noieas2019/links/$',views.noieaslinks),
-	url(r'^noieas2019/hotels/$',views.noieashotels),
-	url(r'^noieas2019/apply$$',views.noieasapply),
+	url(r'^NOIEAS-2019/$',views.noieas),
+	url(r'^NOIEAS-2019/about/$',views.noieasabout),
+	url(r'^NOIEAS-2019/links/$',views.noieaslinks),
+	url(r'^NOIEAS-2019/hotels/$',views.noieashotels),
+	url(r'^NOIEAS-2019/apply$$',views.noieasapply),
 
 	#inceee2019
 	url(r'^inceee2019/$',views.inceee),
@@ -75,6 +75,12 @@ urlpatterns = [
 	url(r'^icamer2019/hotels/$', views.icamerhotels),
 	url(r'^icamer2019/dates/$', views.icamerdates),
 	url(r'^icamer2019/fees/$', views.icamerfees),
+	# ic2sv
+	url(r'^ic2sv/$',views.ic2sv),
+	url(r'^ic2sv/about/$',views.ic2svabout),
+	url(r'^ic2sv/links/$',views.ic2svlinks),
+	url(r'^ic2sv/hotels/$',views.ic2svhotels),
+	url(r'^ic2sv/apply/$',views.ic2svapply),
 
 	# url(r'^metallography_contest/$',views.metallography_contest),
 	# url(r'^registerForContest/$',views.registerForContest),

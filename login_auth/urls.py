@@ -12,6 +12,9 @@ urlpatterns = [
 	#TSSC-2018
 	url(r'^tssc/$',RedirectView.as_view(url='/conference/tssc2018/')),
 	url(r'^tssc2018/$',RedirectView.as_view(url='/conference/tssc2018/')),
+	# ic2sv
+	url(r'^ic2sv/$',RedirectView.as_view(url='/conference/ic2sv/')),
+	url(r'^ic2sv2019/$',RedirectView.as_view(url='/conference/ic2sv/')),
 
 	#TSSC-2018
 	url(r'^inceee/$',RedirectView.as_view(url='/conference/inceee2019/')),

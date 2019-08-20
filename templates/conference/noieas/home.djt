@@ -75,16 +75,15 @@
     </div>
 
     <!-- Call to Action Well -->
-    <!-- <hr>
+    <hr>
         <div class="row">
             <div class="col-lg-12">
-                <div class="well text-center" style="font-size:10px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                <div class="well text-center" style="font-size:50px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations Are Closed !!!</marquee>
                 </div>
             </div>
         </div>
-        <hr> -->
-
+        <hr>
 
     <div class="row">
         <div class="col-md-12" style="line-height:30px;font-size:17px;">
