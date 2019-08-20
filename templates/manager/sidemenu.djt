@@ -13,7 +13,11 @@
 		{% endif %}
 
 		<!-- NOIEAS-2019 Conference -->
+<<<<<<< HEAD
 		{% ifequal conference.alias 'NOIEAS-2019' %}
+=======
+		{% ifequal conference.alias 'NOIEAS-201' %}
+>>>>>>> 279e030bda03ead600444bc8d3e3a5eeca097719
 			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/3">Papers<div class="ui teal left pointing label">{{papercount}}</div></a>
 			<a class="item" href="/manager/conference_landing/{{conference.conference_id}}/4">Final Submissions<div class="ui teal left pointing label">{{finalsubcount}}</div></a>
 		{% endifequal %}

@@ -1,0 +1,566 @@
+{% extends "conference/ic2sv/base.djt" %} {% load staticfiles %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style type="text/css">
+    .speakers {
+        font-family: 'Raleway', sans-serif;
+    }
+    
+</style>
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="110px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+        </center>
+        <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;">
+                    <b>International Conference on</b>
+                </p>
+                <p style="font-size:20px; color: #31b150;">
+                    <b>Communications, Signal Processing and VLSI </b>
+                </p>
+                <p style="font-size:20px;color: #002360;">
+                    <b>(IC2SV2019)</b>
+                </p>
+                <p style="font-size:15px;color: #ff0300;">
+                    <b>On the occasion of Diamond Jubilee of NIT Warangal</b>
+                </p>
+
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+            </center>
+        </div>
+    </div>
+    <BR>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-6">
+            <center>
+                <h3 style="color:blue;">
+                    <b>OCT 26th - 27th, 2019</b>
+                </h3>
+                <hr>
+                <h4>
+                    <b>Organised by</b>
+                    <br>
+                    <br> Department of ELectronics And Communication Engineering
+                    <br>
+                    <br> National Institute of Technology
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+                <hr>
+                <!-- <h4>
+                    <b>Sponsored By</b>
+                    <br>
+                    <br> TEQIP III
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4> -->
+            </center>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+
+    <!-- Call to Action Well -->
+    <!-- <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+			<b><u>UPDATES</u></b>
+		    <br><a href="https://drive.google.com/open?id=1GlfnAxqmVC_d9BeGOBzF3nVElMmX559P" target="_blank"> <u>Conference Photos</u></a>
+                    <br><a href="{% static 'docs_inceee/INCEEE_CULTURAL_EVENT.docx' %}" target="_blank"> <u>INCEEE 2019 Cultural Programme</u> </a>
+                    <br><a href="{% static 'docs_inceee/Instructions.docx' %}" target="_blank"> <u>General Instructions</u> </a>
+                    <br><a href="{% static 'docs_inceee/nitw_route_map.jpg' %}" target="_blank"> <u>NITW Campus Route Map</u> </a>
+                    <br><a href="{% static 'docs_inceee/Overall_Schedule_INCEEE2019.docx' %}" target="_blank"> <u>Overall Schedule of the conference</u> </a>
+                    <br><a href="{% static 'docs_inceee/Session_wise_presentation_details.docx' %}" target="_blank"> <u>Session-wise presentation details</u> </a>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">CONFERENCE THEME</span>
+                </center>
+            </h2>
+            <br>
+            <center><b>Emerging Trends, Innovations, and Challenges in Communications, Signal Processing and VLSI</b></center>
+        </div>
+    </div>
+     <hr> 
+     <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">ABOUT AND SCOPE OF THE CONFERENCE</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                The   2019   First   International   Conference   on   Communications, Signal Processing and VLSI (IC2SV 2019) will be held at National Institute of Technology Warangal, Warangal, Telangana, India. The Conference creates a network of various key players in the field of advances in computers and electronics around the globe. Speakers from various industries, institutions, and research laboratories will give the technical impact of their expertise. The conference also bring to meet new colleagues, collect new ideas and establish new cooperation between research groups and provide a platform for researchers from academic and industry to present their original work and exchange ideas, information, techniques and applications in the field of advances in computers and electronics.  All selected papers will be published in Springer volume.
+
+        </div>
+    </div>
+     <hr> 
+     <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">ABOUT THE INSTITUTE AND DEPARTMENT</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                National Institute of Technology, Warangal (Deemed University), formerly known as Regional Engineering College, was established in 1959. The Institute currently has thirteen academic departments and a few advanced research centers in various disciplines of engineering, pure sciences and management. 
+The Department of Electronics and Communication Engineering is one of the country’s largest ECE departments among all NITs in India and one of the largest departments of the National Institute of Technology, Warangal (NITW). The department of ECE offers broad range of programs that include undergraduate (B.Tech) and post graduate (M.Tech) in Electronics Instrumentation, VLSI System design, Communication Systems and research (Ph.D) programs.
+
+
+            
+        </div>
+    </div>
+     <hr> 
+     <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success"> PRELIMINARY CALL FOR PAPERS</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                Original contributions from researchers describing their original, unpublished, research contribution which is not currently under review by another conference or journal and addressing state-of-the-art research are invited to share their work in all areas of Advances in Electronics and Communications. Topics of interest include, but are not limited to, the following areas:
+
+
+                <div class="col-md-3">Analog Communication
+Cellular Communication
+Digital Communication
+Optical Communication
+Satellite Communication
+RF & Microwave
+Photonics  </div>
+
+
+<div class="col-md-3">
+ Speech Processing
+Video Processing
+Signal processing
+Image Processing
+Information Processing 
+</div> 
+
+
+<div class="col-md-3">
+Embedded Systems
+FPGA Based Systems
+Internet of Things
+Real Time Systems
+Machine Learning
+Robotics
+Single Board Computer Systems
+</div>   
+
+<div class="col-md-3">
+DSP Architecture
+FPGA Architecture
+Low Power VLSI Circuits
+Device Compact Modeling
+Device-Circuit co-design
+Novel Memory elements
+</div>
+
+
+
+            
+        </div>
+    </div>
+     <hr> 
+<div class="row">
+    <!-- /.col-md-6 -->
+    
+    <div class="col-md-6" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">IMPORTANT DATES</span>
+            </center>
+        </h2>
+        <br>
+        <table class="table table-hover">
+            <tr class="active">
+                <td>Submission Deadline</td>
+                <td>31st August 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Notification of Acceptance of Papers</td>
+                <td>30th Sept 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Camera Ready Paper Submission</td>
+                <td>7th OCT 2019</td>
+            </tr>
+            <tr class="active">
+                <td>Author Registration</td>
+                <td>10th OCT 2019</td>
+            </tr>
+        </table>
+        <br>
+        <!-- <h1> Link to Upload Papers </h1>
+        <a href="https://ocs.springer.com/misc/home/IC2SV2019">Click Here</a> -->
+    </div>
+
+
+
+    <div class="col-md-6" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-primary">REGISTRATION DETAILS* </span>
+            </h2>
+            <br>     
+                 
+(* Papers will be available in online proceedings only if any one of the authors presents the paper)  
+
+            
+
+            <table class="table table-hover">
+                
+                <tr class="active">
+                    <td></td>
+                    <td>Author</td>
+                    <td>Participant </td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>Student Members</td>
+                    <td>INR 3000</td>
+                    <td>INR 1500</td>
+                    
+
+                </tr>
+
+                <tr class="active">
+                    <td>International Student Members</td>
+                    <td>USD 100</td>
+                    <td>USD 50 </td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>Faculty Members </td>
+                    <td>INR 4000</td>
+                    <td>INR 2000</td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>International Faculty Members</td>
+                    <td>USD 200</td>
+                    <td>USD 100</td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>Industry Members  </td>
+                    <td>INR 6000</td>
+                    <td>INR 3000</td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>International Industry Members </td>
+                    <td> USD 300</td>
+                    <td>USD 150 </td>
+                    
+                </tr>
+
+            </table>
+
+        </center>
+    </div>
+
+   <!--  <div class="col-md-6">
+        <h2>
+            <center>
+                <span class="label label-primary">Account Details</span>
+            </center>
+        </h2>
+        <br>
+
+        <p style="text-align:left;">Registration fee may be sent in the form of DD in favor of Convener
+            – INCEEE-2019 payable at Warangal or remitted through On-line / NEFT to the below mentioned Bank Account.</p>
+
+
+        <table class="table table-hover">
+            <tr rowspan="6" class="active">
+                <td>Account Namee</td>
+                <td>Convener – INCEEE-2019</td>
+            </tr>
+            <tr class="active">
+                <td>Account No.</td>
+                <td>38011574154</td>
+            </tr>
+            <tr class="active">
+                <td>Bank</td>
+                <td>State Bank of India</td>
+            </tr>
+
+            <tr class="active">
+                <td>Branch</td>
+                <td>RECWarangal (NIT Campus)</td>
+            </tr>
+            <tr class="active">
+                <td>Branch Code</td>
+                <td>20149</td>
+            </tr>
+            <tr class="active">
+                <td>IFSC</td>
+                <td>SBIN0020149</td>
+            </tr>
+            <tr class="active">
+                <td>MICR Code</td>
+                <td>506002030</td>
+            </tr>
+            <tr class="active">
+                <td>SWIFT Code</td>
+                <td>SBININBBH14</td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+<hr>
+ 
+<hr>
+
+<!-- row -->
+<div class="row">
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <center>
+                <h4>
+                    <b>PATRON </b>
+                </h4>
+                <p style="font-size:17px;">Prof. N V Ramana Rao
+                    <br> Director
+                    <br> National Institute of Technology, Warangal</p>
+            </center>
+        </div>
+        <!-- <div class="col-md-4">
+            <center>
+                <h4>
+                    <b>Head Of Department </b>
+                </h4>
+                <p style="font-size:17px;">Prof. Shirish H. Sonawane</p>
+            </center>
+        </div> -->
+        <div class="col-md-6">
+            <center>
+                <h4>
+                    <b>GENERAL CHAIR  </b>
+                </h4>
+                <p style="font-size:17px;">Prof. N. Bheema Rao
+                <br>HoD, ECE, NIT Warangal, India</p>
+            </center>
+        </div>
+        <!-- <div class="col-md-4">
+            <center>
+                <h4>
+                    <b>Coordinators</b>
+                </h4>
+                <p style="font-size:17px;">Prof. A. Venu Vinod
+                    <br>Dr. P. V. Suresh
+                    <br>Dr. S. Muralimohan
+            </center>
+        </div> -->
+        <br>
+    </div>
+    <!-- <div class="col-md-3"></div> -->
+
+</div>
+
+<br>
+<br>
+
+
+<div class="row">
+    <!-- /.col-md-6 -->
+    
+    <div class="col-md-6" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">ADVISORY COMMITTEE</span>
+            </center>
+        </h2>
+        <ul>
+
+            <li>Dr. Anand Bulusu, IIT Roorkee</li>
+            <li>Prof. K. N. Kundekar, IIITDM Jabalpur</li>
+            <li>Prof. Satyabrat Jit, IIT BHU</li>
+            <li>Dr. Rohit Y. Sharma, IIT Ropar</li>
+            <li>Dr. Yogesh Singh Chauhan, IIT Kanpur</li>
+            <li>Sri. Vemuri Hanuman Sai, Austria Microsystems, Hyderabad</li>
+            <li>Prof. R. A. Mishra, MNNIT Allahabad</li>
+            <li>Prof. Rajoo Pandey, NIT Kurukshetra</li>
+            <li>Prof DVLN Somayajulu, IIIT Kurnool</li>
+            <li>Prof. N. V. S. N. Sarma, IIIT Trichy</li>
+            <li>Prof. T. Kishore Kumar, NIT Warangal, India</li>
+            <li>Prof. L. Anjaneyulu, NIT Warangal, India</li>
+            <li>Prof. C. B. Rama Rao, NIT Warangal, India</li>
+            <li>Prof. Laxminidhi T, NIT Karnataka Surathkal</li>
+            <li>Prof. Dharmendra Boolchandani, NIT Jaipur</li>
+            <li>Prof. Jyothi Singhania, NIT Bhopal</li>
+            <li>Prof. Siddhardh Desmukh, NIT Rourkela</li>
+            <li>Sri . M. V.  Krishna Reddy, Texas Instruments, Bangalore</li>
+   
+            </ul>
+        
+    </div>
+
+
+
+    <div class="col-md-6" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-primary">TECHNICAL PROGRAM COMMITTEE </span>
+            </h2>
+            
+
+        </center>
+        <ul>
+              <li>Smt Renuka, Director, Cadence Design Systems, USA</li>
+<li>Dr Mir M,  Silicon Austria Labs, Austria</li>
+<li>Prof SudebDasGupta, IIT Roorkee</li>
+<li>Dr S K Bandari, Seol National University, South Korea</li>
+<li>Prof R P Yadav, MNITJaipur</li>
+<li>Prof K K Mahapatra, NIT Rourkela</li>
+<li>Sri S V Rao, Director, AMD, Hyderabad</li>
+<li>Dr. B. Lakshmi, NIT Warangal, India</li>
+<li>Dr. T. V. K. Hanumantha Rao, NIT Warangal, India</li>
+<li>Dr. P. Sreehari Rao, NIT Warangal, India</li>
+<li>Sri Krishnamahesh, TexasInstruments, Bangalore</li>
+<li>Dr. A. Prakasa Rao, NIT Warangal, India</li>
+<li>Dr. P. Muralidhar, NIT Warangal, India</li>
+<li>Dr. D. Vakula, NIT Warangal, India</li>
+<li>Dr. V. V. Mani, NIT Warangal, India</li>
+<li>Dr. J. Ravi Kumar, NIT Warangal, India </li>
+<li>Dr. S. Anuradha, NIT Warangal, India</li>
+<li>Dr Suresh, Sankalpsemiconductorss, Bangalore</li>  
+            </ul>
+    </div>
+</div>  
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">ORGANIZING COMMITTEE</spa$ </h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-9 col-md-offset-3">
+            <ul>
+                <li>Program Co-chairs:Prof. T. Kishore Kumar, Dr.B. Lakshmi, Dr. P.Sreehari Rao</li>
+<li>Organizing Co-chairs:Prof. L. Anjaneyulu,Dr. A. Prakasa Rao, Dr. V.V. Mani</li>
+<li>Keynote Co-chairs:Prof. C. B. Rama Rao,Dr. T. V. K. Hanumantha Rao, Dr. D. Vakula, </li>
+<li>Tutorial Co-chairs:Dr. P. Muralidhar, Dr. S. Anuradha,</li>
+<li>Publication Co-chairs: Dr. J. Ravi Kumar, Dr. Shivam Verma, Dr. Himansu Shekar Pradhan</li>
+<li>Finance Co-chairs: Sri. M.V. Raghunath, Sri. P. H. K. Prasad, Dr. M. Satish</li>
+<li>Publicity Co-chairs:  Sri. K.V.Sridhar, Dr. G. Arun Kumar, Dr. Kalpana Naidu</li>
+<li>Industrial Co-chairs:  Sri. K. Ravi Kishore, Dr. Prakash Kodali, Dr. Rahul Pandya</li>
+<li>Hospitality Co-chairs:, Smt. P Prithvi, Smt. V. Rama, Sri K  Sarangam</li>
+<li>Registration Co-chairs:Dr. B. K. N. Srinivasarao, Dr. Atul Kumar Nishad</li>
+<li>Website Co-chairs: Sri. S.K.L.V. Sai Prakash, Dr. Mohammad Farukh Hashmi, Dr. Gopiram</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</BR>
+</div>
+</BR>
+
+<!-- INSTRUCTION LIST  -->
+<div id="instructions" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <br>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <h4 style="color:black;">&#9679 Steps to register</h4>
+                <hr>
+                <ol>
+                    <li>Click on register tab at the top</li>
+                    <li>Fill in the details and click on register</li>
+                    <li>Login with your credentials</li>
+                    <li>Congrats !!! You are succesfully registered on website</li>
+                </ol>
+                <hr>
+                <hr>
+                <h4 style="color:black;">&#9679; Steps for applying for conference</h4>
+                <hr>
+                <ol>
+                    <li>After registering on the website, login with your credentials</li>
+                    <li>Click on UploadPaper tab to upload the abstract of your paper.
+                        <br>
+                        <b>(*In case you are not presenting the paper skip to the payment step.)</b>
+                    </li>
+                    <li>You can then check the status of your abstract there.</li>
+                    <li>After the acceptance of your abstract you can proceed to the payment step.</li>
+                </ol>
+                <hr>
+                <hr>
+
+
+                <h4 style="color:black;">&#9679; Steps for Payment</h4>
+                <hr>
+                <ol>
+                    <li>Upon acceptance of the abstract, the author has to pay the full registration fee and submit filled-in
+                        registration form which can be downloaded from the website. (
+                        <a href="/conference/{{conference.conference_alias}}/links" target="blank">click here</a>)</li>
+                    <li>The payment of the registration fee is through NEFT/Demand Draft. The detials of online payment are given
+                        on the conference webiste. (
+                        <a href="/conference/{{conference.conference_alias}}/#fee_div" target="blank">click here</a>)
+                        <br>
+                        <b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.The details of the
+                            author must be written on the back side of the Demand Draft)</b>
+                    </li>
+                    <li>Select "Upload payment Receipt" in Payment tab option from the top menu bar. </li>
+                    <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
+                    <li>You can check the status of your payment approval there.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

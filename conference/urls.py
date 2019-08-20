@@ -75,6 +75,12 @@ urlpatterns = [
 	url(r'^icamer2019/hotels/$', views.icamerhotels),
 	url(r'^icamer2019/dates/$', views.icamerdates),
 	url(r'^icamer2019/fees/$', views.icamerfees),
+	# ic2sv
+	url(r'^ic2sv/$',views.ic2sv),
+	url(r'^ic2sv/about/$',views.ic2svabout),
+	url(r'^ic2sv/links/$',views.ic2svlinks),
+	url(r'^ic2sv/hotels/$',views.ic2svhotels),
+	url(r'^ic2sv/apply/$',views.ic2svapply),
 
 	# url(r'^metallography_contest/$',views.metallography_contest),
 	# url(r'^registerForContest/$',views.registerForContest),

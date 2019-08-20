@@ -34,6 +34,7 @@
       <table class="ui celled table" id="allTable">
           <thead>
             <tr>
+              <th>Paper Ref No.</th>
             <th>Name</th>
             <th>Institute</th>
             <th>Department</th>
@@ -46,6 +47,7 @@
           <tbody>
             {% for profile, paper in displayUsers %}
               <tr>
+                <td>{{paper.paperRefNum}}</td>
               <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
               <td>{{profile.institute}}</td>
               <td>{{profile.department}}</td>

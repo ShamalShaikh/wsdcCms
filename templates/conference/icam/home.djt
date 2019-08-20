@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ICAM'19</title>
+    <title>ICAM5'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -24,6 +24,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+       /* .blink{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}*/
+    </style>
 
 </head>
 
@@ -117,7 +129,7 @@
                 <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
                 <p style="font-size:20px;color: #002360;"><b>INTERNATIONAL CONFERENCE ON</b></p>
                 <p style="font-size:20px; color: #31b150;"><b>Advances in Minerals, Metals, Materials, Manufacturing and Modelling </b></p>
-                <p style="font-size:20px;color: #002360;"><b>(ICAM - 2019)</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(ICAM<sup>5</sup> - 2019)</b></p>
                 <p style="font-size:15px;color: #002360;"><b>On the occasion of Diamond Jubliee Celebrations Of NIT Warangal</b></p>
                 <!-- <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p> -->
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
@@ -152,12 +164,13 @@
         <!-- /.row -->
 
         <!-- Call to Action Well -->
-        <!-- <div class="row">
+    </BR>
+        <div class="row">
             <div class="col-lg-12">
-                <div class="well text-center" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Last date for full length paper submission is extended to 25th December ss2018</marquee>
+                <div class="well text-center blink" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Last date for abstract submission has been extended to 20th August 2019</marquee>
                 </div>
-            </div> -->
+            </div>
             <!-- /.col-lg-12
         </div> -->
         <!-- /.row -->
@@ -167,7 +180,7 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Overview of the Conference</span></center></h2><br>
                 <p style="text-align:justify">
-                            The conference is being organized by the department as a part of institute’s diamond jubilee celebrations. The very purpose of the conference is to provide a platform for the academicians, scholars, researchers and industries to discuss and disseminate the knowledge created in minerals processing, new materials development, materials degradation and computational materials modelling. Further to discuss the advances and challenges in thematic areas. 
+                            The International Conference on Advances in Minerals, Metals, Materials, Manufacturing and Modelling  2019 (ICAM5-2019) is being organized by the department as a part of institute’s diamond jubilee celebrations. The very purpose of the conference is to provide a platform for the academicians, scholars, researchers and industry personal from all around the globe to discuss and disseminate the knowledge created in minerals processing, materials development, materials degradation and computational materials modelling. ICAM5 is structured around several thematically focused sessions during which participants present their work and discuss the advances and challenges in these thematic areas. Several world-renowned experts from the thematic areas have already confirmed to share their years of knowledge and wisdom during the plenary and keynote lectures sessions with the participants during ICAM5. The organizing committee also encourages those who are not presenting their work, also to benefit from the discussions and networking opportunities offered by ICAM<sup>5</sup>.
                         </p><br>
                 </div>
             </div>
@@ -202,7 +215,8 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
                 <p style="text-align:justify">
-                	Authors should submit an abstract of their original, unpublished work in not exceeding 300 words in the attached format. The abstract must be mailed to icam5nitw@gmail.com</p>
+                	Authors are invited to submit an abstract of original, unpublished work not exceeding 300 words. The abstract format can be downloaded from the conference website. The abstract must be submitted through conference website on or before 31.07.2019.
+                </p>
                 
             </div>
         </div>
@@ -210,9 +224,61 @@
 	<div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <h2><center><span class="label label-success">Publication of proceedings</center></h2><br>
-                <p style="text-align:justify">Efforts are being made to publish the peer-reviewed papers in SCI/Scopus indexed/ reputed journals. Please check the website regularly for the updates.
+                <p style="text-align:justify">
+                    After peer review, acceptance of the abstract will be intimated to the participants. Upon the notification of acceptance, authors need to complete the registration along with the fee payment on or before 30.08.2019. Selected full papers from registered participants will be published in the conference proceedings/SCOPUS/SCI indexed journals.
                 </p>
 	    </div>
+        <!-- <hr>
+    <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Awards</center></h2><br>
+                <p style="text-align:justify">
+                    A number of awards are awaiting! In each session, the best presenter will be honoured with cash prize and certificate. The best paper presentation award will be conferred on the selected author(s) of papers presented at the conference.
+
+                </p>
+                    
+        </div> -->
+         <hr>
+    <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Sponsorship</center></h2><br>
+                <p style="text-align:justify">
+                    
+                    Various opportunities of sponsorship are available in ICAM5. The tariffs of each category of sponsorship and the benefits are displayed in website. The prospective sponsors are requested to contact the organizers.
+                </p>
+                    
+        </div>
+        hr>
+    <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Metallography contest </center></h2><br>
+                <p style="text-align:justify">
+                    Metallography contest is organized for students/ scholars where black&white/color micrographs displaying interesting microstructures obtained using optical/ electron microscopes. The selected micrographs will be awarded cash prize. However, participant should be a registered delegate of the conference. Further details can be obtained from the conference website.
+                    
+                </p>
+                    
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Accommodation and Travel</center></h2><br>
+                <p style="text-align:justify">
+                    
+                    The expenses towards travel and accommodation shall be borne by the participants. Accommodation can be arranged on payment basis in the hotels. The details of the hotels and the tariff will be provided in the conference website. A limited number of participants can be accommodated in the institute Visitors’ Block which can be allotted on first-cum-first basis on payment.
+                </p>
+                    
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">How to reach?Nearby airport:</center></h2><br>
+                <p style="text-align:justify">
+                  <center>  
+                    Rajiv Gandhi International airport, Hyderabad (3h from Warangal)<br>
+Nearby railway station: 
+Kazipet (KZJ) 2 km from NIT, Warangal <br>
+Warangal (WL) 12 km from NIT, Warangal
+                </p>
+                </center>    
+        </div>
 	    <!-- <center>
 	    <div class="col-md-12">
 	    	<img src="{% static 'docs_cmfdp/ijmems.jpg' %}">
@@ -237,24 +303,24 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Abstract Submission</td>
-                        <td>10 Jun 2019</td>
+                        <td><strike>31st July 2019</strike><br> 20th August 2019</td>
                     </tr>
                     <tr class="active">
-                        <td>Acceptance of Abstract</td>
-                        <td>30 Jun 2019</td>
+                        <td>Notification of Acceptance</td>
+                        <td><strike>5th August 2019</strike><br> 23th August 2019</td>
                     </tr>
                     <tr class="active">
-                        <td>Full paper submission</td>
-                        <td>15 Jul 2019</td>
+                        <td>Full paper submission<br></td>
+                        <td><strike>30th August 2019</strike><br> 31st August 2019</td>
                     </tr>
                     <tr class="active">
                         <td>Early bird Registration</td>
-                        <td>15 Aug 2019</td>
+                        <td>31st August 2019</td>
                     </tr>
-                    <tr class="active">
+                    <!-- <tr class="active">
                         <td>Registration deadline</td>
                         <td>15 Sep 2019</td>
-                    </tr>
+                    </tr> -->
                 </table>
                 <br>
                 <!-- <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
@@ -291,11 +357,11 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Account Name</td>
-                        <td>Convener- ICAM5</td>
+                        <td>ICAM</td>
                     </tr>
                     <tr class="active">
                         <td>Account No</td>
-                        <td>x</td>
+                        <td>38293706440</td>
                     </tr> 
                     <tr class="active">
                         <td>Bank and Branch</td>
@@ -320,9 +386,9 @@
                     </tr>
                     
                 </table>
-                <b>Payments to be made through DD.</b>
+                <b>Payment also could be made through DD.</b>
                 <br><br>
-                <p>DD is to be drawn in favor of “Conference Chair” payable at Warangal.</p>
+                <p>DD is to be drawn in favor of “ICAM5 warangal” payable at Warangal.</p>
                 </center>
 
             </div>
@@ -336,7 +402,7 @@
                     National Institute of Technology Warangal - 506 004, <br>
                     Telangana State, India.<br>
                     Phone: 0870-2462521  Fax: 0870-2459547<br>
-                    E-mail: icam5nitw@gmail.com<br>
+                    E-mail: icam5@nitw.ac.in<br>
                     Website: http://cms.nitw.ac.in/conference/icam2019/
 
                 </p>
@@ -360,33 +426,33 @@
                     <td>Others (USD)</td>
                 </tr>
                 <tr class="active">
-                    <td>Academia and R&D centers</td>
-                    <td>2500</td>
+                    <td>Academia &R&D</td>
+                    <td>4000</td>
                     <td>200</td>
-                    <td>3000</td>
+                    <td>5000</td>
                     <td>250</td>
 
                 </tr>
 
                 <tr class="active">
-                    <td>Industry delegates</td>
-                    <td>5000</td>
-                    <td>300</td>
+                    <td>Industry participants</td>
                     <td>6000</td>
+                    <td>300</td>
+                    <td>7500</td>
                     <td>350</td>
                 </tr>
                 <tr class="active">
-                    <td>Research Scholars</td>
+                    <td>Students/ Scholars</td>
                     <td>1500</td>
                     <td>100</td>
                     <td>2000</td>
                     <td>150</td>
                 </tr>
                 <tr class="active">
-                    <td>Accompanying /Non-presenting Persons</td>
-                    <td>1500</td>
+                    <td>Accompanying person</td>
+                    <td>2500</td>
                     <td>100</td>
-                    <td>2000</td>
+                    <td>3000</td>
                     <td>150</td>
                 </tr>
 
@@ -400,9 +466,8 @@ Registration fee along with the accommodation fee (if required) may be sent in t
             </div>
 
             <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-default">BEST PAPER PRESENTATION AWARD</span></center></h2><br>
-                <p>
-                    "Best Paper Presentataion Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                <br><h2><center><span class="label label-default"> AWARDS</span></center></h2><br>A number of awards are awaiting! In each session, the best presenter will be honoured with cash prize and certificate. The best paper presentation award will be conferred on the selected author(s) of papers presented at the conference.
+               
                 </p>
             </div>
         </div>
@@ -438,7 +503,7 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                 </div>
                 <div class="col-md-6">
                     <center>
-                    <h4><b>Conference Chair</b></h4>
+                    <h4><b>Chairman</b></h4>
                     <p style="font-size:17px;">Dr. C. Vanitha <br> 
                         Head of the Department<br>National Institute of Technology, Warangal</p>
                     </center>
@@ -448,7 +513,7 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                 <hr>
                <div class="col-md-4">
                     <center>
-                        <h4><b>Organising Secretary</b></h4>
+                        <h4><b>Conveners</b></h4>
                         <p style="font-size:17px;">Prof. G. V. S. Nageswara Rao <br>
                         Prof. N. Narasaiah <br>
                         </p>
@@ -456,22 +521,33 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                 </div>
                 <div class="col-md-4 col-md-offset-4">
                     
-                    <h4><b>Organizing Committee</b></h4> 
+                    <h4><b>Coordinators</b></h4> 
                     <p style="font-size:17px;">
 
                     
-                        Dr. Asit Kumar Khanra <br>
+                        
                         Dr. Mahesh Kumar Talari <br> 
-                        Dr. Nagumouthu Kishore Babu <br>
+                        
                         Dr. G. Brahma Raju <br>
-                        Dr. B. Srinivasa Rao <br>
-                        Dr. Ajoy Kumar Pandey <br>
-                        Dr. R. Arockia Kumar <br>
-                        Dr. V. Rangadhara Chary <br>
-                        Dr. Mithipati Siva Bhaskar <br>
-                        Dr. Varam Sreedevi <br>
+                        
+                        
+                        
                         Dr. Avishkar Bhaurao Rathod <br>
-                        Dr. Uma Maheswara Rao Seelam <br>
+                        Dr. Varam Sreedevi <br>
+                    </p>
+
+                    <h4><b>Members</b></h4> 
+                    <p style="font-size:17px;">
+
+                    Dr. Asit Kumar Khanra<br>
+Dr. Nagumothu Kishore Babu<br>
+Dr. B. Srinivasa Rao<br>
+Dr. Ajoy Kumar Pandey<br>
+Dr. R. Arockia Kumar<br>
+Dr. V. Rangadhara Chary<br>
+Dr. Uma Maheswara Rao Seelam<br>
+                    </p>
+
 
 
                     </ul>
@@ -485,24 +561,34 @@ Registration fee along with the accommodation fee (if required) may be sent in t
             
             
             <div class="col-md-12">
-                <center><h2><span class="label label-success">Technical Advisory Committee</span></h2></center>
+                <center><h2><span class="label label-success">Advisory Committee</span></h2></center>
             <br>
                 
                     <div class="col-md-12" style="font-size:17px;">
-                        <center><h3><span class="label label-info">National</span></h3></center>
+                        <!-- <center><h3><span class="label label-info">National</span></h3></center> -->
                         <br>
                         <ul>
-                            <li>Dr. Vikas Kumar Director, DRDO-DMRL</li>
+                            <li>Dr.Vikas Kumar, Director, DMRL</li>
                             <li>Dr. N. Eswara Prasad, Director, DMSRDE</li>
                             <li>Dr. G. Padmanabhan, Director, ARCI</li>
-                            <li>Dr. Dinesh Srivatsava, CoE, NFC</li>
-                            <li>Dr. T. Jayakumar, DRDO-DMRL</li>
+                            <li>Dr. Dinesh Srivatsava, C&CE, NFC</li>
+                            <li>Dr. A. K. Bhaduri, Director, IGCAR</li>
+                            <li>Prof. Pramod M Padole, Director, VNIT</li>
+                            <li>Dr. T. Jayakumar, DMRL</li>
                             <li>Dr. G. Amarendra, IGCAR</li>
-                            <li>Prof. C. Surayanarayana UCF, USA</li>
-                            <li>Prof. Ramana G Reddy</li>
-                            <li>Sri. Rout, Vizag Steel</li>
+                            <li>Prof. C. Surayanarayana, UCF, USA</li>
+                            <li>Prof. Ramana G Reddy, UoA, USA</li>
+                            <li>Prof. Mohamad Kamal Harun, UiTM, Malaysia</li>
+                            <li>Dr. T. Venugopal, MD, Welding Alloys Sdn Bhd, Malaysia</li>
+                            <li>Dr. Prakash Srirangam, University of Warwick, UK</li>
                             <li>Prof. K. Hono, NIMS, Japan</li>
                             <li>Prof. G. V. S. Sastry, IIT-BHU</li>
+                            <li>Prof. K. Bhanu Sankara Rao, UoH</li>
+                            <li>Dr. Vivekanand Kain, BARC</li>
+                            <li>Prof. Raghu Prasad, IITM</li>
+                            <li>Prof. B. S. Murty, IITM</li>
+                            <li>Prof. Satyam Suwas, IISc.</li>
+                            <li>Prof. G. Phani Kumar, IITM</li>
                             
                         </ul>
                     </div>
@@ -543,7 +629,7 @@ Registration fee along with the accommodation fee (if required) may be sent in t
                                     National Institute of Technology Warangal - 506 004, <br>
                                     Telangana State, India<br>
                                 WARANGAL - 506004, TS<br>
-                                <b>Email : </b>icam5nitw@gmail.com  <br>
+                                <b>Email : </b>icam5@nitw.ac.in<br>
                                 <b>Phone : </b> +91-0870-2462521<br>
                                 <b>Fax: </b>+91-0870-2459547 <br>
                             </div>
