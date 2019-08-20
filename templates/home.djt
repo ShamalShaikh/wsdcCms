@@ -63,9 +63,10 @@
     		<div class="col-md-4 ">
 				<div class="grid mask">
 					<figure>
-						<h1 style="font-size: 50px;">{{upcoming_conf}}</h1>
+						<a href="/conference/{{upcoming_conf
+                    }}" style="font-size: 50px; text-decoration: none;">{{upcoming_conf}}</a>
 						<figcaption>
-							<b><p style="text-transform: capitalize; font-weight: bold;">{{upcoming_conf}}</p></b>
+							<b><a href="/conference/{{upcoming_conf}}" style="text-transform: capitalize; font-weight: bold;">{{upcoming_conf}}</a></b>
 						</figcaption>
 					</figure>
 					<br>
@@ -73,7 +74,7 @@
 			</div>
 		{% endfor %}
 		{% endif %}
-        <!-- NAtiional Conference -->
+        <!-- National Conference -->
 		{% if upcoming_nation %}
 		<h2><center><span class="label label-success">National Conferences</span></center></h2><br>
 		{% for upcoming_conf in upcoming_nation %}
@@ -81,15 +82,16 @@
 				<div class="grid mask">
 					
 					<figure>
-						<a href="/conference/{{upcoming_conf}}" style="font-size: 50px; text-transform: uppercase; text-decoration: none;">{{upcoming_conf}}</a>
-						<figcaption>
-							<b><a href="/conference/{{upcoming_conf}}" style="text-align: center; text-transform: uppercase; font-weight: bold;">{{upcoming_conf}}</a></b>	
-						</figcaption>
-					</figure>
+                        <a href="/conference/{{upcoming_conf}}" style="font-size: 50px; text-decoration: none;">{{upcoming_conf}}</a>
+                        <figcaption>
+                            <b><a href="/conference/{{upcoming_conf}}" style="text-transform: capitalize; font-weight: bold;">{{upcoming_conf}}</a></b>
+                        </figcaption>
+                    </figure>
 					<br>
 				</div><!-- /grid-mask -->
 			</div>
 		{% endfor %}
-		{% endif %}<br>
+		{% endif %}
+    </div>
 </body>
 </html>
