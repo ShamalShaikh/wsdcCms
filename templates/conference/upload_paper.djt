@@ -16,12 +16,14 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          {% ifnotequal conference.conference_alias "rames2018" %}
+          {% if conference.conference_alias != "rames2018" or conference.conference_alias != "icam2019" %}
           <a class="active item" data-tab="first">Upload Abstract</a>
+          <!-- {% ifnotequal conference.conference_alias "icam2019" %} -->
           <a class="item" data-tab="second">Upload Final Paper</a>
+          <!-- {% endifnotequal %} -->
           {% else %}
           <a class="active item" data-tab="first">Upload Paper</a>
-          {% endifnotequal %}
+          {% endif %}
         </div>
       <div class="ui bottom attached tab active segment" data-tab="first">
           <div class="ui segment">
