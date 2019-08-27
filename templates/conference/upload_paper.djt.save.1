@@ -16,9 +16,10 @@
         <div class="ui divider"></div>
         <br>
         <div class="ui top attached tabular menu">
-          {% if conference.conference_alias != "rames2018" or conference.conference_alias != "icam2019" %}
+          {% if conference.conference_alias != "rames2018" and conference.conference_alias != "icam2019" %}
           <a class="active item" data-tab="first">Upload Abstract</a>
           <a class="item" data-tab="second">Upload Final Paper</a>
+	  {% elif conference.conference_alias == 
           {% else %}
           <a class="active item" data-tab="first">Upload Paper</a>
           {% endif %}
