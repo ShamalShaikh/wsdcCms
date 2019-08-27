@@ -85,11 +85,6 @@
                             {% endif %}
                         </ul>
                     </li>
-                    {% if request.user.is_authenticated %}
-                    <li>
-                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
-                    </li>
-                    {% endif %}
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
