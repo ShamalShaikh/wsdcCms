@@ -164,7 +164,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center blink" style="font-size:20px; color:red;">
-                    <marquee BEHAVIOR="ALTERNATE">Last date for abstract submission has been extended to 20th August 2019</marquee>
+                    <marquee BEHAVIOR="ALTERNATE">Last date for abstract submission has been extended to 15th September 2019</marquee>
                 </div>
             </div>
             <!-- /.col-lg-12
@@ -564,6 +564,8 @@ Dr. Uma Maheswara Rao Seelam<br>
                         <!-- <center><h3><span class="label label-info">National</span></h3></center> -->
                         <br>
                         <ul>
+			    <li>Dr. S V Kamat, DG(NS&M), DRDO</li>
+			    <li>Dr. Dinesh Srivastsava, C&CE, NFC</li>
                             <li>Dr.Vikas Kumar, Director, DMRL</li>
                             <li>Dr. N. Eswara Prasad, Director, DMSRDE</li>
                             <li>Dr. G. Padmanabhan, Director, ARCI</li>
@@ -578,6 +580,7 @@ Dr. Uma Maheswara Rao Seelam<br>
                             <li>Dr. T. Venugopal, MD, Welding Alloys Sdn Bhd, Malaysia</li>
                             <li>Dr. Prakash Srirangam, University of Warwick, UK</li>
                             <li>Prof. K. Hono, NIMS, Japan</li>
+			    <li>Dr. G Malakondaiah, DS-CC R&D (HR&M), DRDO </li>
                             <li>Prof. G. V. S. Sastry, IIT-BHU</li>
                             <li>Prof. K. Bhanu Sankara Rao, UoH</li>
                             <li>Dr. Vivekanand Kain, BARC</li>

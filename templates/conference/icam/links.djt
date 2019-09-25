@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ITCSD'19</title>
+    <title>ICAMf'19</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -69,7 +69,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                        {# <a href="/conference/{{alias}}/dashboard/">UploadPaper</a> #}
                     </li>
                     {% endif %}
                     <li>

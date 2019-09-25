@@ -10,7 +10,7 @@
                 <br>
                 <h4><b>
                     <ol>
-                        <li><a href="{% static 'docs_ic2sv/ece.docx' %}" target="_blank">Brochure</a></li><br>
+                        <li><a href="{% static 'docs_ic2sv/ece.pdf' %}" target="_blank">Brochure</a></li><br>
                         <!-- <li>Registration Form ( <a href="{% static 'docs_inceee/inceee2019_reg_form.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_reg_form.docx' %}" target="_blank">doc</a> )</li><br> 
                         <li>Abstract Template ( <a href="{% static 'docs_inceee/inceee2019_abstract_template.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_abstract_template.doc' %}" target="_blank">doc</a> )</li><br>            
                         <li><a href="{% static 'docs_inceee/inceee2019_full_paper_template.doc' %}" target="_blank">Full Paper Template </a></li><br>

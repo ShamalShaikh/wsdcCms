@@ -53,7 +53,7 @@
         <div class="col-md-6">
             <center>
                 <h3 style="color:blue;">
-                    <b>OCT 26th - 27th, 2019</b>
+                    <b>OCT 23rd - 24th, 2019</b>
                 </h3>
                 <hr>
                 <h4>
@@ -210,19 +210,19 @@ Novel Memory elements
         <table class="table table-hover">
             <tr class="active">
                 <td>Submission Deadline</td>
-                <td>31st August 2019</td>
+                <td>15th Sept 2019</td>
             </tr>
             <tr class="active">
                 <td>Notification of Acceptance of Papers</td>
-                <td>30th Sept 2019</td>
+                <td>1st Oct 2019</td>
             </tr>
             <tr class="active">
                 <td>Camera Ready Paper Submission</td>
-                <td>7th OCT 2019</td>
+                <td>7th Oct 2019</td>
             </tr>
             <tr class="active">
                 <td>Author Registration</td>
-                <td>10th OCT 2019</td>
+                <td>15th Oct 2019</td>
             </tr>
         </table>
         <br>
@@ -239,60 +239,83 @@ Novel Memory elements
             </h2>
             <br>     
                  
-(* Papers will be available in online proceedings only if any one of the authors presents the paper)  
+(* Papers will be available in Springer volume online proceedings only if any one of the authors presents the paper)<br>
+(*Limited accommodation may be provided on payment basis in the Institute Visitors Block depending on availability
+and on first come first serve basis @ Rs.1500/- per day.)<br>
+<table class="table table-hover">
+                <tr class="active">
+                    <td rowspan="2">Category</td>
+                    <td colspan="2">Early Bird Registration up to 10-10-2019</td>
+                    <td colspan="2">Regular registration</td>
+                </tr>
+                <tr class="active">
+                    <td>Indian(₹)</td>
+                    <td>International($)</td>
+                    <td>Indian(₹)</td>
+                    <td>International($)</td>
+                </tr>
+                <tr class="active">
+                    <td>Academia &R&D</td>
+                    <td>3000</td>
+                    <td>200</td>
+                    <td>4000</td>
+                    <td>250</td>
 
-            
-
-            <table class="table table-hover">
-                
-                <tr class="active">
-                    <td></td>
-                    <td>Author</td>
-                    <td>Participant </td>
-                    
-                </tr>
-                <tr class="active">
-                    <td>Student Members</td>
-                    <td>INR 3000</td>
-                    <td>INR 1500</td>
-                    
-
                 </tr>
 
                 <tr class="active">
-                    <td>International Student Members</td>
-                    <td>USD 100</td>
-                    <td>USD 50 </td>
-                    
+                    <td>Industry </td>
+                    <td>6000</td>
+                    <td>300</td>
+                    <td>7000</td>
+                    <td>350</td>
                 </tr>
                 <tr class="active">
-                    <td>Faculty Members </td>
-                    <td>INR 4000</td>
-                    <td>INR 2000</td>
-                    
+                    <td>Students/ Scholars (Author)</td>
+                    <td>3000</td>
+                    <td>100</td>
+                    <td>3000</td>
+                    <td>100</td>
                 </tr>
                 <tr class="active">
-                    <td>International Faculty Members</td>
-                    <td>USD 200</td>
-                    <td>USD 100</td>
-                    
-                </tr>
-                <tr class="active">
-                    <td>Industry Members  </td>
-                    <td>INR 6000</td>
-                    <td>INR 3000</td>
-                    
-                </tr>
-                <tr class="active">
-                    <td>International Industry Members </td>
-                    <td> USD 300</td>
-                    <td>USD 150 </td>
-                    
+                    <td>Delegate(Non-Author)</td>
+                    <td>1500(student)<br>2500 (Others)</td>
+                    <td>50</td>
+                    <td>1500(student)<br>2500 (Others)</td>
+                    <td>50</td>
                 </tr>
 
             </table>
 
         </center>
+    </div>
+    <hr>
+    <hr>
+        <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success"> Mode of payment (Online transfer)</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:center;">Account Name: ICCSV2019<br>
+Account No: 38737965494<br>
+Name of the Bank: State Bank of India<br>
+Branch: REC Warangal (NIT Campus)<br>
+Branch Code: 20149<br>
+IFSC Code: SBIN0020149<br>
+MICR Code: 506002030<br>
+Please use this google form link for registration purpose after payment only. <a href="https://cutt.ly/7w3Gq6f">https://cutt.ly/7w3Gq6f</a><br>
+                </p>
+
+
+
+
+
+            
+        </div>
     </div>
 
    <!--  <div class="col-md-6">
@@ -346,7 +369,7 @@ Novel Memory elements
 </div> -->
 <hr>
  
-<hr>
+
 
 <!-- row -->
 <div class="row">

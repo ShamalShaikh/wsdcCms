@@ -74,9 +74,9 @@
                         <a href="https://ocs.springer.com/misc/home/IC2SV2019">Paper Submission</a>
                     </li>
                     {% if not request.user.is_authenticated %}
-                    <li>
+                    <!-- <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
-                    </li>
+                    </li> -->
 
                     {% else %}
                     <li>
