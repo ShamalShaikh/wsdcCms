@@ -1,3 +1,4 @@
+
 # wsdc-devathon-cms
 
 ## Instructions to run
@@ -9,5 +10,4 @@ python manage.py migrate
 python manage.py createsuperuser
 
 python manage.py runserver
-
 
