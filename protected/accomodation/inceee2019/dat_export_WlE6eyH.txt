@@ -1,0 +1,1 @@
+export PATH="$PATH:/home/code/.dat/releases/dat-13.11.4-linux-x64"
