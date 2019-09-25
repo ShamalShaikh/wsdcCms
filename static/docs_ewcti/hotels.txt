@@ -1,0 +1,165 @@
+table border="1" cellpadding="0" cellspacing="0" style="width:959px">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>S.No</strong></p>
+			</td>
+			<td>
+			<p><strong>Hotel</strong></p>
+			</td>
+			<td>
+			<p><strong>Contact No</strong></p>
+			</td>
+			<td>
+			<p><strong>Address</strong></p>
+			</td>
+			<td>
+			<p><strong>Distance from NIT Warangal<br />
+			(km)</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>1</p>
+			</td>
+			<td>
+			<p>Sri Hima Residency</p>
+			</td>
+			<td>
+			<p>(0870)-2456522,&nbsp;<br />
+			9000341177,&nbsp;<br />
+			9550570993</p>
+			</td>
+			<td>
+			<p>Opp to NITW Main gate</p>
+			</td>
+			<td>
+			<p>0.1</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>3</p>
+			</td>
+			<td>
+			<p>Haritha Kakatita,&nbsp;<br />
+			AP Tourism</p>
+			</td>
+			<td>
+			<p>(0870) 2562236<br />
+			AP Tourism Online Payment</p>
+			</td>
+			<td>
+			<p>Nakkalagutta, Hanamkonda</p>
+			</td>
+			<td>
+			<p>2.5</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>4</p>
+			</td>
+			<td>
+			<p>Suprabha Hotel</p>
+			</td>
+			<td>
+			<p>(0870) 2573888,<br />
+			9293783781</p>
+			</td>
+			<td>
+			<p>Nakkalagutta, Hanamkonda</p>
+			</td>
+			<td>
+			<p>2.5</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>5</p>
+			</td>
+			<td>
+			<p>Hotel Landmark</p>
+			</td>
+			<td>
+			<p>(0870)-2546222</p>
+			</td>
+			<td>
+			<p>Nakkalagutta, Hanamkonda</p>
+			</td>
+			<td>
+			<p>3</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>7</p>
+			</td>
+			<td>
+			<p>Ashoka Hotel</p>
+			</td>
+			<td>
+			<p>+91-870-2578491 /&nbsp;<br />
+			2578492 /&nbsp;<br />
+			2578493 / 2578494</p>
+			</td>
+			<td>
+			<p>Main Road, Hanamkonda</p>
+			</td>
+			<td>
+			<p>5</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>9</p>
+			</td>
+			<td>
+			<p>City Grand Hotel</p>
+			</td>
+			<td>
+			<p>(0870)-2454587</p>
+			</td>
+			<td>
+			<p>Near Kakatiya Medical College, Warangal</p>
+			</td>
+			<td>
+			<p>8</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>10</p>
+			</td>
+			<td>
+			<p>Ratna Hotel</p>
+			</td>
+			<td>
+			<p>(0870)-2500645</p>
+			</td>
+			<td>
+			<p>Pochamma Maidan, Warangal</p>
+			</td>
+			<td>
+			<p>10</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>11</p>
+			</td>
+			<td>
+			<p>Surya Hotel</p>
+			</td>
+			<td>
+			<p>(0870) 2441834</p>
+			</td>
+			<td>
+			<p>Railway Station Road, Warangal</p>
+			</td>
+			<td>
+			<p>11</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
