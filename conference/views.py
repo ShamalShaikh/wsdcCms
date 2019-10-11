@@ -335,10 +335,10 @@ def final_paper(request,alias):
 
 
 def nhtff(request):
-	conference = Conference.objects.get(conference_alias='nhtff2018')
+	conference = Conference.objects.get(conference_alias='nhtff2020')
 	response = {}
 	response['conference']=conference
-	response['alias']='nhtff2018'
+	response['alias']='nhtff2020'
 	images = Conf_Image.objects.filter(conf_id=conference)
 	response['images']=images
 
@@ -350,10 +350,10 @@ def nhtff(request):
 	return render(request, 'conference/nhtff/home.djt',response)
 
 def nhtffabout(request):
-	conference = Conference.objects.get(conference_alias='nhtff2018')
+	conference = Conference.objects.get(conference_alias='nhtff2020')
 	response={}
 	response['conference']=conference
-	response['alias']='nhtff2018'
+	response['alias']='nhtff2020'
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
 		if len(payment)==1 :
@@ -361,10 +361,10 @@ def nhtffabout(request):
 	return render(request, 'conference/nhtff/about.djt',response)
 
 def nhtfflinks(request):
-	conference = Conference.objects.get(conference_alias='nhtff2018')
+	conference = Conference.objects.get(conference_alias='nhtff2020')
 	response={}
 	response['conference']=conference
-	response['alias']='nhtff2018'
+	response['alias']='nhtff2020'
 	if request.user.is_authenticated : 
 		payment = Payment.objects.filter(user=request.user, conf_id=conference)
 		if len(payment)==1 :
