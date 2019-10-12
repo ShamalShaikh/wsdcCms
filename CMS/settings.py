@@ -92,6 +92,17 @@ from databases import DATABASES
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.mysql',
+#         'NAME': 'treat17',
+#         'USER': 'root',
+#         'PASSWORD': 'mysql_password',
+#         'HOST': 'localhost', 
+#     }
+# }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
