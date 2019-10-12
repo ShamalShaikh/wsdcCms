@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Conference Management System</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'main/semantic.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/reset.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/site.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/container.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/grid.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/image.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/menu.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/divider.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/segment.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/form.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/input.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/button.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/list.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/message.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/icon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/dropdown.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/accordion.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/button.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/icon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/sidebar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/components/transition.css' %}">
+
+  <script src="{% static 'main/jquery-2.2.4.min.js' %}"></script>
+  <script src="{% static 'main/semantic.js' %}"></script>
+  <script src="{% static 'main/components/form.js' %}"></script>
+  <script src="{% static 'main/components/transition.js' %}"></script>
+  <script src="{% static 'main/components/dropdown.js' %}"></script>
+   <script src="{% static 'main/components/accordion.js' %}"></script>
+   <script src="{% static 'main/semantic.min.js' %}"></script>
+</head>
+<body>
+<div class="ui inverted stackable menu" style="background: black; height:50px;">
+
+  <a href="#" class="item"></a>
+  <div class="right menu">
+    <a class="item" href="/conference/{{conference.conference_alias}}/">Home</a>
+    {% if request.user.is_authenticated %}
+    {% ifnotequal conference.conference_alias "tssc2018" %}
+    <a class="item" href="/conference/{{conference.conference_alias}}/dashboard/">Upload Paper</a>
+    {% endifnotequal %}
+    <a class="item" href="/signout/{{conference.conference_alias}}">Logout</a>
+    {%else%}
+    <a class="item" href="/signin/{{conference.conference_alias}}">Login</a>
+    <a class="item" href="/Register/{{conference.conference_alias}}">Signup</a>
+    {% endif %}
+  </div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>

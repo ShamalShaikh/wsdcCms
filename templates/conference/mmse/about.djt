@@ -1,0 +1,226 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MMSE'18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/mmse2018">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/mmse2018/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/mmse2018/links">Download Links</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <!-- <a href="/profile/1/">Profile</a>  -->
+                       <a href="">Hi, {{request.user.username}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">About The Institute</span></center></h2><br>
+                <p style="color:black">
+                   The National Institute of Technology (formerly Regional Engineering College), Warangal, established in the year 1959, is the first among the 31 NIT’s in the country setup as joint venture of the Government of India and the state government. Over the years the college has established itself as a premier Institution imparting technical education of a very high standard.  It is located on the Hyderabad – Warangal National Highway at a distance of 3 kms from Kazipet Railway station and 12 kms from Warangal Railway station.  Participants are advised to alight either at Kazipet or Warangal depending upon the train of travel.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">About The Department</span></center></h2><br>
+            <p>
+               The Department of Mathematics is a highly reputed Departments which functions with excellence as its motto.  The Department was started in the year 1959 along with other Engineering and Science Departments and has established itself as a dynamic center for academic and research activities. In addition to the teaching of courses in Mathematics for B.Tech and M.Tech Programs, the Department offers two P.G. Programs, M.Sc (Applied Mathematics) and M.Sc (Mathematics and Scientific Computing).  At present, 20 Research Scholars are working for their Ph.D. The Department has a full-fledged computation laboratory to meet the requirements of the M.Sc. students, research scholars and the faculty. The Department has so far produced 100 Ph.D.&#39;s and conducted more than 50 Conferences / Seminars / Workshops / STTP&#39;s, two international conferences and Two GIAN programs. AICTE recognized the department as QIP center for Ph.D.
+            </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">ABOUT WARANGAL</span></center></h2><br>
+            <p>
+              Warangal is about 135 kms from Hyderabad, the capital of Telangana. It is well connected by rail and road. It is well known as an educational center. Once, the capital of the great Kakatiya Kingdom and earlier known as Orugallu or Ekasilanagaram, Warangal still retains its importance as the cultural center of the Telangana. It finds an important place in the tourist map of Telangana. with sites of archaeological significance like the Warangal Fort, Thousand Pillars Temple, Bhadrakali Temple and Ramappa Temple. The three lakes namely Ramappa, Pakhal and Laknavaram and the Wild Life 
+            </p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">About Prof G. Radhakrishnamacharya</span></center></h2><br>
+            <p>
+              Prof. G. Radhakrishnamacharya is a senior Professor of mathematics and has been associated with RECW/NITW for the last 34 years. He obtained his M.Sc. from S. V. University and secured I rank. He obtained his Ph.D. degree from the prestigious IIT Kharagpur. His areas of research are fluid mechanics, bio-fluid mechanics and heat and mass transfer. H has guided 11 Ph.D. students and 50 M.Sc. students for their dissertations. He has published nearly 80 papers in reputed international/national journals. He has given invited talks/ endowment / popular lectures on diverse topics of Mathematics at various institutes like IIT Kanpur, NIT Trichy, NIT Bhopal. He has served the institute in various capacities like Head of the Department, Chief Warden, Registrar, Dean (Student Affairs), Dean (Academic Affairs) and member of Board of Governors on NITW.
+            </p>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : mmse2018.nitw@gmail.com</b><br>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Contact:</b></h4>
+                                <b>Dr. D. SRINIVASACHARYA</b><br>
+                                CONFERENCE CHAIR, MMSE 2018<br>
+                                DEPARTMENT OF MATHEMATICS<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506 004, TS<br>
+                                <b>Mobile : </b>+91 - 9849187249
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+{% extends "conference/noieas/base.djt" %} {% load staticfiles %} {% block content %}
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="110px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+        </center>
+        <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;">
+                    <b>INTERNATIONAL CONFERENCE ON</b>
+                </p>
+                <p style="font-size:20px; color: #31b150;">
+                    <b>NUMERICAL OPTIMIZATION IN ENGINEERING AND SCIENCES</b>
+                </p>
+                <p style="font-size:20px;color: #002360;">
+                    <b>(NOIEAS-2019)</b>
+                </p>
+                <p style="font-size:15px;color: #ff0300;">
+                    <b>On the eve of Diamond Jubilee Celebrations of NIT(REC) Warangal</b>
+                </p>
+
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+            </center>
+        </div>
+    </div>
+    <BR>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-6">
+            <center>
+                <h3 style="color:blue;">
+                    <b>19 -21 June, 2019</b>
+                </h3>
+                <hr>
+                <h4>
+                    <b>Organised by</b>
+                    <br>
+                    <br> Department Of Mathematics
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+                <hr>
+                <h4>
+                    <b>Sponsored under</b>
+                    <br>
+                    <br> TEQIP III
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+            </center>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+
+    <!-- Call to Action Well -->
+    <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:50px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations Are Closed !!!</marquee>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Themes of NOIEAS-2019</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                The conference focusses on the latest developments in the field of Numerical Optimization. The subject has wide applications
+                in Engineering as well as Sciences. The conference is also aims at providing an interactive platform to the
+                academia, researchers and the industry. Participations from different industries, universities and academic
+                institutions from all over the country and abroad are anticipated. The organizing committee hereby invites
+                scientists / technologists engaged in basic as well as applied research from the Universities, Research Institutions
+                and Industries to participate. The scientific sessions will comprise plenary talks, invited talks, technical
+                talks and contributed papers (both oral and posters) on the following sections:
+                <p>
+                    <b>1. Sciences</b>
+                </p>
+                <p>
+                    <b>2. Civil Engineering</b>
+                </p>
+                <p>
+                    <b>3. Electrical Engineering</b>
+                </p>
+                <p>
+                    <b>4. Mechanical Engineering</b>
+                </p>
+                <p>
+                    <b>5. Chemical Engineering</b>
+                </p>
+                <p>
+                    <b>6. Other Engineering Branches</b>
+                </p>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- /.col-md-6 -->
+        <div class="col-md-6" id="dates">
+            <h2>
+                <center>
+                    <span class="label label-primary">Accommodation</span>
+                </center>
+            </h2>
+            <br>
+            <p style="text-align:justify;"> Limited Accommodation on FIFS basis for outstation participants will be provided on request in the Institute
+                Visitor&#39;s Block on payment basis. Many hotels are available in the City. One can book a room online.The
+                list of hotels are available
+                <a href="hotels">here</a>
+            </p>
+        </div>
+        <div class="col-md-6" id="dates">
+            <h2>
+                <center>
+                    <span class="label label-primary">Important Dates</span>
+                </center>
+            </h2>
+            <br>
+            <table class="table table-hover">
+                <tr class="active">
+                    <td>Last date of paper Submission</td>
+                    <td>April 10, 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Notification of Acceptance</td>
+                    <td>APRIL 18, 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Camera-Ready Submission of Accepted Papers</td>
+                    <td>May 15, 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Registration of Accepted Papers</td>
+                    <td>April 19 - May 15, 2019</td>
+                </tr>
+                <tr class="active">
+                    <td>Conference Dates</td>
+                    <td>JUNE 19 -21, 2019</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-6" id="fee_div">
+            <center>
+                <h2>
+                    <span class="label label-primary">Conference Language</span>
+                </h2>
+                <br>
+                <p style="text-align:justify;">The conference presentations and deliberations will be in English.</p>
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <h2>
+                <center>
+                    <span class="label label-primary">Paper Submissions</span>
+                </center>
+            </h2>
+            <br>
+            <p style="text-align:justify;">Papers for submission (6 pages only) need to be prepared in the Springer format using the templates available
+                online. Authors of accepted papers will be allowed to resubmit their camera ready papers after incorporating
+                blind peer review comments within the stipulated deadline. Authors need to register themselves in the conference
+                and present their papers personally. Papers presented at NOIEAS 2019 will be published in SCI / Scopus indexed
+                Journals. Each paper should satisfy the Plagiarism test of the respective journals. Template:
+                <a href="{% static 'docs_noieas/template.pdf' %}" target="_blank">click here</a>
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6" id="fee_div">
+            <center>
+                <h2>
+                    <span class="label label-primary">Registration</span>
+                </h2>
+                <br>
+                <p>Conference registration can be done by sending the filled registration form with FEE.</p>
+                <div class="col-md-6">
+                    <img src="{% static 'images/NOIEAS_FEE.png' %}" display="block" height="400px" width="550px">
+                </div>
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <h2>
+                <center>
+                    <span class="label label-primary">Account Details</span>
+                </center>
+            </h2>
+            <br>
+            <ul>
+                <li style="text-align:left;">Conference kit includes conference bag, tag, Abstracts & CD, access to events in the conference program,
+                    Conference Dinner, Tea/Coffee, Snacks and Lunch on all three days of the conference.</li>
+                <br>
+                <li style="text-align:left;"> The registration fee excludes accommodation charges.</li>
+            </ul>
+            <br>
+            <center>
+                <b>Registration fee may be remitted through Online/NEFT to the Bank Account given below.</b>
+            </center>
+            <br>
+            <table class="table table-hover">
+                <tr rowspan="6" class="active">
+                    <td>Account Name</td>
+                    <td>CONVENOR, NOIEAS</td>
+                </tr>
+                <tr class="active">
+                    <td>Account No</td>
+                    <td>37996305530</td>
+                </tr>
+                <tr class="active">
+                    <td>Bank and Branch</td>
+                    <td>State Bank of India, REC Warangal (NIT Campus)</td>
+                </tr>
+
+                <tr class="active">
+                    <td>Branch Code</td>
+                    <td>20149</td>
+                </tr>
+                <tr class="active">
+                    <td>IFSC Code</td>
+                    <td>SBIN0020149</td>
+                </tr>
+                <tr class="active">
+                    <td>SWIFT Code</td>
+                    <td>SBININBBH14</td>
+                </tr>
+                <tr class="active">
+                    <td>MICR Code</td>
+                    <td>506002030</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <center>
+                <h2>
+                    <span class="label label-success">INTERNATIONAL ADVISORY COMMITTEE</span>
+                </h2>
+            </center>
+            <br>
+            <div class="row" style="font-size:15px;">
+                <ul>
+                    <li>Prof. Kalyanmoy Deb, Michigan State University, USA</li>
+                    <li>Prof. Lipo Wang, NTU, Singapore</li>
+                    <li>Prof. Mehmet Orgun, Macquarie University, Australia</li>
+                    <li>Prof. Patrick Siarry, University of Paris, France</li>
+                    <li>Prof. P.N. Suganthan, NTU, Singapore</li>
+                    <li>Prof. R.N. Mohapatra, Central University of Florida, USA</li>
+                    <li>Prof. Singiresu S. Rao, University of Miami, USA</li>
+                    <li>Prof Marijana Zekić -Suśac, University of Osijek, Croatia</li>
+                    <li>Prof.  Atulya K Nagar, Liverpool Hope Univ, UK</li>
+                    <li>Prof. S G Ahmed, Zagazig University, Egypt</li>
+                    <li>Prof Kishore Pochi Raju, Stevens Inst of Tech, N Jersey,USA</li>
+                    <li>Mr. Kishore K (Google, Mountain View)</li>
+                    <li>Prof V Charles , University of Buckingham, UK</li>
+                    <li>Prof Upmanu Lall, Colombia University, USA</li>
+                    <li>Prof Tony Sheu, National Taiwan University, Taiwan</li>
+                    <li>Prof Don T Philips, Texas A&M University, USA</li>
+                    <li>Prof James J Solberg, Purdue University, USA</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <center>
+                <h2>
+                    <span class="label label-success">NATIONAL ADVISORY COMMITTEE</span>
+                </h2>
+            </center>
+            <br>
+            <div class="row" style="font-size:15px;">
+                <ul>
+                    <li>Prof MP Biswal , IIT Kharagpur</li>
+                    <li>Prof A K Ojha , IIT Bhubneswar</li>
+                    <li>Dr Samarjit Kar, NIT Durgapur</li>
+                    <li>Dr Kedarnath Das, NIT Silchar</li>
+                    <li>Prof Devendra Singh, IIT-BHU</li>
+                    <li>Prof Vasakar Sarkar, IIT Hyderabad</li>
+                    <li>Prof Swagatham Das, ISI Kolkata</li>
+                    <li>Prof K Srinivasan, IIT Chennai</li>
+                    <li>Prof Pradeep Mujumder, IISc Bangalore</li>
+                    <li>Prof D. Nagesh Kumar, IISc Bangalore</li>
+                    <li>Dr Anil Lohani, NIH Roorkee</li>
+                    <li>Prof S Sadagopan, IIIT Bangalore</li>
+                    <li>Prof B Ravi, IIT Mumbai</li>
+                    <li>Prof AVSSKS Gupta, JNTU Hyderabad</li>
+                    <li>Prof AS Shekar, IIT Chennai</li>
+                    <li>Prof Kamal K, IIIT Hyderabad</li>
+                    <li>Prof NN Murulidhar, NITK Surathkal</li>
+                    <li>Prof CSP Rao, NIT AP, Tadepalligudem</li>
+                    <li>Prof Mani Bhusan, IIT Mumbai</li>
+                    <li>Prof Sridharakumar N, IIT Chennai</li>
+                    <li>Prof Rashmi Bhardwaj, GGSIP University, Delhi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h2>
+                    <span class="label label-success">ORGANIZING COMMITTEE</span>
+                </h2>
+            </center>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Patron</b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. N V Ramana Rao
+                        <br> Director
+                        <br> National Institute of Technology, Warangal</p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Chairman</b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. D. Srinivasacharya
+                        <br>Professor & Head Department of Mathematics
+                        <br> National Institute of Technology, Warangal
+                    </p>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <h4>
+                        <b>Convener & Organising Secretary</b>
+                    </h4>
+                    <p style="font-size:17px;">Prof. Debashis Dutta
+                        <br> Professor Department of Mathematics
+                        <br> National Institute of Technology, Warangal</p>
+                </center>
+            </div>
+            <br>
+        </div>
+        <!-- <div class="col-md-3"></div> -->
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h4>
+                    <b>Local Organizing Committee</b>
+                </h4>
+            </center>
+        </div>
+        <div class="col-md-4">
+            <b style="font-size:15px;">Mathematics</b>
+            <ul>
+                <li>Prof. YN Reddy </li>
+                <li>Prof. KNSK Viswanadham </li>
+                <li>Prof. JV Ramana Murthy </li>
+                <li>Dr P Muthu </li>
+                <li>Dr H P Rani </li>
+                <li>Dr. A Benerji Babu </li>
+                <li>Dr. R S Selvaraj </li>
+                <li>Dr T Kurmayya </li>
+                <li>Dr. J Pranitha </li>
+                <li>Dr. Ch Ram Reddy </li>
+                <li>Dr. D Bhargavi </li>
+                <li>Dr. E Satyanarayana </li>
+                <li>Dr Y Srineevasa Rao </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <b style="font-size:15px;">Civil Engineering</b>
+            <ul>
+                <li>Prof KV Jayakumar (Section Chair)</li>
+                <li>Prof NV Umamahesh</li>
+                <li>Prof P Anandraj</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <b style="font-size:15px;">Electrical Engineering</b>
+            <ul>
+                <li>Prof DM Vinod Kumar (Section Chair)</li>
+                <li>Dr Ch Venkaiah</li>
+                <li>Dr Parul Mathuria</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <b style="font-size:15px;">Mechanical Engineering</b>
+            <ul>
+                <li>Prof L Krishnanand</li>
+                <li>Prof P Bangarubabu (Section Chair)</li>
+                <li>Prof N Selvaraj</li>
+                <li>Prof A Neelakanteswara Rao</li>
+                <li>Dr V Hari Kumar</li>
+                <li>Dr M Vijay Kumar</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <b style="font-size:15px;">Chemical Engineering</b>
+            <ul>
+                <li>Prof A Sarath Babu (Section Chair)</li>
+                <li>Prof A Venu Vinod</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- INSTRUCTION LIST  -->
+<div id="instructions" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <h4>Steps to register</h4>
+                <hr>
+                <ol>
+                    <li>Click on register tab at the top</li>
+                    <li>Fill in the details and click on register</li>
+                    <li>Login with your credentials</li>
+                    <li>Congrats !!! You are succesfully registered on website</li>
+                </ol>
+                <hr>
+                <hr>
+                <h4 style="color:red;">Steps for applying for conference</h4>
+                <hr>
+                <ol>
+                    <li>After registering on the website, login with your credentials</li>
+                    <li>Click on the Apply tab at the top</li>
+                    <li>Click on the apply button</li>
+                </ol>
+                <hr>
+                <hr>
+
+
+                <h4>"Final Submission and Payment of Registration fee"</h4>
+                <hr>
+                <ol>
+                    <li>Upon acceptance of participation , the author has to pay the full registration fee.</li>
+                    <li>The payment of the registration fee is through Online/NEFT. The detials of online payment are given on
+                        the conference webiste</li>
+                    <li>Select "upload payment Receipt" (Scanned copy of the online payment Receipt)in apply tab option from
+                        the navbar at top </li>
+                    <li>Upload picture of ID proof and the payment receipt</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

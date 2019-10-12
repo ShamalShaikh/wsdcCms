@@ -1,0 +1,77 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+	<div class="ui fluid segment">
+		<form class="ui form" action="/conference/payment/{{conference.conference_alias}}/" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="field">
+	              <label>Upload Payment Receipt</label>
+	        </div>
+	        <div class="field">
+	              <input name="dd_file" type="file" id="dd_file" class="ui button blue" required>
+	        </div>
+			{% ifequal conference.conference_alias "inceee2019" %}
+	        <div class="field">
+	              <label>Upload soft copy of Registration form</label>
+	        </div>
+	        <div class="field">
+	              <input name="id_file" type="file" id="id_file" class="ui button blue" required>
+		  </div>
+		  {% else %}
+	        <div class="field">
+	              <label>Upload id proof picture</label>
+	        </div>
+	        <div class="field">
+	              <input name="id_file" type="file" id="id_file" class="ui button blue">
+		  </div>
+		  {% endifequal %}
+		  <div class="field">
+			<label>Transaction Id / Reference Number</label>
+		</div>
+		  <div class="four wide field">
+			<input name="refno" type="text" id="refno">
+		</div>
+
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="pay">Pay</button>
+	        </div>
+		</form>
+	</div>
+	{% if payments or rejected_payments %}
+	<div class="ui fluid segment">
+		<table class="ui celled table">
+			<thead>
+			<tr>
+				<th>Payment Date</th>
+				<th>Reference No</th>
+				<th>Status</th>
+				<th>Remarks</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for pay in payments %}
+				{% if not pay.is_rejected %}
+				<tr>
+				<td>{{pay.date}}</td>
+				<td>{{pay.refno}}</td>
+				<td>{% if pay.is_aprooved %}Approved {%else%} Not yet Verified {% endif %}</td>
+				<td></td>
+				</tr>
+				{% endif %}
+			{% endfor %}
+
+			{% for pay in rejected_payments %}
+				<tr>
+				<td>Rejection Date : {{pay.date}}</td>
+				<td>{{pay.refno}}</td>
+				<td>Rejected</td>
+				<td>{{pay.remarks}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

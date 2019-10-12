@@ -1,0 +1,235 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<div class="ui grid">
+		<div class="three wide column">
+			<a href="/manager/conference_landing/{{paper.conf_id.conference_id}}/3"><button class="ui fluid button blue" type="button">Back</button></a>
+		</div>
+	</div>
+
+	<center>
+	<h1>{{paper.papername}}</h1>
+	</center>
+	<div class="ui divider"></div>
+	<br>
+	<center>
+
+		{%ifequal paper.status 0 %}
+	      <h3> Status :  Under Review </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 1 %}
+	      <h3> Status :  Asked for Revision </h3>
+	    {% endifequal %}
+		{%ifequal paper.status 2 %}
+			<!-- these changes made for inceee2019
+			If you are changing according to your conference 
+			please put if else condition on conference names -->
+		  <!-- <h3> Status :  Accepted for Presentation </h3> -->
+		  <h3> Status :  Accepted for Oral </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 3 %}
+		  <!-- <h3> Status :  Accepted for Publication </h3> -->
+		  <h3> Status :  Accepted for Poster </h3>
+	    {% endifequal %}
+	    {%ifequal paper.status 4 %}
+	      <h3> Status :  Rejected </h3>
+	    {% endifequal %}
+
+	</center>
+	<br>
+	<div class="ui divider"></div>
+<br>
+
+<center>
+<div class="ui grid stackable columns">
+
+</center>
+<br><br>
+
+<center>
+	<h3> Remarks : Submit Remarks file for asking revision of paper </h3>
+</center>
+<div class="ui fluid segment">
+	<form class="ui form" action="/manager/paper_remark/{{paper.paper_id}}/" method="post" enctype="multipart/form-data" id="remarkForm">
+		{% csrf_token %}
+		<div class="ui grid">
+			<div class="four wide centered column">
+				<b>Upload Remarks File <br> (PDF Only)</b>
+			</div>
+			<div class="four wide centered column">
+				<div class="field">
+					<input type="file" id="remfile" name="remarkFile">
+				</div>
+			</div>
+			<div class="four wide centered column">
+				<button class="ui fluid button green" type="button" id="remarkbtn">Submit</button>
+			</div>
+		</div>
+		
+	</form>
+</div>
+
+<br><br>
+
+<center><h3> Reviewers </h3></center>
+<div class="ui fluid segment">
+{% if not rev1 %}
+	<form class="ui form" action="/manager/assignToReview/{{paper.paper_id}}/" method="post">
+	{% csrf_token %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+		<center><b>Reviewer 1</b></center>
+		</div>
+		<div class="four wide centered column">
+			<select name="username" class="ui dropdown">
+				{% for rev in reviewer %}
+				<option value="{{rev.user.username}}">{{rev.user.email}} - {{rev.user.first_name}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="four wide centered column">
+			<button class="ui fluid button orange">Assign</button>
+		</div>
+	</div>
+	</form>
+{% else %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+			<center><b>Reviewer 1</b></center>
+		</div>
+		<div class="four wide centered column">
+			<center><b>{{rev1.reviewer.user.username}} - {{rev1.reviewer.user.first_name}}</b></center>
+		</div>
+		<div class="four wide centered column">
+			<a href="/manager/reviewDetails/{{rev1.id}}"><button class="ui fluid button blue" type="button">Details</button></a>
+		</div>
+	</div>
+{% endif %}
+<br>
+<hr>
+<br>
+{% if not rev2 %}
+	<form class="ui form" action="/manager/assignToReview/{{paper.paper_id}}/" method="post">
+	{% csrf_token %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+		<center><b>Reviewer 2</b></center>
+		</div>
+		<div class="four wide centered column">
+			<select name="username" class="ui dropdown">
+				{% for rev in reviewer %}
+				<option value="{{rev.user.username}}">{{rev.user.email}} - {{rev.user.first_name}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="four wide centered column">
+			<button class="ui fluid button orange">Assign</button>
+		</div>
+	</div>
+	</form>
+{% else %}
+	<div class="ui grid">
+		<div class="four wide centered column">
+			<center><b>Reviewer 2</b></center>
+		</div>
+		<div class="four wide centered column">
+			<center><b>{{rev2.reviewer.user.username}} - {{rev2.reviewer.user.first_name}}</b></center>
+		</div>
+		<div class="four wide centered column">
+			<a href="/manager/reviewDetails/{{rev2.id}}"><button class="ui fluid button blue" type="button">Details</button></a>
+		</div>
+	</div>
+{% endif %}
+</div>
+<br><br>
+
+<center><h3> Other Actions </h3></center>
+
+<!-- this if condition is for conference having only one type of Presentation
+put the conference name in place of conf_name -->
+{% ifequal conf_name "conf_name" %}
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/1/{{paper.paper_id}}">
+			<button class="ui fluid button green">
+			  Approve Paper
+			</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+{% else %}
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/1/{{paper.paper_id}}" 
+			   onclick="return confirm('Are you sure you want to approve this abstract for Oral Presentation?')">
+			<button class="ui fluid button green">
+			  Approve Paper for Oral
+			</button>	
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="ui fluid segment">
+	<div class="row">
+		<div class="eight wide column">
+			<a href="/manager/approvepaper/2/{{paper.paper_id}}"
+			onclick="return confirm('Are you sure you want to approve this abstract for Poster Presentation?')">
+			<button class="ui fluid button green">
+			  Approve Paper for Poster
+			</button>
+			</a>
+		</div>
+	</div>
+</div>
+
+{% endifequal %}
+
+<div class="ui fluid segment">
+	<!-- <div class="row"> -->
+		<div class="eight wide column">
+			<a href="/manager/disapprovepaper/{{paper.paper_id}}"
+			onclick="return confirm('Are you sure you want to reject this abstract?')">
+			<button class="ui fluid button red">
+			  Reject Paper
+			</button>
+			</a>
+		</div>
+	<!-- </div> -->
+</div>
+<br>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+	$('#remarkbtn').click(function(){
+		var fileName = $("#remfile").val();
+	    var extension = fileName.split('.').pop();
+	    if(fileName) {
+	    	if(extension != 'pdf')
+	    	{
+	    		alert("Only PDF format is supported");
+	    		return false;
+	    	}
+	    } else {
+	    	file = $('input[name="remarkFile"]').val();
+	    	if(file.length<=0)
+	    	{
+	    		alert("No file selected");
+	        	return false;
+	    	}
+	    }
+	    $('#remarkForm').submit();
+	});
+</script>
+{% endblock %}

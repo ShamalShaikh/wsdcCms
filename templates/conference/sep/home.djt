@@ -1,0 +1,736 @@
+{% extends "conference/sep/base.djt" %} {% load staticfiles %} {% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="110px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+        </center>
+        <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color:blue;">
+                    <b>National Conference on</b>
+                </p>
+                <p style="font-size:20px; color: #31b150;">
+                    <b>Sport and Exercise Psychology:</b><br>
+                    <span style="color:#ff8000"><b>Practices, Pursuits and Promises<b></span>
+                </p>
+                <p style="font-size:20px;color: #002360;">
+                    <b>(SEP- 2019)</b>
+                </p>
+                <p style="font-size:15px;color: #ff0300;">
+                    <b>On the occasion of Diamond Jubilee of NIT Warangal</b>
+                </p>
+
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+            </center>
+        </div>
+    </div>
+    <BR>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-6">
+            <center>
+                <h3 style="color:blue;">
+                    <b>March 29-31, 2019</b>
+                </h3>
+                <hr>
+                <h4>
+                    <b>Organised by</b>
+                    <br>
+                    <br> Department of Physical Education
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+                <hr>
+                <h4>
+                    <b>Sponsored By</b>
+                    <br>
+                    <br> TEQIP III
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+            </center>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+
+    <!-- Call to Action Well -->
+    <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:25px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are Extended till 25th February 2019</marquee>
+                </div>
+            </div>
+        </div>
+     <hr> 
+     <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Welcome message by the Patron, Prof.N.V.Ramana Rao</span><br><br>
+                    <img src="{% static 'docs_sep/director.jpg' %}">
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                I feel it a privilege to host the National Conference on "Sports and Excercise Psychology",  the first ever Conference organised by the Department of Physical Education of NIT Warangal, more so as it is being organised during the Diamond Jubilee Celebrations of the Institute. The Institute has excellent sports & games facility and a mandatory physical education activity is a part of the curriculum of NITW. The conference organised in colloboration with Sports Psychology Association of India, will provide an excellent platform for researchers, academicians, practitioners, sports person and other interested in this discipline to exchange their ideas and updated information on research findings and their application. Being held in an institute of technology of national importance, the conference set the trend for discussion on development and application of Science and Technology for human health, fitness and welfare. I am sure that the deliberations at this conference will be inspiring and creative for everyone and that will make a contribution to the progress of Sport Psychology.
+                <br>
+                I convey my best wishes for the success of this conference, which will be a trend setter for similar and related activities in future.
+
+
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Prof. Dilip K Dreaha, President SPAI, welcome message</span>
+                    <br><br><img src="{% static 'docs_sep/40.jpg' %}" height="145px" width="110px">
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                I am delighted to know that 29th National conference of Sport Psychology is being organised by the National Institute of Technology Warangal Telangana. the conference programme reminds us all, the importance of inclusivity and witness immense development of sport psychology to provide an atmosphere conducive to learn for its practitioners and students. The field boasts of many initiatives to make it one of the most sought after field for the elite performance in sports and facing the routine hazards of this competitive society. I would like to convey my warmest greetings to all those associated with this conference specially management and event organiser.
+                <br>
+                I also convey my very best wishes to SPAI executive members, SPAI members, participants and staff and students on this mega event.
+
+
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Overview of the Conference</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                NIT Warangal, celebrating its Diamond Jubilee year, collaborates with Sports Psychology Association of India to organise the national conference on "Sport and Exercise Psychology: Practices, Pursuits and Promises" to cover a wide range of topics related to sport, play, exercise, motor behaviour and physical activity.
+
+                The conference aims at addressing the new perspectives on the science and art of sports and exercise psychology and issues related to the athelete's mental training and management and social changes. The Conference aims at facilitating fruitful exchange of knowledge and experience and to further the feeling of identity by creating a platform for the sports psychologists, physical educationists, coaches, sports administrators, sport scientists etc., in the field.
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br>
+            <h2>
+                <center>
+                    <span class="label label-success">Thematic Areas</span>
+                </center>
+            </h2>
+            <br>
+
+            <div class="col-md-12">
+                <center>
+                    <p style="color:black;"><b>
+                        SEP-2019 welcomes research papers on the following topics but not limited to:</b>
+                    </p>
+                </center>
+            </div>
+            <br>
+            <div class="col-md-12 col-md-offset-2">
+                <ul>
+                    <li>Motor skill learning and sports skills learning</li>
+                    <li>    Intrinsic and extrinsic motivations in sport and exercise scenario</li>
+                    <li>    Societal influences on sporting activities - psychological perspective</li>
+                    <li>    Psychological intervention techniques in elite sport</li>
+                    <li>    Applied sport psychology support to high performance sports</li>
+                    <li>    Elite sport - pursuits, priorities and problems</li>
+                    <li>    Sport psychology in school and youth sport perspective</li>
+                    <li>    Mind training techniques and strategies</li>
+                    <li>    Performance psychology - sport and exercise environments</li>
+                    <li>    Yogic practices in sport psychology perspective</li>
+                    <li>    Measurement constructs and issues in sport psychology</li>
+                    <li>    Underlying issues in the practice of sport psychology - values and attitudes</li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-5 col-md-offset-1">
+            <ul>
+                <li>Pharmaceutical Engineering</li>
+                <li>Process and Product Development</li>
+                <li>Process Intensification</li>
+                <li>Process Modeling, Simulation & Optimization</li>
+                <li>Reaction Engineering and Catalysis </li>
+                <li>Renewable Energy Resources</li>
+                <li>Transport Processes</li>
+                <li>Waste Management</li>
+            </ul>
+        </div> -->
+    </div>
+</div>
+<hr>
+<div class="row">
+    <!-- /.col-md-6 -->
+    <div class="col-md-6" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">Call for abstracts</span>
+            </center>
+        </h2>
+        <br>
+        <p style="text-align:justify;">
+            Authors should submit an abstract (Paper and Poster) of their original, unpublished work in not exceeding 300 words. The abstract format can be downloaded from the conference website. The poster format will be A0 (118.9 cm / 46.8” height x 84.1 cm / 31.1” width). The abstract must be mailed to <b>sep19@nitw.ac.in</b>.
+        </p>
+    </div>
+    <div class="col-md-6" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">Important Dates</span>
+            </center>
+        </h2>
+        <br>
+        <table class="table table-hover">
+            <tr class="active">
+                <td>Abstract submission:</td>
+                <td>25th  Feb.  2019</td>
+            </tr>
+            <tr class="active">
+                <td>Notification of Acceptance:</td>
+                <td>17th  Feb.  2019</td>
+            </tr>
+            <tr class="active">
+                <td>Full paper submission:</td>
+                <td>15th  Feb.  2019</td>
+            </tr>
+            <tr class="active">
+                <td>Early bird Registration:</td>
+                <td>15th  Feb.  2019</td>
+            </tr>
+            <!-- <tr class="active">
+                <td>Registration Deadline:</td>
+                <td></td>
+            </tr> -->
+        </table>
+        <br>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-success">Proceedings</span>
+            </h2>
+	</center>
+            <br>
+            <p style="text-align:justify;">
+               All the abstracts accepted after peer review from registered participants will be published in the conference proceedings.
+            </p>
+    </div>
+
+
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-6" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-primary">Registration</span>
+            </h2>
+            <br>
+            <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and pay the requisite registration fee (as per the details given below).
+            </p>
+
+            <table class="table table-hover">
+                <tr class="active">
+                    <td>Category</td>
+                    <td>Early</td> 
+                    <td>Standard</td>
+                    <td>Late</td>
+                    <td>On Site</td>
+                </tr>
+                <tr class="active">
+                    <td></td>
+                    <td>5-2-19</td>
+                    <td>20-2-19</td> 
+                    <td>15-3-19</td>
+                    <td>29-3-19</td>
+                    
+                </tr>
+                <tr class="active">
+                    <td>Delegates</td>
+                    <td>Rs. 2,000</td>
+                    <td>Rs.2,500</td> 
+                    <td>Rs.3,000</td>
+                    <td>Rs. 3,500</td>
+
+                </tr>
+
+                <tr class="active">
+                    <td>SPAI Member</td>
+                    <td>Rs.1,500</td>
+                    <td>Rs.2,000</td>
+                    <td>Rs.2,500</td> 
+                    <td>Rs.3,000</td>
+                </tr>
+                <tr class="active">
+                   <td>Scholars/  Students</td>
+                    <td>Rs.1,000</td>
+                    <td>Rs. 1,200</td> 
+                    <td>Rs.1,500</td>
+                    <td>Rs. 2,000</td>
+                </tr>
+                
+            </table>
+
+        </center>
+    </div>
+
+    <div class="col-md-6">
+        <h2>
+            <center>
+                <span class="label label-primary">Account Details</span>
+            </center>
+        </h2>
+        <br>
+
+        <p style="text-align:left;">Registration fee may be remitted through On-line / NEFT to the below mentioned Bank Account</p>
+
+
+        <table class="table table-hover">
+            <tr rowspan="6" class="active">
+                <td>Account Namee</td>
+                <td>Director  NITW</td>
+            </tr>
+            <tr class="active">
+                <td>Account No.</td>
+                <td>52109375198</td>
+            </tr>
+            <tr class="active">
+                <td>Bank</td>
+                <td>State Bank of India</td>
+            </tr>
+
+            <tr class="active">
+                <td>Branch</td>
+                <td>RECWarangal (NIT Campus)</td>
+            </tr>
+            <tr class="active">
+                <td>Branch Code</td>
+                <td>20149</td>
+            </tr>
+            <tr class="active">
+                <td>IFSC</td>
+                <td>SBIN0020149</td>
+            </tr>
+            <tr class="active">
+                <td>MICR Code</td>
+                <td>506002030</td>
+            </tr>
+            <tr class="active">
+                <td>SWIFT Code</td>
+                <td>SBININBBH14</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>
+            <center>
+                <span class="label label-success">Keynote Speakers</span>
+            </center>
+        </h2>
+        <br>
+    </div>
+    <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+               <!--  <img class="img-thumbnail" src="{% static 'docs_inceee/speaker1.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="-blank">
+                <img src="{% static 'docs_sep/1.jpg' %}"><br>
+                <b>
+                    <u>Prof. M.L.Kamlesh</u>
+                </b>
+            </a>
+            <br>Patron, Sport Psychology Association of India</center>
+        <br>
+    </div>
+
+</div>
+<hr>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>
+            <center>
+                <span class="label label-success">Invited Speakers</span>
+            </center>
+        </h2>
+        <br>
+    </div>
+    
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/2.jpg' %}"><br>
+                <b>
+                    <u>Prof. Jaya Shree Acharya</u>
+                </b>
+            </a>
+            <br>Dean, National Sports University, Imphal</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/3.jpg' %}"><br>
+                <b>
+                    <u>Prof. Jolly Roy</u>
+                </b>
+            </a>
+            <br> Manava Rachana University, Faridabad</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/4.jpg' %}"><br>
+                <b>
+                    <u>Dr. Anuradha Solanki</u>
+                </b>
+            </a>
+            <br>Scientic Officer, Sports Authority of India, New Delhi</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/5.jpg' %}"><br>
+                <b>
+                    <u>Dr. Reena Kaul</u>
+                </b>
+            </a>
+            <br> Kolkata</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/6.jpg' %}"><br>
+                <b>
+                    <u>Dr. Suresh Kutty</u>
+                </b>
+            </a>
+            <br>Kannur University</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/7.jpg' %}"><br>
+                <b>
+                    <u>Dr.Anil Ramachandran</u>
+                </b>
+            </a>
+            <br>Kannur University </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/rajesh.jpg' %}" height="140px" width="110px"><br>
+                <b>
+                    <u>Prof Rajesh kumar</u>
+                </b>
+            </a>
+            <br>Principal, OU college of Physical Education</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/9.jpg' %}"><br>
+                <b>
+                    <u>Prof. P.Rajasekar</u>
+                </b>
+            </a>
+            <br>Director of Physical Eduction, University of Hyderabad </center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/Veerender.jpg' %}" height="140px" width="110px"><br>
+                <b>
+                    <u>Dr. C.Veerender</u>
+                </b>
+            </a>
+            <br>Psychologist</center>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <!-- <img class="img-thumbnail" src="{% static 'docs_inceee/speaker2.jpg'%}" height="100" width="150"> -->
+                <br>
+            </div>
+            <a href="#" target="blank">
+                <img src="{% static 'docs_sep/Veerenderdfs.jpg' %}" height="140px" width="110px"><br>
+                <b>
+                    <u>Prof. V.Satyanarayana</u>
+                </b>
+            </a>
+            <br>Principal uni. college of physical education kakatiya university waranga</center>
+        <br>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">Technical Advisory Committee</span> </h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-8 col-md-offset-4">
+            <ul>
+                <li>Prof.M.L. Kamlesh, Patron, SPAI</li>
+                <li>Prof.N.S. Mann, Patron, SPAI</li>
+                <li>Prof.Avinash Sidhu, Patron, SPAI</li>
+                <li>Prof.D.K. Dureha, President, SPAI</li>
+                <li>Dr.Anuradha Solanki, Secretary, SPAI</li>
+                <li>Dr.K. S. Gurjar, Finance Sec., SPAI</li>
+                <li>Prof. Barid Bhattacharya, UK</li>
+                <li>Dr. VVBN Rao, SPAI</li>
+                <li>Prof.K. Madhu Murthy, NITW</li>
+                <li>Prof.CCSRK Prasad, NITW</li>
+                <li>Prof.A. Sarath Babu, NITW</li>       
+
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- row -->
+<div class="row">
+    <br>
+    <div class="row">
+       <!--  <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div> -->
+        <div class="col-md-6">
+            <center>
+                <img src="{% static 'docs_sep/director.jpg' %}"><br>
+                <h4>
+                    <b>Patron</b>
+                </h4>
+                <p style="font-size:17px;">Prof. N V Ramana Rao
+                    <br> Director
+                    <br> National Institute of Technology, Warangal</p>
+            </center>
+        </div>
+        <div class="col-md-6">
+            <center>
+                <img src="{% static 'docs_sep/hod.jpg' %}"><br>
+                <h4>
+                    <b>Convener</b>
+                </h4>
+                <p style="font-size:17px;">Prof. P.Madhusudan Reddy
+                <br>Head of the Department, Physical Education</p>
+            </center>
+        </div>
+        <!-- <div class="col-md-3">
+            <center>
+                <h4>
+                    <b>Convener </b>
+                </h4>
+                <p style="font-size:17px;">Prof. A. Sarath Babu</p>
+            </center>
+        </div>
+        <div class="col-md-3">
+            <center>
+                <h4>
+                    <b>Coordinators</b>
+                </h4>
+                <p style="font-size:17px;">Prof. A. Venu Vinod
+                    <br>Dr. P. V. Suresh
+                    <br>Dr. S. Muralimohan
+            </center>
+        </div> -->
+        <br>
+    </div>
+    <!-- <div class="col-md-3"></div> -->
+
+</div>
+
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">ORGANIZING COMMITTEE</span> </h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-8 col-md-offset-4">
+            <ul>
+                <li>Prof.DVSS Sarma, Chairman</li>
+                <li>Prof.Dilip K Dureha Co-Chairman</li>
+                <li>Dr. Anuradha Solanki Co-convener</li>
+                <li>Dr.K.S. Gurjar</li>
+                <li>Prof.L.R.G. Reddy</li>
+                <li>Prof.M Sydulu</li>
+                <li>Prof.Y. N. Reddy</li>
+                <li>Prof.K. Laxma Reddy</li>
+                <li>Prof.L. Krishnaanand</li>
+                <li>Prof.A.Venu Gopal</li>
+                <li>Prof.A. Venu Vinod</li>
+                <li>Prof.D. Dinakar</li>
+                <li>Prof.P. Rathish Kumar</li>
+                <li>Shri.S. Goverdhan Rao,</li>
+                <li>Shri.R. Mohan</li>
+                <li>Shri.I. A. K. Reddy</li>        
+
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</BR>
+</div>
+</BR>
+
+<!-- INSTRUCTION LIST  -->
+<div id="instructions" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <br>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <h4 style="color:black;">&#9679 Steps to register</h4>
+                <hr>
+                <ol>
+                    <li>Click on register tab at the top</li>
+                    <li>Fill in the details and click on register</li>
+                    <li>Login with your credentials</li>
+                    <li>Congrats !!! You are succesfully registered on website</li>
+                </ol>
+                <hr>
+                <hr>
+                <h4 style="color:black;">&#9679; Steps for applying for conference</h4>
+                <hr>
+                <ol>
+                    <li>After registering on the website, login with your credentials</li>
+                    <li>Click on UploadPaper tab to upload the abstract of your paper.
+                        <br>
+                        <b>(*In case you are not presenting the paper skip to the payment step.)</b>
+                    </li>
+                    <li>You can then check the status of your abstract there.</li>
+                    <li>After the acceptance of your abstract you can proceed to the payment step.</li>
+                </ol>
+                <hr>
+                <hr>
+
+
+                <h4 style="color:black;">&#9679; Steps for Payment</h4>
+                <hr>
+                <ol>
+                    <li>Upon acceptance of the abstract, the author has to pay the full registration fee and submit filled-in
+                        registration form which can be downloaded from the website. (
+                        <a href="/conference/{{conference.conference_alias}}/links" target="blank">click here</a>)</li>
+                    <li>The payment of the registration fee is through NEFT/Demand Draft. The detials of online payment are given
+                        on the conference webiste. (
+                        <a href="/conference/{{conference.conference_alias}}/#fee_div" target="blank">click here</a>)
+                        <br>
+                        <b>(Demand Draft may be sent by speed post / registered post to the Co-ordinators.The details of the
+                            author must be written on the back side of the Demand Draft)</b>
+                    </li>
+                    <li>Select "Upload payment Receipt" in Payment tab option from the top menu bar. </li>
+                    <li>Upload soft copy of the payment receipt, registration form and enter the payment reference number.</li>
+                    <li>You can check the status of your payment approval there.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,934 @@
+{% extends "conference/ewcti/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <center>
+            <div class="col-md-2">
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+            </center>
+            <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;"><b>NATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px; color: #31b150;"><b>EVOLUTION OF WORLD CLASS TECHNICAL
+INSTITUTIONS – ISSUES & CONCERNS</b></p>
+                <p style="font-size:20px;color: #002360;"><b>(EWCTI-2018)</b></p>
+                
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+            </div>
+            <div class="col-sm-2">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+                           
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>10 -12 October, 2018</b></h3>
+                <h4>
+                     Organised by<br><hr>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h4></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        
+
+        <!-- Call to Action Well -->
+        <!-- <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Registrations are open !!!</marquee>
+                </div>
+            </div>
+        </div>
+        <hr> -->
+        <!-- /.row -->
+
+        
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Overview</span></center></h2><br>
+                           <p style="color:black; text-align:justify;"> 
+                            World class universities revolve around excellence
+                        in research, academic freedom and an intellectually
+                        stimulating environment, internal self-governance
+                        by academics over key aspects of academic life and
+                        adequate facilities and funding. Higher education
+                        systems across the world have been going through
+                        significant restructuring processes to enhance their
+                        position and competitiveness and within their own
+                        countries and in the global market.
+                        </p>
+                        <p style="color:black; text-align:justify;">
+                        Universities and Institutions in India are also
+                        competing with each other to get an exalted status in
+                        academic excellence. This includes both the state
+                        funded as well as the private universities. Knowing
+                        what constitutes world-class educational standards,
+                        measuring ourselves against them and matching
+                        them and finally 'being a global partner overseas'
+                        the 'world-class' notion has become everyday
+                        language in many universities. Making the higher
+                        education and the research area 'more visible and
+                        attractive in the world' and rewarding excellence
+                        have also become the focus of the present day.
+                        </p>
+                        <p style="color:black; text-align:justify;">
+                        With this background, it is proposed to bring leading
+                        educationist, academicians, academic administrators
+                        and researchers onto a common platform to discuss
+                        on various issues related to “world-class” institution.
+                        The various themes for discussion would revolve
+                        around Policy matters, national and international
+                        ranking, accreditation, teaching learning process
+                        and research in technical education.
+                        </p>
+                </div>
+            </div>
+         <hr>
+        <div class="row">
+            <div class="col-md-12">
+            
+                <br><h2><center><span class="label label-success">Conference Themes</span></center></h2><br>
+            </div>
+                <div class="row">
+                  <div class="col-md-4"></div>
+                <div class="col-md-8" style="line-height:30px;font-size:17px;">
+                <p style="text-align:justify;"><b>1. Technical Education Policy </b></p>
+
+                <ul>
+                    <li>National Education Policy</li>
+                    <li>Formal/Informal Education/Vocational Education</li>
+                    <li>Regulation (UGC/AICTE/HECI)</li>
+                    <li>Funding (HEFA)</li>
+                </ul>
+
+                <p style="text-align:justify;"><b>2. Ranking of HEI (TEI) </b></p>
+
+                <ul>
+                    <li>NIRF</li>
+                    <li>World University Rankings (THE/QS/CWUR)</li>
+                    <li>Institutes of Eminence</li>
+                </ul>
+
+                <p style="text-align:justify;"><b>3. Accreditation of Programs </b></p>
+
+                <ul>
+                    <li>NBA / NAAC</li>
+                    <li>Global Accreditation Process / Washington
+Accord</li>
+                    <li>ABET, AEAC, etc.</li>
+                </ul>
+
+                <p style="text-align:justify;"><b>4. Teaching-Learning Process</b></p>
+
+                <ul>
+                    <li>Digital Initiatives</li>
+                    <li>SWAYAM/MOOCS</li>
+                    <li>NPTEL</li>
+                </ul>
+
+                <p style="text-align:justify;"><b>5. Research & Innovation in TEI</b></p>
+
+                <ul>
+                    <li>Startup centers and incubation hubs</li>
+                    <li>Atal Innovation Mission / India Innovation Initiative</li>
+                    <li>Research Parks</li>
+                    <li>Hackathons</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Who Can Participate?</span></center></h2><br>
+                <p style="text-align:justify;">Vice-Chancellors, Directors, Policymakers, Academic
+Administrators, Senior Academicians, Educationists,
+Management/Secretaries/ Principals/Directors of
+Technical Institutes, Researchers, Innovators, Industry
+Personnel, Professionals, Educational Technology
+providers can participate in this conference.</p>
+                               
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6" id="dates">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Closure of Registartion of Application</td>
+                        <td>30th Sep, 2018</td>
+                    </tr>
+                </table>
+                <br>
+                
+            </div>
+        </div>
+            
+        
+        <br><br>
+         <hr>
+        <div class="row">
+            <div class="col-md-6" id="fee_div">
+                <center>
+                <h2><span class="label label-primary">Registration</span></h2><br>
+                <p>Each delegate has to pay an amount of Rs. 3,000/-
+as registration fee. This registration fee includes
+conference kit, conference proceedings, session
+teas, breakfast, lunch and dinner. Delegates are
+required to make their own arrangements for their
+accommodation and local travel. However,
+organizers will facilitate the delegates for booking of
+hotels for their stay. The Registration details can be
+found at www.nitw.ac.in</p>
+                <b>Payments to be made through Online/NEFT to the Bank given below.</b>
+                <br><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Account Name</td>
+                        <td>EWCTI 2018 SBI, NITW</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Account No</td>
+                        <td>37908248756</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Bank and Branch</td>
+                        <td>State Bank of India, REC Warangal (NIT Campus)</td>
+                    </tr>
+                    
+                    <tr class="active">
+                        <td>Branch Code</td>
+                        <td>20149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>IFSC Code</td>
+                        <td>SBIN0020149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>MICR Code</td>
+                        <td>506002030</td>
+                    </tr>
+                    
+                </table>
+                </center>
+
+            </div>
+            <div class="col-md-6" id="dates">
+                <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
+                <p style="text-align:justify;">
+                    Sponsorship is requested from educational
+technology service providers, Donors/Public and
+Private funded organizations<br>
+                    Sponsorship with the following tariff is invited.
+                </p>
+                <table class="table table-hover">
+                    <tr>
+                        <th>Category</th>
+                        <th>Rs. in Lakhs</th>
+                        <th>Benefits</th>
+                    </tr>
+                    <tr class="active">
+                        <td>Platinum</td>
+                        <td>5.0</td>
+                        <td>15 Minutes presentation and 1
+Full Page Advertisement in
+Souvenir + 10 Delegates Free</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Diamond</td>
+                        <td>3.0</td>
+                        <td>10 Minutes presentation 1 Full
+Page Advertisement in
+Souvenir + 6 Delegates Free</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Gold</td>
+                        <td>2.0</td>
+                        <td>5 Minutes presentation 1 Full
+Page Advertisement in
+Souvenir + 4 Delegates Free</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Silver</td>
+                        <td>1.0</td>
+                        <td>Half Page Advertisement in
+Souvenir + 2 Delegates Free</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Bronze</td>
+                        <td>0.5</td>
+                        <td>Half Page Advertisement in
+Souvenir + 1 Delegate Free</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+
+                    <table class="table table-hover">
+                    <tr>
+                        <th>Name of the Speaker</th>
+                        <th>Designation</th>
+                        
+                    </tr>
+                   
+                    <tr class="active">
+                    <td > 
+                        <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#one">
+                        Dr.Sukhbir Singh Sandhu, IAS</a>
+                    </td>
+            <td >
+            <p>AS(TE) &amp; CVO, MHRD</p>
+            </td>
+        </tr>
+        <tr class="active">
+            <td><a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#two">
+            Shri Navin Mittal, IAS</a>
+            </td>
+            <td ">
+            Commissioner, CE&amp;TE, GoT, Hyderabad
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+            <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#3">
+            Shri VLVSS Subba Rao
+             </a>
+            </td>
+            <td>
+           Sr. Economic Advisor, MHRD
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#4">
+            Prof. Anil D. Sahasrabudhe
+        </a>
+            </td>
+            <td >
+            Chairman, AICTE
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#5">
+            Prof. Surendra Prasad
+        </a>
+            </td>
+            <td >
+            Chairperson, NBA
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#6">
+            Prof. Sandeep Sancheti
+        </a>
+            </td>
+            <td >
+            VC, SRMIST &amp; President, AIU
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#7">
+            Prof. S Sadagopan
+        </a>
+            </td>
+            <td >
+           Director, IIIT Bangalore
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#8">
+           Prof. Debashish Chatterjee
+       </a>
+            </td>
+            <td >
+            Director, IIM Kozhikode
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#9">
+            Prof. AbhayKarandikar
+        </a>
+            </td>
+            <td >
+            Director, IIT Kanpur
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#10">
+            Prof. Rishikesh T Krishnan
+        </a>
+            </td>
+            <td >
+            Director, IIM Indore
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#">
+            Prof. DK Tripathi
+        </a>
+            </td>
+            <td >
+            Former Director, NIT Warangal
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#11">
+            Dr. Anil Kumar Nassa
+        </a>
+            </td>
+            <td >
+            Member Secretary, NBA
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#12">
+            Dr. AbhayJere
+        </a>
+            </td>
+            <td >
+            Chief Innovation Officer (CIO), MHRD, GOI
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#13">
+            Prof. FurquanQamar
+        </a>
+            </td>
+            <td >
+            Secretary General, AIU
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#14">
+            Shri Sujiv Nair
+        </a>
+            </td>
+            <td >
+            CEO TASK
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#15">
+            Prof. SC Shasrabudhe
+        </a>
+            </td>
+            <td >
+            Former Director, DAIICT
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#16">
+            Prof. DR Vaman
+        </a>
+            </td>
+            <td>
+            DR Telecommunications, MD, USA
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#17">
+            Prof. Andrew Thangaraj
+        </a>
+            </td>
+            <td >
+            National MOOCS Coordinator for SWAYAM, IITM
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#18">
+            Prof. KannanMoudgalva
+        </a>
+            </td>
+            <td >
+            IITB Mumbai
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#19">
+            Prof. K. Srinivas
+        </a>
+            </td>
+            <td >
+            Head ICT &amp; PMU, NIEPA, New Delhi
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#">
+            Ms. Shalini S. Sharma
+        </a>
+            </td>
+            <td >
+            Head-Higher Education, CII, Gurugram
+            </td>
+        </tr>
+        <tr class="active">
+            <td >
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#20">
+            Ms. DeepanwitaChattopadhyay
+        </a>
+            </td>
+            <td >
+            Chairman &amp; CEO, IKP Knowledge Park, Hyderabad
+            </td>
+        </tr>
+        <tr class="active">
+            <td>
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#21">
+            Shri Daniel Cartlo
+        </a>
+            </td>
+            <td >
+            Research Intelligence Elsevier, New York
+            </td>
+        </tr>
+        <tr class="active">
+            <td ">
+                 <a href="http://www.cms.nitw.ac.in/conference/ewcti2018/profiles/#22">
+            Shri Vijaysekhar Reddy
+        </a>
+            </td>
+            <td >
+            Elsevier, New Delhi
+            </td>
+        </tr>
+
+                </table>
+                <!-- <ul>
+                    <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
+                    <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
+                    <li>Shri Ramanathan Ramanan, Mission Director & AS, Atal Innovation Mission</li>
+                    <li>Shri SS Sandhu, IAS, Addl. Secretary,HE, MHRD</li>
+                    <li>Shri Sujiv Nair, CEO, TASK, GoT</li>
+                    <li>Shri Vijaysekhar Reddy, Elsevier</li>
+                    <li>Prof. Abhay Karandikar, Director, IIT Kanpur</li>
+                    <li>Prof. Andrew Thangaraj, National MOOCS Coordinator for SWAYAM, IITM</li>
+                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
+                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode</li>
+                    <li>Prof. DK Tripathi, Former Director, NITW</li>
+                    <li>Prof. DR Vaman, DR Tele Communications, MD USA</li>
+                    <li>Prof. Furqan Qamar, Secretary General, AIU</li>
+                    <li>Prof. K. Srinivas, Head ICT & PMU, NIEPA, New Delhi</li>
+                    <li>Prof. Kannan Moudgalva, IITB Mumbai</li>
+                    <li>Prof. PVM Rao, IIT Delhi</li>
+                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore</li>
+                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore</li>
+                    <li>Prof. Sandeep Sancheti, President, AIU</li>
+                    <li>Prof. SC Shasrabudhe, Former, DAIICT</li>
+                    <li>Prof. Surendra Prasad, Chairperson, NBA</li>
+                    <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
+                    <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+        <br>
+         <hr>
+        <!-- /.row -->
+        
+                    
+            <div class="col-md-12">
+                <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
+            <br>
+                <div class="row">
+
+                     <div class="col-md-offset-1 col-md-5">
+                    <center>
+                        <h4><b>Chairman</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <center>
+                    <h4><b>Co-Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
+                        National Institute of Technology, Warangal<br>
+                        Mob.: 9652901237, Email: kvj@nitw.ac.in
+                       </p>
+                    </center>
+                </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                 <center><h4><b>Members</b></h4></center>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                            <li>Dr. S. SSandhu, IAS, Addl Secretary, MHRD</li>
+                            <li>Dr. Ram Bhoj, Advisor, UNESCO</li>
+                            <li>Prof. Sandeep Sancheti, President, Association of Indian Universities</li>
+                            <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
+                            <li>Prof. D.P. Singh, Chairman, UGC</li>
+                            <li>Prof. K.Uma Maheshwar Rao, Director, NITK, Surathkal</li>
+                            <li>Prof. Mini S. Thomas, Director, NIT Trichy</li>
+                            <li>Prof. P. Anandraj, Dean (P&D), NITW</li>
+                            <li>Prof. Y. Pydisetty, Dean(AA), NITW</li>
+                            <li>Prof. LRG Reddy, Dean (SW), NITW</li>
+                            <li>Prof. DVS Siva Sarma, Dean (FW), NITW</li>
+                            <li>Prof. G. Rajesh Kumar, Dean (R&C), NITW</li>
+      
+                </ul>
+                </div>
+            </div>
+        </div>
+         <hr>
+
+            <!-- row -->
+            <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <center>
+                        <h4><b>Chairman</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Co-Chairman</b></h4>
+                    <p style="font-size:17px;">Prof. K. V. Jayakumar<br> Dean (IRAA)<br>
+                        National Institute of Technology, Warangal<br>Mob.: 9652901237, Email: kvj@nitw.ac.in
+                       </p>
+                    </center>
+                </div>
+               <div class="col-md-4">
+                    <center>
+                    <h4><b>Convener &Organising Secretary</b></h4>
+                    <p style="font-size:17px;">Prof CSRK Prasad<br>
+                        Department of Civil Engineering
+                        <br>National Institute of Technology, Warangal</p>
+                    </center>               
+                </div>
+                <br>
+            </div>
+                <!-- <div class="col-md-3"></div> -->
+                
+        </div>
+
+      
+      <div class="row">
+            <div class="col-md-12">
+                 <center><h4><b>Members</b></h4></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                  <li>Dr. M. Chandrasekhar, Head (Civil Engineering)</li>
+                        <li>Dr. V. T. Somasekhar, Head (Electrical Engineering)</li>
+                        <li>Dr. Popuri Bangarubabu, Head (Mechanical Engineering) </li>
+                        <li>Dr. N. Bheema Rao, Head(Electronic & Comm. Engg)</li>
+                        <li>Dr. C. Vanitha, Head (Metallurgy & Materials Engg.)</li>
+                        <li>Dr. SaratBabu Anne, Head (Chemical Engineering)</li>
+                        <li>Dr. R. B. V. Subramaanyam, Head (Computer Science Engineering)</li>
+                        <li>Dr. Onkara Perumal P, Head (Biotechnology)</li>
+                        <li>Dr. P. Ramlal, Head (School of Management)</li>
+                        <li>Dr. D. Srinivasacharya, Head (Mathematics)</li>
+                        <li>Dr. K. Venugopal Reddy, Head (Physics)</li>
+                        <li>Dr. P. Venkata Sri Laxmi, Head (Chemistry)</li>
+                        <li>Dr. M. Raja Vishwanathan, Head (Humanities & Social Sciences)</li>
+                        <li>Dr. P. Madhusudhana Reddy, Head (Physical Education)</li>
+                        <li>Sri S. Goverdhan Rao, Registrar</li>  
+                </ul>
+                </div>
+            </div>
+        </div>
+        <br>  
+        <hr>
+        <div class="row">
+        <div class="col-md-12">
+                <center><h2><span class="label label-success">Partner Organizations</span></h2></center>
+            <br>
+          </div>
+      </div>
+      </BR>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <!-- <div class="col-md-4"></div>
+                <div class="col-md-8">
+                <ul>
+                            <li>All India Council for Technical Education</li>
+                            <li>Association of Indian Universities</li>
+                            <li>Telangana State Council for Higher Education</li>
+                            <li>Andhra Pradesh State Council for Higher Education</li>
+                      </ul>
+                </div> -->
+                <center><h3> <span class="label label-primary">All India Council for Technical Education (AICTE)</h3></span>
+                <img src="{% static 'docs_ewcti/1.png'%}" width="130px" height="30%"></center>
+                <P style="text-align:justify;">All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level apex advisory body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner. And to ensure the same, as stipulated in the National Policy of Education (1986), AICTE was vested with: <b>More details at: https://www.aicte-india.org/</b></P>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-3">
+                <ul>
+                            <li>Statutory authority for planning, formulation, and maintenance of norms & standards</li>
+                            <li>Quality assurance through accreditation</li>
+                            <li>Funding in priority areas, monitoring, and evaluation</li>
+                            <li>Maintaining parity of certification & awards</li>
+                            <li>The management of technical education in the country </li>
+                      </ul>
+
+                  </div>
+              </div>
+            </div>
+            </div>
+            </BR>
+             <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Association of Indian Universities (AIU)</span></h3>
+                <img src="{% static 'docs_ewcti/2.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The idea of bringing together all the universities on a common platform emerged from the deliberations of a Conference of the Vice Chancellors of Universities convened by Lord Reading, the then Viceroy of India at Shimla in 1924. The Inter-University Board (IUB) of India was subsequently formed on March 23, 1925, with the view of promoting university activities, especially by way of sharing information and co-operation in the field of education, culture, sports and allied areas. The Inter-University Board acquired a legal status with its registration in 1967 as a Society under the Societies Registration Act, 1860. In 1973, it assumed its present name: The Association of Indian Universities (AIU). The membership includes traditional universities, open universities, professional universities, Institutes of National Importance and deemed-to-be universities. In addition, there is a provision of granting of Associate Membership to universities of neighboring countries. <b>More details at: www.aiu.ac.in/ </b></p></div>
+            </div>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Telangana State Council for Higher Education (TSCHE)</span></h3>
+                <img src="{% static 'docs_ewcti/3.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The Telangana State Council for Higher Education (TSCHE) came into existance by the order of the State Governament of Telangana by adopting the APSCHE Act 16 of 1988 for the provision of the AP Reorganiztion Act of 2014.</p>
+                <p style="text-align:justify;">The Telangana State Council for Higher Education (TSCHE) is primarly a coordinating body between University Grants Commission (UGC), the State Government and the Universities. It is the general duty of the council to coordinate and determine standards in Institutions of Higher Education, Research Scientific and Technical Institutions in accordance with the guidlines issued by University Grants Commisisons from time to time. The Act 16 of 1998 envicages three distinct functions (a) Planning and coordination, (b) Academic Functions and (c) Advisory Functions More details at: <b>https://www.tsche.ac.in</b></p>
+                
+
+            </div>
+            </div>
+            <div class="row">
+               <div class="row" style="font-size:15px;">
+                <center><h3><span class="label label-primary">Andhra Pradesh State Council for Higher Education (APSCHE)</span></h3>
+                <img src="{% static 'docs_ewcti/4.png'%}" width="110px" height="30%"></center>
+                <p style="text-align:justify;">The A P State Council of Higher Education (APSCHE) came into existence w.e.f. 20.05.1988 through Act 16 of 1988 to advise the Government in matters relating to Higher Education in the State and to oversee its development with perspective planning and for matters connected therewith and incidental thereto.</p>
+                <p style="text-align:justify;">
+                    The Andhra Pradesh State Council of Higher Education, the first of its kind in the country, set up as per the recommendations of the National Education Policy 1986, is primarily a coordinating body between the University Grants Commission (UGC), the State Government and the Universities. It is the general duty of the Council to coordinate and determine standards in institutions of Higher Education, Research, Scientific and Technical Institutions in accordance with the guidelines issued by the University Grants Commission from time to time. The Act 16 of 1988 envisages three distinct functions (a) Planning and Coordination, (b) Academic Functions and (c) Advisory Functions. <b>More details at: http://www.apsche.org/apsche_new/ </b>
+                </p>
+
+            </div>
+            </div>
+            </div>
+        </div>
+        <br>
+         
+
+</div>
+
+    </div>
+<<<<<<< HEAD
+<!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b>Contact:</b></h4>
+                                <b>Prof. CSRK Prasad<br>
+                                    Organising Secretary, EWCTI2018<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
+                                <b>Phone : </b> +91-9440347348  <br>
+                            </div>
+                           
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+    <!-- /.container -->
+
+
+
+=======
+<<<<<<< HEAD
+<!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>Ewcti2018@nitw.ac.in <br>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <h4><b>Contact:</b></h4>
+                                <b>Prof. CSRK Prasad<br>
+                                    Organising Secretary, EWCTI2018<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b> Ewcti2018@nitw.ac.in   <br>
+                                <b>Phone : </b> +91-9440347348  <br>
+                            </div>
+                           
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+    <!-- /.container -->
+
+
+
+=======
+>>>>>>> 6902be86434737f11b9bea07601b3d57f6bac1b1
+
+    <!-- INSTRUCTION LIST  -->
+    <div id="instructions" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Instructions</h4>
+          </div>
+          <div class="modal-body">
+            <hr>
+            <h4>Steps to register</h4>
+            <hr>
+            <ol>
+                <li>Click on register tab at the top</li>
+                <li>Fill in the details and click on register</li>
+                <li>Login with your credentials</li>
+                <li>Congrats !!! You are succesfully registered on website</li>
+            </ol>
+            <hr><hr>
+            <h4 style="color:red;">Steps for applying for confrence</h4>
+            <hr>
+             <ol>
+                <li>After registering on the website, login with your credentials</li>
+                <li>Click on the Apply tab at the top</li>
+                <li>Click on the apply button</li>
+            </ol>
+            <hr><hr>
+
+            
+            <h4>"Final Submission and Payment of Registration fee"</h4>
+            <hr>
+            <ol>
+                <li>Upon acceptance of participation , the author has to pay the full registration fee.</li>
+                <li>The payment of the registration fee is through Online/NEFT.  The detials of online payment are given on the conference webiste</li>
+                <li>Select "upload payment Receipt" (Scanned copy of the online payment Receipt)in apply tab  option from the navbar at top </li>
+                <li>Upload picture of ID proof and the payment receipt</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<<<<<<< HEAD
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
+=======
+{% endblock %}
+>>>>>>> 6902be86434737f11b9bea07601b3d57f6bac1b1

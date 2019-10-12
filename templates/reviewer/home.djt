@@ -1,0 +1,25 @@
+{% extends "reviewer/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1>Papers to Review</h1>
+	</center>
+	{% for p in papers %}
+	<div class="ui segment">
+	<center>
+	<a href = "/review/reviewPaper/{{p.paper_id}}"><p>{{p.papername}}</p></a>
+	<p>{{p.conf_id.conference_name}}
+	</center>
+	</div>
+	{% endfor %}
+
+	<center>
+	<div class="ui green message" style="position:fixed;bottom:30px;">
+		<h3>Thank For Reviewing !!!</h3>
+	</div>
+	</center>
+</div>
+
+{% endblock %}

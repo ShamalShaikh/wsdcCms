@@ -1,0 +1,74 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+<div class="ui grid">
+	<div class="three wide column">
+		<a href="/manager/assignreviewer/{{reviewDetails.paper.paper_id}}"><button class="ui fluid button blue" type="button">Back</button></a>
+	</div>
+</div>
+
+<center><h2>Paper Name : {{reviewDetails.paper.papername}}</h2></center><br>
+<center><h2>Reviewer : {{reviewDetails.reviewer.user.username}}</h2></center>
+
+	<br>
+	<center>
+		<div class="ui divider"></div>
+		{%ifequal reviewDetails.reviewStatus 0 %}
+	      <h3> Status :  Assigned </h3>
+	    {% endifequal %}
+	    {%ifequal reviewDetails.reviewStatus 1 %}
+	      <h3> Status :  Reviewed </h3>
+	    {% endifequal %}
+	    <div class="ui divider"></div>
+	</center>
+	<br>
+
+	{%ifequal reviewDetails.reviewStatus 1 %}
+      
+    <center><h3>Questions</h3></center>
+    <div class="ui fluid segment">
+	{% for ans in answers %}
+		<div class="ui grid" style="font-size:15px;">
+			<div class="eight wide centered column">{{ans.question.question}}</div>
+			{% if ans.question.que_type %}
+			<div class="four wide centered column">{{ans.answer}}</div>
+			{% else %}
+			<div class="four wide centered column">{{ans.marks}}</div>
+			{% endif %}
+		</div>
+	{% endfor %}
+	</div>
+
+	<div class="ui fluid segment">
+		<div class="ui grid" style="font-size:15px;">
+			<div class="eight wide centered column"></div>
+			<div class="four wide centered column">
+				<center>Average : {{avg}}</center>
+			</div>
+		</div>
+	</div>
+
+	{% if remark %}
+	<div class="ui fluid segment">
+		<div class="ui grid">
+			<div class="four wide centered column"><b>Remarks</b></div>
+			<div class="eight wide centered column">{{remark.answer}}</div>
+		</div>
+	</div>
+	{% endif %}
+
+	<br><br>
+	<div class="ui grid">
+		<div class="five wide column"></div>
+		<div class="six wide column">
+			<a href="/manager/reassign/{{reviewDetails.id}}"><button class="ui fluid button green" type="button">Reassign</button></a>
+		</div>
+	</div>
+
+    {% endifequal %}
+	
+</div>
+
+{% endblock %}

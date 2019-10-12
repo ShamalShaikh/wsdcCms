@@ -1,0 +1,103 @@
+{% extends 'conference/icamer/base.djt' %} {% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+    <div class="col-md-6" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-primary">Registration Fee</span>
+            </h2>
+            <br>
+           <!--  <p style="text-align:justify;">For registration, please fill the online form available in the conference website under registration tab and
+                pay the requisite registration fee (as per the details given below). Atleast one author should register per
+                paper.
+            </p>
+ -->
+            <table class="table table-hover">
+                <tr class="active">
+                    <td>Category</td>
+                    <td>Indian(In Rupees)</td>
+                    <td>Foreign(In USD)</td>
+                </tr>
+                <tr class="active">
+                    <td>UG and PG Students</td>
+                    <td>2000</td>
+                    <td>50</td>
+                </tr>
+                <tr class="active">
+                    <td>Full Time Research Scholars</td>
+                    <td>3000</td>
+                    <td>100</td>
+                </tr>
+                <tr class="active">
+                    <td>Faculty/ Academia</td>
+                    <td>5000</td>
+                    <td>200</td>
+                </tr>
+                <tr class="active">
+                    <td>Delegates from Industry persons</td>
+                    <td>8000</td>
+                    <td>300</td>
+                </tr>
+
+            </table>
+
+        </center>
+        <p style="text-align:justify;">Registration fee covers to access all the sessions, conference kit, lunch and coffee breaks during conference.  It also includes local tour and grand dinner. 
+        The registration fees is non-refundable. Please note that registration fee does not include the cost of accommodation. 
+        <br><b>Limited accommodation is available on the campus on payment basis.</b>  
+</p>
+    </div>
+
+    <div class="col-md-6">
+        <h2>
+            <center>
+                <span class="label label-primary">Registration Procedure</span>
+            </center>
+        </h2>
+        <br/>
+        <b><center><a href="{% static 'icamer/S_ ICAMER 2019.pdf' %}" target="_blank">Registration Procedure</a></center></b>
+
+        <!--<p style="text-align:left;">Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Convener
+            – INCEEE-2019 payable at Warangal or remitted through On-line / NEFT to the below mentioned Bank Account.</p>
+
+
+        <table class="table table-hover">
+            <tr rowspan="6" class="active">
+                <td>Account Namee</td>
+                <td>Convener – INCEEE-2019</td>
+            </tr>
+            <tr class="active">
+                <td>Account No.</td>
+                <td>38011574154</td>
+            </tr>
+            <tr class="active">
+                <td>Bank</td>
+                <td>State Bank of India</td>
+            </tr>
+
+            <tr class="active">
+                <td>Branch</td>
+                <td>RECWarangal (NIT Campus)</td>
+            </tr>
+            <tr class="active">
+                <td>Branch Code</td>
+                <td>20149</td>
+            </tr>
+            <tr class="active">
+                <td>IFSC</td>
+                <td>SBIN0020149</td>
+            </tr>
+            <tr class="active">
+                <td>MICR Code</td>
+                <td>506002030</td>
+            </tr>
+            <tr class="active">
+                <td>SWIFT Code</td>
+                <td>SBININBBH14</td>
+            </tr>
+        </table>-->
+    </div>
+</div>
+    </div>
+{% endblock %}

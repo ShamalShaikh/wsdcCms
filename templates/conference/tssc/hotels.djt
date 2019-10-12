@@ -1,0 +1,366 @@
+{% extends "conference/tssc/base.djt" %}
+{% load staticfiles %}
+{% block head %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EWCTI'18</title>-->
+
+    <!-- Bootstrap Core CSS -->
+   <!--  <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+
+    <!-- Custom CSS -->
+   <!--  <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+ -->
+    <!-- Navigation -->
+    <!--  <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container"> -->
+            <!-- Brand and toggle get grouped for better mobile display -->
+           <!--  <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div> -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Download Links</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/profiles">Speakers Profile</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Registration</a>
+                    </li>
+                    <li>
+                        <a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/apply">Apply</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                    
+                </ul>
+            </div> -->
+            <!-- /.navbar-collapse -->
+       <!--  </div> -->
+        <!-- /.container -->
+    <!--</nav> -->
+{% endblock %}
+{% block content %}
+    <!-- Page Content -->
+    <div class="container"></div>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Hotels</span></center></h2>
+                <br>
+                <table class="table table-hover">
+                    <tr class="active">
+            <th>S.No</th>
+            <th>Hotel</th>
+            <th>Rating</th>
+            <th>Tied up with</th>
+            <th>Address</th>
+            <th>Distance from NITW (km)</th>
+            <th>Wi-Fi</th>
+            <th>Phone</th>
+            <th>Mobile</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sri Hima Residency</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Chaitanyapuri Colony, Prashanthnagar Colony, Hanamkonda, Telangana 506370</td>
+            <td>0.3</td>
+            <td>&nbsp;</td>
+            <td>91-870-2456522</td>
+            <td>91-9000341177; 9550570993</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Landmark Residency</td>
+            <td>3 Star</td>
+            <td>OYO, Goibibo; Yatra, Makemytrip, Travelguru</td>
+            <td>1-8-598, NH163, Balasamudram, Hanamkonda, Telangana 506001</td>
+            <td>3.0</td>
+            <td>Free</td>
+            <td>91-870-2546222; 2546111</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Haritha Kakatita Hotel</td>
+            <td>3 Star</td>
+            <td>Cleartrip</td>
+            <td>Main Road, Adalath Circle, Nakkala Gutta, Hanamkonda, Telangana 506001</td>
+            <td>3.2</td>
+            <td>Free</td>
+            <td>91-870-2562236</td>
+            <td>91-9848036622</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Hotel Suprabha</td>
+            <td>3 Star</td>
+            <td>OYO</td>
+            <td>Plot No.169-32-8, Nakkalagutta, NH-202, Hanamkonda, Warangal, Telangana 506001</td>
+            <td>3.3</td>
+            <td>Free</td>
+            <td>91-870-2573888</td>
+            <td>91-9293783781</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Mitra Residency</td>
+            <td>&nbsp;</td>
+            <td>OYO, Expedia, Makemytrip, Hotels, Wotif</td>
+            <td>2-5-83&amp;84 3rd &amp; 4th floor, Beside Nandana gardens, Nakkala Gutta, Hanamkonda, Telangana 506001</td>
+            <td>3.3</td>
+            <td>Free</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Sai Krishna Residency</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Kaloji Marg, Laxmipuram, Kakaji Nagar Colony, Hanamkonda, Telangana 506001</td>
+            <td>4.2</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>91-8686709495</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Hotel Shreya</td>
+            <td>3 Star</td>
+            <td>Goibibo, Makemytrip</td>
+            <td>6-2-6/1/2/3 Near Kalyan Laxmi Shopping Mall Kakaji Nagar Colony Hanamkonda Telangana 506001</td>
+            <td>4.6</td>
+            <td>Free</td>
+            <td>&nbsp;</td>
+            <td>91-7337509992</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Hotel Amrutha Manor</td>
+            <td>2 Star</td>
+            <td>&nbsp;</td>
+            <td>G.R. Complex, G.R. Talkies Lane, Chowrasta, Kakaji Nagar Colony, Hanamkonda, Telangana 506001</td>
+            <td>4.7</td>
+            <td>&nbsp;</td>
+            <td>91-870-6451771</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Hotel Ashoka</td>
+            <td>3 Star</td>
+            <td>OYO, Expedia, Hotels, Makmytrip</td>
+            <td>Plot No.6-1-242, Main Road, Hanumakonda, Warangal, Telangana 506015</td>
+            <td>5.0</td>
+            <td>Free</td>
+            <td>91-870-2578491 to 94</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>City Grand Hotel</td>
+            <td>3 Star</td>
+            <td>&nbsp;</td>
+            <td>S.V.P. ROAD, RANGAMPET, Warangal, Telangana 506007</td>
+            <td>6.4</td>
+            <td>&nbsp;</td>
+            <td>91-870-2454587</td>
+            <td>91-9959619483</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Hotel Ratna</td>
+            <td>3 Star</td>
+            <td>Yatra, Travelguru</td>
+            <td>Pocham Maidan, Mg Road, Sherpura, Warangal, Telangana 506002</td>
+            <td>7.6</td>
+            <td>Free</td>
+            <td>91-870-2500645</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Supreme Hotels</td>
+            <td>3 Star</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;6-2-221, Bus Stand Road, Near Chowrastha, Kakaji Nagar Colony, Hanamkonda, Telangana 506001</td>
+            <td>7.7</td>
+            <td>Free</td>
+            <td>91-870-2563488</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Santhi Krishna Hotel</td>
+            <td>2 Star</td>
+            <td>&nbsp;</td>
+            <td>Shop Number- 8-7-216 , Behind Head Post Office , Station Road Market Street, Sri Krishna Colony, Girmajipet, Warangal, Telangana 506002</td>
+            <td>7.8</td>
+            <td>&nbsp;</td>
+            <td>91-870-2426607</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Hotel Grand Gayatri</td>
+            <td>3 Star</td>
+            <td>&nbsp;</td>
+            <td>8-5-49/A, Station Road, Opposite Sunil Theatre, Warangal, Telangana 506002</td>
+            <td>8.0</td>
+            <td>&nbsp;</td>
+            <td>91-870-2501999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Sharanya Hotel</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Shop No. 8-6-35, Devi Theatre Lane, Station Rd, Perukawada, Girmajipet, Warangal, Telangana 506002</td>
+            <td>8.1</td>
+            <td>&nbsp;</td>
+            <td>91-870-2426644</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Sitara Grand Family Restaurant</td>
+            <td>3 Star</td>
+            <td>&nbsp;</td>
+            <td>Station Rd, Girmajipet, Warangal, Telangana 506002</td>
+            <td>8.1</td>
+            <td>&nbsp;</td>
+            <td>91-870-2441834</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Venkata Ramana Hotel</td>
+            <td>3 Star</td>
+            <td>&nbsp;</td>
+            <td>Bus Stand Road, Girmajipet, Warangal, Telangana 506002</td>
+            <td>8.2</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>91-9390108448</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Hotel Crystal</td>
+            <td>&nbsp;</td>
+            <td>OYO, Expedia, Booking, Hotels</td>
+            <td>Girmajipet, Warangal, Telangana 506002</td>
+            <td>8.4</td>
+            <td>Free</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Surya Hotel</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Railway Station Road, Warangal</td>
+            <td>11.0</td>
+            <td>&nbsp;</td>
+            <td>91-870-2441834</td>
+            <td>&nbsp;</td>
+        </tr>
+                </table>
+                
+                
+               
+                
+        </div>
+          
+</div>
+        <!-- Footer -->
+       
+
+    
+    <!-- /.container -->
+
+
+
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</body>
+
+</html> -->
+{% endblock %}

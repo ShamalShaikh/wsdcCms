@@ -1,0 +1,64 @@
+
+{% extends "conference/tssc/base.djt" %}
+
+{% load staticfiles %}
+
+
+{% block head %}
+<style>
+	#main{
+		min-height: 60vh;
+	}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container" id="main">
+
+	<img src="{% static 'tssc/tssc_apply_header.PNG' %}">
+	<br/><br/>
+
+	<div class="row">
+	{% if paper %}
+
+		{% if paper.uid.profile.mail_sent_accept %}
+			<div class="alert alert-success">
+		  <strong>Congratulations</strong>
+		  Your Payment is verified. Check your e-mail for invitation.
+		</div>
+
+		{% elif paper.uid.profile.mail_sent_reject %}
+				<div class="alert alert-danger">
+					<strong>Sorry</strong>
+					Your payment was rejected.
+				</div>
+		{% elif paper.uid.profile.mail_sent_register %}
+				{% if not payment %}
+				<div class="alert alert-success">
+					Your application is submitted and reviewed.
+					<a href='/conference/make_payment/{{alias}}'><b>Please proceed for payment.</b></a>
+				</div>
+				{% else %}
+				<div class="alert alert-info">
+					Your payment details are under review.
+				</div>
+				{% endif %}
+
+
+		{% else %}
+			<div class="alert alert-info">
+				 Congratulations! The abstract is received successfully. Please wait for acceptance e-mail.
+			</div>
+		{% endif %}
+
+	{% else %}
+			<div class="alert alert-info">
+				 Applications are closed.
+			</div>
+
+	{% endif %}
+	</div>
+</div>
+
+</div>
+{% endblock %}

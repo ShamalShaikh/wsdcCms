@@ -1,0 +1,395 @@
+{% extends "conference/icamer/base.djt" %} {% load staticfiles %} {% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row">
+        <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="110px">
+                <b>Diamond Jubilee Year 2018-2019</b>
+            </div>
+        </center>
+        <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;">
+                    <b>1st International Conference on</b>
+                </p>
+                <p style="font-size:20px; color: #31b150;">
+                    <b>Applied Mechanical Engineering Research</b>
+                </p>
+                <p style="font-size:20px;color: #002360;">
+                    <b>(ICAMER - 2019)</b>
+                </p>
+                <p style="font-size:15px;color: #ff0300;">
+                    <b>On the occasion of Diamond Jubilee of NIT Warangal</b>
+                </p>
+
+
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+            </center>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <BR>
+
+
+
+
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:18px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE"><a href="{% static 'icamer/Schedule_ICAMER2019.pdf' %}"><b style="color: red;">*Schedule.*</b></a></marquee><br>
+                    <marquee BEHAVIOR="ALTERNATE"><a href="{% static 'icamer/Accomodation_List.pdf' %}"><b style="color:green;">*Accommodation Details.*</b></a></marquee><br>
+                    <!-- <marquee BEHAVIOR="ALTERNATE">*Because of the tremondous response to the conference, there is a delay in the intimation of the decision. Papers are in review. Decision emails are being sent in a phased manner.*</marquee> -->
+                    <!-- <marquee BEHAVIOR="ALTERNATE">"The decision emails have been sent to all the authors who have submitted full papers for the conference".</marquee> -->
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+
+        </div>
+        <!-- /.col-md-8 -->
+        <div class="col-md-6">
+            <center>
+                <h3 style="color:blue;">
+                    <b>May 2 - 4, 2019</b>
+                </h3>
+                <hr>
+                <h4>
+                    <b>Organised by</b>
+                    <br>
+                    <br> Department of Mechanical Engineering
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br><small>(An Institute of National Importance)</small>
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+                <hr>
+                <h4>
+                    <b>Sponsored By</b>
+                    <br>
+                    <br> TEQIP III
+                    <br>
+                    <br> National Institute of Technology Warangal
+                    <br> Warangal 506004.
+                    <br> Telangana State, India.
+                </h4>
+            </center>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+
+    <!-- Call to Action Well -->
+    <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:18px; color:red;">
+                    <!-- <marquee BEHAVIOR="ALTERNATE">*All the authors from abroad can present their papers via video conference. This facility will not be extended for authors from India.*</marquee><br>
+                    <marquee BEHAVIOR="ALTERNATE">*No further submission is allowed.*</marquee><br> -->
+                    <!-- <marquee BEHAVIOR="ALTERNATE">*Because of the tremondous response to the conference, there is a delay in the intimation of the decision. Papers are in review. Decision emails are being sent in a phased manner.*</marquee> -->
+                    <marquee BEHAVIOR="ALTERNATE">"The decision emails have been sent to all the authors who have submitted full papers for the conference".</marquee>
+                </div>
+            </div>
+        </div>
+        <hr>
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <h2>
+                <center>
+                    <span class="label label-success">Overview of the Conference</span>
+                </center>
+            </h2>
+            <br>
+            <p style="color:black; text-align:justify;">
+                The conference focuses on the latest developments in the field of Mechanical Engineering. The
+                conference also aims to provide an interactive platform to the academia, researchers and the industry.
+                Participations from different industries, universities and academic institutions from all over the country
+                and abroad are anticipated. The organizing committee hereby invites academicians/scientists
+                /technologists engaged in basic as well as applied research from the Universities, Research
+                Institutions and Industries to participate. The scientific sessions will comprise plenary talks, invited
+                talks, technical talks and contributed papers (both oral and posters).
+            </p>
+            <p style="color:black; text-align:justify;">
+                Note: Participants from outside India will be allowed to present their papers through online.
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <h2>
+                <center>
+                    <span class="label label-success">Thematic Areas</span>
+                </center>
+            </h2>
+            <br>
+
+            <div class="col-md-12">
+                <center>
+                    <p style="color:black;">
+                        IC-AMER 2019 welcomes research papers on the following topics but not limited to:
+                    </p>
+                </center>
+            </div>
+            <br>
+            <div class="col-md-12">
+                <ul>
+                    <li><b>Design Engineering</b> <br>FEA, Design Optimization, Vibrations, Condition Monitoring, Tribology,
+Structural Health Monitoring, Rotor dynamics, Robotics etc.</li>
+                    <li><b>Thermal Engineering</b> <br>Heat and Mass transfer, Fluid Mechanics, Refrigeration and Air conditioning,
+Renewable and Non-Renewable Sources of Energy, Computation Fluid Dynamics, Energy Storage,
+Aerodynamics, Compressible/Incompressible flows, Green building, Waste management, IC engines/
+combustion, Bio-Heat Transfer, Phase Change Materials, Turbomachines, Automobile, Energy etc.</li>
+                    <li><b>Manufacturing and Industrial Engineering</b> <br>Manufacturing processes, Machining, CAD/CAM,
+Additive Manufacturing, Modelling and Simulation of Manufacturing Processes, Micro and Nano
+Manufacturing, Optimization of Manufacturing Processes, Logistics and Supply Chain Management,
+Operations Management etc.</li>
+                    <li><b>Materials</b> <br>Composite materials, Material characterization, Fracture, Fatigue studies, Advanced
+Materials etc.</li>
+                </ul>
+            </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <!-- /.col-md-6 -->
+    <div class="col-md-12" id="dates">
+        <h2>
+            <center>
+                <span class="label label-primary">Call for Papers</span>
+            </center>
+        </h2>
+        <br>
+        <p style="text-align:justify;">
+            Authors should submit an original and unpublished papers not exceeding 5 pages including figures
+and tables. The paper template can be downloaded from downloads page.
+        </p>
+    </div>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12" id="fee_div">
+        <center>
+            <h2>
+                <span class="label label-success">Proceedings</span>
+            </h2>
+                <img src="{% static 'icamer/Springer.jpg' %}" height="150px">
+	</center>
+            <br>
+            <p style="text-align:justify;">
+                All the peer-reviewed papers will be considered for publication in SCI/Scopus indexed/ reputed
+journals/ISBN Proceedings based on their technical quality and novelty with prior intimation to the
+authors.
+    </div>
+
+
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>
+            <center>
+                <span class="label label-success">Keynote Speakers</span>
+            </center>
+        </h2>
+        <br>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'icamer/pn_rao.PNG'%}" height="100" width="150">
+                <br>
+            </div>
+                <b>
+                    <u>Prof P.N.Rao</u>
+                </b>
+            <br/>Department of Technology, University of Northern Iowa,USA.</center>
+        <br/>
+    </div>
+    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'icamer/g_Padmanabham.PNG'%}" height="100" width="150">
+                <br>
+            </div>
+                <b>
+                    <u>Dr. G. Padmanabham</u>
+                </b>
+            <br>Director, ARCI, Hyderabad, India</center>
+        <br/>
+    </div>
+    <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <center>
+            <div>
+                <img class="img-thumbnail" src="{% static 'icamer/ps_lee.jpg'%}" height="100" width="150">
+                <br/>
+            </div>
+                <b>
+                    <u>P. S. Lee</u>
+                </b>
+            <br/>Department of Mechanical Engineering, National University of Singapore, Singapore</center>
+        <br/>
+    </div>
+</div>
+<hr>
+
+<!-- row -->
+<div class="row">
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <center>
+                <h4>
+                    <b>Patron</b>
+                </h4>
+                <p style="font-size:17px;">Prof. N V Ramana Rao
+                    <br> Director
+                    <br> National Institute of Technology, Warangal</p>
+            </center>
+        </div>
+        <div class="col-md-3">
+            <center>
+                <h4>
+                    <b>Chairman</b>
+                </h4>
+                <p style="font-size:17px;">Prof. P Bnagaru Babu<br/> Head, MED</p>
+            </center>
+        </div>
+        <!--<div class="col-md-3">
+            <center>
+                <h4>
+                    <b>Convener </b>
+                </h4>
+                <p style="font-size:17px;">Prof. A. Sarath Babu</p>
+            </center>
+        </div>
+        <div class="col-md-3">
+            <center>
+                <h4>
+                    <b>Coordinators</b>
+                </h4>
+                <p style="font-size:17px;">Prof. A. Venu Vinod
+                    <br>Dr. P. V. Suresh
+                    <br>Dr. S. Muralimohan
+            </center>
+        </div>-->
+        <br>
+    </div>
+    <!-- <div class="col-md-3"></div> -->
+
+</div>
+
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">ORGANIZING SECRETARIES</span></h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-7 col-md-offset-5">
+            <ul>
+                <li>Dr. Hari Kumar Voruganti</li>
+                <li>Dr. K Kiran Kumar</li>
+                <li>Dr. P Vamsi Krishna</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">JOINT SECRETARIES</span></h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-7 col-md-offset-5">
+            <ul>
+                <li>Dr. Karthik Balasubramanian</li>
+                <li>Dr. Syed Ismail</li>
+                <li>Dr. M Vijaya Kumar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">ADVISORY BOARD</span></h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-7 col-md-offset-5">
+            <ul>
+                <li>Prof. Bhaskar Dasgupta, IIT Kanpur.</li>
+                <li>Prof. P Seshu, IIT Dharwad.</li>
+                <li>Prof. C S P Rao, NIT Andhra Pradesh.</li>
+                <li>Prof. M Ramgopal, IIT Kharagpur.</li>
+                <li>Dr. Ekta Singla, IIT Ropar.</li>
+                <li>Dr. Sachin Singh Gautam, IIT Guwahati.</li>
+                <li>Dr. Saravan Kumar, IIT Madras.</li>
+                <li>Dr. L. Rama Krishna , Scientist-F, ARCI Hyderabad</li>
+                <li>Dr. Xiaoliang Jin, The Univ. of British Columbia, Canada.</li>
+                <li>Dr. Rukmini Srikant Revuru, Univ. of Northern Iowa, USA.</li>
+                <li>Mr. D Uma Maheshwar, GE Aviation India.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <h2>
+                <span class="label label-success">ORGANIZING COMMITTEE</span></h2>
+        </center>
+        <br>
+    </div>
+    <div class="row" style="font-size:15px;">
+        <div class="col-md-12">
+            <center>Faculty Members of the Department of Mechanical Engineering, NIT Warangal</center>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</BR>
+</div>
+</BR>
+
+<!-- INSTRUCTION LIST  -->
+{% include 'conference/icamer/instructions_modal.djt' %}
+
+{% endblock %}

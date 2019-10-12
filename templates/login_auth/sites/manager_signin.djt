@@ -1,0 +1,38 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	{% if message %}
+	<div class="ui message">
+		<i class="close icon"></i>
+		<div class="header">
+		  Authentication Error
+		</div>
+		<div>
+		  <p>{{message}}</p>
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="ui fluid segment">
+		<form class="ui form" action="/manager/signin_auth/" method="post">
+			{% csrf_token %}
+			
+	        <div class="field">
+	              <label>UserName</label>
+	              <input name="username" placeholder="Username" type="text" id="username" required="">
+	        </div>
+	        <div class="field">
+	              <label>Password</label>
+	              <input name="password" placeholder="Password" type="password" id="password" required="">
+	        </div>
+	        <div style="margin-left: 40%;">
+	        <button class="ui button green" type="submit" id="signin">Sign In</button>
+	        </div>
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}

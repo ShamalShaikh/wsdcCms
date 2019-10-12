@@ -1,0 +1,180 @@
+{% extends "conference/ewcti/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12" style="line-height:30px;font-size:17px;">
+				<br><h2><center><span class="label label-success">About Institute</span></center></h2><br>
+				<p style="color:black; text-align:justify;">
+					The National Institute of Technology (NIT), Warangal is the first in the chain of 31 NITs, Institutes of National Importance established by Act of Parliament. Late Pandit Jawaharlal Nehru laid the foundation stone for this institute on October 10, 1959.
+				</p>
+				<p style="color:black; text-align:justify;">
+					The Institute offers eight B.Tech. programmes in engineering, twenty five M.Tech. programmes and seven other post graduate programmes (M.Sc.,
+					MCA and MBA) and research programmes through thirteen academic departments. NIT Warangal has
+					about 100 well equipped laboratories and well established supporting infrastructure. The institute is well-known for its Research and Development, Industrial Consultancy, Continuing Education and Training programmes for teachers and industrial personnel.
+
+				</p>
+				<p style="color:black; text-align:justify;">
+					The institute houses about 600 foreign students
+					from as many as 40 countries. It has strong
+					academic and research collaborations with several
+					leading foreign universities and programs like
+					HERITAGE, EUPHRATES, HORIZON 2020, etc.
+					Students and faculty used to enjoy several short
+					term international mobility.
+				</p>
+				<p style="color:black; text-align:justify;">
+					The institute is about to enter its 60 th year of
+					establishment on 10 th October 2018. A year-long
+					Diamond Jubilee Celebrations are planned
+					commencing with a national conference on
+					“Evolution of World Class Technical Institutions
+					– Issues & Concerns” during October 10-12, 2018.
+				</p>
+                <!-- p style="color:black; text-align:justify;">
+                    Warangal is the second largest city of the new state of Telangana. It is situated at a distance of 140 km from the state capital Hyderabad (Nearest Airport). It is well connected by Rail (Kazipet Junction is 2 km away and Warangal Station is 12 km away) and by Road (NH 163). Warangal is renowned for its rich historical and cultural heritage. It was the seat of erstwhile Kakatiya dynasty. It is a hub of tourist attractions with a number of historical monuments like Thousand Pillars Temple, Warangal Fort, Bhadrakali Temple, Ramappa Temple and Laknavaram Lake located within a radius of 80 km.
+                 </p> -->
+              </div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="line-height:30px;font-size:17px;">
+           		<br><h2><center><span class="label label-success">About Warangal City</span></center></h2><br>
+           		<p style="text-align:justify">
+           			Warangal, a historic city, was the capital city of the
+           			famous Kakatiya Kingdom during the 12th to 14th
+           			century A.D. There are many Intricately carved
+           			monuments built by the Kakatiyas in this region.
+           			The 1000 pillar Temple, the Warangal fort and the
+           			Ramappa Temple bear testimony to the historic
+           			period. Warangal has been identified as a heritage
+           		city by the UNESCO.</p>
+           		<p style="text-align:justify">
+           			Laknavaram Lake, Pakhal Lake and the Eturu
+           			Nagaram Reserve Forests are excellent tourist
+           			attractions. There are also many scenic water falls
+           		near by.</p>
+           		<p style="text-align:justify">
+           			The city is well connected by road and rail network
+           			to the rest of the country. The nearest Airport is at
+           			Hyderabad, another historic city and capital of
+           			Telangana, at a distance of about 170 km from
+           			Warangal.
+           		</p>
+           		<ul>
+           			<li><b><a href="https://en.wikipedia.org/wiki/Warangal"> https://en.wikipedia.org/wiki/Warangal</a></b></li>
+           			<li><b><a href="http://www.telanganatourism.gov.in/ "> http://www.telanganatourism.gov.in/</a></b></li>
+           			<li><b><a href="http://warangalurban.telangana.gov.in/"> http://warangalurban.telangana.gov.in/</a></b></li>
+           		</ul>
+           	</div>
+           </div>        
+
+
+
+
+
+           <!-- historical plaes in warangal  start-->
+           <div class="row">
+           	<div class="col-md-12" style="line-height:30px;font-size:17px;">
+           		<br><h2><center><span class="label label-success">Historical Places Near Warangal</span></center></h2><br>
+           		<p style="text-align:justify;">Warangal is recognized as one of the best heritage cities of India. It is 145 km away from the state capital Hyderabad. It is also the second largest city in the state of Telangana. The city's name is derived from the Telugu word Orugallu;  'Oru' which means one and the word 'gallu' meaning stone. The city was the capital of the great Kakatiya rulers who reigned between 12th and 14th centuries</p>
+           	</div>
+           </div>
+
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Thousand Pillar Temple</span>
+
+           		</center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/t.jpg'%}" width="px" height="%"></center><br>
+
+           		<p style="text-align:justify;">Many Hindu temples were developed under the patronage of Ganapati Deva, Rudrama Devi and Prataparudra who were of Kakatiya dynasty. The Thousand Pillar Temple was believed to be constructed during the period between 1175-1324 CE by order of the king, Rudra Deva. It stands out to be a masterpiece and achieved major heights in terms of architectural skills by the ancient Kakatiya vishwakarma sthapathis.</p>
+           		                             
+           	</div>
+           	<!-- /.col-md-6 -->
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Bhadrakali Temple</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/b.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">The temple is believed to be built in 625 A.D by the King Pulakeshin II of Chalukya dynasty to commemorate his victory over Vengi region of Andhra Desham, as per the writings on the temple wall.</p>
+           		<p style="text-align:justify;">Kakatiya kings later have adopted the temple and considered Goddess Bhadrakali as their "Kula Devatha". A lake was also built by Ganapatideva adjacent to the temple. Due to the fall of Kakatiya dynasty to the Muslim rulers of Delhi, the temple lost its prominence. In 1950, the temple was renovated by Sri Ganapathi Sastri a devi upasaka along with the help of a local merchant and other affluent locals.
+
+           		 </p>
+
+           	</div>
+           </div>
+           	<!-- /.col-md-6 -->
+           	<div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Warangal Fort</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/w.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Warangal Fort, in Warangal district, Telangana in India. Appears to have existed since at least the 12th century when it was the capital of the Kakatiya dynasty. The fort has four ornamental gates, known as Kakatiya Kala Thoranam, that originally formed the entrances to a now ruined great Shiva temple. The Kakatiyan arch has been adopted and officially incorporated into the Emblem of Telangana after the state bifurcation. The Fort is included in the "tentative list" of UNESCO World Heritage Site. The Monument was submitted by the Permanent Delegation of India to UNESCO on 10/09/2010.</p>                     
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Ramappa Temple</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/r.png'%}" width="px" height="%"></center><br>
+           		
+           		<p style="text-align:justify;">The Ramappa temple has been referred as the brightest star in the network of medieval temples in the Deccan region. Another striking feature of this temple is that it is built with bricks that are so light that they can easily float on water. The temple which is situated in a valley took nearly 40 years to be completed. The Ramappa temple finds its hold on a 6 feet high platform on a cruciform plan. The temple's chamber is crowned with a shikharam and is surrounded by pradakshinapatha.</p>        
+           	</div>
+           </div>
+           	<!-- /.col-md-6 -->
+           	<div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Medaram (Sammakka & Saralamma)</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/m.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Sammakka Saralamma Jatara or Medaram Jatara is a tribal Hindu festival of honouring the goddesses celebrated in the state of Telangana, India. The Jatara begins at Medaram. Medaram is a village in Warangal district, Telangana, India. A popular religious congregation or Jatara called "Samakka sarakka" jatara takes place for three days biennially in this village. Sammakka-Sarakka Jatara held by forest dwelling Koya tribe of Telangana and surrounding States, is the biggest Tribal festival in Asia which is attended by two crore people on an average.</p>                     
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Bogatha Waterfall</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/bo.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Situated in Koyaveerapuram G, (Wazeedu Mandal) in Khammam district, Bogatha Waterfall is 120 km away from Bhadrachalam, and 329 km away from Hyderabad. The distance has come down from 440 km because of the newly constructed Eturnagaram bridge on National Highway 202</p>        
+           	</div>
+           
+           	<!-- /.col-md-6 -->
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Laknavaram Lake</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/l.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Laknavaram Lake is a lake located in Govindaraopet mandal, about 80km from Warangal, Telangana. The lake is spread over an area of 10,000 acres and holds about 2.135 tmcft of water. It irrigates over 3,500 acres of land. It was built by Kakatiya kings. It has about 13 islands in it and has a 160 metres long hanging bridge, which connects three islands. It is surrounded by a thick deciduous forest and it is a very popular tourist spot. The new facilities including cottages, a viewing tower, a pantry, and a ferry from the main banks to the island amidst the serene waters have been opened for the nature loving tourists.</p>
+
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Pakhal Lake</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/p.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">The great Kakatiya, Telugu king Ganapati Deva has constructed Pakhal lake in the deepest forest area for the future uses of farmland for agriculture purpose. Now approximately 3Lakh Acres of the area is surviving under it. Kakatiya rulers have lot of future plannings to make people's lives better. They used so many kinds of engineering technologies in the constructions..they built Ramappa temple on a lake, as well as thousand pillars temples at Hanamkonda is constructed on sand land and still surviving for past thousand years and they will be standing so strongly other 2 to 3 thousand years so proudly after our generation.</p>        
+           	</div>
+           	<!-- /.col-md-6 -->
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Eturnagaram Wildlife Sanctuary</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/e.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Eturnagaram Wildlife Sanctuary is a wildlife sanctuary located in Eturnagaram village in Jayashankar district in Telangana, India. It is located 250 km (160 mi) away from Hyderabad.</p>
+           		<p style="text-align:justify;">Telangana has splendid wildlife reserves, one of such is the Eturnagaram wildlife sanctuary, which is 100 km (62 mi) from Warangal. The sanctuary is located near the Maharashtra, Chhattisgarh and Telangana border. It is one of the oldest sanctuaries of Telangana. In the year 1952 on 30 January the erstwhile Hyderabad Government because of its rich bio-diversity declared it as a sanctuary.</p>
+           		<p style="text-align:justify;">The land is undulating from steep slopes to gentle slopes from west to east. Three-quarters of the area consist of a plain while the rest is hilly with many streams and springs. Godavari river passes through the sanctuary. The vegetation here is tropical dry deciduous with teak and other trees of good quality standing 60 ft (18 m) and above. The biennial festival of Sammakka Saralamma Jatara is held in the sanctuary.</p>
+
+           	</div>
+           </div>
+
+        </div>
+
+           <!-- continer ends -->
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,137 @@
+{% extends "conference/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+<div class="ui container">
+		<div class="ui large breadcrumb">
+		  <a class="section">Home</a>
+		  <i class="right chevron icon divider"></i>
+		  <a class="section">Conferences</a>
+		  <i class="right chevron icon divider"></i>
+		  <div class="active section">{{conference.conference_name}}</div>
+		</div>
+		<h2 class="ui horizontal header divider">
+		  <i class="university icon"></i>
+		  {{conference.conference_name}}
+		</h2>
+		<br>
+		<div class="ui two column stackable grid">
+			<div class="column">
+				<div class="ui blue basic fluid button">Start-Date: {{conference.startDate}}</div>
+			</div>
+			<div class="column">
+				<div class="ui blue basic fluid button">Start-Date: {{conference.endDate}}</div>
+			</div>
+		</div>
+		<br>
+		<div class="ui container">
+		{% if payment %}
+			   
+			{% if payment.is_aprooved %}
+			<div class="ui segment">
+				{% if papers %}
+				<table class="ui celled table">
+					<thead>
+						<tr>
+							<th>Paper</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						{% for paper in papers %}
+							<tr>
+								<td><a href="/media/{{paper.paperfile}}" target="blank">{{paper.papername}}</a></td>
+								<td>{%if paper.is_approved%}Published {%elif paper.is_rejected%} Rejected {%elif paper.under_review%} Under Review {% else %} Approval in Progress {%endif%}</td>
+							</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+				{%else%}
+				<center><h3>No Papers Uploaded !!!</h3></center>
+				{% endif %}
+			</div>
+			<div class="ui fluid segment">
+				<form class="ui form" action="/conference/upload_paper/{{conference.conference_id}}/" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="field" style="margin-left: 35%; width:250px;">
+			              <input name="paper_name" placeholder="paper name" type="text" id="paper_name">
+			        </div>
+			        <div class="field" style="margin-left: 33%;">
+			              <input name="paper_file" type="file" id="paper_file" class="ui button blue">
+			        </div>
+			        <div style="margin-left: 40%;">
+			        <button class="ui button green" type="submit" id="uploadPaper">Submit Paper</button>
+			        </div>
+				</form>
+			</div>
+			{% else %}
+			<div class="ui fluid segment">
+				{% if payment.remarks %}
+					<h3> Status :
+					<span> DD rejected </span>
+					</h3>
+					<h3>Remarks : {{payment.remarks}}</h3>
+				{% else %}
+					<h3> Status :
+					<span> DD yet to be Approved </span>
+					</h3>
+				{% endif %}
+				<div style="margin-left: 40%;">
+					<a href="/conference/payment/?cid={{conference.conference_id}}"><button class="ui button blue">Upload DD again</button></a>
+				</div>
+			</div>
+			{% endif %}
+			
+		{% else %}
+			<div>
+				<a href="/conference/make_payment/?cid={{conference.conference_id}}"><button class="ui button fluid blue">Register for Conference</button></a>
+			</div>
+		{% endif %}
+		<br>
+		</div>
+		<div class="ui grid">
+		    <div class="sixteen wide column bijimg">
+		      <img height="400em" width="100%" class="bigimg" id="img1">
+			</div>
+		</div>
+		<div class="ui doubling stackable grid container">
+		  <div class="ten wide column">
+		  <div class="ui segment">
+		    <h1>Description</h1>
+		    <p>{{conference.description}}</p>
+		   </div>
+		  </div>
+		  <div class="two wide column">
+		    <p></p>
+		    <p></p>
+		  </div>
+		  <div class="four wide column">
+		  <div class="ui segment">
+		    <h3>Conference Manager : </h3>
+		    <h3>{{conference.manager.user.first_name}} {{conference.manager.user.last_name}}</h3>
+		  </div>
+		  </div>
+		</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+	var imgArray = new Array();
+	{% for image in images %}
+		imgArray.push("/media/{{image.imgfile}}");
+	{% endfor %}
+	console.log(imgArray);
+	startTime();
+	var imgCount = 0;
+	function startTime() {
+	    if(imgCount == imgArray.length) {
+	        imgCount = 0;
+	    }
+	    document.getElementById("img1").src = imgArray[imgCount];
+	    imgCount++;
+	    setTimeout("startTime()", 1000);
+	}
+</script>
+{% endblock %}

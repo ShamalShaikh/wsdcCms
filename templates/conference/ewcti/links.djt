@@ -1,0 +1,18 @@
+{% extends "conference/ewcti/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <!-- Page Content -->
+    <div class="container" style="padding-top: 100px;min-height: 60vh;">
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-5">
+                <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
+                <br><br>
+                <h4><b><ol>
+                    <li><a href="{% static 'docs_ewcti/ewcti2018_brochure1.pdf' %}">Brochure</a></li><br>
+                </ol></b></h4>
+            </div>
+        </div>
+</div> 
+{% endblock %}

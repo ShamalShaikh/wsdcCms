@@ -1,0 +1,47 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<h2 class="ui center aligned icon header dash_header">
+	  <i class="circular users icon"></i>
+	  Manager Portal
+	</h2>
+	<div class="ui divider"></div>
+	<br>
+<table class="ui celled striped table">
+  <thead>
+    <tr class="center aligned"><th colspan="4">
+      My Conferences
+    </th>
+  </tr>
+  <tr>
+  	<th>Conference Name</th>
+  	<th>Start Date</th>
+  	<th>End Date</th>
+  	<th>View</th>
+  </tr>
+  </thead>
+  <tbody>
+  {%if conferences%}
+  	{% for conference in conferences %}
+    <tr>
+      <td class="collapsing">
+         {{conference.conference_name}}
+      </td>
+      <td>{{conference.startDate}}</td>
+      <td>{{conference.endDate}}</td>
+      <td><a href="/manager/conference_landing/{{conference.conference_id}}/1" class="ui fluid primary button">View Conference</a>
+      </td>
+    </tr>
+    {%endfor%}
+  {%else%}
+  	<tr colspan="4">
+  		No Conferences are assigned to you
+  	</tr>
+  {%endif%}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

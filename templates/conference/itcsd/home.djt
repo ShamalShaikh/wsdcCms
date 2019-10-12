@@ -1,0 +1,742 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ITCSD'19</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    {% endif %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#fee_div">Registration Fee</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.first_name}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <center>
+            <div class="col-md-2">
+                <img src="{% static 'images/60_logo.png' %}" height="150px" style="margin-top:20px"></a>
+            </div>
+            </center>
+            <div class="col-sm-8">
+            <center>
+                <!-- <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P> -->
+                <p style="font-size:20px;color: #002360;"><b>INTERNATIONAL CONFERENCE ON</b></p>
+                <p style="font-size:20px; color: #31b150;"><b>INNOVATIVE TRENDS IN CIVIL ENGINEERING FOR SUSTAINABLE DEVELOPMENT </b></p>
+                <p style="font-size:20px;color: #002360;"><b>(ITCSD - 2019)</b></p>
+                <p style="font-size:15px;color: #002360;"><b>On the occasion of Diamond Jubliee Celebrations Of NIT Warangal</b></p>
+                <!-- <p style="font-size:15px;color: #0f71c6;"><b>(Self-Financed)</b></p> -->
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+            </div>
+            <div class="col-sm-2">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>September 13-15, 2019</b></h3>
+                <h4>
+                     Organised by<br><hr>
+                     <!-- Transportation Division<br><br> -->
+                    Department of Civil Engineering<br><br>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h4></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Call to Action Well -->
+        <!-- <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE">Last date for full length paper submission is extended to 25th December ss2018</marquee>
+                </div>
+            </div> -->
+            <!-- /.col-lg-12
+        </div> -->
+        <!-- /.row -->
+
+        <hr>
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Overview of the Conference</span></center></h2><br>
+                <p style="text-align:justify">
+                            Civil Engineers are the builders of the nation.  They provide basic infrastructure facilities needed for the society.  While providing these basic infrastructure facilities, a civil engineer is concerned with four aspects, namely, Quality, Productivity, Safety and Economy (QPSE). There has been a noticeable change in the environment within which civil engineers carry out their work. There is a growing concern on the adverse consequences of the development activities. Global warming and climate change and their impacts on the various sectors of the society are also of major concern. In this changing environment the specifications for meeting the QPSE requirement are becoming more and more complicated. 
+                        </p><br>
+                        <p style="text-align:justify">
+                            A multitude of threats confront us in our effort to achieve sustainability. Civil engineers have always been looking for innovative tools and techniques for solving the challenging problems that they face during planning, analysis, design and construction of civil engineering structures. This conference is aimed to provide a forum to all Civil Engineers to deliberate on the innovative tools and techniques that are needed to face the challenge of sustainable development.
+                        </p>
+                </div>
+            </div>
+	<hr>
+         <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Thematic Areas</span></center></h2><br>
+               <div class="col-md-offset-4 col-md-5">
+               <li>Water and wastewater treatment</li>
+               <li>Solid and Hazardous waste management</li>
+               <li>Air Pollution and Control</li>
+               <li>Sustainable water resources management</li>
+               <li>Impact of Climate Change</li>
+               <li>Urban water management</li>
+               <li>Performance of concrete making materials </li>
+               <li>Advances in structural analysis
+               <li>Structural dynamics </li>
+               <li>Earthquake engineering</li>
+               <li>Sustainable construction materials</li>
+               <li>Rehabilitation of structures</li>
+               <li>Sustainable Transportation </li>
+               <li>Urban Transportation Planning and Management</li>
+               <li>Traffic Engineering and Safety</li>
+               <li>Pavement Engineering</li>
+               </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Call for Papers</span></center></h2><br>
+                <p style="text-align:justify">
+                	Authors should   submit  an extended abstract of   their original, unpublished work in the template given on the website.  The abstract must be mailed to itcsd2019@nitw.ac.in</p>
+                
+            </div>
+        </div>
+        <hr>
+	<div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Publication Announcement</center></h2><br>
+                <p style="text-align:justify">All the abstracts accepted after peer review from registered participants will be published in the conference proceedings with ISBN number. Selected papers of the conference will be published in the SCI / Scopus indexed Journals.
+                </p>
+	    </div>
+	    <!-- <center>
+	    <div class="col-md-12">
+	    	<img src="{% static 'docs_cmfdp/ijmems.jpg' %}">
+	    </div>
+	</center>
+	<center>
+	    <div class="col-md-12">
+	    	<img src="{% static 'docs_cmfdp/iieta.jpg' %}">
+	    </div>
+	</center> -->
+	</div>
+	<hr>
+        <div class="row">
+            <div class="col-md-6" style="font-size:15px;">
+                <h2><center><span class="label label-primary">Conference Language</span></center></h2><br>
+                <p style="text-align:justify;">The conference presentations and deliberations will be in English</p>
+                               
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-6" id="dates">
+                <h2><center><span class="label label-primary">Important Dates</span></center></h2><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Abstract Submission</td>
+                        <td>30th June, 2019</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Acceptance of Abstract</td>
+                        <td>31th July, 2019</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Full paper submission</td>
+                        <td>31st August, 2019</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Early bird Registration</td>
+                        <td>15th August, 2019</td>
+                    </tr>
+                </table>
+                <br>
+                <!-- <h2><center><span class="label label-primary">Sponsorship</span></center></h2><br>
+                <p style="text-align:justify;">
+                    CTSEM will provide great opportunity for interaction among industries, consultants, government agencies, educational institutions, academicians, professionals and decision makers.<br>
+                    Sponsorship with the following tariff is invited.
+                </p>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Platinum Sponsor:</td>
+                        <td>Rs. 1,00,000 (8 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Gold Sponsor:</td>
+                        <td>Rs. 50,000 (6 delegates free)</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Silver Sponsor:</td>
+                        <td>Rs. 25,000 (4 delegates free)</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Co-Sponsor:</td>
+                        <td>Rs. 10,000 (2 delegates free)</td>
+                    </tr>
+                </table> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <center>
+                <h2><span class="label label-primary">Mode of Payment</span></h2><br>
+                <b>Payments to be made through Online/NEFT to the Bank given below.</b>
+                <br><br>
+                <table class="table table-hover">
+                    <tr class="active">
+                        <td>Account Name</td>
+                        <td>Organising Secretary – ITCSD-2019</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Account No</td>
+                        <td>38203820206</td>
+                    </tr> 
+                    <tr class="active">
+                        <td>Bank and Branch</td>
+                        <td>State Bank of India REC Warangal (NIT Campus)</td>
+                    </tr>
+                    
+                    <tr class="active">
+                        <td>Branch Code</td>
+                        <td>20149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>IFSC Code</td>
+                        <td>SBIN0020149</td>
+                    </tr>
+                    <tr class="active">
+                        <td>MICR Code</td>
+                        <td>506002030</td>
+                    </tr>
+                    <tr class="active">
+                        <td>SWIFT Code</td>
+                        <td>SBININBBH14</td>
+                    </tr>
+                    
+                </table>
+                <b>Payments to be made through DD.</b>
+                <br><br>
+                <p>DD is to be drawn in favor of “Conference Chair” payable at Warangal.</p>
+                </center>
+
+            </div>
+            <div class="col-md-6">
+                <h2><center><span class="label label-primary">Address for correspondence</span></center></h2><br>
+                <center>
+                
+                <p style="font-size:17px;">
+                    <b>Organising Secretary</b><br>
+                    <b>Department of Civil Engineering </b> <br>
+                    National Institute of Technology Warangal - 506 004, <br>
+                    Telangana State, India.<br>
+                    Phone: +91-8332969241 Fax: +91-870-2459547<br>
+                    E-mail: itcsd2019@nitw.ac.in<br>
+                    Website: http://cms.nitw.ac.in/conference/itcsd2019/
+
+                </p>
+                </center>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6" style="line-height:30px;font-size:17px;" id="fee_div">
+                <br><h2><center><span class="label label-default">REGISTRATION FEE</span></center></h2><br>
+                <table class="table table-hover">
+                <tr class="active">
+                    <td rowspan="2">Category</td>
+                    <td colspan="2">Early bird registration</td>
+                    <td colspan="2">Regular registration</td>
+                </tr>
+                <tr class="active">
+                    <td>Indian (INR)</td>
+                    <td>Others (USD)</td>
+                    <td>Indian (INR)</td>
+                    <td>Others (USD)</td>
+                </tr>
+                <tr class="active">
+                    <td>Academia and R&D centers</td>
+                    <td>2500</td>
+                    <td>200</td>
+                    <td>3000</td>
+                    <td>250</td>
+
+                </tr>
+
+                <tr class="active">
+                    <td>Industry delegates</td>
+                    <td>4000</td>
+                    <td>250</td>
+                    <td>5000</td>
+                    <td>300</td>
+                </tr>
+                <tr class="active">
+                    <td>PG &Research Scholars</td>
+                    <td>1500</td>
+                    <td>100</td>
+                    <td>2000</td>
+                    <td>150</td>
+                </tr>
+                <tr class="active">
+                    <td>Accompanying /Non-presenting Persons</td>
+                    <td>1500</td>
+                    <td>100</td>
+                    <td>2000</td>
+                    <td>150</td>
+                </tr>
+
+            </table>
+                <p>For registration, please send the filled-in registration form along with payment to the Organizing Secretary. The registration fee details are given above table. At least one author should register per paper. Conference registration fee includes kit, proceedings and admission to all technical sessions, 
+
+lunch, conference dinner, tea/coffee and snacks. It does not include accommodation. Accommodation details, list of nearby Hotels and their tariff will be updated on the conference website.
+</p><br>
+<p>
+Registration fee along with the accommodation fee (if required) may be sent in the form of DD in favor of Organising SecretaryITCSD-2019 payable at Warangal or remitted through On-line / NEFT to the above mentioned Bank Account.</p>
+            </div>
+
+            <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-default">BEST PAPER PRESENTATION AWARD</span></center></h2><br>
+                <p>
+                    "Best Paper Presentataion Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <!-- <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">Accomodation and Travel</span></center></h2><br>
+                <p style="text-align:justify">
+                    Limited accommodation may be provided on payment
+                    basis in the Institute Visitors Block/DASA Hostel
+                    depending on availability and on first come first serve
+                    basis. However, Warangal city covers a wide range of
+                    hotels and other accommodation facilities to suit every
+                    budget. Participants are advised to contact the hotels
+                    directly and book their accommodation. However, in
+                    case of difficulty, we will assist on your prior request.
+                </p>
+                <br>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Organising Committee</span></h2></center><br>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <h4><b>Patron</b></h4>
+                        <p style="font-size:17px;">Prof. N V Ramana Rao<br> Director <br>
+                            National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <div class="col-md-6">
+                    <center>
+                    <h4><b>Conference Chair</b></h4>
+                    <p style="font-size:17px;">Prof. M. Chandrasekhar<br> 
+                        Head of the Department<br>National Institute of Technology, Warangal</p>
+                    </center>
+                </div>
+                <br>
+                <br>
+                <hr>
+               <div class="col-md-4">
+                    
+                        <h4><b>Organising Secretary</b></h4>
+                        <p style="font-size:17px;">Prof. N V Umamahesh<br> 
+                                                    Dr. K .Venkata Reddy<br>
+                                                    Dr. Venkaiah Chowdary<br>
+                                                    Dr. P. Hari Prasad Reddy<br>
+                                                    Dr. S.Venkateswara Rao
+
+                           </p>
+                    
+                </div>
+                <div class="col-md-4">
+                    
+                    <h4><b>Joint Secretaries</b></h4> 
+                    <p style="font-size:17px;">Dr. P. Venkateswara rao<br>
+                        Dr. S. Shankar<br>Dr. D. Ravi Prasad <br>Dr. Rakesh J Pillai<br><br><br><br>
+
+                    </p>
+                   
+                </div>
+                <div class="col-md-4">
+                    <center>
+                    <h4><b>Treasurer</b></h4> 
+                    <p style="font-size:17px;">Prof. T.D. Gunneswara Rao <br>
+                        National Institute of Technology, Warangal<br><br><br><br>
+
+                    </p>
+                   </center>
+                </div>
+                <br><br>
+                <div class="col-md-4 col-md-offset-4">
+                    
+                    <h4><b>Organizing Committee</b></h4> 
+                    <p style="font-size:17px;">
+
+                    
+                        Prof. C.B Kameswara Rao<br>
+                        Prof. K V Jayakumar<br>
+                        Prof. P Anand Raj<br>
+                        Prof. D Ramseshu<br>
+                        Prof. G Rajesh Kumar<br>
+                        Prof. CSRK Prasad<br>
+                        Prof. P Ratish Kumar<br>
+                        Prof. E. Venkatarathnam<br>
+                        Prof. V Ramanamurthy<br>
+                        Mr. VN Kameswara Rao<br>
+                        Mr. M. Sudhakar<br>
+                        Dr. P Harikrishna<br>
+                        Dr. M Heeralal<br>
+                        <!-- Dr. K Venkata Reddy<br>
+                        Dr. Venkaiah Chowdary<br>
+                        Dr. P Hari Prasad Reddy<br>
+                        Dr. S.Venkateswara Rao<br> -->
+                        Dr. Arif Baig<br>
+                        Dr. T. P. Tezeswi<br>
+                        Dr Sabavath Shankar<br>
+                        Dr. M. Shashi<br>
+                        Dr. Ajey Kumar Patel<br>
+                        Dr. D. Ravi Prasad<br>
+                        Dr. M. V. N. Sivakumar<br>
+                        Dr. K. V. R. Ravi Shankar<br>
+                        Dr. G Kalyan Kumar<br>
+                        Dr. K. Gopi Krishna<br>
+                        Dr. Rakesh J. Pillai<br>
+                        Dr. Arpan Mehar<br>
+                        Dr. Y Navatha<br>
+                        Dr. P Sridhar<br>
+                        Dr. G. V. Ramana<br>
+                        Dr. Ambika S<br>
+                        Dr. S. Anitha Priyadharshani<br>
+                        Dr. B Kavitha<br>
+                        Dr. M Oinam Romanbabu<br>
+                        Dr. V Aneetha<br>
+                        Dr. C Sumanth<br>
+                        <!-- Dr. A Azhoni<br> -->
+                        Dr. B Umesh
+
+
+                    </ul>
+                   
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" style="font-size:17px;">
+            
+            
+            <div class="col-md-12">
+                <center><h2><span class="label label-success">Technical Advisory Committee</span></h2></center>
+            <br>
+                
+                    <div class="col-md-6" style="font-size:17px;">
+                        <center><h3><span class="label label-info">National</span></h3></center>
+                        <br>
+                        <ul>
+                            <li>Prof. D.Nagesh Kumar, IISC Bangalore</li>
+                            <li>Prof. S K Jain, NIH, Roorkee</li>
+                            <li>Prof. Rajesh Gupta, NIT Nagpur</li>
+                            <li>Prof. K Srinivasa Raju, BITS Hyderabad</li>
+                            <li>Prof. K. P. Sudheer, IIT Madras</li>
+                            <li>Prof. J. Murali Krishnan, IIT Madras</li>
+                            <li>Prof. Tom V. Mathew, IIT Bombay</li>
+                            <li>Prof. Partha Chakraborty, IIT Kanpur</li>
+                            <li>Prof Yedla Sudhakar, IDIGR, Bombay</li>
+                            <li>Prof Mukhesh Khare, IIT Delhi</li>
+                            
+                        </ul>
+                    </div>
+                
+           
+
+            <div class="col-md-6">
+                <center><h3><span class="label label-info">International</span></h3></center>
+            <br>
+                        <ul>
+                            <li>Prof. Irini Angelidaki, DTU Denmark</li>
+                            <li>Prof. Venkatesh Marwade, Purdue University</li>
+                            <li>Prof. Alfred Kalyanapu, Tennessee Tech</li>
+                            <li>Prof. Sangam Shreshta, AIT</li>
+                            <li>Prof. Athanassios Nikolaides, AUT, Greece</li>
+                            <li>Prof. Ram Pendyala, Arizona State University</li>
+                            <li>Prof. Srinivas Peeta, Purdue University</li>
+                            <li>Prof. Garrick E. Louis, University of Virginia</li>
+                            <li>Dr. Olga Shuvaeva, Novosibirsk State University</li>
+                            <li>Prof. Ing. André Niemann, University of Duisburg-Essen</li>
+                            <li>Dr Lucia Rigamonti, Politecnico di Milano</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <!-- <div class="col-sm-1"></div> -->
+                    <div class="col-sm-9" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="https://www.nitw.ac.in/department/ce/" target="_blank">Department of Civil Engineering, NIT Warangal</a><br>
+                                <a href="http://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>itcsd2019@nitw.ac.inw<br>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Contact:</b></h4>
+                                <b>Organising Secretary</b><br>
+                                    Department of Civil Engineering <br>
+                                    National Institute of Technology Warangal - 506 004, <br>
+                                    Telangana State, India<br>
+                                WARANGAL - 506004, TS<br>
+                                <b>Email : </b>itcsd2019@nitw.ac.in  <br>
+                                <b>Phone : </b> +91-8332969241 <br>
+                                <b>Fax: </b>+91-870-2459547 <br>
+                            </div>
+                            
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% elif payment.is_rejected %}
+                <h3>Your payment is rejected due to following problem : <br>
+                <br><center>{{payment.remarks}}</center></h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="instructions" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Instructions</h4>
+      </div>
+      <div class="modal-body">
+        <hr>
+        <h4>Steps to register</h4>
+        <hr>
+        <ol>
+            <li>Click on register tab at the top</li>
+            <li>Fill in the details and click on register</li>
+            <li>Login with your credentials</li>
+            <li>Congrats !!! You are succesfully registered on website</li>
+        </ol>
+        <hr><hr>
+        <h4 style="color:red;">Provision for only attending the conference</h4>
+        <hr>
+        <p>In case, you want to attend the conference and do not want to present or submit a paper, then follow these steps : </p>
+        <ol>
+            <li>After registering on the website, login with your credentials</li>
+            <li>Pay the Registration Fee through NEFT (or in worst case DD). The detials of online payment are given on the conference website</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top</li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+        </ol>
+        <hr><hr>
+        <h4>Steps to Upload the paper </h4>
+        <hr>
+        <ol>
+            <li>Select upload paper option from navbar</li>
+            <li>Enter the title of the paper</li>
+            <li>Upload the paper in pdf format only as per the paper template which is available at important links of this website.  No other formats are allowed</li>
+            <li>A confirmation mail stating the tracking id will be sent to you</li>
+        </ol>
+        <hr><hr>
+        <h4>Peer review process</h4>
+        <hr>
+        <ol>
+            <li>The uploaded papers will be checked for similarity index</li>
+            <li>If it satisfy the required similarity index then the papers are sent to reviewers for peer review process.</li>
+            <li>The reviewers' recommendations determine whether a paper will be accepted for publication / accepted subject to change / subject to resubmission with significant changes / accepted for oral presentation / rejected</li>
+            <li>The recommendations of the reviewer will uploaded onto the website and the authors can view and do incorporate the corrections, if any.</li>
+            <li>For papers which require changes, the same reviewers will be used to ensure that the quality of the revised paper is acceptable.</li>
+        </ol>
+        <hr><hr>
+        <h4>"Final Submission and Payment of Registration fee"</h4>
+        <hr>
+        <ol>
+            <li>Upon acceptance of a manuscript for publication/presentation, the author has to pay the full registration fee.</li>
+            <li>The payment of the registration fee is through NEFT (or in worst case DD).  The detials of online payment are given on the conference webiste</li>
+            <li>Select "upload payment Receipt" (Scanned copy of the online payment receipt or DD) option from the navbar at top </li>
+            <li>Upload picture of ID proof and the payment receipt</li>
+            <li>Then from the same upload paper option, go to "final paper upload"</li>
+            <li>Upload Copyright Form (which is available at important links page)</li>
+            <li>Upload final paper, and you are done !!</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '121923426-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

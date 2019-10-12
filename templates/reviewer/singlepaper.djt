@@ -1,0 +1,59 @@
+{% extends "reviewer/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+	<center>
+	<h1>{{paper.papername}}</h1>
+	</center>
+	<div class="ui segment">
+	<center>	
+	<iframe id="iframepdf" src="/media/{{ paperpath }}"" width="900" height="600"></iframe>
+	</center>
+
+	{% if q_len %}
+	<center><h2 style="margin-top:20px">Questions for Review</h2></center>
+	<br>
+	<center>
+	<form action="/review/reviewpaper/{{paper.paper_id}}/" method="post">{% csrf_token %}
+			{% for q in questions %}
+			<a class="header">{{q.question}}</a>
+			<div class="fieldWrapper">
+			{% with forloop.counter as cou %}
+			{% for a in q_ans %}
+			{% if cou == forloop.counter %}
+			<script>
+				$(document).ready(function(){
+				   $('.id_answer{{q.id}} option[value={{a}}]').attr('selected','selected');
+				});
+			</script> 
+			 <select id = "id_answer" class = "id_answer{{q.id}}" name = "answer{{q.id}}" required>
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			</select>
+			{% endif %}
+			{% endfor %}
+			{% endwith %}
+    	 	</div>
+    	 	<br>
+	        {% endfor %}
+			<div class="ui form" id="remark">
+    		    <div class="field">
+          			<label>Remarks</label>
+          			<textarea name="remark" rows="3" cols="10">{{rem}}</textarea>
+        		</div>
+      		</div>
+      		<br>
+
+    	<input type="submit" value="Submit" />
+	</form>	
+	</center>  
+	{% endif %}
+
+</div>
+
+<br><br>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "login_auth/layouts/header.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<style type="text/css">
+	body{
+		background: #ECE9E3;
+	}
+</style>
+
+<div class="ui container">
+<br>
+<h2 class="ui horizontal header divider">
+  <i class="university icon"></i>
+  Conferences
+</h2>
+<br>
+<div class="ui grid two column stackable">
+			{% for conference in conferences %}
+			<div class="ui column">
+			<div class="ui fluid link red card">
+				<a class="content" href="/conference/{{conference.conference_alias}}">
+                    <div class="header">{{conference.conference_name}}</div>
+                </a>
+                <a class="content" style="color:black; font-size: 16px; " href="/conference/{{conference.conference_alias}}">
+	             	<div class="left floated">Start Date : {{conference.startDate}} <br><br>
+	             	End Date : {{conference.endDate}}
+	             	</div>
+	             	<img class="right floated small ui image" src="{% static 'images/DSC2235.JPG' %}" data-pin-nopin="true">
+	            </a>
+			</div>
+			</div>
+			{% endfor %}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,218 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RAMES'18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/conference/rames2018">Home</a>
+                    </li>
+                    <li>
+                        <a href="/conference/rames2018/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/conference/rames2018/links">Important Links</a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="/register/{{conference.conference_alias}}">Register</a>
+                    </li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/conference/make_payment/{{conference.conference_alias}}">Upload Payment Receipt</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#status">Status of payment</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/conference/{{alias}}/dashboard/">UploadPaper</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                       <a href="">Hi, {{request.user.username}}</a>
+                    </li>
+                    <li>
+                        <a href="/signout/{{conference.conference_alias}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                       <a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">About Institute</span></center></h2><br>
+                <p style="color:black; text-align:justify;">
+                   The National Institute of Technology Warangal, an Institute of National Importance (formerly known as the Regional Engineering College, Warangal) established in the year 1959, is the first among the 31 NITs in the country setup as joint venture of the Government of India and the state government. The institute offers 8 under graduate programmes in Engineering and 29 Post graduate programmes leading to M.Tech, M.Sc, M.Sc. (Tech.), MCA and MBA degrees. All the Departments of the institute conduct research programmes leading to Ph.D. degrees. NIT Warangal is consistently ranked among top 10 technical institutions in the country. It is located on the Hyderabad – Warangal National Highway at a distance of 3 kms from Kazipet Railway station and 12 kms from Warangal Railway station. It is spread over 250 acres and is totally residential in nature. Participants are advised to alight either at Kazipet or Warangal depending upon the train of travel. 
+                </p>
+                <br><h2><center><span class="label label-success">About Warangal</span></center></h2><br>
+                <p style="color:black; text-align:justify;">
+                    Warangal is about 135 kms from Hyderabad, the capital of Telangana. It is well connected by rail and road. It is well known as an educational center. Once, the capital of the great Kakatiya Kingdom and earlier known as Orugallu or Ekasilanagaram, Warangal still retains its importance as the cultural center of the Telangana. It finds an important place in the tourist map of Telangana, with sites of archaeological significance like the Warangal Fort, Thousand Pillars Temple, Bhadrakali Temple and Ramappa Temple. The three lakes namely Ramappa, Pakhal and Laknavaram and the Wild Life Sanctuaries at Tadwai and Pakhal are famous for sightseeing.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">About Department</span></center></h2><br>
+            <p style="text-align:justify">
+               The Department of Computer Science &amp; Engineering was established in the year 1991. The department offers high quality undergraduate, postgraduate and doctoral programs. The B. Tech (Computer Science and Engineering) program was started in the year 1983 with an intake of 20 students. The intake was subsequently increased to 120 in 2008. M. Tech (Computer Science and Engineering) program was started in 1987 with an intake of 18 and subsequently increased to 20 in 2008. M. Tech (Information Security) was introduced in the year 2008 Under ISEAP sanctioned by Ministry of Communication and Information Technology (MCIT), DOE, GOI, New Delhi with intake of 20. Later, it was renamed as Computer Science and Information Security. The Master of Computer Applications (MCA) program was started in 1986 with an intake of 30 and increased to 46 from 2008. B.Tech, M.Tech (CSE) and M.Tech (CSIS) programs were accredited in 2014 by NBA as per Washington Accord.
+            </p>
+            <p style="text-align:justify">
+               The department has distinguished and committed faculty members with PhD from reputed institutes. It has close rapport with MICROSOFT, TCS, INFOSYS, ORACLE, TRDDC-Pune, ORACLE, EMC 2 , ACCENTURE, C-DAC, MOTOROLA, HONEYWELL, NOVELL, PHILIPS, SAMSUNG, and IBM-Bangalore. The department has MOUs with TCS, IBM, C-DAC and INFOSYS, for training students and faculty on latest cutting edge technologies and also to pursue Research and Development activities. The Department has been selected as a Remote Center under Information Security Awareness Project (ISEAP) Phase II, MCIT Dept of IT. Along with department of ECE, it is associated in E&amp;ICT Academy project sanctioned by Department of Electronics and Information Technology, Govt of India for Rs.25 crores to train faculty from Engineering and Polytechnic Streams across Telangana, Andhra Pradesh, Karnataka States and Pudicherry, Andaman &amp; Nicobar islands and Lakshadweep UTs.
+            </p>
+            </div>
+        </div>     
+        
+        <!-- Footer -->
+         <footer>
+         <hr>
+            <div style="background-color:#adebeb;font-size:15px;" id="contact">
+                <div class="row">
+                <br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                        <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-8" align="left">
+                    <br>
+                        Copyright © 2018 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><b>Quick Links:</b></h4>
+                                <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                                <a href="http://www.nitw.ac.in/department/cse/" target="_blank">Department of Computer Science & Engineering, NIT Warangal</a><br>
+                                <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                                <br><br>
+
+                                <b>E-mail : </b>rames2018@gmail.com <br>
+                                
+                            </div>
+                            <div class="col-sm-6">
+                                <h4><b>Contact:</b></h4>
+                                <b>Dr. R.B.V. Subramanyam</b><br>
+                                Head CSE &amp; Organizing Chair, RAMES<br>
+                                Department of Computer Science &amp; Engineering<br>
+                                NATIONAL INSTITUTE OF TECHNOLOGY<br>
+                                WARANGAL - 506 004, TS<br>
+                                <b>Mobile :</b> 9490165347<br>
+                                <b>Phone :</b> 0870-2462700<br>
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                </div>
+                <br><br>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+<div id="status" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Status of Payment</h4>
+      </div>
+      <div class="modal-body">
+        {% if payment %}
+            {% if payment.is_aprooved %}
+                <h3>Your payment has been verified !!!</h3>
+            {% else %}
+                <h3>Your payment is not verified yet. Please Wait !!!</h3>
+            {% endif %}
+        {% else %}
+            <h3>You have not uploaded the payment receipt yet</h3>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74103273-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</body>
+
+</html>

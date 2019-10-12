@@ -1,0 +1,33 @@
+{% extends "conference/icamer/base.djt" %}
+{% load staticfiles %}
+{% block content %}
+    <!-- Page Content -->
+    <div class="container" style="padding-top: 10px;min-height: 60vh;">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-5">
+                <h2><center><span class="label label-primary">IMPORTANT DOCUMENTS</span></center></h2>
+                <br>
+                <h4><b>
+                    <ol>
+                        <li><a href="{% static 'icamer/ICAMER2019_1.pdf' %}" target="_blank">Brochure</a></li><br>
+                        <li>Registration Form ( <a href="#">pdf</a> ,<a href="#" target="_blank">doc</a> )</li><br>
+{#                        <li>Abstract Template ( <a href="{% static 'docs_inceee/inceee2019_abstract_template.pdf' %}" target="_blank">pdf</a> ,<a href="{% static 'docs_inceee/inceee2019_abstract_template.doc' %}" target="_blank">doc</a> )</li><br>            #}
+                        <li><a href="{% static 'icamer/template.docx' %}" target="_blank">Full Paper Template </a></li><br>
+{#                        <li><a href="{% static 'icamer/template.docx' %}" target="_blank">Copyright Transfer From </a></li><br>#}
+                    </ol>
+                </b></h4>
+            </div>
+        <div class="col-sm-4">
+                <br><br><br>
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+        </div>
+    </div>
+</div> 
+
+           <!-- INSTRUCTION LIST  -->
+{% include 'conference/icamer/instructions_modal.djt' %}
+{% endblock %}

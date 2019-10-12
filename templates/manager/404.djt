@@ -1,0 +1,11 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="ui container">
+<h1>Page Not found!</h1>
+</div>
+
+<br><br>
+
+{% endblock %}

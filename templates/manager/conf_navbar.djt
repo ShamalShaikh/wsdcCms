@@ -1,0 +1,605 @@
+{% extends "manager/sidebar.djt" %}
+{% load staticfiles %}
+{% block content %}
+
+<center>
+<h1 class="ui header">{{conference.conference_name}}</h1>
+</center>
+<div class="ui divider"></div>
+  <br>
+<div class="ui container">
+<br>
+<div class="ui grid">
+  {%include "manager/sidemenu.djt" %}
+  <div class="thirteen wide column">
+  {% ifequal type '1' %}
+    <h2 class="ui header">
+    <center>
+        <div class="content">
+          Registered Users
+        </div>
+      </center>
+      </h2>
+
+      <div class="ui two item menu">
+        <a class="item active" id="all">All Users</a>
+        <a class="item" id="unpaid">Registered but not paid</a>
+      </div>
+
+    <div id="allUsers">
+      {% if users %}
+      <!-- <div float="right">
+        <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
+      </div> -->
+      <table class="ui celled table" id="allTable">
+          <thead>
+            <tr>
+              <th>Paper Ref No.</th>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Department</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>View Abstract</th>
+            <th>Send Registration Mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for profile, paper in displayUsers %}
+              <tr>
+                <td>{{paper.paperRefNum}}</td>
+              <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
+              <td>{{profile.institute}}</td>
+              <td>{{profile.department}}</td>
+              <td>{{profile.contact}}</td>
+              <td>{{profile.user.email}}</td>
+              <td>
+                {% if paper.paperfile %}
+                <a href="{{paper.paperfile.url}}">Download</a>
+                {% endif %}
+              </td>
+
+              <td>
+                  <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
+                    {% csrf_token %}
+                      <input type="hidden" name="user" value="{{profile.pk}}" />
+                      {% if not profile.mail_sent_register %}
+                      <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                      {% else %}
+                      <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                      {% endif %}
+                  </form>
+              </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      {% else %}
+        <div class="ui segment">
+          <center><h3>No Registered Users !!!</h3></center>
+        </div>
+      {% endif %}
+    </div>
+
+    <div id="unpaidUsers">
+      {% if unpaid_users %}
+      <table class="ui celled table" id="unpaidTable">
+          <thead>
+            <tr>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Department</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>View Abstract</th>
+
+            <th>Send Registration Mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for profile, papers in unpaidUsersPapers %}
+              <tr>
+              <td>{{profile.user.first_name}} {{profile.user.last_name}}</td>
+              <td>{{profile.institute}}</td>
+              <td>{{profile.department}}</td>
+              <td>{{profile.contact}}</td>
+              <td>{{profile.user.email}}</td>
+              <td>
+                {% if paper.paperfile %}
+                    <a href="{{paper.paperfile.url}}">Download</a>
+                {% endif %}
+              </td>
+
+
+              
+              <td>
+                  <form action="/manager/conference_landing/{{conference.conference_id}}/1/sendmail/" method="post">
+                    {% csrf_token %}
+                      <input type="hidden" name="user" value="{{profile.pk}}" />
+                      {% if not profile.mail_sent_register %}
+                      <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                      {% else %}
+                      <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                      {% endif %}
+                  </form>
+              </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      {% else %}
+        <div class="ui segment">
+          <center><h3>No Unpaid Users !!!</h3></center>
+        </div>
+      {% endif %}
+    </div>
+  {% endifequal %}
+
+  {% ifequal type '5' %}
+    <h2 class="ui header">
+      <center>
+        <div class="content">
+          Users Whose Payment is Approved
+        </div>
+      </center>
+      </h2>
+    {% if paidtrans %}
+    <!-- <div float="right">
+      <a href = '/manager/exportdata/{{conference.conference_name}}'>Export data</a>
+    </div> -->
+    <table class="ui celled table" id="paidTable">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Institute</th>
+          <th>Department</th>
+          <th>Documents</th>
+          <th>Reference No</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Send Invitation Mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paidtran in paidtrans %}
+            <tr>
+            <td>{{paidtran.user.first_name}} {{paidtran.user.last_name}}</td>
+            <td>{{paidtran.user.profile.institute}}</td>
+            <td>{{paidtran.user.profile.department}}</td>
+            <td><a href="/downloaddd/{{paidtran.id}}" target="blank">show receipt</a><br>
+              <a href="/downloadid/{{paidtran.id}}" target="blank">show id</a>
+            </td>
+            <td>{{paidtran.refno}}</td>
+            <td>{{paidtran.user.profile.contact}}</td>
+            <td>{{paidtran.user.email}}</td>
+            <td>
+                <form action="/manager/conference_landing/{{conference.conference_id}}/5/sendmail/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{paidtran.user.profile.pk}}" />
+                    {% if not paidtran.user.profile.mail_sent_accept %}
+                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                    {% else %}
+                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                    {% endif %}
+                  </form>
+            </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+      <div class="ui segment">
+        <center><h3>No Verified Users!!!</h3></center>
+      </div>
+    {% endif %}
+{% endifequal %}
+{% ifequal type '2' %}
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Payments Pending Approval
+        </div>
+      </center>
+      </h2>
+      {% if pending_dds %}
+      <table class="ui celled table" id="pendingTable">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
+          <th>Registration Form</th>
+          <th>Approve</th>
+          <th>Disapprove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for pendingdd in pending_dds %}
+          {% if not pendingdd.is_rejected %}
+            <tr>
+            <td>{{pendingdd.user.first_name}}  {{pendingdd.user.last_name}}</td>
+            <td>
+                <a href="/downloaddd/{{pendingdd.id}}" target="blank">show receipt</a></td>
+            <td>{{pendingdd.refno}}</td>
+            <td><a href="/downloadid/{{pendingdd.id}}" target="blank">show id</a></td>
+            <td><center>
+                <form action="/manager/approve_payment/{{pendingdd.id}}/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{pendingdd.user.profile.pk}}" />
+                    <input type="hidden" name="mail_action" value="approve"/>
+                    <input type="submit" class="ui button green" value="Approve" name="mybtn">
+                </form>
+            </center></td>
+            <td><center><button class="ui button red disapprove_btn" payid={{pendingdd.id}} user={{pendingdd.user.profile.pk}}>Disapprove</button></center></td>
+            </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Payments to approve!!!</h3></center>
+      </div>
+    {% endif %}
+
+    {% if rejected_dds %}
+    <br><br>
+    <h2 class="ui header">
+     <center>
+      <div class="content">
+       Rejected Payments
+      </div>
+    </center>
+    </h2>
+      <table class="ui celled table" id="rejectedTable">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Payment Receipt</th>
+          <th>Reference No</th>
+          <th>Issue</th>
+          <th>Email</th>
+          <th>Send Re-payment Mail</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for rejected_dd in rejected_dds %}
+          <tr>
+            <td>{{rejected_dd.user.first_name}} {{rejected_dd.user.last_name}}</td>
+            <td>{{rejected_dd.date | date:"DATE_FORMAT"}}</td>
+            <td><a href="/downloadrejdd/{{rejected_dd.pic_of_dd.url}}" target="blank">show receipt</a></td>
+            <td>{{rejected_dd.refno}}</td>
+            <td>{{rejected_dd.remarks}}</td>
+            <td>{{rejected_dd.user.email}}</td>
+            <td>
+                <form action="/manager/conference_landing/{{conference.conference_id}}/2/sendmail/" method="post">
+                  {% csrf_token %}
+                    <input type="hidden" name="user" value="{{rejected_dd.user.profile.pk}}" />
+                    <input type="hidden" name="remark" value="{{rejected_dd.remarks}}" />
+                    {% if not rejected_dd.user.profile.mail_sent_reject %}
+                    <input type="submit" class="tiny ui green button" value="Send Mail" name="mybtn">
+                    {% else %}
+                    <input type="submit" class="tiny ui orange button" value="Re-Send Mail" name="mybtn">
+                    {% endif %}
+                  </form>
+            </td>            
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+{% endifequal %}
+
+{% ifequal type '3' %}
+      <h2 class="ui header">
+        <center>
+        <div class="content">
+          Papers Uploaded by various users
+        </div>
+        </center>
+      </h2>
+      {% if papers %}
+      <table class="ui celled table" id="papersTable">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>RefNum</th>
+          <th>Title of Paper</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Revision Number</th>
+          <th>Manage Paper</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paper in papers %}
+          <tr>
+            <td><h4>{{paper.uid.first_name}} {{paper.uid.last_name}}</h4></td>
+            <td>{{paper.paperRefNum}}</td>
+            <td><a href="/conference/downloadpaper/{{paper.paper_id}}" target="blank">{{paper.papername}}</a></td>
+            <td>
+                {%ifequal paper.status 0 %}
+                  <h4>Under Review</h4>
+                {% endifequal %}
+                {%ifequal paper.status 1 %}
+                  <h4>Asked for Revision</h4>
+                {% endifequal %}
+                <!-- This condition is added for conference with one type of presentation -->
+                {% ifequal conference.conference_alias "conf_name" %}
+                    {% ifequal paper.status 2 %}
+                      Accepted
+                    {% endifequal %}
+                  {% else %}
+                    {% ifequal paper.status 2 %}
+                      <h4>Accepted for Oral</h4>
+                    {% endifequal %}
+                    {% endifequal %}
+                {%ifequal paper.status 3 %}
+                  <h4>Accepted for Poster</h4>
+                {% endifequal %}
+                {%ifequal paper.status 4 %}
+                  <h4>Rejected</h4>
+                {% endifequal %}
+            </td>
+            <td>{{paper.submissionDate}}</td>
+            <td>{{paper.revisionNumber}}</td>
+            <td><center><a href="/manager/assignreviewer/{{paper.paper_id}}/"><button class="ui button blue">Manage</button></a></center></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No papers Uploaded yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+
+{% ifequal type '4' %}
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Final Papers Uploaded by various users
+        </div>
+      </center>
+      </h2>
+      {% if papers %}
+      <table class="ui celled table" id="FpapersTable">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>RefNum</th>
+          <th>Title</th>
+          <th>Final Paper</th>
+          <th>Copyright Script</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paper in finalpapers %}
+          <tr>
+          <td>{{paper.related_paper.uid.first_name}} {{paper.related_paper.uid.last_name}}</td>
+            <td>{{paper.related_paper.paperRefNum}}</td>
+            <td>{{paper.papername}}</td>
+            <td><a class="ui orange button" href="/conference/downloadfinalpaper/{{paper.id}}" target="blank">Download Paper</a></td>
+            <td>
+                <a class="ui orange button" href="/conference/downloadfinalcf/{{paper.id}}" target="blank">Download Copyright form</button>
+                
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No papers Uploaded yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+
+{% ifequal type '7' %}
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Accomodation Payments
+        </div>
+      </center>
+      </h2>
+      <br>
+      {% if reg_pays %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>Name</th>
+          <th>House Choice</th>
+          <th>Ref No:</th>
+          <th>Paper Id</th>
+          <th>Receipt</th>
+          <th>Tariff(Each room)</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Approve</th>
+          <th>Reject</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reg_pay in reg_pays %}
+          <tr>
+          <td>{{reg_pay.Name}}</td>
+          <td>{{reg_pay.house_choice}}</td>
+          <td>{{reg_pay.reference_number}}</td>
+          <td>{{reg_pay.paper_id}}</td>
+          <td>
+            <a class="ui fluid blue button" href="/media/{{reg_pay.payment_receipt}}" target="blank">Receipt</a></td>
+          </td>
+          <td>{{reg_pay.house_choice.tariff}}</td>
+          <td>{{reg_pay.start_date}}</td>
+          <td>{{reg_pay.end_date}}</td>
+          <td><form method="POST" action="/manager/accomo/" onclick="return confirm('Are you sure you want to approve this request?')">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="approve">
+            <input type="hidden" name="Name" value="{{reg_pay.Name}}">
+            <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
+            <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
+            <input type="submit" class="ui button green" value="Approve">
+          </form></td>
+          <td><form method="POST" action="/manager/accomo/" onclick="return confirm('Are you sure you want to reject request?')">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="reject">
+            <input type="hidden" name="Name" value="{{reg_pay.Name}}">
+            <input type="hidden" name="house" value="{{reg_pay.house_choice}}">
+            <input type="hidden" name="slip" value="{{reg_pay.payment_receipt}}">
+            <input type="hidden" name="review" value="" class="rejection_accomo">
+            <input type="submit" class="ui button red" value="Reject" id="reject_accomo">
+          </form></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Payments yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+{% ifequal type '8' %}
+      <h2 class="ui header">
+      <center>
+        <div class="content">
+          Verified Accomodations
+        </div>
+      </center>
+      </h2>
+      <br>
+      {% if app_accomo %}
+      <table class="ui celled table">
+        <thead>
+          <tr>
+          <th>User</th>
+          <th>House Choice</th>
+          <th>Receipt</th>
+          <th>Ref No:</th>
+          <th>Paper Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for accomo in app_accomo %}
+          <tr>
+          <td>{{accomo.Name}}</td>
+          <td>{{accomo.house_choice}}</td>
+          <td>
+            <a class="ui fluid blue button" href="/media/{{accomo.payment_receipt}}" target="blank">Receipt</a></td>
+          </td>
+          <td>{{accomo.reference_number}}</td>
+          <td>{{accomo.paper_id}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="ui segment">
+        <center><h3>No Payments yet !!!</h3></center>
+      </div>
+      {% endif %}
+{% endifequal %}
+</div>
+</div>
+</div>
+
+<div class="ui small modal pop_up1">
+    <div class="header ">Reason for Disapproval</div>
+    <div class="content">
+      <form class="ui form" action="/manager/disapproval/" method="post">
+      {% csrf_token %}
+        <div class="field">
+          <label>Remark</label>
+          <input type="text" id="remark" name="remark">
+        </div>
+        <div class="field">
+          <input type="hidden" id="payid" name="payid">
+        </div>
+        <div class="field">
+          <input type="hidden" id="user" name="user">
+        </div>
+        <div class="field">
+            <input type="hidden" id="cid" name="cid">
+          </div>
+        <div class="field">
+          <input type="hidden" name="mail_action" value="disapprove"/>
+        </div>
+        <button class="ui submit button" type="submit">Submit</button>
+      </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+$(".disapprove_btn").click(function(){
+  $('.small.modal.pop_up1').modal('show');
+  var pid=$(this).attr('payid');
+  var user=$(this).attr('user');
+  $('#payid').val(pid);
+  $('#user').val(user);
+  $('#cid').val({{conference.conference_id}});
+});
+
+ $(document).ready(function() {
+        $('#allTable').DataTable({
+            "info": true,
+            // "responsive" : true
+        });
+
+        $('#unpaidTable').DataTable({
+            "info": true
+        });
+
+        $('#paidTable').DataTable({
+            "info": true
+        });
+
+        $('#pendingTable').DataTable({
+            "info": true
+        });
+
+        $('#rejectedTable').DataTable({
+            "info": true
+        });
+
+        $('#papersTable').DataTable({
+            "info": true
+        });
+
+        $('#FpapersTable').DataTable({
+            "info": true
+        });
+} );
+
+$('#unpaidUsers').hide();
+$('#allUsers').show();
+
+ $('#all').click(function(){
+        $(this).addClass('active');
+        $('#unpaid').removeClass('active');
+        $('#unpaidUsers').hide();
+        $('#allUsers').show();
+    });
+
+    $('#unpaid').click(function(){
+        $(this).addClass('active');
+        $('#all').removeClass('active');
+        $('#unpaidUsers').show();
+        $('#allUsers').hide();
+});
+
+$("#reject_accomo").click(function() {
+  var review = prompt("please enter the reason for rejection to inform the candidate");
+  $(".rejection_accomo").val(review)
+});
+
+</script>
+{% endblock %}
+

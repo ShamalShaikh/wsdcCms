@@ -1,0 +1,381 @@
+{% extends "conference/tssc/base.djt" %}
+{% load staticfiles %}
+{% block head %}
+
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>TSSC 2018</title>-->
+
+	<!-- Bootstrap Core CSS -->
+	<!--<link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">-->
+
+	<!-- Custom CSS -->
+	<!--<link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+	<script src="{% static 'bs/js/navbar.js' %}"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>-->
+
+	<!-- Navigation -->
+	<!--<nav class="navbar navbar-inverse" role="navigation">-->
+		<!--<div class="container">-->
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<!--<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="" alt="">
+				</a>
+			</div>-->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+		<!--	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="/conference/{{conference.conference_alias}}">Home</a>
+					</li>
+					<li>
+						<a href="/conference/{{conference.conference_alias}}/about">About Us</a>
+					</li>
+					<li>
+						<a href="/conference/{{conference.conference_alias}}/links">Download Links</a>
+					</li>
+					<li>
+						<a href="/conference/{{conference.conference_alias}}/#dates">Important Dates</a>
+					</li>
+					<li>
+						<a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+					{% if not request.user.is_authenticated %}
+					<li>
+						<a href="/register/{{conference.conference_alias}}">Registration</a>
+					</li>
+					<li>
+						<a href="/registerspons/{{conference.conference_alias}}">Registration as Sponser</a>
+					</li>
+					{% endif %}
+				</ul>
+				<ul class="nav navbar-nav" style="float:right;">
+					{% if request.user.is_authenticated %}
+					<li>
+						<a href="">Hi, {{request.user.first_name}}</a>
+					</li>
+					<li>
+						<a href="/signout/{{conference.conference_alias}}">Logout</a>
+					</li>
+					{% else %}
+					<li>
+						<a href="/signin/{{conference.conference_alias}}" style="color:red">Login</a> 
+					</li>
+					{% endif %}
+
+				</ul>
+			</div>-->
+			<!-- /.navbar-collapse -->
+		<!--</div>-->
+		<!-- /.container -->
+	<!--</nav>-->
+{% endblock %}
+{% block content %}
+	<!-- Page Content -->
+	<div class="container">
+
+  <div class="row">
+      <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <br><h2><center><span class="label label-success">About the Telangana Academy of Sciences (TAS)</span></center></h2><br>
+         
+        <p style="color:black; text-align:justify;">
+         Telangana Academy of Sciences has been working relentlessly to
+         promote scientific temper in Telangana State. It has been recognizing
+         eminent scientists / Professors and electing them to the fellowship of
+         the Academy. TAS also promotes children science activities,
+         encourages young scientists towards inventions, investigations and
+         research in pursuit of excellence in the fields of Science and
+         Technology. Its activities include organizing endowment lectures,
+         seminars, symposia, popular exhibitions and programs on overall
+         perception of science and society.
+
+        </p>
+        <p style="color:black; text-align:justify;">
+          For the last 55 years, the activities of the Academy have immensely
+          helped in sharing the academic scholarship among its Fellows and
+          Associate Fellows, in particular and the scientific community, in
+          general. They have also catalyzed popularization of science and
+          inculcation of scientific temper among children and general public.
+          The Academy, in a bid to reach the wider community and to extend its
+          activities, has established Five Regional Centers at Nizamabad,
+          Karimnagar, Hyderabad, Nalgonda and Warangal covering all the
+          Districts of Telangana State.
+        </p>  
+      </div>
+  </div>
+    
+    <div class="row">
+      <div class="col-md-12" style="line-height:30px;font-size:17px;">
+        <br><h2><center><span class="label label-success">About the Focal Theme</span></center></h2><br>
+        <p style="color:black; text-align:justify;">The Focal theme for the Telangana State Science Congress-2018 is
+          <b><i>"Science & Technology for an All Round and Sustainable
+          Development of the Telangana State".</i></b> The State of Telangana is the
+          th nd youngest and the 29 State in India. It has been formed on 2 June,
+          2014 through the AP Reorganization Act. Being an infantile federal
+          state with rich cultural heritage and abundant natural and human
+          resources but low industrial and literacy, the State of Telangana is
+          poised to leap into an all round and sustainable development.
+          Sustainable development addresses the socio-economic
+          development catalysed by scientific, technological and industrial
+          advances. The proactive cooperation and positive support of the
+          scientific community would augment and empower the Government
+          for a sustainable development of the Telangana State. The
+          development of the State is intertwined with the advancements in
+          Science and Technology in different fields, namely, cleaner & fuel
+          efficient technogies, de-fluoridation of drinking water, solar energy
+          harnessing housing technology, entrepreneurship development,
+          human health, water resources, information technology,
+          biotechnology, sustainable human resource management, etc. The
+          TSSC-2018 will identify the key areas in the activities of planning for an
+        all round and sustainable development of the Telangana State.</p>
+
+       </div>
+     </div>
+		<div class="row">
+			<div class="col-md-12" style="line-height:30px;font-size:17px;">
+				<br><h2><center><span class="label label-success">About NIT Warangal</span></center></h2><br>
+				<p style="color:black; text-align:justify;">
+					The National Institute of Technology Warangal (NITW), formerly
+          known as the Regional Engineering College Warangal, is the first
+          among the chain of 31 NITs crowned as Institutes of National
+          Importance. It was established by an Act of Parliament. The country's
+          first Prime Minister, Pandit Jawaharlal Nehru laid the foundation stone
+          th th on 10 October, 1959 for this Institute. Thus, 10 October, 2018 marks
+          the commencement of the <b><span style="color:blue;">Diamond Jubliee Celebrations</span></b> of NITW.
+				</p>
+				<p style="color:black; text-align:justify;">
+					The Institute presently offers eight B.Tech Programmes in Engineering, twenty-five
+          M.Tech Programmes and seven other Postgraduate Programmes (M.Sc.,
+          M.Sc (Tech)., MCA and MBA) and PhD Programmes in all the thirteen
+          Departments including Engineering, Sciences, Humanities,
+          Management and Physical Education. The institute is well-known for
+          its Research and Development, state of the art laboratories, Industrial
+          consultancy, Continuing Education Programmes for teachers and
+          industrial personnel.
+
+				</p>
+        <p style="color:black; text-align: justify;">
+          The World Bank supports the Institute through Technical Education
+          Quality Improvement Programme (TEQIP) and currently Phase III is in
+          progress. The MHRD has recognized NITW as one of the six E&ICT
+          Academies in the country. NITW also hosts scores of advanced shortterm
+          training courses conducted by International academicians under
+          the MHRD's Global Initiative for Academic Network (GIAN)
+          Programme.
+        </p>
+				<p style="color:black; text-align:justify;">
+					The institute has about 600 foreign students from as many as 40
+          countries. It has strong academic and research collaborations with
+          several leading foreign universities and through programs like
+          HERITAGE, EUPHRATES, HORIZON-2020, etc. Students and faculty avail
+          themselves of several short-term international exchange and mobility
+          programs through these channels.
+				</p>
+        <p style="color:black; text-align: justify;">
+          The Institute is recognized by the MHRD to run a Teaching Learning
+          Centre (TLC) for Higher Education and is recognized as a National
+          Resource Centre (NRC) in Mathematics under the Pandit Madan
+          Mohan Malaviya National Mission on Teachers and Teaching
+          (PMMMNMTT). The MHRD has also recognized NIT Warangal as a
+          Mentoring Institute under its very proactive mission, the Rasthtriya
+          Avishkar Abhyan (RAA) to mentor the school science education in the
+          State of Telangana.
+        </p>
+                <p style="color:black; text-align:justify;">
+                    A year-long <b><span style="color:blue;">Diamond Jubliee Celebrations (DJC)</span></b> are planned with the kick start of a grand Inaugural Function on 8<sup>th</sup> October with none other than the Honorable Vice President of India, Sri M. Venkaiah Naidu as
+                  the Chief Guest followed by a National Conference on
+                  <b><span style="color:blue;">" Evolution of World Class Technical Institutions - Issues And Concerns "</span></b> during 10<sup>th</sup> - <sup>12</sup> October, 2018.
+
+                 </p>
+              </div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="line-height:30px;font-size:17px;">
+           		<br><h2><center><span class="label label-success">About Warangal City</span></center></h2><br>
+           		<p style="text-align:justify">
+           			Warangal is a historical city with rich cultural and diverse heritage. It
+                was the capital city of the famous Kakatiya Kingdom during the 12th -14th
+                Century AD. There are many intricately carved monuments built by the
+                Kakatiyas in this region. The 1000 Pillar Temple, Warangal Fort,
+                Ramappa Temple,etc.,bear testimony to the historic period. Warangal
+                has been identified as a heritage city by the UNESCO. The biennial
+                Medaram Fair, the most populous 3-day cultural fair, Laknavaram Lake,
+                Pakhal Lake and Eturunagaram Reserve Forests are excellent tourist
+                attractions and are just within 100 kms from the City. There are also
+              many other scenic waterfalls nearby.</p>
+           		<p style="text-align:justify">
+           			The city is well connected by road and rail network to the rest of the
+                Country. Warangal Railway Station is 12 kms and Kazipet Railway
+                Station is just 2 kms away from NIT campus. The nearest Airport is Rajiv
+                Gandhi International Airport at Hyderabad, another historic city and
+                capital of Telangana State, at a distance of about 170 kms from NIT
+                campus. Warangal City is adapted as one of the Smart Cities by the
+                Government of India and is destined to be a highly happening city in
+                the very near days to come.
+           		</p>
+           		<ul>
+           			<li><b><a href="https://en.wikipedia.org/wiki/Warangal"> https://en.wikipedia.org/wiki/Waranga</a></b>l</li>
+           			<li><b><a href="http://www.telanganatourism.gov.in/ "> http://www.telanganatourism.gov.in/ </a></b>l</li>
+           			<li><b><a href="http://warangalurban.telangana.gov.in/"> http://warangalurban.telangana.gov.in/</a></b>l</li>
+           		</ul>
+           	</div>
+           </div>        
+
+
+
+
+
+           <!-- historical places in warangal  start-->
+           <div class="row">
+           	<div class="col-md-12" style="line-height:30px;font-size:17px;">
+           		<br><h2><center><span class="label label-success">Historical Places Near Warangal</span></center></h2><br>
+           		<p style="text-align:justify;">Warangal is recognized as one of the best heritage cities of India. It is 145 km away from the state capital Hyderabad. It is also the second largest city in the state of Telangana. The city's name is derived from the Telugu word Orugallu;  'Oru' which means one and the word 'gallu' meaning stone. The city was the capital of the great Kakatiya rulers who reigned between 12th and 14th centuries</p>
+           	</div>
+           </div>
+
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Thousand Pillar Temple</span>
+
+           		</center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/t.jpg'%}" width="px" height="%"></center><br>
+
+           		<p style="text-align:justify;">Many Hindu temples were developed under the patronage of Ganapati Deva, Rudrama Devi and Prataparudra who were of Kakatiya dynasty. The Thousand Pillar Temple was believed to be constructed during the period between 1175-1324 CE by order of the king, Rudra Deva. It stands out to be a masterpiece and achieved major heights in terms of architectural skills by the ancient Kakatiya vishwakarma sthapathis.</p>
+           		                             
+           	</div>
+           	<!-- /.col-md-6 -->
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Bhadrakali Temple</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/b.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">The temple is believed to be built in 625 A.D by the King Pulakeshin II of Chalukya dynasty to commemorate his victory over Vengi region of Andhra Desham, as per the writings on the temple wall.</p>
+           		<p style="text-align:justify;">Kakatiya kings later have adopted the temple and considered Goddess Bhadrakali as their "Kula Devatha". A lake was also built by Ganapatideva adjacent to the temple. Due to the fall of Kakatiya dynasty to the Muslim rulers of Delhi, the temple lost its prominence. In 1950, the temple was renovated by Sri Ganapathi Sastri a devi upasaka along with the help of a local merchant and other affluent locals.
+
+           		 </p>
+
+           	</div>
+           </div>
+           	<!-- /.col-md-6 -->
+           	<div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Warangal Fort</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/w.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Warangal Fort, in Warangal district, Telangana in India. Appears to have existed since at least the 12th century when it was the capital of the Kakatiya dynasty. The fort has four ornamental gates, known as Kakatiya Kala Thoranam, that originally formed the entrances to a now ruined great Shiva temple. The Kakatiyan arch has been adopted and officially incorporated into the Emblem of Telangana after the state bifurcation. The Fort is included in the "tentative list" of UNESCO World Heritage Site. The Monument was submitted by the Permanent Delegation of India to UNESCO on 10/09/2010.</p>                     
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Ramappa Temple</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/r.png'%}" width="px" height="%"></center><br>
+           		
+           		<p style="text-align:justify;">The Ramappa temple has been referred as the brightest star in the network of medieval temples in the Deccan region. Another striking feature of this temple is that it is built with bricks that are so light that they can easily float on water. The temple which is situated in a valley took nearly 40 years to be completed. The Ramappa temple finds its hold on a 6 feet high platform on a cruciform plan. The temple's chamber is crowned with a shikharam and is surrounded by pradakshinapatha.</p>        
+           	</div>
+           </div>
+           	<!-- /.col-md-6 -->
+           	<div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Medaram (Sammakka & Saralamma)</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/m.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Sammakka Saralamma Jatara or Medaram Jatara is a tribal Hindu festival of honouring the goddesses celebrated in the state of Telangana, India. The Jatara begins at Medaram. Medaram is a village in Warangal district, Telangana, India. A popular religious congregation or Jatara called "Samakka sarakka" jatara takes place for three days biennially in this village. Sammakka-Sarakka Jatara held by forest dwelling Koya tribe of Telangana and surrounding States, is the biggest Tribal festival in Asia which is attended by two crore people on an average.</p>                     
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Bogatha Waterfall</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/bo.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Situated in Koyaveerapuram G, (Wazeedu Mandal) in Khammam district, Bogatha Waterfall is 120 km away from Bhadrachalam, and 329 km away from Hyderabad. The distance has come down from 440 km because of the newly constructed Eturnagaram bridge on National Highway 202</p>        
+           	</div>
+           
+           	<!-- /.col-md-6 -->
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Laknavaram Lake</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/l.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Laknavaram Lake is a lake located in Govindaraopet mandal, about 80km from Warangal, Telangana. The lake is spread over an area of 10,000 acres and holds about 2.135 tmcft of water. It irrigates over 3,500 acres of land. It was built by Kakatiya kings. It has about 13 islands in it and has a 160 metres long hanging bridge, which connects three islands. It is surrounded by a thick deciduous forest and it is a very popular tourist spot. The new facilities including cottages, a viewing tower, a pantry, and a ferry from the main banks to the island amidst the serene waters have been opened for the nature loving tourists.</p>
+
+           	</div>
+           </div>
+           <div class="row">
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Pakhal Lake</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/p.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">The great Kakatiya, Telugu king Ganapati Deva has constructed Pakhal lake in the deepest forest area for the future uses of farmland for agriculture purpose. Now approximately 3Lakh Acres of the area is surviving under it. Kakatiya rulers have lot of future plannings to make people's lives better. They used so many kinds of engineering technologies in the constructions..they built Ramappa temple on a lake, as well as thousand pillars temples at Hanamkonda is constructed on sand land and still surviving for past thousand years and they will be standing so strongly other 2 to 3 thousand years so proudly after our generation.</p>        
+           	</div>
+           	<!-- /.col-md-6 -->
+           	<div class="col-md-12" style="font-size:15px;">
+           		<h2><center><span class="label label-primary">Eturnagaram Wildlife Sanctuary</span></center></h2><br>
+           		<center>
+           		<img class="img-thumbnail" src="{% static 'docs_ewcti/e.jpg'%}" width="px" height="%"></center><br>
+           		<p style="text-align:justify;">Eturnagaram Wildlife Sanctuary is a wildlife sanctuary located in Eturnagaram village in Jayashankar district in Telangana, India. It is located 250 km (160 mi) away from Hyderabad.</p>
+           		<p style="text-align:justify;">Telangana has splendid wildlife reserves, one of such is the Eturnagaram wildlife sanctuary, which is 100 km (62 mi) from Warangal. The sanctuary is located near the Maharashtra, Chhattisgarh and Telangana border. It is one of the oldest sanctuaries of Telangana. In the year 1952 on 30 January the erstwhile Hyderabad Government because of its rich bio-diversity declared it as a sanctuary.</p>
+           		<p style="text-align:justify;">The land is undulating from steep slopes to gentle slopes from west to east. Three-quarters of the area consist of a plain while the rest is hilly with many streams and springs. Godavari river passes through the sanctuary. The vegetation here is tropical dry deciduous with teak and other trees of good quality standing 60 ft (18 m) and above. The biennial festival of Sammakka Saralamma Jatara is held in the sanctuary.</p>
+
+           	</div>
+           </div>
+
+           <!-- continer ends -->
+        </div>
+
+
+
+        <!-- Historical Places in warangal end -->
+
+        <!-- Footer -->
+        
+
+
+        	<!-- /.container -->
+
+
+
+        <!--	<script>
+        		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        		ga('create', 'UA-74103273-3', 'auto');
+        		ga('send', 'pageview');
+
+        	</script>
+
+        </body>
+
+        </html>-->
+{% endblock %}
