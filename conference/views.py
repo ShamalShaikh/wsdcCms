@@ -1717,3 +1717,6 @@ def ic2svapply(request):
 	except:
 		response['nopaper'] = True
 	return render(request, 'conference/ic2sv/apply.djt',response)
+
+def bctfcs(request):
+	return render(request,'conference/bctfcs/home.html')

@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-from conference.views import gian, home
+from conference.views import gian, home, bctfcs
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -17,5 +17,6 @@ urlpatterns = [
         auth_views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
     url(r'^gian/$', gian ),
+    url(r'^bctfcs/$', bctfcs),
     url(r'^$',home)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
