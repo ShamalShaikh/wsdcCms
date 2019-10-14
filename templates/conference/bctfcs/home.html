@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BCTFCS-2019</title>
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/bctfcs">Home</a>
+                    </li>
+                    <li>
+                        <a href="/bctfcs/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/bctfcs/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+		            <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+            </div>
+            <div class="col-sm-6">
+            <center>
+                <P style="font-size:15px;" >Two Week FDP on Blockchain Technology</P>
+                <p style="font-size:25px;"><b>The Future of Cyber Security (BCTFCS-2019)</b></p>
+                <p style="font-size:20px;"><b>BCTFCS-2019</b></p>
+                <p style="font-size:23px; color:red;">Sponsored by ICPS Division of DST, Govt. of India</p>
+                <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
+            </center>
+            </div>
+            <div class="col-sm-3">
+                <center>
+                <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                </center>
+            </div>
+        </div>
+        <BR>
+        <div class="row">
+            <div class="col-md-6" >
+                <img class="img-responsive img-rounded" src="{% static 'bs/images/nitw.jpg' %}" alt="" style="height:300px; width:600px; ">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-6">
+                <center><h3 style="color:blue;"><b>December 2 - 14 2019</b></h3>
+                <h4>
+                     Organised by<br><hr>
+                    DEPARTMENT OF Computer Science and Engineering<br><br>
+                    National Institute of Technology Warangal<br>
+                    Warangal 506 004. <br>
+                    Telangana State, India.
+                </h4></center>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Course Overview</span></center></h2><br>
+                <p style="text-align:justify">
+                	This course designed with the state-of-the-art concepts of
+                    Blockchain technology that comprises of theory as well as
+                    hands-on sessions in the area of Cyber Security and Blockchain
+                    System. Half of the course is designed for theory, use–case
+                    demonstrations, and research oriented discussions, which will
+                    be helpful in understanding the process; and the remaining
+                    50% course for practical implementation(hands-on). In brief
+                    this FDP covers Introduction to Blockchain Theory-Distributed
+                    Ledger Technologies (DLT), Permissioned and Permissionless
+                    Blockchains, Model, framework, Blockchain network and
+                    architecture design, Blockchain consensus and fault tolerance
+                    mechanisms, Blockchain test-beds, platforms and simulations,
+                    Applications using or built on top of blockchains,
+                    Cryptographic algorithms and protocols, Security and
+                    reliability in Blockchain, Privacy and trust in blockchain,
+                    Blockchain applications in areas such as Internet of
+                    Things(IoT), Internet of things and blockchains.
+                </p>
+                
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Topics to be Covered( but not limited to )</span></center></h2><br>
+               <div class="col-md-offset-4 col-md-5">
+               <li>Blockchain Theory-Distributed Ledger Technologies (DLT)</li>
+               <li>Permissioned and Permissionless Blockchains</li>
+               <li>Model, framework, and mechanism in designing blockchain</li>
+               <li>Blockchain network and architecture design</li>
+               <li>Consensus protocols for blockchains</li>
+               <li>Peer-to-Peer Networks, Peer-to-Peer communication
+                protocols</li>
+               <li>Cyber-attacks to blockchain</li>
+               <li>Insider Threats- Case studies (e.g., of adoption, attacks,
+                forks, scams etc.)</li>
+               <li>Cryptographic algorithms and protocols</li>
+               <li>Security and reliability in Blockchain</li>
+               <li>Privacy and trust in blockchain</li>
+               <li>Security related issues in blockchain</li>
+               <li>Internet of things (IoT) and blockchains</li>
+               </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">About the FDP</span></center></h2><br>
+                <p style="text-align:justify">
+                	The Department of Computer Science and Engineering,
+                    National Institute of Technology Warangal is
+                    organizing two weeks National level Faculty
+                    Development Programme (FDP) on Blockchain
+                    Technology- The Future of Cyber Security (BCTFCS2019) sponsored by the Interdisciplinary Cyber
+                    Physical System (ICPS) Division, Department of Science
+                    & Technology (DST), Govt. of India. Distinguished
+                    Aacademicians, faculty members, research scholars,
+                    under-graduate, and graduate students are invited to
+                    attend this programme.
+                </p>
+                
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Objective </span></center></h2><br>
+                <p style="text-align:justify">
+                	The objective of this programme is to unite
+                    practitioners, researchers and people from industry to
+                    discuss the progress on state-of-the-art research and
+                    the practical usage of blockchain technologies, focusing
+                    on the application and the technologies relying on it.
+                    Specifically, this FDP is to promote discussion on
+                    theory, progress, development, deployment and the
+                    practical usage of blockchain technologies with respect
+                    to cyber security. 
+                </p>
+                
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <h2><center><span class="label label-success">Outcome  </span></center></h2><br>
+                <p style="text-align:justify">
+                	This FDP aims to unite interested scholars as well as
+                    industrial members from all relevant disciplines. The
+                    Outcome of this FDP is to promote, establish and speed
+                    up block chain technology related research, and
+                    identify future research challenges.
+                </p>
+                
+            </div>
+        </div>
+        <hr>
+
+    </div>
+</body>
+</html>
