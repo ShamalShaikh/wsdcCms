@@ -202,6 +202,11 @@
                         <li>Prof. S.S. Motsa, University of Swaziland, Swaziland</li>
                         <li>Prof. M. Shiferaw Ayano, University of Swaziland, Swaziland</li>
                         <li>Prof. A. M. Rashad, Aswan University, Egypt</li>
+                        <li>Prof. O. Anwar Beg, University Salford University, UK</li>
+                        <li>Prof Jitesh S B Gajjar, University of Manchester, UK</li>
+                        <li>Prof. S G Ahmed, Zagazig University, Zagazig, Egypt</li>
+                        <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Malaysia</li>
+
                     </ul> 
                 </div> 
             </div>
@@ -209,7 +214,6 @@
                    <center><h3 style="margin-left:60px;"><span class="label label-primary">National</span></h3></center> <br>
                     <div class="col-md-6">
                         <ul>
-                            <li>Prof. S.V. Raghurama Rao, IISc,  Bangalore</li>
                             <li>Prof. A.K. Pani, IIT Mumbai</li>
                             <li>Prof. B.V. Rathish Kumar, IIT Kanpur</li>
                             <li>Prof. P. V. S. N. Murthy,  IIT, Kharagpur</li>
@@ -222,14 +226,15 @@
                             <li>Prof. S.Chandrasekar Rao, IIT Delhi</li>
                             <li>Prof. Y.V.S.S.S.Raju, IIT Madras</li>
                             <li>Prof. K. S. Reddy, IIT Madras</li>
-                            <li>Prof. P. G. Siddheswar, Bangalore University, Bangalore</li>
-                            <li>Mr. T.K.S.Ramanujam, Tata Consultancy Services, Hyderabad</li>
+                            <li>Prof. Ch. Srinivasa Rao, IIT Madras</li>
+                            <li>Prof. Y. N. Reddy, NIT Warangal</li>
+                            <li>Prof. KNSK Viswanadham, NIT Warangal</li>
                         </ul>  
                     </div>   
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                  <h3 style="margin-left:60px;"><span class="label label-primary">Departmental Organising Committee</span></h3><br>
                         <ul>
                             <li>Dr. Debashish Dutta, Professor and Head</li>
@@ -240,9 +245,9 @@
                             <li>Dr. D. Bhargavi, Assistant Professor </li>
                             <li>Dr. T. Kurmayya, Assistant Professor </li>
                         </ul>
-            </div>
-             <div class="col-md-6">
-                <div class="col-md-7" style="padding-left:50px">
+            </div> -->
+             <div class="col-md-12">
+                <div class="col-md-6" style="padding-left:50px">
                         <h4><b>Chief Patron</b></h4>
                         <h5>Prof. N V Ramana Rao, Director </h5> 
                         <h4><b>Chief Advisors</b></h4>
@@ -251,7 +256,7 @@
                         <h4><b>Treasurer</b></h4>
                         <h5>Dr. CH.RAMREDDY</h5> 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                         <h4><b>Conference Chair</b></h4>
                         <h5>Dr. D. SRINIVASACHARYA</h5>
                         <h5>Prof. J. V. RAMANAMURTHY</h5>
@@ -286,24 +291,24 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>15th Dec, 2017</td>
+                        <td>15th Nov, 2019</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance of full length paper</td>
-                        <td>25th Dec, 2017</td>
+                        <td>15th Dec, 2019</td>
                     </tr>  
                     <tr class="active">
                         <td>Final Paper (Camera Ready)<br>Submission & Registration</td>
-                        <td>30th Dec, 2017</td>
+                        <td>25th Dec, 2019</td>
                     </tr> 
-	 	    <tr class="active">
+	 	    <!-- <tr class="active">
                         <td>Submission of Abstract for oral presentation</td>
                         <td>30th Dec, 2017</td>
                     </tr>
 		    <tr class="active">
                         <td>Last Date of Payment of Registration Fee</td>
                         <td>5th Jan, 2018</td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
             <div class="col-md-1">
@@ -311,15 +316,22 @@
             </div>
             <div class="col-md-3">
                 <h2><span class="label label-primary">Mode of Payment</span></h2><br>
-                Account Name     : Conference Chair NHTFF - 2018<br>
-                Account No       : 37172373926<br>
+                Account Name     : Conference Chair<br>
+                Account No       : 37494838784<br>
                 Name of the Bank : State Bank of India<br>
                 Branch           : REC Warangal (NIT Campus)<br>
                 Branch Code      : 20149<br>
                 IFSC Code        : SBIN0020149<br>
                 MICR Code        : 506002030<br> 
                 <br>
-                DD drawn in favor of “Conference Chair, NHTFF - 2018” payable at Warangal.  
+                DD is to be drawn in favor of “Conference Chair” payable at Warangal.  <br>
+                The filled in registration form along with the DD should be sent <to:br></to:br>
+                Conference Chair, NHTFF - 2020, <br>
+                Department of Mathematics,<br>
+                National Institute of Technology,<br> 
+                Warangal-506 004, Telangana State, India. <br>
+                Ph: 09849187249(DSC), 09491824301(CHRR) <br>   
+                E-mail:  nhtff2020.nitw@gmail.com; dsc@nitw.ac.in; chramreddy@nitw.ac.in  <br>
             </div>
         </div>
         <hr>
