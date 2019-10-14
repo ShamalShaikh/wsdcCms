@@ -21,6 +21,10 @@ urlpatterns = [
 	url(r'^inceee2019/$',RedirectView.as_view(url='/conference/inceee2019/')),
 	#SEP2019
 	url(r'^sep2019/$',RedirectView.as_view(url='/conference/sep2019/')),
+	#nhtff2020
+	url(r'^nhtff2020/$',RedirectView.as_view(url='/conference/nhtff2020/')),
+	#url(r'^nhtff2020/about/$',views.nhtffabout),
+	#url(r'^nhtff2020/links/$',views.nhtfflinks),
 
 	# url(r'^fccm/$',RedirectView.as_view(url='/conference/fccm2018/')),
 	# url(r'^fccm2018/$',RedirectView.as_view(url='/conference/fccm2018/')),
