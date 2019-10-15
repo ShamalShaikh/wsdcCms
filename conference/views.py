@@ -1720,3 +1720,12 @@ def ic2svapply(request):
 
 def bctfcs(request):
 	return render(request,'conference/bctfcs/home.html')
+
+def bctfcsabout(request):
+	return render(request,'conference/bctfcs/about.html')	
+
+def bctfcslinks(request):
+	return render(request, 'conference/bctfcs/links.html')
+
+def bctfcsregister(request):
+	return render(request, 'conference/bctfcs/register.html')

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BCTFCS-2019</title>
+    <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bs/css/small-business.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bs/css/navbar.css' %}">
+    <script src="{% static 'bs/js/navbar.js' %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/bctfcs">Home</a>
+                    </li>
+                    <li>
+                        <a href="/bctfcs/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/bctfcs/links">Important Links</a>
+                    </li>
+                    <li>
+                        <a href="#dates">Important Dates</a>
+                    </li>
+		            <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/bctfcs/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+                <br><h2><center><span class="label label-success">About Institute and Wranagal</span></center></h2><br>
+                <p style="color:black">
+                   The National Institute of Technology (formerly Regional Engineering College), Warangal, established in the year 1959, is the first among the 31 NIT’s in the country setup as joint venture of the Government of India and the state government. Over the years the college has established itself as a premier Institution imparting technical education of a very high standard.  It is located on the Hyderabad – Warangal National Highway at a distance of 3 kms from Kazipet Railway station and 12 kms from Warangal Railway station.  Participants are advised to alight either at Kazipet or Warangal depending upon the train of travel.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="line-height:30px;font-size:17px;">
+            <br><h2><center><span class="label label-success">About The Department</span></center></h2><br>
+            <p>
+                Department of Computer Science & Engineering is the
+                most sought by students in India and abroad for
+                admissions in to all its programmes. Popularity is gained
+                for its innovative teaching of courses in ever updated
+                curriculum so that top software industries prefer our
+                students. Alumni have spread over the world across
+                MNCs enjoying their positions in top brass and running
+                their own industries. Department was established in
+                1991 and currently offering B.Tech.(CSE), M.Tech.(CSE),
+                M.Tech.(CSIS), MCA and Ph.D by following pedagogical
+                and technological methods to address the ever
+                advancing courses
+            </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <hr>
+           <div style="background-color:#adebeb;font-size:15px;" id="contact">
+               <div class="row">
+               <br>
+                   <div class="col-sm-1"></div>
+                   <div class="col-sm-2">
+                       <a href="http://nitw.ac.in/main/" target="_blank"><img src="{% static 'bs/images/logo.png' %}" height="110px" style="margin-top:20px"></a>
+                   </div>
+                   <div class="col-sm-1"></div>
+                   <div class="col-sm-8" align="left">
+                   <br>
+                       Copyright © 2017 <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC&nbsp;</a> All rights reserved.
+                       <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://wsdc.nitw.ac.in" target="_blank">&nbsp;WSDC</a></span>
+                       <br><br>
+                       <div class="row">
+                           <div class="col-sm-6">
+                               <h4><b>Quick Links:</b></h4>
+                               <a href="http://nitw.ac.in/main/" target="_blank">Institue Main Website</a><br>
+                               <a href="http://www.nitw.ac.in/department/mat/" target="_blank">Department of Mathematics, NIT Warangal</a><br>
+                               <a href="https://wsdc.nitw.ac.in" target="_blank">WSDC, NIT Warangal</a>
+
+                               <br><br>
+                               
+                           </div>
+                           <div class="col-sm-6">
+                               <h4><b>Coordinators & Contact Information:</b></h4>
+                                Dr. E.Suresh Babu,<br>
+                                Assistant Professor,<br>
+                                Dept. of Computer Science & Engineering, <br>
+                                National Institute of Technology, Warangal. <br>
+                                (Email: esbabu@nitw.ac.in), Phone: +91 9440959713. <br> <br>
+                                Dr. Y.Sreenivasa Rao <br>
+                                Assistant Professor, <br>
+                                Dept. of Mathematcis, <br>
+                                National Institute of Technology, Warangal. <br>
+                                (Email: ysr@nitw.ac.in), Phone: +91 9494776866. <br>
+                           </div>
+                       </div>
+                   </div>
+                    <br><br>
+               </div>
+               <br><br>
+           </div>
+
+       </footer>
+
+
+</body>
+</html>
