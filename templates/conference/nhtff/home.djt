@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NHTFF'18</title>
+    <title>NHTFF'20</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -110,7 +110,7 @@
             <center>
                 <P style="font-size:15px;" >INTERNATIONAL CONFERENCE ON</P>
                 <p style="font-size:25px;"><b>NUMERICAL HEAT TRANSFER & FLUID FLOW</b></p>
-                <p style="font-size:20px;"><b>(NHTFF18)</b></p>
+                <p style="font-size:20px;"><b>(NHTFF20)</b></p>
                 <p style="font-size:23px; color:red;">In memory of late Prof. T.K.V. Iyengar on the eve of his birth anniversary</p>
                 <!-- <img src="{% static 'bs/images/logo.png' %}" style="height:150px; width:200px"> -->
             </center>
