@@ -77,6 +77,9 @@
 		    <li>
                         <a href="#contact">Contact</a>
                     </li>
+                    <!-- <li>
+                        <a href="" data-toggle="modal" data-target="#instructions">Instructions</a>
+                    </li> -->
                 </ul>
                 <ul class="nav navbar-nav" style="float:right;">
                     {% if request.user.is_authenticated %}
@@ -117,8 +120,9 @@
             </div>
             <div class="col-sm-3">
                 <center>
-                <p style="color:red;">Please Find Instructions here</p>
-                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                <!-- <p style="color:red;">Please Find Instructions here</p>
+                <button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button> -->
+                <br><br><img src="{% static 'docs_nhtff/photo.jpg' %}" alt="" width="150" height="150">
                 </center>
             </div>
         </div>
@@ -140,6 +144,10 @@
                     Warangal 506 004. <br>
                     Telangana State, India.
                 </h4></center>
+                <center><button type="button" class="btn btn-warning" style="margin-top:10px;" data-toggle="modal" data-target="#instructions">Instructions</button>
+                    <a href="/register/{{conference.conference_alias}}" class="btn btn-warning" style="margin-top:10px;">Register</a>
+                </center>
+                
             </div>
             <!-- /.col-md-4 -->
         </div>
@@ -169,7 +177,7 @@
 	<hr>
         <div class="row">
             <div class="col-sm-12">
-                <span style="color:red; font-size:20px; font-weight: 900;">Publication:</span> <span style="color:black; font-weight:700; font-size:17px;">  All the papers submitted will be peer reviewed by two independent reviewers and selected papers will be published (without any publication charges) in the form of a special issue of a journal/book . Plagiarism in any form is unethical and unacceptable. In order to ensure that the content submitted is original and trustworthy, a similarity check will be done. </span>
+                <span style="color:red; font-size:20px; font-weight: 900;">Publication:</span> <span style="color:black; font-weight:700; font-size:17px;">  All the papers submitted will be peer reviewed by two independent reviewers and selected papers will be published (without any publication charges) in the form of a special issue of a journal/book indexed by SCOPUS/SCI/SCIE/ESCI/Web of Science. Plagiarism in any form is unethical and unacceptable. In order to ensure that the content submitted is original and trustworthy, a similarity check will be done. </span>
             </div>
         </div>
 
@@ -186,6 +194,18 @@
             <hr>
             <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
             <hr>
+
+                <center><div class="col-md-12" style="padding-left:50px">
+                        <h4><b>Chief Patron</b></h4>
+                        <h5>Prof. N. V. RAMANA RAO, Director </h5> 
+                        <!-- <h4><b>Chief Advisors</b></h4>
+                        <h5>Prof. G. RADHAKRISHNAMACHARYA</h5> 
+                        <h5>Prof. Y. N. REDDY</h5> 
+                        <h4><b>Treasurer</b></h4>
+                        <h5>Dr. CH.RAMREDDY</h5>  -->
+                        
+                </div></center>
+
             <div class="col-md-6">
                 <center><h3><span class="label label-primary">International</span></h3></center><br>
                  <div class="col-md-6">
@@ -194,15 +214,15 @@
                         <li>Prof. J. N. Reddy,Texas A&M University, USA.</li>
                         <li>Prof. Rama S.R. Gorla, Cleveland State University, USA</li>
                         <li>Prof. Yogesh Jaluria, Rutgers University, USA</li>
-                        <li>Prof. Tapas Malick, Heriot-Watt University. U.K.</li>
-                        <li>Prof D. A. S. Rees, University of Bath, U.K..</li>
-                        <li>Prof O. D. Makinde, Stellenbosch University, South Africa</li>
+                        <li>Prof. Tapas Malick, University of Exeter, U.K.</li>
+                        <li>Prof. D. A. S. Rees, University of Bath, U.K..</li>
+                        <li>Prof. O. D. Makinde, Stellenbosch University, South Africa</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul>
                         <li>Prof. Ioan Pop, Babes-Bolyai University, Romania.</li>
-                        <li>Prof. S.S. Motsa, University of Swaziland, Swaziland</li>
+                        <li>Prof. S.S. Motsa, University of Eswatini, Swaziland</li>
                         <li>Prof. M. Shiferaw Ayano, University of Swaziland, Swaziland</li>
                         <li>Prof. A. M. Rashad, Aswan University, Egypt</li>
                         <li>Prof. O. Anwar Beg, University Salford University, UK</li>
@@ -242,7 +262,7 @@
                  <h3 style="margin-left:60px;"><span class="label label-primary">Departmental Organising Committee</span></h3><br>
                         <ul>
                             <li>Dr. Debashish Dutta, Professor and Head</li>
-                            <li>Dr. P.  Muthu, Associate Professor </li>
+                            <li>Dr. P.  Muthu </li>
                             <li>Dr. R. S. Selvaraj, Assistant Professor </li>
                             <li>Dr. H. P. Rani, Assistant Professor </li>
                             <li>Dr. A. Benerji Babu, Assistant Professor </li>
@@ -251,17 +271,9 @@
                         </ul>
             </div> -->
              <div class="col-md-12">
-                <div class="col-md-3" style="padding-left:50px">
-                        <h4><b>Chief Patron</b></h4>
-                        <h5>Prof. N. V. RAMANA RAO, Director </h5> 
-                        <!-- <h4><b>Chief Advisors</b></h4>
-                        <h5>Prof. G. RADHAKRISHNAMACHARYA</h5> 
-                        <h5>Prof. Y. N. REDDY</h5> 
-                        <h4><b>Treasurer</b></h4>
-                        <h5>Dr. CH.RAMREDDY</h5>  -->
-                        
-                </div>
-                <div class="col-md-3">
+                    <center><h3><span class="label label-success">ORGANISING COMMITTEE</span></h3></center><br>
+                
+                <center><div class="col-md-3">
                         <h4><b>Conference Chair</b></h4>
                         <h5>Prof. D. SRINIVASACHARYA</h5>
                         
@@ -275,6 +287,22 @@
                     <h4><b>Conference Secretary</b></h4>
                         <h5>Dr. CH.RAMREDDY</h5>
                 </div>
+                <div class="col-md-3">
+                    <h4><b>MEMBERS</b></h4>
+                    <!-- <h3 style="margin-left:60px;"><span class="label label-primary">Departmental Organising Committee</span></h3><br> -->
+                        <ul style="list-style-type: none;">
+                            <li>Dr. P.  Muthu </li>
+                            <li>Dr. H. P. Rani </li>
+                            <li>Dr. A. Benerji Babu </li>
+                            <li>Dr. R. S. Selvaraj</li>
+                            <li>Dr. T. Kurmayya </li>
+                            <li>Dr. J. Pranitha</li>
+                            <li>Dr. D. Bhargavi </li>
+                            <li>Dr. E. Satyanarayana </li>
+                            <li>Dr. Y. Srinivasa Rao</li>
+                        </ul>
+                </div>
+                </center>
                         
                         
             </div>
@@ -302,7 +330,7 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Submission of Full Paper</td>
-                        <td>15th Nov, 2019</td>
+                        <td>30th Nov, 2019</td>
                     </tr>
                     <tr class="active">
                         <td>Acceptance of full length paper</td>
@@ -348,6 +376,89 @@
         <hr>
 
         <div class="row">
+            <div class="col-md-12">
+                 <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
+            </div>
+            <div class="row" style="font-size:15px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+
+
+
+        <table class="table table-hover">
+        <tr>
+            <th>Name of the Speaker</th>
+            <th>Institute/University</th>
+            
+        </tr>
+        
+        <tr class="active">
+        <td > 
+            <a href="http://research.manchester.ac.uk/portal/jitesh.gajjar.html">
+                Prof. Jitesh S. B. Gajjar </a>
+        </td>
+        <td >
+        <p>University of Manchester, UK</p>
+        </td>
+        </tr>
+        <tr class="active">
+            <td><a href="http://emps.exeter.ac.uk/renewable-energy/staff/tkm201">
+                Prof. Tapas Malick </a>
+            </td>
+            <td ">
+                    University of Exeter, U.K.
+            </td>
+        </tr>
+        <tr class="active">
+                <td><a href="https://scholar.google.com/citations?user=t5SKuHbztVkC&hl=en&oi=sra">
+                    Prof. S.S. Motsa</a>
+                </td>
+                <td ">
+                        University of Eswatini, Swaziland
+                </td>
+            </tr>
+            <tr class="active">
+                    <td><a href="#">
+                        Prof. S. G. Ahmed</a>
+                    </td>
+                    <td ">
+                             Zagazig University, Zagazig, Egypt
+                    </td>
+                </tr>
+        
+                </table>
+                <!-- <ul>
+                    <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
+                    <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
+                    <li>Shri Ramanathan Ramanan, Mission Director & AS, Atal Innovation Mission</li>
+                    <li>Shri SS Sandhu, IAS, Addl. Secretary,HE, MHRD</li>
+                    <li>Shri Sujiv Nair, CEO, TASK, GoT</li>
+                    <li>Shri Vijaysekhar Reddy, Elsevier</li>
+                    <li>Prof. Abhay Karandikar, Director, IIT Kanpur</li>
+                    <li>Prof. Andrew Thangaraj, National MOOCS Coordinator for SWAYAM, IITM</li>
+                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
+                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode</li>
+                    <li>Prof. DK Tripathi, Former Director, NITW</li>
+                    <li>Prof. DR Vaman, DR Tele Communications, MD USA</li>
+                    <li>Prof. Furqan Qamar, Secretary General, AIU</li>
+                    <li>Prof. K. Srinivas, Head ICT & PMU, NIEPA, New Delhi</li>
+                    <li>Prof. Kannan Moudgalva, IITB Mumbai</li>
+                    <li>Prof. PVM Rao, IIT Delhi</li>
+                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore</li>
+                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore</li>
+                    <li>Prof. Sandeep Sancheti, President, AIU</li>
+                    <li>Prof. SC Shasrabudhe, Former, DAIICT</li>
+                    <li>Prof. Surendra Prasad, Chairperson, NBA</li>
+                    <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
+                    <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+        <br>
+         <hr>
+
+        <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">OBJECTIVES</span></center></h2><br>
                 <p>Heat transfer and fluid flow problems are encountered in various domains, including heat exchangers, electric and microelectronics cooling, automotive and aerospace, air conditioning, fuel cells cooling, building engineering as well as conversion of renewable energy.</p>
@@ -360,7 +471,7 @@
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
                 <br><h2><center><span class="label label-success">Accomodation</span></center></h2><br>
                 <p>
-                    Limited accommodation may be provided on payment basis in the Institute Visitors Block depending on availability and on first come first serve basis. 
+                    Limited accommodation may be provided on <span style="text-decoration: underline;"><b>PAYMENT BASIS</b></span> in the Institute Visitors Block depending on availability and on first come first serve basis. 
                 </p>
                 <p>
                     Warangal city covers a wide range of hotels and other accommodation facilities to suit every budget. Participants are advised to contact the hotels directly and book their accommodation. However, in case of difficulty, we will assist on your prior request. 
@@ -375,15 +486,15 @@
                 <table class="table table-hover">
                     <tr class="active">
                         <td>Delegates from Academic, R&D Institutions</td>
-                        <td>Rs. 5000/- </td>
+                        <td>Rs. 4000/- </td>
                     </tr>
                     <tr class="active">
                         <td>Delegates from Industry</td>
-                        <td>Rs. 8000/- </td>
+                        <td>Rs. 6000/- </td>
                     </tr>
                     <tr class="active">
                         <td>Students/Research Scholar</td>
-                        <td>Rs. 4000/- </td>
+                        <td>Rs. 3000/- </td>
                     </tr>
                     <tr class="active">
                         <td>Foreign Participants</td>
@@ -397,13 +508,13 @@
                 </div>
 
             <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                <br><h2><center><span class="label label-default">BEST PAPER AWARD</span></center></h2><br>
+                <br><h2><center><span class="label label-default">BEST PAPER PRESENTATION</span></center></h2><br>
                 <p>
-                    "Best Paper Awards" will be conferred on the selected author(s) of full papers presented at the conference.
+                    "Best Paper Presentation Award" will be conferred on the selected author(s) of full papers presented at the conference.
                 </p>
-                <h2><center><span class="label label-default">REGISTRATION FEE INCLUDES</span></center></h2><br>
+                <!-- <h2><center><span class="label label-default">REGISTRATION FEE INCLUDES</span></center></h2><br>
                 <p> Conference kit, Conference Buffet, Lunch, Dinner and Refreshments.</p>
-            
+             -->
             </div>
         </div>
         <!-- Footer -->
