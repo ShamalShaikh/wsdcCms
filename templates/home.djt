@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Conference Management System</title>
+    <title>Conference Managment System</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -63,7 +63,7 @@
     		<div class="col-md-4 ">
 				<div class="grid mask">
 					<figure>
-						<a href="/conference/{{upcoming_conf.conference_alias}}" style="font-size: 50px; text-decoration: none;">{{upcoming_conf}}</a>
+						<a href="/conference/{{upcoming_conf}}" style="font-size: 50px; text-decoration: none;">{{upcoming_conf}}</a>
 						<figcaption>
 							<b><a href="/conference/{{upcoming_conf}}" style="text-transform: capitalize; font-weight: bold;">{{upcoming_conf}}</a></b>
 						</figcaption>

@@ -66,7 +66,7 @@
                     </li>
                     {% endif %}
                     
-		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
                             {% if request.user.is_authenticated %}
@@ -75,7 +75,7 @@
                             {% endif %}
                         </ul>
                     </li>
-		    <li>
+            <li>
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -108,6 +108,7 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
+<<<<<<< HEAD
                     <li><a href="{% static 'docs_nhtff/NHTFF-Brochure-Final.pdf' %}">Brochure</a></li><br>
                     <li><a href="{% static 'docs_nhtff/NHTFF_Paper_Template.docx' %}">Paper Template</a></li>
                     
@@ -116,6 +117,9 @@
                     <li><a href="{% static 'docs_nhtff/NHTFF-Registration_form.pdf' %}">Registration Form</a></li><br>
                     <li><a href="{% static 'docs_nhtff/NHTFF-copyright_form.pdf' %}">Copyright Transfer Form</a></li><br>
                     <!-- <li><a href="{% static 'docs_nhtff/poster.pdf' %}">Poster</a></li><br> -->
+=======
+                    <li><a href="{% static 'docs_nhtff/Brochure.docx' %}">Brochure</a></li><br>
+>>>>>>> 2b4e52685dbd3c5d86b56ac65162ca3235bd9acb
                 </ol></b></h4>
             </div>
             <div class="col-sm-4">

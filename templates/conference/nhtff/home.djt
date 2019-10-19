@@ -65,7 +65,7 @@
                     </li>
                     {% endif %}
                     
-		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
                             {% if request.user.is_authenticated %}
@@ -74,7 +74,7 @@
                             {% endif %}
                         </ul>
                     </li>
-		    <li>
+            <li>
                         <a href="#contact">Contact</a>
                     </li>
                     <!-- <li>
@@ -133,6 +133,7 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-6">
+
                 <center><h3 style="color:blue;">
 		<b>
 			January 17 - 19, 2020
@@ -156,23 +157,24 @@
         <hr>
 
         <!-- Call to Action Well -->
-        <!-- <div class="row">
-            <div class="col-lg-12">
+        <div class="row">
+            <!-- <div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
                     <marquee BEHAVIOR="ALTERNATE">Last Date for Submission of Abstracts for Oral Presentation only (but not full paper for publication) is 30th December 2017 !!!</marquee>
                 </div>
-            </div>
-            
-        </div> -->
+            </div> -->
+            <!-- /.col-lg-12 -->
+        </div>
         <!-- /.row -->
 
-	<!-- <div class="row">
-            <div class="col-lg-12">
+	<div class="row">
+            <!-- div class="col-lg-12">
                 <div class="well text-center" style="font-size:20px; color:red;">
                     <marquee BEHAVIOR="ALTERNATE">LAST DATE FOR PAYMENT OF REGISTRATION FEE IS January 05 , 2018. </marquee>
                 </div>
-            </div>
-        </div> -->
+            </div> -->
+            <!-- /.col-lg-12 -->
+        </div>
 
 	<hr>
         <div class="row">

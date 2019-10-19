@@ -65,7 +65,7 @@
                     </li>
                     {% endif %}
                     
-		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Payment <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#fee_div">Registration Fee</a></li>
                             {% if request.user.is_authenticated %}
@@ -74,7 +74,7 @@
                             {% endif %}
                         </ul>
                     </li>
-		    <li>
+            <li>
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
