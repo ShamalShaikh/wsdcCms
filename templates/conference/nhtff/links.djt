@@ -58,7 +58,7 @@
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     <li>
-                        <a href="#dates">Important Dates</a>
+                        <a href="../#dates">Important Dates</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -108,7 +108,6 @@
                 <h2><center><span class="label label-default">IMPORTANT LINKS</span></center></h2>
                 <br><br>
                 <h4><b><ol>
-<<<<<<< HEAD
                     <li><a href="{% static 'docs_nhtff/NHTFF-Brochure-Final.pdf' %}">Brochure</a></li><br>
                     <li><a href="{% static 'docs_nhtff/NHTFF_Paper_Template.docx' %}">Paper Template</a></li>
                     
@@ -117,10 +116,7 @@
                     <li><a href="{% static 'docs_nhtff/NHTFF-Registration_form.pdf' %}">Registration Form</a></li><br>
                     <li><a href="{% static 'docs_nhtff/NHTFF-copyright_form.pdf' %}">Copyright Transfer Form</a></li><br>
                     <!-- <li><a href="{% static 'docs_nhtff/poster.pdf' %}">Poster</a></li><br> -->
-=======
-                    <li><a href="{% static 'docs_nhtff/Brochure.docx' %}">Brochure</a></li><br>
->>>>>>> 2b4e52685dbd3c5d86b56ac65162ca3235bd9acb
-                </ol></b></h4>
+                    </ol></b></h4>
             </div>
             <div class="col-sm-4">
                 <br><br><br>
@@ -161,12 +157,17 @@
                             </div>
                             <div class="col-sm-6">
                                 <h4><b>Contact:</b></h4>
-                                <b>Dr. D. SRINIVASACHARYA</b><br>
-                                CONFERENCE CHAIR, NHTFF 2018<br>
+                                <b>Prof. D. SRINIVASACHARYA</b><br>
+                                CONFERENCE CHAIR, NHTFF 2020<br>
+                                <b>Mobile : </b>+91 - 98491 87249 <br>
+
+                                <b>Dr. CH. RAMREDDY</b><br>
+                                CONFERENCE SECRETARY, NHTFF 2020<br>
+                                <b>Mobile : </b>+91 - 94918 24301 <br>
+
                                 DEPARTMENT OF MATHEMATICS<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506 004, TS<br>
-                                <b>Mobile : </b>+91 - 9849187249
                             </div>
                         </div>
                     </div>

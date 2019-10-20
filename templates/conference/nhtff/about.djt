@@ -57,7 +57,7 @@
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     <li>
-                        <a href="#dates">Important Dates</a>
+                        <a href="../#dates">Important Dates</a>
                     </li>
                     {% if not request.user.is_authenticated %}
                     <li>
@@ -336,13 +336,18 @@
                                 
                             </div>
                             <div class="col-sm-6">
-                                <h4><b>Contact:</b></h4>
-                                <b>Dr. D. SRINIVASACHARYA</b><br>
-                                CONFERENCE CHAIR, NHTFF 2018<br>
+                               <h4><b>Contact:</b></h4>
+                                <b>Prof. D. SRINIVASACHARYA</b><br>
+                                CONFERENCE CHAIR, NHTFF 2020<br>
+                                <b>Mobile : </b>+91 - 98491 87249 <br>
+
+                                <b>Dr. CH. RAMREDDY</b><br>
+                                CONFERENCE SECRETARY, NHTFF 2020<br>
+                                <b>Mobile : </b>+91 - 94918 24301 <br>
+
                                 DEPARTMENT OF MATHEMATICS<br>
                                 NATIONAL INSTITUTE OF TECHNOLOGY<br>
                                 WARANGAL - 506 004, TS<br>
-                                <b>Mobile : </b>+91 - 9849187249
                             </div>
                         </div>
                     </div>
