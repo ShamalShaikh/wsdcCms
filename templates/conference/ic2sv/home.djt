@@ -95,6 +95,14 @@
                 </div>
             </div>
         </div> -->
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center blink" style="font-size:20px; color:red;">
+                    <marquee BEHAVIOR="ALTERNATE"> <a href="{% static 'docs_ic2sv/progschedule_crispIC2SV2019.pdf' %}" target="blank"> Programme Schedule</a></marquee>
+                </div>
+            </div>
+        </div>
         <div class="row">
         <div class="col-md-12" style="line-height:30px;font-size:17px;">
             <br>
