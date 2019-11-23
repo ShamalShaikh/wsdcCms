@@ -54,6 +54,9 @@
                         <a href="/conference/{{conference.conference_alias}}/about">About Us</a>
                     </li>
                     <li>
+                        <a href="/conference/{{conference.conference_alias}}/hotels">Hotels</a>
+                    </li>
+                    <li>
                         <a href="/conference/{{conference.conference_alias}}/links">Important Links</a>
                     </li>
                     <li>
@@ -193,6 +196,38 @@
         </div>
 
         <div class="row">
+            <hr>
+            <center><h2><span class="label label-success">SPEAKERS</span></h2></center>
+            <hr>
+
+            <center>
+                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                            <center>
+                            
+                                <a href="http://www.che.iitm.ac.in/~tanmay/" target="-blank">
+                                    <b>
+                                        <u>Prof. Tanmay Basak</u>
+                                    </b>
+                                </a><br>
+                                Chemical Engineering, IIT Madras<br>
+                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                            </center>
+                            <br>
+                        </div>
+                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                                <center>
+                                
+                                    <a href="https://www.iitism.ac.in/dept/am/facultydetail.php?id=ODg1" target="-blank">
+                                        <b>
+                                            <u>Dr. Pentyala Srinivasa Rao</u>
+                                        </b>
+                                    </a><br>
+                                    Indian Institute of Technology (Indian School of MInes) Dhanbad.<br>
+                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                                </center>
+                                <br>
+                            </div>
+            </center>
             <hr>
             <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
             <hr>

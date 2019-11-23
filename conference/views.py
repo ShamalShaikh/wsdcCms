@@ -371,6 +371,17 @@ def nhtfflinks(request):
 			response['payment'] = payment
 	return render(request, 'conference/nhtff/links.djt',response)
 
+def nhtffhotels(request):
+	conference = Conference.objects.get(conference_alias='nhtff2020')
+	response={}
+	response['conference']=conference
+	response['alias']='nhtff2020'
+	if request.user.is_authenticated : 
+		payment = Payment.objects.filter(user=request.user, conf_id=conference)
+		if len(payment)==1 :
+			response['payment'] = payment
+	return render(request, 'conference/nhtff/hotels.djt',response)
+
 def mmse(request):
 	conference = Conference.objects.get(conference_alias='mmse2018')
 	response = {}

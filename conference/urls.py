@@ -8,6 +8,7 @@ urlpatterns = [
 	url(r'^nhtff2020/$',views.nhtff),
 	url(r'^nhtff2020/about/$',views.nhtffabout),
 	url(r'^nhtff2020/links/$',views.nhtfflinks),
+	url(r'^nhtff2020/hotels/$',views.nhtffhotels),
 	# url(r'^mmse2018/$',views.mmse),
 	# url(r'^mmse2018/about/$',views.mmseabout),
 	# url(r'^mmse2018/links/$',views.mmselinks),
