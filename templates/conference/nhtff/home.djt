@@ -63,10 +63,11 @@
                     <li>
                         <a href="#dates">Important Dates</a>
                     </li>
-                    {% if not request.user.is_authenticated %}
                     <li>
                             <a href="/conference/{{conference.alias}}/dashboard/">UploadPaper</a>
                     </li>
+                    {% if not request.user.is_authenticated %}
+                    
                     <li>
                         <a href="/register/{{conference.conference_alias}}">Register</a>
                     </li>
