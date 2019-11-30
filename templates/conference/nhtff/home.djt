@@ -232,6 +232,58 @@
                                 </center>
                                 <br>
                             </div>
+                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                            <center>
+                            
+                                <a href="http://research.manchester.ac.uk/portal/jitesh.gajjar.html" target="-blank">
+                                    <b>
+                                        <u>Prof. Jitesh S. B. Gajjar</u>
+                                    </b>
+                                </a><br>
+                                University of Manchester, UK<br>
+                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                            </center>
+                            <br>
+                        </div>
+                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                                <center>
+                                
+                                    <a href="http://emps.exeter.ac.uk/renewable-energy/staff/tkm201" target="-blank">
+                                        <b>
+                                            <u>Prof. Tapas Malick </u>
+                                        </b>
+                                    </a><br>
+                                    University of Exeter, U.K.<br>
+                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                                </center>
+                                <br>
+                            </div>
+                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                            <center>
+                            
+                                <a href="https://scholar.google.com/citations?user=t5SKuHbztVkC&hl=en&oi=sra" target="-blank">
+                                    <b>
+                                        <u>Prof. S.S. Motsa</u>
+                                    </b>
+                                </a><br>
+                                University of Eswatini, Swaziland<br>
+                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                            </center>
+                            <br>
+                        </div>
+                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
+                                <center>
+                                
+                                    <a href="#" target="-blank">
+                                        <b>
+                                            <u>Prof. S. G. Ahmed</u>
+                                        </b>
+                                    </a><br>
+                                    Zagazig University, Zagazig, Egypt<br>
+                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
+                                </center>
+                                <br>
+                            </div>
             </center>
             <hr>
             <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
@@ -417,17 +469,17 @@
         </div>
         <hr>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
                  <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
             </div>
             <div class="row" style="font-size:15px;">
                 <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-8"> -->
 
 
 
-        <table class="table table-hover">
+        <!-- <table class="table table-hover">
         <tr>
             <th>Name of the Speaker</th>
             <th>Institute/University</th>
@@ -468,7 +520,7 @@
                     </td>
                 </tr>
         
-                </table>
+                </table> -->
                 <!-- <ul>
                     <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
                     <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
@@ -494,11 +546,11 @@
                     <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
                     <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
                     </ul> -->
-                </div>
+                <!-- </div>
             </div>
         </div>
         <br>
-         <hr>
+         <hr> -->
 
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
