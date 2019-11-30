@@ -205,87 +205,80 @@
             <center><h2><span class="label label-success">SPEAKERS</span></h2></center>
             <hr>
 
-            <center>
-                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                            <center>
-                            
-                                <a href="http://www.che.iitm.ac.in/~tanmay/" target="-blank">
-                                    <b>
-                                        <u>Prof. Tanmay Basak</u>
-                                    </b>
-                                </a><br>
-                                Chemical Engineering, IIT Madras<br>
-                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                            </center>
-                            <br>
-                        </div>
-                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                                <center>
-                                
-                                    <a href="https://www.iitism.ac.in/dept/am/facultydetail.php?id=ODg1" target="-blank">
-                                        <b>
-                                            <u>Dr. Pentyala Srinivasa Rao</u>
-                                        </b>
-                                    </a><br>
-                                    Indian Institute of Technology (Indian School of MInes) Dhanbad.<br>
-                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                                </center>
-                                <br>
-                            </div>
-                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                            <center>
-                            
-                                <a href="http://research.manchester.ac.uk/portal/jitesh.gajjar.html" target="-blank">
-                                    <b>
-                                        <u>Prof. Jitesh S. B. Gajjar</u>
-                                    </b>
-                                </a><br>
-                                University of Manchester, UK<br>
-                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                            </center>
-                            <br>
-                        </div>
-                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                                <center>
-                                
-                                    <a href="http://emps.exeter.ac.uk/renewable-energy/staff/tkm201" target="-blank">
-                                        <b>
-                                            <u>Prof. Tapas Malick </u>
-                                        </b>
-                                    </a><br>
-                                    University of Exeter, U.K.<br>
-                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                                </center>
-                                <br>
-                            </div>
-                    <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                            <center>
-                            
-                                <a href="https://scholar.google.com/citations?user=t5SKuHbztVkC&hl=en&oi=sra" target="-blank">
-                                    <b>
-                                        <u>Prof. S.S. Motsa</u>
-                                    </b>
-                                </a><br>
-                                University of Eswatini, Swaziland<br>
-                                <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                            </center>
-                            <br>
-                        </div>
-                        <div class="col-md-6" style="line-height:30px;font-size:17px;">
-                                <center>
-                                
-                                    <a href="#" target="-blank">
-                                        <b>
-                                            <u>Prof. S. G. Ahmed</u>
-                                        </b>
-                                    </a><br>
-                                    Zagazig University, Zagazig, Egypt<br>
-                                    <!-- <b>Title: </b>New Paradigms in Energy Solutions -->
-                                </center>
-                                <br>
-                            </div>
-            </center>
-            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                     <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
+                </div>
+                <div class="row" style="font-size:15px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+    
+    
+    
+            <table class="table table-hover">
+            <tr>
+                <th>Name of the Speaker</th>
+                <th>Institute/University</th>
+                
+            </tr>
+            
+            <tr class="active">
+            <td > 
+                <a href="http://research.manchester.ac.uk/portal/jitesh.gajjar.html">
+                    Prof. Jitesh S. B. Gajjar </a>
+            </td>
+            <td >
+            <p>University of Manchester, UK</p>
+            </td>
+            </tr>
+            <tr class="active">
+                <td><a href="http://emps.exeter.ac.uk/renewable-energy/staff/tkm201">
+                    Prof. Tapas Malick </a>
+                </td>
+                <td ">
+                        University of Exeter, U.K.
+                </td>
+            </tr>
+            <tr class="active">
+                    <td><a href="https://scholar.google.com/citations?user=t5SKuHbztVkC&hl=en&oi=sra">
+                        Prof. S.S. Motsa</a>
+                    </td>
+                    <td ">
+                            University of Eswatini, Swaziland
+                    </td>
+                </tr>
+                <tr class="active">
+                        <td><a href="#">
+                            Prof. S. G. Ahmed</a>
+                        </td>
+                        <td ">
+                                 Zagazig University, Zagazig, Egypt
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td><a href="http://www.che.iitm.ac.in/~tanmay/">
+                            Prof. Tanmay Basak</a>
+                        </td>
+                        <td ">
+                            Chemical Engineering, IIT Madras
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td><a href="https://www.iitism.ac.in/dept/am/facultydetail.php?id=ODg1">
+                            Dr. Pentyala Srinivasa Rao</a>
+                        </td>
+                        <td ">
+                            Indian Institute of Technology (Indian School of MInes) Dhanbad.
+                        </td>
+                    </tr>
+            
+                    </table>
+                    
+                    </div>
+                </div>
+            </div>
+            <br>
+             <hr>
             <center><h2><span class="label label-success">ADVISORY COMMITTEE</span></h2></center>
             <hr>
 
@@ -469,88 +462,7 @@
         </div>
         <hr>
 
-        <!-- <div class="row">
-            <div class="col-md-12">
-                 <center><h2><span class="label label-success">Confirmed Speakers</span></h2></center><br>
-            </div>
-            <div class="row" style="font-size:15px;">
-                <div class="col-md-2"></div>
-                <div class="col-md-8"> -->
-
-
-
-        <!-- <table class="table table-hover">
-        <tr>
-            <th>Name of the Speaker</th>
-            <th>Institute/University</th>
-            
-        </tr>
         
-        <tr class="active">
-        <td > 
-            <a href="http://research.manchester.ac.uk/portal/jitesh.gajjar.html">
-                Prof. Jitesh S. B. Gajjar </a>
-        </td>
-        <td >
-        <p>University of Manchester, UK</p>
-        </td>
-        </tr>
-        <tr class="active">
-            <td><a href="http://emps.exeter.ac.uk/renewable-energy/staff/tkm201">
-                Prof. Tapas Malick </a>
-            </td>
-            <td ">
-                    University of Exeter, U.K.
-            </td>
-        </tr>
-        <tr class="active">
-                <td><a href="https://scholar.google.com/citations?user=t5SKuHbztVkC&hl=en&oi=sra">
-                    Prof. S.S. Motsa</a>
-                </td>
-                <td ">
-                        University of Eswatini, Swaziland
-                </td>
-            </tr>
-            <tr class="active">
-                    <td><a href="#">
-                        Prof. S. G. Ahmed</a>
-                    </td>
-                    <td ">
-                             Zagazig University, Zagazig, Egypt
-                    </td>
-                </tr>
-        
-                </table> -->
-                <!-- <ul>
-                    <li>Shri Daniel Cartlo, Research Intelligence Elsevier</li>
-                    <li>Shri Navin Mittal, IAS, Commissioner, CE&TE, GoT, Hyderabad</li>
-                    <li>Shri Ramanathan Ramanan, Mission Director & AS, Atal Innovation Mission</li>
-                    <li>Shri SS Sandhu, IAS, Addl. Secretary,HE, MHRD</li>
-                    <li>Shri Sujiv Nair, CEO, TASK, GoT</li>
-                    <li>Shri Vijaysekhar Reddy, Elsevier</li>
-                    <li>Prof. Abhay Karandikar, Director, IIT Kanpur</li>
-                    <li>Prof. Andrew Thangaraj, National MOOCS Coordinator for SWAYAM, IITM</li>
-                    <li>Prof. Anil Sahasrabudhe, Chairman, AICTE</li>
-                    <li>Prof. Debashis Chatterjee, Director, IIM Kozhikode</li>
-                    <li>Prof. DK Tripathi, Former Director, NITW</li>
-                    <li>Prof. DR Vaman, DR Tele Communications, MD USA</li>
-                    <li>Prof. Furqan Qamar, Secretary General, AIU</li>
-                    <li>Prof. K. Srinivas, Head ICT & PMU, NIEPA, New Delhi</li>
-                    <li>Prof. Kannan Moudgalva, IITB Mumbai</li>
-                    <li>Prof. PVM Rao, IIT Delhi</li>
-                    <li>Prof. Rishikesh T Krishnan, Director, IIM Indore</li>
-                    <li>Prof. S. Sadagopan, Director, IIIT Bangalore</li>
-                    <li>Prof. Sandeep Sancheti, President, AIU</li>
-                    <li>Prof. SC Shasrabudhe, Former, DAIICT</li>
-                    <li>Prof. Surendra Prasad, Chairperson, NBA</li>
-                    <li>Dr. Abhay Jere, Chief Innovation Officer (CIO), MHRD, GOI</li>
-                    <li>Ms. Shalini S. Sharma, Head-HE, CII</li>
-                    </ul> -->
-                <!-- </div>
-            </div>
-        </div>
-        <br>
-         <hr> -->
 
         <div class="row">
             <div class="col-md-12" style="line-height:30px;font-size:17px;">
