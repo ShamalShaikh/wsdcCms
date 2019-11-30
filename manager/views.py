@@ -616,11 +616,24 @@ def sendmail(request,cid,type):
     print sender
     print type
     if type == '1':
-        subject = 'Application approved but payment pending'
-        content = "Dear " + profile.user.first_name + ",\n\n"
-        content += "Your details have been reviewed and verified by us.\n\n"
-        content += "Please pay the registration fee to proceed further.\n\n"
-        content += "Thank you!"
+		if conference.conference_alias == "nhtff2020":
+			subject = 'Application approved but payment pending at NHTFF-2020, NIT Warangal'
+			content = "Dear " + profile.user.first_name + ",\n\n"
+			content += "Thank you for submitting your research work to the 2nd INTERNATIONAL CONFERENCE ON NUMERICAL HEAT TRANSFER & FLUID FLOW (NHTFF-2020), which will be conducted during January 17-19, 2020 at Department of Mathematics, NIT Warangal. \n\n"
+			content += "Your details have been reviewed and verified by us.  Please pay the registration fee to proceed further.\n\n"
+			content += "Let us know if you have any queries. \n"
+			content += "Thank you! "
+			content += "With Best Regards \n"
+			content += "Organizing Committee\n"
+			content += "NHTFF-2020, Department of Mathematics\n"
+			content += "National Institute of Technology Warangal\n"
+			content += 	"Warangal-506 004, Telangana, India \n"
+		else :
+			subject = 'Application approved but payment pending'
+			content = "Dear " + profile.user.first_name + ",\n\n"
+			content += "Your details have been reviewed and verified by us.\n\n"
+			content += "Please pay the registration fee to proceed further.\n\n"
+			content += "Thank you!"
 
     if type == '2':
         if mail_Action == "approve":
