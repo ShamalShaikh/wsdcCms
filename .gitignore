@@ -9,3 +9,4 @@ login_auth/migrations
 manager/migrations
 reviews/migrations
 env/
+.vscode/
